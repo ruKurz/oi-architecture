@@ -1,0 +1,12 @@
+# Claude Dev / Cline
+.claude-dev-helper/
+.env
+*.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+*api_key*
+*secret*
