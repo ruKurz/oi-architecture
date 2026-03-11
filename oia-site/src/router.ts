@@ -1,10 +1,23 @@
 import type { OIAModel } from './data/types'
 import { renderOIA } from './renderer/render-diagram'
 import { renderDetailView } from './views/detail'
-import { ZOOM_DEFAULT, ZOOM_MIN, ZOOM_MAX, ZOOM_STEP, ZOOM_FAR_THRESHOLD, ZOOM_MID_THRESHOLD } from './constants'
+import { renderMotivationView } from './views/motivation'
+import { renderMitmachenView } from './views/mitmachen'
+import { renderAboutView } from './views/about'
+import { renderImpressumView } from './views/impressum'
+import { renderNav } from './views/nav'
+import {
+  ZOOM_DEFAULT,
+  ZOOM_MIN,
+  ZOOM_MAX,
+  ZOOM_STEP,
+  ZOOM_FAR_THRESHOLD,
+  ZOOM_MID_THRESHOLD,
+} from './constants'
 
 let model: OIAModel
 let appContainer: HTMLElement
+let navElement: HTMLElement | null = null
 let zoomValue = ZOOM_DEFAULT
 
 function setZoom(val: number) {
@@ -12,7 +25,12 @@ function setZoom(val: number) {
   const wrapper = appContainer.querySelector('.diagram-wrapper') as HTMLElement | null
   if (wrapper) {
     wrapper.style.transform = `scale(${zoomValue})`
-    const cls = zoomValue < ZOOM_FAR_THRESHOLD ? 'zoom-far' : zoomValue < ZOOM_MID_THRESHOLD ? 'zoom-mid' : 'zoom-full'
+    const cls =
+      zoomValue < ZOOM_FAR_THRESHOLD
+        ? 'zoom-far'
+        : zoomValue < ZOOM_MID_THRESHOLD
+          ? 'zoom-mid'
+          : 'zoom-full'
     wrapper.classList.remove('zoom-far', 'zoom-mid', 'zoom-full')
     wrapper.classList.add(cls)
   }
@@ -65,14 +83,31 @@ function renderDetail(id: string) {
   appContainer.appendChild(renderDetailView(model, id))
 }
 
+function renderPage(viewElement: HTMLElement) {
+  appContainer.innerHTML = ''
+  appContainer.appendChild(viewElement)
+}
+
 export function initRouter(oiaModel: OIAModel, container: HTMLElement) {
   model = oiaModel
   appContainer = container
+  navElement = document.getElementById('site-nav')
 
   const route = () => {
     const hash = window.location.hash || '#/'
+
+    if (navElement) renderNav(navElement)
+
     if (hash.startsWith('#/detail/')) {
       renderDetail(decodeURIComponent(hash.replace('#/detail/', '')))
+    } else if (hash === '#/motivation') {
+      renderPage(renderMotivationView())
+    } else if (hash === '#/mitmachen') {
+      renderPage(renderMitmachenView())
+    } else if (hash === '#/about') {
+      renderPage(renderAboutView())
+    } else if (hash === '#/impressum') {
+      renderPage(renderImpressumView())
     } else {
       renderOverview()
     }
