@@ -41,8 +41,8 @@ Data → Intelligence → Capability → Solution → Business Outcome
 ### Understand the model
 
 1. Read [context/oia-context.md](context/oia-context.md) — the stable context anchor (DE), summarizes the current state of the model
-2. Read [context/oia-extended-context.md](context/oia-extended-context.md) — extended version in English
-3. See [images/oia-model-v1.png](images/oia-model-v1.png) for the visual overview
+
+2. See [images/oia-model-v1.png](images/oia-model-v1.png) for the visual overview
 
 ### Explore the architecture diagram
 
@@ -122,5 +122,10 @@ Architecture decisions are documented in [decisions/](./decisions/).
 
 ---
 
-*MIT License — see [LICENSE](LICENSE)*
+## License
+
+This project uses dual licensing:
+
+- **Code** (`oia-site/`) — [MIT License](LICENSE)
+- **Content** (`context/`, `articles/`, `diagrams/`, `decisions/`, `notes/`) — [CC BY 4.0](LICENSE-CC-BY-4.0)
 
