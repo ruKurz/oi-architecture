@@ -31,6 +31,23 @@ Mittelfristiges Ziel: Das OIA-Modell als **Diskussionsgrundlage, Framework oder 
 
 ---
 
+## Thought Doership – Positionierungsprinzip
+
+*(Basierend auf: John Winsor, "Has AI Ended Thought Leadership?", HBR März 2026)*
+
+**Das OIA-Modell gewinnt Glaubwürdigkeit nicht durch Framework-Vollständigkeit, sondern durch operative Verankerung.**
+
+Thought Leadership erodiert, weil GenAI poliertes, aber hohles Wissen auf null Kosten produziert. Differenzierung entsteht durch **Thought Doership**: operative Erfahrung, Narbengewebe aus echten Implementierungen, Bereitschaft über Scheitern zu berichten.
+
+5 Warnsignale für Faux-Expertise: kein Narbengewebe · Altitude Lock (30.000 Fuß, keine Implementierungsebene) · Platitudes über Scheitern · schnell aufgebaute Expertise · zu konsistente Positionen.
+
+**Implikation für dieses Projekt:**
+- Die stärksten LinkedIn-Posts zeigen nicht OIA als Framework – sondern konkrete Scheiternserfahrungen aus Implementierungen
+- Enterprise Search mit echten Integrationsproblemen, gescheiterte RAG-Implementierungen, Datenqualität in Realorganisationen: das differenziert von generischen "Enterprise AI"-Thought-Leaders
+- Jede OIA-Schicht mit eigenem operativem Narbengewebe verankern – das ist der Unterschied zu einem Whitepaper
+
+---
+
 ## Deine Rolle als Claude
 
 Du bist mein **strategischer Sparringspartner und Architektur-Berater** für dieses Projekt.
@@ -91,7 +108,7 @@ Data → Intelligence → Capability → Solution → Business Outcome
 - **Kurze, fokussierte Chats** pro Thema sind bevorzugt gegenüber langen Konversationen.
 - Nach bedeutenden Erkenntnissen wird dieses Dokument aktualisiert.
 - Gartner-Quellen und weitere Analysten-Reports werden im Projekt hinterlegt und sollen aktiv in die Beratung einfließen.
-- Terminologie ist festgelegt (siehe OIA_Kontext_v1.md) – bitte konsistent verwenden.
+- Terminologie ist festgelegt (siehe [context/oia-context.md](context/oia-context.md)) – bitte konsistent verwenden.
 
 ---
 

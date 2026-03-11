@@ -31,7 +31,7 @@ Das Modell ist keine Beschreibung einer konkreten Technologie, sondern ein **arc
 
 | Perspektive | Beschreibung |
 |---|---|
-| **Thought Leadership** | Konzeptioneller Rahmen für LinkedIn-Artikel und Fachgespräche |
+| **Thought Leadership** | Konzeptioneller Rahmen für LinkedIn-Artikel und Fachgespräche – Glaubwürdigkeit entsteht durch operative Verankerung, nicht durch Framework-Vollständigkeit (**Thought Doership**) |
 | **Enterprise Architecture** | Referenzmodell für CIOs und Enterprise Architects |
 | **Knowledge Systems** | Strukturierungsrahmen für Enterprise Search, RAG, AI Agents |
 | **Diskussionsrahmen** | Ermöglicht strukturierte Gespräche über KI-basierte Organisationen |
@@ -137,39 +137,3 @@ Wie Rohdaten zu nutzbarem Wissen werden.
 - **Cognitive Capabilities** = Was das System *kann*, nicht wie es implementiert ist
 - **Solutions** = Nutzerseitige Anwendungen (kein technischer Stack)
 - **Situation Layer** = Kontext-Eingabe, kein User-Interface
-
----
-
-## 8. Quellen & Referenzen
-
-| Quelle | Status |
-|---|---|
-| LinkedIn-Artikel (Erstveröffentlichung) | ✅ Vorhanden |
-| OIA-Diagramm V1 (PNG) | ✅ Vorhanden |
-| ChatGPT Context Summary | ✅ Migriert |
-| Gartner-Reports (Cognitive Search, Knowledge Management) | 🔲 Noch einzupflegen |
-| Forrester / weitere Analysten | 🔲 Noch einzupflegen |
-
----
-
-## 9. Nächste Schritte
-
-1. **Projekt in Claude anlegen** und dieses Dokument als Basis-Kontext hinterlegen
-2. **Gartner-Quellen hochladen** und Terminologie abgleichen
-3. **Knowledge Core konzeptuell ausarbeiten**
-4. **OIA-Diagramm V2 erstellen** (HTML/SVG, publikationsreif)
-5. **LinkedIn-Artikel V2** auf Basis des verfeinerten Modells
-
----
-
-*Dieses Dokument sollte nach jeder bedeutenden Arbeitssession aktualisiert werden.*
-
----
-
-## Arbeitskonventionen
-
-### Todo / Parking Lot
-- Beobachtungen → `/todo <Beschreibung>` oder direkt in `context/todo.md`
-- Kategorien: model | renderer | prompt | architecture | infra | ux
-- Status-Werte: open | in-progress | done | wont-do
-- Review: regelmäßig zu Sessionbeginn kurz durchsehen
