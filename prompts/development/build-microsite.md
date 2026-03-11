@@ -439,7 +439,7 @@ export default defineConfig({
 - **Kein Backend** — reines Static-Site-Deployment
 - **Design Tokens 1:1** aus `oia-diagram-v2.html` übernehmen — keine neuen Farben erfinden
 - **`oia-site/`** ist Unterordner im bestehenden Repo — kein zweites Repo
-- Das JSON-Modell (`oia-model.json`) und der Diagram-Entwicklungs-Workflow sind in `prompts/oia-entwicklungs-prompt-final.md` beschrieben — diese beiden Artefakte bauen aufeinander auf
+- Das JSON-Modell (`oia-model.json`) und der Diagram-Entwicklungs-Workflow sind in `prompts/development/evolve-model.md` beschrieben — diese beiden Artefakte bauen aufeinander auf
 
 ---
 
