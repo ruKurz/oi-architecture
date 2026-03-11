@@ -1,9 +1,10 @@
 import type { OIAModel, Container } from '../data/types'
+import { getItem } from './utils'
 
 function resolveChildren(model: OIAModel, ids: string[]): string {
   return ids
     .map((id) => {
-      const el = model.elements.find((e) => e.id === id)
+      const el = getItem(model, id)
       if (!el) return ''
       if (el.type === 'item') {
         return `<div class="side-item">${el.label}</div>`
@@ -15,7 +16,7 @@ function resolveChildren(model: OIAModel, ids: string[]): string {
         const itemStyle = isQualityGates ? ' style="border-color:rgba(44,242,194,0.2)"' : ''
         const items = el.children
           .map((cid) => {
-            const child = model.elements.find((e) => e.id === cid)
+            const child = getItem(model, cid)
             return child ? `<div class="side-item"${itemStyle}>${child.label}</div>` : ''
           })
           .join('')

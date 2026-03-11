@@ -1,8 +1,5 @@
 import type { OIAModel, Container, ContentItem } from '../data/types'
-
-function getItem(model: OIAModel, id: string): ContentItem | Container | undefined {
-  return model.elements.find((e) => e.id === id)
-}
+import { getItem } from './utils'
 
 function renderActorsLayer(model: OIAModel, layer: Container): string {
   return layer.children
