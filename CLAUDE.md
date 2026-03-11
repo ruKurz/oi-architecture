@@ -43,3 +43,13 @@ Follow CONVENTIONS.md §2.3. Every commit references a GitHub Issue in the foote
 
 Official tasks: GitHub Issues at https://github.com/ruKurz/oi-architecture/issues
 `context/todo.md` is a session parking lot only — not the primary tracker.
+
+## Contact / Author Identity
+
+**Always use this email address** for the author — in all files, templates, and generated content:
+
+```
+kurz@vnc-online
+```
+
+Never invent, guess, or placeholder a different address. If an email is needed and this one does not fit the context, ask the author before proceeding.

@@ -13,7 +13,7 @@ This project is in active development. Security fixes are applied to the latest 
 
 **Do not report security vulnerabilities via public GitHub Issues.**
 
-Please report vulnerabilities by email to: **rüdiger.kurz@[see profile]** or via GitHub's private vulnerability reporting:
+Please report vulnerabilities by email to: **kurz@vnc-online** or via GitHub's private vulnerability reporting:
 
 1. Go to the [Security tab](https://github.com/ruKurz/oi-architecture/security) of this repository
 2. Click **"Report a vulnerability"**
