@@ -1,0 +1,56 @@
+import type { OIAModel, OIAElement } from '../data/types'
+
+function renderChildren(model: OIAModel, ids: string[], depth = 0): string {
+  if (depth > 3) return ''
+  return ids
+    .map((id) => {
+      const el = model.elements.find((e) => e.id === id)
+      if (!el) return ''
+      const indent = depth > 0 ? ` style="margin-left:${depth * 16}px"` : ''
+      if (el.type === 'container') {
+        const sub =
+          el.children.length > 0
+            ? `<div class="detail-children">${renderChildren(model, el.children, depth + 1)}</div>`
+            : ''
+        return `<div class="detail-item"${indent}>
+        <span class="detail-item-label">${el.label}</span>
+        <span style="font-size:10px;color:var(--text-muted);margin-left:8px">${el.containerType}</span>
+        ${sub}
+      </div>`
+      }
+      return `<div class="detail-item"${indent}>
+      <span class="detail-item-label">${el.icon ? el.icon + ' ' : ''}${el.label}</span>
+      <span style="font-size:10px;color:var(--text-muted);margin-left:8px">${el.itemType}</span>
+    </div>`
+    })
+    .join('')
+}
+
+export function renderDetailView(model: OIAModel, id: string): HTMLElement {
+  const el: OIAElement | undefined = model.elements.find((e) => e.id === id)
+
+  const view = document.createElement('div')
+  view.className = 'detail-view'
+
+  if (!el) {
+    view.innerHTML = `
+      <a class="detail-back" href="#/">← Back</a>
+      <div class="detail-title">Element not found: ${id}</div>
+    `
+    return view
+  }
+
+  const children = el.type === 'container' ? el.children : []
+  const description = el.type === 'container' ? el.description || '' : el.description || ''
+
+  view.innerHTML = `
+    <a class="detail-back" href="#/">← Back to Overview</a>
+    <div class="detail-id">${el.id}</div>
+    <div class="detail-title">${el.label}</div>
+    ${description ? `<div class="detail-desc">${description}</div>` : ''}
+    <div class="detail-items">
+      ${children.length > 0 ? renderChildren(model, children) : '<div class="detail-item" style="color:var(--text-muted)">No sub-elements</div>'}
+    </div>
+  `
+  return view
+}

@@ -1,0 +1,43 @@
+name: Deploy OIA Site to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'oia-site/**'
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: oia-site/package-lock.json
+
+      - name: Install dependencies
+        run: cd oia-site && npm ci
+
+      - name: Security audit
+        run: cd oia-site && npm audit --audit-level=moderate
+
+      - name: Lint
+        run: cd oia-site && npm run lint
+
+      - name: Run tests
+        run: cd oia-site && npm run test
+
+      - name: Build
+        run: cd oia-site && npm run build
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./oia-site/dist
