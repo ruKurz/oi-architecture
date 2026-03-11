@@ -1,0 +1,19 @@
+:root {
+  --bg: #050d1a;
+  --bg2: #081222;
+  --panel: #0b1a2e;
+  --panel2: #0e2040;
+  --border: rgba(64, 140, 220, 0.2);
+  --border-bright: rgba(64, 180, 255, 0.45);
+  --border-hover: rgba(77, 184, 255, 0.6);
+  --accent: #4db8ff;
+  --accent2: #2cf2c2;
+  --accent3: #f0a732;
+  --accent4: #c47dff;
+  --text: #e8f4ff;
+  --text-dim: #7a9fc4;
+  --text-muted: #4a6a8a;
+  --glow: 0 0 20px rgba(77, 184, 255, 0.15);
+  --glow-strong: 0 0 30px rgba(77, 184, 255, 0.3);
+  --core-glow: 0 0 40px rgba(44, 242, 194, 0.2), 0 0 80px rgba(44, 242, 194, 0.08);
+}
