@@ -1,0 +1,1 @@
+cd oia-site && npx lint-staged
