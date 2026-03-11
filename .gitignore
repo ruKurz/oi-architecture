@@ -1,6 +1,9 @@
 # Claude Dev / Cline
 .claude-dev-helper/
 .claude/settings.local.json
+
+# Private inspirations / drafts (may contain secrets)
+inspirations/
 .env
 *.env
 
