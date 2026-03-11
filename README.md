@@ -38,24 +38,100 @@ Data → Intelligence → Capability → Solution → Business Outcome
 
 ## Quick Start
 
-### Understand the model
+Goal: from zero to a running dev environment and your first PR in under 20 minutes.
 
-1. Read [context/oia-context.md](context/oia-context.md) — the stable context anchor (DE), summarizes the current state of the model
+### Prerequisites
 
-2. See [images/oia-model-v1.png](images/oia-model-v1.png) for the visual overview
+- **Node.js 20+** — [nodejs.org](https://nodejs.org)
+- **Git**
+- **VS Code** (recommended) — install the suggested extensions when prompted
 
-### Explore the architecture diagram
+### 1 — Clone and install
 
-Open [diagrams/oia-diagram-v2.html](diagrams/oia-diagram-v2.html) in a browser — the current interactive diagram.
+```bash
+git clone https://github.com/ruKurz/oi-architecture.git
+cd oi-architecture/oia-site
+npm install
+```
 
-### Read the articles
+### 2 — Start the dev server
 
-- [articles/organizational-intelligence-architecture.md](articles/organizational-intelligence-architecture.md) — foundational LinkedIn article introducing the OIA model
-- [articles/the-organizational-brain.md](articles/the-organizational-brain.md) — deeper dive into the cognitive systems perspective
+```bash
+npm run dev
+# → http://localhost:5173/oi-architecture/
+```
 
-### Work with Claude
+Open the URL in your browser. Hot reload is active — changes appear immediately.
 
-The file [context/oia-project-instruction-prompt.md](context/oia-project-instruction-prompt.md) contains the full project instruction prompt — load it into a Claude project to get a configured sparring partner for architecture work, article writing, and diagram development.
+### 3 — Run the tests
+
+```bash
+npm test
+# All tests must stay green after any change
+```
+
+### 4 — Find the right place for your change
+
+| What you want to change | Where to look |
+|---|---|
+| OIA model content (layers, items, labels) | `oia-site/src/data/oia-model.json` |
+| Layer rendering logic | `oia-site/src/renderer/render-layer.ts` |
+| Detail panel / side panel | `oia-site/src/renderer/render-panel.ts` |
+| Navigation and routing | `oia-site/src/router.ts` |
+| Site pages (Motivation, About, …) | `oia-site/src/views/` |
+| Colors, layout, design tokens | `oia-site/src/styles/` |
+| Shared constants and zoom levels | `oia-site/src/constants.ts` |
+
+### 5 — Make your change
+
+Before you start:
+
+- Read [CONVENTIONS.md](CONVENTIONS.md) — naming rules, BIZ/DEV separation, commit format
+- Every commit references a GitHub Issue: `feat(renderer): add X  Refs #N`
+
+After your change:
+
+```bash
+npm run lint && npm test
+```
+
+Both must pass before committing.
+
+### 6 — Submit a pull request
+
+1. Fork the repo on GitHub
+2. Create a feature branch: `git checkout -b feat/your-change`
+3. Commit with a [Conventional Commit](CONVENTIONS.md#23-conventional-commits) message
+4. Push and open a pull request — CI runs lint, tests, and build automatically
+
+> Need more detail? See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+---
+
+### Working with AI (Claude Code)
+
+This project ships a set of prompts for recurring development tasks. Load the relevant file as context in [Claude](https://claude.ai) or run it via Claude Code in this repo. Each prompt is self-contained — read its `## Kontext` section first.
+
+| Prompt | Purpose |
+|---|---|
+| `prompts/development/project-review.md` | Full project health check — creates GitHub Issues for findings |
+| `prompts/development/sprint-retro.md` | Sprint Review → Retro → Planning cycle |
+| `prompts/development/create-adr.md` | Create a new Architecture Decision Record |
+| `prompts/development/create-issue.md` | Create a well-structured GitHub Issue |
+| `prompts/development/evolve-model.md` | Extend or refine the OIA model |
+| `prompts/templates/prompt-helper.md` | **Mandatory** before adding any new prompt to this project |
+
+---
+
+## Understanding the Architecture
+
+For readers who want to explore the model itself rather than contribute code:
+
+- Read [context/oia-context.md](context/oia-context.md) — the stable context anchor, summarizes the current model state (DE)
+- Read the articles:
+  - [articles/organizational-intelligence-architecture.md](articles/organizational-intelligence-architecture.md) — foundational article introducing OIA
+  - [articles/the-organizational-brain.md](articles/the-organizational-brain.md) — the cognitive systems perspective
+- Load [context/oia-project-instruction-prompt.md](context/oia-project-instruction-prompt.md) into a Claude project for a configured architecture sparring partner
 
 ---
 
@@ -63,17 +139,23 @@ The file [context/oia-project-instruction-prompt.md](context/oia-project-instruc
 
 ```
 oi-architecture/
+├── oia-site/         # Interactive renderer (TypeScript + Vite)
+│   └── src/
+│       ├── data/     # oia-model.json — single source of truth for the model
+│       ├── renderer/ # Layer, panel, diagram rendering logic
+│       ├── views/    # Site pages (Motivation, About, …)
+│       └── styles/   # CSS design tokens and layout
 ├── context/          # Stable context documents (project anchor)
 ├── articles/         # Published and draft LinkedIn articles
 ├── diagrams/         # Architecture diagrams (HTML/SVG)
-├── drafts/           # Work-in-progress content
+├── decisions/        # Architecture Decision Records (ADRs)
+├── prompts/          # Claude prompts for recurring project tasks
+│   ├── development/  # Execution prompts (review, sprint, ADR, …)
+│   ├── diagrams/     # Diagram generation prompts
+│   └── templates/    # Prompt helper (mandatory for new prompts)
 ├── notes/            # Research notes and ideas
-├── prompts/          # Claude prompts, templates, context generators
-│   ├── context/      # Prompt templates for context generation
-│   └── templates/    # Article and diagram templates
 ├── images/           # Visual assets
-├── inspirations/     # Reference material and external sources
-└── videos/           # Video content
+└── inspirations/     # Reference material and external sources
 ```
 
 ---
@@ -122,10 +204,23 @@ Architecture decisions are documented in [decisions/](./decisions/).
 
 ---
 
+## History
+
+The OIA model evolved through several visual iterations before the current data-driven renderer was built.
+
+| Version | Artefact | Description |
+|---|---|---|
+| V1 | [images/oia-model-v1.png](images/oia-model-v1.png) | First static diagram — established the 7-layer structure |
+| V2 pre | [diagrams/oia-diagram-v2.html](diagrams/oia-diagram-v2.html) | Interactive HTML prototype — the design language that became the renderer |
+| V2 | `oia-site/` | Production renderer: TypeScript + Vite, fully data-driven from `oia-model.json` |
+
+> A diagram gallery showing the visual evolution of OIA is planned for the microsite.
+
+---
+
 ## License
 
 This project uses dual licensing:
 
 - **Code** (`oia-site/`) — [MIT License](LICENSE)
 - **Content** (`context/`, `articles/`, `diagrams/`, `decisions/`, `notes/`) — [CC BY 4.0](LICENSE-CC-BY-4.0)
-
