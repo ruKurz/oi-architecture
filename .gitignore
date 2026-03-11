@@ -2,8 +2,9 @@
 .claude-dev-helper/
 .claude/settings.local.json
 
-# Private inspirations / drafts (may contain secrets)
+# Private notes / inspirations / drafts (may contain secrets)
 inspirations/
+notes/
 .env
 *.env
 
