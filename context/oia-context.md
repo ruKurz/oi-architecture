@@ -163,3 +163,13 @@ Wie Rohdaten zu nutzbarem Wissen werden.
 ---
 
 *Dieses Dokument sollte nach jeder bedeutenden Arbeitssession aktualisiert werden.*
+
+---
+
+## Arbeitskonventionen
+
+### Todo / Parking Lot
+- Beobachtungen → `/todo <Beschreibung>` oder direkt in `context/todo.md`
+- Kategorien: model | renderer | prompt | architecture | infra | ux
+- Status-Werte: open | in-progress | done | wont-do
+- Review: regelmäßig zu Sessionbeginn kurz durchsehen
