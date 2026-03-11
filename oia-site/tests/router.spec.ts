@@ -1,7 +1,6 @@
 import { describe, test, expect, beforeEach, vi } from 'vitest'
 import { JSDOM } from 'jsdom'
-import model from '../src/data/oia-model.json'
-import type { OIAModel } from '../src/data/types'
+import { model } from '../src/data/model'
 
 describe('initRouter — overview route (#/)', () => {
   let container: HTMLElement
@@ -18,19 +17,19 @@ describe('initRouter — overview route (#/)', () => {
 
   test('renders diagram-wrapper on overview route', async () => {
     const { initRouter } = await import('../src/router')
-    initRouter(model as OIAModel, container)
+    initRouter(model, container)
     expect(container.querySelector('.diagram-wrapper')).not.toBeNull()
   })
 
   test('adds zoom-controls to container', async () => {
     const { initRouter } = await import('../src/router')
-    initRouter(model as OIAModel, container)
+    initRouter(model, container)
     expect(container.querySelector('.zoom-controls')).not.toBeNull()
   })
 
   test('zoom-slider range is 40–100', async () => {
     const { initRouter } = await import('../src/router')
-    initRouter(model as OIAModel, container)
+    initRouter(model, container)
     const slider = container.querySelector('.zoom-slider') as HTMLInputElement
     expect(slider?.min).toBe('40')
     expect(slider?.max).toBe('100')
@@ -38,21 +37,21 @@ describe('initRouter — overview route (#/)', () => {
 
   test('default zoom is 75% → zoom-full class on diagram-wrapper', async () => {
     const { initRouter } = await import('../src/router')
-    initRouter(model as OIAModel, container)
+    initRouter(model, container)
     const wrapper = container.querySelector('.diagram-wrapper') as HTMLElement
     expect(wrapper?.classList.contains('zoom-full')).toBe(true)
   })
 
   test('zoom label shows 75%', async () => {
     const { initRouter } = await import('../src/router')
-    initRouter(model as OIAModel, container)
+    initRouter(model, container)
     const label = container.querySelector('.zoom-label')
     expect(label?.textContent).toBe('75%')
   })
 
   test('diagram elements have data-id attributes', async () => {
     const { initRouter } = await import('../src/router')
-    initRouter(model as OIAModel, container)
+    initRouter(model, container)
     expect(container.querySelectorAll('[data-id]').length).toBeGreaterThan(0)
   })
 })
@@ -73,19 +72,19 @@ describe('initRouter — detail route (#/detail/:id)', () => {
 
   test('renders detail-view when hash starts with #/detail/', async () => {
     const { initRouter } = await import('../src/router')
-    initRouter(model as OIAModel, container)
+    initRouter(model, container)
     expect(container.querySelector('.detail-view')).not.toBeNull()
   })
 
   test('detail view shows element label', async () => {
     const { initRouter } = await import('../src/router')
-    initRouter(model as OIAModel, container)
+    initRouter(model, container)
     expect(container.innerHTML).toContain('Organizational Knowledge Core')
   })
 
   test('detail view has back link', async () => {
     const { initRouter } = await import('../src/router')
-    initRouter(model as OIAModel, container)
+    initRouter(model, container)
     expect(container.querySelector('.detail-back')).not.toBeNull()
   })
 })
