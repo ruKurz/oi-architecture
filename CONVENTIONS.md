@@ -182,6 +182,8 @@ See [decisions/README.md](decisions/README.md) for the full ADR template and ind
 
 Methodology: Ralf D. Müller / Johannes Dienst — Decision first, Alternatives mandatory.
 
+**ADR Acceptance Rule:** Only a human maintainer may set an ADR status to `Accepted`. AI-assisted tooling must use `Proposed` when creating new ADRs. An ADR in `Proposed` state is active and followed — `Proposed` means "awaiting human sign-off", not "not yet in use".
+
 See [ADR-0004](decisions/0004-adr-format-mueller-dienst.md) for rationale.
 
 ---

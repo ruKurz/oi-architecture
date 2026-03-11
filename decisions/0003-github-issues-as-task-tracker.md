@@ -1,7 +1,7 @@
 # ADR-0003: GitHub Issues as Official Task Tracker
 
 **Decision:** GitHub Issues is the single source of truth for all actionable tasks in the OIA project. The file `context/todo.md` is retained as a session parking lot only — unstructured observations captured during work sessions, converted to GitHub Issues before the next work session begins.
-**Status:** Accepted
+**Status:** Proposed
 **Date:** 2026-03-11
 **Type:** DEV
 

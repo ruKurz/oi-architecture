@@ -1,7 +1,7 @@
 # ADR-0002: BIZ/DEV Separation as Project Rule
 
 **Decision:** Every file, commit, and prompt in the OIA project is classified as either BIZ (OIA architecture content: model, articles, diagrams, architecture decisions) or DEV (technical implementation: renderer, tooling, tests, CI). A single commit must never touch both domains simultaneously.
-**Status:** Accepted
+**Status:** Proposed
 **Date:** 2026-03-11
 **Type:** BOTH
 
