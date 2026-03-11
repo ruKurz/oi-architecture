@@ -1,5 +1,5 @@
 import { describe, test, expect } from 'vitest'
-import model from '../src/data/oia-model.json'
+import { model } from '../src/data/model'
 
 describe('OIA Model integrity', () => {
   test('all 10 main layers present', () => {
