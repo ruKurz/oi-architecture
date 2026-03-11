@@ -1,1 +1,2 @@
+#!/bin/sh
 cd oia-site && npx lint-staged
