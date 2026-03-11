@@ -1,5 +1,6 @@
 # Claude Dev / Cline
 .claude-dev-helper/
+.claude/settings.local.json
 .env
 *.env
 
