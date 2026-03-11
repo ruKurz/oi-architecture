@@ -1,0 +1,10 @@
+# <type>[scope]: <imperative description> (max 50 chars)
+# Types: feat fix content docs refactor test chore style
+# Scopes (optional): renderer model ci infra ux content decisions
+
+# Body (optional, wrap at 72 chars):
+
+
+# Footer — REQUIRED (except initial commits):
+Closes #N
+# or: Refs #N  (if issue stays open after this commit)
