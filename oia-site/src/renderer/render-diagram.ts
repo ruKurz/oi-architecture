@@ -1,6 +1,7 @@
 import type { OIAModel, Container } from '../data/types'
 import { renderLayer } from './render-layer'
 import { renderPanel } from './render-panel'
+import { getItem } from './utils'
 
 export function renderOIA(model: OIAModel): HTMLElement {
   const wrapper = document.createElement('div')
@@ -22,9 +23,7 @@ export function renderOIA(model: OIAModel): HTMLElement {
   grid.className = 'main-grid'
 
   // Left panel
-  const leftPanel = model.elements.find((e) => e.id === '#panel-left' && e.type === 'container') as
-    | Container
-    | undefined
+  const leftPanel = getItem(model, '#panel-left') as Container | undefined
   if (leftPanel) {
     grid.appendChild(renderPanel(model, leftPanel))
   }
@@ -55,9 +54,7 @@ export function renderOIA(model: OIAModel): HTMLElement {
   grid.appendChild(center)
 
   // Right panel
-  const rightPanel = model.elements.find(
-    (e) => e.id === '#panel-right' && e.type === 'container',
-  ) as Container | undefined
+  const rightPanel = getItem(model, '#panel-right') as Container | undefined
   if (rightPanel) {
     grid.appendChild(renderPanel(model, rightPanel))
   }
