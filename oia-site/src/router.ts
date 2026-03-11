@@ -1,17 +1,18 @@
 import type { OIAModel } from './data/types'
 import { renderOIA } from './renderer/render-diagram'
 import { renderDetailView } from './views/detail'
+import { ZOOM_DEFAULT, ZOOM_MIN, ZOOM_MAX, ZOOM_STEP, ZOOM_FAR_THRESHOLD, ZOOM_MID_THRESHOLD } from './constants'
 
 let model: OIAModel
 let appEl: HTMLElement
-let zoomValue = 0.75
+let zoomValue = ZOOM_DEFAULT
 
 function setZoom(val: number) {
   zoomValue = val
   const wrapper = appEl.querySelector('.diagram-wrapper') as HTMLElement | null
   if (wrapper) {
     wrapper.style.transform = `scale(${zoomValue})`
-    const cls = zoomValue < 0.55 ? 'zoom-far' : zoomValue < 0.75 ? 'zoom-mid' : 'zoom-full'
+    const cls = zoomValue < ZOOM_FAR_THRESHOLD ? 'zoom-far' : zoomValue < ZOOM_MID_THRESHOLD ? 'zoom-mid' : 'zoom-full'
     wrapper.classList.remove('zoom-far', 'zoom-mid', 'zoom-full')
     wrapper.classList.add(cls)
   }
@@ -43,7 +44,7 @@ function renderOverview() {
   controls.className = 'zoom-controls'
   controls.innerHTML = `
     <span style="font-size:10px;color:var(--text-muted)">Zoom</span>
-    <input class="zoom-slider" type="range" min="40" max="100" value="${Math.round(zoomValue * 100)}" step="5">
+    <input class="zoom-slider" type="range" min="${ZOOM_MIN * 100}" max="${ZOOM_MAX * 100}" value="${Math.round(zoomValue * 100)}" step="${ZOOM_STEP * 100}">
     <span class="zoom-label">${Math.round(zoomValue * 100)}%</span>
   `
   appEl.appendChild(controls)
@@ -54,8 +55,8 @@ function renderOverview() {
   // Mousewheel zoom on slider area
   controls.addEventListener('wheel', (e) => {
     e.preventDefault()
-    const delta = e.deltaY < 0 ? 0.05 : -0.05
-    setZoom(Math.min(1, Math.max(0.4, zoomValue + delta)))
+    const delta = e.deltaY < 0 ? ZOOM_STEP : -ZOOM_STEP
+    setZoom(Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, zoomValue + delta)))
   })
 }
 
