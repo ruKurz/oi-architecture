@@ -1,7 +1,7 @@
 # ADR-0004: ADR Format: Müller/Dienst Methodology
 
 **Decision:** Architecture Decision Records follow the Ralf D. Müller / Johannes Dienst format: Decision statement first (active voice), followed by Status, Context, Consequences (Easier/Harder/Required adjustments), and a mandatory Alternatives table. ADRs are written in English and stored in `decisions/` as `NNNN-kebab-case-noun-phrase.md`.
-**Status:** Accepted
+**Status:** Proposed
 **Date:** 2026-03-11
 **Type:** DEV
 
