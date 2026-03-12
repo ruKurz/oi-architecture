@@ -2,15 +2,15 @@
 
 > *How organizations turn knowledge into action.*
 
-**Organizational Intelligence Architecture (OIA)** ist ein konzeptionelles Referenzmodell für intelligente Organisationen.  
-Es beschreibt, wie Rohdaten zu Entscheidungen, Handlungen und messbaren Business Outcomes werden – jenseits von reinen Daten‑ und Analytics‑Architekturen.
+**Organizational Intelligence Architecture (OIA)** is a conceptual reference model for intelligent organizations.
+It describes how raw data becomes decisions, actions, and measurable business outcomes — going beyond pure data and analytics architectures.
 
 ```text
 Data → Intelligence → Capability → Solution → Business Outcome
 ```
 
 **Status:** Version 0.1.0 – early access, designed as a thinking tool.
-Die weitere Entwicklung – von der Referenzarchitektur zur Referenzimplementierung – soll gemeinsam mit einer Community erfolgen.
+Further development — from reference architecture to reference implementation — is intended to happen together with a community.
 
 ![OIA Interactive Diagram — 7-layer architecture showing how organizations turn knowledge into action](docs/images/Organizational-Intelligence-Architecture-03-12-2026.png)
 
@@ -18,76 +18,74 @@ Die weitere Entwicklung – von der Referenzarchitektur zur Referenzimplementier
 
 ## At a Glance
 
-OIA richtet sich an **Enterprise‑ und Lösungsarchitekt:innen, strategische Entscheider:innen und AI‑Leader**, die eine gemeinsame Sprache für:
+OIA is aimed at **enterprise and solution architects, strategic decision-makers, and AI leaders** who want to establish a shared language for:
 
-- Daten, Wissen und Entscheidungen
-- AI‑/LLM‑Infrastruktur
-- konkrete Lösungen und Business Outcomes
+- data, knowledge, and decisions
+- AI/LLM infrastructure
+- concrete solutions and business outcomes
 
-aufbauen wollen.
-
-Das Modell liegt als interaktive Visualisierung vor:  
-Ein mehrschichtiges Diagramm, das Situationen, Use Cases, Fähigkeiten, Lösungen, AI‑Infrastruktur und Datenbasis einer Organisation in einem zusammenhängenden Bild zeigt.
+The model is available as an interactive visualization:
+a multi-layer diagram that shows the situations, use cases, capabilities, solutions, AI infrastructure, and data foundation of an organization in a single coherent picture.
 
 ---
 
 ## Why OIA?
 
-Die zentrale These von OIA:
+The central thesis of OIA:
 
-> Organisationen scheitern an AI‑Adoption, wenn sie nicht zuerst Datenqualität, Kultur, Strukturen und Wissenskurierung adressieren.
+> Organizations fail at AI adoption when they do not first address data quality, culture, structures, and knowledge curation.
 
-Typische heutige Architektur‑Landkarten enden bei:
+Typical architecture maps today stop at:
 
-- Datenplattformen und Pipelines  
-- Analytics‑ und BI‑Systemen  
-- isolierten AI‑/ML‑Use‑Cases
+- data platforms and pipelines
+- analytics and BI systems
+- isolated AI/ML use cases
 
-Was fehlt, ist eine **architektonische Brücke**:
+What is missing is an **architectural bridge**:
 
-- von „wir haben Daten“  
-- über „wir verfügen über explizite, geprüfte Fähigkeiten“  
-- hin zu „wir setzen diese Fähigkeiten konsistent in Lösungen und Entscheidungen um“.
+- from "we have data"
+- through "we have explicit, validated capabilities"
+- to "we consistently apply those capabilities in solutions and decisions"
 
-OIA macht diesen Weg explizit – als **kognitive Architektur der Organisation**.
+OIA makes this path explicit — as the **cognitive architecture of the organization**.
 
 ---
 
 ## Architecture Layers
 
-### Kernlagen
+### Core Layers
 
-| Layer                       | Was beschrieben wird                                                                                  |
-|----------------------------|-------------------------------------------------------------------------------------------------------|
-| **Situation Layer**        | Kontext jeder Entscheidung: Mitarbeiter:in, Ereignis, Zeit, Ort, Domäne, Aufgabe, Berechtigungen     |
-| **Use Cases**              | Organisations‑Herausforderungen: z.B. HR, Maintenance, Customer Support                               |
-| **Solutions & Applications** | User‑Facing Systeme: Enterprise Search, Knowledge Assistants, Code Assist                          |
-| **Cognitive Capabilities** | Was die Organisation *kann*: Find, Link, Evaluate, Generate, Structure, Report                       |
-| **Features & APIs**        | Wiederverwendbare Services: `/search` `/summarize` `/link` `/chat` `/classify`                       |
-| **AI & Cognitive Infrastructure** | LLMs, ML, NLP, Vektorindizes, Knowledge Graphs, RPA                                            |
-| **Data Layer**             | Fundament: Personen, Dokumente, Projekte, Regeln + Processing Pipeline                               |
+| Layer                            | What it describes                                                                              |
+|----------------------------------|-----------------------------------------------------------------------------------------------|
+| **Situation Layer**              | Context of every decision: employee, event, time, place, domain, task, permissions            |
+| **Use Cases**                    | Organizational challenges: e.g. HR, Maintenance, Customer Support                             |
+| **Solutions & Applications**     | User-facing systems: Enterprise Search, Knowledge Assistants, Code Assist                     |
+| **Cognitive Capabilities**       | What the organization *can do*: Find, Link, Evaluate, Generate, Structure, Report             |
+| **Features & APIs**              | Reusable services: `/search` `/summarize` `/link` `/chat` `/classify`                        |
+| **AI & Cognitive Infrastructure**| LLMs, ML, NLP, Vector Indexes, Knowledge Graphs, RPA                                         |
+| **Data Layer**                   | Foundation: persons, documents, projects, rules + processing pipeline                         |
 
-### Quer­schnitts­dimensionen
+### Cross-Cutting Dimensions
 
-- **Linke Seite – System Development & Interaction**  
+- **Left side — System Development & Interaction**
   User Interaction, Context Understanding, Feature Orchestration, Learning & Optimization.
 
-- **Rechte Seite – Data Sources & Processing**  
+- **Right side — Data Sources & Processing**
   Ingestion → Processing → Cleaning → Validation.
 
 ---
 
 ## Quick Start (Dev, v0.1.0)
 
-Ziel: In **unter 20 Minuten** eine laufende Dev‑Umgebung und deinen ersten kleinen Change.
+Goal: a running dev environment and your first small change in **under 20 minutes**.
 
-### Voraussetzungen
+### Prerequisites
 
-- **Node.js 20+** – <https://nodejs.org>  
-- **Git**  
-- **VS Code** (empfohlen) – installiere die vorgeschlagenen Extensions
+- **Node.js 20+** — <https://nodejs.org>
+- **Git**
+- **VS Code** (recommended) — install the suggested extensions
 
-### 1 — Repository klonen und installieren
+### 1 — Clone and install
 
 ```bash
 git clone https://github.com/ruKurz/oi-architecture.git
@@ -95,63 +93,63 @@ cd oi-architecture/oia-site
 npm install
 ```
 
-### 2 — Dev‑Server starten
+### 2 — Start the dev server
 
 ```bash
 npm run dev
 # → http://localhost:5173/oi-architecture/
 ```
 
-Browser öffnen, Hot Reload ist aktiv.
+Open the browser — hot reload is active.
 
-### 3 — Tests ausführen
+### 3 — Run tests
 
 ```bash
 npm test
-# Alle Tests müssen nach Änderungen grün bleiben
+# All tests must stay green after your changes
 ```
 
 ---
 
-## Making Changes (für Contributor)
+## Making Changes
 
-### 4 — Die richtige Stelle finden
+### 4 — Find the right place
 
-| Was du ändern möchtest                      | Wo du schauen solltest                    |
-|---------------------------------------------|-------------------------------------------|
-| OIA‑Modell (Layer, Items, Labels)          | `oia-site/src/data/oia-model.json`        |
-| Layer‑Rendering                             | `oia-site/src/renderer/render-layer.ts`   |
-| Detail‑ / Side‑Panel                        | `oia-site/src/renderer/render-panel.ts`   |
-| Navigation & Routing                        | `oia-site/src/router.ts`                  |
-| Seiten (Motivation, About, …)              | `oia-site/src/views/`                     |
-| Farben, Layout, Design Tokens              | `oia-site/src/styles/`                    |
-| Konstanten & Zoom‑Level                    | `oia-site/src/constants.ts`               |
+| What you want to change                   | Where to look                             |
+|-------------------------------------------|-------------------------------------------|
+| OIA model (layers, items, labels)         | `oia-site/src/data/oia-model.json`        |
+| Layer rendering                           | `oia-site/src/renderer/render-layer.ts`   |
+| Detail / side panel                       | `oia-site/src/renderer/render-panel.ts`   |
+| Navigation & routing                      | `oia-site/src/router.ts`                  |
+| Pages (Motivation, About, ...)            | `oia-site/src/views/`                     |
+| Colors, layout, design tokens             | `oia-site/src/styles/`                    |
+| Constants & zoom levels                   | `oia-site/src/constants.ts`               |
 
-### 5 — Änderung umsetzen
+### 5 — Implement your change
 
-Vor dem Start:
+Before you start:
 
-- Lies [`CONVENTIONS.md`](CONVENTIONS.md) – Naming, BIZ/DEV‑Trennung, Commit‑Format.  
-- Jeder Commit referenziert ein GitHub‑Issue:  
+- Read [`CONVENTIONS.md`](CONVENTIONS.md) — naming, BIZ/DEV separation, commit format.
+- Every commit references a GitHub Issue:
   `feat(renderer): add X  Refs #N`
 
-Nach der Änderung:
+After your change:
 
 ```bash
 npm run lint && npm test
 ```
 
-Beides muss erfolgreich sein, bevor du commitest.
+Both must pass before you commit.
 
-### 6 — Pull Request erstellen
+### 6 — Open a Pull Request
 
-1. Repo forken.  
-2. Feature‑Branch anlegen:  
-   `git checkout -b feat/your-change`  
-3. Commit mit [Conventional Commit](CONVENTIONS.md#23-conventional-commits).  
-4. Pushen und Pull Request öffnen – CI prüft Lint, Tests und Build.
+1. Fork the repo.
+2. Create a feature branch:
+   `git checkout -b feat/your-change`
+3. Commit using [Conventional Commits](CONVENTIONS.md#23-conventional-commits).
+4. Push and open a Pull Request — CI checks lint, tests, and build.
 
-Weitere Details: [`docs/CONTRIBUTING.md`](docs/CONTRIBUTING.md).
+Full details: [`docs/CONTRIBUTING.md`](docs/CONTRIBUTING.md).
 
 ---
 
@@ -167,33 +165,32 @@ Weitere Details: [`docs/CONTRIBUTING.md`](docs/CONTRIBUTING.md).
 
 ---
 
-## Working with AI (Claude Code)
+## Optional AI Tooling (Claude Code)
 
-Für wiederkehrende Aufgaben stellt das Projekt fertige Prompts bereit.  
-Du kannst sie als Kontext in [Claude](https://claude.ai) laden oder über Claude Code im Repo verwenden.
+The project ships a set of ready-made prompts for recurring tasks. These are entirely optional — contributors do not need them to work on the codebase. They are provided as a convenience for those who use [Claude](https://claude.ai) or Claude Code and want structured starting points for common activities.
 
-Jeder Prompt ist eigenständig – lies zuerst den Abschnitt `## Kontext`.
+Each prompt is self-contained. If you use one, read its `## Kontext` section first.
 
-| Prompt                                   | Zweck                                                |
+| Prompt                                   | Purpose                                              |
 |------------------------------------------|------------------------------------------------------|
-| `prompts/development/project-review.md`  | Projekt‑Health‑Check, erzeugt GitHub‑Issues          |
+| `prompts/development/project-review.md`  | Project health check, generates GitHub Issues        |
 | `prompts/development/sprint-retro.md`    | Sprint Review → Retro → Planning                     |
-| `prompts/development/create-adr.md`      | Neue Architecture Decision Records erstellen         |
-| `prompts/development/create-issue.md`    | Strukturierte GitHub‑Issues erzeugen                 |
-| `prompts/development/evolve-model.md`    | OIA‑Modell erweitern oder verfeinern                 |
-| `prompts/templates/prompt-helper.md`     | **Pflicht** vor neuen Prompts                        |
+| `prompts/development/create-adr.md`      | Create new Architecture Decision Records             |
+| `prompts/development/create-issue.md`    | Generate structured GitHub Issues                    |
+| `prompts/development/evolve-model.md`    | Extend or refine the OIA model                       |
+| `prompts/templates/prompt-helper.md`     | **Required** before creating new prompts             |
 
 ---
 
-## Understanding the Architecture (ohne Code)
+## Understanding the Architecture (Without Code)
 
-Wenn du das Modell **verstehen und nutzen**, aber nicht unbedingt entwickeln möchtest:
+If you want to **understand and use** the model without necessarily contributing to the codebase:
 
-- `context/oia-context.md` – stabiler Kontextanker, fasst den aktuellen Modellstand (DE) zusammen.  
-- Artikel:
-  - `articles/organizational-intelligence-architecture.md` – Einführung in OIA.
-  - `articles/the-organizational-brain.md` – die Perspektive „Organisation als kognitives System“.
-- `context/oia-project-instruction-prompt.md` in ein Claude‑Projekt laden, um einen konfigurierten Architecture‑Sparring‑Partner zu erhalten.
+- `context/oia-context.md` — stable context anchor summarizing the current model state.
+- Articles:
+  - `articles/organizational-intelligence-architecture.md` — introduction to OIA.
+  - `articles/the-organizational-brain.md` — the perspective of "the organization as a cognitive system".
+- Load `context/oia-project-instruction-prompt.md` into a Claude project to get a configured architecture sparring partner.
 
 ---
 
@@ -224,45 +221,45 @@ oi-architecture/
 
 ## Current Status
 
-**V1** – Konzeptionelle 7‑Layer‑Architektur ist definiert und veröffentlicht.  
-**V2 (in Arbeit)** – Fokusthemen:
+**V1** — The conceptual 7-layer architecture is defined and published.
+**V2 (in progress)** — Focus areas:
 
-| Item                                                                 | Priority |
-|----------------------------------------------------------------------|----------|
-| Knowledge Core – zentraler Wissensspeicher (Semantic Layer, Index, Access Control, Graph) | 🔴 High  |
-| Klarer Datenfluss: Pipeline → Knowledge Core → Capabilities         | 🔴 High  |
-| Actors – explizite Modellierung von Menschen & Agenten              | 🟡 Medium |
-| Business Outcome – Entscheidung / Aktion / Outcome klar schließen   | 🟡 Medium |
-| Validated Knowledge Storage – explizite Schicht für kuratiertes, versioniertes Wissen | 🟠 Medium |
+| Item                                                                                      | Priority |
+|-------------------------------------------------------------------------------------------|----------|
+| Knowledge Core — central knowledge store (Semantic Layer, Index, Access Control, Graph)   | 🔴 High  |
+| Clear data flow: Pipeline → Knowledge Core → Capabilities                                 | 🔴 High  |
+| Actors — explicit modeling of humans and agents                                            | 🟡 Medium |
+| Business Outcome — closing the loop at Decision / Action / Outcome                        | 🟡 Medium |
+| Validated Knowledge Storage — explicit layer for curated, versioned knowledge             | 🟠 Medium |
 
 ---
 
 ## Key Terminology
 
-- **OIA** – Organizational Intelligence Architecture (nicht: Operational Intelligence).  
-- **Knowledge Core** – zentraler, strukturierter Wissensspeicher der Organisation.  
-- **Cognitive Capabilities** – was das System *tun kann*, unabhängig von der technischen Umsetzung.  
-- **Solutions** – User‑Facing‑Anwendungen, keine Technologie‑Stacks.  
-- **Situation Layer** – Kontextinput, kein User Interface.
+- **OIA** — Organizational Intelligence Architecture (not: Operational Intelligence).
+- **Knowledge Core** — the organization's central, structured knowledge store.
+- **Cognitive Capabilities** — what the system *can do*, independent of the technical implementation.
+- **Solutions** — user-facing applications, not technology stacks.
+- **Situation Layer** — context input, not a user interface.
 
 ---
 
 ## Strategic Context & Community
 
-OIA schlägt eine Brücke zwischen:
+OIA bridges the gap between:
 
-- Code‑getriebener AI und gewachsener Enterprise‑Datenlandschaft  
-- Technologie‑Enthusiasmus und organisatorischen Voraussetzungen  
-- Technischer Architektur und strategischer Perspektive
+- code-driven AI and established enterprise data landscapes
+- technology enthusiasm and organizational prerequisites
+- technical architecture and strategic perspective
 
-Dieses Repository ist **Version 0.1.0** – bewusst als Denkanstoß angelegt.  
-Die Weiterentwicklung hin zu Referenz‑Implementierungen soll gemeinsam mit einer Community erfolgen:
+This repository is **Version 0.1.0** — deliberately designed as a starting point for discussion.
+Further development toward reference implementations is intended to happen together with a community:
 
-- Feedback zu Modell und Visualisierung  
-- neue Use Cases und Capabilities  
-- gemeinsame Experimente mit Knowledge Cores, Agenten und bestehenden Enterprise‑Systemen
+- feedback on the model and visualization
+- new use cases and capabilities
+- shared experiments with Knowledge Cores, agents, and existing enterprise systems
 
-(Community‑Links fügst du hier ein, sobald verfügbar – z.B. Slack/Discord, Newsletter, Meetup‑Seite.)
+(Community links will be added here once available — e.g. Slack/Discord, newsletter, meetup page.)
 
 ---
 
@@ -270,25 +267,26 @@ Die Weiterentwicklung hin zu Referenz‑Implementierungen soll gemeinsam mit ein
 
 Dual Licensing:
 
-- **Code** (`oia-site/`) – [MIT License](LICENSE)  
-- **Content** (`context/`, `articles/`, `diagrams/`, `decisions/`, `notes/`) – [CC BY 4.0](LICENSE-CC-BY-4.0)
+- **Code** (`oia-site/`) — [MIT License](LICENSE)
+- **Content** (`context/`, `articles/`, `diagrams/`, `decisions/`, `notes/`) — [CC BY 4.0](LICENSE-CC-BY-4.0)
+
 ---
 
 ## Conventions
 
-Verbindliche Regeln für Naming, Commits und BIZ/DEV‑Trennung: [`CONVENTIONS.md`](CONVENTIONS.md).
+Binding rules for naming, commits, and BIZ/DEV separation: [`CONVENTIONS.md`](CONVENTIONS.md).
 Architecture Decision Records: [`decisions/`](decisions/).
 
 ---
 
 ## History
 
-Das OIA‑Modell hat mehrere visuelle Iterationen durchlaufen, bevor der aktuelle datengetriebene Renderer entstand.
+The OIA model went through several visual iterations before the current data-driven renderer was built.
 
-| Version | Artefakt | Beschreibung |
+| Version | Artifact | Description |
 |---|---|---|
-| V1 | [images/oia-model-v1.png](images/oia-model-v1.png) | Erstes statisches Diagramm – begründet die 7-Layer-Struktur |
-| V2 pre | [diagrams/oia-diagram-v2.html](diagrams/oia-diagram-v2.html) | Interaktiver HTML-Prototyp – die Design-Sprache des Renderers |
-| V2 | `oia-site/` | Produktions-Renderer: TypeScript + Vite, vollständig datengetrieben aus `oia-model.json` |
+| V1 | [images/oia-model-v1.png](images/oia-model-v1.png) | First static diagram — establishes the 7-layer structure |
+| V2 pre | [diagrams/oia-diagram-v2.html](diagrams/oia-diagram-v2.html) | Interactive HTML prototype — the design language of the renderer |
+| V2 | `oia-site/` | Production renderer: TypeScript + Vite, fully data-driven from `oia-model.json` |
 
-> Eine Diagramm-Galerie zur visuellen Evolution von OIA ist für die Microsite geplant.
+> A diagram gallery showing the visual evolution of OIA is planned for the microsite.
