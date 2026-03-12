@@ -23,7 +23,7 @@ Aktives Repository: aus `git remote get-url origin` ermitteln.
 
 ## Ziel (Phase A)
 
-Alle erledigten-aber-offenen Issues sind geschlossen. Die Acceptance Criteria der letzten 10 geschlossenen Issues sind gegen das Repo geprüft. Eine Abweichungsliste liegt vor.
+Alle erledigten-aber-offenen Sprint-Issues sind geschlossen. Die Acceptance Criteria aller Sprint-Issues sind gegen das Repo geprüft. Eine Abweichungsliste liegt vor.
 
 ## Constraints (Phase A)
 
@@ -35,6 +35,29 @@ Alle erledigten-aber-offenen Issues sind geschlossen. Die Acceptance Criteria de
 ---
 
 ## Schritte (Phase A)
+
+### A-0 — Sprint-Notizen laden
+
+Suche die aktuellste Sprint-Datei:
+
+```bash
+ls -t sprints/*.md 2>/dev/null | head -1
+```
+
+Lies die Datei. Extrahiere:
+1. **Sprintziel** — für Phase C als Ausgangsbasis
+2. **Definition of Done** — falls vorhanden, für Phase A-2 als Maßstab
+3. **Issue-Liste** — alle `#N`-Einträge unter "Kern" und "Optional"
+
+```bash
+grep -oE '#[0-9]+' sprints/<DATEINAME>.md
+```
+
+Halte die Issue-Nummern intern fest — sie ersetzen in A-2 die "letzten 10 geschlossenen Issues".
+
+**Fallback:** Existiert keine Sprint-Datei → kurze Warnung ausgeben, weiter mit A-1 (A-2 nutzt dann die letzten 10 geschlossenen Issues).
+
+---
 
 ### A-1 — Issue-Hygiene: Erledigte aber noch offene Issues finden
 
@@ -57,25 +80,28 @@ gh issue close <N> --comment "Closed: implemented in commit <HASH> — <COMMIT_T
 
 ---
 
-### A-2 — Abnahme-Review: Letzte 10 geschlossene Issues
+### A-2 — Abnahme-Review: Sprint-Issues
+
+Nutze die Issue-Liste aus A-0. Lade für jede Issue-Nummer den vollständigen Body:
 
 ```bash
-gh issue list --state closed --limit 10
+gh issue view <N> --json state,title,body
 ```
 
-Für jedes der 10 Issues:
+Für jedes Sprint-Issue:
 
 1. Lies den vollständigen Issue-Body (Acceptance criteria).
-2. Prüfe im Repo, ob jedes Akzeptanzkriterium tatsächlich erfüllt ist:
+2. Prüfe **State**: noch `open` → als ❌ werten, sofern nicht gerade in Arbeit.
+3. Prüfe im Repo, ob jedes Akzeptanzkriterium tatsächlich erfüllt ist:
    - Existiert die genannte Datei?
    - Enthält sie das beschriebene Element?
    - Wurde ein genanntes Kommando / Label / Konfiguration umgesetzt?
-3. Klassifiziere:
-   - ✅ **Vollständig** — alle Kriterien erfüllt
-   - ⚠️ **Teilweise** — mindestens eines fehlt oder weicht ab
-   - ❌ **Offen** — Kernaussage des Issues ist nicht umgesetzt
+4. Klassifiziere:
+   - ✅ **Vollständig** — geschlossen, alle Kriterien erfüllt
+   - ⚠️ **Teilweise** — geschlossen, aber mindestens ein Kriterium fehlt oder weicht ab
+   - ❌ **Offen** — noch nicht umgesetzt oder Kernaussage fehlt
 
-**Ausgabe:** Tabellarische Liste aller 10 Issues mit Status + Abweichungsbeschreibung (max. 1 Satz).
+**Ausgabe:** Tabellarische Liste aller Sprint-Issues mit Status + Abweichungsbeschreibung (max. 1 Satz).
 
 ---
 
@@ -91,8 +117,9 @@ Für jedes der 10 Issues:
 
 ## Akzeptanzkriterien (Phase A)
 
-- [ ] Erledigte-aber-offene Issues identifiziert und geschlossen (oder begründet nicht geschlossen)
-- [ ] Alle 10 Issues gegen ihre AC geprüft
+- [ ] Sprint-Notizen geladen (oder Fallback begründet)
+- [ ] Erledigte-aber-offene Sprint-Issues identifiziert und geschlossen (oder begründet nicht geschlossen)
+- [ ] Alle Sprint-Issues gegen ihre AC geprüft
 - [ ] Abweichungsliste ausgegeben (auch wenn leer)
 
 ---
@@ -353,10 +380,11 @@ Zeige nach Phase C:
 
 ```
 Sprint-Abschluss — [DATUM]
+Sprint-Notizen:       sprints/[DATEI] | kein Sprint (Fallback)
 
 Phase A (Review):
   Issues geschlossen:   N  (#...)
-  Issues reviewed:      10
+  Issues reviewed:      N  (Sprint-Issues)
   Status:               ✅ X  ⚠️ Y  ❌ Z
   Abweichungsrate:      X%
 
