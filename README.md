@@ -9,8 +9,10 @@ Es beschreibt, wie Rohdaten zu Entscheidungen, Handlungen und messbaren Business
 Data → Intelligence → Capability → Solution → Business Outcome
 ```
 
-**Status:** Version 0.1.0 – early access, designed as a thinking tool.  
+**Status:** Version 0.1.0 – early access, designed as a thinking tool.
 Die weitere Entwicklung – von der Referenzarchitektur zur Referenzimplementierung – soll gemeinsam mit einer Community erfolgen.
+
+![OIA Interactive Diagram — 7-layer architecture showing how organizations turn knowledge into action](docs/images/Organizational-Intelligence-Architecture-03-12-2026.png)
 
 ---
 
