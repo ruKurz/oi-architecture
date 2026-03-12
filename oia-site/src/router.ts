@@ -4,7 +4,7 @@ import { renderDetailView } from './views/detail'
 import { renderMotivationView } from './views/motivation'
 import { renderContributeView } from './views/contribute'
 import { renderAboutView } from './views/about'
-import { renderImpressumView } from './views/impressum'
+import { renderLegalView } from './views/legal'
 import { renderNav } from './views/nav'
 import {
   ZOOM_DEFAULT,
@@ -101,10 +101,7 @@ export function initRouter(oiaModel: OIAModel, container: HTMLElement) {
     if (navElement) renderNav(navElement)
 
     const isPageView =
-      hash === '#/motivation' ||
-      hash === '#/contribute' ||
-      hash === '#/about' ||
-      hash === '#/impressum'
+      hash === '#/motivation' || hash === '#/contribute' || hash === '#/about' || hash === '#/legal'
     if (fab) fab.style.display = isPageView ? '' : 'none'
 
     if (hash.startsWith('#/detail/')) {
@@ -115,8 +112,8 @@ export function initRouter(oiaModel: OIAModel, container: HTMLElement) {
       renderPage(renderContributeView())
     } else if (hash === '#/about') {
       renderPage(renderAboutView())
-    } else if (hash === '#/impressum') {
-      renderPage(renderImpressumView())
+    } else if (hash === '#/legal') {
+      renderPage(renderLegalView())
     } else {
       renderOverview()
     }

@@ -1,4 +1,4 @@
-type NavRoute = '/' | '/motivation' | '/contribute' | '/about' | '/impressum'
+type NavRoute = '/' | '/motivation' | '/contribute' | '/about' | '/legal'
 
 interface NavLink {
   href: string
@@ -11,14 +11,14 @@ const NAV_LINKS: NavLink[] = [
   { href: '#/motivation', label: 'Motivation', route: '/motivation' },
   { href: '#/contribute', label: 'Contribute', route: '/contribute' },
   { href: '#/about', label: 'About', route: '/about' },
-  { href: '#/impressum', label: 'Impressum', route: '/impressum' },
+  { href: '#/legal', label: 'Impressum', route: '/legal' },
 ]
 
 function activeRoute(hash: string): NavRoute {
   if (hash.startsWith('#/motivation')) return '/motivation'
   if (hash.startsWith('#/contribute')) return '/contribute'
   if (hash.startsWith('#/about')) return '/about'
-  if (hash.startsWith('#/impressum')) return '/impressum'
+  if (hash.startsWith('#/legal')) return '/legal'
   return '/'
 }
 

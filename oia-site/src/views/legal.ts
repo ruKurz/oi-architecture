@@ -1,11 +1,11 @@
-export function renderImpressumView(): HTMLElement {
+export function renderLegalView(): HTMLElement {
   const view = document.createElement('div')
   view.className = 'page-view'
   view.innerHTML = `
     <div class="page-view__content">
 
       <div class="page-view__eyebrow">Legal</div>
-      <h1 class="page-view__lead">Impressum</h1>
+      <h1 class="page-view__lead">Legal Notice</h1>
 
       <section class="page-view__section">
         <h2 class="page-view__section-title">Angaben gemäß § 5 TMG</h2>
