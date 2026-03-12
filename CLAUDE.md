@@ -1,5 +1,9 @@
 # OIA · Claude Instructions
 
+> **For external contributors:** This file configures optional AI tooling (Claude Code) used by the project author.
+> The project is fully usable and contributable without it.
+> All contribution rules are documented in [`docs/CONTRIBUTING.md`](docs/CONTRIBUTING.md) and [`CONVENTIONS.md`](CONVENTIONS.md).
+
 ## Project Context
 
 Read before every session:
