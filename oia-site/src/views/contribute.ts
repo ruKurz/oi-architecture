@@ -1,4 +1,4 @@
-export function renderMitmachenView(): HTMLElement {
+export function renderContributeView(): HTMLElement {
   const view = document.createElement('div')
   view.className = 'page-view'
   view.innerHTML = `

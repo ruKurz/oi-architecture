@@ -2,7 +2,7 @@ import type { OIAModel } from './data/types'
 import { renderOIA } from './renderer/render-diagram'
 import { renderDetailView } from './views/detail'
 import { renderMotivationView } from './views/motivation'
-import { renderMitmachenView } from './views/mitmachen'
+import { renderContributeView } from './views/contribute'
 import { renderAboutView } from './views/about'
 import { renderImpressumView } from './views/impressum'
 import { renderNav } from './views/nav'
@@ -102,8 +102,8 @@ export function initRouter(oiaModel: OIAModel, container: HTMLElement) {
       renderDetail(decodeURIComponent(hash.replace('#/detail/', '')))
     } else if (hash === '#/motivation') {
       renderPage(renderMotivationView())
-    } else if (hash === '#/mitmachen') {
-      renderPage(renderMitmachenView())
+    } else if (hash === '#/contribute') {
+      renderPage(renderContributeView())
     } else if (hash === '#/about') {
       renderPage(renderAboutView())
     } else if (hash === '#/impressum') {
