@@ -519,6 +519,36 @@ body::after {
 }
 
 /* ── CONTRIBUTE PAGE ── */
+.page-view__contributing-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 16px 0 0;
+  padding: 16px 20px;
+  background: rgba(77, 184, 255, 0.04);
+  border: 1px solid rgba(77, 184, 255, 0.2);
+  border-radius: 6px;
+  text-decoration: none;
+  transition:
+    background 0.15s,
+    border-color 0.15s;
+}
+.page-view__contributing-cta:hover {
+  background: rgba(77, 184, 255, 0.08);
+  border-color: rgba(77, 184, 255, 0.4);
+}
+.page-view__contributing-cta-label {
+  font-size: 13px;
+  color: var(--text-dim);
+}
+.page-view__contributing-cta-file {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
 .page-view__badge {
   display: inline-block;
   font-family: 'Space Mono', monospace;
