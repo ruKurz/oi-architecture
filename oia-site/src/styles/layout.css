@@ -425,6 +425,59 @@ body::after {
   text-align: center;
 }
 
+/* ── CONTRIBUTE PAGE ── */
+.page-view__badge {
+  display: inline-block;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--accent2);
+  background: rgba(44, 242, 194, 0.05);
+  border: 1px solid rgba(44, 242, 194, 0.2);
+  border-radius: 4px;
+  padding: 4px 12px;
+  margin-bottom: 20px;
+}
+
+.page-view__code {
+  display: block;
+  margin-top: 8px;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  line-height: 1.7;
+  color: var(--accent);
+  background: rgba(77, 184, 255, 0.04);
+  border: 1px solid rgba(77, 184, 255, 0.15);
+  border-radius: 4px;
+  padding: 10px 14px;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.page-view__table {
+  margin-top: 10px;
+  border-collapse: collapse;
+  font-size: 12px;
+  width: 100%;
+}
+
+.page-view__table td {
+  padding: 5px 12px 5px 0;
+  color: var(--text-dim);
+  vertical-align: top;
+}
+
+.page-view__table td:last-child {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.page-view__join-step {
+  align-items: flex-start;
+}
+
 /* ── DIAGRAM WRAPPER ── */
 .diagram-wrapper {
   width: 1440px;

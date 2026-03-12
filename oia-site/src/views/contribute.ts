@@ -2,83 +2,179 @@ export function renderContributeView(): HTMLElement {
   const view = document.createElement('div')
   view.className = 'page-view'
   view.innerHTML = `
+    <div class="page-view__hero">
+      <div class="page-view__hero-line">OIA is an open model.</div>
+      <div class="page-view__hero-sub">Your experience makes it better.</div>
+    </div>
+
     <div class="page-view__content">
 
       <div class="page-view__eyebrow">Contribute</div>
 
       <h1 class="page-view__lead">
-        <!-- PLACEHOLDER: Call-to-Action als Einstieg (Pyramid: Handlungsaufforderung zuerst) -->
-        OIA ist ein offenes Modell —<br>
-        dein Wissen macht es besser.
+        Build the Architecture Together
       </h1>
 
-      <div class="page-placeholder">
-        ⚠️ Inhalt wird vom Autor bereitgestellt — Struktur steht, Text ist Platzhalter
+      <div class="page-view__intro">
+        <p>OIA is not a finished framework.</p>
+        <p>
+          It is a <strong>working model</strong> — version <strong>0.1.0</strong>, intentionally early.
+        </p>
+        <p>
+          The architecture will evolve through real implementations, experiments, and operational feedback.<br>
+          Not through theory alone.
+        </p>
+        <p>
+          This is where you come in.
+        </p>
       </div>
 
       <section class="page-view__section">
-        <h2 class="page-view__section-title">Was wir suchen</h2>
+        <h2 class="page-view__section-title">Who Contributes to OIA</h2>
         <div class="page-view__cards">
           <div class="page-view__card">
             <div class="page-view__card-title">Practitioners</div>
             <p class="page-view__card-body">
-              <!-- PLACEHOLDER -->
-              Du arbeitest täglich mit Enterprise Search, Knowledge Management
-              oder KI in Organisationen? Deine Erfahrungen formen das Modell.
+              You work daily with enterprise search, knowledge management,
+              or AI in organizations. Your implementation experience — including failures —
+              is exactly what this architecture needs.
             </p>
           </div>
           <div class="page-view__card">
-            <div class="page-view__card-title">Architekten & Berater</div>
+            <div class="page-view__card-title">Architects &amp; Advisors</div>
             <p class="page-view__card-body">
-              <!-- PLACEHOLDER -->
-              Du entwickelst Architekturen für intelligente Organisationen?
-              Dein Feedback zu Vollständigkeit und Praxistauglichkeit ist wertvoll.
+              You design architectures for intelligent organizations.
+              Your feedback on completeness, gaps, and real-world applicability
+              sharpens the model.
             </p>
           </div>
           <div class="page-view__card">
-            <div class="page-view__card-title">Entwickler</div>
+            <div class="page-view__card-title">Developers</div>
             <p class="page-view__card-body">
-              <!-- PLACEHOLDER -->
-              Du möchtest am interaktiven Renderer mitbauen?
-              TypeScript, Vite, klare Konventionen — der Einstieg dauert 20 Minuten.
+              You want to contribute to the interactive renderer or improve
+              the tooling. TypeScript, Vite, clear conventions —
+              the entry point is small and well-documented.
             </p>
           </div>
         </div>
       </section>
 
       <section class="page-view__section">
-        <h2 class="page-view__section-title">Wie du beiträgst</h2>
-        <ol class="page-view__steps">
-          <li class="page-view__step">
+        <h2 class="page-view__section-title">Ways to Contribute</h2>
+        <p class="page-view__body" style="margin-bottom: 20px;">
+          Contributions do not have to be large.<br>
+          The most valuable inputs often come from real experience:
+        </p>
+        <div class="page-view__cards">
+          <div class="page-view__card">
+            <ul class="page-view__card-list">
+              <li>Open an issue with a model gap you have encountered</li>
+              <li>Share a failed implementation pattern and what it revealed</li>
+              <li>Challenge a layer definition that does not match reality</li>
+            </ul>
+          </div>
+          <div class="page-view__card">
+            <ul class="page-view__card-list">
+              <li>Propose a new use case or capability</li>
+              <li>Improve the renderer or documentation</li>
+              <li>Submit a pull request for any of the above</li>
+            </ul>
+          </div>
+        </div>
+        <p class="page-view__body" style="margin-top: 20px; font-style: italic; color: var(--text-muted);">
+          A comment on an issue is a contribution.<br>
+          A conversation that improves a concept is a contribution.
+        </p>
+      </section>
+
+      <section class="page-view__section">
+        <h2 class="page-view__section-title">Quick Contribution Path</h2>
+        <div class="page-view__badge">First Contribution ≈ 20 minutes</div>
+        <div class="page-view__join-steps">
+          <div class="page-view__join-step">
             <span class="page-view__step-num">01</span>
             <div>
-              <strong>Repository erkunden</strong> —
+              <strong>Explore the repository</strong><br>
               <a class="page-view__link" href="https://github.com/ruKurz/oi-architecture" target="_blank" rel="noopener">github.com/ruKurz/oi-architecture</a>
             </div>
-          </li>
-          <li class="page-view__step">
+          </div>
+          <div class="page-view__join-step">
             <span class="page-view__step-num">02</span>
             <div>
-              <strong>CONTRIBUTING.md lesen</strong> — Prozess, Standards und erste Schritte
+              <strong>Run it locally</strong><br>
+              <code class="page-view__code">git clone https://github.com/ruKurz/oi-architecture.git<br>
+cd oi-architecture/oia-site &amp;&amp; npm install &amp;&amp; npm run dev</code>
             </div>
-          </li>
-          <li class="page-view__step">
+          </div>
+          <div class="page-view__join-step">
             <span class="page-view__step-num">03</span>
             <div>
-              <strong>Issue öffnen oder kommentieren</strong> — kein Beitrag ist zu klein
+              <strong>Find the right place</strong><br>
+              <table class="page-view__table">
+                <tr><td>OIA model (layers, items)</td><td><code>oia-site/src/data/oia-model.json</code></td></tr>
+                <tr><td>Pages (Motivation, About…)</td><td><code>oia-site/src/views/</code></td></tr>
+                <tr><td>Diagram rendering</td><td><code>oia-site/src/renderer/</code></td></tr>
+                <tr><td>Colors &amp; layout</td><td><code>oia-site/src/styles/</code></td></tr>
+              </table>
             </div>
-          </li>
-          <li class="page-view__step">
+          </div>
+          <div class="page-view__join-step">
             <span class="page-view__step-num">04</span>
             <div>
-              <strong>Pull Request stellen</strong> — CI prüft alles, Review folgt zeitnah
+              <strong>Submit a Pull Request</strong><br>
+              CI checks lint and tests. Review follows promptly.
             </div>
-          </li>
-        </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-view__section">
+        <h2 class="page-view__section-title">What We Value in Contributions</h2>
+        <p class="page-view__body" style="margin-bottom: 20px;">
+          OIA is a <strong>practical architecture</strong>, not an academic framework.
+        </p>
+        <div class="page-view__cards">
+          <div class="page-view__card">
+            <ul class="page-view__card-list">
+              <li>Lessons from real systems — including what did not work</li>
+              <li>Concrete gaps between the model and implementation reality</li>
+              <li>Clarity over completeness — sharp definitions beat long lists</li>
+            </ul>
+          </div>
+          <div class="page-view__card">
+            <ul class="page-view__card-list">
+              <li>Architecture that can be acted upon, not just described</li>
+              <li>Honest feedback, even if it challenges existing decisions</li>
+              <li>Small, focused changes that improve a single thing well</li>
+            </ul>
+          </div>
+        </div>
+        <p class="page-view__body page-view__manifesto" style="margin-top: 28px;">
+          <strong>Architecture grows from practice.</strong><br>
+          Failure is data. Share it.
+        </p>
+      </section>
+
+      <section class="page-view__section">
+        <h2 class="page-view__section-title">Start the Conversation</h2>
+        <p class="page-view__body" style="margin-bottom: 20px;">
+          If you are building systems where <strong>knowledge must become action</strong>,<br>
+          your experience belongs in this architecture.
+        </p>
+        <p class="page-view__body" style="margin-bottom: 28px;">
+          Open an issue. Ask a question. Challenge an assumption.<br>
+          Every conversation that improves the model is a contribution.
+        </p>
       </section>
 
       <div class="page-view__cta">
-        <a class="page-view__cta-link primary" href="https://github.com/ruKurz/oi-architecture" target="_blank" rel="noopener">Auf GitHub starten →</a>
+        <a class="page-view__cta-link" href="#/motivation">← Motivation</a>
+        <a class="page-view__cta-link primary" href="https://github.com/ruKurz/oi-architecture" target="_blank" rel="noopener">Zum GitHub Repository →</a>
+      </div>
+
+      <div class="page-view__charter">
+        <em>Architecture does not emerge from presentations.</em><br>
+        <em>It emerges from systems that were built, tested, broken — and rebuilt.</em>
       </div>
 
     </div>
