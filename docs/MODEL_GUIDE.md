@@ -152,4 +152,4 @@ Model changes are **BIZ domain** changes (see [CONVENTIONS.md](../CONVENTIONS.md
 - Challenge a layer definition that does not match real-world systems
 - Propose a new capability or use case based on implementation experience
 
-See [GOOD_FIRST_ISSUES.md](../GOOD_FIRST_ISSUES.md) for specific contribution ideas.
+See [GOOD_FIRST_ISSUES.md](GOOD_FIRST_ISSUES.md) for specific contribution ideas.

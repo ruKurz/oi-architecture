@@ -44,6 +44,19 @@ Follow CONVENTIONS.md §2.3. Every commit references a GitHub Issue in the foote
 Official tasks: GitHub Issues at https://github.com/ruKurz/oi-architecture/issues
 `context/todo.md` is a session parking lot only — not the primary tracker.
 
+## Version Identity
+
+**Current OIA version: `0.1.0`**
+
+This version string must be consistent everywhere it appears:
+- `oia-site/src/data/oia-model.json` → `meta.version`
+- Website pages (Motivation, Contribute) → any hardcoded version strings
+- README.md → status/version references
+
+**Rule:** Never change the version in one place without updating all others. When the version changes, treat it as a cross-cutting change and update all occurrences in one commit.
+
+---
+
 ## Contact / Author Identity
 
 **Always use this email address** for the author — in all files, templates, and generated content:
