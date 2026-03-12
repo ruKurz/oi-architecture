@@ -425,6 +425,30 @@ body::after {
   text-align: center;
 }
 
+/* ── ABOUT PAGE ── */
+.page-view__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.page-view__contact-row {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.page-view__contact-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  min-width: 64px;
+  flex-shrink: 0;
+}
+
 /* ── CONTRIBUTE PAGE ── */
 .page-view__badge {
   display: inline-block;
