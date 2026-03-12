@@ -122,7 +122,7 @@ export function renderMotivationView(): HTMLElement {
 
       <div class="page-view__cta">
         <a class="page-view__cta-link" href="#/">← Zum Architekturdiagramm</a>
-        <a class="page-view__cta-link primary" href="#/contribute">Contribute →</a>
+        <a class="page-view__cta-link primary" href="#/contribute">Join the work →</a>
       </div>
 
       <div class="page-view__charter">
