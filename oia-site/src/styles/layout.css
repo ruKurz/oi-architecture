@@ -297,6 +297,97 @@ body::after {
   border-color: var(--accent);
 }
 
+/* ── MOTIVATION PAGE SPECIFICS ── */
+.page-view__intro {
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.page-view__intro p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--text-dim);
+}
+
+.page-view__audience {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 8px 0;
+}
+
+.page-view__audience-item {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  color: var(--accent2);
+  padding: 5px 12px;
+  background: rgba(44, 242, 194, 0.05);
+  border: 1px solid rgba(44, 242, 194, 0.2);
+  border-radius: 4px;
+}
+
+.page-view__audience-cta {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.page-view__card-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.page-view__card-list li {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-dim);
+  padding-left: 12px;
+  border-left: 2px solid var(--border);
+}
+
+.page-view__flow--vertical {
+  flex-wrap: wrap;
+}
+
+.page-view__manifesto {
+  margin-top: 28px;
+  padding: 20px 24px;
+  background: rgba(77, 184, 255, 0.03);
+  border-left: 2px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+  font-style: italic;
+  line-height: 1.9;
+}
+
+.page-view__join-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.page-view__join-step {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 15px;
+  color: var(--text);
+}
+
+.page-view__charter {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.8;
+  text-align: center;
+}
+
 /* ── DIAGRAM WRAPPER ── */
 .diagram-wrapper {
   width: 1440px;
