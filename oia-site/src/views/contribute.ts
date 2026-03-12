@@ -82,8 +82,8 @@ export function renderContributeView(): HTMLElement {
           </div>
         </div>
         <p class="page-view__body" style="margin-top: 20px; font-style: italic; color: var(--text-muted);">
-          A comment on an issue is a contribution.<br>
-          A conversation that improves a concept is a contribution.
+          <a class="page-view__link" href="https://github.com/ruKurz/oi-architecture/issues" target="_blank" rel="noopener">A comment on an issue is a contribution.</a><br>
+          <a class="page-view__link" href="https://www.linkedin.com/feed/update/urn:li:activity:7434972082561687552/" target="_blank" rel="noopener">A conversation that improves a concept is a contribution.</a>
         </p>
       </section>
 
