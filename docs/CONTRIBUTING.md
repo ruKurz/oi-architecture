@@ -70,7 +70,7 @@ For codebase architecture and technical design, see [docs/ARCHITECTURE.md](docs/
 
 Before you start:
 
-- Read [CONVENTIONS.md](CONVENTIONS.md) — naming, BIZ/DEV separation, commit format.
+- Read [CONVENTIONS.md](../CONVENTIONS.md) — naming, BIZ/DEV separation, commit format.
 - Open or find a GitHub Issue for your change. Every commit references an issue.
 
 After your change:
@@ -85,7 +85,7 @@ Both must pass before committing.
 
 ## Commit Format
 
-We follow [Conventional Commits](CONVENTIONS.md#23-conventional-commits):
+We follow [Conventional Commits](../CONVENTIONS.md#23-conventional-commits):
 
 ```
 <type>(<scope>): <imperative description>
