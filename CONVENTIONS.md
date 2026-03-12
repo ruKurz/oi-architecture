@@ -97,6 +97,23 @@ Categories: `model` · `renderer` · `prompt` · `architecture` · `infra` · `u
 
 See [ADR-0003](decisions/0003-github-issues-as-task-tracker.md) for rationale.
 
+### Issue closing rules
+
+**Close-Verifikation:** When closing an issue, the close comment must verify each AC item explicitly:
+
+```
+gh issue close <N> --comment "Closed: implemented in commit <HASH> — <COMMIT_TITLE>
+
+AC verified:
+✅ Criterion A
+✅ Criterion B
+⚠️ Criterion C: deferred to #M"
+```
+
+**AC-Update bei Scope-Änderung:** If scope changes during implementation (e.g. a file path changes, a feature is split), update the issue's Acceptance criteria before closing — not after.
+
+**Externe Abhängigkeiten:** AC items that depend on another open issue must be marked `blocked by #N` in the AC list, not listed as standalone criteria. This prevents false-negative reviews at close time.
+
 ---
 
 ## 2.5 TypeScript Naming
