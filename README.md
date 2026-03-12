@@ -261,7 +261,6 @@ Further development toward reference implementations is intended to happen toget
 - new use cases and capabilities
 - shared experiments with Knowledge Cores, agents, and existing enterprise systems
 
-(Community links will be added here once available — e.g. Slack/Discord, newsletter, meetup page.)
 
 ---
 

@@ -205,6 +205,21 @@ See [ADR-0004](decisions/0004-adr-format-mueller-dienst.md) for rationale.
 
 ---
 
+## 2.11 Semantic Anchors
+
+Semantic Anchors are named methodologies invoked verbatim in prompts and CLAUDE.md to activate established knowledge domains in AI assistants. They complement ADRs: an ADR documents a project-specific decision, an anchor establishes shared vocabulary for a universal methodology.
+
+**Active anchor set:** `context/semantic-anchors.md`
+**Decision:** [ADR-0010](decisions/0010-semantic-anchors-as-vocabulary-layer.md)
+
+Rules:
+- Anchors are invoked **verbatim** — "MECE Principle (Minto)", not "MECE" or "mutually exclusive"
+- New anchors must exist in the library at https://llm-coding.github.io/Semantic-Anchors/ or meet the same quality criteria (precise, rich, consistent, attributable)
+- Adding or removing an anchor requires a GitHub Issue and a `content(context):` commit
+- Project-specific rules belong in ADRs. Universal methodology vocabulary belongs in Semantic Anchors. Do not put methodology explanations in ADRs — reference the anchor instead
+
+---
+
 ## Known Exceptions
 
 Existing code that pre-dates these conventions is not retroactively fixed. Violations are tracked as GitHub Issues when encountered during active work.
