@@ -153,6 +153,18 @@ Weitere Details: [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ---
 
+## Documentation
+
+| Document | Purpose |
+|---|---|
+| [`CONTRIBUTING.md`](CONTRIBUTING.md) | Contribution workflow, dev setup, commit format, PR process |
+| [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | Codebase structure, rendering architecture, routing, CSS |
+| [`docs/MODEL_GUIDE.md`](docs/MODEL_GUIDE.md) | OIA model layers, terminology, how to contribute to the model |
+| [`GOOD_FIRST_ISSUES.md`](GOOD_FIRST_ISSUES.md) | Curated entry points for new contributors |
+| [`decisions/`](decisions/) | Architecture Decision Records |
+
+---
+
 ## Working with AI (Claude Code)
 
 Für wiederkehrende Aufgaben stellt das Projekt fertige Prompts bereit.  
