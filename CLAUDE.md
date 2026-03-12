@@ -9,6 +9,32 @@
 Read before every session:
 - `context/oia-context.md` — stable project anchor, terminology
 - `CONVENTIONS.md` — binding rules for all new files and commits
+- `decisions/README.md` — ADR index: active architecture contracts
+
+## Architecture Decision Records (ADRs)
+
+ADRs in `decisions/` are binding contracts — they document WHY a rule exists. Do not contradict a Proposed or Accepted ADR without first creating a superseding ADR.
+
+**Before any structural or architectural change:** check `decisions/README.md` for a relevant existing decision.
+
+**When to create a new ADR:** A new ADR is needed when you make a decision that (a) affects project structure, tooling, or process, (b) has non-obvious alternatives that were rejected, and (c) should be traceable in the future. Use `prompts/development/create-adr.md`. New ADRs always start in `Proposed` state — only the human maintainer sets `Accepted`.
+
+**ADR numbering:** The next ADR number is the current highest in `decisions/README.md` + 1. Never reuse a number.
+
+## Semantic Anchors
+
+This project uses Semantic Anchors as a shared vocabulary layer. The full active set with application context is in `context/semantic-anchors.md`. See [ADR-0010](decisions/0010-semantic-anchors-as-vocabulary-layer.md) for rationale.
+
+**Apply automatically — BIZ tasks:**
+- **MECE Principle (Minto)** when evaluating or designing OIA layers: test every categorization for overlap and completeness
+- **Pyramid Principle (Minto)** when structuring articles, ADR bodies, or documents: conclusion first, support below
+- **BLUF** for any executive-facing output (LinkedIn, C-level summaries): one-sentence lead, no scene-setting
+- **Domain-Driven Design (Evans)** when discussing OIA terminology or layer boundaries: treat OIA terms as Ubiquitous Language
+
+**Apply automatically — DEV tasks:**
+- **Conventional Commits** for every commit message (CONVENTIONS.md §2.3, ADR-0005)
+- **Diátaxis Framework** when creating new `docs/` content: declare the mode (Tutorial / How-to / Reference / Explanation) and do not mix modes
+- **Semantic Versioning** whenever a version number is mentioned or changed
 
 ## Scope Rules
 
