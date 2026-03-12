@@ -86,6 +86,8 @@ Regeln: Imperativ · max. 70 Zeichen · kein Punkt am Ende
 - [ ] All tests still green (wenn DEV)
 ```
 
+**Hinweis Abhängigkeiten:** Wenn ein AC-Item erst erfüllt sein kann, nachdem ein anderes Issue abgeschlossen wurde → `blocked by #N` statt eigenständiges Kriterium. Beispiel: `- [ ] Labels deployed — blocked by #54` statt `- [ ] Labels exist on GitHub`.
+
 ### Schritt 5 — Issue erstellen
 
 ```bash
@@ -108,6 +110,7 @@ Gib die erstellte Issue-URL aus.
 | Kategorie-Label fehlt | Nachfragen — kein Issue ohne Kategorie |
 | `gh` nicht verfügbar | Eintrag in `context/todo.md` als Fallback, mit Hinweis |
 | Mehr als ein Problem in der Eingabe | Ein Issue pro Problem — nicht zusammenfassen |
+| AC-Item hängt von anderem offenen Issue ab | Als `blocked by #N` kennzeichnen — nicht als eigenständiges Kriterium |
 
 ---
 
