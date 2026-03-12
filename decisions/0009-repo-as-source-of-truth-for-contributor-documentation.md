@@ -1,7 +1,7 @@
 # ADR-0009: Repo as Source of Truth — Website as Entry Point
 
 **Decision:** The GitHub repository is the single source of truth for all operational contributor documentation (CONTRIBUTING.md, ARCHITECTURE.md, MODEL_GUIDE.md). The OIA website (GitHub Pages) serves as a strategic entry point — it explains the project's purpose and directs visitors to the repo. Operational details (dev setup, contribution workflow, file maps) live exclusively in the repo.
-**Status:** Proposed
+**Status:** Accepted
 **Date:** 2026-03-12
 **Type:** DEV
 
