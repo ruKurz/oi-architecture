@@ -2,6 +2,11 @@ export function renderMotivationView(): HTMLElement {
   const view = document.createElement('div')
   view.className = 'page-view'
   view.innerHTML = `
+    <div class="page-view__hero">
+      <div class="page-view__hero-line">This is an open architecture of participation.</div>
+      <div class="page-view__hero-sub">For everyone.</div>
+    </div>
+
     <div class="page-view__content">
 
       <div class="page-view__eyebrow">Motivation</div>
