@@ -1,7 +1,7 @@
 # ADR-0006: Prompt-Helper Enforcement via CLAUDE.md
 
 **Decision:** Every new prompt file in `prompts/` must be created through the `prompts/templates/prompt-helper.md` process. This rule is enforced at the AI-assistant level via a CLAUDE.md instruction. A GitHub Actions validator serves as a secondary check for structural compliance.
-**Status:** Proposed
+**Status:** Accepted
 **Date:** 2026-03-11
 **Type:** DEV
 

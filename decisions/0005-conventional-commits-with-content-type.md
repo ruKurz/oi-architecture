@@ -1,7 +1,7 @@
 # ADR-0005: Conventional Commits with Custom Content Type
 
 **Decision:** The OIA project uses Conventional Commits with a custom `content:` type for BIZ-domain changes (OIA model updates, articles, diagrams, architecture content). All other types follow the standard specification. Every commit footer must reference a GitHub Issue (`Closes #N` or `Refs #N`), except for initial setup commits.
-**Status:** Proposed
+**Status:** Accepted
 **Date:** 2026-03-11
 **Type:** DEV
 
