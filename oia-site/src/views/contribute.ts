@@ -88,41 +88,31 @@ export function renderContributeView(): HTMLElement {
       </section>
 
       <section class="page-view__section">
-        <h2 class="page-view__section-title">Quick Contribution Path</h2>
+        <h2 class="page-view__section-title">Ready to start?</h2>
         <div class="page-view__badge">First Contribution ≈ 20 minutes</div>
+        <p class="page-view__body" style="margin-bottom: 20px;">
+          The full contribution workflow — dev setup, commit format, PR process — is documented in the repository.
+        </p>
         <div class="page-view__join-steps">
           <div class="page-view__join-step">
             <span class="page-view__step-num">01</span>
             <div>
-              <strong>Explore the repository</strong><br>
-              <a class="page-view__link" href="https://github.com/ruKurz/oi-architecture" target="_blank" rel="noopener">github.com/ruKurz/oi-architecture</a>
+              <strong>Read the contribution guide</strong><br>
+              <a class="page-view__link" href="https://github.com/ruKurz/oi-architecture/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">CONTRIBUTING.md</a>
             </div>
           </div>
           <div class="page-view__join-step">
             <span class="page-view__step-num">02</span>
             <div>
-              <strong>Run it locally</strong><br>
-              <code class="page-view__code">git clone https://github.com/ruKurz/oi-architecture.git<br>
-cd oi-architecture/oia-site &amp;&amp; npm install &amp;&amp; npm run dev</code>
+              <strong>Browse good first issues</strong><br>
+              <a class="page-view__link" href="https://github.com/ruKurz/oi-architecture/issues?q=label%3Agood-first-issue" target="_blank" rel="noopener">Issues labeled good-first-issue</a>
             </div>
           </div>
           <div class="page-view__join-step">
             <span class="page-view__step-num">03</span>
             <div>
-              <strong>Find the right place</strong><br>
-              <table class="page-view__table">
-                <tr><td>OIA model (layers, items)</td><td><code>oia-site/src/data/oia-model.json</code></td></tr>
-                <tr><td>Pages (Motivation, About…)</td><td><code>oia-site/src/views/</code></td></tr>
-                <tr><td>Diagram rendering</td><td><code>oia-site/src/renderer/</code></td></tr>
-                <tr><td>Colors &amp; layout</td><td><code>oia-site/src/styles/</code></td></tr>
-              </table>
-            </div>
-          </div>
-          <div class="page-view__join-step">
-            <span class="page-view__step-num">04</span>
-            <div>
-              <strong>Submit a Pull Request</strong><br>
-              CI checks lint and tests. Review follows promptly.
+              <strong>Open a discussion or pull request</strong><br>
+              <a class="page-view__link" href="https://github.com/ruKurz/oi-architecture" target="_blank" rel="noopener">github.com/ruKurz/oi-architecture</a>
             </div>
           </div>
         </div>
