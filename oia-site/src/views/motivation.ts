@@ -12,70 +12,73 @@ export function renderMotivationView(): HTMLElement {
       <div class="page-view__eyebrow">Motivation</div>
 
       <h1 class="page-view__lead">
-        Help Shape the Architecture<br>of Organizational Intelligence
+        Build the Architecture Together
       </h1>
 
       <div class="page-view__intro">
         <p>OIA is not a finished framework.</p>
         <p>
-          It is the beginning of a conversation about how organizations can build
-          <strong>systems for thinking, learning and acting with knowledge</strong>.
+          It is a <strong>working model</strong> for how organizations can turn knowledge into action.
         </p>
         <p>
           Version <strong>0.1.0</strong> is intentionally early.<br>
-          The goal is to evolve the Organizational Intelligence Architecture together
-          with practitioners who face these challenges every day.
+          The architecture will evolve through real implementations, experiments and operational feedback.
         </p>
-        <div class="page-view__audience">
-          <span class="page-view__audience-item">Enterprise architects.</span>
-          <span class="page-view__audience-item">Knowledge management leaders.</span>
-          <span class="page-view__audience-item">AI engineers.</span>
-          <span class="page-view__audience-item">Digital transformation teams.</span>
-        </div>
-        <p class="page-view__audience-cta">
-          If you work at the intersection of <strong>knowledge, AI and enterprise systems</strong>,
-          your perspective is valuable.
-        </p>
+        <p>Not through theory alone.</p>
       </div>
 
       <section class="page-view__section">
-        <h2 class="page-view__section-title">Ways to Contribute</h2>
-        <p class="page-view__body" style="margin-bottom: 24px;">
-          You don't need to start with a big contribution. Even small inputs help evolve the architecture.
+        <h2 class="page-view__section-title">An Open Architecture of Participation</h2>
+        <p class="page-view__body" style="margin-bottom: 20px;">
+          OIA is designed as a <strong>shared architectural thinking model</strong>.
         </p>
-
-        <div class="page-view__cards">
-          <div class="page-view__card">
-            <div class="page-view__card-title">Share feedback</div>
-            <ul class="page-view__card-list">
-              <li>Does the model reflect the reality of your organization?</li>
-              <li>What layers or capabilities are missing?</li>
-              <li>Where do you see architectural gaps?</li>
-            </ul>
-          </div>
-          <div class="page-view__card">
-            <div class="page-view__card-title">Contribute use cases</div>
-            <ul class="page-view__card-list">
-              <li>Real-world scenarios where organizational knowledge must become action</li>
-              <li>Decision support systems</li>
-              <li>AI assistants grounded in enterprise knowledge</li>
-            </ul>
-          </div>
-          <div class="page-view__card">
-            <div class="page-view__card-title">Extend the architecture</div>
-            <ul class="page-view__card-list">
-              <li>Additional capability layers</li>
-              <li>Reference patterns</li>
-              <li>Implementation approaches</li>
-            </ul>
-          </div>
+        <p class="page-view__body" style="margin-bottom: 20px;">
+          It improves when people who actually build systems contribute their experience:
+        </p>
+        <div class="page-view__audience">
+          <span class="page-view__audience-item">enterprise architects</span>
+          <span class="page-view__audience-item">knowledge management practitioners</span>
+          <span class="page-view__audience-item">AI engineers</span>
+          <span class="page-view__audience-item">data platform teams</span>
+          <span class="page-view__audience-item">digital transformation leaders</span>
         </div>
+        <p class="page-view__body page-view__manifesto">
+          <strong>Architecture that grows from practice.</strong>
+        </p>
       </section>
 
       <section class="page-view__section">
-        <h2 class="page-view__section-title">The Vision</h2>
+        <h2 class="page-view__section-title">What Contributions Look Like</h2>
         <p class="page-view__body" style="margin-bottom: 20px;">
-          The long-term goal is to evolve OIA from:
+          Contributions do not have to be large.<br>
+          The most valuable inputs often come from real implementation experience:
+        </p>
+        <div class="page-view__cards">
+          <div class="page-view__card">
+            <ul class="page-view__card-list">
+              <li>a failed RAG experiment</li>
+              <li>a difficult enterprise search integration</li>
+              <li>governance challenges around AI assistants</li>
+            </ul>
+          </div>
+          <div class="page-view__card">
+            <ul class="page-view__card-list">
+              <li>knowledge graph modelling problems</li>
+              <li>operational lessons from production systems</li>
+              <li>architectural gaps you have encountered</li>
+            </ul>
+          </div>
+        </div>
+        <p class="page-view__body" style="margin-top: 20px; font-style: italic; color: var(--text-muted);">
+          Real systems create real learning.<br>
+          That learning improves the architecture.
+        </p>
+      </section>
+
+      <section class="page-view__section">
+        <h2 class="page-view__section-title">From Reference Model to Real Systems</h2>
+        <p class="page-view__body" style="margin-bottom: 20px;">
+          The long-term ambition of OIA is to evolve step by step:
         </p>
         <div class="page-view__flow page-view__flow--vertical">
           <span class="page-view__flow-step">Reference Architecture</span>
@@ -86,35 +89,34 @@ export function renderMotivationView(): HTMLElement {
           <span class="page-view__flow-arrow">→</span>
           <span class="page-view__flow-step accent3">Operational Organizational Intelligence Systems</span>
         </div>
-        <p class="page-view__body page-view__manifesto">
-          This can only emerge through collaboration across disciplines.<br><br>
-          Architecture is not invented in isolation.<br>
-          It is discovered through practice.
+        <p class="page-view__body" style="margin-top: 20px; font-style: italic; color: var(--text-muted);">
+          This evolution can only happen through <strong>shared practice</strong>.
         </p>
       </section>
 
       <section class="page-view__section">
-        <h2 class="page-view__section-title">Join the Conversation</h2>
-        <p class="page-view__body" style="margin-bottom: 24px;">
-          If the idea of <strong>organizational intelligence as an architectural system</strong> resonates with you:
+        <h2 class="page-view__section-title">Join the Work</h2>
+        <p class="page-view__body" style="margin-bottom: 20px;">
+          If you are building systems where <strong>knowledge must become action</strong>,<br>
+          your experience belongs in this architecture.
         </p>
         <div class="page-view__join-steps">
           <div class="page-view__join-step">
             <span class="page-view__step-num">01</span>
-            <span>Explore the architecture</span>
+            <span>Explore the model</span>
           </div>
           <div class="page-view__join-step">
             <span class="page-view__step-num">02</span>
-            <span>Share your perspective</span>
+            <span>Challenge assumptions</span>
           </div>
           <div class="page-view__join-step">
             <span class="page-view__step-num">03</span>
-            <span>Help evolve the model</span>
+            <span>Contribute insights from real implementations</span>
           </div>
         </div>
-        <p class="page-view__body" style="margin-top: 20px; font-style: italic; color: var(--text-muted);">
-          This project is intentionally open.<br>
-          The architecture improves with every discussion.
+        <p class="page-view__body page-view__manifesto" style="margin-top: 28px;">
+          OIA is not a finished answer.<br><br>
+          It is a place where the architecture of organizational intelligence is <strong>built in the open</strong>.
         </p>
       </section>
 
@@ -124,8 +126,8 @@ export function renderMotivationView(): HTMLElement {
       </div>
 
       <div class="page-view__charter">
-        <em>Organizational Intelligence Architecture (OIA)</em><br>
-        <em>An open model for how organizations turn knowledge into action.</em>
+        <em>Architecture does not emerge from presentations.</em><br>
+        <em>It emerges from systems that were built, tested, broken — and rebuilt.</em>
       </div>
 
     </div>
