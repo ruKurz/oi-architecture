@@ -93,10 +93,19 @@ export function initRouter(oiaModel: OIAModel, container: HTMLElement) {
   appContainer = container
   navElement = document.getElementById('site-nav')
 
+  const fab = document.querySelector('.github-fab') as HTMLElement | null
+
   const route = () => {
     const hash = window.location.hash || '#/'
 
     if (navElement) renderNav(navElement)
+
+    const isPageView =
+      hash === '#/motivation' ||
+      hash === '#/contribute' ||
+      hash === '#/about' ||
+      hash === '#/impressum'
+    if (fab) fab.style.display = isPageView ? '' : 'none'
 
     if (hash.startsWith('#/detail/')) {
       renderDetail(decodeURIComponent(hash.replace('#/detail/', '')))
