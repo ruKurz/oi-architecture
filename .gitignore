@@ -1,3 +1,6 @@
+# Session reviews (local only — not committed)
+reviews/
+
 # Claude Dev / Cline
 .claude-dev-helper/
 .claude/settings.local.json
