@@ -21,7 +21,7 @@ oi-architecture/
 ├── decisions/             # Architecture Decision Records (BIZ/DEV)
 ├── docs/                  # Contributor documentation
 ├── prompts/               # Claude prompts for recurring project tasks
-└── CONTRIBUTING.md        # Contribution workflow
+└── docs/CONTRIBUTING.md   # Contribution workflow
 ```
 
 ---

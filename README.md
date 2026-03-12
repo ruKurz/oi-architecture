@@ -149,7 +149,7 @@ Beides muss erfolgreich sein, bevor du commitest.
 3. Commit mit [Conventional Commit](CONVENTIONS.md#23-conventional-commits).  
 4. Pushen und Pull Request öffnen – CI prüft Lint, Tests und Build.
 
-Weitere Details: [`CONTRIBUTING.md`](CONTRIBUTING.md).
+Weitere Details: [`docs/CONTRIBUTING.md`](docs/CONTRIBUTING.md).
 
 ---
 
@@ -157,10 +157,10 @@ Weitere Details: [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 | Document | Purpose |
 |---|---|
-| [`CONTRIBUTING.md`](CONTRIBUTING.md) | Contribution workflow, dev setup, commit format, PR process |
+| [`docs/CONTRIBUTING.md`](docs/CONTRIBUTING.md) | Contribution workflow, dev setup, commit format, PR process |
 | [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | Codebase structure, rendering architecture, routing, CSS |
 | [`docs/MODEL_GUIDE.md`](docs/MODEL_GUIDE.md) | OIA model layers, terminology, how to contribute to the model |
-| [`GOOD_FIRST_ISSUES.md`](GOOD_FIRST_ISSUES.md) | Curated entry points for new contributors |
+| [`docs/GOOD_FIRST_ISSUES.md`](docs/GOOD_FIRST_ISSUES.md) | Curated entry points for new contributors |
 | [`decisions/`](decisions/) | Architecture Decision Records |
 
 ---
