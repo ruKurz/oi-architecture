@@ -2,6 +2,8 @@
 
 > *How organizations turn knowledge into action.*
 
+**[Live Demo →](https://rukurz.github.io/oi-architecture/)**
+
 **Organizational Intelligence Architecture (OIA)** is a conceptual reference model for intelligent organizations.
 It describes how raw data becomes decisions, actions, and measurable business outcomes — going beyond pure data and analytics architectures.
 
