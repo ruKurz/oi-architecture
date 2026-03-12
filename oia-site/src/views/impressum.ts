@@ -17,8 +17,8 @@ export function renderImpressumView(): HTMLElement {
           <div class="page-view__contact-row">
             <span class="page-view__contact-label">Anschrift</span>
             <span class="page-view__body">
-              [Straße und Hausnummer]<br>
-              [PLZ Ort]<br>
+              Anton-Bruckner-Str. 3<br>
+              61250 Usingen<br>
               Deutschland
             </span>
           </div>
