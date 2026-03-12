@@ -1,5 +1,6 @@
-# Session reviews (local only — not committed)
+# Session reviews and sprint notes (local only — not committed)
 reviews/
+sprints/
 
 # Claude Dev / Cline
 .claude-dev-helper/
