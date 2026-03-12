@@ -11,7 +11,7 @@ const NAV_LINKS: NavLink[] = [
   { href: '#/motivation', label: 'Motivation', route: '/motivation' },
   { href: '#/contribute', label: 'Contribute', route: '/contribute' },
   { href: '#/about', label: 'About', route: '/about' },
-  { href: '#/legal', label: 'Impressum', route: '/legal' },
+  { href: '#/legal', label: 'Legal Notice', route: '/legal' },
 ]
 
 function activeRoute(hash: string): NavRoute {
