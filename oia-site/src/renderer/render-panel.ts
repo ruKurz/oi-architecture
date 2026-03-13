@@ -11,9 +11,9 @@ function resolveChildren(model: OIAModel, ids: string[]): string {
       }
       if (element.type === 'container') {
         const isQualityGates = element.meta?.variant === 'highlight'
-        const style = isQualityGates ? ' style="border-color:rgba(44,242,194,0.25);"' : ''
+        const style = isQualityGates ? ' style="border-color:var(--accent2-dim);"' : ''
         const titleStyle = isQualityGates ? ' style="color:var(--accent2)"' : ''
-        const itemStyle = isQualityGates ? ' style="border-color:rgba(44,242,194,0.2)"' : ''
+        const itemStyle = isQualityGates ? ' style="border-color:var(--accent2-subtle)"' : ''
         const items = element.children
           .map((cid) => {
             const child = getItem(model, cid)
