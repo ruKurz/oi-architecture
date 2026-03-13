@@ -270,6 +270,19 @@ Dual Licensing:
 
 ---
 
+## Legacy & Archived Content
+
+`_archive/` contains superseded file versions kept for reference only.
+Active versions of all content live in their respective directories.
+
+---
+
+## Governance
+
+See [`GOVERNANCE.md`](GOVERNANCE.md) for the current governance model and decision-making process.
+
+---
+
 ## Conventions
 
 Binding rules for naming, commits, and BIZ/DEV separation: [`CONVENTIONS.md`](CONVENTIONS.md).
