@@ -1,127 +1,139 @@
-# Todo-Infrastruktur Setup
-> **Prompt-Typ:** Execution
-> Legt die Strukturen an, die es danach ermöglichen, Beobachtungen und offene Punkte schnell und unkompliziert festzuhalten — ohne den laufenden Arbeitsfluss zu unterbrechen.
+# ~~OIA · Setup Todo Command~~ — DEPRECATED
+
+> **Status: Deprecated**
+> The todo infrastructure (`context/todo.md` + `.claude/commands/todo.md`) has been set up.
+> This prompt is a one-time setup and is no longer needed.
+> The `/todo` slash command is active. See `context/todo.md` for usage.
+
+---
+
+# Todo Infrastructure Setup
+
+**Prompt type:** Execution *(one-time, already executed)*
+**Domain:** DEV
+
+> Sets up the structures that allow observations and open points to be captured quickly and without interrupting the current workflow.
 
 ---
 
 ## Kontext
 
-Betroffen: Arbeitsinfrastruktur des OIA-Projekts.
+Affected: working infrastructure of the OIA project.
 
-Relevante Dateien (vor Ausführung lesen):
-- `context/oia-context.md` — Terminologie (nur lesen)
-- `.claude/commands/` — prüfen ob bereits vorhanden
+Relevant files (read before execution):
+- `context/oia-context.md` — terminology (read only)
+- `.claude/commands/` — check if already present
 
 ---
 
 ## Ziel
 
-Nach Ausführung dieses Prompts kann jeder Beteiligte (Mensch oder Agent) eine Beobachtung mit einem einzigen, einheitlichen Befehl festhalten. Die gesammelten Einträge sind ohne Session-Kontext lesbar und priorisierbar.
+After running this prompt, every participant (human or agent) can record an observation with a single, consistent command. The collected entries are readable and prioritisable without session context.
 
 ---
 
 ## Constraints
 
-- Ändert **keine** bestehenden Projektdateien (kein `oia-model.json`, kein CSS, kein Code)
-- Erstellt **keine** Inhalts-Einträge — nur die Infrastruktur
-- Überschreibt **keine** bereits vorhandenen Dateien — prüft zuerst, ob sie existieren
-- Legt **keine** eigene Terminologie fest, die mit `context/oia-context.md` kollidiert
+- **Changes no existing project files** (no `oia-model.json`, no CSS, no code)
+- **Creates no content entries** — infrastructure only
+- **Does not overwrite existing files** — checks first whether they exist
+- **Introduces no terminology** that conflicts with `context/oia-context.md`
 
 ---
 
 ## Schritte
 
-### Schritt 1 — `context/todo.md` anlegen
+### Step 1 — Create `context/todo.md`
 
-Erstelle die Datei mit folgendem Inhalt:
+Create the file with the following content:
 
 ```markdown
 # OIA · Parking Lot
 
-Beobachtungen, offene Punkte und Ideen, die während der Arbeit auffallen
-und nicht sofort umgesetzt werden können.
+Observations, open points and ideas that come up during work
+and cannot be addressed immediately.
 
-Einträge werden mit `/todo` oder direkt hinzugefügt.
-Format: chronologisch, neueste Einträge unten.
+Entries are added via `/todo` or directly.
+Format: chronological, newest entries at the bottom.
 
-Kategorien: model | renderer | prompt | architecture | infra | ux
-Dringlichkeit: low | medium | high
+Categories: model | renderer | prompt | architecture | infra | ux
+Urgency: low | medium | high
 Status: open | in-progress | done | wont-do
 
 ---
 
-<!-- Einträge folgen hier -->
+<!-- Entries follow here -->
 ```
 
-> Falls die Datei bereits existiert: nur prüfen, ob die Kopfzeile das Kategorie/Status-Schema enthält — ggf. ergänzen, nicht ersetzen.
+> If the file already exists: only check whether the header contains the category/status schema — add if missing, do not replace.
 
 ---
 
-### Schritt 2 — Slash-Command `.claude/commands/todo.md` anlegen
+### Step 2 — Create slash command `.claude/commands/todo.md`
 
-Erstelle `.claude/commands/todo.md` mit folgendem Inhalt:
+Create `.claude/commands/todo.md` with the following content:
 
 ```markdown
-Füge den folgenden Punkt als neuen Eintrag in `context/todo.md` ein.
-Implementiere nichts. Analysiere nichts. Nur festhalten.
+Add the following point as a new entry to `context/todo.md`.
+Do not implement anything. Do not analyse anything. Just record it.
 
-Verwende dieses Format:
+Use this format:
 
-### [HEUTIGES DATUM] $ARGUMENTS
-- **Kategorie:** (model | renderer | prompt | architecture | infra | ux)
-- **Dringlichkeit:** medium
-- **Beobachtung:** $ARGUMENTS
-- **Kontext:** (aus dem laufenden Gespräch ableiten, falls erkennbar)
+### [TODAY'S DATE] $ARGUMENTS
+- **Category:** (model | renderer | prompt | architecture | infra | ux)
+- **Urgency:** medium
+- **Observation:** $ARGUMENTS
+- **Context:** (derive from the current conversation if recognisable)
 - **Status:** open
 
-Bestätige mit einer Zeile: "→ Eingetragen: [Kurztitel]"
+Confirm with one line: "→ Recorded: [short title]"
 ```
 
-> Falls `.claude/commands/` nicht existiert: Verzeichnis anlegen.
-> Falls die Datei bereits existiert: Inhalt vergleichen, nur bei wesentlicher Abweichung ersetzen.
+> If `.claude/commands/` does not exist: create the directory.
+> If the file already exists: compare content, only replace if there is a material difference.
 
 ---
 
-### Schritt 3 — Konvention dokumentieren
+### Step 3 — Document the convention
 
-Ergänze in `context/oia-context.md` unter einem neuen Abschnitt `## Arbeitskonventionen` (oder append, falls bereits vorhanden):
+Add to `context/oia-context.md` under a new section `## Working Conventions` (or append if already present):
 
 ```markdown
-## Arbeitskonventionen
+## Working Conventions
 
 ### Todo / Parking Lot
-- Beobachtungen → `/todo <Beschreibung>` oder direkt in `context/todo.md`
-- Kategorien: model | renderer | prompt | architecture | infra | ux
-- Status-Werte: open | in-progress | done | wont-do
-- Review: regelmäßig zu Sessionbeginn kurz durchsehen
+- Observations → `/todo <description>` or directly in `context/todo.md`
+- Categories: model | renderer | prompt | architecture | infra | ux
+- Status values: open | in-progress | done | wont-do
+- Review: briefly scan at the start of each session
 ```
 
 ---
 
 ## Entscheidungsregeln
 
-| Situation | Verhalten |
+| Situation | Behaviour |
 |---|---|
-| `context/todo.md` existiert bereits | Nur Kopfzeile/Schema prüfen, nicht überschreiben |
-| `.claude/commands/todo.md` existiert bereits | Inhalt vergleichen — nur ersetzen wenn Schema fehlt |
-| `context/oia-context.md` hat bereits "Arbeitskonventionen" | Nur den Todo-Abschnitt ergänzen, falls fehlend |
-| `.claude/commands/` existiert nicht | Verzeichnis anlegen, dann Datei erstellen |
+| `context/todo.md` already exists | Only check header/schema, do not overwrite |
+| `.claude/commands/todo.md` already exists | Compare content — only replace if schema is missing |
+| `context/oia-context.md` already has "Working Conventions" | Only add the todo section if missing |
+| `.claude/commands/` does not exist | Create directory, then create file |
 
 ---
 
 ## Akzeptanzkriterien
 
-- [ ] `context/todo.md` existiert mit Kopfzeile inkl. Kategorie- und Status-Schema
-- [ ] `.claude/commands/todo.md` existiert und enthält `$ARGUMENTS`
-- [ ] `context/oia-context.md` enthält den Todo-Konventions-Abschnitt
-- [ ] Ein Test-Eintrag mit `/todo Infrastruktur-Setup abgeschlossen` lässt sich sofort anlegen
+- [ ] `context/todo.md` exists with header including category and status schema
+- [ ] `.claude/commands/todo.md` exists and contains `$ARGUMENTS`
+- [ ] `context/oia-context.md` contains the todo conventions section
+- [ ] A test entry with `/todo Infrastructure setup complete` can be added immediately
 
 ---
 
 ## Output
 
 ```
-context/todo.md              — erstellt
-.claude/commands/todo.md     — erstellt
-context/oia-context.md       — geändert (Abschnitt ergänzt)
+context/todo.md              — created
+.claude/commands/todo.md     — created
+context/oia-context.md       — changed (section added)
 ```

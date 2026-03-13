@@ -1,198 +1,201 @@
 # OIA · Project Review
 
-**Prompt-Typ:** Execution
-**Refs:** #11
-> Scannt das OIA-Projekt selbständig, prüft alle ADRs auf Compliance, und erstellt GitHub Issues für neue Befunde. Keine statischen Pfade — alles wird aus dem Projekt ermittelt.
+**Prompt type:** Execution
+**Domain:** DEV
 
 ---
 
 ## Kontext
 
-Lies vor der Ausführung:
-- `CONVENTIONS.md` — verbindliche Regeln
-- `CLAUDE.md` — Scope-Regeln (BIZ/DEV)
+Read before execution:
+- `CONVENTIONS.md` — binding rules
+- `CLAUDE.md` — scope rules (BIZ/DEV)
+- `decisions/README.md` — all active ADRs (loaded dynamically in Step 0)
 
-Projektroot: aktuelles Arbeitsverzeichnis.
+Project root: current working directory.
 
 ---
 
 ## Ziel
 
-Am Ende sind alle neuen Befunde (Konventionsverstöße, ADR-Verletzungen, strukturelle Probleme) als GitHub Issues angelegt — ohne Duplikate, ohne Implementierung.
+All new findings (convention violations, ADR breaches, structural problems) are created as GitHub Issues — without duplicates, without implementation.
 
 ---
 
 ## Constraints
 
-- Implementiert **nichts** — nur Analyse und Issue-Erstellung
-- Ändert **keine** Quelldateien
-- Erstellt **kein** Issue ohne vorherige Duplikatprüfung
-- Bewertet **keine** BIZ-Inhalte (OIA-Layer-Struktur, Modell-IDs, Architektur-Terminologie)
-- Greift **nicht** in `node_modules`, `.git`, `dist`, `build` ein
-- Fügt **kein** vages Issue ein ("Code verbessern") — jedes Issue braucht eine konkrete Aktion
+- **Implements nothing** — analysis and issue creation only
+- **Changes no source files**
+- **Creates no issue without prior duplicate check**
+- **Does not evaluate BIZ content** (OIA layer structure, model IDs, architecture terminology)
+- **Does not touch** `node_modules`, `.git`, `dist`, `build`
+- **No vague issues** ("improve code") — every issue needs a concrete action
 
 ---
 
-## Schritt 0 — Discovery
+## Schritte
 
-Ermittle selbständig:
+### Step 0 — Discovery
 
-1. **Projektstruktur**: Alle Dateien und Ordner im Root (eine Ebene tief).
-2. **Source-Verzeichnis** (`src/`, `lib/`, o.Ä.), **Test-Verzeichnis**, **Style-Verzeichnis**, **CI/CD-Konfiguration**.
-3. **ADR-Verzeichnis**: Scanne `decisions/` auf alle `*.md`-Dateien außer `README.md`. Für jede ADR: lies `**Decision:**` und `**Type:**` Zeilen — diese definieren was geprüft wird.
-4. **Offene GitHub Issues**: Lade die aktuelle Issue-Liste (`gh issue list --state open --limit 100`). Halte Titel und Nummern intern fest — wird in Schritt 3 zur Duplikatprüfung verwendet.
+Determine autonomously:
 
-Zeige kurz die erkannte Struktur und die gefundenen ADRs (3–7 Zeilen) bevor du mit der Analyse beginnst.
+1. **Project structure**: all files and folders in root (one level deep).
+2. **Source directory** (`src/`, `lib/`, etc.), **test directory**, **style directory**, **CI/CD configuration**.
+3. **ADR directory**: scan `decisions/` for all `*.md` files except `README.md`. For each ADR: read the `**Decision:**` and `**Type:**` lines — these define what is checked.
+4. **Open GitHub Issues**: load the current issue list (`gh issue list --state open --limit 100`). Store titles and numbers internally — used for duplicate checking in Step 3.
 
----
-
-## Schritt 1 — Analyse: 7 Dimensionen
-
-Für jeden Befund: konkret benennen (Datei + Zeile wenn möglich), Priorität vormerken.
-
-### Dimension 1 · Projektstruktur & Ordner-Organisation
-- Dateien im Root, die in einen Unterordner gehören?
-- Doppelte Dateien mit ähnlichen Namen an verschiedenen Orten?
-- Ordnernamen inkonsistent (gemischt Deutsch/Englisch)?
-- Archiv-/Draft-Bereiche klar von aktivem Inhalt abgegrenzt?
-- Dateien, die nirgendwo referenziert werden (verwaist)?
-
-### Dimension 2 · Datenmodell & Typsystem
-- Primäre Modelldatei (JSON/YAML/Schema): IDs konsistent? Pflichtfelder vollständig?
-- TypeScript-Typen: `any`-Typen ohne Kommentar? Type-Casts ohne Begründung?
-- Felder im Modell, die im Typsystem nicht abgebildet sind (oder umgekehrt)?
-
-### Dimension 3 · Source-Code & Architektur
-- Dateien > 150 Zeilen → Kandidaten zum Aufteilen?
-- Identische/ähnliche Code-Blöcke (DRY-Verletzungen)?
-- Hartkodierte Werte, die aus dem Datenmodell kommen sollten?
-- Ungenutzte Exporte, Imports oder tote Code-Pfade?
-
-### Dimension 4 · Styling
-- Magic Numbers (Farben, Größen) die Design Tokens sein sollten?
-- CSS-Klassen, die im HTML/JS-Code nicht verwendet werden?
-- Inline-Styles für wiederkehrende Werte (statt CSS-Variablen)?
-
-### Dimension 5 · Tests
-- Source-Dateien ohne zugehörige Testdatei?
-- Kritische User-Flows (Routing, Navigation, Interaktion) ohne Test-Abdeckung?
-- Tests, die Implementierungsdetails statt Verhalten prüfen?
-
-### Dimension 6 · Tooling & Automatisierung
-- Fehlende Scripts (lint, format, typecheck, audit)?
-- CI/CD: Deckt es Build, Test und Deploy ab? Manuelle Schritte, die automatisiert werden könnten?
-- Dev-Dependencies klar von Prod-Dependencies getrennt?
-
-### Dimension 7 · Dokumentation & Prompts
-- README.md aktuell (beschreibt aktuelle Projektstruktur)?
-- Prompts ohne die 4 Pflicht-Abschnitte (`## Kontext`, `## Ziel`, `## Constraints`, `## Akzeptanzkriterien`)?
-- Prompts mit hardkodierten Pfaden, die veraltet sein könnten?
-- Dokumentation, die nicht mehr zum Code passt?
+Briefly show the detected structure and found ADRs (3–7 lines) before starting the analysis.
 
 ---
 
-## Schritt 1b — ADR-Compliance-Check
+### Step 1 — Analysis: 7 dimensions
 
-Für jede in Schritt 0 gefundene ADR:
+For every finding: name it concretely (file + line where possible), note the priority.
 
-1. Lies die vollständige ADR.
-2. Leite daraus ab: **Welche konkreten Eigenschaften muss das Projekt erfüllen?**
-   - Beispiel ADR-0001 (Sprache): Alle TS-Variablen/Funktionen müssen englisch sein → prüfe Quellcode auf deutsche Bezeichner.
-   - Beispiel ADR-0002 (BIZ/DEV): Kein Commit darf beide Domains berühren → prüfe Git-Log auf gemischte Commits.
-   - Beispiel ADR-0005 (Commits): Footer muss `Closes #N` oder `Refs #N` enthalten → prüfe letzten 10 Commits.
-   - Beispiel ADR-0006 (Prompt-Helper): Alle `prompts/**/*.md` müssen 4 Pflichtabschnitte haben → prüfe alle Prompt-Dateien.
-3. Halte Verletzungen als Befunde fest (mit Datei + Zeile).
+#### Dimension 1 · Project structure & folder organisation
+- Files in root that belong in a subdirectory?
+- Duplicate files with similar names in different locations?
+- Folder names inconsistent (mixed languages)?
+- Archive/draft areas clearly separated from active content?
+- Files referenced nowhere (orphaned)?
+
+#### Dimension 2 · Data model & type system
+- Primary model file (JSON/YAML/schema): IDs consistent? Mandatory fields complete?
+- TypeScript types: `any` types without comment? Type casts without justification?
+- Fields in the model not reflected in the type system (or vice versa)?
+
+#### Dimension 3 · Source code & architecture
+- Files > 150 lines → split candidates?
+- Identical/similar code blocks (DRY violations)?
+- Hardcoded values that should come from the data model?
+- Unused exports, imports, or dead code paths?
+
+#### Dimension 4 · Styling
+- Magic numbers (colours, sizes) that should be design tokens?
+- CSS classes not used in HTML/JS code?
+- Inline styles for recurring values (instead of CSS variables)?
+
+#### Dimension 5 · Tests
+- Source files without a corresponding test file?
+- Critical user flows (routing, navigation, interaction) without test coverage?
+- Tests checking implementation details rather than behaviour?
+
+#### Dimension 6 · Tooling & automation
+- Missing scripts (lint, format, typecheck, audit)?
+- CI/CD: does it cover build, test, and deploy? Manual steps that could be automated?
+- Dev-dependencies clearly separated from prod-dependencies?
+
+#### Dimension 7 · Documentation & prompts
+- README.md up to date (reflects current project structure)?
+- Prompts missing the 4 required sections (`## Kontext`, `## Ziel`, `## Constraints`, `## Akzeptanzkriterien`)?
+- Prompts with hardcoded paths that may be outdated?
+- Documentation that no longer matches the code?
 
 ---
 
-## Schritt 2 — Priorisieren
+### Step 1b — ADR compliance check
 
-Weise jedem Befund zu:
-- 🔴 Blocker oder Inkonsistenz, die Folgefehler erzeugt
-- 🟡 Verbesserung mit klarem, mittelfristigem Nutzen
-- 🟢 Nice-to-have, langfristig oder optional
+For each ADR found in Step 0:
+
+1. Read the complete ADR.
+2. Derive: **which concrete properties must the project fulfil?**
+   - Example ADR-0001 (language): all TS variables/functions must be English → scan source code for German identifiers.
+   - Example ADR-0002 (BIZ/DEV): no commit may touch both domains → check git log for mixed commits.
+   - Example ADR-0005 (commits): footer must contain `Closes #N` or `Refs #N` → check last 10 commits.
+   - Example ADR-0006 (prompt helper): all `prompts/**/*.md` must have 4 required sections → check all prompt files.
+3. Record violations as findings (with file + line).
 
 ---
 
-## Schritt 3 — Duplikatprüfung & Issue-Erstellung
+### Step 2 — Prioritise
 
-Für jeden Befund aus Schritt 1 + 1b:
+Assign each finding:
+- 🔴 Blocker or inconsistency that produces downstream errors
+- 🟡 Improvement with clear medium-term benefit
+- 🟢 Nice-to-have, long-term or optional
 
-### 3.1 Duplikatprüfung
-Vergleiche den Befund mit der in Schritt 0 geladenen Issue-Liste:
-- Suche nach Überschneidungen im **Titel** und in der **betroffenen Datei/Komponente**.
-- Bei eindeutiger Überschneidung: **Issue überspringen**, in Zusammenfassung als "bereits offen: #N" vermerken.
-- Bei Unsicherheit: Issue erstellen, mit Hinweis "möglicherweise verwandt mit #N".
+---
 
-### 3.2 Issue erstellen
-Für neue Befunde ohne Duplikat:
+### Step 3 — Duplicate check & issue creation
 
-```
+For each finding from Step 1 + 1b:
+
+#### 3.1 Duplicate check
+Compare the finding against the issue list loaded in Step 0:
+- Search for overlaps in **title** and **affected file/component**.
+- Clear overlap: **skip**, note as "already open: #N" in the summary.
+- Uncertain: create the issue with a note "possibly related to #N".
+
+#### 3.2 Create the issue
+
+For new findings without a duplicate:
+
+```bash
 gh issue create \
   --title "<type>(<scope>): <imperative description>" \
   --label "<domain:dev|domain:biz>,<category>" \
-  --body "<Kontext + Aktion + Akzeptanzkriterien>"
+  --body "<Context + Action + Acceptance criteria>"
 ```
 
-Issue-Body-Format:
+Issue body format:
 ```markdown
 ## Context
-[Datei(en) + konkrete Beobachtung + warum es ein Problem ist]
+[File(s) + specific observation + why it is a problem]
 
 ## Action
-[Was konkret zu tun ist — spezifisch genug dass jemand ohne Kontext starten kann]
+[What exactly needs to be done — specific enough that someone without context can start]
 
 ## Acceptance criteria
-- [ ] [Messbares Kriterium]
-- [ ] All tests still green (falls DEV)
+- [ ] [Measurable criterion]
+- [ ] All tests still green (if DEV)
 ```
 
-Labels: verwende `domain:dev` oder `domain:biz` + mindestens ein Kategorie-Label (`renderer`, `model`, `infra`, `ux`, `prompt`, `architecture`, `content`).
+Labels: use `domain:dev` or `domain:biz` + at least one category label (`renderer`, `model`, `infra`, `ux`, `prompt`, `architecture`, `content`).
 
-### 3.3 Zu klein für ein Issue?
-Wenn ein Befund kleiner als S (unter 30 Minuten, trivial) ist: trage ihn in `context/todo.md` unter dem passenden Abschnitt ein statt ein Issue zu erstellen.
+#### 3.3 Too small for an issue?
+If a finding is smaller than S (under 30 minutes, trivial): add it to `context/todo.md` under the appropriate section instead of creating an issue.
 
 ---
 
-## Schritt 4 — Zusammenfassung ausgeben
+### Step 4 — Output summary
 
-Zeige nach Abschluss:
-- Anzahl neue Issues erstellt (mit Nummern)
-- Anzahl übersprungen (Duplikate, mit Issue-Nummern)
-- Anzahl in `context/todo.md` eingetragen (zu klein für Issue)
-- Welche Dimension / ADR hat die meisten Findings?
-- Empfohlener erster Schritt und warum
+Show after completion:
+- Number of new issues created (with numbers)
+- Number skipped (duplicates, with issue numbers)
+- Number added to `context/todo.md` (too small for an issue)
+- Which dimension / ADR produced the most findings?
+- Recommended first step and why
 
 ---
 
 ## Entscheidungsregeln
 
-| Situation | Verhalten |
+| Situation | Behaviour |
 |---|---|
-| Befund ist unklar oder könnte Absicht sein | Als 🟢-Issue mit "Investigate whether..." im Titel |
-| Zwei Befunde beschreiben dasselbe Problem | Zusammenführen zu einem Issue |
-| Offenes GitHub Issue deckt Befund bereits ab | Überspringen — in Zusammenfassung vermerken |
-| Datei oder Ordner nicht auffindbar | In Zusammenfassung als "nicht geprüft: [was]" vermerken |
-| Mehr als 5 Befunde in einer Dimension | Top 5 nach Impact auswählen |
-| BIZ-Inhalt betroffen (Modell-IDs, Layer-Namen) | Kein Issue erstellen — BIZ-Entscheidung, außer Scope |
-| `gh` CLI nicht verfügbar | Befunde in `context/todo.md` eintragen als Fallback |
+| Finding is unclear or could be intentional | Create as 🟢 issue with "Investigate whether..." in the title |
+| Two findings describe the same problem | Merge into one issue |
+| Open GitHub Issue already covers the finding | Skip — note in summary |
+| File or folder not found | Note in summary as "not checked: [what]" |
+| More than 5 findings in one dimension | Select top 5 by impact |
+| BIZ content affected (model IDs, layer names) | Do not create issue — BIZ decision, out of scope |
+| `gh` CLI not available | Add findings to `context/todo.md` as fallback |
 
 ---
 
 ## Akzeptanzkriterien
 
-- [ ] Schritt 0 wurde ausgeführt: Discovery + ADR-Liste + offene Issues geladen
-- [ ] Alle 7 Dimensionen + alle gefundenen ADRs wurden geprüft
-- [ ] Kein Issue ohne vorherige Duplikatprüfung erstellt
-- [ ] Jedes neue Issue hat: Titel im Conventional-Commits-Format, mindestens 2 Labels, konkreten Body
-- [ ] Nichts wurde implementiert
-- [ ] Zusammenfassung mit empfohlenem ersten Schritt wurde ausgegeben
+- [ ] Step 0 executed: discovery + ADR list + open issues loaded
+- [ ] All 7 dimensions + all found ADRs checked
+- [ ] No issue created without prior duplicate check
+- [ ] Every new issue has: title in Conventional Commits format, at least 2 labels, concrete body
+- [ ] Nothing was implemented
+- [ ] Summary with recommended first step was output
 
 ---
 
 ## Output
 
 ```
-GitHub Issues — neue Issues erstellt (Nummern in Zusammenfassung)
-context/todo.md — optional: neue Einträge für triviale Befunde (< 30min)
+GitHub Issues — new issues created (numbers in summary)
+context/todo.md — optional: new entries for trivial findings (< 30 min)
 ```

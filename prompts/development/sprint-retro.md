@@ -1,17 +1,19 @@
 # OIA · Sprint Review, Retro & Planning
 
-**Prompt-Typ:** Execution
-> Ein vollständiger Sprint-Abschluss in drei Phasen: **Review** (was wurde wirklich erledigt?), **Retro** (was lief nicht gut, was verbessern wir?), **Planning** (was machen wir als nächstes?). Wird ausgeführt, wenn der laufende Sprint abgeschlossen werden soll.
+**Prompt type:** Execution (interactive — contains explicit checkpoints)
+**Domain:** DEV
+
+> A complete sprint close in three phases: **Review** (what was actually done?), **Retro** (what did not go well, what do we improve?), **Planning** (what do we do next?). Run when the current sprint is to be closed.
 
 ---
 
 ## Kontext
 
-Lies vor der Ausführung:
-- `decisions/0003-github-issues-as-task-tracker.md` — verbindliches Issue-Format und Abschluss-Konventionen
-- `decisions/0005-conventional-commits-with-content-type.md` — `Closes #N` / `Refs #N` Footer-Konvention
+Read before execution:
+- `decisions/0003-github-issues-as-task-tracker.md` — binding issue format and close conventions
+- `decisions/0005-conventional-commits-with-content-type.md` — `Closes #N` / `Refs #N` footer convention
 
-Aktives Repository: aus `git remote get-url origin` ermitteln.
+Active repository: determined via `git remote get-url origin`.
 
 ---
 
@@ -19,108 +21,108 @@ Aktives Repository: aus `git remote get-url origin` ermitteln.
 
 # PHASE A — Review
 
-> Läuft vollständig durch, keine Unterbrechung.
+> Runs fully through without interruption.
 
 ## Ziel (Phase A)
 
-Alle erledigten-aber-offenen Sprint-Issues sind geschlossen. Die Acceptance Criteria aller Sprint-Issues sind gegen das Repo geprüft. Eine Abweichungsliste liegt vor.
+All completed-but-open sprint issues are closed. The acceptance criteria of all sprint issues have been checked against the repo. A deviation list is present.
 
 ## Constraints (Phase A)
 
-- Implementiert **nichts**
-- Ändert **keine** Quelldateien
-- Schließt **kein** Issue ohne Nachweis (Commit-Referenz oder explizit bestätigte Implementierung)
-- Bewertet **keine** BIZ-Inhalte (OIA-Modell-Layer, Terminologie)
+- **Implements nothing**
+- **Changes no source files**
+- **Closes no issue without evidence** (commit reference or explicitly confirmed implementation)
+- **Does not evaluate BIZ content** (OIA model layers, terminology)
 
 ---
 
 ## Schritte (Phase A)
 
-### A-0 — Sprint-Notizen laden
+### A-0 — Load sprint notes
 
-Suche die aktuellste Sprint-Datei:
+Find the most recent sprint file:
 
 ```bash
 ls -t sprints/*.md 2>/dev/null | head -1
 ```
 
-Lies die Datei. Extrahiere:
-1. **Sprintziel** — für Phase C als Ausgangsbasis
-2. **Definition of Done** — falls vorhanden, für Phase A-2 als Maßstab
-3. **Issue-Liste** — alle `#N`-Einträge unter "Kern" und "Optional"
+Read the file. Extract:
+1. **Sprint goal** — baseline for Phase C
+2. **Definition of Done** — if present, used as the standard for Phase A-2
+3. **Issue list** — all `#N` entries under "Core" and "Optional"
 
 ```bash
-grep -oE '#[0-9]+' sprints/<DATEINAME>.md
+grep -oE '#[0-9]+' sprints/<FILENAME>.md
 ```
 
-Halte die Issue-Nummern intern fest — sie ersetzen in A-2 die "letzten 10 geschlossenen Issues".
+Store the issue numbers internally — they replace the "last 10 closed issues" in A-2.
 
-**Fallback:** Existiert keine Sprint-Datei → kurze Warnung ausgeben, weiter mit A-1 (A-2 nutzt dann die letzten 10 geschlossenen Issues).
+**Fallback:** If no sprint file exists → output a brief warning, continue with A-1 (A-2 then uses the last 10 closed issues).
 
 ---
 
-### A-1 — Issue-Hygiene: Erledigte aber noch offene Issues finden
+### A-1 — Issue hygiene: find completed-but-open issues
 
 ```bash
 git log --oneline -30
 gh issue list --state open --limit 100
 ```
 
-1. Scanne die letzten 30 Commits auf `Closes #N`, `Fixes #N`, `Refs #N`-Footer.
-2. Prüfe für jede referenzierte Issue-Nummer: Ist das Issue noch offen?
-3. Prüfe zusätzlich: Gibt es offene Issues, deren **Titel oder Scope** eindeutig von einem neueren Commit abgedeckt wird — auch ohne expliziten Footer?
-4. Liste alle Kandidaten mit Begründung (Commit-Hash + Commit-Nachricht als Nachweis).
-5. Schließe alle bestätigten Fälle:
+1. Scan the last 30 commits for `Closes #N`, `Fixes #N`, `Refs #N` footers.
+2. For each referenced issue number: is the issue still open?
+3. Also check: are there open issues whose **title or scope** is clearly covered by a more recent commit — even without an explicit footer?
+4. List all candidates with justification (commit hash + commit message as evidence).
+5. Close all confirmed cases:
 
 ```bash
 gh issue close <N> --comment "Closed: implemented in commit <HASH> — <COMMIT_TITLE>"
 ```
 
-**Entscheidungsregel:** Unsichere Fälle → nicht schließen, stattdessen Kommentar im Issue: "Possibly done in <HASH> — please confirm."
+> **Decision rule:** Uncertain cases → do not close; instead add a comment to the issue: "Possibly done in <HASH> — please confirm."
 
 ---
 
-### A-2 — Abnahme-Review: Sprint-Issues
+### A-2 — Acceptance review: sprint issues
 
-Nutze die Issue-Liste aus A-0. Lade für jede Issue-Nummer den vollständigen Body:
+Use the issue list from A-0. Load the complete body for each issue number:
 
 ```bash
 gh issue view <N> --json state,title,body
 ```
 
-Für jedes Sprint-Issue:
+For each sprint issue:
 
-1. Lies den vollständigen Issue-Body (Acceptance criteria).
-2. Prüfe **State**: noch `open` → als ❌ werten, sofern nicht gerade in Arbeit.
-3. Prüfe im Repo, ob jedes Akzeptanzkriterium tatsächlich erfüllt ist:
-   - Existiert die genannte Datei?
-   - Enthält sie das beschriebene Element?
-   - Wurde ein genanntes Kommando / Label / Konfiguration umgesetzt?
-4. Klassifiziere:
-   - ✅ **Vollständig** — geschlossen, alle Kriterien erfüllt
-   - ⚠️ **Teilweise** — geschlossen, aber mindestens ein Kriterium fehlt oder weicht ab
-   - ❌ **Offen** — noch nicht umgesetzt oder Kernaussage fehlt
+1. Read the complete issue body (acceptance criteria).
+2. Check **state**: still `open` → rate as ❌, unless currently in progress.
+3. Check in the repo whether each acceptance criterion is actually met:
+   - Does the named file exist?
+   - Does it contain the described element?
+   - Was a named command / label / configuration implemented?
+4. Classify:
+   - ✅ **Complete** — closed, all criteria met
+   - ⚠️ **Partial** — closed, but at least one criterion missing or deviating
+   - ❌ **Open** — not yet implemented or core statement missing
 
-**Ausgabe:** Tabellarische Liste aller Sprint-Issues mit Status + Abweichungsbeschreibung (max. 1 Satz).
+**Output:** Tabular list of all sprint issues with status + deviation description (max. 1 sentence).
 
 ---
 
 ## Entscheidungsregeln (Phase A)
 
-| Situation | Verhalten |
+| Situation | Behaviour |
 |---|---|
-| Commit-Footer fehlt, aber Implementierung eindeutig erkennbar | Issue schließen + Hinweis auf fehlenden Footer |
-| Issue hat keine Acceptance Criteria | Als ⚠️ werten — fehlende AC = nicht überprüfbar |
-| `gh` CLI nicht verfügbar | Ergebnisse als Markdown-Ausgabe, kein Issue schließen |
+| Commit footer missing but implementation clearly recognisable | Close issue + note about missing footer |
+| Issue has no acceptance criteria | Rate as ⚠️ — missing AC = not verifiable |
+| `gh` CLI not available | Output results as markdown, do not close issues |
 
 ---
 
 ## Akzeptanzkriterien (Phase A)
 
-- [ ] Sprint-Notizen geladen (oder Fallback begründet)
-- [ ] Erledigte-aber-offene Sprint-Issues identifiziert und geschlossen (oder begründet nicht geschlossen)
-- [ ] Alle Sprint-Issues gegen ihre AC geprüft
-- [ ] Abweichungsliste ausgegeben (auch wenn leer)
+- [ ] Sprint notes loaded (or fallback justified)
+- [ ] Completed-but-open sprint issues identified and closed (or justifiably not closed)
+- [ ] All sprint issues checked against their AC
+- [ ] Deviation list output (even if empty)
 
 ---
 
@@ -128,99 +130,99 @@ Für jedes Sprint-Issue:
 
 # PHASE B — Retro
 
-> Läuft vollständig durch, keine Unterbrechung. Basiert auf Abweichungsliste aus Phase A.
+> Runs fully through without interruption. Based on the deviation list from Phase A.
 
 ## Ziel (Phase B)
 
-Die 3 wirkungsvollsten Prozessverbesserungen aus dem Sprint existieren als ein einziges GitHub Issue.
+The 3 most impactful process improvements from the sprint exist as a single GitHub Issue.
 
 ## Constraints (Phase B)
 
-- **Nur ausführen** wenn Phase A Abweichungen ergab (⚠️ oder ❌)
-- Fasst die **3 Maßnahmen** in einem einzigen Issue zusammen — nicht 3 separate Issues
-- Erstellt **kein** Issue ohne vorherige Duplikatprüfung
+- **Only run** if Phase A produced deviations (⚠️ or ❌)
+- Combines the **3 measures** in a single issue — not 3 separate issues
+- **Creates no issue without prior duplicate check**
 
 ---
 
 ## Schritte (Phase B)
 
-### B-1 — Ursachenanalyse
+### B-1 — Root cause analysis
 
-Für jede Abweichung aus Phase A: kurze Hypothese. Kategorien:
+For each deviation from Phase A: brief hypothesis. Categories:
 
-| Kategorie | Beispiel |
+| Category | Example |
 |---|---|
-| **Acceptance Criteria zu vage** | "File exists" statt "File exists with sections X, Y, Z" |
-| **Scope-Creep** | Issue teilweise umgesetzt, Rest vergessen |
-| **Kein Commit-Footer** | Issue nicht verknüpft → geht vergessen |
-| **Issue zu groß** | Mehrere Aufgaben in einem Issue → nur Teil erledigt |
-| **Review fehlte** | Keine Überprüfung nach Commit, ob AC wirklich erfüllt |
+| **Acceptance criteria too vague** | "File exists" instead of "File exists with sections X, Y, Z" |
+| **Scope creep** | Issue partially done, rest forgotten |
+| **No commit footer** | Issue not linked → gets forgotten |
+| **Issue too large** | Multiple tasks in one issue → only part done |
+| **No review** | No check after commit whether AC actually met |
 
-### B-2 — Maßnahmen entwickeln + priorisieren
+### B-2 — Develop and prioritise measures
 
-Pro Ursachen-Kategorie maximal eine konkrete Maßnahme. Bewerte nach: **Nutzen · Aufwand · Nachhaltigkeit**. Wähle die **3 besten**.
+Maximum one concrete measure per root-cause category. Evaluate by: **benefit · effort · sustainability**. Choose the **3 best**.
 
-### B-3 — Duplikatprüfung
+### B-3 — Duplicate check
 
 ```bash
 gh issue list --state open --limit 100
 ```
 
-### B-4 — Retro-Issue erstellen
+### B-4 — Create retro issue
 
 ```bash
 gh issue create \
-  --title "chore(process): implement sprint retro improvements (<DATUM>)" \
+  --title "chore(process): implement sprint retro improvements (<DATE>)" \
   --label "domain:dev,infra" \
   --body "<Body>"
 ```
 
-Body-Format:
+Body format:
 ```markdown
 ## Context
-Sprint Retro vom <DATUM>. Review der letzten 10 Issues ergab <N> Abweichungen.
+Sprint retro from <DATE>. Review of the last 10 issues produced <N> deviations.
 
-## Findings (Abweichungen)
-- Issue #X: [Beschreibung]
+## Findings (deviations)
+- Issue #X: [description]
 
-## Root Causes
-- [Ursache] → [betroffene Issues]
+## Root causes
+- [cause] → [affected issues]
 
-## Action — 3 Maßnahmen (priorisiert)
+## Action — 3 measures (prioritised)
 
-### 1. [Maßnahme]
-[Konkrete Umsetzung, max. 2 Sätze]
+### 1. [Measure]
+[Concrete implementation, max. 2 sentences]
 
-### 2. [Maßnahme]
-[Konkrete Umsetzung, max. 2 Sätze]
+### 2. [Measure]
+[Concrete implementation, max. 2 sentences]
 
-### 3. [Maßnahme]
-[Konkrete Umsetzung, max. 2 Sätze]
+### 3. [Measure]
+[Concrete implementation, max. 2 sentences]
 
 ## Acceptance criteria
-- [ ] Maßnahme 1 umgesetzt und verankert (CONVENTIONS.md / Prompt / ADR)
-- [ ] Maßnahme 2 umgesetzt
-- [ ] Maßnahme 3 umgesetzt
-- [ ] Nächster Sprint Retro zeigt Rückgang der Abweichungsrate
+- [ ] Measure 1 implemented and anchored (CONVENTIONS.md / Prompt / ADR)
+- [ ] Measure 2 implemented
+- [ ] Measure 3 implemented
+- [ ] Next sprint retro shows a reduction in deviation rate
 ```
 
 ---
 
 ## Entscheidungsregeln (Phase B)
 
-| Situation | Verhalten |
+| Situation | Behaviour |
 |---|---|
-| Keine Abweichungen in Phase A | Phase B überspringen — kurze Bestätigung ausgeben |
-| Abweichung ist trivial | Als Beobachtung im Issue, keine eigene Maßnahme |
-| Weniger als 3 Abweichungen | Nur 1–2 Maßnahmen, Titel anpassen |
-| Mehr als 5 Abweichungen | Top 5 nach Impact, Rest als "further observations" |
+| No deviations in Phase A | Skip Phase B — output a brief confirmation |
+| Deviation is trivial | Note as observation in the issue, no separate measure |
+| Fewer than 3 deviations | Only 1–2 measures, adjust title |
+| More than 5 deviations | Top 5 by impact, rest as "further observations" |
 
 ---
 
 ## Akzeptanzkriterien (Phase B)
 
-- [ ] Retro-Issue erstellt (falls Abweichungen) oder Abwesenheit bestätigt
-- [ ] Retro-Issue enthält max. 3 Maßnahmen
+- [ ] Retro issue created (if deviations) or absence confirmed
+- [ ] Retro issue contains max. 3 measures
 
 ---
 
@@ -228,90 +230,90 @@ Sprint Retro vom <DATUM>. Review der letzten 10 Issues ergab <N> Abweichungen.
 
 # PHASE C — Sprint Planning
 
-> Interaktiv — enthält zwei explizite Checkpoints, an denen auf Chat-Antwort gewartet wird.
+> Interactive — contains two explicit checkpoints that wait for a chat reply.
 
 ## Ziel (Phase C)
 
-Ein abgestimmter Sprint-Scope existiert: eine Liste von Issues, die ein Sprintziel bestmöglich unterstützen — weder zu viel noch zu wenig — und ein Shake-Hands zum Start.
+An agreed sprint scope exists: a list of issues that best support a sprint goal — neither too much nor too little — and a handshake to start.
 
 ## Constraints (Phase C)
 
-- Erstellt **keine neuen Issues** vor Checkpoint 1
-- Schlägt **keine Issues vor**, die nicht thematisch mit dem Sprintziel zusammenhängen
-- Fasst den Scope **nicht** ohne explizite Bestätigung ab
-- **Wartet** nach jedem Checkpoint auf eine Chat-Antwort — führt nicht eigenständig weiter
+- **Creates no new issues** before Checkpoint 1
+- **Proposes no issues** that are not thematically connected to the sprint goal
+- **Does not finalise scope** without explicit confirmation
+- **Waits** after each checkpoint for a chat reply — does not proceed autonomously
 
 ---
 
 ## Schritte (Phase C)
 
-### C-1 — Sprintziel aufnehmen
+### C-1 — Capture the sprint goal
 
-Das Sprintziel wird vom Nutzer als Freitext zusammen mit dem Prompt übergeben.
+The sprint goal is provided by the user as free text together with the prompt.
 
-Falls keines übergeben wurde:
-> **STOP — Eingabe fehlt.** Bitte das Sprintziel als Freitext eingeben: "Was soll am Ende des nächsten Sprints erreicht sein?"
+If none was provided:
+> **STOP — input missing.** Please provide the sprint goal as free text: "What should be achieved by the end of the next sprint?"
 
-Paraphrasiere das Ziel in einem Satz:
-> "Ich verstehe das Sprintziel als: **[Paraphrase]**. Korrekt?"
+Paraphrase the goal in one sentence:
+> "I understand the sprint goal as: **[paraphrase]**. Correct?"
 
-Falls korrigiert: Sprintziel aktualisieren, dann weiter.
+If corrected: update the sprint goal, then continue.
 
 ---
 
-### C-2 — Issue-Scan: Thematisch passende Issues finden
+### C-2 — Issue scan: find thematically relevant issues
 
 ```bash
 gh issue list --state open --limit 100
 ```
 
-Ordne jeden offenen Issue einem von drei Buckets zu:
+Assign each open issue to one of three buckets:
 
-| Bucket | Kriterium |
+| Bucket | Criterion |
 |---|---|
-| 🎯 **Direkt** | Issue unterstützt das Sprintziel unmittelbar |
-| 🔗 **Indirekt** | Voraussetzung für ein direktes Issue oder sinnvolle Ergänzung |
-| ⬜ **Nicht relevant** | Kein erkennbarer Bezug |
+| 🎯 **Direct** | Issue directly supports the sprint goal |
+| 🔗 **Indirect** | Prerequisite for a direct issue or a sensible addition |
+| ⬜ **Not relevant** | No recognisable connection |
 
-Zeige nur 🎯 und 🔗 Issues mit je einem Satz Begründung.
+Show only 🎯 and 🔗 issues with one sentence of justification each.
 
 ---
 
-### C-3 — Scope-Vorschlag + Gap-Analyse
+### C-3 — Scope proposal + gap analysis
 
-**Vorgeschlagener Sprint-Scope:**
+**Proposed sprint scope:**
 
-Präsentiere 🎯 als Kernscope, 🔗 als optional. Größeneinschätzung pro Issue:
+Present 🎯 as core scope, 🔗 as optional. Size estimate per issue:
 
-| Größe | Richtwert |
+| Size | Guideline |
 |---|---|
-| S | < 30 Minuten |
-| M | 30 Min – 2 Stunden |
-| L | halber Tag |
-| XL | mehrere Tage → Aufteilen empfohlen |
+| S | < 30 minutes |
+| M | 30 min – 2 hours |
+| L | half a day |
+| XL | multiple days → splitting recommended |
 
-**Gap-Analyse:** Fehlen Issues, die das Ziel gut unterstützen würden aber noch nicht existieren? Pro Lücke: ein Satz + Empfehlung (anlegen oder nicht).
-
----
-
-### ⏸ CHECKPOINT 1 — Scope-Feedback
-
-> **STOP — Ausgabe an Nutzer. Warten auf Chat-Antwort.**
-
-Frage explizit:
-1. Ist der Scope richtig (zu viel / zu wenig / passt)?
-2. Sollen Issues aus der Gap-Analyse angelegt werden — welche?
-3. Sollen Issues aus dem Scope herausgenommen werden?
-
-**Nicht weiter, bis Chat-Antwort vorliegt.**
+**Gap analysis:** Are there issues missing that would support the goal well but do not yet exist? Per gap: one sentence + recommendation (create or not).
 
 ---
 
-### C-4 — Scope finalisieren
+### ⏸ CHECKPOINT 1 — Scope feedback
 
-Führe aus, was in Checkpoint 1 bestätigt wurde:
+> **STOP — output to user. Wait for chat reply.**
 
-- Neue Issues anlegen (falls bestätigt):
+Ask explicitly:
+1. Is the scope right (too much / too little / fits)?
+2. Should issues from the gap analysis be created — which ones?
+3. Should issues be removed from the scope?
+
+**Do not continue until a chat reply is received.**
+
+---
+
+### C-4 — Finalise scope
+
+Execute what was confirmed in Checkpoint 1:
+
+- Create new issues (if confirmed):
 
 ```bash
 gh issue create \
@@ -320,81 +322,81 @@ gh issue create \
   --body "<Context + Action + Acceptance criteria>"
 ```
 
-Zeige den finalen Scope:
+Show the final scope:
 
 ```
-Sprint-Scope — [DATUM]
-Ziel: [Sprintziel]
+Sprint scope — [DATE]
+Goal: [sprint goal]
 
-🎯 Kern:
-  #N  [Titel]  [Größe]
+🎯 Core:
+  #N  [Title]  [Size]
 
-🔗 Optional (falls Zeit):
-  #N  [Titel]  [Größe]
+🔗 Optional (if time allows):
+  #N  [Title]  [Size]
 
-Gesamt Kern: [Summe]
+Total core: [sum]
 ```
 
 ---
 
-### ⏸ CHECKPOINT 2 — Shake-Hands
+### ⏸ CHECKPOINT 2 — Handshake
 
-> **STOP — Ausgabe an Nutzer. Warten auf Chat-Antwort.**
+> **STOP — output to user. Wait for chat reply.**
 
-> "Scope steht. Bereit zum Start? — Antworte mit **'Start'** oder gib letzte Korrekturen durch."
+> "Scope is set. Ready to start? — Reply with **'Start'** or give final corrections."
 
-Nach Bestätigung:
-> "Sprint gestartet. Viel Erfolg. Beim nächsten Abschluss: diesen Prompt erneut ausführen."
+After confirmation:
+> "Sprint started. Good luck. When closing the sprint: run this prompt again."
 
 ---
 
 ## Entscheidungsregeln (Phase C)
 
-| Situation | Verhalten |
+| Situation | Behaviour |
 |---|---|
-| Kein Sprintziel | STOP — Eingabe anfragen |
-| Scope > 5 direkte Issues | Hinweis: "Möglicherweise zu groß — Priorisierung auf 3–5 Kern-Issues empfohlen" |
-| Scope = 0 direkte Issues | Hinweis: "Keine passenden Issues — Gap-Analyse zeigt nötige neue Issues" |
-| XL-Issue im Scope | Warnung: "Issue #N ist XL — Aufteilen vor Sprint-Start empfohlen" |
-| Nutzer bestätigt ohne Änderungen | Direkt zu Checkpoint 2 |
+| No sprint goal | STOP — request input |
+| Scope > 5 direct issues | Note: "Possibly too large — prioritising to 3–5 core issues recommended" |
+| Scope = 0 direct issues | Note: "No matching issues — gap analysis shows needed new issues" |
+| XL issue in scope | Warning: "Issue #N is XL — splitting before sprint start recommended" |
+| User confirms without changes | Go directly to Checkpoint 2 |
 
 ---
 
 ## Akzeptanzkriterien (Phase C)
 
-- [ ] Sprintziel paraphrasiert und bestätigt
-- [ ] Alle offenen Issues gescannt und bewertet
-- [ ] Scope-Vorschlag mit Größen ausgegeben
-- [ ] Gap-Analyse durchgeführt
-- [ ] Checkpoint 1: Feedback eingeholt und umgesetzt
-- [ ] Checkpoint 2: Shake-Hands erfolgt
-- [ ] Finaler Scope schriftlich ausgegeben
+- [ ] Sprint goal paraphrased and confirmed
+- [ ] All open issues scanned and evaluated
+- [ ] Scope proposal with sizes output
+- [ ] Gap analysis performed
+- [ ] Checkpoint 1: feedback gathered and implemented
+- [ ] Checkpoint 2: handshake completed
+- [ ] Final scope output in writing
 
 ---
 
 ---
 
-# Zusammenfassung am Ende des vollständigen Durchlaufs
+# Summary at end of full run
 
-Zeige nach Phase C:
+Show after Phase C:
 
 ```
-Sprint-Abschluss — [DATUM]
-Sprint-Notizen:       sprints/[DATEI] | kein Sprint (Fallback)
+Sprint close — [DATE]
+Sprint notes:       sprints/[FILE] | no sprint (fallback)
 
 Phase A (Review):
-  Issues geschlossen:   N  (#...)
-  Issues reviewed:      N  (Sprint-Issues)
-  Status:               ✅ X  ⚠️ Y  ❌ Z
-  Abweichungsrate:      X%
+  Issues closed:    N  (#...)
+  Issues reviewed:  N  (sprint issues)
+  Status:           ✅ X  ⚠️ Y  ❌ Z
+  Deviation rate:   X%
 
 Phase B (Retro):
-  Retro-Issue:          #N (URL) | nicht nötig
+  Retro issue:      #N (URL) | not needed
 
 Phase C (Planning):
-  Neue Issues:          N  (#...)
-  Sprint-Scope:         N Kern-Issues, N optionale
-  Sprintziel:           [ein Satz]
+  New issues:       N  (#...)
+  Sprint scope:     N core issues, N optional
+  Sprint goal:      [one sentence]
 ```
 
 ---
@@ -402,8 +404,8 @@ Phase C (Planning):
 ## Output
 
 ```
-Phase A: GitHub Issues — geschlossen (Anzahl variabel)
-Phase B: GitHub Issue — 1 Retro-Issue (falls Abweichungen)
-Phase C: GitHub Issues — ggf. neue Issues (Gap-Analyse)
-         Chat-Ausgabe — finaler Sprint-Scope als Liste
+Phase A: GitHub Issues — closed (variable count)
+Phase B: GitHub Issue — 1 retro issue (if deviations)
+Phase C: GitHub Issues — new issues if any (gap analysis)
+         Chat output — final sprint scope as list
 ```
