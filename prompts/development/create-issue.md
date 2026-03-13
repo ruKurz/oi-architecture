@@ -88,6 +88,10 @@ Rules: imperative · max. 70 characters · no trailing period
 
 **On dependencies:** If an AC item can only be fulfilled after another issue is closed → use `blocked by #N` instead of a standalone criterion. Example: `- [ ] Labels deployed — blocked by #54`.
 
+**Dependency check:** Before finalising the AC list, ask: "Could a future commit implementing another open issue break any of these AC items?" If yes, document the dependency with `Depends on #N` in the body, or mark the affected AC as `monitored — could be broken by #N`.
+
+**AC verifiability check:** Every AC item must be verifiable in the repository. If an AC describes local state (git config, env vars, machine-local setup), either reformulate as a repo artifact ("File X exists with content Y") or mark explicitly as `not repo-verifiable — manual check required`.
+
 ### Step 5 — Create the issue
 
 ```bash

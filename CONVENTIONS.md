@@ -80,6 +80,7 @@ Rules:
 - Max 50 characters for subject line
 - No period at end
 - GitHub Issue in footer — always (except initial commits)
+- Before `Closes #N`: all acceptance criteria of the issue must be verified — see §2.4 Close-Verifikation
 
 See [ADR-0005](decisions/0005-conventional-commits-with-content-type.md) for rationale.
 
