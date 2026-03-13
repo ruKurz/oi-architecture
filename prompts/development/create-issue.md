@@ -1,94 +1,94 @@
 # OIA · Create GitHub Issue
 
-**Prompt-Typ:** Execution
-> Legt ein neues GitHub Issue an — regelkonform nach ADR-0003 (Format, Labels, Duplikatprüfung).
+**Prompt type:** Execution
+**Domain:** DEV | BIZ (depends on the issue)
 
 ---
 
 ## Kontext
 
-Lies vor der Ausführung:
-- `decisions/0003-github-issues-as-task-tracker.md` — verbindliches Format, Labels, No-Duplicate-Rule
-- `CONVENTIONS.md` §2.1 — BIZ/DEV-Zuordnung für Labels
-- `CONVENTIONS.md` §2.3 — Commit-Typen als Orientierung für Issue-Titel
+Read before execution:
+- `decisions/0003-github-issues-as-task-tracker.md` — binding format, labels, no-duplicate rule
+- `CONVENTIONS.md` §2.1 — BIZ/DEV assignment for labels
+- `CONVENTIONS.md` §2.3 — commit types as reference for issue titles
 
-Aktives Repository: aus `git remote get-url origin` ermitteln — nicht hartkodiert.
+Active repository: determined via `git remote get-url origin` — not hardcoded.
 
 ---
 
 ## Ziel
 
-Ein neues GitHub Issue existiert, das ADR-0003 vollständig einhält: korrekter Titel, mindestens 2 Labels, vollständiger Body (Context / Action / Acceptance criteria), kein Duplikat eines bestehenden Issues.
+A new GitHub Issue exists that fully complies with ADR-0003: correct title, at least 2 labels, complete body (Context / Action / Acceptance criteria), no duplicate of an existing issue.
+
+---
+
+## Inputs
+
+Provided informally by the user — as "kernels of truth":
+- What is the problem / task? (1–3 sentences)
+- Which file(s) are affected?
+- DEV or BIZ?
+- Category: `renderer` · `model` · `infra` · `ux` · `prompt` · `architecture` · `content`
+
+If inputs are missing: ask before creating anything.
 
 ---
 
 ## Constraints
 
-- **Kein Issue ohne Duplikatprüfung** — offene Issues zuerst laden
-- **Kein Issue für BIZ-Inhalte** (OIA-Modell-IDs, Layer-Namen) ohne explizite Nutzer-Bestätigung
-- **Kein vager Titel** — muss Conventional-Commits-Format einhalten
-- **Mindestens 2 Labels** — domain + category
-- **Nicht ausführen** — das Issue beschreibt Arbeit, die noch aussteht; nichts implementieren
-
----
-
-## Inputs (vom Nutzer bereitzustellen)
-
-Formlos — als "Kernels of Truth":
-- Was ist das Problem / die Aufgabe? (1–3 Sätze)
-- Welche Datei(en) sind betroffen?
-- DEV oder BIZ?
-- Kategorie: `renderer` · `model` · `infra` · `ux` · `prompt` · `architecture` · `content`
-
-Falls Inputs fehlen: nachfragen, bevor etwas erstellt wird.
+- **No issue without duplicate check** — load open issues first
+- **No issue for BIZ content** (OIA model IDs, layer names) without explicit user confirmation
+- **No vague title** — must follow Conventional Commits format
+- **At least 2 labels** — domain + category
+- **Do not implement** — the issue describes work that is still pending; do not execute anything
 
 ---
 
 ## Schritte
 
-### Schritt 1 — Duplikatprüfung
+### Step 1 — Duplicate check
 
 ```bash
 gh issue list --state open --limit 100
 ```
 
-Prüfe Titel und betroffene Dateien gegen die Nutzereingabe:
-- Klare Überschneidung → **abbrechen**, bestehende Issue-Nummer nennen
-- Unsicher → Issue erstellen mit Hinweis `possibly related to #N` im Body
+Compare titles and affected files against the user input:
+- Clear overlap → **abort**, name the existing issue number
+- Uncertain → create the issue with a note `possibly related to #N` in the body
 
-### Schritt 2 — Titel formulieren
+### Step 2 — Draft the title
 
 Format: `<type>(<scope>): <imperative description>`
 
-Erlaubte Typen: `feat` `fix` `content` `docs` `refactor` `test` `chore` `style`
-Scopes (Beispiele): `renderer` `model` `ci` `infra` `ux` `content` `decisions` `prompt`
+Allowed types: `feat` `fix` `content` `docs` `refactor` `test` `chore` `style`
+Scopes (examples): `renderer` `model` `ci` `infra` `ux` `content` `decisions` `prompt`
 
-Regeln: Imperativ · max. 70 Zeichen · kein Punkt am Ende
+Rules: imperative · max. 70 characters · no trailing period
 
-### Schritt 3 — Labels bestimmen
+### Step 3 — Determine labels
 
-| Pflicht | Werte |
+| Required | Values |
 |---|---|
-| Domain | `domain:dev` oder `domain:biz` |
-| Kategorie | `renderer` · `model` · `infra` · `ux` · `prompt` · `architecture` · `content` |
+| Domain | `domain:dev` or `domain:biz` |
+| Category | `renderer` · `model` · `infra` · `ux` · `prompt` · `architecture` · `content` |
 
-### Schritt 4 — Body verfassen
+### Step 4 — Write the body
 
 ```markdown
 ## Context
-[Datei(en) + konkrete Beobachtung + warum es ein Problem ist]
+[File(s) + specific observation + why it is a problem]
 
 ## Action
-[Was konkret zu tun ist — spezifisch genug für jemanden ohne Vorwissen]
+[What exactly needs to be done — specific enough for someone without prior knowledge]
 
 ## Acceptance criteria
-- [ ] [Messbares Kriterium]
-- [ ] All tests still green (wenn DEV)
+- [ ] [Measurable criterion]
+- [ ] All tests still green (if DEV)
 ```
 
-**Hinweis Abhängigkeiten:** Wenn ein AC-Item erst erfüllt sein kann, nachdem ein anderes Issue abgeschlossen wurde → `blocked by #N` statt eigenständiges Kriterium. Beispiel: `- [ ] Labels deployed — blocked by #54` statt `- [ ] Labels exist on GitHub`.
+**On dependencies:** If an AC item can only be fulfilled after another issue is closed → use `blocked by #N` instead of a standalone criterion. Example: `- [ ] Labels deployed — blocked by #54`.
 
-### Schritt 5 — Issue erstellen
+### Step 5 — Create the issue
 
 ```bash
 gh issue create \
@@ -97,36 +97,36 @@ gh issue create \
   --body "<body>"
 ```
 
-Gib die erstellte Issue-URL aus.
+Output the created issue URL.
 
 ---
 
 ## Entscheidungsregeln
 
-| Situation | Verhalten |
+| Situation | Behaviour |
 |---|---|
-| Duplikat gefunden | Abbrechen — bestehende Nummer nennen |
-| BIZ/DEV unklar | Nachfragen — nicht raten |
-| Kategorie-Label fehlt | Nachfragen — kein Issue ohne Kategorie |
-| `gh` nicht verfügbar | Eintrag in `context/todo.md` als Fallback, mit Hinweis |
-| Mehr als ein Problem in der Eingabe | Ein Issue pro Problem — nicht zusammenfassen |
-| AC-Item hängt von anderem offenen Issue ab | Als `blocked by #N` kennzeichnen — nicht als eigenständiges Kriterium |
+| Duplicate found | Abort — name the existing issue number |
+| BIZ/DEV unclear | Ask — do not guess |
+| Category label missing | Ask — no issue without a category |
+| `gh` not available | Add entry to `context/todo.md` as fallback, with a note |
+| More than one problem in the input | One issue per problem — do not combine |
+| AC item depends on another open issue | Mark as `blocked by #N` — not as a standalone criterion |
 
 ---
 
 ## Akzeptanzkriterien
 
-- [ ] Duplikatprüfung wurde ausgeführt (Ergebnis kurz vermerkt)
-- [ ] Titel folgt Conventional-Commits-Format
-- [ ] Mindestens 2 Labels gesetzt (domain + category)
-- [ ] Body enthält alle 3 Abschnitte (Context, Action, Acceptance criteria)
-- [ ] Issue-URL wurde ausgegeben
-- [ ] Nichts wurde implementiert
+- [ ] Duplicate check was performed (result briefly noted)
+- [ ] Title follows Conventional Commits format
+- [ ] At least 2 labels set (domain + category)
+- [ ] Body contains all 3 sections (Context, Action, Acceptance criteria)
+- [ ] Issue URL was output
+- [ ] Nothing was implemented
 
 ---
 
 ## Output
 
 ```
-GitHub Issue — erstellt (URL in Ausgabe)
+GitHub Issue — created (URL in output)
 ```

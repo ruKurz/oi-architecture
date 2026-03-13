@@ -9,14 +9,16 @@ This folder contains AI prompt templates used by the project author with [Claude
 | `templates/prompt-helper.md` | Guided process for creating new prompts |
 | `development/create-issue.md` | Create a GitHub Issue following ADR-0003 |
 | `development/create-adr.md` | Create an Architecture Decision Record |
+| `development/integrate-concept.md` | Integrate a concept as a binding project contract |
+| `development/introduce-conventions.md` | Set up project conventions from scratch |
+| `development/evolve-model.md` | Evolve the OIA data model (JSON-driven) |
+| `development/build-microsite.md` | Build the OIA interactive diagram site |
 | `development/project-review.md` | Internal compliance scan (ADR violations, code quality) |
 | `development/oss-readiness-review.md` | External OSS readiness review across 10 dimensions |
 | `development/sprint-retro.md` | Sprint review, retrospective, and planning |
-| `development/build-microsite.md` | Build the OIA interactive diagram site |
-| `development/evolve-model.md` | Evolve the OIA data model |
-| `development/introduce-conventions.md` | Set up project conventions |
-| `development/setup-todo-command.md` | Set up the /todo slash command |
-| `diagrams/generate-diagram.md` | Generate the OIA architecture diagram |
+| `diagrams/generate-diagram.md` | Image generation prompt for the OIA architecture diagram |
+
+> `development/setup-todo-command.md` — **deprecated** (one-time setup, already executed)
 
 ## For contributors without Claude Code
 

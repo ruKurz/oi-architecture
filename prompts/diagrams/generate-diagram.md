@@ -1,9 +1,16 @@
+# OIA · Generate Architecture Diagram (Image)
 
-# Prompt — Organizational Intelligence Architecture (OIA) Diagram V2
+**Prompt type:** Generation
+**Domain:** BIZ
+
+> This is an image generation prompt — use with AI image tools (e.g. DALL-E, Midjourney, Stable Diffusion).
+> For evolving the data-driven diagram in code, use `prompts/development/evolve-model.md` instead.
+
+---
 
 Create a **clean enterprise architecture diagram** titled:
 
-**Organizational Intelligence Architecture (OIA)**  
+**Organizational Intelligence Architecture (OIA)**
 Subtitle: **How organizations turn knowledge into action**
 
 The diagram must look like a **modern enterprise architecture framework used in strategy and CIO presentations.**
@@ -195,7 +202,7 @@ This context determines which knowledge and capabilities are relevant.
 
 Two actor groups must appear side-by-side:
 
-**Users**  
+**Users**
 **Agents**
 
 Users include:
@@ -287,6 +294,6 @@ Ensure:
 
 The final result should look like a **professional enterprise AI architecture reference diagram suitable for CIO presentations.**
 
-High resolution  
-Clean layout  
+High resolution
+Clean layout
 Architecture infographic style

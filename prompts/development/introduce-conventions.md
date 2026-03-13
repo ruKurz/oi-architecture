@@ -1,56 +1,56 @@
 # OIA · Introduce Project Conventions
 
-**Prompt-Typ:** Execution
-**Kontext:** DEV — Technische Infrastruktur
+**Prompt type:** Execution
+**Domain:** DEV — Technical Infrastructure
 
 ---
 
 ## Kontext
 
-Lies vor der Ausführung:
-- `context/oia-context.md` — Projektüberblick, Terminologie
-- `context/todo.md` — aktueller Stand der Aufgaben
+Read before execution:
+- `context/oia-context.md` — project overview, terminology
+- `context/todo.md` — current task state
 
-Scanne die bestehende Struktur:
-- Projektroot: alle Dateien auf oberster Ebene
-- `oia-site/` — Vite/TypeScript App
-- `prompts/`, `context/`, `articles/`, `decisions/` (falls vorhanden)
+Scan the existing structure:
+- Project root: all files at the top level
+- `oia-site/` — Vite/TypeScript app
+- `prompts/`, `context/`, `articles/`, `decisions/` (if present)
 
 ---
 
 ## Ziel
 
-Am Ende existiert ein `CONVENTIONS.md` im Projektroot, das alle Konventionen des OIA-Projekts verbindlich definiert. Die Konventionen sind sofort wirksam — bestehende Dateien werden nicht rückwirkend angepasst.
+At the end, a `CONVENTIONS.md` exists in the project root that defines all project conventions as binding rules. Conventions apply immediately to new files — existing files are not retroactively adjusted.
 
 ---
 
 ## Constraints
 
-- **BIZ-Inhalte nicht anfassen**: Diagramm-Inhalte, OIA-Modell-IDs, Layer-Benennung, Architektur-Terminologie sind BIZ-Entscheidungen und werden in `CONVENTIONS.md` nicht definiert
-- **Keine Umbenennung bestehender Dateien** im Rahmen dieses Prompts — Konventionen gelten für neue Dateien
-- **Kein Refactoring bestehenden Codes** — nur Dokumentation, Todo-Nummerierung und Git-Template
-- Das Dokument soll als "Decision Log for Future Me" formuliert sein, nicht als Contributor-Onboarding-Guide
+- **Do not touch BIZ content**: diagram content, OIA model IDs, layer naming, and architecture terminology are BIZ decisions and are not defined in `CONVENTIONS.md`
+- **No renaming of existing files** as part of this prompt — conventions apply to new files
+- **No refactoring of existing code** — only documentation, todo format, and git template
+- The document is written as a "Decision Log for Future Me" — not as a contributor onboarding guide
 
 ---
 
 ## Inputs
 
-- `context/todo.md` — Header wird aktualisiert (GitHub-Issues-Hinweis)
-- `README.md` — wird um Conventions-Abschnitt ergänzt
-- `context/oia-context.md` — Terminologie-Referenz (nicht verändern)
-- Konventionsinhalte: vollständig in Schritt 2 dieses Prompts definiert
+- `context/todo.md` — header updated (GitHub Issues note)
+- `README.md` — conventions section added
+- `context/oia-context.md` — terminology reference (do not change)
+- Convention content: fully defined in Step 2 of this prompt
 
 ---
 
 ## Schritte
 
-### Schritt 1 — `decisions/` Ordner anlegen
+### Step 1 — Create `decisions/` folder
 
-Erstelle `decisions/` im Projektroot mit:
-- `decisions/README.md` — ADR-Index und Template
-- `decisions/0001-language-and-naming-conventions.md` — erste ADR (diese Konvention als Entscheidung dokumentiert)
+Create `decisions/` in the project root with:
+- `decisions/README.md` — ADR index and template
+- `decisions/0001-language-and-naming-conventions.md` — first ADR (this convention documented as a decision)
 
-ADR-Template (Müller/Dienst-Format — Decision zuerst, Alternatives Pflicht):
+ADR template (Müller/Dienst format — Decision first, Alternatives mandatory):
 ```markdown
 # ADR-NNNN: Noun-phrase title
 
@@ -80,33 +80,41 @@ Quality attribute affected (e.g. maintainability, portability, security).
 
 ---
 
-### Schritt 2 — `CONVENTIONS.md` im Projektroot erstellen
+### Step 2 — Create `CONVENTIONS.md` in the project root
 
-Struktur des Dokuments (alle Abschnitte sind Pflicht):
+Document structure (all sections are mandatory):
 
-#### 2.1 BIZ / DEV Separation (oberste Regel)
+#### 2.1 BIZ / DEV Separation (primary rule)
 
-Definiere zwei Arbeitsbereiche:
+Define two domains:
 
-| Bereich | Bedeutung | Commit-Typ | Ordner |
+| Domain | Meaning | Commit types | Folders |
 |---|---|---|---|
-| **DEV** | Technische Umsetzung: Renderer, Tooling, Tests, Build, CI | `feat:` `fix:` `chore:` `refactor:` `test:` `style:` | `oia-site/` `.github/` `prompts/` |
-| **BIZ** | Fachliche Inhalte: OIA-Modell, Artikel, Diagramm-Inhalte, Architektur-Entscheidungen | `content:` `docs:` | `context/` `articles/` `diagrams/` `decisions/` `notes/` |
+| **DEV** | Technical implementation: Renderer, Tooling, Tests, Build, CI | `feat:` `fix:` `chore:` `refactor:` `test:` `style:` | `oia-site/` `.github/` `prompts/` |
+| **BIZ** | Domain content: OIA model, articles, diagram content, architecture decisions | `content:` `docs:` | `context/` `articles/` `diagrams/` `decisions/` `notes/` |
 
-Regel: **Ein Commit berührt entweder BIZ oder DEV — nie beide.** Wenn beides nötig ist: zwei separate Commits.
+Rule: **A single commit touches either BIZ or DEV — never both.** If both are needed: two separate commits.
 
-Regel: **Kein Commit ohne referenziertes GitHub Issue** (außer: `chore: initial setup` bei neuen Dateien).
+Rule: **No commit without a referenced GitHub Issue** (except: `chore: initial setup` for new files).
 
 ---
 
-#### 2.2 Sprache
+#### 2.2 Language
 
-| Bereich | Sprache | Beispiele |
+**Rule:** All project artifacts are written in English. The only exception is LinkedIn articles, which remain in German for a German-speaking audience.
+
+| Context | Language | Examples |
 |---|---|---|
-| Code, Kommentare, Commits, Dateinamen | Englisch | `renderLayerAsHtml()`, `feat: add zoom constants` |
-| Typen, Interfaces, JSON-Keys | Englisch | `ContentItem`, `itemType`, `containerType` |
-| Artikel, LinkedIn-Posts, Prompts | Deutsch | Autoren-Entscheidung |
-| ADRs | Englisch (vollständig — DEV-Artefakt) | `ADR-0001: Use Vite and TypeScript for renderer` |
+| Code, comments, commits, filenames | English | `renderLayerAsHtml()`, `feat: add zoom constants` |
+| Types, interfaces, JSON keys | English | `ContentItem`, `itemType`, `containerType` |
+| ADRs | English | `ADR-0001: Language and Naming Conventions` |
+| Prompts | English | `prompts/development/integrate-concept.md` |
+| Context files, notes, documentation | English | `context/oia-context.md`, `docs/` |
+| LinkedIn articles | German | Author's choice for German-speaking audience |
+
+Existing German files are known exceptions — not retroactively translated; follow English on creation or next significant edit.
+
+See [ADR-0011](decisions/0011-english-as-project-language.md) for rationale.
 
 ---
 
@@ -122,105 +130,103 @@ Closes #N   ← closes the GitHub Issue
 Refs #N     ← references without closing (for partial work)
 ```
 
-Erlaubte Typen:
+Allowed types:
 
-| Typ | Verwendung |
+| Type | Usage |
 |---|---|
-| `feat` | Neue Funktion im Renderer oder Tooling |
-| `fix` | Bug-Korrektur |
-| `content` | Neuer OIA-Inhalt, Artikel, Modell-Ergänzung (BIZ) |
-| `docs` | Dokumentation, ADRs, CONVENTIONS.md |
-| `refactor` | Code-Umstrukturierung ohne Verhaltensänderung |
-| `test` | Tests hinzugefügt oder angepasst |
-| `chore` | Build, CI/CD, Dependencies, Tooling |
-| `style` | Formatierung (kein Logik-Wechsel) |
+| `feat` | New feature in renderer or tooling |
+| `fix` | Bug fix |
+| `content` | New OIA content, article, model addition (BIZ) |
+| `docs` | Documentation, ADRs, CONVENTIONS.md |
+| `refactor` | Code restructuring without behaviour change |
+| `test` | Tests added or adjusted |
+| `chore` | Build, CI/CD, dependencies, tooling |
+| `style` | Formatting (no logic change) |
 
-Scopes (optional, in Klammern):
+Scopes (optional, in parentheses):
 ```
 feat(renderer): add outcome layer rendering
 content(model): add business outcome items to L10
 chore(ci): add npm audit to deploy pipeline
 ```
 
-Regeln:
-- Imperativ: "add" nicht "added", "fix" nicht "fixes"
-- Max. 50 Zeichen für die Subject-Zeile
-- Kein Punkt am Ende
-- GitHub Issue im Footer — immer (außer bei initialen Commits)
+Rules:
+- Imperative: "add" not "added", "fix" not "fixes"
+- Max. 50 characters for the subject line
+- No trailing period
+- GitHub Issue in footer — always (except initial commits)
 
 ---
 
-#### 2.4 Issue-Tracking
+#### 2.4 Issue tracking
 
-**Offizielle Aufgaben → GitHub Issues** (https://github.com/<owner>/oi-architecture/issues)
+**Official tasks → GitHub Issues** (https://github.com/<owner>/oi-architecture/issues)
 
-Vorteile: Community-fähig, filterbar, verlinkbar in Commits, Milestones möglich.
+`context/todo.md` remains a **session parking lot** — things that come up during work and are not yet prioritised. Before starting work: convert open parking lot entries to GitHub Issues or consciously discard them.
 
-`context/todo.md` bleibt als **Session-Parking-Lot** — Dinge die während der Arbeit auffallen, noch nicht priorisiert. Vor Arbeitsbeginn: offene Parking-Lot-Einträge als GitHub Issues anlegen oder bewusst verwerfen.
-
-Format eines Parking-Lot-Eintrags (weiterhin in `context/todo.md`):
+Parking lot entry format (in `context/todo.md`):
 ```
-**[2026-MM-DD] [AKTION] `#kategorie` [S|M|L]** (DEV|BIZ)
-→ Betroffener Pfad: Beschreibung
-→ Aktion: Was konkret zu tun ist
+**[2026-MM-DD] [ACTION] `#category` [S|M|L]** (DEV|BIZ)
+→ Affected path: description
+→ Action: what specifically needs to be done
 ```
 
-Kategorien: `model` · `renderer` · `prompt` · `architecture` · `infra` · `ux` · `content`
+Categories: `model` · `renderer` · `prompt` · `architecture` · `infra` · `ux` · `content`
 
 ---
 
-#### 2.5 TypeScript Naming
+#### 2.5 TypeScript naming
 
-| Element | Konvention | Beispiel |
+| Element | Convention | Example |
 |---|---|---|
-| Variablen | camelCase, semantisch vollständig | `currentZoomValue`, `diagramWrapperElement` |
-| Funktionen | camelCase, Verb zuerst, semantisch vollständig | `renderLayerAsHtml()`, `findElementById()`, `resolveChildrenForContainer()` |
-| Booleans | `is`/`has`-Präfix | `isHighlighted`, `hasChildren`, `isDetailView` |
-| Event-Handler | `on`/`handle`-Präfix | `onHashChange`, `handleZoomInput` |
-| Typen/Interfaces | PascalCase, kein `I`/`T`-Präfix | `OIAModel`, `ContentItem`, `LayerContainer` |
-| Enums (Name) | PascalCase | `ContainerType` |
-| Enum-Werte | SCREAMING_SNAKE_CASE | `SITUATION_LAYER`, `DATA_SOURCE` |
-| Konstanten (Modul-Ebene) | SCREAMING_SNAKE_CASE | `DEFAULT_ZOOM`, `ZOOM_LEVELS` |
-| Keine Typinfo im Namen | | `userString` ❌ → `userName` ✓ |
-| Keine Abkürzungen | | `el` ❌ → `element` ✓, `btn` ❌ → `button` ✓ |
+| Variables | camelCase, semantically complete | `currentZoomValue`, `diagramWrapperElement` |
+| Functions | camelCase, verb first, semantically complete | `renderLayerAsHtml()`, `findElementById()`, `resolveChildrenForContainer()` |
+| Booleans | `is`/`has` prefix | `isHighlighted`, `hasChildren`, `isDetailView` |
+| Event handlers | `on`/`handle` prefix | `onHashChange`, `handleZoomInput` |
+| Types/Interfaces | PascalCase, no `I`/`T` prefix | `OIAModel`, `ContentItem`, `LayerContainer` |
+| Enums (name) | PascalCase | `ContainerType` |
+| Enum values | SCREAMING_SNAKE_CASE | `SITUATION_LAYER`, `DATA_SOURCE` |
+| Module-level constants | SCREAMING_SNAKE_CASE | `DEFAULT_ZOOM`, `ZOOM_LEVELS` |
+| No type info in names | | `userString` ❌ → `userName` ✓ |
+| No abbreviations | | `el` ❌ → `element` ✓, `btn` ❌ → `button` ✓ |
 
 ---
 
-#### 2.6 Datei- und Ordner-Naming
+#### 2.6 File and folder naming
 
-| Typ | Konvention | Beispiel |
+| Type | Convention | Example |
 |---|---|---|
-| TypeScript-Module | kebab-case | `render-layer.ts`, `oia-model.json` |
-| Test-Dateien | `<name>.spec.ts` | `render-layer.spec.ts` |
-| Verzeichnisse | kebab-case, Englisch | `src/renderer/`, `src/data/` |
-| Markdown-Inhalte | kebab-case, Englisch | `naming-conventions.md` |
-| Prompts | kebab-case, Englisch | `introduce-conventions.md` |
+| TypeScript modules | kebab-case | `render-layer.ts`, `oia-model.json` |
+| Test files | `<name>.spec.ts` | `render-layer.spec.ts` |
+| Directories | kebab-case, English | `src/renderer/`, `src/data/` |
+| Markdown content | kebab-case, English | `naming-conventions.md` |
+| Prompts | kebab-case, English | `introduce-conventions.md` |
 
 ---
 
-#### 2.7 CSS-Klassen
+#### 2.7 CSS classes
 
-kebab-case, BEM-lite (Block--Element nur bei echter Hierarchie):
+kebab-case, BEM-lite (Block--Element only when the hierarchy is semantically meaningful):
 
 ```css
 .detail-view          /* Block */
-.detail-view__title   /* Element (nur wenn Hierarchie semantisch relevant) */
-.zoom-controls        /* einfacher Block */
-.layer-core           /* Modifier eingebaut im Blocknamen */
+.detail-view__title   /* Element (only when hierarchy is semantically relevant) */
+.zoom-controls        /* simple block */
+.layer-core           /* modifier built into the block name */
 ```
 
-Keine Inline-Styles für wiederkehrende Werte — immer CSS-Variable oder Klasse.
+No inline styles for recurring values — always use a CSS variable or class.
 
 ---
 
-#### 2.8 JSON-Datenmodell (DEV-Struktur)
+#### 2.8 JSON data model (DEV structure)
 
-Keys: camelCase (JavaScript-idiomatisch):
+Keys: camelCase (JavaScript idiomatic):
 ```json
 { "itemType": "outcome", "containerType": "layer", "isHighlighted": true }
 ```
 
-IDs: Bestehende `#L1`–`#L10` werden nicht verändert. Schema für neue Items: Entscheidung liegt bei BIZ-Kontext.
+IDs: existing `#L1`–`#L10` are not changed. Schema for new items: BIZ context decides.
 
 ---
 
@@ -229,7 +235,7 @@ IDs: Bestehende `#L1`–`#L10` werden nicht verändert. Schema für neue Items: 
 ```typescript
 describe('<FunctionName>', () => {
   test('<verb> + <expected result>', ...)
-  // Beispiele:
+  // Examples:
   test('returns element with class detail-view', ...)
   test('shows not-found message for unknown id', ...)
   test('renders badge icons on tagged layers', ...)
@@ -238,18 +244,18 @@ describe('<FunctionName>', () => {
 
 ---
 
-### Schritt 3 — `context/todo.md` aktualisieren
+### Step 3 — Update `context/todo.md`
 
-Lies `context/todo.md`. Ergänze den Header mit dem neuen Format-Standard (siehe 2.4):
-- Ersetze die Anleitung zur Nummerierung durch den GitHub-Issues-Hinweis
-- Füge oben einen Hinweis ein: "Parking Lot — offene Einträge als GitHub Issues anlegen vor Arbeitsbeginn"
-- Bestehende Einträge bleiben unverändert (keine Nummerierung nötig — sie wandern als Issues ins Tracker)
+Read `context/todo.md`. Add the new format standard to the header (see §2.4):
+- Replace the numbering guide with the GitHub Issues note
+- Add a note at the top: "Parking Lot — convert open entries to GitHub Issues before starting work"
+- Existing entries remain unchanged (no numbering needed — they migrate to the tracker as issues)
 
 ---
 
-### Schritt 4 — Git Commit Message Template anlegen
+### Step 4 — Create git commit message template
 
-Erstelle `.gitmessage` im Projektroot:
+Create `.gitmessage` in the project root:
 
 ```
 # <type>[scope]: <imperative description> (max 50 chars)
@@ -264,18 +270,18 @@ Closes #N
 # or: Refs #N  (if issue stays open after this commit)
 ```
 
-Aktiviere das Template für das Repository:
+Activate the template for the repository:
 ```bash
 git config commit.template .gitmessage
 ```
 
-> ⚠️ **Irreversibel auf Systemebene:** Dieser Befehl schreibt in die lokale `.git/config`. Rückgängig machen: `git config --unset commit.template`
+> ⚠️ **Irreversible at system level:** This command writes to the local `.git/config`. Undo with: `git config --unset commit.template`
 
 ---
 
-### Schritt 5 — README.md ergänzen
+### Step 5 — Update `README.md`
 
-Füge im Abschnitt "Contributing" (neu anlegen falls nicht vorhanden) einen kurzen Hinweis ein:
+Add a short note in the "Contributing" section (create it if not present):
 ```markdown
 ## Conventions
 See [CONVENTIONS.md](./CONVENTIONS.md) for naming, commit, and BIZ/DEV separation rules.
@@ -286,30 +292,30 @@ Architecture decisions are documented in [decisions/](./decisions/).
 
 ## Entscheidungsregeln
 
-- Wenn eine Konvention einen bestehenden Code-Stand verletzt → dokumentieren in `CONVENTIONS.md` unter "Known Exceptions", nicht sofort fixen
-- Wenn BIZ vs. DEV unklar → BIZ-Zweifel gilt: nicht in DEV-Commit aufnehmen
-- Wenn ein Parking-Lot-Eintrag zu klein für ein GitHub Issue ist → in `context/todo.md` belassen, kein Issue nötig
+- If a convention conflicts with an existing code state → document in `CONVENTIONS.md` under "Known Exceptions", do not fix immediately
+- If BIZ vs. DEV is unclear → BIZ doubt applies: do not include in a DEV commit
+- If a parking lot entry is too small for a GitHub Issue → keep in `context/todo.md`, no issue needed
 
 ---
 
 ## Akzeptanzkriterien
 
-- [ ] `CONVENTIONS.md` existiert im Projektroot und ist lesbar ohne Kontext-Vorwissen
-- [ ] `decisions/README.md` und `decisions/0001-...md` existieren
-- [ ] `context/todo.md` hat GitHub-Issues-Hinweis im Header
-- [ ] `.gitmessage` existiert, `git config commit.template` ist gesetzt
-- [ ] `README.md` verweist auf `CONVENTIONS.md` und `decisions/`
-- [ ] Kein bestehender Code wurde verändert
+- [ ] `CONVENTIONS.md` exists in the project root and is readable without prior context
+- [ ] `decisions/README.md` and `decisions/0001-...md` exist
+- [ ] `context/todo.md` has the GitHub Issues note in the header
+- [ ] `.gitmessage` exists, `git config commit.template` is set
+- [ ] `README.md` references `CONVENTIONS.md` and `decisions/`
+- [ ] No existing code was changed
 
 ---
 
 ## Output
 
-| Datei | Aktion |
+| File | Action |
 |---|---|
-| `CONVENTIONS.md` | erstellt |
-| `decisions/README.md` | erstellt |
-| `decisions/0001-language-and-naming-conventions.md` | erstellt |
-| `context/todo.md` | geändert (Header: GitHub-Issues-Hinweis) |
-| `.gitmessage` | erstellt |
-| `README.md` | geändert (Conventions-Abschnitt) |
+| `CONVENTIONS.md` | created |
+| `decisions/README.md` | created |
+| `decisions/0001-language-and-naming-conventions.md` | created |
+| `context/todo.md` | changed (header: GitHub Issues note) |
+| `.gitmessage` | created |
+| `README.md` | changed (conventions section) |

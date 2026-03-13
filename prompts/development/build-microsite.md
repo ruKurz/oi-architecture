@@ -1,52 +1,47 @@
-# OIA MicroSite — Ausführungs-Prompt v2
+# OIA · Build the OIA Microsite
+
+**Prompt type:** Execution
+**Domain:** DEV
+
+---
 
 ## Kontext
 
-Du arbeitest am Projekt **Organizational Intelligence Architecture (OIA)** – einem konzeptionellen Architekturmodell, das beschreibt, wie Organisationen Wissen in Handlungen verwandeln. Zielgruppe: CIOs, Enterprise Architects. Publikationskanal: LinkedIn, GitHub Pages.
+Read before execution:
+- `context/oia-context.md` — architecture layers, terminology, conceptual flow
+- `diagrams/oia-diagram-v2.html` — source for initial model extraction
+- `oia-site/src/data/types.ts` — TypeScript schema (if already present)
 
-**Ausführungskontext:** Arbeite im Repository-Root (nutze relative Pfade, keine absoluten Maschinenpfade).
+Architecture principle: **Model-Driven Site**
 
-Das Modell hat 9 Architekturschichten (L1–L9) plus zwei Seitenpanels. Der konzeptionelle Fluss:
+Single source of truth: `oia-site/src/data/oia-model.json`
+
+The JSON model is never manually translated into HTML. Instead, a `renderOIA()` function generates the complete diagram from the model. The site framework (Vite, router, zoom) is decoupled from the content.
 
 ```
-Data → Intelligence → Capability → Solution → Business Outcome
-```
-
-Die Architekturschichten von unten nach oben:
-```
-L9  – Actors
-L8  – Situation Layer
-L7  – Use Cases & Challenges
-L6  – Solutions & Applications
-L5  – Cognitive Capabilities
-L4  – Features & APIs
-L3  – Organizational Knowledge Core  ← zentrales Element (hervorgehoben)
-L2  – AI & Cognitive Infrastructure
-L1b – Data Processing Pipeline
-L1  – Data Sources
-
-Left Panel  – System Development & Interaction
-Right Panel – Data Sources & Processing
+oia-model.json  →  renderOIA()  →  Diagram HTML in browser
+                →  detail view  →  click-detail per element
 ```
 
 ---
 
-## Architekturprinzip: Model-Driven Site
+## Ziel
 
-**Single Source of Truth:** `oia-site/src/data/oia-model.json`
-
-Das JSON-Modell wird nie manuell ins HTML übersetzt. Stattdessen erzeugt eine `renderOIA()`-Funktion aus dem Modell das vollständige Diagramm. Das Site-Framework (Vite, Router, Zoom) ist von den Inhalten getrennt.
-
-```
-oia-model.json  →  renderOIA()  →  Diagramm-HTML im Browser
-                →  detail view  →  Klick-Detail pro Element
-```
+A fully functional, data-driven OIA diagram site exists at `oia-site/`, deployed to GitHub Pages via GitHub Actions. All diagram content comes from `oia-model.json` — no manual HTML editing.
 
 ---
 
-## Phase 1: Projekt erstellen
+## Constraints
 
-### Vite-Projekt anlegen
+- **No manual HTML** — all content comes from `oia-model.json`
+- **No backend** — pure static site deployment
+- **Design tokens 1:1** from `diagrams/oia-diagram-v2.html` — do not invent new colours
+- **`oia-site/` is a subdirectory** of the existing repo — not a separate repository
+- **Model and evolution workflow** are described in `prompts/development/evolve-model.md` — these two artefacts build on each other
+
+---
+
+## Phase 1: Create the project
 
 ```bash
 npm create vite@latest oia-site -- --template vanilla-ts
@@ -55,34 +50,34 @@ npm install
 npm install -D vitest @vitest/ui
 ```
 
-> Playwright wird erst hinzugefügt, wenn der Dev-Server läuft. Für den Start reichen Vitest-Unit-Tests.
+> Playwright is added only once the dev server is running. Vitest unit tests are sufficient to start.
 
 ---
 
-## Phase 2: Ordnerstruktur
+## Phase 2: Folder structure
 
 ```
 oia-site/
 ├── src/
 │   ├── data/
-│   │   ├── oia-model.json       # Single Source of Truth (JSON-Modell)
-│   │   └── types.ts             # TypeScript-Interfaces für das Modell
+│   │   ├── oia-model.json       # Single source of truth (JSON model)
+│   │   └── types.ts             # TypeScript interfaces for the model
 │   ├── renderer/
 │   │   ├── render-diagram.ts    # renderOIA(model, viewId?) → HTMLElement
-│   │   ├── render-layer.ts      # Einzelne Layer rendern
-│   │   └── render-panel.ts      # Side-Panels rendern
+│   │   ├── render-layer.ts      # Render individual layers
+│   │   └── render-panel.ts      # Render side panels
 │   ├── views/
-│   │   ├── overview.ts          # Default-Route: vollständiges Diagramm
-│   │   └── detail.ts            # Detail-View für ein Element (#/detail/:id)
+│   │   ├── overview.ts          # Default route: full diagram
+│   │   └── detail.ts            # Detail view for an element (#/detail/:id)
 │   ├── styles/
-│   │   ├── tokens.css           # Design Tokens (1:1 aus oia-diagram-v2.html)
+│   │   ├── tokens.css           # Design tokens (1:1 from oia-diagram-v2.html)
 │   │   ├── layout.css
 │   │   └── components.css
-│   ├── router.ts                # Hash-Router: #/ | #/detail/:id
-│   └── main.ts                  # App-Einstiegspunkt
+│   ├── router.ts                # Hash router: #/ | #/detail/:id
+│   └── main.ts                  # App entry point
 ├── tests/
-│   ├── model.spec.ts            # Alle L1–L9 vorhanden, IDs eindeutig
-│   └── renderer.spec.ts         # renderOIA gibt valides HTML zurück
+│   ├── model.spec.ts            # All L1–L9 present, IDs unique
+│   └── renderer.spec.ts         # renderOIA returns valid HTML
 ├── public/
 │   └── favicon.svg
 ├── index.html
@@ -96,7 +91,7 @@ oia-site/
 
 ---
 
-## Phase 3: Datenmodell
+## Phase 3: Data model
 
 ### `src/data/types.ts`
 
@@ -125,7 +120,7 @@ export interface Container {
   containerType: 'layer' | 'frame' | 'box'
   label: string
   description?: string
-  children: string[]            // IDs der Kind-Elemente
+  children: string[]            // IDs of child elements
   badges?: string[]
   meta?: { order?: number; highlighted?: boolean; view_level?: string }
 }
@@ -181,9 +176,9 @@ export interface View {
 
 ---
 
-### `src/data/oia-model.json` — Initiale Befüllung
+### `src/data/oia-model.json` — initial population
 
-Das JSON-Modell wird aus `diagrams/oia-diagram-v2.html` extrahiert. Struktur-Vorgabe:
+The JSON model is extracted from `diagrams/oia-diagram-v2.html`. Structure:
 
 ```json
 {
@@ -211,7 +206,7 @@ Das JSON-Modell wird aus `diagrams/oia-diagram-v2.html` extrahiert. Struktur-Vor
       "children": ["#L3-semantic", "#L3-index", "#L3-graph", "#L3-access"],
       "meta": { "order": 3, "highlighted": true }
     }
-    // ... alle weiteren Layer und Items aus oia-diagram-v2.html extrahieren
+    // ... all further layers and items extracted from oia-diagram-v2.html
   ],
   "connections": [
     {
@@ -236,7 +231,7 @@ Das JSON-Modell wird aus `diagrams/oia-diagram-v2.html` extrahiert. Struktur-Vor
 }
 ```
 
-> **Aufgabe beim Ausführen:** Lies `diagrams/oia-diagram-v2.html` vollständig und extrahiere alle Inhalte in das JSON-Modell. Alle Layer-IDs folgen dem Schema `#L1`–`#L9`. Item-IDs werden sequenziell vergeben: `#001`, `#002`, ...
+> **Task on execution:** Read `diagrams/oia-diagram-v2.html` completely and extract all content into the JSON model. All layer IDs follow the schema `#L1`–`#L9`. Item IDs are assigned sequentially: `#001`, `#002`, ...
 
 ---
 
@@ -255,36 +250,36 @@ export function renderOIA(model: OIAModel, viewId?: string): HTMLElement {
   const wrapper = document.createElement('div')
   wrapper.className = 'diagram-wrapper'
 
-  // 1. Left Panel rendern
-  // 2. Center: Layer L1–L9 in order (model.meta.order) rendern
-  // 3. Right Panel rendern
-  // 4. Badge-Legende rendern falls model.legend.show
+  // 1. Render left panel
+  // 2. Center: render layers L1–L9 in order (model.meta.order)
+  // 3. Render right panel
+  // 4. Render badge legend if model.legend.show
 
   return wrapper
 }
 ```
 
-**Renderer-Regeln:**
-- `containerType: 'layer'` → volle Breite, horizontaler Block (CSS-Klasse: `.layer`)
-- `containerType: 'frame'` → Gruppe mit leichtem Hintergrund (`.layer-frame`)
-- `containerType: 'box'` → kompakter Sub-Container (`.layer-box`)
+**Renderer rules:**
+- `containerType: 'layer'` → full width, horizontal block (CSS class: `.layer`)
+- `containerType: 'frame'` → group with light background (`.layer-frame`)
+- `containerType: 'box'` → compact sub-container (`.layer-box`)
 - `meta.highlighted: true` → teal border + glow (Knowledge Core L3)
-- `itemType` bestimmt die Farbe (siehe Design Tokens)
-- Jedes klickbare Element erhält `data-id="<element.id>"` und `cursor: pointer`
+- `itemType` determines the colour (see design tokens)
+- Every clickable element gets `data-id="<element.id>"` and `cursor: pointer`
 
 ---
 
-## Phase 5: Design Tokens
+## Phase 5: Design tokens
 
-`src/styles/tokens.css` — exakt aus `oia-diagram-v2.html` übernehmen:
+`src/styles/tokens.css` — copied exactly from `diagrams/oia-diagram-v2.html`:
 
 ```css
 :root {
   --bg:        #050d1a;
-  --accent:    #4db8ff;   /* blau  – Hauptakzent, Layer-Titel */
-  --accent2:   #2cf2c2;   /* teal  – Knowledge Core, APIs */
+  --accent:    #4db8ff;   /* blue   – main accent, layer titles */
+  --accent2:   #2cf2c2;   /* teal   – Knowledge Core, APIs */
   --accent3:   #f0a732;   /* orange – Use Cases, Feedback */
-  --accent4:   #c47dff;   /* lila  – Agents */
+  --accent4:   #c47dff;   /* purple – Agents */
   --text:      #e8f4ff;
   --text-dim:  #7a9fc4;
   --border:    rgba(77, 184, 255, 0.2);
@@ -292,18 +287,18 @@ export function renderOIA(model: OIAModel, viewId?: string): HTMLElement {
 }
 ```
 
-Fonts: Space Mono (Labels/Titel), DM Sans (Fließtext/Sub-Items)
+Fonts: Space Mono (labels/titles), DM Sans (body text/sub-items)
 
 ---
 
-## Phase 6: Routing & Zoom
+## Phase 6: Routing & zoom
 
-### Hash-Router (`src/router.ts`)
+### Hash router (`src/router.ts`)
 
 ```typescript
-// Routen:
+// Routes:
 // '#/'              → Overview (renderOIA fullscreen)
-// '#/detail/:id'    → Detail-View für Element mit dieser ID
+// '#/detail/:id'    → Detail view for element with this ID
 
 export function initRouter(): void {
   const render = () => {
@@ -320,23 +315,23 @@ export function initRouter(): void {
 }
 ```
 
-### Zoom-Verhalten
+### Zoom behaviour
 
-- Zoom-Slider: fixed, unten rechts
-- Range: 40%–100%, Default: 75%
-- CSS: `transform: scale(zoomValue)` auf `.diagram-wrapper`
-- Zoom-Klassen steuern Sichtbarkeit:
-  - `zoom-far` (< 55%): nur Layer-Titel sichtbar
-  - `zoom-mid` (55–75%): Titel + Sub-Item-Labels sichtbar
-  - `zoom-full` (> 75%): vollständige Darstellung
-- Mausrad im Slider-Bereich: Zoom; außerhalb: normales Scroll
+- Zoom slider: fixed, bottom right
+- Range: 40%–100%, default: 75%
+- CSS: `transform: scale(zoomValue)` on `.diagram-wrapper`
+- Zoom classes control visibility:
+  - `zoom-far` (< 55%): only layer titles visible
+  - `zoom-mid` (55–75%): titles + sub-item labels visible
+  - `zoom-full` (> 75%): full rendering
+- Mouse wheel in slider area: zoom; outside: normal scroll
 
-### Detail-View (`src/views/detail.ts`)
+### Detail view (`src/views/detail.ts`)
 
-- Vollflächige Ansicht für ein Element
-- Zeigt: id, label, description, alle children (rekursiv aufgelöst)
-- `← Back`-Button → `window.location.hash = '#/'`
-- Design: gleiche Farb-Tokens, zentriertes Layout, mehr Weißraum
+- Full-screen view for one element
+- Shows: id, label, description, all children (resolved recursively)
+- `← Back` button → `window.location.hash = '#/'`
+- Design: same colour tokens, centred layout, more whitespace
 
 ---
 
@@ -415,16 +410,16 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./oia-site/dist
-          cname: ''   # Optional: Custom Domain eintragen
+          cname: ''   # Optional: custom domain
 ```
 
-`vite.config.ts` für gh-pages Subpath:
+`vite.config.ts` for gh-pages subpath:
 
 ```typescript
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: '/oi-architecture/',   // GitHub Repo-Name
+  base: '/oi-architecture/',   // GitHub repo name
   build: {
     outDir: 'dist',
   }
@@ -433,26 +428,41 @@ export default defineConfig({
 
 ---
 
-## Wichtige Constraints
+## Execution order
 
-- **Kein manuelles HTML** — alle Inhalte kommen aus `oia-model.json`
-- **Kein Backend** — reines Static-Site-Deployment
-- **Design Tokens 1:1** aus `oia-diagram-v2.html` übernehmen — keine neuen Farben erfinden
-- **`oia-site/`** ist Unterordner im bestehenden Repo — kein zweites Repo
-- Das JSON-Modell (`oia-model.json`) und der Diagram-Entwicklungs-Workflow sind in `prompts/development/evolve-model.md` beschrieben — diese beiden Artefakte bauen aufeinander auf
+1. Create Vite project (Phase 1)
+2. Create `types.ts` (Phase 3)
+3. Extract `oia-model.json` from `diagrams/oia-diagram-v2.html` (Phase 3)
+4. Write tests and let them fail with an empty model (Phase 7)
+5. Implement renderer until tests pass (Phase 4)
+6. Design tokens + layout CSS (Phase 5)
+7. Router + zoom + detail view (Phase 6)
+8. Configure GitHub Actions (Phase 8)
+9. Verify `npm run build` locally
+10. Start `npm run dev` and verify at `http://localhost:5173/oi-architecture/`
+11. Create `quick-start.md` in `oia-site/` (dev server, tests, build, deployment)
 
 ---
 
-## Ausführungsreihenfolge
+## Akzeptanzkriterien
 
-1. Vite-Projekt anlegen (`Phase 1`)
-2. `types.ts` anlegen (`Phase 3`)
-3. `oia-model.json` aus `diagrams/oia-diagram-v2.html` extrahieren (`Phase 3`)
-4. Tests schreiben und mit leerem Modell scheitern lassen (`Phase 7`)
-5. Renderer implementieren bis Tests grün (`Phase 4`)
-6. Design Tokens + Layout CSS (`Phase 5`)
-7. Router + Zoom + Detail-View (`Phase 6`)
-8. GitHub Actions konfigurieren (`Phase 8`)
-9. `npm run build` lokal verifizieren
-10. `npm run dev` starten und unter `http://localhost:5173/oi-architecture/` prüfen
-11. `quick-start.md` in `oia-site/` erstellen (Dev-Server, Tests, Build, Deployment)
+- [ ] `npm run test` passes (all tests green)
+- [ ] `npm run build` produces a clean `dist/`
+- [ ] Diagram visible in browser at `http://localhost:5173/oi-architecture/`
+- [ ] All 9 main layers rendered from `oia-model.json`
+- [ ] Detail view works for at least one element
+- [ ] GitHub Actions workflow deploys to gh-pages on push to main
+- [ ] No manual HTML content — all diagram content from JSON model
+
+---
+
+## Output
+
+| File | Action |
+|---|---|
+| `oia-site/` | created (full directory) |
+| `oia-site/src/data/oia-model.json` | created (extracted from diagram) |
+| `oia-site/src/data/types.ts` | created |
+| `oia-site/src/renderer/` | created |
+| `oia-site/tests/` | created |
+| `.github/workflows/deploy.yml` | created |

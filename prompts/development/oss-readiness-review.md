@@ -1,178 +1,177 @@
 # OIA · OSS Readiness Review
 
-**Prompt-Typ:** Generation
-**Refs:** #61
-> Führt eine strukturierte Open-Source-Bereitschaftsprüfung durch — simuliert die Außenperspektive eines erfahrenen OSS-Maintainers vor der ersten öffentlichen Veröffentlichung.
+**Prompt type:** Generation
+**Domain:** DEV
 
 ---
 
 ## Kontext
 
-Lies vor der Ausführung:
-- `README.md` — Ersteindruck, Zielgruppenansprache, Quick Start
-- `docs/CONTRIBUTING.md` — Contributor-Experience
-- `CONVENTIONS.md` — Projektregeln und BIZ/DEV-Trennung
-- `CLAUDE.md` — Scope-Regeln, AI-Tooling-Konfiguration
-- `.github/` — Workflows, Templates (falls vorhanden)
-- `oia-site/` — Produktiver Code, Tests, CI-Konfiguration
-- `decisions/` — ADRs und Governance-Dokumente
+Read before execution:
+- `README.md` — first impression, target audience, quick start
+- `docs/CONTRIBUTING.md` — contributor experience
+- `CONVENTIONS.md` — project rules and BIZ/DEV separation
+- `CLAUDE.md` — scope rules, AI tooling configuration
+- `.github/` — workflows, templates (if present)
+- `oia-site/` — production code, tests, CI configuration
+- `decisions/` — ADRs and governance documents
 
-Aktives Repository: aus `git remote get-url origin` ermitteln.
+Active repository: determined via `git remote get-url origin`.
 
 ---
 
 ## Ziel
 
-Am Ende liegt ein vollständiges Review-Dokument unter `reviews/oss-readiness-review-YYYY-MM-DD.md`, das die Projektstärken, Schwächen und fehlenden Elemente aus drei externen Perspektiven bewertet — als Grundlage für gezielte Verbesserungen vor der öffentlichen Veröffentlichung.
+At the end, a complete review document exists at `reviews/oss-readiness-review-YYYY-MM-DD.md`, evaluating the project's strengths, weaknesses, and missing elements from three external perspectives — as a basis for targeted improvements before public release.
 
 ---
 
 ## Constraints
 
-- Ändert **keine** Projektdateien
-- Erstellt **keine** GitHub Issues (das ist Aufgabe von `project-review.md` als Folgeschritt)
-- Bewertet **keine** inhaltlichen BIZ-Entscheidungen (OIA-Layer-Struktur, Terminologie)
-- Schreibt **keine** Empfehlungen für grundlegende Architektur-Umorientierungen — nur für OSS-Bereitschaft
-- Greift **nicht** in `node_modules`, `.git`, `dist`, `build` ein
-- Das Review ersetzt **nicht** den internen Compliance-Check (`project-review.md`)
+- **Changes no project files**
+- **Creates no GitHub Issues** (that is the task of `project-review.md` as a follow-up step)
+- **Does not evaluate BIZ decisions** (OIA layer structure, terminology)
+- **Does not recommend fundamental architecture reorientations** — only OSS readiness
+- **Does not touch** `node_modules`, `.git`, `dist`, `build`
+- This review **does not replace** the internal compliance check (`project-review.md`)
 
 ---
 
 ## Perspektiven
 
-Die Analyse erfolgt aus drei gleichzeitig eingenommenen Außenperspektiven:
+The analysis is conducted simultaneously from three external perspectives:
 
-1. **Externer Entwickler** (erstmaliger Contributor)
-2. **Erfahrener OSS-Maintainer** (kritischer Reviewer)
-3. **Kritischer Nutzer** (bewertet Adoption-Entscheidung)
+1. **External developer** (first-time contributor)
+2. **Experienced OSS maintainer** (critical reviewer)
+3. **Critical user** (evaluating an adoption decision)
 
 ---
 
 ## Schritte
 
-### 1 · FIRST IMPRESSION
+### 1 · First impression
 
-Analysiere, was ein Besucher bei der ersten Begegnung mit dem Repository versteht und was unklar bleibt:
-- Was ist sofort verständlich?
-- Was ist unklar oder verwirrend?
-- Würde ein externer Entwickler das Projekt ausprobieren? Warum (nicht)?
+Analyse what a visitor understands on first contact with the repository — and what remains unclear:
+- What is immediately understandable?
+- What is unclear or confusing?
+- Would an external developer try the project? Why (not)?
 
-### 2 · README & DOCUMENTATION REVIEW
+### 2 · README & documentation review
 
-Bewerte:
-- Klarheit der Problemstellung und Zielgruppe
-- Quick-Start-Nutzbarkeit (funktioniert ohne Vorwissen?)
-- Fehlendes: Screenshots, Live-URL, Beispiele
-- Sprache und Konsistenz (Zielgruppe klar angesprochen?)
+Evaluate:
+- Clarity of problem statement and target audience
+- Quick-start usability (does it work without prior knowledge?)
+- What is missing: screenshots, live URL, examples
+- Language and consistency (is the target audience clearly addressed?)
 
-Liste konkrete Schwächen mit Fundstelle (Datei, Abschnitt).
+List specific weaknesses with location (file, section).
 
-### 3 · CONTRIBUTOR EXPERIENCE
+### 3 · Contributor experience
 
-Analysiere aus Sicht eines externen Contributors:
-- Ist die Projektstruktur nachvollziehbar?
-- Ist klar, wo man anfangen soll?
-- Sind Coding-Konventionen erkennbar?
-- Gibt es reibungslose Einstiegspunkte (Good First Issues, Labels, Onboarding)?
+Analyse from the perspective of an external contributor:
+- Is the project structure understandable?
+- Is it clear where to start?
+- Are coding conventions recognisable?
+- Are there smooth entry points (Good First Issues, labels, onboarding)?
 
-Benenne Reibungspunkte explizit.
+Name friction points explicitly.
 
-### 4 · CODEBASE & ARCHITECTURE
+### 4 · Codebase & architecture
 
-Bewerte (ohne Grundkonzepte zu erklären):
-- Modularität und Separation of Concerns
-- Naming-Konsistenz
-- Technical-Debt-Signale (DRY-Verletzungen, Hardcoding, ungetestete Pfade)
-- Architekturrisiken für zukünftige Contributor
+Evaluate (without explaining fundamental concepts):
+- Modularity and separation of concerns
+- Naming consistency
+- Technical debt signals (DRY violations, hardcoding, untested paths)
+- Architecture risks for future contributors
 
-### 5 · PROJECT GOVERNANCE & OPEN SOURCE READINESS
+### 5 · Project governance & open source readiness
 
-Prüfe Vorhandensein und Qualität:
+Check presence and quality:
 
-| Artefakt | Status | Qualität |
+| Artefact | Status | Quality |
 |---|---|---|
 | LICENSE | ? | ? |
 | CONTRIBUTING.md | ? | ? |
 | CODE_OF_CONDUCT.md | ? | ? |
 | SECURITY.md | ? | ? |
 | CHANGELOG.md | ? | ? |
-| Issue Templates | ? | ? |
-| PR Template | ? | ? |
+| Issue templates | ? | ? |
+| PR template | ? | ? |
 | dependabot.yml | ? | ? |
-| Roadmap (auffindbar) | ? | ? |
+| Roadmap (findable) | ? | ? |
 
-Erkläre was fehlt oder unzureichend ist.
+Explain what is missing or insufficient.
 
-### 6 · TESTING & QUALITY SIGNALS
+### 6 · Testing & quality signals
 
-Bewerte:
-- Vorhandensein und Struktur der Tests
-- CI-Automatisierung und Abdeckung
-- Risiken für zukünftige Wartbarkeit
+Evaluate:
+- Presence and structure of tests
+- CI automation and coverage
+- Risks for future maintainability
 
-### 7 · CRITICAL QUESTIONS BEFORE RELEASE
+### 7 · Critical questions before release
 
-Formuliere mindestens 10 unbequeme Fragen, die eine kritische Öffentlichkeit stellen wird — Fragen, auf die das Projekt noch keine klare Antwort hat.
+Formulate at least 10 uncomfortable questions that a critical public will ask — questions the project does not yet have a clear answer to.
 
-### 8 · TOP 10 IMPROVEMENTS BEFORE OPEN SOURCE RELEASE
+### 8 · Top 10 improvements before open source release
 
-Ranke die 10 wirkungsvollsten Verbesserungen nach Impact:
+Rank the 10 most impactful improvements by impact:
 
-| # | Verbesserung | Impact |
+| # | Improvement | Impact |
 |---|---|---|
 | 1 | … | … |
 | … | … | … |
 
-Fokus: Was erhöht Glaubwürdigkeit und Nutzbarkeit am stärksten?
+Focus: what increases credibility and usability most?
 
-### 9 · OPEN SOURCE MATURITY ASSESSMENT
+### 9 · Open source maturity assessment
 
-Bewerte auf dieser Skala:
+Evaluate on this scale:
 
 - **Level 1** – Experimental
 - **Level 2** – Usable
 - **Level 3** – Open Source Ready
 - **Level 4** – Mature OSS
 
-Begründe die Einstufung mit konkreten Befunden.
+Justify the rating with concrete findings.
 
-### 10 · FINAL HONEST VERDICT
+### 10 · Final honest verdict
 
-Antworte ehrlich: Wenn du dieses Projekt online entdeckst, würdest du es:
+Answer honestly: if you discover this project online, would you:
 
-- Ignorieren
-- Beobachten (Watch)
-- Ausprobieren
-- Adoptieren
+- Ignore it
+- Watch it
+- Try it
+- Adopt it
 
-Begründe warum. Fokus: Hilft die Antwort dem Projekt, öffentliche Kritik zu überstehen?
+Explain why. Focus: does the answer help the project survive public scrutiny?
 
 ---
 
 ## Entscheidungsregeln
 
-| Situation | Verhalten |
+| Situation | Behaviour |
 |---|---|
-| Befund könnte Absicht sein (z.B. bewusste Zweisprachigkeit) | Trotzdem benennen — externe Wahrnehmung zählt, nicht Autorenintention |
-| Governance-Artefakt fehlt | In §5-Tabelle als ❌ Missing eintragen, in §8 ranken wenn relevant |
-| Code-Qualitätsproblem ohne OSS-Relevanz | Nur erwähnen wenn es Contributor-Experience direkt betrifft |
-| BIZ-Inhalt (OIA-Modell, Layer-Struktur) betroffen | Außerhalb des Scope — nicht bewerten |
+| Finding could be intentional (e.g. deliberate bilingualism) | Name it anyway — external perception counts, not author intention |
+| Governance artefact missing | Enter as ❌ Missing in the §5 table, rank in §8 if relevant |
+| Code quality problem without OSS relevance | Mention only if it directly affects contributor experience |
+| BIZ content affected (OIA model, layer structure) | Out of scope — do not evaluate |
 
 ---
 
 ## Akzeptanzkriterien
 
-- [ ] Alle 10 Abschnitte sind vorhanden und ausgefüllt
-- [ ] §8 (Top 10) ist nach Impact gerankt, nicht alphabetisch
-- [ ] §9 (Maturity) enthält eine konkrete Level-Einstufung mit Begründung
-- [ ] §10 (Verdict) enthält eine der vier Optionen (Ignore / Watch / Try / Adopt)
-- [ ] Keine Projektdatei wurde geändert
-- [ ] Review wurde gespeichert unter `reviews/oss-readiness-review-YYYY-MM-DD.md`
+- [ ] All 10 sections are present and filled in
+- [ ] §8 (Top 10) is ranked by impact, not alphabetically
+- [ ] §9 (Maturity) contains a concrete level rating with justification
+- [ ] §10 (Verdict) contains one of the four options (Ignore / Watch / Try / Adopt)
+- [ ] No project file was changed
+- [ ] Review saved at `reviews/oss-readiness-review-YYYY-MM-DD.md`
 
 ---
 
 ## Output
 
 ```
-reviews/oss-readiness-review-YYYY-MM-DD.md — erstellt
+reviews/oss-readiness-review-YYYY-MM-DD.md — created
 ```

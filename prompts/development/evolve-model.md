@@ -1,52 +1,54 @@
-# OIA Diagramm — Modell-Evolution Prompt
-> Typ: **Execution** | Zuletzt aktualisiert: 2026-03
+# OIA · Evolve the OIA Data Model
+
+**Prompt type:** Execution
+**Domain:** BIZ (model content) | DEV (schema changes)
 
 ---
 
 ## Kontext
 
-Lies vor dem Start:
-- `context/oia-context.md` — Architekturschichten, Terminologie, V2-Backlog
-- `oia-site/src/data/oia-model.json` — aktuelles Modell (Single Source of Truth)
+Read before execution:
+- `context/oia-context.md` — architecture layers, terminology, V2 backlog
+- `oia-site/src/data/oia-model.json` — current model (single source of truth)
+- `oia-site/src/data/types.ts` — full TypeScript schema
 
-**Projektstatus:**
-Die Grundinfrastruktur ist gebaut:
-- JSON-Modell existiert: `oia-site/src/data/oia-model.json`
-- Renderer existiert: `oia-site/src/renderer/render-diagram.ts`
-- Vitest-Tests laufen: `npm run test` (13 Tests grün)
-- Dev-Server: `npm run dev` → http://localhost:5173/oi-architecture/
+Current infrastructure status:
+- JSON model: `oia-site/src/data/oia-model.json`
+- Renderer: `oia-site/src/renderer/render-diagram.ts`
+- Tests: `npm run test` (Vitest)
+- Dev server: `npm run dev` → http://localhost:5173/oi-architecture/
 
-Dieser Prompt beschreibt, wie das **Modell weiterentwickelt** wird — nicht wie die Infrastruktur gebaut wird.
+This prompt covers model evolution only — not initial site setup (see `build-microsite.md`).
 
 ---
 
 ## Ziel
 
-Das OIA-Diagramm über das JSON-Modell iterativ weiterentwickeln — ohne manuelles HTML-Editing — über zwei definierte Workflows.
+Iteratively evolve the OIA diagram via the JSON model — without manual HTML editing — using one of two defined workflows.
 
 ---
 
 ## Constraints
 
-- **Kein manuelles HTML** — Diagramm-Inhalte werden ausschließlich über `oia-model.json` geändert
-- **IDs sind stabil** — bestehende IDs (`#L1`–`#L9`, `#001`, ...) werden nicht umnummeriert ohne explizite Migration
-- **Strukturelle Modell-Änderungen** (neue Layer, ID-Schema-Änderungen) → erst als Delta zur Review vorlegen, nicht direkt committen
-- **Design Tokens unverändert** — keine neuen Farben einführen; Tokens stehen in `oia-site/src/styles/tokens.css`
-- **Excalidraw ist Skizze, nicht Source of Truth** — nie direkt aus Excalidraw ins Modell ohne Review-Schritt
-- **Ein Workflow pro Session** — A und B nicht mischen
+- **No manual HTML** — diagram content is changed exclusively via `oia-model.json`
+- **IDs are stable** — existing IDs (`#L1`–`#L9`, `#001`, ...) are not renumbered without an explicit migration
+- **Structural model changes** (new layers, ID schema changes) → present as a delta for review first, do not commit directly
+- **Design tokens unchanged** — no new colours introduced; tokens are in `oia-site/src/styles/tokens.css`
+- **Excalidraw is a sketch, not source of truth** — never copy directly from Excalidraw without a review step
+- **One workflow per session** — do not mix Workflow A and B
 
 ---
 
 ## Datenmodell-Referenz
 
-Das vollständige Schema ist in `oia-site/src/data/types.ts` typisiert. Kurzreferenz für häufige Änderungen:
+Full schema: `oia-site/src/data/types.ts`. Quick reference for common changes:
 
-### Element-IDs
-- Layer: `#L1`–`#L9`, Pipeline: `#L1b`, Panels: `#panel-left`, `#panel-right`
-- Neue Items: sequenziell ab dem höchsten bestehenden Zähler (`#001`, `#002`, ...)
-- Neue Layer: `#L10`, `#L11`, ... oder sprechende IDs bei Sonderrollen
+### Element IDs
+- Layers: `#L1`–`#L9`, Pipeline: `#L1b`, Panels: `#panel-left`, `#panel-right`
+- New items: sequential from the highest existing counter (`#001`, `#002`, ...)
+- New layers: `#L10`, `#L11`, ... or descriptive IDs for special roles
 
-### Container anlegen
+### Adding a container
 ```json
 {
   "id": "#L10",
@@ -59,7 +61,7 @@ Das vollständige Schema ist in `oia-site/src/data/types.ts` typisiert. Kurzrefe
 }
 ```
 
-### Item anlegen
+### Adding an item
 ```json
 {
   "id": "#087",
@@ -70,10 +72,10 @@ Das vollständige Schema ist in `oia-site/src/data/types.ts` typisiert. Kurzrefe
 }
 ```
 
-**Gültige `itemType`-Werte:**
+**Valid `itemType` values:**
 `actor` | `situation` | `usecase` | `solution` | `capability` | `feature` | `infrastructure` | `processingstep` | `datasource` | `concept`
 
-### Verbindung anlegen
+### Adding a connection
 ```json
 {
   "id": "conn-002",
@@ -86,83 +88,82 @@ Das vollständige Schema ist in `oia-site/src/data/types.ts` typisiert. Kurzrefe
 
 ---
 
-## Workflow A — Strukturell (Excalidraw-Skizze → Modell-Delta → HTML)
+## Schritte
 
-Für: neue Layer, Verschiebungen, neue Container-Hierarchien.
+### Workflow A — Structural (Excalidraw sketch → model delta → HTML)
+
+For: new layers, reorganisations, new container hierarchies.
 
 ```
-1. Nutzer skizziert Änderung in Excalidraw (Rechtecke = Container, grobe Position reicht)
-2. Nutzer exportiert als PNG und stellt es bereit
-3. Claude liest räumliche Struktur → erstellt Modell-Delta als JSON:
+1. User sketches the change in Excalidraw (rectangles = containers, rough position is enough)
+2. User exports as PNG and provides it
+3. Read the spatial structure → create a model delta as JSON:
    {
      "action": "add_layer",
      "element": { "id": "#L10", "containerType": "layer", "label": "Business Outcome", ... },
      "position": { "after": "#L9" }
    }
-4. Claude zeigt Delta zur Review: "Diese Änderungen habe ich erkannt — korrekt?"
-5. Nutzer bestätigt oder korrigiert
-6. Delta wird in oia-model.json gemerged
-7. npm run test  →  muss grün bleiben
-8. npm run dev   →  Diagramm visuell prüfen
+4. Present the delta for review: "These are the changes I recognised — correct?"
+5. User confirms or corrects
+6. Merge delta into oia-model.json
+7. npm run test  →  must stay green
+8. npm run dev   →  visually verify the diagram
 ```
 
-**Entscheidungsregel bei Schritt 3:** Wenn räumliche Intention unklar → Rückfrage vor Delta-Erstellung, kein "best guess" committen.
+> **Decision rule at Step 3:** If the spatial intention is unclear → ask before creating the delta; do not commit a "best guess".
 
 ---
 
-## Workflow B — Inhaltlich (Natürliche Sprache → Modell-Änderung → HTML)
+### Workflow B — Content (natural language → model change → HTML)
 
-Für: neues Item, geänderte Properties, neue Verbindung, Label-Korrektur.
+For: new items, changed properties, new connections, label corrections.
 
 ```
-1. Nutzer beschreibt Änderung:
-   z. B. "Füge unter L5 ein neues Capability-Item 'Detect Anomalies' hinzu"
-2. Claude erstellt das Element und zeigt es zur Review:
+1. User describes the change:
+   e.g. "Add a new Capability item 'Detect Anomalies' under L5"
+2. Create the element and present it for review:
    { "id": "#087", "type": "item", "itemType": "capability", "label": "Detect Anomalies", ... }
-3. Nutzer bestätigt
-4. Element wird in oia-model.json eingefügt (children-Array des Eltern-Containers aktualisieren)
-5. npm run test  →  muss grün bleiben
-6. npm run dev   →  Diagramm visuell prüfen
+3. User confirms
+4. Insert element into oia-model.json (update children array of the parent container)
+5. npm run test  →  must stay green
+6. npm run dev   →  visually verify the diagram
 ```
 
-**Entscheidungsregel bei Schritt 4:** Wenn `itemType` unklar → aus `context/oia-context.md` ableiten, nicht raten. Bei Konflikt mit bestehender Terminologie → Rückfrage.
+> **Decision rule at Step 4:** If `itemType` is unclear → derive from `context/oia-context.md`, do not guess. If a conflict with existing terminology arises → ask.
 
 ---
 
-## Offene Umsetzungsschritte (priorisiert)
+## Entscheidungsregeln
 
-| Schritt | Status | Beschreibung |
-|---|---|---|
-| JSON-Modell aus HTML extrahieren | ✅ Erledigt | `oia-site/src/data/oia-model.json` |
-| HTML-Renderer implementieren | ✅ Erledigt | `oia-site/src/renderer/` |
-| Excalidraw-Export | 🔲 Offen | `exportToExcalidraw(model)` → `.excalidraw`-Datei mit `customData`-IDs |
-| Workflow-B-Test: neues Element | 🔲 Offen | Layer `#L10 – Business Outcome` nach L9 hinzufügen |
-| View-System (Zoom-Levels) | 🔲 V3 | Overview-View + Detail-View pro Layer |
-| PNG-Export für LinkedIn | 🔲 V3 | puppeteer/html2canvas, 1200×627px |
+| Situation | Behaviour |
+|---|---|
+| Spatial intention in Workflow A is ambiguous | Ask — do not commit a best guess |
+| `itemType` unclear in Workflow B | Derive from `context/oia-context.md`; ask if still unclear |
+| Tests fail after model change | Revert the change and investigate before retrying |
+| Structural change affects ID schema | Propose migration plan; do not execute without confirmation |
+| Excalidraw and existing model diverge | Excalidraw is the sketch; the JSON model is authoritative |
 
 ---
 
 ## Akzeptanzkriterien
 
-Nach jeder Modell-Änderung:
+After every model change:
 
-- [ ] `npm run test` läuft grün (13+ Tests bestanden)
-- [ ] `npm run build` erzeugt fehlerfreies `dist/`
-- [ ] Diagramm im Browser zeigt die Änderung korrekt
-- [ ] Keine bestehenden IDs wurden umdefiniert oder gelöscht (außer explizit geplant)
-- [ ] Neue Elemente sind im `children`-Array ihres Eltern-Containers referenziert
+- [ ] `npm run test` passes (all tests green)
+- [ ] `npm run build` produces a clean `dist/`
+- [ ] The diagram in the browser shows the change correctly
+- [ ] No existing IDs were redefined or deleted (unless explicitly planned)
+- [ ] New elements are referenced in the `children` array of their parent container
 
-Nach strukturellen Änderungen zusätzlich:
-- [ ] Delta wurde vor dem Commit zur Review vorgelegt
-- [ ] `context/oia-context.md` bei Bedarf aktualisiert (neue Terminologie, Backlog-Status)
+After structural changes additionally:
+- [ ] Delta was presented for review before committing
+- [ ] `context/oia-context.md` updated if needed (new terminology, backlog status)
 
 ---
 
-## Bekannte Risiken und Entscheidungen
+## Output
 
-| Risiko | Entscheidung |
+| File | Action |
 |---|---|
-| Beliebige Verschachtelung kann zu inkonsistenten Modellen führen | Akzeptiert — Regeln werden im kreativen Prozess nicht erzwungen, später nachdefiniert |
-| Sketch→Model-Übersetzung ist fehleranfällig | Excalidraw ist explizit nur Skizze. Delta immer durch Review-Schritt |
-| Custom-Renderer = Wartungsaufwand | Gerechtfertigt — OIA ist kein C4/Software-Architektur-Framework, Structurizr passt nicht |
-| PNG-Export erfordert zusätzliches Tooling | Für V3 verschoben |
+| `oia-site/src/data/oia-model.json` | changed |
+| `context/oia-context.md` | changed (if new terminology introduced) |
