@@ -6,6 +6,43 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.2.0] — Upcoming
+
+### Added
+
+**Architecture Decisions**
+- ADR-0007: Semantic Versioning (SemVer) as the versioning scheme for OIA model + site — [#36](https://github.com/ruKurz/oi-architecture/issues/36)
+- ADR-0008: GitHub Releases with manual trigger as release strategy — [#37](https://github.com/ruKurz/oi-architecture/issues/37)
+- ADR-0010: Semantic Anchors as shared vocabulary layer for AI prompts — [#66](https://github.com/ruKurz/oi-architecture/issues/66)
+- ADR-0011: English as the sole project language — [#67](https://github.com/ruKurz/oi-architecture/issues/67)
+
+**Project Governance**
+- `GOVERNANCE.md` — benevolent dictator model, maintainer identity, ADR-based decision process, evolution path — [#40](https://github.com/ruKurz/oi-architecture/issues/40)
+- `_archive/` directory for superseded file versions — [#16](https://github.com/ruKurz/oi-architecture/issues/16)
+- `diagrams/README.md` — documents active visualization and relationship to renderer — [#5](https://github.com/ruKurz/oi-architecture/issues/5)
+- `drafts/README.md` — documents WIP lifecycle (drafts → articles or discard) — [#8](https://github.com/ruKurz/oi-architecture/issues/8)
+- `context/semantic-anchors.md` — active semantic anchor registry (MECE, Pyramid Principle, BLUF, DDD, Conventional Commits, Diátaxis, SemVer)
+
+**CI/CD**
+- PR check: typecheck step (`tsc --noEmit`) — [#69](https://github.com/ruKurz/oi-architecture/issues/69)
+- PR check: ADR-0006 prompt compliance validator — checks all prompts for required sections — [#70](https://github.com/ruKurz/oi-architecture/issues/70)
+
+**Tests**
+- 18 new tests in `tests/views.spec.ts` covering all 4 view functions (About, Contribute, Motivation, Legal) — 50 tests total — [#71](https://github.com/ruKurz/oi-architecture/issues/71)
+
+### Changed
+
+- `CONVENTIONS.md` §2.1: root-level files (`CLAUDE.md`, `README.md`, `CONVENTIONS.md`, etc.) explicitly classified as DEV — [#74](https://github.com/ruKurz/oi-architecture/issues/74)
+- `CONVENTIONS.md` §2.3: AC verification requirement added before `Closes #N` — [#44](https://github.com/ruKurz/oi-architecture/issues/44)
+- `prompts/development/create-issue.md`: dependency check and AC verifiability check added to Step 4 — [#44](https://github.com/ruKurz/oi-architecture/issues/44)
+- All prompts in `prompts/`: overhauled to English, unified structure, section headings renamed to English — [#68](https://github.com/ruKurz/oi-architecture/issues/68)
+- `README.md`: added Legacy & Archived Content section and Governance link — [#16](https://github.com/ruKurz/oi-architecture/issues/16), [#40](https://github.com/ruKurz/oi-architecture/issues/40)
+- `CLAUDE.md`: ADR enforcement and Semantic Anchors integrated into agent contracts
+
+### Fixed
+
+- Renderer: hardcoded `rgba(44,242,194,...)` inline styles replaced with CSS variables (`--accent2-subtle`, `--accent2-dim`, `--accent2-mid`, `--accent2-high`) — [#2](https://github.com/ruKurz/oi-architecture/issues/2)
+
 ## [0.1.0] — 2026-03-12
 
 ### Added
