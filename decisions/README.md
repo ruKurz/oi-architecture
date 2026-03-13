@@ -9,7 +9,7 @@ Key principle: **Decision first** — the decision is stated upfront, rationale 
 
 | ADR | Title | Status | Type | Date |
 |---|---|---|---|---|
-| [ADR-0001](./0001-language-and-naming-conventions.md) | Language and Naming Conventions | Accepted | DEV | 2026-03-11 |
+| [ADR-0001](./0001-language-and-naming-conventions.md) | Language and Naming Conventions | Accepted (language section superseded by ADR-0011) | DEV | 2026-03-11 |
 | [ADR-0002](./0002-biz-dev-separation.md) | BIZ/DEV Separation as Project Rule | Accepted | BOTH | 2026-03-11 |
 | [ADR-0003](./0003-github-issues-as-task-tracker.md) | GitHub Issues as Official Task Tracker | Accepted | DEV | 2026-03-11 |
 | [ADR-0004](./0004-adr-format-mueller-dienst.md) | ADR Format: Müller/Dienst Methodology | Accepted | DEV | 2026-03-11 |
@@ -19,6 +19,7 @@ Key principle: **Decision first** — the decision is stated upfront, rationale 
 | ADR-0008 | *(skipped)* | — | — | — |
 | [ADR-0009](./0009-repo-as-source-of-truth-for-contributor-documentation.md) | Repo as Source of Truth — Website as Entry Point | Accepted | DEV | 2026-03-12 |
 | [ADR-0010](./0010-semantic-anchors-as-vocabulary-layer.md) | Semantic Anchors as Shared Vocabulary Layer | Proposed | DEV | 2026-03-12 |
+| [ADR-0011](./0011-english-as-project-language.md) | English as the Sole Project Language | Proposed | DEV | 2026-03-13 |
 
 ## ADR Acceptance Rule
 
