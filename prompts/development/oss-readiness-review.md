@@ -5,7 +5,7 @@
 
 ---
 
-## Kontext
+## Context
 
 Read before execution:
 - `README.md` — first impression, target audience, quick start
@@ -20,7 +20,7 @@ Active repository: determined via `git remote get-url origin`.
 
 ---
 
-## Ziel
+## Goal
 
 At the end, a complete review document exists at `reviews/oss-readiness-review-YYYY-MM-DD.md`, evaluating the project's strengths, weaknesses, and missing elements from three external perspectives — as a basis for targeted improvements before public release.
 
@@ -47,7 +47,7 @@ The analysis is conducted simultaneously from three external perspectives:
 
 ---
 
-## Schritte
+## Steps
 
 ### 1 · First impression
 
@@ -148,7 +148,7 @@ Explain why. Focus: does the answer help the project survive public scrutiny?
 
 ---
 
-## Entscheidungsregeln
+## Decision rules
 
 | Situation | Behaviour |
 |---|---|
@@ -159,7 +159,7 @@ Explain why. Focus: does the answer help the project survive public scrutiny?
 
 ---
 
-## Akzeptanzkriterien
+## Acceptance criteria
 
 - [ ] All 10 sections are present and filled in
 - [ ] §8 (Top 10) is ranked by impact, not alphabetically

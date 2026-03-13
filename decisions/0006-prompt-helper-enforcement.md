@@ -7,9 +7,9 @@
 
 ## Context
 
-During the session establishing conventions, `prompts/development/introduce-conventions.md` was created directly without going through the prompt-helper process. This resulted in three fixable issues: a stale Ziel section, non-concrete Inputs, and an unmarked irreversible step. The issues were caught and corrected retroactively.
+During the session establishing conventions, `prompts/development/introduce-conventions.md` was created directly without going through the prompt-helper process. This resulted in three fixable issues: a stale Goal section, non-concrete Inputs, and an unmarked irreversible step. The issues were caught and corrected retroactively.
 
-The prompt-helper exists to prevent exactly this: prompts that drift from the project's structural requirements (explicit Constraints, measurable Akzeptanzkriterien, no inline context). Without enforcement, the helper is a guideline, not a rule.
+The prompt-helper exists to prevent exactly this: prompts that drift from the project's structural requirements (explicit Constraints, measurable Acceptance criteria, no inline context). Without enforcement, the helper is a guideline, not a rule.
 
 Two enforcement levels were considered: (1) AI-level instruction (CLAUDE.md) to prevent non-compliant prompts from being created in the first place, and (2) CI validation as a safety net for structural checks.
 
@@ -19,7 +19,7 @@ Quality attribute affected: maintainability (prompt quality degrades without enf
 
 **Easier:** AI assistant cannot bypass the helper even if instructed to create a quick prompt; structural issues are caught before files are committed; prompt library stays consistent.
 **Harder:** Overhead per prompt is higher — the helper adds a planning step before writing; for genuinely simple prompts, this feels bureaucratic (but simple prompts are explicitly out of scope per the helper's Tanzbereich definition).
-**Required adjustments:** CLAUDE.md must contain the rule "Kein Prompt ohne Helper" with explicit reference to `prompts/templates/prompt-helper.md`; a GitHub Actions workflow step must validate required sections (`## Kontext`, `## Ziel`, `## Constraints`, `## Akzeptanzkriterien`) in `prompts/**/*.md` files.
+**Required adjustments:** CLAUDE.md must contain the rule "No prompt without the helper" with explicit reference to `prompts/templates/prompt-helper.md`; a GitHub Actions workflow step must validate required sections (`## Context`, `## Goal`, `## Constraints`, `## Acceptance criteria`) in `prompts/**/*.md` files.
 
 ## Alternatives
 

@@ -5,7 +5,7 @@
 
 ---
 
-## Kontext
+## Context
 
 Read before execution:
 - `CONVENTIONS.md` — binding rules
@@ -16,7 +16,7 @@ Project root: current working directory.
 
 ---
 
-## Ziel
+## Goal
 
 All new findings (convention violations, ADR breaches, structural problems) are created as GitHub Issues — without duplicates, without implementation.
 
@@ -33,7 +33,7 @@ All new findings (convention violations, ADR breaches, structural problems) are 
 
 ---
 
-## Schritte
+## Steps
 
 ### Step 0 — Discovery
 
@@ -87,7 +87,7 @@ For every finding: name it concretely (file + line where possible), note the pri
 
 #### Dimension 7 · Documentation & prompts
 - README.md up to date (reflects current project structure)?
-- Prompts missing the 4 required sections (`## Kontext`, `## Ziel`, `## Constraints`, `## Akzeptanzkriterien`)?
+- Prompts missing the 4 required sections (`## Context`, `## Goal`, `## Constraints`, `## Acceptance criteria`)?
 - Prompts with hardcoded paths that may be outdated?
 - Documentation that no longer matches the code?
 
@@ -168,7 +168,7 @@ Show after completion:
 
 ---
 
-## Entscheidungsregeln
+## Decision rules
 
 | Situation | Behaviour |
 |---|---|
@@ -182,7 +182,7 @@ Show after completion:
 
 ---
 
-## Akzeptanzkriterien
+## Acceptance criteria
 
 - [ ] Step 0 executed: discovery + ADR list + open issues loaded
 - [ ] All 7 dimensions + all found ADRs checked
