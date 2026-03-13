@@ -1,158 +1,158 @@
 # OIA Prompt Helper
-> Erstellt strukturierte, ausführbare Prompts für das OIA-Projekt.
+> Creates structured, executable prompts for the OIA project.
 
 ---
 
-## Tanzbereich — Was der Helper erstellt (und was nicht)
+## Scope — What the helper creates (and what it does not)
 
-Der Prompt Helper erstellt Prompts, die **dauerhafte Änderungen am Projekt** bewirken:
+The Prompt Helper creates prompts that **produce lasting changes to the project**:
 
-| Erstellt | Nicht erstellt |
+| Creates | Does not create |
 |---|---|
-| Workflows, die einen neuen Entwicklungsprozess einführen | Session-Commands für Einzel-Aktionen |
-| Setup-Prompts, die Infrastruktur anlegen (Dateien, Konventionen, Slash-Commands) | Prompts, die einen einzelnen Wert / eine einzelne Beobachtung erfassen |
-| Prozess-Prompts, die beschreiben wie etwas wiederholt gemacht wird | Checklisten für einmalige Schritte |
-| Prompts, die das Modell, die Darstellung oder das Tooling erweitern | Direkte Ausführung ohne Prompt als Zwischenartefakt |
+| Workflows that introduce a new development process | Session commands for one-off actions |
+| Setup prompts that establish infrastructure (files, conventions, slash commands) | Prompts that capture a single value or observation |
+| Process prompts that describe how something is done repeatedly | Checklists for one-time steps |
+| Prompts that extend the model, rendering, or tooling | Direct execution without a prompt as intermediate artefact |
 
-**Faustregel:** Wenn der resultierende Prompt nur einmal sinnvoll ist → kein Prompt-Helper-Fall.
-Wenn der Prompt eine wiederholbare Arbeitsweise im Projekt etabliert → Prompt-Helper-Fall.
+**Rule of thumb:** If the resulting prompt is only useful once → not a Prompt Helper case.
+If the prompt establishes a repeatable way of working in the project → Prompt Helper case.
 
-**Beispiele für gültige Prompt-Helper-Aufgaben:**
-- "Erstelle einen Prompt, der Todo-Infrastruktur im Projekt anlegt (Datei + Slash-Command)"
-- "Erstelle einen Prompt, der einen neuen Diagramm-Export-Workflow einführt"
-- "Erstelle einen Prompt, der das Modell um einen neuen Layer-Typ erweitert"
+**Examples of valid Prompt Helper tasks:**
+- "Create a prompt that sets up todo infrastructure in the project (file + slash command)"
+- "Create a prompt that introduces a new diagram export workflow"
+- "Create a prompt that extends the model with a new layer type"
 
-**Beispiele für ungültige Aufgaben (direkter Chat reicht):**
-- "Erfasse diese Beobachtung für mich"
-- "Füge diesen Eintrag zu einer Liste hinzu"
-
----
-
-## System-Kontext
-
-**Lies vor dem Erstellen des Prompts:**
-- `context/oia-context.md` — Architekturschichten, Terminologie, Backlog (DE)
-- `context/oia-project-instruction-prompt.md` — Rolle, Mission, Zielgruppe
-
-**Scanne auf bereits vorhandene ähnliche Prompts:**
-- `prompts/development/` — technische Ausführungs-Prompts
-- `prompts/` — alle weiteren Prompts inkl. Vorgänger-Versionen
-
-**Single Source of Truth für Modellinhalte:** `oia-site/src/data/oia-model.json`
-
-**Ausführungskontext:** Nutze relative Pfade — Claude kennt das Arbeitsverzeichnis aus der Session.
+**Examples of invalid tasks (direct chat is sufficient):**
+- "Record this observation for me"
+- "Add this entry to a list"
 
 ---
 
-## Prompt-Typ
+## System context
 
-Wähle den Typ, bevor du die Struktur festlegst:
+**Read before creating the prompt:**
+- `context/oia-context.md` — architecture layers, terminology, backlog (DE)
+- `context/oia-project-instruction-prompt.md` — role, mission, target audience
 
-| Typ | Wann | Typische Outputs |
+**Scan for existing similar prompts:**
+- `prompts/development/` — technical execution prompts
+- `prompts/` — all other prompts including predecessor versions
+
+**Single source of truth for model content:** `oia-site/src/data/oia-model.json`
+
+**Execution context:** Use relative paths — Claude knows the working directory from the session.
+
+---
+
+## Prompt type
+
+Choose the type before fixing the structure:
+
+| Type | When | Typical outputs |
 |---|---|---|
-| **Execution** | Baue / implementiere etwas | Dateien, Code, Konfiguration |
-| **Generation** | Erstelle Inhalte | Artikel, Diagramme, JSON-Daten |
-| **Refinement** | Aktualisiere / verbessere Bestehendes | Geänderte Dateien, neue Version |
+| **Execution** | Build / implement something | Files, code, configuration |
+| **Generation** | Create content | Articles, diagrams, JSON data |
+| **Refinement** | Update / improve existing artefacts | Changed files, new version |
 
-**Typ dieser Aufgabe:** `{EXECUTION | GENERATION | REFINEMENT}`
-
----
-
-## Aufgabe
-
-### Ausgangssituation
-
-{BESCHREIBUNG_DES_PROBLEMS_ODER_VORHABENS}
-
-### Ausgangsartefakte
-
-- `{BESTEHENDER_PROMPT_ODER_DATEI}` — Rolle: `{Ausgangspunkt | Referenz | wird ersetzt}`
-- `{WEITERE_REFERENZEN}`
-
-### Änderungen gegenüber Vorgänger
-
-> Nur ausfüllen bei Refinement. Bei neuen Prompts: "Neu — kein Vorgänger."
-
-{DELTA_ZUM_VORGAENGER}
+**Type of this task:** `{EXECUTION | GENERATION | REFINEMENT}`
 
 ---
 
-## OIA-spezifische Regeln
+## Task
 
-Diese Regeln gelten für jeden generierten Prompt:
+### Starting situation
 
-1. **Terminologie** — Begriffe aus `context/oia-context.md` Abschnitt "Terminologie" werden nicht umdefiniert
-2. **JSON-Modell-Änderungen** — Strukturelle Änderungen an `oia-model.json` (neue Layer, ID-Schema) → erst zur Review vorlegen, nicht direkt ausführen
-3. **Kein Inline-Kontext** — Kontext wird per Dateipfad referenziert, nicht wiederholt
-4. **Ein Prompt, eine Aufgabe** — Scope-Creep wird explizit zurückgewiesen
-5. **Irreversible Schritte markieren** — Git-Operationen, Dateiüberschreibungen, Deployments
+{DESCRIPTION_OF_THE_PROBLEM_OR_INITIATIVE}
+
+### Source artefacts
+
+- `{EXISTING_PROMPT_OR_FILE}` — role: `{Starting point | Reference | will be replaced}`
+- `{FURTHER_REFERENCES}`
+
+### Changes relative to predecessor
+
+> Fill in only for Refinement. For new prompts: "New — no predecessor."
+
+{DELTA_TO_PREDECESSOR}
 
 ---
 
-## Output-Schema für den generierten Prompt
+## OIA-specific rules
+
+These rules apply to every generated prompt:
+
+1. **Terminology** — terms from `context/oia-context.md` section "Terminologie" are not redefined
+2. **JSON model changes** — structural changes to `oia-model.json` (new layers, ID schema) → present for review first, do not execute directly
+3. **No inline context** — context is referenced by file path, not repeated as prose
+4. **One prompt, one task** — scope creep is explicitly rejected
+5. **Mark irreversible steps** — git operations, file overwrites, deployments
+
+---
+
+## Output schema for the generated prompt
 
 ```
 ## Kontext
-Welcher Teil des OIA-Projekts ist betroffen?
-Welche Dateien sind relevant (nur Pfade, kein Inhalt)?
+Which part of the OIA project is affected?
+Which files are relevant (paths only, no content)?
 
 ## Ziel
-Ein Satz: Was soll am Ende existieren oder sich verändert haben?
+One sentence: what should exist or have changed at the end?
 
 ## Constraints
-Was darf der Prompt NICHT tun?
-(z. B. "Ändert kein bestehendes CSS", "Berührt oia-model.json nicht")
+What must the prompt NOT do?
+(e.g. "Does not change existing CSS", "Does not touch oia-model.json")
 
 ## Inputs
-Dateien, die gelesen werden müssen — mit konkreten Pfaden.
+Files that must be read — with concrete paths.
 
 ## Schritte
-Nummerierte, ausführbare Schritte.
-Jeder Schritt hat genau ein Ergebnis.
+Numbered, executable steps.
+Each step has exactly one result.
 
 ## Entscheidungsregeln
-Was tun bei Unklarheiten oder Konflikten?
-(z. B. "Wenn ID-Konflikt → frage nach, führe nicht aus")
+What to do in case of ambiguity or conflict?
+(e.g. "If ID conflict → ask, do not execute")
 
 ## Akzeptanzkriterien
-Woran erkennt man, dass der Prompt erfolgreich ausgeführt wurde?
-(z. B. "npm run test läuft grün", "Build erzeugt dist/")
+How do you know the prompt was executed successfully?
+(e.g. "npm run test passes", "Build produces dist/")
 
 ## Output
-Welche Dateien werden erstellt oder geändert?
-Format: `pfad/zur/datei.ext` — erstellt | geändert | gelöscht
+Which files are created or changed?
+Format: `path/to/file.ext` — created | changed | deleted
 ```
 
 ---
 
-## Few-Shot: Beispiel eines guten OIA-Prompts
+## Few-shot: example of a good OIA prompt
 
-> Referenz: `prompts/development/build-microsite.md`
+> Reference: `prompts/development/build-microsite.md`
 
-Was diesen Prompt gut macht:
-- **Kontext** ist kurz — nur Projektpfad + Architekturübersicht, kein Fließtext
-- **Constraints** sind explizit — "Kein manuelles HTML", "Kein Backend", "Design Tokens 1:1"
-- **Schritte** sind nummeriert und phasenweise — jede Phase hat ein abgeschlossenes Artefakt
-- **Ausführungsreihenfolge** am Ende — auch bei verteilter Arbeit klar, was zuerst kommt
-- **Akzeptanzkriterien** eingebettet in Phasen — z. B. "Tests müssen grün sein"
+What makes this prompt good:
+- **Kontext** is short — only project path + architecture overview, no prose
+- **Constraints** are explicit — "No manual HTML", "No backend", "Design tokens 1:1"
+- **Schritte** are numbered and phase-based — each phase has a completed artefact
+- **Execution order** at the end — clear even for distributed work
+- **Akzeptanzkriterien** embedded in phases — e.g. "Tests must pass"
 
-Was ein schlechter OIA-Prompt macht (Anti-Pattern):
-- Beschreibt das Was, aber nicht das Wie → Agent trifft zu viele eigene Entscheidungen
-- Enthält den Projektkontext als Fließtext statt als Pfad-Referenz → veraltet sofort
-- Vermischt Modell-Änderung + Renderer-Änderung + Deployment in einem Prompt → nicht isolierbar
+What a bad OIA prompt does (anti-patterns):
+- Describes the what, but not the how → agent makes too many independent decisions
+- Contains project context as prose instead of path references → goes stale immediately
+- Mixes model change + renderer change + deployment in one prompt → not isolatable
 
 ---
 
-## Ergebnis
+## Done
 
-Du bist fertig, wenn:
+You are finished when:
 
-- [ ] Prompt-Typ ist festgelegt
-- [ ] `Constraints` sind explizit formuliert (nicht nur implizit)
-- [ ] `Akzeptanzkriterien` sind messbar (nicht "sieht gut aus")
-- [ ] Kein Projektkontext ist inline wiederholt — nur Pfad-Referenzen
-- [ ] Der Prompt ist unter folgendem Pfad gespeichert:
+- [ ] Prompt type is defined
+- [ ] `Constraints` are explicitly stated (not just implied)
+- [ ] `Akzeptanzkriterien` are measurable (not "looks good")
+- [ ] No project context is repeated inline — path references only
+- [ ] The prompt is saved at the following path:
 
 ```
-{ZIELPFAD_ZUM_PROMPT}
+{TARGET_PATH_FOR_PROMPT}
 ```

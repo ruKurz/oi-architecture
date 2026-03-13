@@ -24,15 +24,20 @@ See [ADR-0002](decisions/0002-biz-dev-separation.md) for rationale.
 
 ## 2.2 Language
 
+**Rule:** All project artifacts are written in English. The only exception is LinkedIn articles, which remain in German for a German-speaking audience.
+
 | Context | Language | Examples |
 |---|---|---|
 | Code, comments, commits, filenames | English | `renderLayerAsHtml()`, `feat: add zoom constants` |
 | Types, interfaces, JSON keys | English | `ContentItem`, `itemType`, `containerType` |
-| Articles, LinkedIn posts | German | Author's choice |
-| Prompts | German | Author's choice |
-| ADRs | English (fully — DEV artifact) | `ADR-0001: Use Vite and TypeScript for renderer` |
+| ADRs | English | `ADR-0011: English as the Sole Project Language` |
+| Prompts | English | `prompts/development/integrate-concept.md` |
+| Context files, notes, documentation | English | `context/oia-context.md`, `docs/` |
+| LinkedIn articles | German | Author's choice for German-speaking audience |
 
-See [ADR-0001](decisions/0001-language-and-naming-conventions.md) for rationale.
+Existing German files in `context/`, `notes/`, and `prompts/` are known exceptions — not retroactively translated; follow English on creation or next significant edit.
+
+See [ADR-0011](decisions/0011-english-as-project-language.md) for rationale.
 
 ---
 
