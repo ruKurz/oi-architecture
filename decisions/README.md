@@ -15,8 +15,8 @@ Key principle: **Decision first** — the decision is stated upfront, rationale 
 | [ADR-0004](./0004-adr-format-mueller-dienst.md) | ADR Format: Müller/Dienst Methodology | Accepted | DEV | 2026-03-11 |
 | [ADR-0005](./0005-conventional-commits-with-content-type.md) | Conventional Commits with Custom Content Type | Accepted | DEV | 2026-03-11 |
 | [ADR-0006](./0006-prompt-helper-enforcement.md) | Prompt-Helper Enforcement via CLAUDE.md | Accepted | DEV | 2026-03-11 |
-| ADR-0007 | *(skipped)* | — | — | — |
-| ADR-0008 | *(skipped)* | — | — | — |
+| [ADR-0007](./0007-versioning-scheme.md) | Versioning Scheme — Semantic Versioning for OIA | Proposed | BOTH | 2026-03-13 |
+| [ADR-0008](./0008-release-strategy.md) | Release Strategy — GitHub Releases with Manual Trigger | Proposed | DEV | 2026-03-13 |
 | [ADR-0009](./0009-repo-as-source-of-truth-for-contributor-documentation.md) | Repo as Source of Truth — Website as Entry Point | Accepted | DEV | 2026-03-12 |
 | [ADR-0010](./0010-semantic-anchors-as-vocabulary-layer.md) | Semantic Anchors as Shared Vocabulary Layer | Proposed | DEV | 2026-03-12 |
 | [ADR-0011](./0011-english-as-project-language.md) | English as the Sole Project Language | Proposed | DEV | 2026-03-13 |
