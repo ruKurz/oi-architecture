@@ -223,9 +223,6 @@ oi-architecture/
 
 ## Current Status
 
-**V1** — The conceptual 7-layer architecture is defined and published.
-**V2 (in progress)** — Focus areas:
-
 | Item                                                                                      | Priority |
 |-------------------------------------------------------------------------------------------|----------|
 | Knowledge Core — central knowledge store (Semantic Layer, Index, Access Control, Graph)   | 🔴 High  |
@@ -286,8 +283,8 @@ The OIA model went through several visual iterations before the current data-dri
 
 | Version | Artifact | Description |
 |---|---|---|
-| V1 | [images/oia-model-v1.png](images/oia-model-v1.png) | First static diagram — establishes the 7-layer structure |
-| V2 pre | [diagrams/oia-diagram-v2.html](diagrams/oia-diagram-v2.html) | Interactive HTML prototype — the design language of the renderer |
-| V2 | `oia-site/` | Production renderer: TypeScript + Vite, fully data-driven from `oia-model.json` |
+| pre V1 | [images/oia-model-v1.png](images/oia-model-v1.png) | First static diagram — establishes the 7-layer structure |
+| pre V2 | [diagrams/oia-diagram-v2.html](diagrams/oia-diagram-v2.html) | Interactive HTML prototype — the design language of the renderer |
+| Version 0.1.0 | `oia-site/` | Production renderer: TypeScript + Vite, fully data-driven from `oia-model.json` |
 
 > A diagram gallery showing the visual evolution of OIA is planned for the microsite.
