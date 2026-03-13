@@ -110,7 +110,7 @@ function renderPipeline(model: OIAModel, layer: Container): string {
       const isLast = i === arr.length - 1
       const isOutput = item.properties?.variant === 'output'
       const style = isOutput
-        ? ' style="border-color:rgba(44,242,194,0.3);color:rgba(44,242,194,0.8)"'
+        ? ' style="border-color:var(--accent2-dim);color:var(--accent2-high)"'
         : ''
       const arrow = !isLast ? '<div class="pipeline-arrow">→</div>' : ''
       return `<div class="pipeline-step"${style}>${item.icon || ''}<br>${item.label}</div>${arrow}`
@@ -171,10 +171,10 @@ export function renderLayer(model: OIAModel, layer: Container): HTMLElement {
     const numId = layer.id.replace('#', '')
     wrapper.innerHTML = `
       <div class="layer-header">
-        <span class="layer-num" style="color:#2cf2c2;opacity:0.6">${numId}</span>
+        <span class="layer-num" style="color:var(--accent2);opacity:0.6">${numId}</span>
         <span class="layer-title">${layer.label}</span>
         <span class="core-badge">CENTRAL COMPONENT</span>
-        <span class="layer-desc" style="color:rgba(44,242,194,0.5)">${layer.description || ''}</span>
+        <span class="layer-desc" style="color:var(--accent2-mid)">${layer.description || ''}</span>
         ${getBadgeIcons(model, layer.badges)}
       </div>
       ${renderKnowledgeCore(model, layer)}

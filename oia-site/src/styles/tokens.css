@@ -16,4 +16,8 @@
   --glow: 0 0 20px rgba(77, 184, 255, 0.15);
   --glow-strong: 0 0 30px rgba(77, 184, 255, 0.3);
   --core-glow: 0 0 40px rgba(44, 242, 194, 0.2), 0 0 80px rgba(44, 242, 194, 0.08);
+  --accent2-subtle: rgba(44, 242, 194, 0.2);
+  --accent2-dim: rgba(44, 242, 194, 0.3);
+  --accent2-mid: rgba(44, 242, 194, 0.5);
+  --accent2-high: rgba(44, 242, 194, 0.8);
 }
