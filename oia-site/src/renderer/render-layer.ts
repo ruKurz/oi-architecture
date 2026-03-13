@@ -158,6 +158,21 @@ function getBadgeIcons(model: OIAModel, badgeIds: string[] | undefined): string 
     .join('')
 }
 
+type LayerRenderer = (model: OIAModel, layer: Container) => string
+
+const layerRenderers: Record<string, LayerRenderer> = {
+  '#L9': (model, layer) => `<div class="actors-grid">${renderActorsLayer(model, layer)}</div>`,
+  '#L8': (model, layer) => `<div class="sit-grid">${renderSituationLayer(model, layer)}</div>`,
+  '#L7': (model, layer) => `<div class="usecase-grid">${renderUseCaseLayer(model, layer)}</div>`,
+  '#L6': (model, layer) => `<div class="sol-grid">${renderSolutionsLayer(model, layer)}</div>`,
+  '#L5': (model, layer) => `<div class="cap-grid">${renderCapabilitiesLayer(model, layer)}</div>`,
+  '#L4': (model, layer) => `<div class="tag-row">${renderFeaturesLayer(model, layer)}</div>`,
+  '#L2': (model, layer) => `<div class="tag-row">${renderInfrastructureLayer(model, layer)}</div>`,
+  '#L10': (model, layer) => `<div class="outcome-grid">${renderOutcomeLayer(model, layer)}</div>`,
+  '#L1b': renderPipeline,
+  '#L1': (model, layer) => `<div class="data-grid">${renderDataSources(model, layer)}</div>`,
+}
+
 export function renderLayer(model: OIAModel, layer: Container): HTMLElement {
   const isCore = layer.meta?.highlighted === true
   const isPipeline = layer.containerType === 'pipeline'
@@ -184,29 +199,8 @@ export function renderLayer(model: OIAModel, layer: Container): HTMLElement {
 
   wrapper.className = 'layer'
   const numId = layer.id.replace('#', '')
-  let content = ''
-
-  if (layer.id === '#L9') {
-    content = `<div class="actors-grid">${renderActorsLayer(model, layer)}</div>`
-  } else if (layer.id === '#L8') {
-    content = `<div class="sit-grid">${renderSituationLayer(model, layer)}</div>`
-  } else if (layer.id === '#L7') {
-    content = `<div class="usecase-grid">${renderUseCaseLayer(model, layer)}</div>`
-  } else if (layer.id === '#L6') {
-    content = `<div class="sol-grid">${renderSolutionsLayer(model, layer)}</div>`
-  } else if (layer.id === '#L5') {
-    content = `<div class="cap-grid">${renderCapabilitiesLayer(model, layer)}</div>`
-  } else if (layer.id === '#L4') {
-    content = `<div class="tag-row">${renderFeaturesLayer(model, layer)}</div>`
-  } else if (layer.id === '#L2') {
-    content = `<div class="tag-row">${renderInfrastructureLayer(model, layer)}</div>`
-  } else if (layer.id === '#L10') {
-    content = `<div class="outcome-grid">${renderOutcomeLayer(model, layer)}</div>`
-  } else if (isPipeline) {
-    content = renderPipeline(model, layer)
-  } else if (layer.id === '#L1') {
-    content = `<div class="data-grid">${renderDataSources(model, layer)}</div>`
-  }
+  const renderer = layerRenderers[layer.id] ?? (isPipeline ? renderPipeline : null)
+  const content = renderer ? renderer(model, layer) : ''
 
   wrapper.innerHTML = `
     <div class="layer-header">
