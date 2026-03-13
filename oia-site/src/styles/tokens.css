@@ -1,4 +1,24 @@
 :root {
+  /* ── Layout ── */
+  --nav-height: 44px;
+  --max-width: 1440px;
+  --padding-x: 24px;
+  --page-max-width: 760px;
+  --detail-max-width: 800px;
+
+  /* ── Border radius ── */
+  --radius-sm: 4px;
+  --radius-chip: 5px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+
+  /* ── Z-index layers ── */
+  --z-base: 1;
+  --z-zoom: 100;
+  --z-nav: 200;
+  --z-fab: 300;
+
+  /* ── Colors ── */
   --bg: #050d1a;
   --bg2: #081222;
   --panel: #0b1a2e;
