@@ -4,15 +4,15 @@
     </div>`}).join("")}function N(e,t){return t.children.map(n=>{const i=l(e,n);return i?`<span class="sit-item">${i.label}</span>`:""}).join("")}function P(e,t){return t.children.map(n=>{const i=l(e,n);return i?`<span class="usecase-item"><span class="usecase-dot"></span>${i.label}</span>`:""}).join("")}function R(e,t){return t.children.map(n=>{const i=l(e,n);return i?`<div class="sol-item"><span class="sol-icon">${i.icon||""}</span>${i.label}</div>`:""}).join("")}function j(e,t){return t.children.map(n=>{const i=l(e,n);return i?`<span class="cap-item"><span class="cap-dot"></span>${i.label}</span>`:""}).join("")}function H(e,t){return t.children.map(n=>{const i=l(e,n);return i?`<span class="tag mono accent2">${i.label}</span>`:""}).join("")}function K(e,t){return`<div class="core-inner">${t.children.map(i=>{const a=l(e,i);if(!a||a.type!=="container")return"";const o=a.children.map(s=>{const c=l(e,s);return c?c.label:""}).join("<br>");return`<div class="core-block" data-id="${a.id}" style="cursor:pointer">
       <div class="core-block-title">${a.label}</div>
       <div class="core-block-items">${o}</div>
-    </div>`}).join("")}</div>`}function V(e,t){return t.children.map(n=>{const i=l(e,n);return i?`<span class="tag"><span class="dot"></span>${i.label}</span>`:""}).join("")}function B(e,t){return`<div class="pipeline-row">${t.children.map((i,a,o)=>{const s=l(e,i);if(!s)return"";const c=a===o.length-1,u=s.properties?.variant==="output"?' style="border-color:rgba(44,242,194,0.3);color:rgba(44,242,194,0.8)"':"",m=c?"":'<div class="pipeline-arrow">→</div>';return`<div class="pipeline-step"${u}>${s.icon||""}<br>${s.label}</div>${m}`}).join("")}</div>`}function W(e,t){return t.children.map(n=>{const i=l(e,n);if(!i)return"";const a=Array.isArray(i.properties?.outcome_category)?i.properties.outcome_category.join(" · "):i.properties?.outcome_category||"";return`<div class="outcome-item">
+    </div>`}).join("")}</div>`}function V(e,t){return t.children.map(n=>{const i=l(e,n);return i?`<span class="tag"><span class="dot"></span>${i.label}</span>`:""}).join("")}function B(e,t){return`<div class="pipeline-row">${t.children.map((i,a,o)=>{const s=l(e,i);if(!s)return"";const c=a===o.length-1,u=s.properties?.variant==="output"?' style="border-color:var(--accent2-dim);color:var(--accent2-high)"':"",m=c?"":'<div class="pipeline-arrow">→</div>';return`<div class="pipeline-step"${u}>${s.icon||""}<br>${s.label}</div>${m}`}).join("")}</div>`}function W(e,t){return t.children.map(n=>{const i=l(e,n);if(!i)return"";const a=Array.isArray(i.properties?.outcome_category)?i.properties.outcome_category.join(" · "):i.properties?.outcome_category||"";return`<div class="outcome-item">
       <span class="outcome-label">${i.label}</span>
       ${a?`<span class="outcome-categories">${a}</span>`:""}
     </div>`}).join("")}function G(e,t){return t.children.map(n=>{const i=l(e,n);return i?`<div class="data-item"><span class="data-icon">${i.icon||""}</span>${i.label}</div>`:""}).join("")}function f(e,t){return!t||t.length===0?"":t.map(n=>{const i=e.badges.find(a=>a.id===n);return i?`<span class="badge-icon" title="${i.label}: ${i.description}">${i.icon}</span>`:""}).join("")}function F(e,t){const n=t.meta?.highlighted===!0,i=t.containerType==="pipeline",a=document.createElement("div");if(a.dataset.id=t.id,a.style.cursor="pointer",n){a.className="layer-core";const c=t.id.replace("#","");return a.innerHTML=`
       <div class="layer-header">
-        <span class="layer-num" style="color:#2cf2c2;opacity:0.6">${c}</span>
+        <span class="layer-num" style="color:var(--accent2);opacity:0.6">${c}</span>
         <span class="layer-title">${t.label}</span>
         <span class="core-badge">CENTRAL COMPONENT</span>
-        <span class="layer-desc" style="color:rgba(44,242,194,0.5)">${t.description||""}</span>
+        <span class="layer-desc" style="color:var(--accent2-mid)">${t.description||""}</span>
         ${f(e,t.badges)}
       </div>
       ${K(e,t)}
@@ -24,7 +24,7 @@
       ${f(e,t.badges)}
     </div>
     ${s}
-  `,a}function U(e,t){return t.map(n=>{const i=l(e,n);if(!i)return"";if(i.type==="item")return`<div class="side-item">${i.label}</div>`;if(i.type==="container"){const a=i.meta?.variant==="highlight",o=a?' style="border-color:rgba(44,242,194,0.25);"':"",s=a?' style="color:var(--accent2)"':"",c=a?' style="border-color:rgba(44,242,194,0.2)"':"",g=i.children.map(u=>{const m=l(e,u);return m?`<div class="side-item"${c}>${m.label}</div>`:""}).join("");return`<div class="side-block" data-id="${i.id}"${o}>
+  `,a}function U(e,t){return t.map(n=>{const i=l(e,n);if(!i)return"";if(i.type==="item")return`<div class="side-item">${i.label}</div>`;if(i.type==="container"){const a=i.meta?.variant==="highlight",o=a?' style="border-color:var(--accent2-dim);"':"",s=a?' style="color:var(--accent2)"':"",c=a?' style="border-color:var(--accent2-subtle)"':"",g=i.children.map(u=>{const m=l(e,u);return m?`<div class="side-item"${c}>${m.label}</div>`:""}).join("");return`<div class="side-block" data-id="${i.id}"${o}>
   <div class="side-block-title"${s}>${i.label}</div>
   ${g}
 </div>`}return""}).join(`
