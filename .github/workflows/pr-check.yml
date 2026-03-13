@@ -22,5 +22,21 @@ jobs:
       - name: Lint
         run: cd oia-site && npm run lint
 
+      - name: Typecheck
+        run: cd oia-site && npm run typecheck
+
       - name: Run tests
         run: cd oia-site && npm test
+
+      - name: Prompt compliance check
+        run: |
+          failed=0
+          for f in prompts/development/*.md prompts/diagrams/*.md; do
+            for section in "## Context" "## Goal" "## Constraints" "## Acceptance criteria"; do
+              if ! grep -q "$section" "$f"; then
+                echo "MISSING '$section' in $f"
+                failed=1
+              fi
+            done
+          done
+          exit $failed
