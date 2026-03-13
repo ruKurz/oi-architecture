@@ -5,7 +5,7 @@
 
 ---
 
-## Kontext
+## Context
 
 Read before execution:
 - `decisions/0003-github-issues-as-task-tracker.md` — binding format, labels, no-duplicate rule
@@ -16,7 +16,7 @@ Active repository: determined via `git remote get-url origin` — not hardcoded.
 
 ---
 
-## Ziel
+## Goal
 
 A new GitHub Issue exists that fully complies with ADR-0003: correct title, at least 2 labels, complete body (Context / Action / Acceptance criteria), no duplicate of an existing issue.
 
@@ -44,7 +44,7 @@ If inputs are missing: ask before creating anything.
 
 ---
 
-## Schritte
+## Steps
 
 ### Step 1 — Duplicate check
 
@@ -101,7 +101,7 @@ Output the created issue URL.
 
 ---
 
-## Entscheidungsregeln
+## Decision rules
 
 | Situation | Behaviour |
 |---|---|
@@ -114,7 +114,7 @@ Output the created issue URL.
 
 ---
 
-## Akzeptanzkriterien
+## Acceptance criteria
 
 - [ ] Duplicate check was performed (result briefly noted)
 - [ ] Title follows Conventional Commits format

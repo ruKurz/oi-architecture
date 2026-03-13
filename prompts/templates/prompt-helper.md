@@ -92,11 +92,11 @@ These rules apply to every generated prompt:
 ## Output schema for the generated prompt
 
 ```
-## Kontext
+## Context
 Which part of the OIA project is affected?
 Which files are relevant (paths only, no content)?
 
-## Ziel
+## Goal
 One sentence: what should exist or have changed at the end?
 
 ## Constraints
@@ -106,15 +106,15 @@ What must the prompt NOT do?
 ## Inputs
 Files that must be read — with concrete paths.
 
-## Schritte
+## Steps
 Numbered, executable steps.
 Each step has exactly one result.
 
-## Entscheidungsregeln
+## Decision rules
 What to do in case of ambiguity or conflict?
 (e.g. "If ID conflict → ask, do not execute")
 
-## Akzeptanzkriterien
+## Acceptance criteria
 How do you know the prompt was executed successfully?
 (e.g. "npm run test passes", "Build produces dist/")
 
@@ -130,11 +130,11 @@ Format: `path/to/file.ext` — created | changed | deleted
 > Reference: `prompts/development/build-microsite.md`
 
 What makes this prompt good:
-- **Kontext** is short — only project path + architecture overview, no prose
+- **Context** is short — only project path + architecture overview, no prose
 - **Constraints** are explicit — "No manual HTML", "No backend", "Design tokens 1:1"
-- **Schritte** are numbered and phase-based — each phase has a completed artefact
+- **Steps** are numbered and phase-based — each phase has a completed artefact
 - **Execution order** at the end — clear even for distributed work
-- **Akzeptanzkriterien** embedded in phases — e.g. "Tests must pass"
+- **Acceptance criteria** embedded in phases — e.g. "Tests must pass"
 
 What a bad OIA prompt does (anti-patterns):
 - Describes the what, but not the how → agent makes too many independent decisions
@@ -149,7 +149,7 @@ You are finished when:
 
 - [ ] Prompt type is defined
 - [ ] `Constraints` are explicitly stated (not just implied)
-- [ ] `Akzeptanzkriterien` are measurable (not "looks good")
+- [ ] `Acceptance criteria` are measurable (not "looks good")
 - [ ] No project context is repeated inline — path references only
 - [ ] The prompt is saved at the following path:
 

@@ -5,7 +5,7 @@
 
 ---
 
-## Kontext
+## Context
 
 Read before execution:
 - `decisions/README.md` — ADR index and template
@@ -18,7 +18,7 @@ The Alternatives section is **mandatory** — document what was consciously reje
 
 ---
 
-## Ziel
+## Goal
 
 Create a new ADR file in `decisions/` that documents an architecture decision.
 The ADR is complete, self-explanatory, and follows the Müller/Dienst format.
@@ -48,7 +48,7 @@ If inputs are missing: ask before generating anything.
 
 ---
 
-## Schritte
+## Steps
 
 ### Step 1 — Determine the next ADR number
 
@@ -123,7 +123,7 @@ Closes #N
 
 ---
 
-## Entscheidungsregeln
+## Decision rules
 
 - If alternatives are missing → ask, do not invent them
 - If the type is unclear (DEV vs. BIZ) → use BOTH and ask the user
@@ -132,7 +132,7 @@ Closes #N
 
 ---
 
-## Qualitätskriterien (AI self-check)
+## Quality criteria (AI self-check)
 
 After creation, verify:
 - [ ] Would someone without context understand the decision in 30 seconds?
@@ -143,7 +143,7 @@ After creation, verify:
 
 ---
 
-## Akzeptanzkriterien
+## Acceptance criteria
 
 - [ ] `decisions/NNNN-<name>.md` exists with complete Müller/Dienst format
 - [ ] `decisions/README.md` contains the new entry

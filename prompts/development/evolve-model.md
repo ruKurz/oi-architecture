@@ -5,7 +5,7 @@
 
 ---
 
-## Kontext
+## Context
 
 Read before execution:
 - `context/oia-context.md` — architecture layers, terminology, V2 backlog
@@ -22,7 +22,7 @@ This prompt covers model evolution only — not initial site setup (see `build-m
 
 ---
 
-## Ziel
+## Goal
 
 Iteratively evolve the OIA diagram via the JSON model — without manual HTML editing — using one of two defined workflows.
 
@@ -88,7 +88,7 @@ Full schema: `oia-site/src/data/types.ts`. Quick reference for common changes:
 
 ---
 
-## Schritte
+## Steps
 
 ### Workflow A — Structural (Excalidraw sketch → model delta → HTML)
 
@@ -133,7 +133,7 @@ For: new items, changed properties, new connections, label corrections.
 
 ---
 
-## Entscheidungsregeln
+## Decision rules
 
 | Situation | Behaviour |
 |---|---|
@@ -145,7 +145,7 @@ For: new items, changed properties, new connections, label corrections.
 
 ---
 
-## Akzeptanzkriterien
+## Acceptance criteria
 
 After every model change:
 

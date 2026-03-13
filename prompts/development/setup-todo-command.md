@@ -16,7 +16,7 @@
 
 ---
 
-## Kontext
+## Context
 
 Affected: working infrastructure of the OIA project.
 
@@ -26,7 +26,7 @@ Relevant files (read before execution):
 
 ---
 
-## Ziel
+## Goal
 
 After running this prompt, every participant (human or agent) can record an observation with a single, consistent command. The collected entries are readable and prioritisable without session context.
 
@@ -41,7 +41,7 @@ After running this prompt, every participant (human or agent) can record an obse
 
 ---
 
-## Schritte
+## Steps
 
 ### Step 1 — Create `context/todo.md`
 
@@ -110,7 +110,7 @@ Add to `context/oia-context.md` under a new section `## Working Conventions` (or
 
 ---
 
-## Entscheidungsregeln
+## Decision rules
 
 | Situation | Behaviour |
 |---|---|
@@ -121,7 +121,7 @@ Add to `context/oia-context.md` under a new section `## Working Conventions` (or
 
 ---
 
-## Akzeptanzkriterien
+## Acceptance criteria
 
 - [ ] `context/todo.md` exists with header including category and status schema
 - [ ] `.claude/commands/todo.md` exists and contains `$ARGUMENTS`

@@ -5,7 +5,7 @@
 
 ---
 
-## Kontext
+## Context
 
 Read before execution:
 - `context/oia-context.md` — architecture layers, terminology, conceptual flow
@@ -25,7 +25,7 @@ oia-model.json  →  renderOIA()  →  Diagram HTML in browser
 
 ---
 
-## Ziel
+## Goal
 
 A fully functional, data-driven OIA diagram site exists at `oia-site/`, deployed to GitHub Pages via GitHub Actions. All diagram content comes from `oia-model.json` — no manual HTML editing.
 
@@ -444,7 +444,7 @@ export default defineConfig({
 
 ---
 
-## Akzeptanzkriterien
+## Acceptance criteria
 
 - [ ] `npm run test` passes (all tests green)
 - [ ] `npm run build` produces a clean `dist/`

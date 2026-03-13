@@ -7,7 +7,7 @@
 
 ---
 
-## Kontext
+## Context
 
 Read before execution:
 - `decisions/0003-github-issues-as-task-tracker.md` — binding issue format and close conventions
@@ -23,7 +23,7 @@ Active repository: determined via `git remote get-url origin`.
 
 > Runs fully through without interruption.
 
-## Ziel (Phase A)
+## Goal (Phase A)
 
 All completed-but-open sprint issues are closed. The acceptance criteria of all sprint issues have been checked against the repo. A deviation list is present.
 
@@ -36,7 +36,7 @@ All completed-but-open sprint issues are closed. The acceptance criteria of all 
 
 ---
 
-## Schritte (Phase A)
+## Steps (Phase A)
 
 ### A-0 — Load sprint notes
 
@@ -107,7 +107,7 @@ For each sprint issue:
 
 ---
 
-## Entscheidungsregeln (Phase A)
+## Decision rules (Phase A)
 
 | Situation | Behaviour |
 |---|---|
@@ -117,7 +117,7 @@ For each sprint issue:
 
 ---
 
-## Akzeptanzkriterien (Phase A)
+## Acceptance criteria (Phase A)
 
 - [ ] Sprint notes loaded (or fallback justified)
 - [ ] Completed-but-open sprint issues identified and closed (or justifiably not closed)
@@ -132,7 +132,7 @@ For each sprint issue:
 
 > Runs fully through without interruption. Based on the deviation list from Phase A.
 
-## Ziel (Phase B)
+## Goal (Phase B)
 
 The 3 most impactful process improvements from the sprint exist as a single GitHub Issue.
 
@@ -144,7 +144,7 @@ The 3 most impactful process improvements from the sprint exist as a single GitH
 
 ---
 
-## Schritte (Phase B)
+## Steps (Phase B)
 
 ### B-1 — Root cause analysis
 
@@ -208,7 +208,7 @@ Sprint retro from <DATE>. Review of the last 10 issues produced <N> deviations.
 
 ---
 
-## Entscheidungsregeln (Phase B)
+## Decision rules (Phase B)
 
 | Situation | Behaviour |
 |---|---|
@@ -219,7 +219,7 @@ Sprint retro from <DATE>. Review of the last 10 issues produced <N> deviations.
 
 ---
 
-## Akzeptanzkriterien (Phase B)
+## Acceptance criteria (Phase B)
 
 - [ ] Retro issue created (if deviations) or absence confirmed
 - [ ] Retro issue contains max. 3 measures
@@ -232,7 +232,7 @@ Sprint retro from <DATE>. Review of the last 10 issues produced <N> deviations.
 
 > Interactive — contains two explicit checkpoints that wait for a chat reply.
 
-## Ziel (Phase C)
+## Goal (Phase C)
 
 An agreed sprint scope exists: a list of issues that best support a sprint goal — neither too much nor too little — and a handshake to start.
 
@@ -245,7 +245,7 @@ An agreed sprint scope exists: a list of issues that best support a sprint goal 
 
 ---
 
-## Schritte (Phase C)
+## Steps (Phase C)
 
 ### C-1 — Capture the sprint goal
 
@@ -350,7 +350,7 @@ After confirmation:
 
 ---
 
-## Entscheidungsregeln (Phase C)
+## Decision rules (Phase C)
 
 | Situation | Behaviour |
 |---|---|
@@ -362,7 +362,7 @@ After confirmation:
 
 ---
 
-## Akzeptanzkriterien (Phase C)
+## Acceptance criteria (Phase C)
 
 - [ ] Sprint goal paraphrased and confirmed
 - [ ] All open issues scanned and evaluated

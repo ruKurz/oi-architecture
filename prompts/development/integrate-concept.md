@@ -5,7 +5,7 @@
 
 ---
 
-## Kontext
+## Context
 
 Read before execution:
 - `CLAUDE.md` — agent contracts, ADR rules, Semantic Anchor rules
@@ -19,7 +19,7 @@ in the project — as a contract for human developers and the agent alike.
 
 ---
 
-## Ziel
+## Goal
 
 At the end, `$Subject` exists as a reviewed, documented, and binding element
 of the development process in `$Project` — for both agent and human.
@@ -45,7 +45,7 @@ of the development process in `$Project` — for both agent and human.
 
 ---
 
-## Schritte
+## Steps
 
 ### Step 1 — Analysis: Is $Subject the right choice?
 
@@ -108,7 +108,7 @@ of the development process in `$Project` — for both agent and human.
 
 ---
 
-## Entscheidungsregeln
+## Decision rules
 
 - If `$Subject` is already fully and correctly integrated → stop after Step 1 and inform the user
 - If `$Subject` affects both BIZ and DEV → plan two commits and inform the user
@@ -118,7 +118,7 @@ of the development process in `$Project` — for both agent and human.
 
 ---
 
-## Akzeptanzkriterien
+## Acceptance criteria
 
 - [ ] An ADR for `$Subject` exists in `decisions/` (status: Proposed)
 - [ ] `decisions/README.md` contains the new ADR entry

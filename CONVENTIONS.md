@@ -192,7 +192,7 @@ describe('<FunctionName>', () => {
 
 ## 2.10 Prompts
 
-Every new prompt file in `prompts/` must be created through the `prompts/templates/prompt-helper.md` process. Prompts without the required sections (`## Kontext`, `## Ziel`, `## Constraints`, `## Akzeptanzkriterien`) are non-compliant.
+Every new prompt file in `prompts/` must be created through the `prompts/templates/prompt-helper.md` process. Prompts without the required sections (`## Context`, `## Goal`, `## Constraints`, `## Acceptance criteria`) are non-compliant.
 
 See [ADR-0006](decisions/0006-prompt-helper-enforcement.md) for rationale.
 

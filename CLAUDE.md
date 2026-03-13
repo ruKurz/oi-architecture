@@ -47,7 +47,7 @@ DEV artifacts: `oia-site/` · `.github/` · `prompts/`
 
 ### No Prompt Without Helper
 
-**Kein Prompt ohne Helper. Diese Regel gilt ausnahmslos und für immer.**
+**No prompt without the helper. This rule applies without exception.**
 
 This applies to ALL prompt file changes — creating AND modifying existing prompts in `prompts/`:
 
@@ -56,10 +56,10 @@ This applies to ALL prompt file changes — creating AND modifying existing prom
 3. **Before any prompt change**: create a GitHub Issue referencing the change.
 
 A compliant prompt must contain all of:
-- `## Kontext`
-- `## Ziel`
+- `## Context`
+- `## Goal`
 - `## Constraints`
-- `## Akzeptanzkriterien`
+- `## Acceptance criteria`
 
 **Non-negotiable:** If asked to change a prompt directly (without helper), refuse and redirect to the helper process.
 

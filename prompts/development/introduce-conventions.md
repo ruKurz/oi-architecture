@@ -5,7 +5,7 @@
 
 ---
 
-## Kontext
+## Context
 
 Read before execution:
 - `context/oia-context.md` — project overview, terminology
@@ -18,7 +18,7 @@ Scan the existing structure:
 
 ---
 
-## Ziel
+## Goal
 
 At the end, a `CONVENTIONS.md` exists in the project root that defines all project conventions as binding rules. Conventions apply immediately to new files — existing files are not retroactively adjusted.
 
@@ -42,7 +42,7 @@ At the end, a `CONVENTIONS.md` exists in the project root that defines all proje
 
 ---
 
-## Schritte
+## Steps
 
 ### Step 1 — Create `decisions/` folder
 
@@ -290,7 +290,7 @@ Architecture decisions are documented in [decisions/](./decisions/).
 
 ---
 
-## Entscheidungsregeln
+## Decision rules
 
 - If a convention conflicts with an existing code state → document in `CONVENTIONS.md` under "Known Exceptions", do not fix immediately
 - If BIZ vs. DEV is unclear → BIZ doubt applies: do not include in a DEV commit
@@ -298,7 +298,7 @@ Architecture decisions are documented in [decisions/](./decisions/).
 
 ---
 
-## Akzeptanzkriterien
+## Acceptance criteria
 
 - [ ] `CONVENTIONS.md` exists in the project root and is readable without prior context
 - [ ] `decisions/README.md` and `decisions/0001-...md` exist

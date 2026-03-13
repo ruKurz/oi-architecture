@@ -171,7 +171,7 @@ Full details: [`docs/CONTRIBUTING.md`](docs/CONTRIBUTING.md).
 
 The project ships a set of ready-made prompts for recurring tasks. These are entirely optional — contributors do not need them to work on the codebase. They are provided as a convenience for those who use [Claude](https://claude.ai) or Claude Code and want structured starting points for common activities.
 
-Each prompt is self-contained. If you use one, read its `## Kontext` section first.
+Each prompt is self-contained. If you use one, read its `## Context` section first.
 
 | Prompt                                   | Purpose                                              |
 |------------------------------------------|------------------------------------------------------|
