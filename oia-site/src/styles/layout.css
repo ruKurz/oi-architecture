@@ -34,8 +34,8 @@ body::after {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 200;
-  height: 44px;
+  z-index: var(--z-nav);
+  height: var(--nav-height);
   background: rgba(5, 13, 26, 0.92);
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(10px);
@@ -43,10 +43,10 @@ body::after {
 }
 
 .site-nav__inner {
-  max-width: 1440px;
+  max-width: var(--max-width);
   margin: 0 auto;
   height: 100%;
-  padding: 0 24px;
+  padding: 0 var(--padding-x);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -81,7 +81,7 @@ body::after {
   color: var(--text-dim);
   text-decoration: none;
   padding: 6px 12px;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   transition:
     color 0.15s,
     background 0.15s;
@@ -101,7 +101,7 @@ body::after {
   justify-content: center;
   margin-left: 12px;
   padding: 6px;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   color: var(--text-muted);
   text-decoration: none;
   transition:
@@ -125,7 +125,7 @@ body::after {
   position: fixed;
   bottom: 28px;
   right: 28px;
-  z-index: 300;
+  z-index: var(--z-fab);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -167,15 +167,15 @@ body::after {
 /* ── APP OFFSET FOR NAV ── */
 #app {
   position: relative;
-  z-index: 1;
-  padding-top: 44px;
+  z-index: var(--z-base);
+  padding-top: var(--nav-height);
 }
 
 /* ── PAGE VIEWS (Motivation, Mitmachen, About, Impressum) ── */
 .page-view {
-  max-width: 760px;
+  max-width: var(--page-max-width);
   margin: 0 auto;
-  padding: 48px 24px 80px;
+  padding: 48px var(--padding-x) 80px;
 }
 
 .page-view__eyebrow {
@@ -202,7 +202,7 @@ body::after {
   color: var(--accent3);
   background: rgba(240, 167, 50, 0.06);
   border: 1px dashed rgba(240, 167, 50, 0.3);
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   padding: 8px 12px;
   margin-bottom: 40px;
   letter-spacing: 0.5px;
@@ -259,7 +259,7 @@ body::after {
 .page-view__flow-step {
   background: rgba(77, 184, 255, 0.06);
   border: 1px solid rgba(77, 184, 255, 0.2);
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   padding: 6px 14px;
   font-family: 'Space Mono', monospace;
   font-size: 11px;
@@ -284,7 +284,7 @@ body::after {
 .page-view__card {
   background: var(--panel);
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   padding: 16px;
   transition: border-color 0.2s;
 }
@@ -369,7 +369,7 @@ body::after {
 /* ── MOTIVATION HERO ── */
 .page-view__hero {
   width: 100%;
-  padding: 64px 24px 56px;
+  padding: 64px var(--padding-x) 56px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -432,7 +432,7 @@ body::after {
   padding: 5px 12px;
   background: rgba(44, 242, 194, 0.05);
   border: 1px solid rgba(44, 242, 194, 0.2);
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
 }
 
 .page-view__audience-cta {
@@ -462,10 +462,10 @@ body::after {
 
 .page-view__manifesto {
   margin-top: 28px;
-  padding: 20px 24px;
+  padding: 20px var(--padding-x);
   background: rgba(77, 184, 255, 0.03);
   border-left: 2px solid var(--accent);
-  border-radius: 0 6px 6px 0;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
   font-style: italic;
   line-height: 1.9;
 }
@@ -528,7 +528,7 @@ body::after {
   padding: 16px 20px;
   background: rgba(77, 184, 255, 0.04);
   border: 1px solid rgba(77, 184, 255, 0.2);
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   text-decoration: none;
   transition:
     background 0.15s,
@@ -558,7 +558,7 @@ body::after {
   color: var(--accent2);
   background: rgba(44, 242, 194, 0.05);
   border: 1px solid rgba(44, 242, 194, 0.2);
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   padding: 4px 12px;
   margin-bottom: 20px;
 }
@@ -572,7 +572,7 @@ body::after {
   color: var(--accent);
   background: rgba(77, 184, 255, 0.04);
   border: 1px solid rgba(77, 184, 255, 0.15);
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   padding: 10px 14px;
   white-space: pre-wrap;
   word-break: break-all;
@@ -603,10 +603,10 @@ body::after {
 
 /* ── DIAGRAM WRAPPER ── */
 .diagram-wrapper {
-  width: 1440px;
+  width: var(--max-width);
   min-height: 100vh;
   margin: 0 auto;
-  padding: 32px 24px 48px;
+  padding: 32px var(--padding-x) 48px;
   position: relative;
   z-index: 1;
   transform-origin: top center;
@@ -680,13 +680,13 @@ body::after {
   position: fixed;
   bottom: 24px;
   right: 24px;
-  z-index: 100;
+  z-index: var(--z-zoom);
   display: flex;
   align-items: center;
   gap: 8px;
   background: var(--panel);
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   padding: 8px 12px;
   font-family: 'Space Mono', monospace;
   font-size: 10px;
@@ -705,9 +705,9 @@ body::after {
 
 /* ── DETAIL VIEW ── */
 .detail-view {
-  max-width: 800px;
+  max-width: var(--detail-max-width);
   margin: 48px auto;
-  padding: 0 24px;
+  padding: 0 var(--padding-x);
 }
 .detail-back {
   display: inline-flex;
@@ -753,7 +753,7 @@ body::after {
 .detail-item {
   background: var(--panel);
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   padding: 10px 14px;
   font-size: 13px;
   color: var(--text-dim);
