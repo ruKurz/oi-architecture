@@ -57,6 +57,15 @@ Each entry:
 
 ---
 
+### SOTA — State of the Art
+**Domain:** BIZ
+**Applies when:** Positioning OIA capabilities relative to current AI and knowledge management approaches in articles or strategic content
+**Key concepts activated:** Current best-known approach in a field, benchmark baseline, research-grade comparison, advancement framing, competitive landscape positioning
+
+**OIA application:** When writing about what OIA enables beyond current tools, or when describing how OIA integrates state-of-the-art AI components (LLMs, vector indexes, knowledge graphs), invoke SOTA to anchor the value proposition against the current baseline — not hypothetically.
+
+---
+
 ### Cynefin Framework (Snowden)
 **Domain:** BIZ
 **Applies when:** Positioning OIA's purpose, writing thought-leadership content, or discussing where OIA adds value
