@@ -6,7 +6,7 @@
 **Level:** Org
 **Binding for:** All
 **Derives from:** [ODR-0000](./0000-commit-to-transparent-governance-documentation.md)
-**Implements:** [ADR-0003](../arch/0003-github-issues-as-task-tracker.md), [ADR-0005](../arch/0005-conventional-commits-with-content-type.md)
+**Implements:** [ADR-0003](../arch/0003-github-issues-as-task-tracker.md), [ADR-0005](../arch/0005-conventional-commits-with-content-type.md), [ADR-0014](../arch/0014-feature-branch-release-branch-workflow.md), [ADR-0015](../arch/0015-sprint-based-development-workflow.md)
 
 ## Context
 
