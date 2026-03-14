@@ -120,10 +120,6 @@ Goal: [sprint goal]
 
 Create `sprints/YYYY-MM-DD.md` with the sprint goal, DoD, and issue list.
 
-**Sprint naming rule:** The sprint name is the date of today's planning session — not a future date from planning notes or a previous meeting. Use `date +%Y-%m-%d` to confirm today's date if unsure.
-
-**Duplicate file handling:** If `sprints/YYYY-MM-DD.md` already exists, append a two-digit counter suffix starting at `00`: `YYYY-MM-DD-00.md`, `YYYY-MM-DD-01.md`, etc. Check with `ls sprints/YYYY-MM-DD*.md` before creating.
-
 ---
 
 ### ⏸ CHECKPOINT 2 — Handshake
