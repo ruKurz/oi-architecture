@@ -4,7 +4,7 @@
 
 -
 
-## Related issue
+## Linked issue
 
 Closes #<!-- issue number -->
 
@@ -25,11 +25,19 @@ Closes #<!-- issue number -->
 - [ ] `domain:dev` — renderer, CI, tooling, docs
 - [ ] `domain:biz` — OIA model, architecture content
 
+## AC verification
+
+<!-- Copy the acceptance criteria from the linked issue and verify each one -->
+
+- [ ]
+- [ ]
+
 ## Testing
 
-- [ ] `npm run lint` passes
-- [ ] `npm test` passes (32 tests green)
+- [ ] `npm run lint` passes (DEV changes only)
+- [ ] `npm test` passes (DEV changes only)
+- [ ] Preview deployment checked (if visual changes)
 
-## Notes for reviewer
+## Notes
 
-<!-- Anything the reviewer should pay particular attention to? -->
+<!-- Deploy-time items, decisions made mid-implementation, reviewer callouts -->
