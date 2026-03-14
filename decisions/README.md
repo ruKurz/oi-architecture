@@ -61,6 +61,7 @@ ODRs document organizational decisions at the Org layer of the governance hierar
 **Status:** Proposed | Accepted | Deprecated | Superseded by ADR-XXXX
 **Date:** YYYY-MM-DD
 **Type:** DEV | BIZ | BOTH
+**Governed by:** ODR-XXXX | — (if no governing ODR applies)
 
 ## Context
 
