@@ -612,6 +612,38 @@ body::after {
   transform-origin: top center;
 }
 
+/* ── MOBILE NOTICE ── */
+.mobile-notice {
+  display: none;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1440px) {
+  #app {
+    overflow-x: hidden;
+  }
+  .diagram-wrapper {
+    margin-left: 0;
+    transform-origin: top left;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-notice {
+    display: block;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    background: rgba(77, 184, 255, 0.04);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 8px 14px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+}
+
 /* ── HEADER ── */
 .header {
   text-align: center;
