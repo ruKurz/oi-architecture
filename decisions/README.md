@@ -4,8 +4,8 @@ This directory contains two types of decision records for the OIA project:
 
 | Type | Layer | Subject | Location |
 |---|---|---|---|
-| **ADR** — Architecture Decision Record | Arch | Technical and structural choices | `decisions/arch/` |
-| **ODR** — Organizational Decision Record | Org | Operating model, governance, process principles | `decisions/org/` |
+| **ADR** — Architecture Decision Record | Arch | Technical and structural choices | `decisions/adr/` |
+| **ODR** — Organizational Decision Record | Org | Operating model, governance, process principles | `decisions/odr/` |
 
 Both follow the **Decision first** principle (Müller/Dienst). See [`context/odr-concept.md`](../context/odr-concept.md) for the full ODR concept and hierarchy (Gov → Org → Arch).
 
@@ -19,22 +19,22 @@ ADR methodology: Ralf D. Müller / Johannes Dienst (fiveandahalfstars.ninja).
 
 | ADR | Title | Status | Type | Date |
 |---|---|---|---|---|
-| [ADR-0001](./arch/0001-language-and-naming-conventions.md) | Language and Naming Conventions | Accepted (language section superseded by ODR-0004) | DEV | 2026-03-11 |
-| [ADR-0002](./arch/0002-biz-dev-separation.md) | BIZ/DEV Separation as Project Rule | Accepted | BOTH | 2026-03-11 |
-| [ADR-0003](./arch/0003-github-issues-as-task-tracker.md) | GitHub Issues as Official Task Tracker | Accepted | DEV | 2026-03-11 |
-| [ADR-0004](./arch/0004-adr-format-mueller-dienst.md) | ADR Format: Müller/Dienst Methodology | Accepted | DEV | 2026-03-11 |
-| [ADR-0005](./arch/0005-conventional-commits-with-content-type.md) | Conventional Commits with Custom Content Type | Accepted | DEV | 2026-03-11 |
-| [ADR-0006](./arch/0006-prompt-helper-enforcement.md) | Prompt-Helper Enforcement via CLAUDE.md | Accepted | DEV | 2026-03-11 |
-| [ADR-0007](./arch/0007-versioning-scheme.md) | Versioning Scheme — Semantic Versioning for OIA | Proposed | BOTH | 2026-03-13 |
-| [ADR-0008](./arch/0008-release-strategy.md) | Release Strategy — GitHub Releases with Manual Trigger | Proposed | DEV | 2026-03-13 |
-| [ADR-0009](./arch/0009-repo-as-source-of-truth-for-contributor-documentation.md) | Repo as Source of Truth — Website as Entry Point | Accepted | DEV | 2026-03-12 |
-| [ADR-0010](./arch/0010-semantic-anchors-as-vocabulary-layer.md) | Semantic Anchors as Shared Vocabulary Layer | Proposed | DEV | 2026-03-12 |
+| [ADR-0001](./adr/0001-language-and-naming-conventions.md) | Language and Naming Conventions | Accepted (language section superseded by ODR-0004) | DEV | 2026-03-11 |
+| [ADR-0002](./adr/0002-biz-dev-separation.md) | BIZ/DEV Separation as Project Rule | Accepted | BOTH | 2026-03-11 |
+| [ADR-0003](./adr/0003-github-issues-as-task-tracker.md) | GitHub Issues as Official Task Tracker | Accepted | DEV | 2026-03-11 |
+| [ADR-0004](./adr/0004-adr-format-mueller-dienst.md) | ADR Format: Müller/Dienst Methodology | Accepted | DEV | 2026-03-11 |
+| [ADR-0005](./adr/0005-conventional-commits-with-content-type.md) | Conventional Commits with Custom Content Type | Accepted | DEV | 2026-03-11 |
+| [ADR-0006](./adr/0006-prompt-helper-enforcement.md) | Prompt-Helper Enforcement via CLAUDE.md | Accepted | DEV | 2026-03-11 |
+| [ADR-0007](./adr/0007-versioning-scheme.md) | Versioning Scheme — Semantic Versioning for OIA | Proposed | BOTH | 2026-03-13 |
+| [ADR-0008](./adr/0008-release-strategy.md) | Release Strategy — GitHub Releases with Manual Trigger | Proposed | DEV | 2026-03-13 |
+| [ADR-0009](./adr/0009-repo-as-source-of-truth-for-contributor-documentation.md) | Repo as Source of Truth — Website as Entry Point | Accepted | DEV | 2026-03-12 |
+| [ADR-0010](./adr/0010-semantic-anchors-as-vocabulary-layer.md) | Semantic Anchors as Shared Vocabulary Layer | Proposed | DEV | 2026-03-12 |
 | ~~[ADR-0011](./_obsolete/0011-english-as-project-language.md)~~ | ~~English as the Sole Project Language~~ | Superseded by ODR-0004 | DEV | 2026-03-13 |
-| [ADR-0012](./arch/0012-introduce-odr-governance-layer.md) | Introduce ODR as Governance Documentation Layer | Proposed | BOTH | 2026-03-14 |
-| [ADR-0013](./arch/0013-issue-reference-in-commit-subject.md) | Issue Reference in Commit Subject Line | Proposed | DEV | 2026-03-28 |
-| [ADR-0014](./arch/0014-feature-branch-release-branch-workflow.md) | Feature-Branch and Release-Branch Development Workflow | Proposed | DEV | 2026-03-28 |
-| [ADR-0015](./arch/0015-sprint-based-development-workflow.md) | Sprint-Based Development Workflow | Proposed | DEV | 2026-03-28 |
-| [ADR-0016](./arch/0016-agile-semantic-anchors.md) | Agile Process Semantic Anchors | Proposed | DEV | 2026-03-28 |
+| [ADR-0012](./adr/0012-introduce-odr-governance-layer.md) | Introduce ODR as Governance Documentation Layer | Proposed | BOTH | 2026-03-14 |
+| [ADR-0013](./adr/0013-issue-reference-in-commit-subject.md) | Issue Reference in Commit Subject Line | Proposed | DEV | 2026-03-28 |
+| [ADR-0014](./adr/0014-feature-branch-release-branch-workflow.md) | Feature-Branch and Release-Branch Development Workflow | Proposed | DEV | 2026-03-28 |
+| [ADR-0015](./adr/0015-sprint-based-development-workflow.md) | Sprint-Based Development Workflow | Proposed | DEV | 2026-03-28 |
+| [ADR-0016](./adr/0016-agile-semantic-anchors.md) | Agile Process Semantic Anchors | Proposed | DEV | 2026-03-28 |
 
 ---
 
@@ -44,11 +44,11 @@ ODRs document organizational decisions at the Org layer of the governance hierar
 
 | ODR | Title | Status | Date |
 |---|---|---|---|
-| [ODR-0000](./org/0000-commit-to-transparent-governance-documentation.md) | Commit to Transparent Governance Documentation | Proposed | 2026-03-14 |
-| [ODR-0001](./org/0001-oia-ecosystem-type.md) | OIA Ecosystem Type — Community-Driven with Benevolent Dictator | Proposed | 2026-03-14 |
-| [ODR-0002](./org/0002-adopt-agile-principles.md) | Adopt Agile Software Development Principles | Proposed | 2026-03-14 |
-| [ODR-0003](./org/0003-adopt-adrs-as-arch-layer-documentation-practice.md) | Adopt ADRs as Arch-Layer Documentation Practice | Proposed | 2026-03-14 |
-| [ODR-0004](./org/0004-english-as-project-language.md) | English as the Sole Project Language | Proposed | 2026-03-14 |
+| [ODR-0000](./odr/0000-commit-to-transparent-governance-documentation.md) | Commit to Transparent Governance Documentation | Proposed | 2026-03-14 |
+| [ODR-0001](./odr/0001-oia-ecosystem-type.md) | OIA Ecosystem Type — Community-Driven with Benevolent Dictator | Proposed | 2026-03-14 |
+| [ODR-0002](./odr/0002-adopt-agile-principles.md) | Adopt Agile Software Development Principles | Proposed | 2026-03-14 |
+| [ODR-0003](./odr/0003-adopt-adrs-as-arch-layer-documentation-practice.md) | Adopt ADRs as Arch-Layer Documentation Practice | Proposed | 2026-03-14 |
+| [ODR-0004](./odr/0004-english-as-project-language.md) | English as the Sole Project Language | Proposed | 2026-03-14 |
 
 ## ADR Acceptance Rule
 

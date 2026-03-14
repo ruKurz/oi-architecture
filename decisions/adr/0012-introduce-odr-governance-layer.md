@@ -4,7 +4,7 @@
 **Status:** Proposed
 **Date:** 2026-03-14
 **Type:** BOTH
-**Governed by:** [ODR-0000](../org/0000-commit-to-transparent-governance-documentation.md)
+**Governed by:** [ODR-0000](../odr/0000-commit-to-transparent-governance-documentation.md)
 
 ## Context
 
@@ -25,10 +25,10 @@ The full concept, hierarchy definition, and template are documented in `context/
 **Harder:** The decisions directory now has two distinct namespaces (ADRs and ODRs) that must be kept organized. Contributors must learn to distinguish which type of decision warrants an ODR vs. an ADR.
 
 **Required adjustments:**
-- New subdirectory `decisions/org/` for ODR files
+- New subdirectory `decisions/odr/` for ODR files
 - `decisions/README.md` extended with an ODR section and index
 - CLAUDE.md updated to reference ODRs alongside ADRs
-- The ODR template (`decisions/org/odr-template.md`) is the canonical starting point for all new ODRs
+- The ODR template (`decisions/odr/odr-template.md`) is the canonical starting point for all new ODRs
 
 ## Alternatives
 
@@ -44,7 +44,7 @@ The full concept, hierarchy definition, and template are documented in `context/
 |---|---|
 | [ADR-0004](./0004-adr-format-mueller-dienst.md) | ADR methodology this decision extends (not replaces) |
 | [ADR-0002](./0002-biz-dev-separation.md) | BIZ/DEV separation — ODRs belong to BIZ artifacts |
-| [ODR-0001](../org/0001-oia-ecosystem-type.md) | First ODR created under this framework |
-| [ODR-0002](../org/0002-adopt-agile-principles.md) | Second ODR created under this framework |
-| [ODR-0003](../org/0003-adopt-adrs-as-arch-layer-documentation-practice.md) | Third ODR — closes the bootstrapping gap for ADR adoption |
-| [ODR-0004](../org/0004-english-as-project-language.md) | Fourth ODR — language policy elevated from ADR-0011 |
+| [ODR-0001](../odr/0001-oia-ecosystem-type.md) | First ODR created under this framework |
+| [ODR-0002](../odr/0002-adopt-agile-principles.md) | Second ODR created under this framework |
+| [ODR-0003](../odr/0003-adopt-adrs-as-arch-layer-documentation-practice.md) | Third ODR — closes the bootstrapping gap for ADR adoption |
+| [ODR-0004](../odr/0004-english-as-project-language.md) | Fourth ODR — language policy elevated from ADR-0011 |

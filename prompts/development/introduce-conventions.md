@@ -48,7 +48,7 @@ At the end, a `CONVENTIONS.md` exists in the project root that defines all proje
 
 Create `decisions/` in the project root with:
 - `decisions/README.md` — ADR index and template
-- `decisions/arch/0001-language-and-naming-conventions.md` — first ADR (this convention documented as a decision)
+- `decisions/adr/0001-language-and-naming-conventions.md` — first ADR (this convention documented as a decision)
 
 ADR template (Müller/Dienst format — Decision first, Alternatives mandatory):
 ```markdown
@@ -114,7 +114,7 @@ Rule: **No commit without a referenced GitHub Issue** (except: `chore: initial s
 
 Existing German files are known exceptions — not retroactively translated; follow English on creation or next significant edit.
 
-See [ADR-0011](decisions/arch/0011-english-as-project-language.md) for rationale.
+See [ADR-0011](decisions/adr/0011-english-as-project-language.md) for rationale.
 
 ---
 
@@ -301,7 +301,7 @@ Architecture decisions are documented in [decisions/](./decisions/).
 ## Acceptance criteria
 
 - [ ] `CONVENTIONS.md` exists in the project root and is readable without prior context
-- [ ] `decisions/README.md` and `decisions/arch/0001-...md` exist
+- [ ] `decisions/README.md` and `decisions/adr/0001-...md` exist
 - [ ] `context/todo.md` has the GitHub Issues note in the header
 - [ ] `.gitmessage` exists, `git config commit.template` is set
 - [ ] `README.md` references `CONVENTIONS.md` and `decisions/`
@@ -315,7 +315,7 @@ Architecture decisions are documented in [decisions/](./decisions/).
 |---|---|
 | `CONVENTIONS.md` | created |
 | `decisions/README.md` | created |
-| `decisions/arch/0001-language-and-naming-conventions.md` | created |
+| `decisions/adr/0001-language-and-naming-conventions.md` | created |
 | `context/todo.md` | changed (header: GitHub Issues note) |
 | `.gitmessage` | created |
 | `README.md` | changed (conventions section) |
