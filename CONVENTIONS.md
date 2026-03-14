@@ -339,7 +339,7 @@ Concept files in `context/` that evolve over time carry a `**Version:**` field f
 | File | Current version |
 |---|---|
 | `context/odr-concept.md` | 1.3.0 |
-| `context/oia-context.md` | 1.0.0 |
+| `context/oia-context.md` | 1.1.0 |
 | `context/adr-concept.md` | 1.0.0 |
 | `context/semantic-anchors.md` | 2.0.0 |
 
