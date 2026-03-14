@@ -33,7 +33,7 @@ Every ODR explicitly states who it binds:
 | **Contributors** | People contributing to the project (code, content, governance) |
 | **All** | Users + Agents + Contributors |
 
-This explicit binding is what distinguishes ODRs from informal process notes. An ODR is not a suggestion — it is a traceable organizational commitment.
+This explicit binding is what distinguishes ODRs from informal process notes. An ODR is not a suggestion — it is a traceable organizational commitment. For how binding is enforced in practice, see [ODR lifecycle and maintenance → Enforcement](#odr-lifecycle-and-maintenance).
 
 ---
 
@@ -71,7 +71,7 @@ Several adjacent formats exist. None of them cover the Org layer completely:
 
 **Policy Document:** The classic form of organizational decisions (HR handbooks, codes of conduct). Problems: no standardized structure analogous to ADRs, no documentation of the decision rationale (context, rejected alternatives, trade-offs), not version-controlled in a software workflow sense, no binding scope definition.
 
-**Runbook / Playbook:** Describes *how* something is done — step-by-step operational procedures. ODRs describe *why* — the reasoning behind organizational choices. The difference is between an operating manual and a constitution. A constitution does not tell you how to file a form; it tells you why the process exists at all. But a constitution without an enforcement mechanism is merely a suggestion. ODR enforcement is operational: CI/CD checks can verify that agent-generated artifacts reference the correct ODR; PR review gates can require an ODR citation when a decision touches the organizational layer; automated linting can flag agent behavior inconsistent with accepted ODRs. The binding claim is not rhetorical — it is a property of the toolchain.
+**Runbook / Playbook:** Describes *how* something is done — step-by-step operational procedures. ODRs describe *why* — the reasoning behind organizational choices. The difference is between an operating manual and a constitution. A constitution does not tell you how to file a form; it tells you why the process exists at all. Unlike a constitution, an ODR is backed by a concrete enforcement mechanism — see the Enforcement section in [ODR lifecycle and maintenance](#odr-lifecycle-and-maintenance).
 
 **AI Governance Frameworks (Microsoft Cloud Adoption Framework, NIST AI RMF, EU AI Act):** These define *what* must be documented (risk controls, compliance evidence, role assignments) and *who* is responsible. They do not provide a format in which individual organizational decisions are captured as structured, versionable, derivable units. Microsoft's AI Readiness approach defines institutional roles (Platform Team, AI CoE) and processes — but does not codify *why* an organization operates the way it does, nor how that derives to technical tool choices. The result: compliance is demonstrated as static documentation, not as an active, machine-readable knowledge base.
 
@@ -293,6 +293,19 @@ When an ODR is superseded, all ADRs that reference it in their `implements` fiel
 - If the implementing ADR is no longer consistent with the new ODR: it must be updated or superseded itself.
 
 This review is not optional — it is part of the acceptance criteria for any ODR supersession.
+
+### Enforcement
+
+An ODR's binding claim is not rhetorical — it is a property of the toolchain. Concrete enforcement mechanisms:
+
+| Mechanism | What it enforces |
+|---|---|
+| **CI/CD check** | Agent-generated artifacts reference the correct ODR in their `governed-by` field |
+| **PR review gate** | Any commit touching the organizational layer must cite an ODR or open one |
+| **Automated linting** | Flags ADRs missing a `governed-by` field; flags ODRs missing `implements` targets |
+| **Agent instruction check** | System prompts / CLAUDE.md reference the active ODR stack at session start |
+
+Enforcement does not require all mechanisms from day one. The minimum viable enforcement for this project is the PR review gate: any decision that affects how the project operates requires either an existing ODR citation or a new ODR proposal before merge.
 
 ### Review cadence
 
