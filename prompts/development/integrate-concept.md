@@ -8,14 +8,19 @@
 ## Context
 
 Read before execution:
-- `CLAUDE.md` — agent contracts, ADR rules, Semantic Anchor rules
-- `CONVENTIONS.md` — §2.1 BIZ/DEV separation, §2.3 commits
-- `decisions/README.md` — ADR index (existing decisions, next available number)
+- `CLAUDE.md` — agent contracts, ADR + ODR rules, Semantic Anchor rules
+- `CONVENTIONS.md` — §2.1 BIZ/DEV separation, §2.3 commits, §ADR Format, §ODR Format
+- `decisions/README.md` — ADR + ODR index (existing decisions, next available numbers)
 - `context/semantic-anchors.md` — active anchor registry
 
 This prompt integrates a new concept (`$Subject`) as a binding element into `$Project`.
-Binding means: the concept is documented as an ADR and anchored at all relevant locations
-in the project — as a contract for human developers and the agent alike.
+Binding means: the concept is documented as an ADR or ODR and anchored at all relevant
+locations in the project — as a contract for human developers and the agent alike.
+
+**ADR or ODR?** Before drafting, determine the governance layer:
+- `$Subject` affects technical structure, tooling, or process → **ADR** in `decisions/arch/`
+- `$Subject` affects how the project governs itself (ecosystem model, operating principles, language policy, process discipline) → **ODR** in `decisions/org/`
+- When in doubt: if it binds Users and AI Agents beyond just Contributors, it is an ODR.
 
 ---
 
@@ -72,10 +77,12 @@ of the development process in `$Project` — for both agent and human.
    - Which files change and how?
    - Which locations need cleanup (contradictions, duplicates)?
    - Is `$Subject` BIZ, DEV, or BOTH? → determines how many commits are needed
-4. Draft an ADR for `$Subject` based on Steps 1 + 2:
-   - Use `prompts/development/create-adr.md`
-   - ADR always starts in status `Proposed` — only the maintainer sets `Accepted`
-   - Present the ADR for review; do not commit yet
+4. Draft an ADR **or ODR** for `$Subject` based on Steps 1 + 2:
+   - If Arch-layer: use `prompts/development/create-adr.md` → file in `decisions/arch/`
+   - If Org-layer: use `prompts/development/create-odr.md` → file in `decisions/org/`
+   - If an ODR is created and it mandates existing ADRs: add `governed-by: ODR-XXXX` to those ADRs
+   - Record always starts in status `Proposed` — only the maintainer sets `Accepted`
+   - Present the draft for review; do not commit yet
 
 ---
 
@@ -86,11 +93,12 @@ of the development process in `$Project` — for both agent and human.
 > **Wait for explicit confirmation before making any changes.**
 
 2. Apply changes in this order:
-   - a. Place ADR in `decisions/`, update `decisions/README.md`
-   - b. Update `CLAUDE.md` (session reads, auto-apply rules)
-   - c. Extend `CONVENTIONS.md` (new section or extend existing)
-   - d. `context/semantic-anchors.md` — only if `$Subject` is a Semantic Anchor
-   - e. Additional files as defined in the integration plan
+   - a. Place ADR (`decisions/arch/`) or ODR (`decisions/org/`), update `decisions/README.md`
+   - b. If ODR: add `governed-by: ODR-XXXX` to any mandated ADRs
+   - c. Update `CLAUDE.md` (session reads, auto-apply rules)
+   - d. Extend `CONVENTIONS.md` (new section or extend existing)
+   - e. `context/semantic-anchors.md` — only if `$Subject` is a Semantic Anchor
+   - f. Additional files as defined in the integration plan
 3. Create a GitHub Issue, then commit:
    - BIZ changes and DEV changes in separate commits
    - Each commit references the issue in the footer (`Closes #N` or `Refs #N`)
@@ -113,15 +121,17 @@ of the development process in `$Project` — for both agent and human.
 - If `$Subject` is already fully and correctly integrated → stop after Step 1 and inform the user
 - If `$Subject` affects both BIZ and DEV → plan two commits and inform the user
 - If a web search would be useful → ask first, do not run automatically
-- If the ADR number is unclear → `decisions/README.md` is the single source of truth: highest number + 1
+- If the ADR number is unclear → `decisions/README.md` ADR index is the single source of truth: highest ADR number + 1
+- If the ODR number is unclear → `decisions/README.md` ODR index: highest ODR number + 1 (independent of ADR numbers)
 - If `$Subject` requires a new prompt → refer to `prompts/templates/prompt-helper.md`, do not create it directly
 
 ---
 
 ## Acceptance criteria
 
-- [ ] An ADR for `$Subject` exists in `decisions/` (status: Proposed)
-- [ ] `decisions/README.md` contains the new ADR entry
+- [ ] An ADR (in `decisions/arch/`) or ODR (in `decisions/org/`) for `$Subject` exists (status: Proposed)
+- [ ] `decisions/README.md` contains the new ADR or ODR entry
+- [ ] If an ODR was created: mandated ADRs carry `governed-by: ODR-XXXX`
 - [ ] `CLAUDE.md` contains `$Subject` as a binding rule or session read
 - [ ] `CONVENTIONS.md` contains `$Subject` in the relevant section
 - [ ] A GitHub Issue exists referencing the integration
@@ -134,7 +144,8 @@ of the development process in `$Project` — for both agent and human.
 
 | File | Action |
 |---|---|
-| `decisions/NNNN-<subject-slug>.md` | created |
+| `decisions/arch/NNNN-<subject-slug>.md` | created (if ADR) |
+| `decisions/org/NNNN-<subject-slug>.md` | created (if ODR) |
 | `decisions/README.md` | changed |
 | `CLAUDE.md` | changed |
 | `CONVENTIONS.md` | changed |

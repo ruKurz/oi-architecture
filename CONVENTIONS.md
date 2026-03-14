@@ -39,7 +39,7 @@ See [ADR-0002](decisions/arch/0002-biz-dev-separation.md) for rationale.
 
 Existing German files in `context/`, `notes/`, and `prompts/` are known exceptions — not retroactively translated; follow English on creation or next significant edit.
 
-See [ADR-0011](decisions/arch/0011-english-as-project-language.md) for rationale.
+See [ODR-0004](decisions/org/0004-english-as-project-language.md) for rationale.
 
 ---
 
@@ -207,9 +207,50 @@ See [decisions/README.md](decisions/README.md) for the full ADR template and ind
 
 Methodology: Ralf D. Müller / Johannes Dienst — Decision first, Alternatives mandatory.
 
+**Location:** `decisions/arch/NNNN-kebab-case-title.md`
+
+**Required fields:** `Decision` · `Status` · `Date` · `Type` · `Governed by`
+
+**Governed by field:** Every ADR carries `**Governed by:** ODR-XXXX` pointing to the ODR that mandated it, or `**Governed by:** —` when no ODR applies. This field enables upward traversal from Arch → Org layer.
+
 **ADR Acceptance Rule:** Only a human maintainer may set an ADR status to `Accepted`. AI-assisted tooling must use `Proposed` when creating new ADRs. An ADR in `Proposed` state is active and followed — `Proposed` means "awaiting human sign-off", not "not yet in use".
 
-See [ADR-0004](decisions/arch/0004-adr-format-mueller-dienst.md) for rationale.
+See [ADR-0004](decisions/arch/0004-adr-format-mueller-dienst.md) and [ODR-0003](decisions/org/0003-adopt-adrs-as-arch-layer-documentation-practice.md) for rationale.
+
+---
+
+## ODR Format
+
+ODRs document organizational decisions at the Org layer of the governance hierarchy (Gov → Org → Arch). See [decisions/README.md](decisions/README.md) for the ODR index and [decisions/org/odr-template.md](decisions/org/odr-template.md) for the template.
+
+**Location:** `decisions/org/NNNN-kebab-case-title.md`
+
+**Numbering:** ODR numbers are independent of ADR numbers. The next ODR number = current highest in the ODR index + 1. Never reuse a number.
+
+**Required fields:**
+
+| Field | Values | Purpose |
+|---|---|---|
+| `Decision` | One or two sentences, active voice | What was decided and why — upfront |
+| `Status` | `Proposed` · `Accepted` · `Deprecated` · `Superseded by ODR-XXXX` | Lifecycle state |
+| `Date` | `YYYY-MM-DD` | Date created |
+| `Level` | Always `Org` | Governance layer |
+| `Binding for` | `All` · `Users` · `Agents` · `Contributors` | Explicit scope |
+| `Derives from` | `ODR-XXXX` · `—` | Parent ODR in the derivation chain |
+| `Implements` | `ADR-XXXX, ADR-YYYY` · `—` | Arch-layer records that implement this ODR |
+
+**Bidirectional linking rule:**
+- ODR → ADR: via `Implements` field on the ODR
+- ADR → ODR: via `Governed by` field on the ADR
+- These two fields must be kept in sync when creating either record.
+
+**ODR Acceptance Rule:** Same as ADRs — only a human maintainer sets `Accepted`. AI tooling uses `Proposed`.
+
+**Commit type:** ODR changes use `docs(decisions):` — ODRs are BIZ artifacts stored in `decisions/org/`.
+
+**Supersession:** When an ODR is superseded, move it to `decisions/_obsolete/` and update its status to `Superseded by ODR-XXXX`. Update the ODR index in `decisions/README.md` with a strikethrough entry.
+
+See [ODR-0000](decisions/org/0000-commit-to-transparent-governance-documentation.md) and [context/odr-concept.md](context/odr-concept.md) for rationale and full concept.
 
 ---
 
@@ -225,6 +266,28 @@ Rules:
 - New anchors must exist in the library at https://llm-coding.github.io/Semantic-Anchors/ or meet the same quality criteria (precise, rich, consistent, attributable)
 - Adding or removing an anchor requires a GitHub Issue and a `content(context):` commit
 - Project-specific rules belong in ADRs. Universal methodology vocabulary belongs in Semantic Anchors. Do not put methodology explanations in ADRs — reference the anchor instead
+
+---
+
+## Concept File Versioning
+
+Concept files in `context/` that evolve over time carry a `**Version:**` field following SemVer (`MAJOR.MINOR.PATCH`), independent of the OIA model version (ADR-0007).
+
+| Bump | When |
+|---|---|
+| **PATCH** | Typo corrections, clarifications that don't change meaning |
+| **MINOR** | New sections, expanded explanations, new examples |
+| **MAJOR** | Structural rethink, renamed sections, breaking change to how the concept is used |
+
+**Active versioned concept files:**
+
+| File | Current version |
+|---|---|
+| `context/odr-concept.md` | 1.3.0 |
+| `context/oia-context.md` | 1.0.0 |
+| `context/adr-concept.md` | 1.0.0 |
+
+Update the version field and this table when making significant changes to a concept file.
 
 ---
 

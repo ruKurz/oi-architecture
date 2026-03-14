@@ -10,13 +10,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
+**Organizational Decision Records (ODRs)** — new governance layer introduced in sprint 2026-03-14
+- ODR-0000: Commit to Transparent Governance Documentation — founding charter — [#78](https://github.com/ruKurz/oi-architecture/issues/78)
+- ODR-0001: OIA Ecosystem Type — Community-Driven with Benevolent Dictator — [#78](https://github.com/ruKurz/oi-architecture/issues/78)
+- ODR-0002: Adopt Agile Software Development Principles — [#78](https://github.com/ruKurz/oi-architecture/issues/78)
+- ODR-0003: Adopt ADRs as Arch-Layer Documentation Practice — [#84](https://github.com/ruKurz/oi-architecture/issues/84)
+- ODR-0004: English as the Sole Project Language (supersedes ADR-0011) — [#85](https://github.com/ruKurz/oi-architecture/issues/85)
+
 **Architecture Decisions**
 - ADR-0007: Semantic Versioning (SemVer) as the versioning scheme for OIA model + site — [#36](https://github.com/ruKurz/oi-architecture/issues/36)
 - ADR-0008: GitHub Releases with manual trigger as release strategy — [#37](https://github.com/ruKurz/oi-architecture/issues/37)
 - ADR-0010: Semantic Anchors as shared vocabulary layer for AI prompts — [#66](https://github.com/ruKurz/oi-architecture/issues/66)
-- ADR-0011: English as the sole project language — [#67](https://github.com/ruKurz/oi-architecture/issues/67)
+- ADR-0012: Introduce ODR as Governance Documentation Layer — [#78](https://github.com/ruKurz/oi-architecture/issues/78)
 
 **Project Governance**
+- `decisions/` restructured into `arch/`, `org/`, `_obsolete/` subfolders — [#85](https://github.com/ruKurz/oi-architecture/issues/85)
 - `GOVERNANCE.md` — benevolent dictator model, maintainer identity, ADR-based decision process, evolution path — [#40](https://github.com/ruKurz/oi-architecture/issues/40)
 - `_archive/` directory for superseded file versions — [#16](https://github.com/ruKurz/oi-architecture/issues/16)
 - `diagrams/README.md` — documents active visualization and relationship to renderer — [#5](https://github.com/ruKurz/oi-architecture/issues/5)
@@ -26,6 +34,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 **CI/CD**
 - PR check: typecheck step (`tsc --noEmit`) — [#69](https://github.com/ruKurz/oi-architecture/issues/69)
 - PR check: ADR-0006 prompt compliance validator — checks all prompts for required sections — [#70](https://github.com/ruKurz/oi-architecture/issues/70)
+- PR check: ODR compliance validator — checks all ODRs for required fields and sections — [#92](https://github.com/ruKurz/oi-architecture/issues/92)
+- PR check: ADR `governed-by` field validator — ensures all ADRs carry the field — [#92](https://github.com/ruKurz/oi-architecture/issues/92)
 
 **Tests**
 - 18 new tests in `tests/views.spec.ts` covering all 4 view functions (About, Contribute, Motivation, Legal) — 50 tests total — [#71](https://github.com/ruKurz/oi-architecture/issues/71)
