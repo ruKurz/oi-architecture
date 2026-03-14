@@ -1,18 +1,107 @@
 # Working with ADRs and Semantic Anchors in OIA
 
 > **Diátaxis mode:** How-to guide — task-oriented, for contributors and AI agents.
-> For conceptual background, see [ADR-0004](../decisions/arch/0004-adr-format-mueller-dienst.md) and [ADR-0010](../decisions/arch/0010-semantic-anchors-as-vocabulary-layer.md).
+> For conceptual background, see [ADR-0004](../decisions/arch/0004-adr-format-mueller-dienst.md), [ADR-0010](../decisions/arch/0010-semantic-anchors-as-vocabulary-layer.md), and [context/odr-concept.md](../context/odr-concept.md).
 
 ---
 
 ## What Each Concept Does
 
-| Concept | Scope | Question it answers |
-|---|---|---|
-| **ADR** | Project-specific | *Why did we decide X in this project?* |
-| **Semantic Anchor** | Universal methodology | *What does this methodology mean — precisely?* |
+| Concept | Layer | Scope | Question it answers |
+|---|---|---|---|
+| **ODR** | Org | Project-specific governance | *Why does this project operate the way it does?* |
+| **ADR** | Arch | Project-specific technical | *Why did we decide X for the architecture/tooling?* |
+| **Semantic Anchor** | — | Universal methodology | *What does this methodology mean — precisely?* |
 
-They are complementary, not competing. An ADR may *reference* a Semantic Anchor as its rationale. A new anchor adoption is itself recorded as an ADR.
+All three are complementary. An ADR may reference a Semantic Anchor as its rationale. An ADR may be mandated by an ODR. ODRs, ADRs, and anchors together form the full knowledge layer for human contributors and AI agents.
+
+**Decision tree — which record type?**
+
+```
+Does this decision affect how the project GOVERNS ITSELF?
+  (ecosystem model, operating principles, language policy, agent contracts)
+  YES → ODR in decisions/org/
+  NO  → Does it affect technical structure, tooling, or process?
+          YES → ADR in decisions/arch/
+          NO  → Is it a universal methodology (from the Semantic Anchors library)?
+                  YES → Semantic Anchor in context/semantic-anchors.md
+                  NO  → Add to CONVENTIONS.md or CLAUDE.md directly
+```
+
+---
+
+## Organizational Decision Records (ODRs)
+
+### Format
+
+ODRs use a distinct format from ADRs. The template is at `decisions/org/odr-template.md`:
+
+```markdown
+# ODR-NNNN: Noun-phrase title
+
+**Decision:** One or two sentences, active voice.
+**Status:** Proposed | Accepted | Deprecated | Superseded by ODR-XXXX
+**Date:** YYYY-MM-DD
+**Level:** Org
+**Binding for:** All | Users | Agents | Contributors
+**Derives from:** ODR-XXXX | — (founding record)
+**Implements:** ADR-XXXX, ADR-YYYY | —
+
+## Context
+## Consequences
+**For Users:** ...
+**For Agents:** ...
+**Easier:** ...
+**Harder:** ...
+**Required adjustments:** ...
+
+## Alternatives
+## Related decisions
+```
+
+### Creating a New ODR
+
+Use the prompt: `prompts/development/create-odr.md`
+
+Trigger conditions — create an ODR when:
+- A decision affects how the project **governs itself** (not what it builds)
+- It binds Users, Agents, or Contributors at the organizational level
+- Examples: ecosystem type, operating model, language policy, governance principles
+
+Do NOT create an ODR for:
+- Technical choices (those are ADRs)
+- Temporary process notes (log in `context/todo.md`)
+- Decisions already covered by an existing ODR
+
+### Numbering
+
+Next ODR number = highest number in `decisions/README.md` ODR index + 1. ODR numbers are **independent of ADR numbers**. Never reuse a number.
+
+### Status Lifecycle
+
+```
+Proposed  →  Accepted  →  Deprecated
+                        ↘  Superseded by ODR-XXXX
+```
+
+When superseded: move the file to `decisions/_obsolete/` and update `decisions/README.md` with a struck-through entry.
+
+### The derives-from / implements Chain
+
+ODRs form a derivation chain:
+- **`Derives from:`** points to the parent ODR that motivated this decision (upward)
+- **`Implements:`** lists the ADRs that are the Arch-layer implementation (downward)
+- **`Governed by:`** on the ADR points back to the ODR (upward on the ADR side)
+
+All three fields must be kept in sync. See `context/odr-concept.md` for the full concept.
+
+### Updating the ODR Index
+
+After creating an ODR, add a row to `decisions/README.md` ODR Index:
+
+```markdown
+| [ODR-NNNN](./org/NNNN-title.md) | Short title | Proposed | YYYY-MM-DD |
+```
 
 ---
 
@@ -85,13 +174,13 @@ Proposed  →  Accepted  →  Deprecated
 After creating a new ADR file, update `decisions/README.md`:
 
 ```markdown
-| [ADR-NNNN](./NNNN-title.md) | Short title | Proposed | DEV | YYYY-MM-DD |
+| [ADR-NNNN](./arch/NNNN-title.md) | Short title | Proposed | DEV | YYYY-MM-DD |
 ```
 
 ### Referencing ADRs
 
-- In CONVENTIONS.md: `See [ADR-XXXX](decisions/XXXX-title.md) for rationale.`
-- In CLAUDE.md: inline reference `[ADR-XXXX](decisions/XXXX-title.md)` in the relevant rule
+- In CONVENTIONS.md: `See [ADR-XXXX](decisions/arch/XXXX-title.md) for rationale.`
+- In CLAUDE.md: inline reference `[ADR-XXXX](decisions/arch/XXXX-title.md)` in the relevant rule
 - In commit messages: `Refs #N` (via the GitHub Issue, not directly to the ADR file)
 
 ---
@@ -172,9 +261,10 @@ For a significant adoption decision (e.g. a new BIZ methodology that frames the 
 
 | Action | Tool | File |
 |---|---|---|
-| Record a project decision with alternatives | ADR | `decisions/NNNN-title.md` |
+| Record an organizational governance decision | ODR | `decisions/org/NNNN-title.md` |
+| Record a technical/structural decision | ADR | `decisions/arch/NNNN-title.md` |
 | Define shared methodology vocabulary | Semantic Anchor | `context/semantic-anchors.md` |
-| Enforce a rule on the AI agent | Both | `CLAUDE.md` |
+| Enforce a rule on the AI agent | ADR/ODR + CLAUDE.md | `CLAUDE.md` |
 | Document a binding convention | Either | `CONVENTIONS.md` |
 | Park a temporary observation | Neither | `context/todo.md` |
 | Track a task | GitHub Issue | https://github.com/ruKurz/oi-architecture/issues |

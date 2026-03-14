@@ -4,10 +4,12 @@ This directory contains two types of decision records for the OIA project:
 
 | Type | Layer | Subject | Location |
 |---|---|---|---|
-| **ADR** — Architecture Decision Record | Arch | Technical and structural choices | `decisions/` |
+| **ADR** — Architecture Decision Record | Arch | Technical and structural choices | `decisions/arch/` |
 | **ODR** — Organizational Decision Record | Org | Operating model, governance, process principles | `decisions/org/` |
 
 Both follow the **Decision first** principle (Müller/Dienst). See [`context/odr-concept.md`](../context/odr-concept.md) for the full ODR concept and hierarchy (Gov → Org → Arch).
+
+**Obsolete records** (superseded or deprecated) are stored in [`decisions/_obsolete/`](./_obsolete/README.md). They are never deleted — they remain for historical reference. See `_obsolete/README.md` for the index.
 
 ---
 
