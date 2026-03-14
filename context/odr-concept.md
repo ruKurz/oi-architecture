@@ -2,7 +2,7 @@
 
 **Version:** 1.3.0 · 2026-03-14
 **Status:** Active
-**Related:** [ADR-0012](../decisions/arch/0012-introduce-odr-governance-layer.md) · [ODR Template](../decisions/org/odr-template.md)
+**Related:** [ADR-0012](../decisions/adr/0012-introduce-odr-governance-layer.md) · [ODR Template](../decisions/odr/odr-template.md)
 
 ---
 
@@ -234,8 +234,8 @@ ODRs are, in the language of OIA, a **Knowledge Core artifact** for the organiza
 ## Naming and numbering
 
 - ODRs are numbered independently of ADRs: `ODR-0001`, `ODR-0002`, …
-- Files are stored in `decisions/org/` (separate from ADRs in `decisions/`)
-- File naming: `decisions/org/NNNN-slug.md`
+- Files are stored in `decisions/odr/` (separate from ADRs in `decisions/`)
+- File naming: `decisions/odr/NNNN-slug.md`
 - Both ADRs and ODRs are indexed in `decisions/README.md` under separate sections
 
 **Status values** (same as ADRs):
@@ -256,8 +256,8 @@ ODRs are, in the language of OIA, a **Knowledge Core artifact** for the organiza
 | Subject | Technical / structural choices | Organizational operating choices |
 | Trigger | Architectural need or constraint | Governance need, policy choice, or Gov constraint |
 | Binding for | Technical contributors primarily | All participants (Users, Agents, Contributors) |
-| Location | `decisions/` | `decisions/org/` |
-| Template | `decisions/README.md` → Template section | `decisions/org/odr-template.md` |
+| Location | `decisions/` | `decisions/odr/` |
+| Template | `decisions/README.md` → Template section | `decisions/odr/odr-template.md` |
 | Numbered | ADR-XXXX | ODR-XXXX |
 | Derivation links | — | `derives-from` / `implements` |
 | Upward link | `governed-by: ODR-XXXX` | — |
@@ -270,7 +270,7 @@ ODRs are, in the language of OIA, a **Knowledge Core artifact** for the organiza
 
 ### Proposing an ODR
 
-Any participant — human contributor or AI-assisted tooling — may propose an ODR by creating a file in `decisions/org/` with status `Proposed`. Proposals must follow the canonical template (`decisions/org/odr-template.md`) and include all required fields, including `derives-from` and `implements`.
+Any participant — human contributor or AI-assisted tooling — may propose an ODR by creating a file in `decisions/odr/` with status `Proposed`. Proposals must follow the canonical template (`decisions/odr/odr-template.md`) and include all required fields, including `derives-from` and `implements`.
 
 A new ODR should be accompanied by a GitHub Issue (per ADR-0003) and a commit referencing that issue.
 

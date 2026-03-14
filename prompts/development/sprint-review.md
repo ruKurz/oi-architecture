@@ -10,8 +10,8 @@
 ## Context
 
 - `sprints/` — sprint notes files (gitignored); contains issue list and sprint goal
-- `decisions/arch/0003-github-issues-as-task-tracker.md` — close-verification format
-- `decisions/arch/0005-conventional-commits-with-content-type.md` — commit footer conventions
+- `decisions/adr/0003-github-issues-as-task-tracker.md` — close-verification format
+- `decisions/adr/0005-conventional-commits-with-content-type.md` — commit footer conventions
 - GitHub CLI (`gh`) and `git` available
 
 ---

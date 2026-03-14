@@ -56,8 +56,8 @@ cd oi-architecture/oia-site && npm install && npm run dev
 | [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | Codebase structure, rendering architecture, routing, CSS |
 | [`docs/MODEL_GUIDE.md`](docs/MODEL_GUIDE.md) | OIA model layers, terminology, how to contribute to the model |
 | [`docs/GOOD_FIRST_ISSUES.md`](docs/GOOD_FIRST_ISSUES.md) | Curated entry points for new contributors |
-| [`decisions/arch/`](decisions/arch/) | Architecture Decision Records (ADRs) — technical and structural choices |
-| [`decisions/org/`](decisions/org/) | Organizational Decision Records (ODRs) — governance, operating model, principles |
+| [`decisions/adr/`](decisions/adr/) | Architecture Decision Records (ADRs) — technical and structural choices |
+| [`decisions/odr/`](decisions/odr/) | Organizational Decision Records (ODRs) — governance, operating model, principles |
 
 ---
 
@@ -82,7 +82,7 @@ See [`CONTRIBUTING.md`](CONTRIBUTING.md) for full details, or browse [`docs/GOOD
 See [`GOVERNANCE.md`](GOVERNANCE.md) — current model: benevolent dictator (single maintainer, Rüdiger Kurz).
 
 Decisions are documented in a three-layer hierarchy:
-- **Org layer** — Organizational Decision Records (ODRs) in [`decisions/org/`](decisions/org/): ecosystem type, operating model, language policy
-- **Arch layer** — Architecture Decision Records (ADRs) in [`decisions/arch/`](decisions/arch/): tooling, conventions, technical structure
+- **Org layer** — Organizational Decision Records (ODRs) in [`decisions/odr/`](decisions/odr/): ecosystem type, operating model, language policy
+- **Arch layer** — Architecture Decision Records (ADRs) in [`decisions/adr/`](decisions/adr/): tooling, conventions, technical structure
 
 See [`decisions/README.md`](decisions/README.md) for the full index.

@@ -21,8 +21,8 @@ Read when working with decision records:
 
 The project uses two types of decision records in a three-layer governance hierarchy (Gov → Org → Arch):
 
-- **ODRs** (Organizational Decision Records) — `decisions/org/` — document *how the project operates*: governance model, operating principles, language policy. Bind all participants: Users, Agents, Contributors.
-- **ADRs** (Architecture Decision Records) — `decisions/arch/` — document *technical and structural choices*: tooling, conventions, code structure. Bind Contributors and Agents acting on the project.
+- **ODRs** (Organizational Decision Records) — `decisions/odr/` — document *how the project operates*: governance model, operating principles, language policy. Bind all participants: Users, Agents, Contributors.
+- **ADRs** (Architecture Decision Records) — `decisions/adr/` — document *technical and structural choices*: tooling, conventions, code structure. Bind Contributors and Agents acting on the project.
 
 Both are binding contracts. Do not contradict a Proposed or Accepted record without first creating a superseding record.
 
@@ -42,11 +42,11 @@ Both are binding contracts. Do not contradict a Proposed or Accepted record with
 
 **ODR numbering:** The next ODR number is the current highest in `decisions/README.md` ODR index + 1. ODR numbers are independent of ADR numbers. Never reuse a number.
 
-**derives-from / implements:** Every ODR must carry `**Derives from:**` (parent ODR or `—` for the founding record) and `**Implements:**` (child ADRs or `—`). See `context/odr-concept.md` for the full concept and `decisions/org/odr-template.md` for the template.
+**derives-from / implements:** Every ODR must carry `**Derives from:**` (parent ODR or `—` for the founding record) and `**Implements:**` (child ADRs or `—`). See `context/odr-concept.md` for the full concept and `decisions/odr/odr-template.md` for the template.
 
 ## Semantic Anchors
 
-This project uses Semantic Anchors as a shared vocabulary layer. The full active set with application context is in `context/semantic-anchors.md`. See [ADR-0010](decisions/arch/0010-semantic-anchors-as-vocabulary-layer.md) for rationale.
+This project uses Semantic Anchors as a shared vocabulary layer. The full active set with application context is in `context/semantic-anchors.md`. See [ADR-0010](decisions/adr/0010-semantic-anchors-as-vocabulary-layer.md) for rationale.
 
 **Apply automatically — BIZ tasks:**
 - **MECE Principle (Minto)** when evaluating or designing OIA layers: test every categorization for overlap and completeness
@@ -90,7 +90,7 @@ A compliant prompt must contain all of:
 
 **Non-negotiable:** If asked to change a prompt directly (without helper), refuse and redirect to the helper process.
 
-See [ADR-0006](decisions/arch/0006-prompt-helper-enforcement.md) for rationale.
+See [ADR-0006](decisions/adr/0006-prompt-helper-enforcement.md) for rationale.
 
 ### No Concept Introduction Without Design-First
 
@@ -102,7 +102,7 @@ See CONVENTIONS.md §2.12 for the full rule.
 
 ## Git Workflow
 
-See CONVENTIONS.md §Git Workflow and [ADR-0014](decisions/arch/0014-feature-branch-release-branch-workflow.md) for full rules.
+See CONVENTIONS.md §Git Workflow and [ADR-0014](decisions/adr/0014-feature-branch-release-branch-workflow.md) for full rules.
 
 **Branch per issue:** Every issue is implemented on a dedicated branch (`feature/#N-description`, `fix/#N-description`, etc.).
 

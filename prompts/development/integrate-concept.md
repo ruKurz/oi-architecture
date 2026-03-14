@@ -18,8 +18,8 @@ Binding means: the concept is documented as an ADR or ODR and anchored at all re
 locations in the project — as a contract for human developers and the agent alike.
 
 **ADR or ODR?** Before drafting, determine the governance layer:
-- `$Subject` affects technical structure, tooling, or process → **ADR** in `decisions/arch/`
-- `$Subject` affects how the project governs itself (ecosystem model, operating principles, language policy, process discipline) → **ODR** in `decisions/org/`
+- `$Subject` affects technical structure, tooling, or process → **ADR** in `decisions/adr/`
+- `$Subject` affects how the project governs itself (ecosystem model, operating principles, language policy, process discipline) → **ODR** in `decisions/odr/`
 - When in doubt: if it binds Users and AI Agents beyond just Contributors, it is an ODR.
 
 ---
@@ -78,8 +78,8 @@ of the development process in `$Project` — for both agent and human.
    - Which locations need cleanup (contradictions, duplicates)?
    - Is `$Subject` BIZ, DEV, or BOTH? → determines how many commits are needed
 4. Draft an ADR **or ODR** for `$Subject` based on Steps 1 + 2:
-   - If Arch-layer: use `prompts/development/create-adr.md` → file in `decisions/arch/`
-   - If Org-layer: use `prompts/development/create-odr.md` → file in `decisions/org/`
+   - If Arch-layer: use `prompts/development/create-adr.md` → file in `decisions/adr/`
+   - If Org-layer: use `prompts/development/create-odr.md` → file in `decisions/odr/`
    - If an ODR is created and it mandates existing ADRs: add `governed-by: ODR-XXXX` to those ADRs
    - Record always starts in status `Proposed` — only the maintainer sets `Accepted`
    - Present the draft for review; do not commit yet
@@ -93,7 +93,7 @@ of the development process in `$Project` — for both agent and human.
 > **Wait for explicit confirmation before making any changes.**
 
 2. Apply changes in this order:
-   - a. Place ADR (`decisions/arch/`) or ODR (`decisions/org/`), update `decisions/README.md`
+   - a. Place ADR (`decisions/adr/`) or ODR (`decisions/odr/`), update `decisions/README.md`
    - b. If ODR: add `governed-by: ODR-XXXX` to any mandated ADRs
    - c. Update `CLAUDE.md` (session reads, auto-apply rules)
    - d. Extend `CONVENTIONS.md` (new section or extend existing)
@@ -129,7 +129,7 @@ of the development process in `$Project` — for both agent and human.
 
 ## Acceptance criteria
 
-- [ ] An ADR (in `decisions/arch/`) or ODR (in `decisions/org/`) for `$Subject` exists (status: Proposed)
+- [ ] An ADR (in `decisions/adr/`) or ODR (in `decisions/odr/`) for `$Subject` exists (status: Proposed)
 - [ ] `decisions/README.md` contains the new ADR or ODR entry
 - [ ] If an ODR was created: mandated ADRs carry `governed-by: ODR-XXXX`
 - [ ] `CLAUDE.md` contains `$Subject` as a binding rule or session read
@@ -144,8 +144,8 @@ of the development process in `$Project` — for both agent and human.
 
 | File | Action |
 |---|---|
-| `decisions/arch/NNNN-<subject-slug>.md` | created (if ADR) |
-| `decisions/org/NNNN-<subject-slug>.md` | created (if ODR) |
+| `decisions/adr/NNNN-<subject-slug>.md` | created (if ADR) |
+| `decisions/odr/NNNN-<subject-slug>.md` | created (if ODR) |
 | `decisions/README.md` | changed |
 | `CLAUDE.md` | changed |
 | `CONVENTIONS.md` | changed |

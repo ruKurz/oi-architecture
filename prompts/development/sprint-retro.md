@@ -10,7 +10,7 @@
 ## Context
 
 - Deviation table from `sprint-review.md` (passed in as input or retrieved from the review session)
-- `decisions/arch/0003-github-issues-as-task-tracker.md` — issue format and close conventions
+- `decisions/adr/0003-github-issues-as-task-tracker.md` — issue format and close conventions
 - Chat history of the sprint session (agent evaluates it as part of B-0)
 
 ---
