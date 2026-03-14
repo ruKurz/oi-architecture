@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: '/oi-architecture/',
+  base: process.env.VITE_BASE_PATH ?? '/oi-architecture/',
   build: {
     outDir: 'dist',
   },
