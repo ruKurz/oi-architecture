@@ -1,0 +1,16 @@
+# Netlify configuration — PR preview deployments only
+# Production is served via GitHub Pages (see .github/workflows/deploy.yml)
+
+[build]
+  base    = "oia-site"
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  VITE_BASE_PATH = "/"
+
+# SPA fallback — all routes serve index.html (hash router handles navigation)
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200
