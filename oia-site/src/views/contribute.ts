@@ -90,16 +90,16 @@ export function renderContributeView(): HTMLElement {
       <section class="page-view__section">
         <h2 class="page-view__section-title">Ready to start?</h2>
         <div class="page-view__badge">First Contribution ≈ 20 minutes</div>
-        <a class="page-view__contributing-cta" href="https://github.com/ruKurz/oi-architecture/blob/main/docs/CONTRIBUTING.md" target="_blank" rel="noopener">
+        <a class="page-view__contributing-cta" href="https://github.com/ruKurz/oi-architecture/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">
           <span class="page-view__contributing-cta-label">Read the full contribution guide</span>
-          <span class="page-view__contributing-cta-file">docs/CONTRIBUTING.md →</span>
+          <span class="page-view__contributing-cta-file">CONTRIBUTING.md →</span>
         </a>
         <div class="page-view__join-steps" style="margin-top: 24px;">
           <div class="page-view__join-step">
             <span class="page-view__step-num">01</span>
             <div>
               <strong>Read the contribution guide</strong><br>
-              <a class="page-view__link" href="https://github.com/ruKurz/oi-architecture/blob/main/docs/CONTRIBUTING.md" target="_blank" rel="noopener">CONTRIBUTING.md</a>
+              <a class="page-view__link" href="https://github.com/ruKurz/oi-architecture/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">CONTRIBUTING.md</a>
             </div>
           </div>
           <div class="page-view__join-step">
