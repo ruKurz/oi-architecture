@@ -1,75 +1,75 @@
 # Organizational Intelligence Architecture (OIA)
-### Context Document · v1.0.0
+### Context Document · v1.1.0
 > *How organizations turn knowledge into action*
 
 ---
 
-## 1. Zweck dieses Dokuments
+## 1. Purpose of This Document
 
-Dieses Dokument dient als **stabiler Kontextanker** für alle weiterführenden Chats und Arbeitssitzungen zum OIA-Modell. Es fasst den aktuellen Erkenntnisstand zusammen und verhindert, dass Grundlagen in langen Konversationen verloren gehen oder wiederholt erklärt werden müssen.
+This document serves as the **stable context anchor** for all follow-up chats and working sessions on the OIA model. It summarizes the current state of understanding and prevents foundational knowledge from being lost or repeatedly re-explained in long conversations.
 
-**Zuletzt aktualisiert:** März 2026
-**Status:** V1 – Basis aus LinkedIn-Artikel, ChatGPT-Summary und OIA-Diagramm v1
+**Last updated:** March 2026
+**Status:** V1 — based on LinkedIn article, ChatGPT summary, and OIA diagram v1
 
 ---
 
-## 2. Kernidee
+## 2. Core Idea
 
-Organisationen können als **kognitive Systeme** verstanden werden. Sie nehmen Daten auf, interpretieren Informationen, erzeugen Wissen, treffen Entscheidungen und führen Handlungen aus.
+Organizations can be understood as **cognitive systems**. They absorb data, interpret information, generate knowledge, make decisions, and execute actions.
 
-Die OIA beschreibt diesen Transformationsprozess:
+OIA describes this transformation process:
 
 ```
 Data → Intelligence → Capability → Solution → Business Outcome
 ```
 
-Das Modell ist keine Beschreibung einer konkreten Technologie, sondern ein **architektonisches Denkmodell für intelligente Organisationen**.
+The model is not a description of a specific technology — it is an **architectural thinking model for intelligent organizations**.
 
 ---
 
-## 3. Zweck des Modells
+## 3. Purpose of the Model
 
-| Perspektive | Beschreibung |
+| Perspective | Description |
 |---|---|
-| **Thought Leadership** | Konzeptioneller Rahmen für LinkedIn-Artikel und Fachgespräche – Glaubwürdigkeit entsteht durch operative Verankerung, nicht durch Framework-Vollständigkeit (**Thought Doership**) |
-| **Enterprise Architecture** | Referenzmodell für CIOs und Enterprise Architects |
-| **Knowledge Systems** | Strukturierungsrahmen für Enterprise Search, RAG, AI Agents |
-| **Diskussionsrahmen** | Ermöglicht strukturierte Gespräche über KI-basierte Organisationen |
+| **Thought Leadership** | Conceptual framework for LinkedIn articles and expert conversations — credibility emerges from operational grounding, not framework completeness (**Thought Doership**) |
+| **Enterprise Architecture** | Reference model for CIOs and Enterprise Architects |
+| **Knowledge Systems** | Structuring framework for Enterprise Search, RAG, AI Agents |
+| **Discussion Framework** | Enables structured conversations about AI-based organizations |
 
 ---
 
-## 4. Architekturschichten (aktueller Stand V1)
+## 4. Architecture Layers (Current State V1)
 
-### 4.1 Situation Layer (Kontext)
-Ausgangspunkt jeder Entscheidung. Definiert, welche Informationen, Fähigkeiten und Systeme relevant sind.
+### 4.1 Situation Layer (Context)
+Starting point of every decision. Defines which information, capabilities, and systems are relevant.
 
-**Dimensionen:** Employee · Event · Time · Place · Domain · Task · Preferences · Language · Access · Knowledge
+**Dimensions:** Employee · Event · Time · Place · Domain · Task · Preferences · Language · Access · Knowledge
 
 ---
 
 ### 4.2 Use Cases & Challenges
-Konkrete organisationale Anforderungen, die die Architektur motivieren.
+Concrete organizational requirements that motivate the architecture.
 
-**Beispiele:** HR Process Consulting · Infrastructure Maintenance · Software Development Support · System Documentation · Procurement Verification · 24/7 Customer Support
+**Examples:** HR Process Consulting · Infrastructure Maintenance · Software Development Support · System Documentation · Procurement Verification · 24/7 Customer Support
 
 ---
 
 ### 4.3 Solutions & Applications
-Die nutzersichtbare Schicht – Interaktionspunkte zwischen Mensch und organisationalem Wissen.
+The user-visible layer — interaction points between humans and organizational knowledge.
 
-**Beispiele:** Enterprise Search · Knowledge Assistants · Maintenance Assistants · Code Assist Systems
+**Examples:** Enterprise Search · Knowledge Assistants · Maintenance Assistants · Code Assist Systems
 
 ---
 
 ### 4.4 Cognitive Capabilities
-Was die Organisation kognitiv leisten kann – unabhängig von konkreter Implementierung.
+What the organization can do cognitively — independent of concrete implementation.
 
-**Beispiele:** Find Information · Link Information · Evaluate Facts · Structure Documents · Generate Content · Identify Redundancies · Create Reports · Convey Knowledge · Identify Requirements · Deliver Information
+**Examples:** Find Information · Link Information · Evaluate Facts · Structure Documents · Generate Content · Identify Redundancies · Create Reports · Convey Knowledge · Identify Requirements · Deliver Information
 
 ---
 
 ### 4.5 Features & APIs
-Technische Umsetzung der Fähigkeiten – ermöglicht Wiederverwendbarkeit.
+Technical implementation of capabilities — enables reusability.
 
 ```
 /search  /classify  /summarize  /link  /remember  /chat  /transform  /create  /calc
@@ -78,16 +78,16 @@ Technische Umsetzung der Fähigkeiten – ermöglicht Wiederverwendbarkeit.
 ---
 
 ### 4.6 AI & Cognitive Infrastructure
-Technologische Grundlagen der kognitiven Fähigkeiten.
+Technological foundations of cognitive capabilities.
 
-**Komponenten:** Large Language Models · Machine Learning · Deep Learning · NLP · Vector Indexes · Knowledge Graphs · Computer Vision · RPA
+**Components:** Large Language Models · Machine Learning · Deep Learning · NLP · Vector Indexes · Knowledge Graphs · Computer Vision · RPA
 
 ---
 
 ### 4.7 Data Layer
-Fundament der gesamten Architektur.
+Foundation of the entire architecture.
 
-**Datenquellen:** Persons · Organizations · Locations · Customers · Materials · Projects · Jobs · News · Rules · Media
+**Data sources:** Persons · Organizations · Locations · Customers · Materials · Projects · Jobs · News · Rules · Media
 
 **Processing Pipeline:**
 ```
@@ -96,44 +96,44 @@ Ingestion → Processing → Cleaning → Validation → Information & Knowledge
 
 ---
 
-## 5. Seitenstrukturen des Modells
+## 5. Side Structures of the Model
 
-### 5.1 System Development & Interaction (linke Spalte)
-Wie das System entwickelt, betrieben und verbessert wird.
+### 5.1 System Development & Interaction (left column)
+How the system is developed, operated, and improved.
 
-| Bereich | Inhalte |
+| Area | Contents |
 |---|---|
 | User Interaction | Login · User Profile · Input/Output |
 | Context Understanding | Intent Detection · Context Enrichment |
 | Feature Orchestration | Agents · Workflows · Pipelines |
 | Learning & Optimization | Training · Model Improvement |
 
-### 5.2 Data Sources & Processing (rechte Spalte)
-Wie Rohdaten zu nutzbarem Wissen werden.
+### 5.2 Data Sources & Processing (right column)
+How raw data becomes usable knowledge.
 
-**Quellen:** People · Documents · Transactions · Projects · Logs
+**Sources:** People · Documents · Transactions · Projects · Logs
 **Pipeline:** Ingestion → Processing → Cleaning → Validation
 
 ---
 
-## 6. Fehlende / noch zu entwickelnde Elemente (V2-Backlog)
+## 6. Missing / Still to be Developed (V2 Backlog)
 
-| Element | Beschreibung | Priorität |
+| Element | Description | Priority |
 |---|---|---|
-| **Knowledge Core** | Zentrales Konzept: strukturierter Wissensspeicher der Organisation (Semantic Layer, Index, Access Control, Knowledge Graph) | 🔴 Hoch |
-| **Actors** | Humans (Employee, Analyst, Developer) und Agents (AI Assistants, Autonomous Systems) explizit einzeichnen | 🟡 Mittel |
-| **Business Outcome** | Der Kreislauf schließt sich erst bei Decision / Action / Outcome – fehlt noch | 🟡 Mittel |
-| **Validated Knowledge Storage** | Explizite Schicht für geprüftes, versioniertes Wissen | 🟠 Mittel |
-| **Klarerer Datenfluss** | Verbindung Data Pipeline → Knowledge Core → Capabilities visuell deutlicher machen | 🔴 Hoch |
+| **Knowledge Core** | Central concept: structured organizational knowledge store (Semantic Layer, Index, Access Control, Knowledge Graph) | 🔴 High |
+| **Actors** | Explicitly represent Humans (Employee, Analyst, Developer) and Agents (AI Assistants, Autonomous Systems) | 🟡 Medium |
+| **Business Outcome** | The loop closes at Decision / Action / Outcome — currently missing | 🟡 Medium |
+| **Validated Knowledge Storage** | Explicit layer for verified, versioned knowledge | 🟠 Medium |
+| **Clearer Data Flow** | Make the connection Data Pipeline → Knowledge Core → Capabilities visually clearer | 🔴 High |
 
 ---
 
-## 7. Terminologie-Entscheidungen
+## 7. Terminology Decisions
 
-> Dieser Abschnitt verhindert, dass Begriffe in neuen Chats falsch interpretiert werden.
+> This section prevents terms from being misinterpreted in new chats.
 
-- **OIA** = Organizational Intelligence Architecture (nicht: Operational Intelligence)
-- **Knowledge Core** = Zentraler Wissensspeicher; noch nicht vollständig modelliert
-- **Cognitive Capabilities** = Was das System *kann*, nicht wie es implementiert ist
-- **Solutions** = Nutzerseitige Anwendungen (kein technischer Stack)
-- **Situation Layer** = Kontext-Eingabe, kein User-Interface
+- **OIA** = Organizational Intelligence Architecture (not: Operational Intelligence)
+- **Knowledge Core** = Central knowledge store; not yet fully modeled
+- **Cognitive Capabilities** = What the system *can do*, not how it is implemented
+- **Solutions** = User-facing applications (not a technical stack)
+- **Situation Layer** = Context input, not a user interface
