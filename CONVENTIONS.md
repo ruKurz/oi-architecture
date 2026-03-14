@@ -408,7 +408,4 @@ Existing code that pre-dates these conventions is not retroactively fixed. Viola
 
 | File | Violation | Issue |
 |---|---|---|
-| `oia-site/src/renderer/render-layer.ts:154–173` | 13 hardcoded `if (layer.id === '#Lx')` instead of map | TBD |
-| `oia-site/src/renderer/render-layer.ts:88,139` | RGBA colors as inline style instead of CSS vars | TBD |
-| `oia-site/src/router.ts:14,47,58` | Zoom values hardcoded instead of constants | TBD |
-| `oia-site/src/renderer/render-layer.ts` + `render-panel.ts` | Duplicate `getItem()` function | TBD |
+| `oia-site/src/renderer/render-layer.ts`, `render-layer-blocks.ts`, `render-panel.ts` | Inline `style=` attributes instead of CSS classes | [#132](https://github.com/ruKurz/oi-architecture/issues/132) |
