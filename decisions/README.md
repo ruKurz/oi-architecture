@@ -1,11 +1,19 @@
-# Architecture Decision Records
+# Decision Records
 
-This directory contains Architecture Decision Records (ADRs) for the OIA project.
+This directory contains two types of decision records for the OIA project:
+
+| Type | Layer | Subject | Location |
+|---|---|---|---|
+| **ADR** — Architecture Decision Record | Arch | Technical and structural choices | `decisions/` |
+| **ODR** — Organizational Decision Record | Org | Operating model, governance, process principles | `decisions/org/` |
+
+Both follow the **Decision first** principle (Müller/Dienst). See [`context/odr-concept.md`](../context/odr-concept.md) for the full ODR concept and hierarchy (Gov → Org → Arch).
+
+---
+
+## ADR Index
 
 ADR methodology: Ralf D. Müller / Johannes Dienst (fiveandahalfstars.ninja).
-Key principle: **Decision first** — the decision is stated upfront, rationale follows.
-
-## Index
 
 | ADR | Title | Status | Type | Date |
 |---|---|---|---|---|
@@ -20,6 +28,18 @@ Key principle: **Decision first** — the decision is stated upfront, rationale 
 | [ADR-0009](./0009-repo-as-source-of-truth-for-contributor-documentation.md) | Repo as Source of Truth — Website as Entry Point | Accepted | DEV | 2026-03-12 |
 | [ADR-0010](./0010-semantic-anchors-as-vocabulary-layer.md) | Semantic Anchors as Shared Vocabulary Layer | Proposed | DEV | 2026-03-12 |
 | [ADR-0011](./0011-english-as-project-language.md) | English as the Sole Project Language | Proposed | DEV | 2026-03-13 |
+| [ADR-0012](./0012-introduce-odr-governance-layer.md) | Introduce ODR as Governance Documentation Layer | Proposed | BOTH | 2026-03-14 |
+
+---
+
+## ODR Index
+
+ODRs document organizational decisions at the Org layer of the governance hierarchy. They bind all participants: Users, Agents, and Contributors.
+
+| ODR | Title | Status | Date |
+|---|---|---|---|
+| [ODR-0001](./org/0001-oia-ecosystem-type.md) | OIA Ecosystem Type — Community-Driven with Benevolent Dictator | Proposed | 2026-03-14 |
+| [ODR-0002](./org/0002-adopt-agile-principles.md) | Adopt Agile Software Development Principles | Proposed | 2026-03-14 |
 
 ## ADR Acceptance Rule
 
