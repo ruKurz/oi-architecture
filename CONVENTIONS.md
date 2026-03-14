@@ -108,6 +108,19 @@ Categories: `model` · `renderer` · `prompt` · `architecture` · `infra` · `u
 
 See [ADR-0003](decisions/adr/0003-github-issues-as-task-tracker.md) for rationale.
 
+### No-Duplicate Rule
+
+**Every workflow that creates GitHub Issues must run the duplicate check first — without exception.**
+
+This applies to all prompts, scripts, and AI-assisted workflows:
+
+1. Load open issues: `gh issue list --state open --limit 100`
+2. Check for overlap by **title keywords** and **affected file/component**.
+3. Clear overlap → **do not create** — reference the existing issue instead.
+4. Uncertain → create the issue and add `possibly related to #N` in the body.
+
+This rule is authoritative here. All prompts that create issues must reference it by name (`CONVENTIONS.md §2.4 No-Duplicate Rule`) rather than repeating the procedure inline. See [ADR-0003](decisions/adr/0003-github-issues-as-task-tracker.md) for the original definition and rationale.
+
 ### Issue closing rules
 
 **Close-Verifikation:** When closing an issue, the close comment must verify each AC item explicitly:

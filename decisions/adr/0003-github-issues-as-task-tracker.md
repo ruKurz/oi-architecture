@@ -55,6 +55,8 @@ Before creating any issue, the existing open issues must be checked for duplicat
 
 This rule applies to all automated issue creation (prompts, scripts, AI assistants) and manual creation alike.
 
+**Operational rule:** The authoritative, named statement of this rule is in `CONVENTIONS.md §2.4 No-Duplicate Rule`. Prompts reference it there — not inline.
+
 ## Alternatives
 
 | Option | Reason rejected |
