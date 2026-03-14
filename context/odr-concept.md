@@ -14,21 +14,43 @@ ODRs make organizational intelligence explicit. They answer the question:
 
 > *"Why does this organization behave the way it does?"*
 
+The defining property of an ODR is its **binding scope**: every ODR explicitly states which participants are bound by it — Users, Agents, Contributors, or all three. An AI agent that acts within an organization must respect its organizational decisions just as much as a human employee does. This is not a design detail; it is the core constraint that distinguishes ODRs from all existing decision documentation formats.
+
 ---
 
-## Why ODRs — the gap ADRs leave
+## Why ODRs — the gap no existing format fills
 
 **ADRs** (Architecture Decision Records) document technical and structural choices:
 > "We chose technology X over Y for architectural reason Z."
 
-They are primarily binding for technical contributors: code reviewers, architects, developers.
+The keyword is *architectural*. ADRs are explicitly bound to systems and their structure — not to the organization as an acting subject. They are primarily binding for technical contributors: code reviewers, architects, developers.
 
 **ODRs** document organizational choices:
 > "We chose operating model X over Y because it minimizes risk Z at cost C."
 
-They bind **all system participants** — Users, Contributors, and Agents alike. An agent that acts within an organization must respect its organizational decisions just as much as a human employee does.
+The critical distinction: an ODR binds **all system participants** — Users, Contributors, and Agents alike. An AI agent that acts within an organization must respect its organizational decisions just as much as a human employee does. This is not an afterthought — it is the central design constraint that makes ODRs necessary.
 
 ADRs answer *how we build*. ODRs answer *how we operate*.
+
+### Why existing formats don't fill this gap
+
+Several adjacent formats exist. None of them cover the Org layer completely:
+
+| Format | Layer | Binding | Why-documentation | Versionable | Agent-aware |
+|---|---|---|---|---|---|
+| ADR | Arch | Technical contributors | ✅ | ✅ | ❌ |
+| GDR (Governance Decision Record) | Arch/Data | Data teams + platform | ✅ | ✅ | ❌ |
+| Decision Log | All | No specific scope | ⚠️ often absent | ❌ | ❌ |
+| Policy Document | Org | Humans | ❌ rarely | ❌ | ❌ |
+| **ODR** | **Org** | **All participants incl. Agents** | **✅** | **✅** | **✅** |
+
+**GDR (Agile Lab):** A versioned, computationally executable governance policy format for data platforms — Policy-as-Code. Domain-specific to data governance; requires platform infrastructure. Not a general-purpose format for organizational decisions.
+
+**Decision Log:** A reactive protocol — it records what was decided, not why in a structured way. No binding concept, no defined scope (who is bound?), no governance layer in a hierarchy.
+
+**Policy Document:** The classic form of organizational decisions (HR handbooks, codes of conduct). Problems: no standardized structure analogous to ADRs, no documentation of the decision rationale (context, rejected alternatives, trade-offs), not version-controlled in a software workflow sense, no binding scope definition.
+
+The "it's just a Policy Document with ADR format" objection is predictable — and wrong. Policy Documents do not document the decision rationale, are not part of a versionable knowledge base, and do not define the binding scope. An ODR does all three. The binding-scope field (Users / Agents / Contributors / All) is not cosmetic — it makes the decision machine-readable in the sense that an AI agent can determine whether a given ODR applies to its actions.
 
 ---
 
