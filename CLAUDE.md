@@ -86,9 +86,23 @@ A compliant prompt must contain all of:
 
 See [ADR-0006](decisions/arch/0006-prompt-helper-enforcement.md) for rationale.
 
+## Git Workflow
+
+See CONVENTIONS.md §Git Workflow and [ADR-0014](decisions/arch/0014-feature-branch-release-branch-workflow.md) for full rules.
+
+**Branch per issue:** Every issue is implemented on a dedicated branch (`feature/#N-description`, `fix/#N-description`, etc.).
+
+**Agent push autonomy:** Push to a feature branch at any time — no chat confirmation required. Notify the human in chat when opening a PR.
+
+**Never merge to main:** Open the PR, summarize the changes in chat, and wait for human approval. The human merges.
+
+**Force-push:** Never without an explicit human instruction in chat.
+
+**Push to main:** Only when explicitly instructed — this triggers production deployment.
+
 ## Commit Convention
 
-Follow CONVENTIONS.md §2.3. Every commit references a GitHub Issue in the footer (`Closes #N` or `Refs #N`), except initial setup commits.
+Follow CONVENTIONS.md §2.3. Every commit subject ends with `(#N)`. Every commit footer references a GitHub Issue (`Closes #N` or `Refs #N`), except initial setup commits.
 
 ## Issue Tracking
 
