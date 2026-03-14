@@ -115,3 +115,33 @@ This explicit binding is what distinguishes ODRs from informal process notes. An
 | Location | `decisions/` | `decisions/org/` |
 | Template | `decisions/README.md` → Template section | `decisions/org/odr-template.md` |
 | Numbered | ADR-XXXX | ODR-XXXX |
+
+---
+
+## Theoretical foundation
+
+The Gov → Org → Arch hierarchy is a deliberate simplification of established enterprise governance frameworks — not an invented construct.
+
+### TOGAF (The Open Group Architecture Framework)
+The strongest correspondence. TOGAF's Architecture Governance model distinguishes explicitly between:
+- **Corporate/Regulatory Governance** — external constraints that are given, not chosen (= `Gov`)
+- **IT/Business Governance** — internal policies and operating decisions (= `Org`)
+- **Architecture Governance** — technical decisions, patterns, standards (= `Arch`)
+
+TOGAF treats Corporate Governance as an external input to the internal governance framework, consistent with the ODR model's treatment of `Gov` as "given, not chosen." A TOGAF whitepaper explicitly recommends inserting a Business Governance layer between Corporate and Technology Governance — acknowledging that the boundary between Org and Arch needs more granularity in large enterprises. The three-layer model here is a conscious simplification of this richer structure.
+
+### COBIT / ISO/IEC 42010
+COBIT and the ISO/IEC 42010 standard (Systems and Software Engineering — Architecture Description) treat external regulatory requirements (GDPR, HIPAA, ISO 27001, SOX, NIST) as a distinct compliance layer on which internal governance mechanisms are built. This is the same separation as `Gov → Org`.
+
+### Weill & Ross — IT Governance
+Peter Weill and Jeanne W. Ross (*IT Governance*, 2004) define IT governance as "specifying the decision rights and accountability framework to encourage desirable behavior in the use of IT." Their framework distinguishes governance decisions (who has the right to decide) from management decisions (who implements). ODRs operate at the governance level — they document *that* a decision was made and *why*, not *how* it is implemented.
+
+### ADR tradition — Nygard (2011)
+The Architecture Decision Record format originates with Michael Nygard's 2011 blog post *Documenting Architecture Decisions*. The format was designed for the Arch layer: technical choices made by architects and developers. ODRs extend the same traceability principle one layer up — applying it to organizational decisions that constrain the Arch layer.
+
+### GOV.UK ADR Framework
+The UK Government Digital Service recommends ADR adoption at multiple levels — team, programme, department, cross-departmental. This multi-level recommendation implicitly acknowledges a hierarchy of decision-making authority consistent with the Gov → Org → Arch model.
+
+---
+
+**Note on scope:** The three-level model is a pragmatic simplification. Real enterprise governance (especially TOGAF-compliant architectures) operates with more layers and finer distinctions. For a project at OIA's current scale, three levels provide the right balance between rigor and maintainability.
