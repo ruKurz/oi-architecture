@@ -36,7 +36,7 @@ If inputs are missing: ask before creating anything.
 
 ## Constraints
 
-- **No issue without duplicate check** — load open issues first
+- **No issue without duplicate check** — per `CONVENTIONS.md §2.4 No-Duplicate Rule` and ADR-0003; load open issues first
 - **No issue for BIZ content** (OIA model IDs, layer names) without explicit user confirmation
 - **No vague title** — must follow Conventional Commits format
 - **At least 2 labels** — domain + category
