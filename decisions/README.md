@@ -17,18 +17,18 @@ ADR methodology: Ralf D. Müller / Johannes Dienst (fiveandahalfstars.ninja).
 
 | ADR | Title | Status | Type | Date |
 |---|---|---|---|---|
-| [ADR-0001](./0001-language-and-naming-conventions.md) | Language and Naming Conventions | Accepted (language section superseded by ADR-0011) | DEV | 2026-03-11 |
-| [ADR-0002](./0002-biz-dev-separation.md) | BIZ/DEV Separation as Project Rule | Accepted | BOTH | 2026-03-11 |
-| [ADR-0003](./0003-github-issues-as-task-tracker.md) | GitHub Issues as Official Task Tracker | Accepted | DEV | 2026-03-11 |
-| [ADR-0004](./0004-adr-format-mueller-dienst.md) | ADR Format: Müller/Dienst Methodology | Accepted | DEV | 2026-03-11 |
-| [ADR-0005](./0005-conventional-commits-with-content-type.md) | Conventional Commits with Custom Content Type | Accepted | DEV | 2026-03-11 |
-| [ADR-0006](./0006-prompt-helper-enforcement.md) | Prompt-Helper Enforcement via CLAUDE.md | Accepted | DEV | 2026-03-11 |
-| [ADR-0007](./0007-versioning-scheme.md) | Versioning Scheme — Semantic Versioning for OIA | Proposed | BOTH | 2026-03-13 |
-| [ADR-0008](./0008-release-strategy.md) | Release Strategy — GitHub Releases with Manual Trigger | Proposed | DEV | 2026-03-13 |
-| [ADR-0009](./0009-repo-as-source-of-truth-for-contributor-documentation.md) | Repo as Source of Truth — Website as Entry Point | Accepted | DEV | 2026-03-12 |
-| [ADR-0010](./0010-semantic-anchors-as-vocabulary-layer.md) | Semantic Anchors as Shared Vocabulary Layer | Proposed | DEV | 2026-03-12 |
-| [ADR-0011](./0011-english-as-project-language.md) | English as the Sole Project Language | Proposed | DEV | 2026-03-13 |
-| [ADR-0012](./0012-introduce-odr-governance-layer.md) | Introduce ODR as Governance Documentation Layer | Proposed | BOTH | 2026-03-14 |
+| [ADR-0001](./arch/0001-language-and-naming-conventions.md) | Language and Naming Conventions | Accepted (language section superseded by ADR-0011) | DEV | 2026-03-11 |
+| [ADR-0002](./arch/0002-biz-dev-separation.md) | BIZ/DEV Separation as Project Rule | Accepted | BOTH | 2026-03-11 |
+| [ADR-0003](./arch/0003-github-issues-as-task-tracker.md) | GitHub Issues as Official Task Tracker | Accepted | DEV | 2026-03-11 |
+| [ADR-0004](./arch/0004-adr-format-mueller-dienst.md) | ADR Format: Müller/Dienst Methodology | Accepted | DEV | 2026-03-11 |
+| [ADR-0005](./arch/0005-conventional-commits-with-content-type.md) | Conventional Commits with Custom Content Type | Accepted | DEV | 2026-03-11 |
+| [ADR-0006](./arch/0006-prompt-helper-enforcement.md) | Prompt-Helper Enforcement via CLAUDE.md | Accepted | DEV | 2026-03-11 |
+| [ADR-0007](./arch/0007-versioning-scheme.md) | Versioning Scheme — Semantic Versioning for OIA | Proposed | BOTH | 2026-03-13 |
+| [ADR-0008](./arch/0008-release-strategy.md) | Release Strategy — GitHub Releases with Manual Trigger | Proposed | DEV | 2026-03-13 |
+| [ADR-0009](./arch/0009-repo-as-source-of-truth-for-contributor-documentation.md) | Repo as Source of Truth — Website as Entry Point | Accepted | DEV | 2026-03-12 |
+| [ADR-0010](./arch/0010-semantic-anchors-as-vocabulary-layer.md) | Semantic Anchors as Shared Vocabulary Layer | Proposed | DEV | 2026-03-12 |
+| [ADR-0011](./arch/0011-english-as-project-language.md) | English as the Sole Project Language | Proposed | DEV | 2026-03-13 |
+| [ADR-0012](./arch/0012-introduce-odr-governance-layer.md) | Introduce ODR as Governance Documentation Layer | Proposed | BOTH | 2026-03-14 |
 
 ---
 

@@ -4,7 +4,7 @@
 **Status:** Proposed
 **Date:** 2026-03-14
 **Type:** BOTH
-**Governed by:** [ODR-0000](./org/0000-commit-to-transparent-governance-documentation.md)
+**Governed by:** [ODR-0000](../org/0000-commit-to-transparent-governance-documentation.md)
 
 ## Context
 
@@ -44,5 +44,5 @@ The full concept, hierarchy definition, and template are documented in `context/
 |---|---|
 | [ADR-0004](./0004-adr-format-mueller-dienst.md) | ADR methodology this decision extends (not replaces) |
 | [ADR-0002](./0002-biz-dev-separation.md) | BIZ/DEV separation — ODRs belong to BIZ artifacts |
-| [ODR-0001](./org/0001-oia-ecosystem-type.md) | First ODR created under this framework |
-| [ODR-0002](./org/0002-adopt-agile-principles.md) | Second ODR created under this framework |
+| [ODR-0001](../org/0001-oia-ecosystem-type.md) | First ODR created under this framework |
+| [ODR-0002](../org/0002-adopt-agile-principles.md) | Second ODR created under this framework |

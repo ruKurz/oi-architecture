@@ -1,7 +1,7 @@
 # Working with ADRs and Semantic Anchors in OIA
 
 > **Diátaxis mode:** How-to guide — task-oriented, for contributors and AI agents.
-> For conceptual background, see [ADR-0004](../decisions/0004-adr-format-mueller-dienst.md) and [ADR-0010](../decisions/0010-semantic-anchors-as-vocabulary-layer.md).
+> For conceptual background, see [ADR-0004](../decisions/arch/0004-adr-format-mueller-dienst.md) and [ADR-0010](../decisions/arch/0010-semantic-anchors-as-vocabulary-layer.md).
 
 ---
 

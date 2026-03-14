@@ -20,7 +20,7 @@ Two distinct domains. A commit touches exactly one.
 
 **Rule:** No commit without a referenced GitHub Issue (except: `chore: initial setup` for new files).
 
-See [ADR-0002](decisions/0002-biz-dev-separation.md) for rationale.
+See [ADR-0002](decisions/arch/0002-biz-dev-separation.md) for rationale.
 
 ---
 
@@ -39,7 +39,7 @@ See [ADR-0002](decisions/0002-biz-dev-separation.md) for rationale.
 
 Existing German files in `context/`, `notes/`, and `prompts/` are known exceptions — not retroactively translated; follow English on creation or next significant edit.
 
-See [ADR-0011](decisions/0011-english-as-project-language.md) for rationale.
+See [ADR-0011](decisions/arch/0011-english-as-project-language.md) for rationale.
 
 ---
 
@@ -82,7 +82,7 @@ Rules:
 - GitHub Issue in footer — always (except initial commits)
 - Before `Closes #N`: all acceptance criteria of the issue must be verified — see §2.4 Close-Verifikation
 
-See [ADR-0005](decisions/0005-conventional-commits-with-content-type.md) for rationale.
+See [ADR-0005](decisions/arch/0005-conventional-commits-with-content-type.md) for rationale.
 
 ---
 
@@ -103,7 +103,7 @@ Parking-lot entry format (in `context/todo.md`):
 
 Categories: `model` · `renderer` · `prompt` · `architecture` · `infra` · `ux` · `content`
 
-See [ADR-0003](decisions/0003-github-issues-as-task-tracker.md) for rationale.
+See [ADR-0003](decisions/arch/0003-github-issues-as-task-tracker.md) for rationale.
 
 ### Issue closing rules
 
@@ -197,7 +197,7 @@ describe('<FunctionName>', () => {
 
 Every new prompt file in `prompts/` must be created through the `prompts/templates/prompt-helper.md` process. Prompts without the required sections (`## Context`, `## Goal`, `## Constraints`, `## Acceptance criteria`) are non-compliant.
 
-See [ADR-0006](decisions/0006-prompt-helper-enforcement.md) for rationale.
+See [ADR-0006](decisions/arch/0006-prompt-helper-enforcement.md) for rationale.
 
 ---
 
@@ -209,7 +209,7 @@ Methodology: Ralf D. Müller / Johannes Dienst — Decision first, Alternatives 
 
 **ADR Acceptance Rule:** Only a human maintainer may set an ADR status to `Accepted`. AI-assisted tooling must use `Proposed` when creating new ADRs. An ADR in `Proposed` state is active and followed — `Proposed` means "awaiting human sign-off", not "not yet in use".
 
-See [ADR-0004](decisions/0004-adr-format-mueller-dienst.md) for rationale.
+See [ADR-0004](decisions/arch/0004-adr-format-mueller-dienst.md) for rationale.
 
 ---
 
@@ -218,7 +218,7 @@ See [ADR-0004](decisions/0004-adr-format-mueller-dienst.md) for rationale.
 Semantic Anchors are named methodologies invoked verbatim in prompts and CLAUDE.md to activate established knowledge domains in AI assistants. They complement ADRs: an ADR documents a project-specific decision, an anchor establishes shared vocabulary for a universal methodology.
 
 **Active anchor set:** `context/semantic-anchors.md`
-**Decision:** [ADR-0010](decisions/0010-semantic-anchors-as-vocabulary-layer.md)
+**Decision:** [ADR-0010](decisions/arch/0010-semantic-anchors-as-vocabulary-layer.md)
 
 Rules:
 - Anchors are invoked **verbatim** — "MECE Principle (Minto)", not "MECE" or "mutually exclusive"

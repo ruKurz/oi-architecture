@@ -6,7 +6,7 @@
 **Level:** Org
 **Binding for:** All
 **Derives from:** [ODR-0000](./0000-commit-to-transparent-governance-documentation.md)
-**Implements:** [ADR-0003](../0003-github-issues-as-task-tracker.md), [ADR-0005](../0005-conventional-commits-with-content-type.md)
+**Implements:** [ADR-0003](../arch/0003-github-issues-as-task-tracker.md), [ADR-0005](../arch/0005-conventional-commits-with-content-type.md)
 
 ## Context
 
@@ -54,7 +54,7 @@ In a project like OIA — where the model itself is being discovered, not specif
 
 | Record | Relationship |
 |---|---|
-| [ADR-0012](../0012-introduce-odr-governance-layer.md) | Architectural decision that introduced the ODR layer |
+| [ADR-0012](../arch/0012-introduce-odr-governance-layer.md) | Architectural decision that introduced the ODR layer |
 | [ODR-0001](./0001-oia-ecosystem-type.md) | Establishes the community-driven model this ODR operates within |
-| [ADR-0003](../0003-github-issues-as-task-tracker.md) | Arch-layer implementation: GitHub Issues as sprint task tracker |
-| [ADR-0005](../0005-conventional-commits-with-content-type.md) | Arch-layer implementation: conventional commits as delivery discipline |
+| [ADR-0003](../arch/0003-github-issues-as-task-tracker.md) | Arch-layer implementation: GitHub Issues as sprint task tracker |
+| [ADR-0005](../arch/0005-conventional-commits-with-content-type.md) | Arch-layer implementation: conventional commits as delivery discipline |

@@ -8,7 +8,7 @@
 ## Context
 
 Read before execution:
-- `decisions/0003-github-issues-as-task-tracker.md` — binding format, labels, no-duplicate rule
+- `decisions/arch/0003-github-issues-as-task-tracker.md` — binding format, labels, no-duplicate rule
 - `CONVENTIONS.md` §2.1 — BIZ/DEV assignment for labels
 - `CONVENTIONS.md` §2.3 — commit types as reference for issue titles
 

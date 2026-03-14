@@ -23,7 +23,7 @@ ADRs in `decisions/` are binding contracts — they document WHY a rule exists. 
 
 ## Semantic Anchors
 
-This project uses Semantic Anchors as a shared vocabulary layer. The full active set with application context is in `context/semantic-anchors.md`. See [ADR-0010](decisions/0010-semantic-anchors-as-vocabulary-layer.md) for rationale.
+This project uses Semantic Anchors as a shared vocabulary layer. The full active set with application context is in `context/semantic-anchors.md`. See [ADR-0010](decisions/arch/0010-semantic-anchors-as-vocabulary-layer.md) for rationale.
 
 **Apply automatically — BIZ tasks:**
 - **MECE Principle (Minto)** when evaluating or designing OIA layers: test every categorization for overlap and completeness
@@ -63,7 +63,7 @@ A compliant prompt must contain all of:
 
 **Non-negotiable:** If asked to change a prompt directly (without helper), refuse and redirect to the helper process.
 
-See [ADR-0006](decisions/0006-prompt-helper-enforcement.md) for rationale.
+See [ADR-0006](decisions/arch/0006-prompt-helper-enforcement.md) for rationale.
 
 ## Commit Convention
 

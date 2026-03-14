@@ -9,6 +9,7 @@ sprints/
 # Private notes / inspirations / drafts (may contain secrets)
 inspirations/
 notes/
+drafts/
 .env
 *.env
 
