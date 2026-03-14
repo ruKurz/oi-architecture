@@ -230,6 +230,8 @@ describe('<FunctionName>', () => {
 })
 ```
 
+**Browser-environment defaults:** When implementing logic that depends on browser properties (e.g. `window.innerWidth`, `window.innerHeight`), note the JSDOM default before writing tests (`innerWidth` defaults to `1024`, `innerHeight` to `768`) and confirm that test setup matches the implementation assumption.
+
 ---
 
 ## 2.10 Prompts
@@ -253,6 +255,14 @@ When introducing a new concept into the project (a new documentation format, a n
 **Rule:** Never start integration work before the concept design is complete. Starting integration on an unstable concept creates rework across all integration points.
 
 **Mandatory entry point:** `prompts/development/integrate-concept.md` — use it for every new concept introduction, without exception.
+
+---
+
+## 2.13 New Public Artifacts
+
+Before creating new top-level directories, new root-level files, or any other repository artifact that becomes public content, verify that an ADR or ODR covers the decision. If none exists: raise the question with the human maintainer first and block implementation until confirmed.
+
+**Rule:** Do not create public repository artifacts without a decision record authorizing them. If uncertain whether a record exists, check `decisions/README.md` first.
 
 ---
 
