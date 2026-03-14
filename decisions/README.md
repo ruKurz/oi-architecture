@@ -17,7 +17,7 @@ ADR methodology: Ralf D. Müller / Johannes Dienst (fiveandahalfstars.ninja).
 
 | ADR | Title | Status | Type | Date |
 |---|---|---|---|---|
-| [ADR-0001](./arch/0001-language-and-naming-conventions.md) | Language and Naming Conventions | Accepted (language section superseded by ADR-0011) | DEV | 2026-03-11 |
+| [ADR-0001](./arch/0001-language-and-naming-conventions.md) | Language and Naming Conventions | Accepted (language section superseded by ODR-0004) | DEV | 2026-03-11 |
 | [ADR-0002](./arch/0002-biz-dev-separation.md) | BIZ/DEV Separation as Project Rule | Accepted | BOTH | 2026-03-11 |
 | [ADR-0003](./arch/0003-github-issues-as-task-tracker.md) | GitHub Issues as Official Task Tracker | Accepted | DEV | 2026-03-11 |
 | [ADR-0004](./arch/0004-adr-format-mueller-dienst.md) | ADR Format: Müller/Dienst Methodology | Accepted | DEV | 2026-03-11 |
@@ -27,7 +27,7 @@ ADR methodology: Ralf D. Müller / Johannes Dienst (fiveandahalfstars.ninja).
 | [ADR-0008](./arch/0008-release-strategy.md) | Release Strategy — GitHub Releases with Manual Trigger | Proposed | DEV | 2026-03-13 |
 | [ADR-0009](./arch/0009-repo-as-source-of-truth-for-contributor-documentation.md) | Repo as Source of Truth — Website as Entry Point | Accepted | DEV | 2026-03-12 |
 | [ADR-0010](./arch/0010-semantic-anchors-as-vocabulary-layer.md) | Semantic Anchors as Shared Vocabulary Layer | Proposed | DEV | 2026-03-12 |
-| [ADR-0011](./arch/0011-english-as-project-language.md) | English as the Sole Project Language | Proposed | DEV | 2026-03-13 |
+| ~~[ADR-0011](./_obsolete/0011-english-as-project-language.md)~~ | ~~English as the Sole Project Language~~ | Superseded by ODR-0004 | DEV | 2026-03-13 |
 | [ADR-0012](./arch/0012-introduce-odr-governance-layer.md) | Introduce ODR as Governance Documentation Layer | Proposed | BOTH | 2026-03-14 |
 
 ---
@@ -42,6 +42,7 @@ ODRs document organizational decisions at the Org layer of the governance hierar
 | [ODR-0001](./org/0001-oia-ecosystem-type.md) | OIA Ecosystem Type — Community-Driven with Benevolent Dictator | Proposed | 2026-03-14 |
 | [ODR-0002](./org/0002-adopt-agile-principles.md) | Adopt Agile Software Development Principles | Proposed | 2026-03-14 |
 | [ODR-0003](./org/0003-adopt-adrs-as-arch-layer-documentation-practice.md) | Adopt ADRs as Arch-Layer Documentation Practice | Proposed | 2026-03-14 |
+| [ODR-0004](./org/0004-english-as-project-language.md) | English as the Sole Project Language | Proposed | 2026-03-14 |
 
 ## ADR Acceptance Rule
 

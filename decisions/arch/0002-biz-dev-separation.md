@@ -4,6 +4,7 @@
 **Status:** Accepted
 **Date:** 2026-03-11
 **Type:** BOTH
+**Governed by:** —
 
 ## Context
 

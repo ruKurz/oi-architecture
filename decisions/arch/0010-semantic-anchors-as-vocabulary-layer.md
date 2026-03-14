@@ -4,6 +4,7 @@
 **Status:** Proposed
 **Date:** 2026-03-12
 **Type:** DEV
+**Governed by:** —
 
 ## Context
 
