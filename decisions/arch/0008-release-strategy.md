@@ -1,6 +1,6 @@
 # ADR-0008: Release Strategy — GitHub Releases with Manual Trigger
 
-**Decision:** OIA uses GitHub Releases as the primary release mechanism. Releases are triggered manually by the maintainer via a git tag + `gh release create`. Release notes are drawn from `CHANGELOG.md`. No external release tooling is introduced.
+**Decision:** OIA uses GitHub Releases as the primary release mechanism. Releases are prepared on a `release/vX.Y.Z` branch, tagged there, and published via `gh release create`. Release notes are a curated summary — not a raw commit dump — written alongside `CHANGELOG.md`. No external release tooling is introduced.
 **Status:** Proposed
 **Date:** 2026-03-13
 **Type:** DEV
@@ -29,6 +29,17 @@ Key constraints:
 
 ## Release Process
 
+### Step 0 — Create release branch
+
+Branch from `main` when the release scope is agreed (may span multiple sprints):
+
+```bash
+git checkout -b release/vX.Y.Z
+git push -u origin release/vX.Y.Z
+```
+
+All stabilization commits (version bump, CHANGELOG, final fixes) go on this branch. No new features are added to the release branch — those continue on `main` via feature branches.
+
 ### Step 1 — Update version string
 
 Update all version locations in a single `chore(release): bump version to vX.Y.Z` commit:
@@ -46,7 +57,7 @@ Add a dated entry for the new version. Format:
 ### Fixed
 ```
 
-### Step 3 — Create git tag
+### Step 3 — Create git tag on the release branch
 
 ```bash
 git tag -a vX.Y.Z -m "Release vX.Y.Z"
@@ -71,9 +82,44 @@ For pre-releases (v0.x.y):
 gh release create vX.Y.Z --prerelease ...
 ```
 
-### Step 5 — Verify GitHub Pages deployment
+### Step 5 — Merge release branch back to main
+
+```bash
+git checkout main
+git merge release/vX.Y.Z
+git push origin main
+```
+
+This ensures `main` includes all stabilization commits made during release preparation.
+
+### Step 6 — Verify GitHub Pages deployment
 
 Confirm the live site reflects the new version after the Pages workflow completes.
+
+## Release Notes Format
+
+GitHub Release notes must be human-readable — not a raw commit dump. Structure:
+
+```markdown
+## What's in this release
+
+<1–3 sentence summary: what does this version deliver?>
+
+## Highlights
+
+- <Key change 1>
+- <Key change 2>
+
+## Sprint(s) included
+
+- Sprint YYYY-MM-DD: <sprint goal>
+
+## Full changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for the complete change history.
+```
+
+GitHub auto-generates a commit list from the tag range — enable "Generate release notes" in the GitHub UI or via `--generate-notes` flag to include it below the curated section.
 
 ## Pre-release Convention
 

@@ -31,6 +31,8 @@ ADR methodology: Ralf D. Müller / Johannes Dienst (fiveandahalfstars.ninja).
 | [ADR-0010](./arch/0010-semantic-anchors-as-vocabulary-layer.md) | Semantic Anchors as Shared Vocabulary Layer | Proposed | DEV | 2026-03-12 |
 | ~~[ADR-0011](./_obsolete/0011-english-as-project-language.md)~~ | ~~English as the Sole Project Language~~ | Superseded by ODR-0004 | DEV | 2026-03-13 |
 | [ADR-0012](./arch/0012-introduce-odr-governance-layer.md) | Introduce ODR as Governance Documentation Layer | Proposed | BOTH | 2026-03-14 |
+| [ADR-0013](./arch/0013-issue-reference-in-commit-subject.md) | Issue Reference in Commit Subject Line | Proposed | DEV | 2026-03-28 |
+| [ADR-0014](./arch/0014-feature-branch-release-branch-workflow.md) | Feature-Branch and Release-Branch Development Workflow | Proposed | DEV | 2026-03-28 |
 
 ---
 
