@@ -11,6 +11,10 @@ Read before every session:
 - `CONVENTIONS.md` — binding rules for all new files and commits
 - `decisions/README.md` — ADR + ODR index: active architecture and organizational contracts
 
+Read when working with decision records:
+- `context/adr-concept.md` — what ADRs are, canonical references, ADR vs ODR distinction
+- `context/odr-concept.md` — full ODR concept, derivation chain, lifecycle, agent onboarding
+
 ## Decision Records: ADRs and ODRs
 
 The project uses two types of decision records in a three-layer governance hierarchy (Gov → Org → Arch):
