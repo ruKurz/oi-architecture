@@ -11,6 +11,8 @@ Read before every session:
 - `CONVENTIONS.md` — binding rules for all new files and commits
 - `decisions/README.md` — ADR + ODR index: active architecture and organizational contracts
 
+Sprint process entry point: `prompts/development/sprint-change.md` — orchestrates review, retro, planning, refinement, scope-change.
+
 Read when working with decision records:
 - `context/adr-concept.md` — what ADRs are, canonical references, ADR vs ODR distinction
 - `context/odr-concept.md` — full ODR concept, derivation chain, lifecycle, agent onboarding
