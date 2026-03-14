@@ -1,166 +1,78 @@
-# OIA · Sprint Review, Retro & Planning
+# OIA · Sprint Retrospective
 
-**Prompt type:** Execution (interactive — contains explicit checkpoints)
+**Prompt type:** Execution (interactive — contains an explicit checkpoint)
 **Domain:** DEV
 
-> A complete sprint close in three phases: **Review** (what was actually done?), **Retro** (what did not go well, what do we improve?), **Planning** (what do we do next?). Run when the current sprint is to be closed.
+> Analyzes what did not go well in the sprint — from both the issue history and the chat/collaboration experience — and derives at most 3 improvement measures. Run after `sprint-review.md`. Requires the deviation table from the review.
 
 ---
 
 ## Context
 
-Read before execution:
-- `decisions/arch/0003-github-issues-as-task-tracker.md` — binding issue format and close conventions
-- `decisions/arch/0005-conventional-commits-with-content-type.md` — `Closes #N` / `Refs #N` footer convention
-
-Active repository: determined via `git remote get-url origin`.
+- Deviation table from `sprint-review.md` (passed in as input or retrieved from the review session)
+- `decisions/arch/0003-github-issues-as-task-tracker.md` — issue format and close conventions
+- Chat history of the sprint session (agent evaluates it as part of B-0)
 
 ---
 
----
+## Goal
 
-# PHASE A — Review
-
-> Runs fully through without interruption.
-
-## Goal (Phase A)
-
-All completed-but-open sprint issues are closed. The acceptance criteria of all sprint issues have been checked against the repo. A deviation list is present.
-
-## Constraints (Phase A)
-
-- **Implements nothing**
-- **Changes no source files**
-- **Closes no issue without evidence** (commit reference or explicitly confirmed implementation)
-- **Does not evaluate BIZ content** (OIA model layers, terminology)
+At most 3 improvement measures are agreed between agent and human, and exist as a single GitHub Issue.
 
 ---
 
-## Steps (Phase A)
+## Constraints
 
-### A-0 — Load sprint notes
-
-Find the most recent sprint file:
-
-```bash
-ls -t sprints/*.md 2>/dev/null | head -1
-```
-
-Read the file. Extract:
-1. **Sprint goal** — baseline for Phase C
-2. **Definition of Done** — if present, used as the standard for Phase A-2
-3. **Issue list** — all `#N` entries under "Core" and "Optional"
-
-```bash
-grep -oE '#[0-9]+' sprints/<FILENAME>.md
-```
-
-Store the issue numbers internally — they replace the "last 10 closed issues" in A-2.
-
-**Fallback:** If no sprint file exists → output a brief warning, continue with A-1 (A-2 then uses the last 10 closed issues).
+- Only run if the review produced deviations (⚠️ or ❌) OR the agent identifies qualitative issues in B-0
+- Combines all measures in a single issue — not separate issues
+- Does not create a retro issue without checking for duplicates first
+- **Does not skip the interactive checkpoint** — the agent must wait for the human's observations before deriving measures
 
 ---
 
-### A-1 — Issue hygiene: find completed-but-open issues
+## Steps
 
-```bash
-git log --oneline -30
-gh issue list --state open --limit 100
-```
+### B-0 — Chat history analysis
 
-1. Scan the last 30 commits for `Closes #N`, `Fixes #N`, `Refs #N` footers.
-2. For each referenced issue number: is the issue still open?
-3. Also check: are there open issues whose **title or scope** is clearly covered by a more recent commit — even without an explicit footer?
-4. List all candidates with justification (commit hash + commit message as evidence).
-5. Close all confirmed cases:
+Before looking at issue deviations: analyze the sprint's chat/collaboration history.
 
-```bash
-gh issue close <N> --comment "Closed: implemented in commit <HASH> — <COMMIT_TITLE>"
-```
+Identify and briefly note (1 sentence each):
+- **Communicative detours** — repeated back-and-forth, clarifications that should have been clear upfront
+- **Scope changes** — moments where the plan changed mid-sprint and why
+- **Process bypasses** — established prompts or rules not followed (e.g. integrate-concept.md skipped)
+- **Revisions** — outputs that had to be redone, and what triggered the rework
 
-> **Decision rule:** Uncertain cases → do not close; instead add a comment to the issue: "Possibly done in <HASH> — please confirm."
+Output a short "Chat observations" list (max 5 items). If nothing notable: "No significant chat observations."
 
 ---
 
-### A-2 — Acceptance review: sprint issues
+### B-1 — Issue deviation analysis
 
-Use the issue list from A-0. Load the complete body for each issue number:
-
-```bash
-gh issue view <N> --json state,title,body
-```
-
-For each sprint issue:
-
-1. Read the complete issue body (acceptance criteria).
-2. Check **state**: still `open` → rate as ❌, unless currently in progress.
-3. Check in the repo whether each acceptance criterion is actually met:
-   - Does the named file exist?
-   - Does it contain the described element?
-   - Was a named command / label / configuration implemented?
-4. Classify:
-   - ✅ **Complete** — closed, all criteria met
-   - ⚠️ **Partial** — closed, but at least one criterion missing or deviating
-   - ❌ **Open** — not yet implemented or core statement missing
-
-**Output:** Tabular list of all sprint issues with status + deviation description (max. 1 sentence).
+Use the deviation table from the review. For each ⚠️ or ❌:
+- Brief root cause hypothesis (one sentence)
+- Category: AC too vague | scope creep | missing commit footer | issue too large | no review | other
 
 ---
 
-## Decision rules (Phase A)
+### ⏸ CHECKPOINT — Human observations
 
-| Situation | Behaviour |
-|---|---|
-| Commit footer missing but implementation clearly recognisable | Close issue + note about missing footer |
-| Issue has no acceptance criteria | Rate as ⚠️ — missing AC = not verifiable |
-| `gh` CLI not available | Output results as markdown, do not close issues |
+> **STOP. Output the combined analysis (B-0 + B-1) to the user. Then ask:**
 
----
+"These are my observations from the sprint. What did you notice? What felt wrong, slow, or avoidable — from your side?"
 
-## Acceptance criteria (Phase A)
-
-- [ ] Sprint notes loaded (or fallback justified)
-- [ ] Completed-but-open sprint issues identified and closed (or justifiably not closed)
-- [ ] All sprint issues checked against their AC
-- [ ] Deviation list output (even if empty)
+**Wait for the human's reply before continuing.**
 
 ---
 
----
+### B-2 — Combine and prioritize measures
 
-# PHASE B — Retro
+Merge the agent's analysis (B-0 + B-1) with the human's observations. Identify overlaps and unique points.
 
-> Runs fully through without interruption. Based on the deviation list from Phase A.
+Evaluate each candidate measure by: **benefit · effort · sustainability**.
 
-## Goal (Phase B)
-
-The 3 most impactful process improvements from the sprint exist as a single GitHub Issue.
-
-## Constraints (Phase B)
-
-- **Only run** if Phase A produced deviations (⚠️ or ❌)
-- Combines the **3 measures** in a single issue — not 3 separate issues
-- **Creates no issue without prior duplicate check**
+Select **at most 3 measures**. For each: one concrete, actionable statement (max 2 sentences).
 
 ---
-
-## Steps (Phase B)
-
-### B-1 — Root cause analysis
-
-For each deviation from Phase A: brief hypothesis. Categories:
-
-| Category | Example |
-|---|---|
-| **Acceptance criteria too vague** | "File exists" instead of "File exists with sections X, Y, Z" |
-| **Scope creep** | Issue partially done, rest forgotten |
-| **No commit footer** | Issue not linked → gets forgotten |
-| **Issue too large** | Multiple tasks in one issue → only part done |
-| **No review** | No check after commit whether AC actually met |
-
-### B-2 — Develop and prioritise measures
-
-Maximum one concrete measure per root-cause category. Evaluate by: **benefit · effort · sustainability**. Choose the **3 best**.
 
 ### B-3 — Duplicate check
 
@@ -168,244 +80,77 @@ Maximum one concrete measure per root-cause category. Evaluate by: **benefit · 
 gh issue list --state open --limit 100
 ```
 
+Skip any measure that already exists as an open issue.
+
+---
+
 ### B-4 — Create retro issue
 
 ```bash
 gh issue create \
-  --title "chore(process): implement sprint retro improvements (<DATE>)" \
-  --label "domain:dev,infra" \
-  --body "<Body>"
+  --title "chore(process): sprint retro improvements — <DATE>" \
+  --label "domain:dev" \
+  --body "<body>"
 ```
 
 Body format:
 ```markdown
 ## Context
-Sprint retro from <DATE>. Review of the last 10 issues produced <N> deviations.
+Sprint retro <DATE>. Review produced N deviations. Chat analysis identified M observations.
 
-## Findings (deviations)
-- Issue #X: [description]
+## Chat observations
+- [observation 1]
+
+## Issue deviations
+- #N: [description]
 
 ## Root causes
-- [cause] → [affected issues]
+- [cause] → [affected issues/observations]
 
-## Action — 3 measures (prioritised)
+## Measures (max 3, prioritized)
 
-### 1. [Measure]
-[Concrete implementation, max. 2 sentences]
+### 1. [Measure title]
+[Concrete implementation, max 2 sentences. Where it will be anchored: CONVENTIONS.md / prompt / ADR / CLAUDE.md]
 
-### 2. [Measure]
-[Concrete implementation, max. 2 sentences]
+### 2. [Measure title]
+[...]
 
-### 3. [Measure]
-[Concrete implementation, max. 2 sentences]
+### 3. [Measure title]
+[...]
 
 ## Acceptance criteria
-- [ ] Measure 1 implemented and anchored (CONVENTIONS.md / Prompt / ADR)
+- [ ] Measure 1 implemented and anchored
 - [ ] Measure 2 implemented
 - [ ] Measure 3 implemented
-- [ ] Next sprint retro shows a reduction in deviation rate
 ```
 
 ---
 
-## Decision rules (Phase B)
+## Decision rules
 
 | Situation | Behaviour |
 |---|---|
-| No deviations in Phase A | Skip Phase B — output a brief confirmation |
-| Deviation is trivial | Note as observation in the issue, no separate measure |
-| Fewer than 3 deviations | Only 1–2 measures, adjust title |
-| More than 5 deviations | Top 5 by impact, rest as "further observations" |
+| No deviations AND no chat observations | Skip — output: "No issues found. Retro skipped." |
+| Deviation is trivial | Note as observation in the issue; no separate measure |
+| Fewer than 3 improvements needed | Use 1–2 measures; adjust title |
+| Human and agent observations conflict | Note both; let the human decide which takes priority |
 
 ---
 
-## Acceptance criteria (Phase B)
+## Acceptance criteria
 
-- [ ] Retro issue created (if deviations) or absence confirmed
-- [ ] Retro issue contains max. 3 measures
-
----
-
----
-
-# PHASE C — Sprint Planning
-
-> Interactive — contains two explicit checkpoints that wait for a chat reply.
-
-## Goal (Phase C)
-
-An agreed sprint scope exists: a list of issues that best support a sprint goal — neither too much nor too little — and a handshake to start.
-
-## Constraints (Phase C)
-
-- **Creates no new issues** before Checkpoint 1
-- **Proposes no issues** that are not thematically connected to the sprint goal
-- **Does not finalise scope** without explicit confirmation
-- **Waits** after each checkpoint for a chat reply — does not proceed autonomously
-
----
-
-## Steps (Phase C)
-
-### C-1 — Capture the sprint goal
-
-The sprint goal is provided by the user as free text together with the prompt.
-
-If none was provided:
-> **STOP — input missing.** Please provide the sprint goal as free text: "What should be achieved by the end of the next sprint?"
-
-Paraphrase the goal in one sentence:
-> "I understand the sprint goal as: **[paraphrase]**. Correct?"
-
-If corrected: update the sprint goal, then continue.
-
----
-
-### C-2 — Issue scan: find thematically relevant issues
-
-```bash
-gh issue list --state open --limit 100
-```
-
-Assign each open issue to one of three buckets:
-
-| Bucket | Criterion |
-|---|---|
-| 🎯 **Direct** | Issue directly supports the sprint goal |
-| 🔗 **Indirect** | Prerequisite for a direct issue or a sensible addition |
-| ⬜ **Not relevant** | No recognisable connection |
-
-Show only 🎯 and 🔗 issues with one sentence of justification each.
-
----
-
-### C-3 — Scope proposal + gap analysis
-
-**Proposed sprint scope:**
-
-Present 🎯 as core scope, 🔗 as optional. Size estimate per issue:
-
-| Size | Guideline |
-|---|---|
-| S | < 30 minutes |
-| M | 30 min – 2 hours |
-| L | half a day |
-| XL | multiple days → splitting recommended |
-
-**Gap analysis:** Are there issues missing that would support the goal well but do not yet exist? Per gap: one sentence + recommendation (create or not).
-
----
-
-### ⏸ CHECKPOINT 1 — Scope feedback
-
-> **STOP — output to user. Wait for chat reply.**
-
-Ask explicitly:
-1. Is the scope right (too much / too little / fits)?
-2. Should issues from the gap analysis be created — which ones?
-3. Should issues be removed from the scope?
-
-**Do not continue until a chat reply is received.**
-
----
-
-### C-4 — Finalise scope
-
-Execute what was confirmed in Checkpoint 1:
-
-- Create new issues (if confirmed):
-
-```bash
-gh issue create \
-  --title "<type>(<scope>): <description>" \
-  --label "<domain>,<category>" \
-  --body "<Context + Action + Acceptance criteria>"
-```
-
-Show the final scope:
-
-```
-Sprint scope — [DATE]
-Goal: [sprint goal]
-
-🎯 Core:
-  #N  [Title]  [Size]
-
-🔗 Optional (if time allows):
-  #N  [Title]  [Size]
-
-Total core: [sum]
-```
-
----
-
-### ⏸ CHECKPOINT 2 — Handshake
-
-> **STOP — output to user. Wait for chat reply.**
-
-> "Scope is set. Ready to start? — Reply with **'Start'** or give final corrections."
-
-After confirmation:
-> "Sprint started. Good luck. When closing the sprint: run this prompt again."
-
----
-
-## Decision rules (Phase C)
-
-| Situation | Behaviour |
-|---|---|
-| No sprint goal | STOP — request input |
-| Scope > 5 direct issues | Note: "Possibly too large — prioritising to 3–5 core issues recommended" |
-| Scope = 0 direct issues | Note: "No matching issues — gap analysis shows needed new issues" |
-| XL issue in scope | Warning: "Issue #N is XL — splitting before sprint start recommended" |
-| User confirms without changes | Go directly to Checkpoint 2 |
-
----
-
-## Acceptance criteria (Phase C)
-
-- [ ] Sprint goal paraphrased and confirmed
-- [ ] All open issues scanned and evaluated
-- [ ] Scope proposal with sizes output
-- [ ] Gap analysis performed
-- [ ] Checkpoint 1: feedback gathered and implemented
-- [ ] Checkpoint 2: handshake completed
-- [ ] Final scope output in writing
-
----
-
----
-
-# Summary at end of full run
-
-Show after Phase C:
-
-```
-Sprint close — [DATE]
-Sprint notes:       sprints/[FILE] | no sprint (fallback)
-
-Phase A (Review):
-  Issues closed:    N  (#...)
-  Issues reviewed:  N  (sprint issues)
-  Status:           ✅ X  ⚠️ Y  ❌ Z
-  Deviation rate:   X%
-
-Phase B (Retro):
-  Retro issue:      #N (URL) | not needed
-
-Phase C (Planning):
-  New issues:       N  (#...)
-  Sprint scope:     N core issues, N optional
-  Sprint goal:      [one sentence]
-```
+- [ ] Chat history analyzed (B-0) before issue deviations
+- [ ] Combined analysis presented to human before measures are derived
+- [ ] Human observations collected at the checkpoint
+- [ ] Retro issue created (if issues found) or absence explicitly confirmed
+- [ ] Retro issue contains max 3 measures
 
 ---
 
 ## Output
 
 ```
-Phase A: GitHub Issues — closed (variable count)
-Phase B: GitHub Issue — 1 retro issue (if deviations)
-Phase C: GitHub Issues — new issues if any (gap analysis)
-         Chat output — final sprint scope as list
+Chat output — combined analysis (B-0 + B-1)
+Chat output — measure proposals
+GitHub Issue — 1 retro issue (if issues found)
 ```
