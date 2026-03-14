@@ -21,6 +21,7 @@ This folder contains AI prompt templates used by the project author with [Claude
 | `development/sprint-planning.md` | Phase C: agree sprint goal and scope for next sprint |
 | `development/sprint-refinement.md` | Sharpen one or more issues to sprint-ready quality |
 | `development/sprint-scope-change.md` | Handle mid-sprint scope additions, removals, or splits |
+| `development/init-session.md` | Session warm-up — load full binding context (ADRs, ODRs, sprint, branch) |
 | `diagrams/generate-diagram.md` | Image generation prompt for the OIA architecture diagram |
 
 > `development/setup-todo-command.md` — **deprecated** (one-time setup, already executed)
