@@ -86,6 +86,14 @@ A compliant prompt must contain all of:
 
 See [ADR-0006](decisions/arch/0006-prompt-helper-enforcement.md) for rationale.
 
+### No Concept Introduction Without Design-First
+
+**Before introducing any new concept:** use `prompts/development/integrate-concept.md` as the mandatory entry point. Do not create integration issues or start implementation before the concept design is complete and approved by the human maintainer.
+
+Order: Design → Approval → Integration Issues → Implementation. Never skip to integration.
+
+See CONVENTIONS.md §2.12 for the full rule.
+
 ## Git Workflow
 
 See CONVENTIONS.md §Git Workflow and [ADR-0014](decisions/arch/0014-feature-branch-release-branch-workflow.md) for full rules.

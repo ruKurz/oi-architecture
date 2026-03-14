@@ -125,6 +125,29 @@ AC verified:
 
 **Externe Abhängigkeiten:** AC items that depend on another open issue must be marked `blocked by #N` in the AC list, not listed as standalone criteria. This prevents false-negative reviews at close time.
 
+**Post-deploy AC items:** AC items that require a deployed environment (visual layout checks, live-site verification) must be marked `(post-deploy)` explicitly. They may be verified after the PR is merged and deployment is complete — they do not block the PR merge.
+
+Example:
+```
+✅ Criterion A
+✅ Criterion B
+⚠️ Criterion C (post-deploy): visual layout check — verify after deployment
+```
+
+**Cross-cutting concept checklist:** When creating an issue for a new concept introduction (a new ADR category, a new documentation format, a new convention), the AC list must include an explicit review of all standard integration points. Either each point is covered in the issue, or explicitly excluded with a reason:
+
+| Integration point | Typical artifact |
+|---|---|
+| Agent instructions | `CLAUDE.md` |
+| Binding rules | `CONVENTIONS.md` |
+| Process prompts | `prompts/development/` |
+| CI validation | `.github/workflows/pr-check.yml` |
+| User-facing docs | `docs/` |
+| Repository entry points | `README.md`, `CONTRIBUTING.md` |
+| Change history | `CHANGELOG.md` |
+
+See [ADR-0014](decisions/arch/0014-feature-branch-release-branch-workflow.md) and sprint retro 2026-03-14 for rationale.
+
 ---
 
 ## 2.5 TypeScript Naming
@@ -201,6 +224,22 @@ describe('<FunctionName>', () => {
 Every new prompt file in `prompts/` must be created through the `prompts/templates/prompt-helper.md` process. Prompts without the required sections (`## Context`, `## Goal`, `## Constraints`, `## Acceptance criteria`) are non-compliant.
 
 See [ADR-0006](decisions/arch/0006-prompt-helper-enforcement.md) for rationale.
+
+---
+
+## 2.12 Concept Introduction
+
+When introducing a new concept into the project (a new documentation format, a new process, a new architectural pattern), the following order is mandatory:
+
+**Step 1 — Design first.** The concept must be fully designed and validated in collaboration with the human maintainer before any integration issues are created. The entry point is `prompts/development/integrate-concept.md`.
+
+**Step 2 — Create integration issues.** Only after the concept is stable: create GitHub Issues for each integration point (CONVENTIONS.md, CLAUDE.md, prompts, CI, docs, README, CHANGELOG, ...).
+
+**Step 3 — Implement integration.** Execute the issues in dependency order.
+
+**Rule:** Never start integration work before the concept design is complete. Starting integration on an unstable concept creates rework across all integration points.
+
+**Mandatory entry point:** `prompts/development/integrate-concept.md` — use it for every new concept introduction, without exception.
 
 ---
 
