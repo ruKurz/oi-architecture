@@ -1,6 +1,6 @@
 # ODR — Organizational Decision Record
 
-**Version:** 1.1 · 2026-03-14
+**Version:** 1.2 · 2026-03-14
 **Status:** Active
 **Related:** [ADR-0012](../decisions/0012-introduce-odr-governance-layer.md) · [ODR Template](../decisions/org/odr-template.md)
 
@@ -21,6 +21,19 @@ A useful mental model:
 > *ODRs are the `.env` file of the organization — not for secrets, but for values, methods, and decisions from which both human and agent behavior can be derived.*
 
 Just as a `.env` file configures runtime behavior without embedding logic in code, an ODR stack configures organizational behavior without embedding it in informal culture or undocumented convention.
+
+### Binding parties
+
+Every ODR explicitly states who it binds:
+
+| Party | Meaning |
+|---|---|
+| **Users** | Humans interacting with the system (employees, contributors, readers) |
+| **Agents** | AI systems, automated workflows, bots acting within the organization |
+| **Contributors** | People contributing to the project (code, content, governance) |
+| **All** | Users + Agents + Contributors |
+
+This explicit binding is what distinguishes ODRs from informal process notes. An ODR is not a suggestion — it is a traceable organizational commitment.
 
 ---
 
@@ -58,9 +71,19 @@ Several adjacent formats exist. None of them cover the Org layer completely:
 
 **Policy Document:** The classic form of organizational decisions (HR handbooks, codes of conduct). Problems: no standardized structure analogous to ADRs, no documentation of the decision rationale (context, rejected alternatives, trade-offs), not version-controlled in a software workflow sense, no binding scope definition.
 
-**Runbook / Playbook:** Describes *how* something is done — step-by-step operational procedures. ODRs describe *why* — the reasoning behind organizational choices. The difference is between an operating manual and a constitution. A constitution does not tell you how to file a form; it tells you why the process exists at all.
+**Runbook / Playbook:** Describes *how* something is done — step-by-step operational procedures. ODRs describe *why* — the reasoning behind organizational choices. The difference is between an operating manual and a constitution. A constitution does not tell you how to file a form; it tells you why the process exists at all. But a constitution without an enforcement mechanism is merely a suggestion. ODR enforcement is operational: CI/CD checks can verify that agent-generated artifacts reference the correct ODR; PR review gates can require an ODR citation when a decision touches the organizational layer; automated linting can flag agent behavior inconsistent with accepted ODRs. The binding claim is not rhetorical — it is a property of the toolchain.
 
 **AI Governance Frameworks (Microsoft Cloud Adoption Framework, NIST AI RMF, EU AI Act):** These define *what* must be documented (risk controls, compliance evidence, role assignments) and *who* is responsible. They do not provide a format in which individual organizational decisions are captured as structured, versionable, derivable units. Microsoft's AI Readiness approach defines institutional roles (Platform Team, AI CoE) and processes — but does not codify *why* an organization operates the way it does, nor how that derives to technical tool choices. The result: compliance is demonstrated as static documentation, not as an active, machine-readable knowledge base.
+
+### Anti-pattern: AI Theater
+
+Organizations responding to AI readiness requirements typically create new roles and governance layers: Chief AI Officer, AI Ethics Committee, AI Center of Excellence, AI Governance Committee. These structures are designed to *talk about* AI — to discuss policies, review risks, and produce reports. They rarely produce machine-readable artifacts that describe how the organization actually operates.
+
+The result: AI agents deployed in these organizations have no structured source of truth for organizational context. They receive a system prompt written by a developer, or they receive none at all. The governance layer is a committee; the agent's operational context is guesswork.
+
+This is AI Theater — governance-as-committee rather than governance-as-structured-knowledge. You cannot configure an agent's behavior from an org chart. A Chief AI Officer title does not tell an agent whether this organization operates agilely, what its risk tolerance is, or whether a given decision requires human sign-off. An ODR stack does.
+
+ODRs replace advisory bodies as the *medium* for organizational self-description. The committee may still exist — but its decisions, once made, are encoded in ODRs, not in meeting minutes. AI maturity is not achieved by creating roles to discuss AI; it is achieved by building the organizational knowledge infrastructure that agents can actually read.
 
 The "it's just a Policy Document with ADR format" objection is predictable — and wrong. Policy Documents do not document the decision rationale, are not part of a versionable knowledge base, and do not define the binding scope or derivation chain. An ODR does all four.
 
@@ -90,6 +113,59 @@ This is structurally related to **Fitness Functions** from Evolutionary Architec
 
 ODRs make the following statement machine-verifiable:
 > *"The commit convention used in this project is not a random choice. It derives from ODR-0002 (agile principles) → structured delivery discipline → ADR-0005."*
+
+### Example ODR
+
+```markdown
+# ODR-0002: Adopt Agile Software Development Principles
+
+**Decision:** OIA development follows the principles of the Agile Manifesto (2001)
+as its operating model — accepting process overhead as the cost of a deliberate
+risk-minimization strategy, with adaptations for the single-maintainer context.
+**Status:** Proposed
+**Date:** 2026-03-14
+**Level:** Org
+**Binding for:** All
+**Derives from:** ODR-0001 (community-driven model requires adaptive delivery)
+**Implements:** ADR-0003 (GitHub Issues as sprint task tracker),
+               ADR-0005 (Conventional Commits as delivery discipline)
+
+## Context
+
+Software projects make an organizational choice about how they manage uncertainty,
+change, and delivery risk — even when that choice is never stated. In a project
+like OIA — where the model is being discovered, not specified up front — rigid
+planning would lock in premature decisions. Agile principles are a structural fit:
+the architecture evolves as understanding deepens.
+
+Risk-minimization framing: agile's short feedback loops reduce the risk of building
+the wrong thing for a long time. This risk reduction has a cost: process overhead
+(planning, retros, issue hygiene). That tradeoff is consciously accepted.
+
+## Consequences
+
+**For Users:** Development is iterative and visible. The OIA model will change as
+understanding improves. Stability of core concepts is protected by ADRs, not by a
+rigid specification.
+
+**For Agents:** AI tooling acting within this project must respect agile operating
+constraints: sprint scope is bounded, unconfirmed scope changes require explicit
+human sign-off (Checkpoint protocol), and process documents are binding artifacts.
+
+**Easier:** Change is expected and accommodated without justification overhead.
+**Harder:** Process discipline is required even with a single maintainer.
+**Required adjustments:** Sprint-based workflow via sprint-retro.md; GitHub Issues
+as authoritative tracker (ADR-0003); Conventional Commits (ADR-0005).
+
+## Alternatives
+
+| Option | Reason rejected |
+|---|---|
+| Waterfall / plan-driven | Incompatible with a model being discovered, not pre-specified |
+| No explicit process | No traceability; contradicts OIA's thesis of explicit structure |
+| Full Scrum | Assumes team roles that don't map to a single-maintainer context |
+| Kanban-only | Lacks sprint boundary needed for deliberate reflection and scope control |
+```
 
 ---
 
@@ -154,21 +230,6 @@ ODRs are, in the language of OIA, a **Knowledge Core artifact** for the organiza
 
 ---
 
-## Binding parties
-
-Every ODR explicitly states who it binds:
-
-| Party | Meaning |
-|---|---|
-| **Users** | Humans interacting with the system (employees, contributors, readers) |
-| **Agents** | AI systems, automated workflows, bots acting within the organization |
-| **Contributors** | People contributing to the project (code, content, governance) |
-| **All** | Users + Agents + Contributors |
-
-This explicit binding is what distinguishes ODRs from informal process notes. An ODR is not a suggestion — it is a traceable organizational commitment.
-
----
-
 ## Naming and numbering
 
 - ODRs are numbered independently of ADRs: `ODR-0001`, `ODR-0002`, …
@@ -198,6 +259,41 @@ This explicit binding is what distinguishes ODRs from informal process notes. An
 | Template | `decisions/README.md` → Template section | `decisions/org/odr-template.md` |
 | Numbered | ADR-XXXX | ODR-XXXX |
 | Derivation links | — | `derives-from` / `implements` |
+
+---
+
+## ODR lifecycle and maintenance
+
+### Proposing an ODR
+
+Any participant — human contributor or AI-assisted tooling — may propose an ODR by creating a file in `decisions/org/` with status `Proposed`. Proposals must follow the canonical template (`decisions/org/odr-template.md`) and include all required fields, including `derives-from` and `implements`.
+
+A new ODR should be accompanied by a GitHub Issue (per ADR-0003) and a commit referencing that issue.
+
+### Accepting an ODR
+
+**Only a human maintainer may set an ODR's status to `Accepted`.** This is a deliberate governance constraint: organizational decisions that bind all participants — including AI agents — require explicit human sign-off. AI-assisted tooling must use `Proposed` when creating new ODRs, regardless of confidence.
+
+### Superseding an ODR
+
+When an ODR is replaced by a newer decision:
+
+1. The new ODR is created with `derives-from` referencing the superseded ODR where applicable.
+2. The superseded ODR's status is updated to `Superseded by ODR-XXXX` — it is **not deleted**.
+3. The derivation chain remains fully traversable: any observer can follow the history from the current ODR back through all previous decisions.
+
+### Impact on implementing ADRs
+
+When an ODR is superseded, all ADRs that reference it in their `implements` field require an explicit review:
+
+- If the implementing ADR remains valid under the new ODR: add a note confirming continued validity.
+- If the implementing ADR is no longer consistent with the new ODR: it must be updated or superseded itself.
+
+This review is not optional — it is part of the acceptance criteria for any ODR supersession.
+
+### Review cadence
+
+ODRs should be reviewed at major project milestones (e.g., major version releases) and whenever a significant governance change occurs. The review need not result in a change — a documented confirmation of continued validity is a valid outcome. Stale ODRs that are no longer reflected in actual practice should be updated to `Deprecated` rather than left as silent debt.
 
 ---
 
