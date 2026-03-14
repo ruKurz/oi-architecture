@@ -5,6 +5,8 @@
 **Date:** 2026-03-14
 **Level:** Org
 **Binding for:** All
+**Derives from:** [ODR-0000](./0000-commit-to-transparent-governance-documentation.md)
+**Implements:** [GOVERNANCE.md](../../GOVERNANCE.md) (operational implementation, not an ADR)
 
 ## Context
 

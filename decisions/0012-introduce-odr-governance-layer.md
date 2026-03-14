@@ -4,6 +4,7 @@
 **Status:** Proposed
 **Date:** 2026-03-14
 **Type:** BOTH
+**Governed by:** [ODR-0000](./org/0000-commit-to-transparent-governance-documentation.md)
 
 ## Context
 
