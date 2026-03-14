@@ -46,3 +46,5 @@ The full concept, hierarchy definition, and template are documented in `context/
 | [ADR-0002](./0002-biz-dev-separation.md) | BIZ/DEV separation — ODRs belong to BIZ artifacts |
 | [ODR-0001](../org/0001-oia-ecosystem-type.md) | First ODR created under this framework |
 | [ODR-0002](../org/0002-adopt-agile-principles.md) | Second ODR created under this framework |
+| [ODR-0003](../org/0003-adopt-adrs-as-arch-layer-documentation-practice.md) | Third ODR — closes the bootstrapping gap for ADR adoption |
+| [ODR-0004](../org/0004-english-as-project-language.md) | Fourth ODR — language policy elevated from ADR-0011 |
