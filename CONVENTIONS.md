@@ -342,6 +342,7 @@ Concept files in `context/` that evolve over time carry a `**Version:**` field f
 | `context/oia-context.md` | 1.0.0 |
 | `context/adr-concept.md` | 1.0.0 |
 | `context/semantic-anchors.md` | 2.0.0 |
+| `context/oia-project-instruction-prompt.md` | 1.0.0 |
 
 Update the version field and this table when making significant changes to a concept file.
 
