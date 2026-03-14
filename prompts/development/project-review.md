@@ -3,12 +3,16 @@
 **Prompt type:** Execution
 **Domain:** DEV
 
+> Scans the project for convention violations, ADR breaches, and structural problems, then
+> creates GitHub Issues for all new findings. Replaces the former `project-cleanup.md` — both
+> prompts were identical in scope and steps. Run as a standalone health check or as preparation
+> before a sprint or release.
+
 ---
 
 ## Context
 
-Read before execution:
-- `CONVENTIONS.md` — binding rules
+- `CONVENTIONS.md` — binding rules and No-Duplicate Rule (§2.4)
 - `CLAUDE.md` — scope rules (BIZ/DEV)
 - `decisions/README.md` — all active ADRs (loaded dynamically in Step 0)
 
@@ -18,7 +22,7 @@ Project root: current working directory.
 
 ## Goal
 
-All new findings (convention violations, ADR breaches, structural problems) are created as GitHub Issues — without duplicates, without implementation.
+All new findings (convention violations, ADR breaches, structural problems) are documented as GitHub Issues — without duplicates, without implementation.
 
 ---
 
@@ -26,7 +30,7 @@ All new findings (convention violations, ADR breaches, structural problems) are 
 
 - **Implements nothing** — analysis and issue creation only
 - **Changes no source files**
-- **Creates no issue without prior duplicate check**
+- **Creates no issue without prior duplicate check** — per ADR-0003 No-Duplicate Rule and CONVENTIONS.md §2.4
 - **Does not evaluate BIZ content** (OIA layer structure, model IDs, architecture terminology)
 - **Does not touch** `node_modules`, `.git`, `dist`, `build`
 - **No vague issues** ("improve code") — every issue needs a concrete action
@@ -121,7 +125,7 @@ Assign each finding:
 For each finding from Step 1 + 1b:
 
 #### 3.1 Duplicate check
-Compare the finding against the issue list loaded in Step 0:
+Per ADR-0003 No-Duplicate Rule: compare the finding against the issue list loaded in Step 0:
 - Search for overlaps in **title** and **affected file/component**.
 - Clear overlap: **skip**, note as "already open: #N" in the summary.
 - Uncertain: create the issue with a note "possibly related to #N".
@@ -186,7 +190,7 @@ Show after completion:
 
 - [ ] Step 0 executed: discovery + ADR list + open issues loaded
 - [ ] All 7 dimensions + all found ADRs checked
-- [ ] No issue created without prior duplicate check
+- [ ] No issue created without prior duplicate check (ADR-0003 No-Duplicate Rule applied)
 - [ ] Every new issue has: title in Conventional Commits format, at least 2 labels, concrete body
 - [ ] Nothing was implemented
 - [ ] Summary with recommended first step was output
