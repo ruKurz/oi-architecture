@@ -64,7 +64,7 @@ Die nutzersichtbare Schicht – Interaktionspunkte zwischen Mensch und organisat
 ### 4.4 Cognitive Capabilities
 Was die Organisation kognitiv leisten kann – unabhängig von konkreter Implementierung.
 
-**Beispiele:** Find Information · Link Information · Evaluate Facts · Structure Documents · Generate Content · Identify Redundancies · Create Reports · Convey Knowledge · Identify Requirements
+**Beispiele:** Find Information · Link Information · Evaluate Facts · Structure Documents · Generate Content · Identify Redundancies · Create Reports · Convey Knowledge · Identify Requirements · Deliver Information
 
 ---
 
