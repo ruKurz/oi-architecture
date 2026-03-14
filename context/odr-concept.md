@@ -259,6 +259,9 @@ ODRs are, in the language of OIA, a **Knowledge Core artifact** for the organiza
 | Template | `decisions/README.md` → Template section | `decisions/org/odr-template.md` |
 | Numbered | ADR-XXXX | ODR-XXXX |
 | Derivation links | — | `derives-from` / `implements` |
+| Upward link | `governed-by: ODR-XXXX` | — |
+
+> **Bidirectional traversability:** ODRs carry `implements` links pointing down to ADRs. ADRs carry a `governed-by` field pointing up to the ODR that mandated them. This makes the chain traversable in both directions: from an organizational principle to its technical implementation, and from a technical convention back to the organizational decision that justified it. Without the `governed-by` field on ADRs, the chain is navigable top-down only — an agent reading an ADR in isolation cannot determine which organizational decision it serves.
 
 ---
 
@@ -325,5 +328,7 @@ Ford, Parsons, Kua, and Richards (*Building Evolutionary Architectures*, 2017) d
 The UK Government Digital Service recommends ADR adoption at multiple levels — team, programme, department, cross-departmental. This multi-level recommendation implicitly acknowledges a hierarchy of decision-making authority consistent with the Gov → Org → Arch model.
 
 ---
+
+**Note on bidirectional traversability:** The `governed-by: ODR-XXXX` field on ADRs closes the loop. TOGAF's governance hierarchy is described top-down: Corporate → IT → Architecture. COBIT defines accountability chains but does not specify how individual artifacts reference their governing policy. Neither framework provides a mechanism for navigating from a low-level technical decision *back* to the organizational principle that motivated it. The `governed-by` field does: it makes the ADR ↔ ODR relationship explicit and machine-readable in both directions, a property that none of the established frameworks operationalize at the artifact level.
 
 **Note on scope:** The three-level model is a pragmatic simplification. Real enterprise governance (especially TOGAF-compliant architectures) operates with more layers and finer distinctions. For a project at OIA's current scale, three levels provide the right balance between rigor and maintainability.
