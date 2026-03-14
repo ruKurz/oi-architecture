@@ -83,12 +83,29 @@ Both must pass before committing.
 
 ---
 
+## Contribution Workflow
+
+1. **Open or find a GitHub Issue** — every change starts with an issue.
+2. **Create a feature branch** from `main`:
+   ```bash
+   git checkout -b feature/#42-your-change-description
+   ```
+   Branch naming: `feature/#<issue-number>-<short-description>` (see [CONVENTIONS.md](CONVENTIONS.md)).
+3. **Implement** your change on the branch.
+4. **Commit** using Conventional Commits (see below).
+5. **Push** and open a **Pull Request** against `main`.
+6. **Check the preview deployment** — Netlify builds a preview for each PR. The URL appears in the PR checks. Verify your change renders correctly before requesting review.
+7. **Review and merge** — a maintainer reviews and merges to `main`.
+
+---
+
 ## Commit Format
 
-We follow [Conventional Commits](CONVENTIONS.md#23-conventional-commits):
+We follow [Conventional Commits](CONVENTIONS.md#23-conventional-commits).
+Every commit subject ends with the issue reference in parentheses:
 
 ```
-<type>(<scope>): <imperative description>
+<type>(<scope>): <imperative description> (#N)
 
 Closes #N   ← closes the issue
 Refs #N     ← references without closing
@@ -97,9 +114,9 @@ Refs #N     ← references without closing
 Examples:
 
 ```
-feat(renderer): add outcome layer highlighting
-content(model): improve Cognitive Capabilities description
-docs(views): update Motivation page intro
+feat(renderer): add outcome layer highlighting (#42)
+content(model): improve Cognitive Capabilities description (#67)
+docs(views): update Motivation page intro (#88)
 ```
 
 Allowed types: `feat` · `fix` · `content` · `docs` · `refactor` · `test` · `chore` · `style`
@@ -128,12 +145,22 @@ If your contribution changes how the project operates or governs itself — not 
 
 ## Pull Request
 
-1. Create a branch: `git checkout -b feat/your-change-description`
-2. Commit your change with a Conventional Commit message.
-3. Push and open a Pull Request against `main`.
-4. CI verifies lint, tests, and build automatically.
+Use the PR template — it is pre-filled when you open a PR on GitHub. Fill in:
+
+- **Linked issue** — the `#N` reference
+- **AC verification** — confirm each acceptance criterion from the issue
+- **Preview deployment** — paste the Netlify preview URL so the reviewer can verify rendering
 
 Keep PRs focused — one change per PR. A small, well-explained PR is reviewed faster than a large one.
+
+---
+
+## Releases
+
+OIA releases are published on GitHub as GitHub Releases with curated release notes. A release is not the same as a sprint end — releases are explicit, tagged events.
+
+To follow releases: watch the repository on GitHub and enable "Releases" notifications.
+To read release notes: see the [Releases page](https://github.com/ruKurz/oi-architecture/releases) on GitHub.
 
 ---
 
