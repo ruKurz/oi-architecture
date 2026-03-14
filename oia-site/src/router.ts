@@ -18,7 +18,12 @@ import {
 let model: OIAModel
 let appContainer: HTMLElement
 let navElement: HTMLElement | null = null
-let zoomValue = ZOOM_DEFAULT
+const DIAGRAM_NATIVE_WIDTH = 1440
+function getInitialZoom(): number {
+  return Math.max(ZOOM_MIN, Math.min(ZOOM_DEFAULT, window.innerWidth / DIAGRAM_NATIVE_WIDTH))
+}
+
+let zoomValue = getInitialZoom()
 
 function setZoom(val: number) {
   zoomValue = val

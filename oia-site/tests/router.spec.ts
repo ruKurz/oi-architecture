@@ -36,6 +36,7 @@ describe('initRouter — overview route (#/)', () => {
   })
 
   test('default zoom is 75% → zoom-full class on diagram-wrapper', async () => {
+    Object.defineProperty(window, 'innerWidth', { value: 1440, configurable: true })
     const { initRouter } = await import('../src/router')
     initRouter(model, container)
     const wrapper = container.querySelector('.diagram-wrapper') as HTMLElement
@@ -43,6 +44,7 @@ describe('initRouter — overview route (#/)', () => {
   })
 
   test('zoom label shows 75%', async () => {
+    Object.defineProperty(window, 'innerWidth', { value: 1440, configurable: true })
     const { initRouter } = await import('../src/router')
     initRouter(model, container)
     const label = container.querySelector('.zoom-label')
