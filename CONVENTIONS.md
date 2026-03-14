@@ -47,13 +47,15 @@ See [ODR-0004](decisions/org/0004-english-as-project-language.md) for rationale.
 
 Format:
 ```
-<type>[optional scope]: <imperative description>
+<type>[optional scope]: <imperative description> (#N)
 
 [optional body, wrapped at 72 chars]
 
 Closes #N   ← closes the GitHub Issue
 Refs #N     ← references without closing (for partial work)
 ```
+
+The `(#N)` suffix in the subject line makes the issue reference visible in `git log --oneline`. The footer `Closes #N` is kept alongside it — it is needed for GitHub auto-close and changelog tooling. See [ADR-0013](decisions/arch/0013-issue-reference-in-commit-subject.md) for rationale.
 
 Allowed types:
 
@@ -77,8 +79,9 @@ chore(ci): add npm audit to deploy pipeline
 
 Rules:
 - Imperative: "add" not "added", "fix" not "fixes"
-- Max 50 characters for subject line
+- Max 50 characters for subject line (the `(#N)` suffix counts toward this)
 - No period at end
+- `(#N)` suffix in subject line — always (except initial commits)
 - GitHub Issue in footer — always (except initial commits)
 - Before `Closes #N`: all acceptance criteria of the issue must be verified — see §2.4 Close-Verifikation
 
@@ -288,6 +291,61 @@ Concept files in `context/` that evolve over time carry a `**Version:**` field f
 | `context/adr-concept.md` | 1.0.0 |
 
 Update the version field and this table when making significant changes to a concept file.
+
+---
+
+## Git Workflow
+
+See [ADR-0014](decisions/arch/0014-feature-branch-release-branch-workflow.md) for rationale.
+
+### Branch Strategy
+
+Feature-branch per issue. No `develop` branch. Release branches for release preparation only.
+
+**Branch naming:**
+```
+feature/#42-add-zoom-constants
+fix/#78-deliver-capability
+docs/#98-semantic-versioning-adr
+release/v0.2.0
+```
+Pattern: `<type>/#<issue-number>-<kebab-description>`
+
+### Commit Granularity
+
+1 commit = 1 logical unit. Multiple commits per issue are expected. WIP commits are allowed on feature branches and must be squashed or rebased into clean commits before the PR merge. `main` history must be readable without WIP noise.
+
+### Push Rules
+
+| Action | Rule |
+|---|---|
+| Push to feature branch | Free — no confirmation required |
+| Open PR | Agent opens PR and notifies human in chat |
+| Merge to `main` | Human approval via PR only — agent never merges |
+| Force-push | Never without explicit human instruction |
+
+### PR Lifecycle
+
+```
+1. Create branch: feature/#N-description
+2. Implement: commit (logical units, (#N) suffix)
+3. Push branch
+4. Open PR → notify human in chat
+5. Human: review diff + CI + preview deployment
+6. Human: approve + merge
+7. Close issue with AC verification
+```
+
+### Release Process
+
+See [ADR-0008](decisions/arch/0008-release-strategy.md) for the full release process including branch, tag, and GitHub Release steps.
+
+**Short form:**
+1. Create `release/vX.Y.Z` branch from `main`
+2. Bump version + update CHANGELOG on branch
+3. Tag on release branch: `git tag -a vX.Y.Z`
+4. Create GitHub Release with curated release notes
+5. Merge release branch back to `main`
 
 ---
 
