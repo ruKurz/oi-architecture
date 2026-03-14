@@ -1,6 +1,6 @@
 # ADR-0007: Versioning Scheme — Semantic Versioning for OIA
 
-**Decision:** OIA uses Semantic Versioning (SemVer, semver.org) with the scheme `MAJOR.MINOR.PATCH`. Model version and site version are coupled — one version number covers both. The current version is `0.1.0`.
+**Decision:** OIA uses Semantic Versioning (SemVer, semver.org) with the scheme `MAJOR.MINOR.PATCH` across all versioned artifacts: the OIA model + site (coupled, one version), and concept files in `context/` (each versioned independently).
 **Status:** Proposed
 **Date:** 2026-03-13
 **Type:** BOTH
@@ -50,6 +50,20 @@ Sequential versioning is too coarse — it says nothing about compatibility.
 | **PATCH** (fix) | Typo correction, diagram label fix, CSS bugfix, renderer bugfix that does not change visual output |
 
 **Pre-release (v0.x.y):** All `0.x.y` versions are pre-release by convention — the public API / model schema is not yet stable. A `MAJOR` bump to `1.0.0` signals that the model is stable and backwards-incompatible changes will be rare and deliberate.
+
+## Concept File Versioning
+
+Concept files in `context/` evolve independently of the OIA model. Each carries its own `**Version:**` field using the same SemVer scheme:
+
+| Bump | When |
+|---|---|
+| **PATCH** | Typo corrections, clarifications that do not change meaning |
+| **MINOR** | New sections, expanded explanations, new examples |
+| **MAJOR** | Structural rethink, renamed sections, breaking change to how the concept is used |
+
+Concept file versions are independent of each other and of the model version. They are not released as a bundle — each file is versioned on its own evolution timeline.
+
+See CONVENTIONS.md §Concept File Versioning for the active versioned file list and update rules.
 
 ## Alternatives
 
