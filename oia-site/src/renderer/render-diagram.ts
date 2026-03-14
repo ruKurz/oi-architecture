@@ -7,6 +7,12 @@ export function renderOIA(model: OIAModel): HTMLElement {
   const wrapper = document.createElement('div')
   wrapper.className = 'diagram-wrapper'
 
+  // Mobile notice (hidden on desktop via CSS)
+  const notice = document.createElement('div')
+  notice.className = 'mobile-notice'
+  notice.textContent = 'Best viewed on desktop — pinch to zoom or rotate to landscape'
+  wrapper.appendChild(notice)
+
   // Header
   const header = document.createElement('div')
   header.className = 'header'
