@@ -1,6 +1,6 @@
 # ODR — Organizational Decision Record
 
-**Version:** 1.0 · 2026-03-14
+**Version:** 1.1 · 2026-03-14
 **Status:** Active
 **Related:** [ADR-0012](../decisions/0012-introduce-odr-governance-layer.md) · [ODR Template](../decisions/org/odr-template.md)
 
@@ -16,6 +16,12 @@ ODRs make organizational intelligence explicit. They answer the question:
 
 The defining property of an ODR is its **binding scope**: every ODR explicitly states which participants are bound by it — Users, Agents, Contributors, or all three. An AI agent that acts within an organization must respect its organizational decisions just as much as a human employee does. This is not a design detail; it is the core constraint that distinguishes ODRs from all existing decision documentation formats.
 
+A useful mental model:
+
+> *ODRs are the `.env` file of the organization — not for secrets, but for values, methods, and decisions from which both human and agent behavior can be derived.*
+
+Just as a `.env` file configures runtime behavior without embedding logic in code, an ODR stack configures organizational behavior without embedding it in informal culture or undocumented convention.
+
 ---
 
 ## Why ODRs — the gap no existing format fills
@@ -28,7 +34,7 @@ The keyword is *architectural*. ADRs are explicitly bound to systems and their s
 **ODRs** document organizational choices:
 > "We chose operating model X over Y because it minimizes risk Z at cost C."
 
-The critical distinction: an ODR binds **all system participants** — Users, Contributors, and Agents alike. An AI agent that acts within an organization must respect its organizational decisions just as much as a human employee does. This is not an afterthought — it is the central design constraint that makes ODRs necessary.
+The critical distinction: an ODR binds **all system participants** — Users, Contributors, and Agents alike.
 
 ADRs answer *how we build*. ODRs answer *how we operate*.
 
@@ -36,13 +42,15 @@ ADRs answer *how we build*. ODRs answer *how we operate*.
 
 Several adjacent formats exist. None of them cover the Org layer completely:
 
-| Format | Layer | Binding | Why-documentation | Versionable | Agent-aware |
-|---|---|---|---|---|---|
-| ADR | Arch | Technical contributors | ✅ | ✅ | ❌ |
-| GDR (Governance Decision Record) | Arch/Data | Data teams + platform | ✅ | ✅ | ❌ |
-| Decision Log | All | No specific scope | ⚠️ often absent | ❌ | ❌ |
-| Policy Document | Org | Humans | ❌ rarely | ❌ | ❌ |
-| **ODR** | **Org** | **All participants incl. Agents** | **✅** | **✅** | **✅** |
+| Format | Layer | Binding | Why-documentation | Versionable | Agent-aware | Derivation chain |
+|---|---|---|---|---|---|---|
+| ADR | Arch | Technical contributors | ✅ | ✅ | ❌ | ❌ |
+| GDR (Governance Decision Record) | Arch/Data | Data teams + platform | ✅ | ✅ | ❌ | ❌ |
+| Decision Log | All | No specific scope | ⚠️ often absent | ❌ | ❌ | ❌ |
+| Policy Document | Org | Humans | ❌ rarely | ❌ | ❌ | ❌ |
+| Runbook / Playbook | Arch | Operators | ❌ | ⚠️ | ❌ | ❌ |
+| AI Governance Framework (NIST, Microsoft, EU AI Act) | Org/Gov | Management, auditors | ⚠️ | ❌ | ❌ | ❌ |
+| **ODR** | **Org** | **All participants incl. Agents** | **✅** | **✅** | **✅** | **✅** |
 
 **GDR (Agile Lab):** A versioned, computationally executable governance policy format for data platforms — Policy-as-Code. Domain-specific to data governance; requires platform infrastructure. Not a general-purpose format for organizational decisions.
 
@@ -50,7 +58,56 @@ Several adjacent formats exist. None of them cover the Org layer completely:
 
 **Policy Document:** The classic form of organizational decisions (HR handbooks, codes of conduct). Problems: no standardized structure analogous to ADRs, no documentation of the decision rationale (context, rejected alternatives, trade-offs), not version-controlled in a software workflow sense, no binding scope definition.
 
-The "it's just a Policy Document with ADR format" objection is predictable — and wrong. Policy Documents do not document the decision rationale, are not part of a versionable knowledge base, and do not define the binding scope. An ODR does all three. The binding-scope field (Users / Agents / Contributors / All) is not cosmetic — it makes the decision machine-readable in the sense that an AI agent can determine whether a given ODR applies to its actions.
+**Runbook / Playbook:** Describes *how* something is done — step-by-step operational procedures. ODRs describe *why* — the reasoning behind organizational choices. The difference is between an operating manual and a constitution. A constitution does not tell you how to file a form; it tells you why the process exists at all.
+
+**AI Governance Frameworks (Microsoft Cloud Adoption Framework, NIST AI RMF, EU AI Act):** These define *what* must be documented (risk controls, compliance evidence, role assignments) and *who* is responsible. They do not provide a format in which individual organizational decisions are captured as structured, versionable, derivable units. Microsoft's AI Readiness approach defines institutional roles (Platform Team, AI CoE) and processes — but does not codify *why* an organization operates the way it does, nor how that derives to technical tool choices. The result: compliance is demonstrated as static documentation, not as an active, machine-readable knowledge base.
+
+The "it's just a Policy Document with ADR format" objection is predictable — and wrong. Policy Documents do not document the decision rationale, are not part of a versionable knowledge base, and do not define the binding scope or derivation chain. An ODR does all four.
+
+---
+
+## The derivation chain — the core innovation
+
+The most important property of an ODR is not its format. It is the **derivation chain** it enables.
+
+```
+Value (ODR)  →  Method (ODR / practice)  →  Tool (ADR)
+```
+
+Example:
+
+```
+ODR-0002: We adopt agile principles
+  └─ implements: Scrum sprint cadence
+       └─ implements: ADR-0003 (GitHub Issues as task tracker)
+       └─ implements: ADR-0005 (Conventional Commits)
+            └─ implements: git flow branch strategy
+```
+
+This chain means that an observer — human or AI — who reads `ODR-0002` can *derive* which tools and conventions are in use, and *why* they were chosen. The choice is not arbitrary; it is the logical implementation of an organizational decision that was made consciously and documented transparently.
+
+This is structurally related to **Fitness Functions** from Evolutionary Architecture (Ford et al., 2017) — but one layer higher. Fitness Functions check whether the *system* meets architectural criteria. ODRs define the criteria against which *organizational behavior* is measured. Both make implicit constraints explicit and testable.
+
+ODRs make the following statement machine-verifiable:
+> *"The commit convention used in this project is not a random choice. It derives from ODR-0002 (agile principles) → structured delivery discipline → ADR-0005."*
+
+---
+
+## Agent onboarding: the concrete use case
+
+Current state-of-the-art for briefing an AI agent on organizational context: a long system prompt, manually written and manually maintained. When the organization changes, the prompt goes stale. When a new AI tool is adopted, the briefing starts from scratch.
+
+With an ODR stack, agent onboarding becomes derivable:
+
+1. Agent reads `decisions/README.md` → finds the ODR index
+2. Agent reads `ODR-0001` → knows: this project is community-driven, no vendor control
+3. Agent reads `ODR-0002` → knows: agile principles apply; sprint-based, iterative, change is expected
+4. Agent traverses `implements` references → knows: GitHub Issues (ADR-0003), Conventional Commits (ADR-0005), BIZ/DEV separation (ADR-0002)
+5. Agent knows what it can decide autonomously and what requires human sign-off
+
+The result: consistent agent behavior derived from organizational decisions, not from a manually curated prompt. When a decision changes, the ODR is updated — and the behavior update propagates.
+
+This is the capability gap that no existing governance framework addresses. Microsoft, NIST, and the EU AI Act all recognize that AI agents need context. None of them provide a machine-readable format in which that context is stored as a structured, versionable, derivable knowledge base.
 
 ---
 
@@ -78,6 +135,7 @@ Arch (Architecture / Technology)
 An ODR at the Org layer may:
 - Reference a Gov constraint as the trigger for the decision
 - Constrain one or more ADRs at the Arch layer
+- Be referenced by other ODRs via `derives-from` (parent) or `implements` (child) links
 
 An ADR may reference an ODR as its higher-level authority:
 > *"Per ODR-0001, this project operates under a community-driven model; this ADR implements that choice at the technical layer."*
@@ -91,6 +149,8 @@ The ODR concept aligns directly with the *Organizational Intelligence Architectu
 > Organizational intelligence is not just about data pipelines and AI models — it requires making the cognitive architecture of the organization itself explicit and traceable.
 
 Decisions about *how the organization operates* are part of that cognitive architecture. Left implicit, they become invisible constraints that block contributors (human and AI) from acting coherently. Made explicit as ODRs, they become navigable, auditable, and improvable.
+
+ODRs are, in the language of OIA, a **Knowledge Core artifact** for the organization's own operating logic — stored in the same repository as the code it governs, versioned alongside it, and readable by all participants.
 
 ---
 
@@ -137,6 +197,7 @@ This explicit binding is what distinguishes ODRs from informal process notes. An
 | Location | `decisions/` | `decisions/org/` |
 | Template | `decisions/README.md` → Template section | `decisions/org/odr-template.md` |
 | Numbered | ADR-XXXX | ODR-XXXX |
+| Derivation links | — | `derives-from` / `implements` |
 
 ---
 
@@ -160,6 +221,9 @@ Peter Weill and Jeanne W. Ross (*IT Governance*, 2004) define IT governance as "
 
 ### ADR tradition — Nygard (2011)
 The Architecture Decision Record format originates with Michael Nygard's 2011 blog post *Documenting Architecture Decisions*. The format was designed for the Arch layer: technical choices made by architects and developers. ODRs extend the same traceability principle one layer up — applying it to organizational decisions that constrain the Arch layer.
+
+### Fitness Functions — Ford et al. (2017)
+Ford, Parsons, Kua, and Richards (*Building Evolutionary Architectures*, 2017) define Fitness Functions as objective integrity assessments of architectural characteristics. ODRs operate at an analogous level for the organizational layer: they make the criteria against which *organizational behavior* is measured explicit and traceable — not code quality, but organizational identity.
 
 ### GOV.UK ADR Framework
 The UK Government Digital Service recommends ADR adoption at multiple levels — team, programme, department, cross-departmental. This multi-level recommendation implicitly acknowledges a hierarchy of decision-making authority consistent with the Gov → Org → Arch model.
