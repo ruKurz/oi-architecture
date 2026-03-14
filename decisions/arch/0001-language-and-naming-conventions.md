@@ -1,9 +1,10 @@
 # ADR-0001: Language and Naming Conventions
 
 **Decision:** All technical artifacts (code, comments, commits, filenames, ADRs, documentation) are written in English. OIA content artifacts (articles, LinkedIn posts) remain in German as an author choice. TypeScript follows camelCase for variables/functions, PascalCase for types, SCREAMING_SNAKE_CASE for enums and module-level constants.
-**Status:** Accepted (language section superseded by ADR-0011)
+**Status:** Accepted (language section superseded by ODR-0004)
 **Date:** 2026-03-11
 **Type:** DEV
+**Governed by:** —
 
 ## Context
 

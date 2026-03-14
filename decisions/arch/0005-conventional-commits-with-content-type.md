@@ -4,6 +4,7 @@
 **Status:** Accepted
 **Date:** 2026-03-11
 **Type:** DEV
+**Governed by:** [ODR-0002](../org/0002-adopt-agile-principles.md)
 
 ## Context
 

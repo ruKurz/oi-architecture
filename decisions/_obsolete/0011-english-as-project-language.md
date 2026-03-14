@@ -1,7 +1,7 @@
 # ADR-0011: English as the Sole Project Language
 
 **Decision:** All project artifacts are written in English. The only exception is LinkedIn articles, which remain in German as an author choice for a German-speaking audience. This supersedes the language section of ADR-0001.
-**Status:** Proposed
+**Status:** Superseded by ODR-0004
 **Date:** 2026-03-13
 **Type:** DEV
 
