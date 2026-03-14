@@ -8,6 +8,8 @@
 **Derives from:** ODR-XXXX | Gov constraint (e.g. GDPR) | — (if no parent)
 **Implements:** ADR-XXXX, ADR-YYYY | — (if no direct Arch-layer implementation yet)
 
+> **Field note:** ODRs do NOT carry a `governed-by` field. That field belongs on ADRs — it points upward from an architectural decision to the ODR that mandated it. ODRs point downward via `implements`. The directionality is asymmetric by design: ODR → ADR via `implements`; ADR → ODR via `governed-by`.
+
 ## Context
 
 Facts that made this decision necessary. Neutral language — no judgement yet.

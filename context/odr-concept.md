@@ -129,6 +129,7 @@ risk-minimization strategy, with adaptations for the single-maintainer context.
 **Derives from:** ODR-0001 (community-driven model requires adaptive delivery)
 **Implements:** ADR-0003 (GitHub Issues as sprint task tracker),
                ADR-0005 (Conventional Commits as delivery discipline)
+*(Note: `governed-by` is an ADR field, not an ODR field. ODRs carry `implements` pointing down to ADRs; ADRs carry `governed-by` pointing up to the ODR that mandated them. The chain is bidirectional — the directionality is asymmetric by design.)*
 
 ## Context
 
