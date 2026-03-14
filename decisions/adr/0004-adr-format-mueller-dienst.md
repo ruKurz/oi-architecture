@@ -4,7 +4,7 @@
 **Status:** Accepted
 **Date:** 2026-03-11
 **Type:** DEV
-**Governed by:** [ODR-0003](../org/0003-adopt-adrs-as-arch-layer-documentation-practice.md)
+**Governed by:** [ODR-0003](../odr/0003-adopt-adrs-as-arch-layer-documentation-practice.md)
 
 ## Context
 

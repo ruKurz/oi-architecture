@@ -6,7 +6,7 @@
 **Level:** Org
 **Binding for:** All
 **Derives from:** [ODR-0000](./0000-commit-to-transparent-governance-documentation.md)
-**Implements:** [ADR-0004](../arch/0004-adr-format-mueller-dienst.md)
+**Implements:** [ADR-0004](../adr/0004-adr-format-mueller-dienst.md)
 
 ## Context
 
@@ -14,7 +14,7 @@ ODR-0000 establishes that all binding decisions must be explicitly documented an
 
 ADRs (Architecture Decision Records) are an established practice originating with Michael Nygard (2011). The format has been refined by multiple practitioners. For OIA, the relevant question is not *whether* to use ADRs — that is mandated by ODR-0000 — but *which ADR format* to adopt and what scope ADRs cover within the project.
 
-This ODR answers the first question (adopt ADRs for the Arch layer). [ADR-0004](../arch/0004-adr-format-mueller-dienst.md) answers the second (the Müller/Dienst format).
+This ODR answers the first question (adopt ADRs for the Arch layer). [ADR-0004](../adr/0004-adr-format-mueller-dienst.md) answers the second (the Müller/Dienst format).
 
 **Scope of ADRs in OIA:** ADRs cover decisions that (a) affect project structure, tooling, or technical process, (b) have non-obvious alternatives that were actively rejected, and (c) should remain traceable over time. Organizational decisions (governance model, operating principles) belong to the ODR layer, not ADRs.
 
@@ -29,7 +29,7 @@ This ODR answers the first question (adopt ADRs for the Arch layer). [ADR-0004](
 **Harder:** Every binding technical decision requires a record. The discipline of creating ADRs adds time per decision. This overhead is accepted as the cost of traceability.
 
 **Required adjustments:**
-- [ADR-0004](../arch/0004-adr-format-mueller-dienst.md) governs the specific format to be used — carries `governed-by: ODR-0003`
+- [ADR-0004](../adr/0004-adr-format-mueller-dienst.md) governs the specific format to be used — carries `governed-by: ODR-0003`
 - `decisions/README.md` serves as the ADR index — all ADRs must be registered there
 - `prompts/development/create-adr.md` provides the guided creation workflow
 
@@ -47,5 +47,5 @@ This ODR answers the first question (adopt ADRs for the Arch layer). [ADR-0004](
 | Record | Relationship |
 |---|---|
 | [ODR-0000](./0000-commit-to-transparent-governance-documentation.md) | Derives from — founding charter that mandates explicit decision documentation |
-| [ADR-0004](../arch/0004-adr-format-mueller-dienst.md) | Implements this ODR — specifies the Müller/Dienst format for ADRs |
-| [ADR-0012](../arch/0012-introduce-odr-governance-layer.md) | Sibling decision — introduces ODRs as the Org-layer counterpart to ADRs |
+| [ADR-0004](../adr/0004-adr-format-mueller-dienst.md) | Implements this ODR — specifies the Müller/Dienst format for ADRs |
+| [ADR-0012](../adr/0012-introduce-odr-governance-layer.md) | Sibling decision — introduces ODRs as the Org-layer counterpart to ADRs |

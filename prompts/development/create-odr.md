@@ -6,7 +6,7 @@ The OIA project documents organizational decisions as ODRs (Organizational Decis
 
 **Key references:**
 - `context/odr-concept.md` — full ODR concept, hierarchy, and rationale
-- `decisions/org/odr-template.md` — canonical ODR template with all required fields
+- `decisions/odr/odr-template.md` — canonical ODR template with all required fields
 - `decisions/README.md` — ODR index (source of truth for next ODR number)
 - `CONVENTIONS.md §ODR Format` — field definitions, commit rules, acceptance protocol
 
@@ -18,7 +18,7 @@ The OIA project documents organizational decisions as ODRs (Organizational Decis
 
 ## Goal
 
-Create a well-formed, fully linked ODR file in `decisions/org/` that:
+Create a well-formed, fully linked ODR file in `decisions/odr/` that:
 1. Uses the next available ODR number from the index in `decisions/README.md`
 2. Populates all required fields from the template
 3. Correctly identifies its position in the derivation chain (`derives-from`, `implements`)
@@ -27,13 +27,13 @@ Create a well-formed, fully linked ODR file in `decisions/org/` that:
 
 ## Constraints
 
-- **Template:** Always use `decisions/org/odr-template.md` as the starting point
+- **Template:** Always use `decisions/odr/odr-template.md` as the starting point
 - **Numbering:** Read the current highest ODR number from `decisions/README.md` ODR index. Next = highest + 1. Never reuse a number.
 - **Status:** Always `Proposed`. Only the human maintainer sets `Accepted`.
 - **Binding scope:** Explicitly state `Binding for:` — do not leave it implicit. Options: `All` · `Users` · `Agents` · `Contributors`.
 - **Derives from:** Must point to a parent ODR or to `—` only for a founding record. ODR-0000 is the root. All other ODRs must trace to ODR-0000.
 - **Implements:** List all ADRs this ODR mandates. If no ADR exists yet, use `—` and note that an ADR should be created.
-- **No BIZ/DEV mixing:** ODR creation is a BIZ commit (`docs(decisions):`). If you also need to add `governed-by` to an existing ADR, that is a separate DEV concern — do it in the same commit only if the ADR is in `decisions/arch/` (also BIZ).
+- **No BIZ/DEV mixing:** ODR creation is a BIZ commit (`docs(decisions):`). If you also need to add `governed-by` to an existing ADR, that is a separate DEV concern — do it in the same commit only if the ADR is in `decisions/adr/` (also BIZ).
 - **Issue reference:** Every commit must reference the GitHub Issue in the footer (`Closes #N` or `Refs #N`).
 - **Prompt-helper compliant:** This prompt was created via the prompt-helper process (ADR-0006).
 
@@ -52,7 +52,7 @@ Answer these questions before writing:
 3. **Binding for:** Who must comply — All / Users / Agents / Contributors?
 
 ### Step 3 — Draft the ODR
-Use `decisions/org/odr-template.md`. Fill every field:
+Use `decisions/odr/odr-template.md`. Fill every field:
 - `Decision:` — one or two sentences, active voice, decision + key rationale
 - `Status:` — always `Proposed`
 - `Date:` — today's date
@@ -65,20 +65,20 @@ Write the full body: Context, Consequences (For Users / For Agents / Easier / Ha
 
 ### Step 4 — Save the file
 ```
-decisions/org/NNNN-kebab-case-noun-phrase-title.md
+decisions/odr/NNNN-kebab-case-noun-phrase-title.md
 ```
 Filename: lowercase, kebab-case, noun phrase (not a verb phrase).
 
 ### Step 5 — Update decisions/README.md
 Add one row to the ODR Index table:
 ```markdown
-| [ODR-NNNN](./org/NNNN-title.md) | Title | Proposed | YYYY-MM-DD |
+| [ODR-NNNN](./odr/NNNN-title.md) | Title | Proposed | YYYY-MM-DD |
 ```
 
 ### Step 6 — Update governed-by on impacted ADRs
 For each ADR listed in `Implements:`, ensure it carries:
 ```
-**Governed by:** [ODR-NNNN](../org/NNNN-title.md)
+**Governed by:** [ODR-NNNN](../odr/NNNN-title.md)
 ```
 If the ADR does not yet exist, note it as a follow-up.
 
@@ -93,7 +93,7 @@ Closes #N
 
 ## Acceptance criteria
 
-- [ ] ODR file exists at `decisions/org/NNNN-*.md` with the correct number
+- [ ] ODR file exists at `decisions/odr/NNNN-*.md` with the correct number
 - [ ] All required fields present: Decision, Status (Proposed), Date, Level (Org), Binding for, Derives from, Implements
 - [ ] Derives from chain traces back to ODR-0000 (directly or via parent ODRs)
 - [ ] `decisions/README.md` ODR index updated with the new entry

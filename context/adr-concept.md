@@ -2,7 +2,7 @@
 
 **Version:** 1.0.0 · 2026-03-14
 **Status:** Active
-**Related:** [ODR-0003](../decisions/org/0003-adopt-adrs-as-arch-layer-documentation-practice.md) · [ADR-0004](../decisions/arch/0004-adr-format-mueller-dienst.md)
+**Related:** [ODR-0003](../decisions/odr/0003-adopt-adrs-as-arch-layer-documentation-practice.md) · [ADR-0004](../decisions/adr/0004-adr-format-mueller-dienst.md)
 
 ---
 
@@ -36,13 +36,13 @@ The defining property is **traceability**: future contributors — human or AI �
 
 ## ADRs in OIA
 
-OIA uses the **Müller/Dienst format** (not Nygard, not MADR) for the reasons documented in [ADR-0004](../decisions/arch/0004-adr-format-mueller-dienst.md):
+OIA uses the **Müller/Dienst format** (not Nygard, not MADR) for the reasons documented in [ADR-0004](../decisions/adr/0004-adr-format-mueller-dienst.md):
 
 1. **Decision first** — the decision is the first thing a reader sees, before any context
 2. **Mandatory Alternatives** — the author must explicitly state what was rejected and why
 3. **Easier/Harder split** — consequences are separated into what becomes simpler and what requires more discipline
 
-**Governance layer:** ADRs sit at the **Arch layer** of the OIA governance hierarchy (Gov → **Org** → **Arch**). [ODR-0003](../decisions/org/0003-adopt-adrs-as-arch-layer-documentation-practice.md) is the Org-layer decision that mandates ADR use. ADR-0004 is the Arch-layer decision that specifies the format.
+**Governance layer:** ADRs sit at the **Arch layer** of the OIA governance hierarchy (Gov → **Org** → **Arch**). [ODR-0003](../decisions/odr/0003-adopt-adrs-as-arch-layer-documentation-practice.md) is the Org-layer decision that mandates ADR use. ADR-0004 is the Arch-layer decision that specifies the format.
 
 **Bidirectional linking:** Every ADR carries a `**Governed by:**` field pointing to the ODR that mandated it (or `—` if none). This enables upward traversal: Arch → Org.
 
@@ -55,7 +55,7 @@ OIA uses the **Müller/Dienst format** (not Nygard, not MADR) for the reasons do
 | **Layer** | Arch | Org |
 | **Subject** | Technical structure, tooling, process | Governance, operating model, principles |
 | **Binds** | Contributors (and Agents acting on the project) | All participants: Users, Agents, Contributors |
-| **Location** | `decisions/arch/` | `decisions/org/` |
+| **Location** | `decisions/adr/` | `decisions/odr/` |
 | **Prompt** | `prompts/development/create-adr.md` | `prompts/development/create-odr.md` |
 | **Points to ODR** | via `Governed by:` field | — |
 | **Points to ADR** | — | via `Implements:` field |

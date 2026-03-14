@@ -1,7 +1,7 @@
 # Working with ADRs and Semantic Anchors in OIA
 
 > **Diátaxis mode:** How-to guide — task-oriented, for contributors and AI agents.
-> For conceptual background, see [ADR-0004](../decisions/arch/0004-adr-format-mueller-dienst.md), [ADR-0010](../decisions/arch/0010-semantic-anchors-as-vocabulary-layer.md), and [context/odr-concept.md](../context/odr-concept.md).
+> For conceptual background, see [ADR-0004](../decisions/adr/0004-adr-format-mueller-dienst.md), [ADR-0010](../decisions/adr/0010-semantic-anchors-as-vocabulary-layer.md), and [context/odr-concept.md](../context/odr-concept.md).
 
 ---
 
@@ -20,9 +20,9 @@ All three are complementary. An ADR may reference a Semantic Anchor as its ratio
 ```
 Does this decision affect how the project GOVERNS ITSELF?
   (ecosystem model, operating principles, language policy, agent contracts)
-  YES → ODR in decisions/org/
+  YES → ODR in decisions/odr/
   NO  → Does it affect technical structure, tooling, or process?
-          YES → ADR in decisions/arch/
+          YES → ADR in decisions/adr/
           NO  → Is it a universal methodology (from the Semantic Anchors library)?
                   YES → Semantic Anchor in context/semantic-anchors.md
                   NO  → Add to CONVENTIONS.md or CLAUDE.md directly
@@ -34,7 +34,7 @@ Does this decision affect how the project GOVERNS ITSELF?
 
 ### Format
 
-ODRs use a distinct format from ADRs. The template is at `decisions/org/odr-template.md`:
+ODRs use a distinct format from ADRs. The template is at `decisions/odr/odr-template.md`:
 
 ```markdown
 # ODR-NNNN: Noun-phrase title
@@ -100,7 +100,7 @@ All three fields must be kept in sync. See `context/odr-concept.md` for the full
 After creating an ODR, add a row to `decisions/README.md` ODR Index:
 
 ```markdown
-| [ODR-NNNN](./org/NNNN-title.md) | Short title | Proposed | YYYY-MM-DD |
+| [ODR-NNNN](./odr/NNNN-title.md) | Short title | Proposed | YYYY-MM-DD |
 ```
 
 ---
@@ -174,13 +174,13 @@ Proposed  →  Accepted  →  Deprecated
 After creating a new ADR file, update `decisions/README.md`:
 
 ```markdown
-| [ADR-NNNN](./arch/NNNN-title.md) | Short title | Proposed | DEV | YYYY-MM-DD |
+| [ADR-NNNN](./adr/NNNN-title.md) | Short title | Proposed | DEV | YYYY-MM-DD |
 ```
 
 ### Referencing ADRs
 
-- In CONVENTIONS.md: `See [ADR-XXXX](decisions/arch/XXXX-title.md) for rationale.`
-- In CLAUDE.md: inline reference `[ADR-XXXX](decisions/arch/XXXX-title.md)` in the relevant rule
+- In CONVENTIONS.md: `See [ADR-XXXX](decisions/adr/XXXX-title.md) for rationale.`
+- In CLAUDE.md: inline reference `[ADR-XXXX](decisions/adr/XXXX-title.md)` in the relevant rule
 - In commit messages: `Refs #N` (via the GitHub Issue, not directly to the ADR file)
 
 ---
@@ -261,8 +261,8 @@ For a significant adoption decision (e.g. a new BIZ methodology that frames the 
 
 | Action | Tool | File |
 |---|---|---|
-| Record an organizational governance decision | ODR | `decisions/org/NNNN-title.md` |
-| Record a technical/structural decision | ADR | `decisions/arch/NNNN-title.md` |
+| Record an organizational governance decision | ODR | `decisions/odr/NNNN-title.md` |
+| Record a technical/structural decision | ADR | `decisions/adr/NNNN-title.md` |
 | Define shared methodology vocabulary | Semantic Anchor | `context/semantic-anchors.md` |
 | Enforce a rule on the AI agent | ADR/ODR + CLAUDE.md | `CLAUDE.md` |
 | Document a binding convention | Either | `CONVENTIONS.md` |
