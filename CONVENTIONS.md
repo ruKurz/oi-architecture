@@ -20,7 +20,7 @@ Two distinct domains. A commit touches exactly one.
 
 **Rule:** No commit without a referenced GitHub Issue (except: `chore: initial setup` for new files).
 
-See [ADR-0002](decisions/arch/0002-biz-dev-separation.md) for rationale.
+See [ADR-0002](decisions/adr/0002-biz-dev-separation.md) for rationale.
 
 ---
 
@@ -39,7 +39,7 @@ See [ADR-0002](decisions/arch/0002-biz-dev-separation.md) for rationale.
 
 Existing German files in `context/`, `notes/`, and `prompts/` are known exceptions — not retroactively translated; follow English on creation or next significant edit.
 
-See [ODR-0004](decisions/org/0004-english-as-project-language.md) for rationale.
+See [ODR-0004](decisions/odr/0004-english-as-project-language.md) for rationale.
 
 ---
 
@@ -55,7 +55,7 @@ Closes #N   ← closes the GitHub Issue
 Refs #N     ← references without closing (for partial work)
 ```
 
-The `(#N)` suffix in the subject line makes the issue reference visible in `git log --oneline`. The footer `Closes #N` is kept alongside it — it is needed for GitHub auto-close and changelog tooling. See [ADR-0013](decisions/arch/0013-issue-reference-in-commit-subject.md) for rationale.
+The `(#N)` suffix in the subject line makes the issue reference visible in `git log --oneline`. The footer `Closes #N` is kept alongside it — it is needed for GitHub auto-close and changelog tooling. See [ADR-0013](decisions/adr/0013-issue-reference-in-commit-subject.md) for rationale.
 
 Allowed types:
 
@@ -85,7 +85,7 @@ Rules:
 - GitHub Issue in footer — always (except initial commits)
 - Before `Closes #N`: all acceptance criteria of the issue must be verified — see §2.4 Close-Verifikation
 
-See [ADR-0005](decisions/arch/0005-conventional-commits-with-content-type.md) for rationale.
+See [ADR-0005](decisions/adr/0005-conventional-commits-with-content-type.md) for rationale.
 
 ---
 
@@ -106,7 +106,7 @@ Parking-lot entry format (in `context/todo.md`):
 
 Categories: `model` · `renderer` · `prompt` · `architecture` · `infra` · `ux` · `content`
 
-See [ADR-0003](decisions/arch/0003-github-issues-as-task-tracker.md) for rationale.
+See [ADR-0003](decisions/adr/0003-github-issues-as-task-tracker.md) for rationale.
 
 ### Issue closing rules
 
@@ -146,7 +146,7 @@ Example:
 | Repository entry points | `README.md`, `CONTRIBUTING.md` |
 | Change history | `CHANGELOG.md` |
 
-See [ADR-0014](decisions/arch/0014-feature-branch-release-branch-workflow.md) and sprint retro 2026-03-14 for rationale.
+See [ADR-0014](decisions/adr/0014-feature-branch-release-branch-workflow.md) and sprint retro 2026-03-14 for rationale.
 
 ---
 
@@ -223,7 +223,7 @@ describe('<FunctionName>', () => {
 
 Every new prompt file in `prompts/` must be created through the `prompts/templates/prompt-helper.md` process. Prompts without the required sections (`## Context`, `## Goal`, `## Constraints`, `## Acceptance criteria`) are non-compliant.
 
-See [ADR-0006](decisions/arch/0006-prompt-helper-enforcement.md) for rationale.
+See [ADR-0006](decisions/adr/0006-prompt-helper-enforcement.md) for rationale.
 
 ---
 
@@ -249,7 +249,7 @@ See [decisions/README.md](decisions/README.md) for the full ADR template and ind
 
 Methodology: Ralf D. Müller / Johannes Dienst — Decision first, Alternatives mandatory.
 
-**Location:** `decisions/arch/NNNN-kebab-case-title.md`
+**Location:** `decisions/adr/NNNN-kebab-case-title.md`
 
 **Required fields:** `Decision` · `Status` · `Date` · `Type` · `Governed by`
 
@@ -257,15 +257,15 @@ Methodology: Ralf D. Müller / Johannes Dienst — Decision first, Alternatives 
 
 **ADR Acceptance Rule:** Only a human maintainer may set an ADR status to `Accepted`. AI-assisted tooling must use `Proposed` when creating new ADRs. An ADR in `Proposed` state is active and followed — `Proposed` means "awaiting human sign-off", not "not yet in use".
 
-See [ADR-0004](decisions/arch/0004-adr-format-mueller-dienst.md) and [ODR-0003](decisions/org/0003-adopt-adrs-as-arch-layer-documentation-practice.md) for rationale.
+See [ADR-0004](decisions/adr/0004-adr-format-mueller-dienst.md) and [ODR-0003](decisions/odr/0003-adopt-adrs-as-arch-layer-documentation-practice.md) for rationale.
 
 ---
 
 ## ODR Format
 
-ODRs document organizational decisions at the Org layer of the governance hierarchy (Gov → Org → Arch). See [decisions/README.md](decisions/README.md) for the ODR index and [decisions/org/odr-template.md](decisions/org/odr-template.md) for the template.
+ODRs document organizational decisions at the Org layer of the governance hierarchy (Gov → Org → Arch). See [decisions/README.md](decisions/README.md) for the ODR index and [decisions/odr/odr-template.md](decisions/odr/odr-template.md) for the template.
 
-**Location:** `decisions/org/NNNN-kebab-case-title.md`
+**Location:** `decisions/odr/NNNN-kebab-case-title.md`
 
 **Numbering:** ODR numbers are independent of ADR numbers. The next ODR number = current highest in the ODR index + 1. Never reuse a number.
 
@@ -288,11 +288,11 @@ ODRs document organizational decisions at the Org layer of the governance hierar
 
 **ODR Acceptance Rule:** Same as ADRs — only a human maintainer sets `Accepted`. AI tooling uses `Proposed`.
 
-**Commit type:** ODR changes use `docs(decisions):` — ODRs are BIZ artifacts stored in `decisions/org/`.
+**Commit type:** ODR changes use `docs(decisions):` — ODRs are BIZ artifacts stored in `decisions/odr/`.
 
 **Supersession:** When an ODR is superseded, move it to `decisions/_obsolete/` and update its status to `Superseded by ODR-XXXX`. Update the ODR index in `decisions/README.md` with a strikethrough entry.
 
-See [ODR-0000](decisions/org/0000-commit-to-transparent-governance-documentation.md) and [context/odr-concept.md](context/odr-concept.md) for rationale and full concept.
+See [ODR-0000](decisions/odr/0000-commit-to-transparent-governance-documentation.md) and [context/odr-concept.md](context/odr-concept.md) for rationale and full concept.
 
 ---
 
@@ -301,7 +301,7 @@ See [ODR-0000](decisions/org/0000-commit-to-transparent-governance-documentation
 Semantic Anchors are named methodologies invoked verbatim in prompts and CLAUDE.md to activate established knowledge domains in AI assistants. They complement ADRs: an ADR documents a project-specific decision, an anchor establishes shared vocabulary for a universal methodology.
 
 **Active anchor set:** `context/semantic-anchors.md`
-**Decision:** [ADR-0010](decisions/arch/0010-semantic-anchors-as-vocabulary-layer.md)
+**Decision:** [ADR-0010](decisions/adr/0010-semantic-anchors-as-vocabulary-layer.md)
 
 Rules:
 - Anchors are invoked **verbatim** — "MECE Principle (Minto)", not "MECE" or "mutually exclusive"
@@ -336,7 +336,7 @@ Update the version field and this table when making significant changes to a con
 
 ## Git Workflow
 
-See [ADR-0014](decisions/arch/0014-feature-branch-release-branch-workflow.md) for rationale.
+See [ADR-0014](decisions/adr/0014-feature-branch-release-branch-workflow.md) for rationale.
 
 ### Branch Strategy
 
@@ -378,7 +378,7 @@ Pattern: `<type>/#<issue-number>-<kebab-description>`
 
 ### Release Process
 
-See [ADR-0008](decisions/arch/0008-release-strategy.md) for the full release process including branch, tag, and GitHub Release steps.
+See [ADR-0008](decisions/adr/0008-release-strategy.md) for the full release process including branch, tag, and GitHub Release steps.
 
 **Short form:**
 1. Create `release/vX.Y.Z` branch from `main`

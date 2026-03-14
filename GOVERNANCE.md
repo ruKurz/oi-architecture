@@ -15,8 +15,8 @@ This is not ambiguity — it is a deliberate choice for a project in its early p
 **Day-to-day changes** (content, fixes, tooling) are made directly by the maintainer.
 
 **Significant decisions** are documented in two layers in [`decisions/`](decisions/README.md):
-- **Organizational decisions** (governance model, operating principles, language policy) → Organizational Decision Records (ODRs) in [`decisions/org/`](decisions/org/). This governance model is documented as [ODR-0001](decisions/org/0001-oia-ecosystem-type.md).
-- **Architectural decisions** (tooling, conventions, technical structure) → Architecture Decision Records (ADRs) in [`decisions/arch/`](decisions/arch/).
+- **Organizational decisions** (governance model, operating principles, language policy) → Organizational Decision Records (ODRs) in [`decisions/odr/`](decisions/odr/). This governance model is documented as [ODR-0001](decisions/odr/0001-oia-ecosystem-type.md).
+- **Architectural decisions** (tooling, conventions, technical structure) → Architecture Decision Records (ADRs) in [`decisions/adr/`](decisions/adr/).
 
 **Community input** is welcome at any time via GitHub Issues and Pull Requests. Contributions are reviewed by the maintainer. There is no committee, no vote, no roadmap committee.
 

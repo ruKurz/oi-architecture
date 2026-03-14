@@ -7,7 +7,7 @@
 > knowledge of that methodology — proponents, practices, failure modes — in a single phrase.
 >
 > Source: https://llm-coding.github.io/Semantic-Anchors/
-> Decision: [ADR-0010](../decisions/arch/0010-semantic-anchors-as-vocabulary-layer.md)
+> Decision: [ADR-0010](../decisions/adr/0010-semantic-anchors-as-vocabulary-layer.md)
 
 ---
 
@@ -96,7 +96,7 @@ Each entry:
 **Applies when:** Any commit message is drafted
 **Key concepts activated:** `feat:` / `fix:` / `docs:` / `chore:` / `refactor:` types, scope in parentheses, imperative subject line, breaking change footer, machine-parseable changelog
 
-**OIA application:** See CONVENTIONS.md §2.3 and [ADR-0005](../decisions/arch/0005-conventional-commits-with-content-type.md). The project extends the standard with the `content:` type for BIZ commits.
+**OIA application:** See CONVENTIONS.md §2.3 and [ADR-0005](../decisions/adr/0005-conventional-commits-with-content-type.md). The project extends the standard with the `content:` type for BIZ commits.
 
 ---
 

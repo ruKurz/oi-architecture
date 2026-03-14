@@ -8,7 +8,7 @@
 **Derives from:** [ODR-0001](./0001-oia-ecosystem-type.md)
 **Implements:** — (operational implementation via CONVENTIONS.md §2.2 and ADR-0001 naming conventions)
 
-> **Note on supersession:** This ODR supersedes the language section of [ADR-0001](../arch/0001-language-and-naming-conventions.md) and [ADR-0011](../_obsolete/0011-english-as-project-language.md). The naming conventions from ADR-0001 remain active at the Arch layer.
+> **Note on supersession:** This ODR supersedes the language section of [ADR-0001](../adr/0001-language-and-naming-conventions.md) and [ADR-0011](../_obsolete/0011-english-as-project-language.md). The naming conventions from ADR-0001 remain active at the Arch layer.
 
 ## Context
 
@@ -53,5 +53,5 @@ The LinkedIn exception is an explicit author choice, not an inconsistency: the t
 | Record | Relationship |
 |---|---|
 | [ODR-0001](./0001-oia-ecosystem-type.md) | Derives from — community-driven model requires international accessibility |
-| [ADR-0001](../arch/0001-language-and-naming-conventions.md) | Arch-layer naming conventions remain active; language section superseded by this ODR |
+| [ADR-0001](../adr/0001-language-and-naming-conventions.md) | Arch-layer naming conventions remain active; language section superseded by this ODR |
 | [ADR-0011](../_obsolete/0011-english-as-project-language.md) | Superseded — Arch-layer record that this ODR replaces at the Org layer |
