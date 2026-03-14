@@ -5,6 +5,8 @@
 **Date:** YYYY-MM-DD
 **Level:** Org
 **Binding for:** All | Users | Agents | Contributors
+**Derives from:** ODR-XXXX | Gov constraint (e.g. GDPR) | — (if no parent)
+**Implements:** ADR-XXXX, ADR-YYYY | — (if no direct Arch-layer implementation yet)
 
 ## Context
 
@@ -32,5 +34,5 @@ Reference any higher-level norm or regulation that applies.
 
 | Record | Relationship |
 |---|---|
-| ODR-XXXX | Parent constraint (higher-level organizational decision) |
+| ODR-XXXX | Derives from (parent organizational decision) |
 | ADR-XXXX | Implements this ODR at the architectural layer |
