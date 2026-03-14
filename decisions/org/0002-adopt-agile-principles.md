@@ -5,6 +5,8 @@
 **Date:** 2026-03-14
 **Level:** Org
 **Binding for:** All
+**Derives from:** [ODR-0000](./0000-commit-to-transparent-governance-documentation.md)
+**Implements:** [ADR-0003](../0003-github-issues-as-task-tracker.md), [ADR-0005](../0005-conventional-commits-with-content-type.md)
 
 ## Context
 

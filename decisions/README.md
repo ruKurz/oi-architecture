@@ -38,6 +38,7 @@ ODRs document organizational decisions at the Org layer of the governance hierar
 
 | ODR | Title | Status | Date |
 |---|---|---|---|
+| [ODR-0000](./org/0000-commit-to-transparent-governance-documentation.md) | Commit to Transparent Governance Documentation | Proposed | 2026-03-14 |
 | [ODR-0001](./org/0001-oia-ecosystem-type.md) | OIA Ecosystem Type — Community-Driven with Benevolent Dictator | Proposed | 2026-03-14 |
 | [ODR-0002](./org/0002-adopt-agile-principles.md) | Adopt Agile Software Development Principles | Proposed | 2026-03-14 |
 
