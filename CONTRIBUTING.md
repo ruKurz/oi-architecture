@@ -115,6 +115,15 @@ Every change belongs to either **BIZ** (model, content, decisions) or **DEV** (c
 | DEV | `oia-site/` · `.github/` · `prompts/` |
 | BIZ | `context/` · `articles/` · `diagrams/` · `decisions/` · `notes/` |
 
+## Decision Records
+
+Significant decisions are documented in two formats:
+
+- **ADR** (Architecture Decision Record) — for technical and structural choices. Stored in `decisions/arch/`. Use `prompts/development/create-adr.md`.
+- **ODR** (Organizational Decision Record) — for governance and operating model decisions (ecosystem type, language policy, process principles). Stored in `decisions/org/`. Use `prompts/development/create-odr.md`.
+
+If your contribution changes how the project operates or governs itself — not just what it builds — it may warrant an ODR. See [`decisions/README.md`](decisions/README.md) for the full index and [`context/odr-concept.md`](context/odr-concept.md) for the concept.
+
 ---
 
 ## Pull Request

@@ -40,3 +40,44 @@ jobs:
             done
           done
           exit $failed
+
+      - name: ODR compliance check
+        run: |
+          failed=0
+          for f in decisions/org/*.md; do
+            # Skip the template and README files
+            basename=$(basename "$f")
+            if [[ "$basename" == "odr-template.md" || "$basename" == "README.md" ]]; then
+              continue
+            fi
+            # Check required sections
+            for section in "## Context" "## Consequences" "## Alternatives" "## Related decisions"; do
+              if ! grep -q "$section" "$f"; then
+                echo "MISSING section '$section' in $f"
+                failed=1
+              fi
+            done
+            # Check required header fields
+            for field in "\*\*Decision:\*\*" "\*\*Status:\*\*" "\*\*Level:\*\* Org" "\*\*Binding for:\*\*" "\*\*Derives from:\*\*" "\*\*Implements:\*\*"; do
+              if ! grep -qE "$field" "$f"; then
+                echo "MISSING field '$field' in $f"
+                failed=1
+              fi
+            done
+          done
+          exit $failed
+
+      - name: ADR governed-by check
+        run: |
+          failed=0
+          for f in decisions/arch/*.md; do
+            basename=$(basename "$f")
+            if [[ "$basename" == "README.md" ]]; then
+              continue
+            fi
+            if ! grep -q "\*\*Governed by:\*\*" "$f"; then
+              echo "MISSING 'Governed by:' field in $f"
+              failed=1
+            fi
+          done
+          exit $failed

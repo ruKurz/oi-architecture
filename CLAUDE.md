@@ -9,17 +9,34 @@
 Read before every session:
 - `context/oia-context.md` — stable project anchor, terminology
 - `CONVENTIONS.md` — binding rules for all new files and commits
-- `decisions/README.md` — ADR index: active architecture contracts
+- `decisions/README.md` — ADR + ODR index: active architecture and organizational contracts
 
-## Architecture Decision Records (ADRs)
+## Decision Records: ADRs and ODRs
 
-ADRs in `decisions/` are binding contracts — they document WHY a rule exists. Do not contradict a Proposed or Accepted ADR without first creating a superseding ADR.
+The project uses two types of decision records in a three-layer governance hierarchy (Gov → Org → Arch):
 
-**Before any structural or architectural change:** check `decisions/README.md` for a relevant existing decision.
+- **ODRs** (Organizational Decision Records) — `decisions/org/` — document *how the project operates*: governance model, operating principles, language policy. Bind all participants: Users, Agents, Contributors.
+- **ADRs** (Architecture Decision Records) — `decisions/arch/` — document *technical and structural choices*: tooling, conventions, code structure. Bind Contributors and Agents acting on the project.
 
-**When to create a new ADR:** A new ADR is needed when you make a decision that (a) affects project structure, tooling, or process, (b) has non-obvious alternatives that were rejected, and (c) should be traceable in the future. Use `prompts/development/create-adr.md`. New ADRs always start in `Proposed` state — only the human maintainer sets `Accepted`.
+Both are binding contracts. Do not contradict a Proposed or Accepted record without first creating a superseding record.
 
-**ADR numbering:** The next ADR number is the current highest in `decisions/README.md` + 1. Never reuse a number.
+**Before any change:** check `decisions/README.md` for a relevant existing ADR or ODR.
+
+### Architecture Decision Records (ADRs)
+
+**When to create a new ADR:** A decision that (a) affects project structure, tooling, or process, (b) has non-obvious alternatives that were rejected, and (c) should be traceable. Use `prompts/development/create-adr.md`. New ADRs always start in `Proposed` state — only the human maintainer sets `Accepted`.
+
+**ADR numbering:** The next ADR number is the current highest in `decisions/README.md` ADR index + 1. Never reuse a number.
+
+**governed-by field:** Every ADR must carry `**Governed by:** ODR-XXXX` or `**Governed by:** —`. This field points upward to the ODR that mandated the decision. Use `—` when no ODR applies.
+
+### Organizational Decision Records (ODRs)
+
+**When to create a new ODR:** A decision belongs at the Org layer when it (a) affects how the project governs itself — not what it builds, (b) binds participants beyond just technical contributors (including Users and AI Agents), and (c) is organizational in nature (ecosystem model, language policy, operating principles). Use `prompts/development/create-odr.md`.
+
+**ODR numbering:** The next ODR number is the current highest in `decisions/README.md` ODR index + 1. ODR numbers are independent of ADR numbers. Never reuse a number.
+
+**derives-from / implements:** Every ODR must carry `**Derives from:**` (parent ODR or `—` for the founding record) and `**Implements:**` (child ADRs or `—`). See `context/odr-concept.md` for the full concept and `decisions/org/odr-template.md` for the template.
 
 ## Semantic Anchors
 
