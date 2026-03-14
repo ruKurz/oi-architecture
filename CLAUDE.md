@@ -58,6 +58,10 @@ This project uses Semantic Anchors as a shared vocabulary layer. The full active
 - **Conventional Commits** for every commit message (CONVENTIONS.md §2.3, ADR-0005)
 - **Diátaxis Framework** when creating new `docs/` content: declare the mode (Tutorial / How-to / Reference / Explanation) and do not mix modes
 - **Semantic Versioning** whenever a version number is mentioned or changed
+- **Five Whys (Ohno)** in sprint retro root cause analysis: trace to structural cause, not symptom
+- **MoSCoW (Clegg)** when sprint scope exceeds time-box: label each issue Must/Should/Could/Won't
+- **Testing Pyramid (Fowler/Cohn)** when designing or reviewing test coverage for renderer/tooling
+- **YAGNI (Jeffries, Beck)** on every DEV implementation: implement only what the current issue's AC requires
 
 ## Scope Rules
 

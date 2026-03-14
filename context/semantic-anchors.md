@@ -1,5 +1,7 @@
 # OIA · Active Semantic Anchors
 
+**Version:** 2.0.0 · 2026-03-28
+
 > Semantic Anchors are well-defined methodologies and frameworks that serve as reference points
 > when communicating with AI assistants. Invoking an anchor activates the AI's full trained
 > knowledge of that methodology — proponents, practices, failure modes — in a single phrase.
@@ -122,6 +124,46 @@ Each entry:
 **Key concepts activated:** Four documentation modes — Tutorials (learning-oriented), How-to guides (task-oriented), Reference (information-oriented), Explanation (understanding-oriented); never mix modes in one document
 
 **OIA application:** New docs/ content must declare its mode. `docs/CONTRIBUTING.md` is a How-to guide. `docs/ARCHITECTURE.md` is Reference. `docs/working-with-adrs-and-semantic-anchors.md` is a How-to guide. Mixing modes is a Diátaxis violation.
+
+---
+
+## DEV Anchors — Agile Process
+
+> Added in sprint 2026-03-28 when agile development methods were formally adopted (ODR-0002). These four anchors map to specific process steps actually practised in OIA — they are not aspirational.
+
+### Five Whys (Ohno)
+**Domain:** DEV
+**Applies when:** Sprint retrospective root cause analysis (sprint-retro.md B-1)
+**Key concepts activated:** Iterative questioning (ask "why" 5 times), root cause vs. symptom, causal chain, Taiichi Ohno / Toyota Production System
+
+**OIA application:** In sprint-retro.md B-1, apply Five Whys to each deviation: do not stop at the immediate cause (e.g. "AC was missing") — trace back to why it was missing. This produces actionable, structural measures rather than symptom-level fixes.
+
+---
+
+### MoSCoW (Clegg)
+**Domain:** DEV
+**Applies when:** Sprint planning prioritization (sprint-planning.md C-3), backlog triage
+**Key concepts activated:** Must Have / Should Have / Could Have / Won't Have, time-box constraints, stakeholder negotiation, DSDM agile framework
+
+**OIA application:** When the sprint scope contains more issues than the time-box allows, apply MoSCoW to the candidate list: every issue is explicitly labeled Must (core), Should (high-value addition), Could (if time allows), or Won't (deferred). This makes trade-off decisions explicit and documented.
+
+---
+
+### Testing Pyramid (Fowler / Cohn)
+**Domain:** DEV
+**Applies when:** Designing or reviewing the test strategy for OIA renderer or tooling changes
+**Key concepts activated:** Unit tests (many, fast, isolated) at the base, integration tests (fewer) in the middle, E2E/UI tests (few, slow) at the top; anti-pattern: inverted pyramid (too many E2E tests)
+
+**OIA application:** OIA has unit tests (Vitest, `oia-site/src/**/*.spec.ts`). New DEV features follow the pyramid: unit tests for logic, integration tests for rendering paths, manual/preview for UI. Do not add E2E automation without justification — visual regression is handled via Netlify preview deployments.
+
+---
+
+### YAGNI — You Aren't Gonna Need It (Jeffries, Beck)
+**Domain:** DEV
+**Applies when:** Any DEV implementation task — reviewing scope, evaluating feature additions, deciding whether to add abstraction
+**Key concepts activated:** Extreme Programming principle, avoid speculative generality, implement only what is needed now, cost of premature abstraction, incremental design
+
+**OIA application:** OIA is a pre-1.0 project with a single maintainer. YAGNI applies at every level: do not add configuration flags for hypothetical use cases, do not create abstractions for patterns that appear fewer than 3 times, do not build tooling "for the future". When in doubt: implement the simplest thing that satisfies the current issue's AC.
 
 ---
 
