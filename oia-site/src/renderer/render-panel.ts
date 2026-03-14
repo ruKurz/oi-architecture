@@ -11,17 +11,16 @@ function resolveChildren(model: OIAModel, ids: string[]): string {
       }
       if (element.type === 'container') {
         const isQualityGates = element.meta?.variant === 'highlight'
-        const style = isQualityGates ? ' style="border-color:var(--accent2-dim);"' : ''
-        const titleStyle = isQualityGates ? ' style="color:var(--accent2)"' : ''
-        const itemStyle = isQualityGates ? ' style="border-color:var(--accent2-subtle)"' : ''
+        const blockClass = isQualityGates ? ' side-block--highlight' : ''
+        const itemClass = isQualityGates ? ' side-item--highlight' : ''
         const items = element.children
           .map((cid) => {
             const child = getItem(model, cid)
-            return child ? `<div class="side-item"${itemStyle}>${child.label}</div>` : ''
+            return child ? `<div class="side-item${itemClass}">${child.label}</div>` : ''
           })
           .join('')
-        return `<div class="side-block" data-id="${element.id}"${style}>
-  <div class="side-block-title"${titleStyle}>${element.label}</div>
+        return `<div class="side-block${blockClass}" data-id="${element.id}">
+  <div class="side-block-title">${element.label}</div>
   ${items}
 </div>`
       }
