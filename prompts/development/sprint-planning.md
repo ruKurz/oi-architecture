@@ -32,6 +32,25 @@ An agreed sprint scope exists: sprint goal, core issues, optional issues, and a 
 
 ## Steps
 
+### C-0 — Pre-sprint sync gate
+
+Before any planning begins, verify the repository is in a clean, fully-pushed state:
+
+```bash
+git status
+git log origin/main..HEAD --oneline
+```
+
+If **either** check shows uncommitted changes or unpushed commits:
+
+> **STOP — repository not in sync.**
+> Please commit and push all pending work to `main` before starting a new sprint.
+> Return here once `git status` is clean and `git log origin/main..HEAD` is empty.
+
+Do not proceed to C-1 until the sync gate passes.
+
+---
+
 ### C-1 — Capture the sprint goal
 
 The sprint goal is provided as free text together with the prompt.
@@ -120,6 +139,10 @@ Goal: [sprint goal]
 
 Create `sprints/YYYY-MM-DD.md` with the sprint goal, DoD, and issue list.
 
+**Sprint naming rule:** The sprint name is the date of today's planning session — not a future date from planning notes or a previous meeting. Use `date +%Y-%m-%d` to confirm today's date if unsure.
+
+**Duplicate file handling:** If `sprints/YYYY-MM-DD.md` already exists, append a two-digit counter suffix starting at `00`: `YYYY-MM-DD-00.md`, `YYYY-MM-DD-01.md`, etc. Check with `ls sprints/YYYY-MM-DD*.md` before creating.
+
 ---
 
 ### ⏸ CHECKPOINT 2 — Handshake
@@ -146,6 +169,7 @@ After confirmation:
 
 ## Acceptance criteria
 
+- [ ] Sync gate passed: working tree clean, no unpushed commits
 - [ ] Sprint goal paraphrased and confirmed
 - [ ] Open issues scanned and bucketed
 - [ ] Scope proposal with sizes output
