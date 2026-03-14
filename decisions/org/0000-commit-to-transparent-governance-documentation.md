@@ -6,7 +6,7 @@
 **Level:** Org
 **Binding for:** All
 **Derives from:** — (founding ODR — no parent; derives from OIA's core thesis that organizational decisions must be made operational and navigable)
-**Implements:** [ADR-0004](../0004-adr-format-mueller-dienst.md), [ADR-0012](../0012-introduce-odr-governance-layer.md)
+**Implements:** [ADR-0004](../arch/0004-adr-format-mueller-dienst.md), [ADR-0012](../arch/0012-introduce-odr-governance-layer.md)
 
 ## Context
 
@@ -36,8 +36,8 @@ This ODR is the founding charter of that commitment. It is its own first instanc
 **Harder:** Every binding decision requires a record. Informal decisions, ad-hoc rules, and verbal agreements have no standing until they are formalized as an ODR or ADR. This creates discipline overhead that must be maintained consistently.
 
 **Required adjustments:**
-- [ADR-0012](../0012-introduce-odr-governance-layer.md) — the architectural implementation: introduces the ODR layer, subdirectory, template, and README index
-- [ADR-0004](../0004-adr-format-mueller-dienst.md) — the Arch-layer mechanism this ODR extends upward: ADR format as the Müller/Dienst methodology
+- [ADR-0012](../arch/0012-introduce-odr-governance-layer.md) — the architectural implementation: introduces the ODR layer, subdirectory, template, and README index
+- [ADR-0004](../arch/0004-adr-format-mueller-dienst.md) — the Arch-layer mechanism this ODR extends upward: ADR format as the Müller/Dienst methodology
 - All ODRs created under this commitment carry `derives-from: ODR-0000` (directly or via chain)
 
 ## Alternatives
@@ -53,7 +53,7 @@ This ODR is the founding charter of that commitment. It is its own first instanc
 
 | Record | Relationship |
 |---|---|
-| [ADR-0004](../0004-adr-format-mueller-dienst.md) | Arch-layer mechanism this ODR mandates — ADR format as the decision-documentation method |
-| [ADR-0012](../0012-introduce-odr-governance-layer.md) | Arch-layer implementation — introduces the ODR layer itself |
+| [ADR-0004](../arch/0004-adr-format-mueller-dienst.md) | Arch-layer mechanism this ODR mandates — ADR format as the decision-documentation method |
+| [ADR-0012](../arch/0012-introduce-odr-governance-layer.md) | Arch-layer implementation — introduces the ODR layer itself |
 | [ODR-0001](./0001-oia-ecosystem-type.md) | Derives from this ODR — establishes the community-driven governance model |
 | [ODR-0002](./0002-adopt-agile-principles.md) | Derives from this ODR — establishes agile as OIA's development operating model |

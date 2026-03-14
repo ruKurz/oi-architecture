@@ -10,8 +10,8 @@
 ## Context
 
 Read before execution:
-- `decisions/0003-github-issues-as-task-tracker.md` — binding issue format and close conventions
-- `decisions/0005-conventional-commits-with-content-type.md` — `Closes #N` / `Refs #N` footer convention
+- `decisions/arch/0003-github-issues-as-task-tracker.md` — binding issue format and close conventions
+- `decisions/arch/0005-conventional-commits-with-content-type.md` — `Closes #N` / `Refs #N` footer convention
 
 Active repository: determined via `git remote get-url origin`.
 

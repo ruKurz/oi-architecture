@@ -51,6 +51,6 @@ Additionally: OIA is at an early stage (v0.1.0). Consortium governance requires 
 
 | Record | Relationship |
 |---|---|
-| [ADR-0012](../0012-introduce-odr-governance-layer.md) | Architectural decision that introduced the ODR layer |
-| [ADR-0002](../0002-biz-dev-separation.md) | BIZ/DEV separation — this ODR is a BIZ artifact |
+| [ADR-0012](../arch/0012-introduce-odr-governance-layer.md) | Architectural decision that introduced the ODR layer |
+| [ADR-0002](../arch/0002-biz-dev-separation.md) | BIZ/DEV separation — this ODR is a BIZ artifact |
 | [GOVERNANCE.md](../../GOVERNANCE.md) | Operational implementation of this decision |
