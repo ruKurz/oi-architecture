@@ -13,6 +13,8 @@ Read before every session:
 
 Sprint process entry point: `prompts/development/sprint-change.md` — orchestrates review, retro, planning, refinement, scope-change.
 
+**Mid-sprint scope rule:** Any issue added to an active sprint after the planning handshake must be processed via `prompts/development/sprint-scope-change.md`. Do not add issues to the sprint file directly without running this prompt.
+
 Read when working with decision records:
 - `context/adr-concept.md` — what ADRs are, canonical references, ADR vs ODR distinction
 - `context/odr-concept.md` — full ODR concept, derivation chain, lifecycle, agent onboarding
