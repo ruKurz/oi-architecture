@@ -98,11 +98,29 @@ The OIA model reflects this positioning at two levels:
 
 ---
 
+## Read vs. write access
+
+The framing above positions Agents as consumers — readers of the Knowledge Core. This is intentional: read access is the dominant pattern and the safer starting point.
+
+The question of **write access** is architecturally separate and requires explicit governance: under what conditions may an Agent contribute to, modify, or invalidate organizational knowledge?
+
+Without ODR-governed write boundaries, Agents become a source of **knowledge degradation at scale** — not knowledge processing. An Agent that writes unchecked can corrupt the very infrastructure it depends on, silently and at throughput no human reviewer can match.
+
+Write access for Agents requires at minimum:
+- Explicit scope definition (which knowledge domains may be written)
+- Human-in-the-loop validation gates (or auditable automated equivalents)
+- Versioning and rollback capability in the Knowledge Core
+- Accountability tracing back to the Initiator (per OIA-ODR-0001)
+
+This is addressed as a governance concern in the ODR framework — not as a capability question in the renderer or APIs.
+
+---
+
 ## The organizational consequence
 
-Organizations that invest in Agents before investing in their Knowledge Core will discover that Agents scale their data quality problems, not their intelligence.
+Most organizations will deploy Agents before governing their knowledge. That is not an exception — it is the default. OIA does not prevent that. It names what happens next: Agents scale the data quality problems, not the intelligence.
 
-The sequence matters:
+For organizations that do invest in the foundation first, the sequence is:
 
 1. **Govern the knowledge** — structure, access control, currency, authority
 2. **Expose it cleanly** — consistent APIs, machine-readable metadata
