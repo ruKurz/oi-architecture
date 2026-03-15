@@ -4,6 +4,9 @@ import {
   renderSpectrum,
   renderKeyInsight,
 } from '../renderer/render-system-participants'
+import type { TriadRole } from '../renderer/render-eu-ai-act-overlay'
+import { renderEuAiActOverlay } from '../renderer/render-eu-ai-act-overlay'
+import { renderInfoBadge, renderInfoOverlay, attachInfoBadgeHandlers } from './info-badge'
 
 function findParent(model: OIAModel, id: string): Container | undefined {
   return model.elements.find(
@@ -229,15 +232,32 @@ export function renderDetailView(model: OIAModel, id: string): HTMLElement {
         ? ''
         : '<div class="detail-items"><div class="detail-item detail-item--empty">No sub-elements</div></div>'
 
+  // InfoBadge + EU AI Act overlay for participant detail views
+  const euAiActBadge = participantEl?.role
+    ? renderInfoBadge('EU AI Act context', 'overlay-eu-ai-act')
+    : ''
+  const euAiActOverlay = participantEl?.role
+    ? renderInfoOverlay('overlay-eu-ai-act', renderEuAiActOverlay(participantEl.role as TriadRole))
+    : ''
+
   view.innerHTML = `
     ${breadcrumb}
-    <div class="detail-id">${el.id}</div>
-    <div class="detail-title">${el.label}</div>
+    <div class="detail-header">
+      <div>
+        <div class="detail-id">${el.id}</div>
+        <div class="detail-title">${el.label}</div>
+      </div>
+      ${euAiActBadge}
+    </div>
+    ${euAiActOverlay}
     ${description ? `<div class="detail-desc">${description}</div>` : ''}
     ${participantContext}
     ${actorSpectra}
     ${childrenHtml}
     ${related}
   `
+
+  if (participantEl?.role) attachInfoBadgeHandlers(view)
+
   return view
 }
