@@ -1,7 +1,7 @@
 # ADR-0016: Agile Process Semantic Anchors
 
 **Decision:** Four agile methodology anchors are added to the OIA active anchor set: Five Whys (Ohno), MoSCoW (Clegg), Testing Pyramid (Fowler/Cohn), and YAGNI (Jeffries/Beck). Each anchor maps to a specific, already-practised OIA process step and must be applied automatically by AI tooling in that context.
-**Status:** Proposed
+**Status:** Accepted
 **Date:** 2026-03-28
 **Type:** DEV
 **Governed by:** [ADR-0010](./0010-semantic-anchors-as-vocabulary-layer.md)

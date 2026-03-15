@@ -1,7 +1,7 @@
 # ADR-0014: Feature-Branch and Release-Branch Development Workflow
 
 **Decision:** OIA uses a feature-branch model: every issue is implemented on a dedicated branch, merged to `main` via a pull request with human approval. Releases are prepared on a `release/vX.Y.Z` branch. There is no `develop` branch.
-**Status:** Proposed
+**Status:** Accepted
 **Date:** 2026-03-28
 **Type:** DEV
 **Governed by:** [ODR-0002](../odr/0002-adopt-agile-principles.md)

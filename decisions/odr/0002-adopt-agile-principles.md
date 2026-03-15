@@ -1,7 +1,7 @@
 # ODR-0002: Adopt Agile Software Development Principles
 
 **Decision:** OIA development follows the principles of the Agile Manifesto (2001) as its operating model — accepting the process overhead as the cost of a deliberate risk-minimization strategy, with adaptations for the single-maintainer context.
-**Status:** Proposed
+**Status:** Accepted
 **Date:** 2026-03-14
 **Level:** Org
 **Binding for:** All

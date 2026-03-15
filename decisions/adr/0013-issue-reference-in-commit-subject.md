@@ -1,7 +1,7 @@
 # ADR-0013: Issue Reference in Commit Subject Line
 
 **Decision:** Every commit subject line ends with `(#N)` — the GitHub Issue number in parentheses. The footer `Closes #N` / `Refs #N` is retained alongside it.
-**Status:** Proposed
+**Status:** Accepted
 **Date:** 2026-03-28
 **Type:** DEV
 **Governed by:** [ODR-0002](../odr/0002-adopt-agile-principles.md)
