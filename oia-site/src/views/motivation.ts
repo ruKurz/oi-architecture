@@ -21,7 +21,7 @@ export function renderMotivationView(): HTMLElement {
           It is a <strong>working model</strong> for how organizations can turn knowledge into action.
         </p>
         <p>
-          Version <strong>0.2.0</strong> is intentionally early.<br>
+          Version <strong>0.3.0</strong> is intentionally early.<br>
           The architecture will evolve through real implementations, experiments and operational feedback.
         </p>
         <p>Not through theory alone.</p>
