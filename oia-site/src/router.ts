@@ -66,7 +66,7 @@ function renderOverview() {
   const controls = document.createElement('div')
   controls.className = 'zoom-controls'
   controls.innerHTML = `
-    <span style="font-size:10px;color:var(--text-muted)">Zoom</span>
+    <span class="zoom-controls__label">Zoom</span>
     <input class="zoom-slider" type="range" min="${ZOOM_MIN * 100}" max="${ZOOM_MAX * 100}" value="${Math.round(zoomValue * 100)}" step="${ZOOM_STEP * 100}">
     <span class="zoom-label">${Math.round(zoomValue * 100)}%</span>
   `

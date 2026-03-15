@@ -33,13 +33,13 @@ export function renderLegalView(): HTMLElement {
         <h2 class="page-view__section-title">Verantwortlich für den Inhalt</h2>
         <p class="page-view__body">
           Rüdiger Kurz, Anschrift wie oben.<br>
-          <span style="color: var(--text-muted); font-size: 12px;">§ 55 Abs. 2 RStV</span>
+          <span class="page-view__legal-ref">§ 55 Abs. 2 RStV</span>
         </p>
       </section>
 
       <section class="page-view__section">
         <h2 class="page-view__section-title">Lizenz</h2>
-        <p class="page-view__body" style="margin-bottom: 16px;">
+        <p class="page-view__body page-view__body--spaced-sm">
           Diese Seite veröffentlicht das <strong>Organizational Intelligence Architecture (OIA)</strong> Modell
           unter einer dualen Lizenz:
         </p>
@@ -55,7 +55,7 @@ export function renderLegalView(): HTMLElement {
             </li>
           </ul>
         </div>
-        <p class="page-view__body" style="margin-top: 16px; font-size: 13px; color: var(--text-muted);">
+        <p class="page-view__body page-view__body--caption">
           CC BY 4.0: Weitergabe und Bearbeitung erlaubt, solange der Urheber (Rüdiger Kurz)
           und die Quelle (<a class="page-view__link" href="https://github.com/ruKurz/oi-architecture" target="_blank" rel="noopener">github.com/ruKurz/oi-architecture</a>) genannt werden.
         </p>
@@ -63,7 +63,7 @@ export function renderLegalView(): HTMLElement {
 
       <section class="page-view__section">
         <h2 class="page-view__section-title">Datenschutz</h2>
-        <p class="page-view__body" style="color: var(--text-muted);">
+        <p class="page-view__body page-view__body--muted">
           Diese Seite verwendet keine Cookies, kein Tracking und keine Analyse-Werkzeuge.
           Es werden keine personenbezogenen Daten erhoben oder gespeichert.<br>
           Hosting: GitHub Pages.

@@ -8,6 +8,38 @@
 
 ---
 
+## Context
+
+This prompt generates a **static image** of the Organizational Intelligence Architecture (OIA) model for use in publications, LinkedIn posts, and CIO-level presentations.
+
+Relevant files (for terminology and layer definitions — do not inline content):
+- `context/oia-context.md` — canonical layer names, terminology, architecture overview
+- `context/oia-project-instruction-prompt.md` — target audience (CIO, Enterprise Architect), mission, visual positioning
+
+The OIA model has a fixed nine-layer structure (bottom → top) plus a left-side System Development dimension and feedback loops. These must appear in every generated image.
+
+## Goal
+
+Generate a high-resolution, publication-ready enterprise architecture diagram image of the OIA model that accurately reflects all nine layers, the left-side dimension, and the feedback loops — suitable for CIO presentations and LinkedIn.
+
+## Constraints
+
+- Does **not** modify any project files — output is an image, not code or data
+- Does **not** touch `oia-model.json` or the interactive HTML renderer
+- Does **not** redefine or rename OIA terminology — use canonical terms from `context/oia-context.md` exclusively
+- Layer content and order must match the model exactly — no additions, no omissions, no reordering
+- For model content changes (new layers, renamed elements): update `oia-model.json` first via `prompts/development/evolve-model.md`, then regenerate the image
+
+## Acceptance criteria
+
+- All nine layers visible in correct bottom-to-top order: Data Sources → Processing Pipeline → Knowledge Core → Features/APIs → Cognitive Capabilities → Solutions/Applications → Use Cases → Situation Layer → Actors
+- Left-side System Development dimension (User Interaction, Context Understanding, Feature Orchestration, Model Improvement) is present
+- Feedback loops (Applications → Knowledge Core, Agents → Knowledge Core, Users → Knowledge Core) are indicated
+- Visual style: dark blue background, white typography, no artistic scenes, no brains, no cyberpunk imagery
+- Output: high-resolution image suitable for publication (min. 1920 px wide) and LinkedIn (aspect ratio approximately 16:9 or 4:3)
+
+---
+
 Create a **clean enterprise architecture diagram** titled:
 
 **Organizational Intelligence Architecture (OIA)**
