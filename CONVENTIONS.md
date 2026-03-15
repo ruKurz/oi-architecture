@@ -12,7 +12,7 @@ Two distinct domains. A commit touches exactly one.
 | Domain | Meaning | Commit Types | Folders / Files |
 |---|---|---|---|
 | **DEV** | Technical implementation: Renderer, Tooling, Tests, Build, CI | `feat:` `fix:` `chore:` `refactor:` `test:` `style:` | `oia-site/` `.github/` `prompts/` + root files: `CLAUDE.md` `CONVENTIONS.md` `README.md` `CHANGELOG.md` `SECURITY.md` `CODE_OF_CONDUCT.md` `.gitmessage` |
-| **BIZ** | Domain content: OIA model, articles, diagram content, architecture decisions | `content:` `docs:` | `context/` `articles/` `diagrams/` `decisions/` `notes/` |
+| **BIZ** | Domain content: OIA model, articles, diagram content, architecture decisions | `content:` `docs:` | `context/` `articles/` `diagrams/` `decisions/` `.local/notes/` |
 
 **Rule:** A single commit touches either BIZ or DEV — never both. If both are needed: two separate commits.
 
