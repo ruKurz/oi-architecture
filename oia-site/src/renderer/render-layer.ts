@@ -37,17 +37,16 @@ export function renderLayer(model: OIAModel, layer: Container): HTMLElement {
 
   const wrapper = document.createElement('div')
   wrapper.dataset.id = layer.id
-  wrapper.style.cursor = 'pointer'
 
   if (isCore) {
     wrapper.className = 'layer-core'
     const numId = layer.id.replace('#', '')
     wrapper.innerHTML = `
       <div class="layer-header">
-        <span class="layer-num" style="color:var(--accent2);opacity:0.6">${numId}</span>
+        <span class="layer-num layer-num--core">${numId}</span>
         <span class="layer-title">${layer.label}</span>
         <span class="core-badge">CENTRAL COMPONENT</span>
-        <span class="layer-desc" style="color:var(--accent2-mid)">${layer.description || ''}</span>
+        <span class="layer-desc layer-desc--core">${layer.description || ''}</span>
         ${getBadgeIcons(model, layer.badges)}
       </div>
       ${renderKnowledgeCore(model, layer)}
