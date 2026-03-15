@@ -61,7 +61,7 @@ export function renderContributeView(): HTMLElement {
 
       <section class="page-view__section">
         <h2 class="page-view__section-title">Ways to Contribute</h2>
-        <p class="page-view__body" style="margin-bottom: 20px;">
+        <p class="page-view__body page-view__body--spaced">
           Contributions do not have to be large.<br>
           The most valuable inputs often come from real experience:
         </p>
@@ -81,7 +81,7 @@ export function renderContributeView(): HTMLElement {
             </ul>
           </div>
         </div>
-        <p class="page-view__body" style="margin-top: 20px; font-style: italic; color: var(--text-muted);">
+        <p class="page-view__body page-view__body--footnote">
           <a class="page-view__link" href="https://github.com/ruKurz/oi-architecture/issues" target="_blank" rel="noopener">A comment on an issue is a contribution.</a><br>
           <a class="page-view__link" href="https://www.linkedin.com/feed/update/urn:li:activity:7434972082561687552/" target="_blank" rel="noopener">A conversation that improves a concept is a contribution.</a>
         </p>
@@ -94,7 +94,7 @@ export function renderContributeView(): HTMLElement {
           <span class="page-view__contributing-cta-label">Read the full contribution guide</span>
           <span class="page-view__contributing-cta-file">CONTRIBUTING.md →</span>
         </a>
-        <div class="page-view__join-steps" style="margin-top: 24px;">
+        <div class="page-view__join-steps page-view__join-steps--top-gap">
           <div class="page-view__join-step">
             <span class="page-view__step-num">01</span>
             <div>
@@ -121,7 +121,7 @@ export function renderContributeView(): HTMLElement {
 
       <section class="page-view__section">
         <h2 class="page-view__section-title">What We Value in Contributions</h2>
-        <p class="page-view__body" style="margin-bottom: 20px;">
+        <p class="page-view__body page-view__body--spaced">
           OIA is a <strong>practical architecture</strong>, not an academic framework.
         </p>
         <div class="page-view__cards">
@@ -140,7 +140,7 @@ export function renderContributeView(): HTMLElement {
             </ul>
           </div>
         </div>
-        <p class="page-view__body page-view__manifesto" style="margin-top: 28px;">
+        <p class="page-view__body page-view__manifesto page-view__manifesto--top-spaced">
           <strong>Architecture grows from practice.</strong><br>
           Failure is data. Share it.
         </p>
@@ -148,11 +148,11 @@ export function renderContributeView(): HTMLElement {
 
       <section class="page-view__section">
         <h2 class="page-view__section-title">Start the Conversation</h2>
-        <p class="page-view__body" style="margin-bottom: 20px;">
+        <p class="page-view__body page-view__body--spaced">
           If you are building systems where <strong>knowledge must become action</strong>,<br>
           your experience belongs in this architecture.
         </p>
-        <p class="page-view__body" style="margin-bottom: 28px;">
+        <p class="page-view__body page-view__body--spaced-lg">
           Open an issue. Ask a question. Challenge an assumption.<br>
           Every conversation that improves the model is a contribution.
         </p>
