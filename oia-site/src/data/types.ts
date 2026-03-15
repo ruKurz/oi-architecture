@@ -69,6 +69,7 @@ export interface ParticipantItem extends ContentItem {
   spectrumAxis?: 'autonomy' | 'accountability'
   position?: number
   converging?: boolean
+  caption?: string
   text?: string
 }
 
