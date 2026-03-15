@@ -857,3 +857,190 @@ body::after {
 .detail-item--empty {
   color: var(--text-muted);
 }
+
+/* ── System Participants layer (#L9) ─────────────────────────── */
+
+/* Color tokens for participant entities */
+.sp-color--purple {
+  --sp-color: var(--accent4);
+}
+.sp-color--teal {
+  --sp-color: var(--accent2);
+}
+.sp-color--amber {
+  --sp-color: var(--accent3);
+}
+.sp-color--gray {
+  --sp-color: var(--text-dim);
+}
+
+/* Layer wrapper */
+.sp-layer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 8px 0;
+}
+
+/* ── Triad ── */
+.sp-triad {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.sp-triad__item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 12px;
+  border: 1px solid var(--sp-color, var(--border));
+  border-radius: var(--radius-md);
+  background: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.sp-triad__item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.sp-triad__item--secondary {
+  opacity: 0.6;
+}
+
+.sp-triad__item--secondary:hover {
+  opacity: 0.85;
+}
+
+.sp-triad__label {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--sp-color, var(--text));
+  letter-spacing: 0.03em;
+}
+
+.sp-triad__descriptor {
+  font-size: 9px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ── Spectrum ── */
+.sp-spectrum {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sp-spectrum__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.sp-spectrum__title {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.sp-spectrum__range {
+  display: flex;
+  gap: 8px;
+  font-size: 9px;
+  color: var(--text-muted);
+}
+
+.sp-spectrum__axis {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sp-spectrum__entity {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 8px 10px;
+  border: 1px solid var(--sp-color, var(--border));
+  border-radius: var(--radius-sm);
+  background: rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.sp-spectrum__entity:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.sp-spectrum__entity-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--sp-color, var(--text));
+}
+
+.sp-spectrum__entity-desc {
+  font-size: 8px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.sp-spectrum__arrow {
+  font-size: 12px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+/* Dashed "converging" connector between Human and Agent */
+.sp-spectrum__converging {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+  width: 36px;
+}
+
+.sp-spectrum__converging-line {
+  display: block;
+  width: 100%;
+  height: 1px;
+  border-top: 1px dashed var(--text-muted);
+}
+
+.sp-spectrum__converging-label {
+  font-size: 7px;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+/* ── Key Insight ── */
+.sp-insight {
+  border: 1px dashed var(--border-bright);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.sp-insight:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.sp-insight__text {
+  font-size: 10px;
+  color: var(--text-dim);
+  line-height: 1.5;
+  font-style: italic;
+}

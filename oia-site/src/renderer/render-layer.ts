@@ -9,17 +9,17 @@ import {
   renderDataSources,
 } from './render-layer-items'
 import {
-  renderActorsLayer,
   renderSolutionsLayer,
   renderKnowledgeCore,
   renderPipeline,
   renderOutcomeLayer,
 } from './render-layer-blocks'
+import { renderSystemParticipants } from './render-system-participants'
 
 type LayerRenderer = (model: OIAModel, layer: Container) => string
 
 const layerRenderers: Record<string, LayerRenderer> = {
-  '#L9': (model, layer) => `<div class="actors-grid">${renderActorsLayer(model, layer)}</div>`,
+  '#L9': (model, layer) => renderSystemParticipants(model, layer),
   '#L8': (model, layer) => `<div class="sit-grid">${renderSituationLayer(model, layer)}</div>`,
   '#L7': (model, layer) => `<div class="usecase-grid">${renderUseCaseLayer(model, layer)}</div>`,
   '#L6': (model, layer) => `<div class="sol-grid">${renderSolutionsLayer(model, layer)}</div>`,
