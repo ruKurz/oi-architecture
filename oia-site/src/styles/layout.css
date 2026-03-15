@@ -883,26 +883,67 @@ body::after {
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  padding: 3px 10px;
+  padding: 4px 12px;
+  transition: opacity 0.15s;
+}
+.detail-flow__node--inactive {
+  opacity: 0.65;
 }
 .detail-flow__node--current {
   color: var(--text);
   border-color: var(--border-bright);
+  background: rgba(255, 255, 255, 0.06);
   cursor: default;
+  font-weight: 600;
 }
+/* Active color variants — match participant role color */
+.detail-flow__node--teal {
+  border-color: var(--accent2);
+  color: var(--accent2);
+  background: rgba(44, 242, 194, 0.08);
+}
+.detail-flow__node--purple {
+  border-color: #a78bfa;
+  color: #a78bfa;
+  background: rgba(167, 139, 250, 0.08);
+}
+.detail-flow__node--amber {
+  border-color: #fbbf24;
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.08);
+}
+
+/* Edge: vertical stack — badge · arrow · label */
 .detail-flow__edge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  cursor: help;
+}
+.detail-flow__edge-badge {
   font-family: 'Space Mono', monospace;
-  font-size: 9px;
+  font-size: 7px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  border: 0.5px solid var(--border);
+  border-radius: 3px;
+  padding: 1px 5px;
+  background: var(--panel);
+}
+.detail-flow__edge-arrow {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--text-dim);
+  line-height: 1;
+}
+.detail-flow__edge-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
   color: var(--text-muted);
   font-style: italic;
-}
-.detail-flow__edge::before {
-  content: '→ ';
-  opacity: 0.5;
-}
-.detail-flow__edge::after {
-  content: ' →';
-  opacity: 0.5;
+  white-space: nowrap;
 }
 
 .detail-back {
@@ -940,6 +981,7 @@ body::after {
   color: var(--text-dim);
   margin-bottom: 28px;
   font-style: italic;
+  min-height: 5em; /* stabilise layout: governance flow stays at same Y across participants */
 }
 .detail-items {
   display: flex;
@@ -1093,6 +1135,28 @@ body::after {
   opacity: 0.5;
   letter-spacing: 0.03em;
   padding: 0 8px;
+}
+
+/* Attribution label above spectra */
+.sp-spectra-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 20px;
+  margin-bottom: 4px;
+}
+
+/* Actor detail: spectra context block */
+.detail-actor-context {
+  margin-top: 8px;
+  margin-bottom: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 /* ── Spectrum ── */
