@@ -6,6 +6,7 @@ This directory contains two types of decision records for the OIA project:
 |---|---|---|---|
 | **ADR** — Architecture Decision Record | Arch | Technical and structural choices | `decisions/adr/` |
 | **ODR** — Organizational Decision Record | Org | Operating model, governance, process principles | `decisions/odr/` |
+| **OIA-ODR** — OIA Model Decision Record | Model | OIA layer definitions, element semantics, model governance | `decisions/oia-odr/` |
 
 Both follow the **Decision first** principle (Müller/Dienst). See [`context/odr-concept.md`](../context/odr-concept.md) for the full ODR concept and hierarchy (Gov → Org → Arch).
 
@@ -49,6 +50,20 @@ ODRs document organizational decisions at the Org layer of the governance hierar
 | [ODR-0002](./odr/0002-adopt-agile-principles.md) | Adopt Agile Software Development Principles | Accepted | 2026-03-14 |
 | [ODR-0003](./odr/0003-adopt-adrs-as-arch-layer-documentation-practice.md) | Adopt ADRs as Arch-Layer Documentation Practice | Accepted | 2026-03-14 |
 | [ODR-0004](./odr/0004-english-as-project-language.md) | English as the Sole Project Language | Accepted | 2026-03-14 |
+
+---
+
+## OIA-ODR Index
+
+OIA-ODRs document model-level decisions — how the OIA model is structured, what its layers mean, and which governance frames apply within the model. They bind Contributors implementing model changes and AI Agents traversing the model.
+
+OIA-ODR numbers are independent of ADR and ODR numbers. The next OIA-ODR number is the current highest in this index + 1.
+
+| OIA-ODR | Title | Status | Date |
+|---|---|---|---|
+| [OIA-ODR-0001](./oia-odr/0001-system-participants-layer.md) | System Participants Layer | Proposed | 2026-03-15 |
+
+---
 
 ## ADR Acceptance Rule
 
