@@ -1,6 +1,5 @@
 # ADR — Architecture Decision Record
 
-**Version:** 1.0.0 · 2026-03-14
 **Status:** Active
 **Related:** [ODR-0003](../decisions/odr/0003-adopt-adrs-as-arch-layer-documentation-practice.md) · [ADR-0004](../decisions/adr/0004-adr-format-mueller-dienst.md)
 

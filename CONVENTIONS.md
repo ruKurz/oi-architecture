@@ -334,24 +334,11 @@ Rules:
 
 ---
 
-## Concept File Versioning
+## Document Versioning
 
-Concept files in `context/` that evolve over time carry a `**Version:**` field following SemVer (`MAJOR.MINOR.PATCH`), independent of the OIA model version (ADR-0007).
+**No document-internal version annotations.** Individual files do not carry a `**Version:**` field or version subtitle. Versioning is via Git history exclusively — `git log -- <file>` is the authoritative change record.
 
-| Bump | When |
-|---|---|
-| **PATCH** | Typo corrections, clarifications that don't change meaning |
-| **MINOR** | New sections, expanded explanations, new examples |
-| **MAJOR** | Structural rethink, renamed sections, breaking change to how the concept is used |
-
-**Active versioned concept files:**
-
-| File | Current version |
-|---|---|
-| `context/odr-concept.md` | 1.3.0 |
-| `context/oia-context.md` | 1.1.0 |
-| `context/adr-concept.md` | 1.0.0 |
-| `context/semantic-anchors.md` | 2.0.0 |
+**Exception:** `oia-site/src/data/oia-model.json → meta.version` — this is the OIA model's release version, consumed by the UI and tied to the project's SemVer release cycle (ADR-0007). It must not be removed.
 | `context/oia-project-instruction-prompt.md` | 1.0.0 |
 
 Update the version field and this table when making significant changes to a concept file.
