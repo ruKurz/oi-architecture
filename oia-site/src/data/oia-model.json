@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": "0.1.0",
+    "version": "0.2.0",
     "title": "Organizational Intelligence Architecture",
     "subtitle": "How organizations turn knowledge into action",
     "created": "2026"
@@ -119,77 +119,137 @@
       "id": "#L9",
       "type": "container",
       "containerType": "layer",
-      "label": "Actors",
-      "description": "Who interacts with the system",
-      "children": ["#L9-users", "#L9-agents"],
+      "label": "System Participants",
+      "description": "Who initiates, acts, and benefits — and with what accountability",
+      "children": [
+        "#L9-triad",
+        "#L9-spectrum-autonomy",
+        "#L9-spectrum-accountability",
+        "#L9-key-insight"
+      ],
       "meta": { "order": 9 }
     },
     {
-      "id": "#L9-users",
+      "id": "#L9-triad",
       "type": "container",
       "containerType": "frame",
-      "label": "Users",
-      "badges": ["badge-feedback"],
-      "meta": { "icon": "👤", "variant": "users" },
-      "children": ["#L9-u1", "#L9-u2", "#L9-u3", "#L9-u4"]
+      "label": "Triad",
+      "children": ["#L9-t-initiator", "#L9-t-actor", "#L9-t-beneficiary"]
     },
     {
-      "id": "#L9-u1",
+      "id": "#L9-t-initiator",
       "type": "item",
-      "itemType": "actor",
-      "label": "Employees",
-      "properties": { "role": "human" }
+      "itemType": "participant",
+      "label": "Initiator",
+      "role": "initiator",
+      "triadPosition": 1,
+      "color": "purple",
+      "weight": "secondary"
     },
     {
-      "id": "#L9-u2",
+      "id": "#L9-t-actor",
       "type": "item",
-      "itemType": "actor",
-      "label": "Developers",
-      "properties": { "role": "human" }
+      "itemType": "participant",
+      "label": "Actor",
+      "role": "actor",
+      "triadPosition": 2,
+      "color": "teal",
+      "weight": "primary",
+      "primary": true
     },
     {
-      "id": "#L9-u3",
+      "id": "#L9-t-beneficiary",
       "type": "item",
-      "itemType": "actor",
-      "label": "Analysts",
-      "properties": { "role": "human" }
+      "itemType": "participant",
+      "label": "Beneficiary",
+      "role": "beneficiary",
+      "triadPosition": 3,
+      "color": "amber",
+      "weight": "secondary"
     },
     {
-      "id": "#L9-u4",
-      "type": "item",
-      "itemType": "actor",
-      "label": "Decision Makers",
-      "properties": { "role": "human" }
-    },
-    {
-      "id": "#L9-agents",
+      "id": "#L9-spectrum-autonomy",
       "type": "container",
-      "containerType": "frame",
-      "label": "Agents",
-      "badges": ["badge-feedback"],
-      "meta": { "icon": "🤖", "variant": "agents" },
-      "children": ["#L9-a1", "#L9-a2", "#L9-a3"]
+      "containerType": "spectrum",
+      "label": "Autonomy & Decision Space",
+      "spectrumAxis": "autonomy",
+      "children": ["#L9-sa-system", "#L9-sa-human", "#L9-sa-agent"]
     },
     {
-      "id": "#L9-a1",
+      "id": "#L9-sa-system",
       "type": "item",
-      "itemType": "actor",
-      "label": "AI Assistants",
-      "properties": { "role": "agent" }
+      "itemType": "participant",
+      "label": "System",
+      "spectrumAxis": "autonomy",
+      "position": 1,
+      "description": "Configured · deterministic",
+      "color": "gray"
     },
     {
-      "id": "#L9-a2",
+      "id": "#L9-sa-human",
       "type": "item",
-      "itemType": "actor",
-      "label": "AI Agents",
-      "properties": { "role": "agent" }
+      "itemType": "participant",
+      "label": "Human",
+      "spectrumAxis": "autonomy",
+      "position": 2,
+      "description": "Guided · contextual judgment",
+      "color": "teal"
     },
     {
-      "id": "#L9-a3",
+      "id": "#L9-sa-agent",
       "type": "item",
-      "itemType": "actor",
-      "label": "Autonomous Systems",
-      "properties": { "role": "agent" }
+      "itemType": "participant",
+      "label": "Agent",
+      "spectrumAxis": "autonomy",
+      "position": 3,
+      "description": "Goal-directed · autonomous",
+      "color": "teal",
+      "converging": true
+    },
+    {
+      "id": "#L9-spectrum-accountability",
+      "type": "container",
+      "containerType": "spectrum",
+      "label": "Accountability",
+      "spectrumAxis": "accountability",
+      "children": ["#L9-sc-system", "#L9-sc-agent", "#L9-sc-human"]
+    },
+    {
+      "id": "#L9-sc-system",
+      "type": "item",
+      "itemType": "participant",
+      "label": "System",
+      "spectrumAxis": "accountability",
+      "position": 1,
+      "description": "Inherits from Initiator",
+      "color": "gray"
+    },
+    {
+      "id": "#L9-sc-agent",
+      "type": "item",
+      "itemType": "participant",
+      "label": "Agent",
+      "spectrumAxis": "accountability",
+      "position": 2,
+      "description": "ODR-bounded · delegated",
+      "color": "teal"
+    },
+    {
+      "id": "#L9-sc-human",
+      "type": "item",
+      "itemType": "participant",
+      "label": "Human",
+      "spectrumAxis": "accountability",
+      "position": 3,
+      "description": "Legal · structural · always",
+      "color": "purple"
+    },
+    {
+      "id": "#L9-key-insight",
+      "type": "item",
+      "itemType": "keyInsight",
+      "label": "Key Insight",
+      "text": "Capabilities converge. Accountability does not. The human remains the legal and structural anchor — independent of agent autonomy."
     },
 
     {
@@ -908,18 +968,10 @@
     },
     {
       "id": "conn-fb-2",
-      "from": "#L9-agents",
+      "from": "#L9",
       "to": "#L3",
       "connectionType": "feedback",
-      "label": "Agents → Knowledge Core",
-      "direction": "backward"
-    },
-    {
-      "id": "conn-fb-3",
-      "from": "#L9-users",
-      "to": "#L3",
-      "connectionType": "feedback",
-      "label": "Users → Knowledge Core",
+      "label": "System Participants → Knowledge Core",
       "direction": "backward"
     },
     {
