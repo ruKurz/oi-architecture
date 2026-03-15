@@ -14,12 +14,12 @@ export interface ModelMeta {
   created: string
 }
 
-export type OIAElement = Container | ContentItem
+export type OIAElement = Container | ContentItem | ParticipantItem
 
 export interface Container {
   id: string
   type: 'container'
-  containerType: 'layer' | 'frame' | 'box' | 'pipeline' | 'panel'
+  containerType: 'layer' | 'frame' | 'box' | 'pipeline' | 'panel' | 'spectrum'
   label: string
   description?: string
   children: string[]
@@ -56,6 +56,22 @@ export type ItemType =
   | 'datasource'
   | 'concept'
   | 'outcome'
+  | 'participant'
+  | 'keyInsight'
+
+export interface ParticipantItem extends ContentItem {
+  itemType: 'participant' | 'keyInsight'
+  role?: 'initiator' | 'actor' | 'beneficiary'
+  triadPosition?: number
+  weight?: 'primary' | 'secondary'
+  primary?: boolean
+  color?: 'purple' | 'teal' | 'amber' | 'gray'
+  spectrumAxis?: 'autonomy' | 'accountability'
+  position?: number
+  converging?: boolean
+  caption?: string
+  text?: string
+}
 
 export interface Connection {
   id: string

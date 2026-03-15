@@ -1,29 +1,5 @@
 import type { OIAModel, Container, ContentItem } from '../data/types'
 import { getItem } from './utils'
-import { getBadgeIcons } from './render-layer-items'
-
-export function renderActorsLayer(model: OIAModel, layer: Container): string {
-  return layer.children
-    .map((fid) => {
-      const frame = getItem(model, fid) as Container | undefined
-      if (!frame || frame.type !== 'container') return ''
-      const isAgents = frame.meta?.variant === 'agents'
-      const tagClass = isAgents ? 'accent4' : ''
-      const tags = frame.children
-        .map((cid) => {
-          const child = getItem(model, cid)
-          return child
-            ? `<span class="tag ${tagClass}"><span class="dot"></span>${child.label}</span>`
-            : ''
-        })
-        .join('')
-      return `<div class="actor-group ${frame.meta?.variant || ''}" data-id="${frame.id}">
-      <div class="actor-group-title">${frame.meta?.icon || ''} ${frame.label}${getBadgeIcons(model, frame.badges)}</div>
-      <div class="tag-row">${tags}</div>
-    </div>`
-    })
-    .join('')
-}
 
 export function renderSolutionsLayer(model: OIAModel, layer: Container): string {
   return layer.children
