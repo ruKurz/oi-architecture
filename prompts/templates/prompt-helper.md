@@ -151,6 +151,12 @@ You are finished when:
 - [ ] `Constraints` are explicitly stated (not just implied)
 - [ ] `Acceptance criteria` are measurable (not "looks good")
 - [ ] No project context is repeated inline — path references only
+- [ ] Prompt compliance pre-flight passed — run before committing:
+  ```bash
+  for section in "## Context" "## Goal" "## Constraints" "## Acceptance criteria"; do
+    grep -q "$section" <path-to-prompt>.md && echo "OK: $section" || echo "MISSING: $section"
+  done
+  ```
 - [ ] The prompt is saved at the following path:
 
 ```
