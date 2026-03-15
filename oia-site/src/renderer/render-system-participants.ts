@@ -114,9 +114,15 @@ function renderKeyInsight(model: OIAModel, insightId: string): string {
 }
 
 export function renderSystemParticipants(model: OIAModel, layer: Container): string {
-  const [triadId, spectrum1Id, spectrum2Id, insightId] = layer.children
+  const [triadId] = layer.children
   return `<div class="sp-layer">
     ${renderTriad(model, triadId)}
+  </div>`
+}
+
+export function renderSystemParticipantsDetail(model: OIAModel, layer: Container): string {
+  const [, spectrum1Id, spectrum2Id, insightId] = layer.children
+  return `<div class="sp-layer">
     <div class="sp-centric-stmt">${ACTOR_CENTRIC_STMT}</div>
     ${renderSpectrum(model, spectrum1Id)}
     ${renderSpectrum(model, spectrum2Id)}
