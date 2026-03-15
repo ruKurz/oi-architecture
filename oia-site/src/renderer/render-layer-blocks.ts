@@ -17,7 +17,7 @@ export function renderActorsLayer(model: OIAModel, layer: Container): string {
             : ''
         })
         .join('')
-      return `<div class="actor-group ${frame.meta?.variant || ''}" data-id="${frame.id}" style="cursor:pointer">
+      return `<div class="actor-group ${frame.meta?.variant || ''}" data-id="${frame.id}">
       <div class="actor-group-title">${frame.meta?.icon || ''} ${frame.label}${getBadgeIcons(model, frame.badges)}</div>
       <div class="tag-row">${tags}</div>
     </div>`
@@ -47,7 +47,7 @@ export function renderKnowledgeCore(model: OIAModel, layer: Container): string {
           return child ? child.label : ''
         })
         .join('<br>')
-      return `<div class="core-block" data-id="${box.id}" style="cursor:pointer">
+      return `<div class="core-block" data-id="${box.id}">
       <div class="core-block-title">${box.label}</div>
       <div class="core-block-items">${items}</div>
     </div>`
@@ -63,11 +63,9 @@ export function renderPipeline(model: OIAModel, layer: Container): string {
       if (!item) return ''
       const isLast = i === arr.length - 1
       const isOutput = item.properties?.variant === 'output'
-      const style = isOutput
-        ? ' style="border-color:var(--accent2-dim);color:var(--accent2-high)"'
-        : ''
+      const outputClass = isOutput ? ' pipeline-step--output' : ''
       const arrow = !isLast ? '<div class="pipeline-arrow">→</div>' : ''
-      return `<div class="pipeline-step"${style}>${item.icon || ''}<br>${item.label}</div>${arrow}`
+      return `<div class="pipeline-step${outputClass}">${item.icon || ''}<br>${item.label}</div>${arrow}`
     })
     .join('')
   return `<div class="pipeline-row">${steps}</div>`
