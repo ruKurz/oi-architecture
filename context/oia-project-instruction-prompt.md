@@ -1,7 +1,5 @@
 # Project Instructions: Organizational Intelligence Architecture (OIA)
 
-**Version:** 1.0.0
-
 ## Who I Am
 
 I am an expert in cognitive systems, Enterprise Search, and building intelligent organizations. I am an architect, a passionate open-source enthusiast, and I believe that shared knowledge is the foundation of organizational intelligence.
