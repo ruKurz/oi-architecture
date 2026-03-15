@@ -143,6 +143,8 @@ Create `sprints/YYYY-MM-DD.md` with the sprint goal, DoD, and issue list.
 
 **Duplicate file handling:** If `sprints/YYYY-MM-DD.md` already exists, append a two-digit counter suffix starting at `00`: `YYYY-MM-DD-00.md`, `YYYY-MM-DD-01.md`, etc. Check with `ls sprints/YYYY-MM-DD*.md` before creating.
 
+**Language:** Sprint file content must be in English — per ODR-0004. Goal, DoD, section headers, and notes are all English.
+
 ---
 
 ### ⏸ CHECKPOINT 2 — Handshake
