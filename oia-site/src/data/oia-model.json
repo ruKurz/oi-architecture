@@ -144,7 +144,8 @@
       "role": "initiator",
       "triadPosition": 1,
       "color": "purple",
-      "weight": "secondary"
+      "weight": "secondary",
+      "description": "Defines the governance frame: goals, permissions, and organizational rules. Interacts with OIA constitutively — not operatively. Sets the conditions under which Actors operate. Accountability always traces back to the Initiator and is always reducible to a human or organization."
     },
     {
       "id": "#L9-t-actor",
@@ -155,7 +156,8 @@
       "triadPosition": 2,
       "color": "teal",
       "weight": "primary",
-      "primary": true
+      "primary": true,
+      "description": "The primary interaction entity of OIA. Engages with Capabilities, Features, and the Knowledge Core. OIA is built from the Actor's perspective. The Actor can be a Human, an Agent, or a System."
     },
     {
       "id": "#L9-t-beneficiary",
@@ -165,7 +167,8 @@
       "role": "beneficiary",
       "triadPosition": 3,
       "color": "amber",
-      "weight": "secondary"
+      "weight": "secondary",
+      "description": "The entity for whom the outcome creates value. Legitimizes the action. Feedback flows back into the architecture from the Beneficiary, but the Beneficiary does not control the process. Can be a human, team, or system."
     },
     {
       "id": "#L9-spectrum-autonomy",
@@ -182,7 +185,8 @@
       "label": "System",
       "spectrumAxis": "autonomy",
       "position": 1,
-      "description": "Configured · deterministic. Executes within fixed parameters.",
+      "caption": "Configured · deterministic",
+      "description": "Operates within a fixed configuration set by the Initiator. No independent decision space — executes exactly what was configured. Predictable, deterministic, bounded by design.",
       "color": "gray"
     },
     {
@@ -192,7 +196,8 @@
       "label": "Human",
       "spectrumAxis": "autonomy",
       "position": 2,
-      "description": "Guided · contextual judgment. Constrained by hierarchy & cognition.",
+      "caption": "Guided · contextual judgment",
+      "description": "Decides contextually, embedded in hierarchy, political consideration, and cognitive limits. Filters before acting — through organization, experience, and judgment. Greater interpretive depth than operational reach.",
       "color": "teal"
     },
     {
@@ -202,7 +207,8 @@
       "label": "Agent",
       "spectrumAxis": "autonomy",
       "position": 3,
-      "description": "Goal-directed · autonomous. Parallel, continuous, bias-free throughput.",
+      "caption": "Goal-directed · autonomous",
+      "description": "Greater operational reach than a human: parallel processing, continuous availability, no cognitive bias, no organizational embeddedness. Operates without the filters that constrain human decision-making in organizations. The positioning to the right of Human on this axis is intentional — not a display error.",
       "color": "teal",
       "converging": true
     },
@@ -221,7 +227,8 @@
       "label": "System",
       "spectrumAxis": "accountability",
       "position": 1,
-      "description": "Inherits from Initiator. No independent accountability.",
+      "caption": "Inherits from Initiator",
+      "description": "Carries no independent accountability. Accountability flows back entirely to the Initiator who configured it.",
       "color": "gray"
     },
     {
@@ -231,7 +238,8 @@
       "label": "Agent",
       "spectrumAxis": "accountability",
       "position": 2,
-      "description": "ODR-bounded · delegated. No legal framework, no societal sanction.",
+      "caption": "ODR-bounded · delegated",
+      "description": "Accountability is delegated and explicitly bounded by Organizational Decision Records (ODRs). No legal framework, no societal sanction mechanism. Without ODR-defined boundaries, Agent actions cannot be held accountable.",
       "color": "teal"
     },
     {
@@ -241,7 +249,8 @@
       "label": "Human",
       "spectrumAxis": "accountability",
       "position": 3,
-      "description": "Legal · structural · always. The permanent anchor — regardless of agent autonomy.",
+      "caption": "Legal · structural · always",
+      "description": "Carries accountability through law, socialization, and culture — mechanisms no machine brings and that cannot be delegated. Permanently at the rightmost position on this axis, independent of agent autonomy.",
       "color": "purple"
     },
     {
