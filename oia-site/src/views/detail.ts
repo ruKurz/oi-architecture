@@ -14,13 +14,13 @@ function renderChildren(model: OIAModel, ids: string[], depth = 0): string {
             : ''
         return `<div class="detail-item"${indent}>
         <span class="detail-item-label">${el.label}</span>
-        <span style="font-size:10px;color:var(--text-muted);margin-left:8px">${el.containerType}</span>
+        <span class="detail-item__meta">${el.containerType}</span>
         ${sub}
       </div>`
       }
       return `<div class="detail-item"${indent}>
       <span class="detail-item-label">${el.icon ? el.icon + ' ' : ''}${el.label}</span>
-      <span style="font-size:10px;color:var(--text-muted);margin-left:8px">${el.itemType}</span>
+      <span class="detail-item__meta">${el.itemType}</span>
     </div>`
     })
     .join('')
@@ -49,7 +49,7 @@ export function renderDetailView(model: OIAModel, id: string): HTMLElement {
     <div class="detail-title">${el.label}</div>
     ${description ? `<div class="detail-desc">${description}</div>` : ''}
     <div class="detail-items">
-      ${children.length > 0 ? renderChildren(model, children) : '<div class="detail-item" style="color:var(--text-muted)">No sub-elements</div>'}
+      ${children.length > 0 ? renderChildren(model, children) : '<div class="detail-item detail-item--empty">No sub-elements</div>'}
     </div>
   `
   return view

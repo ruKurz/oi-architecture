@@ -29,10 +29,10 @@ export function renderMotivationView(): HTMLElement {
 
       <section class="page-view__section">
         <h2 class="page-view__section-title">An Open Architecture of Participation</h2>
-        <p class="page-view__body" style="margin-bottom: 20px;">
+        <p class="page-view__body page-view__body--spaced">
           OIA is designed as a <strong>shared architectural thinking model</strong>.
         </p>
-        <p class="page-view__body" style="margin-bottom: 20px;">
+        <p class="page-view__body page-view__body--spaced">
           It improves when people who actually build systems contribute their experience:
         </p>
         <div class="page-view__audience">
@@ -49,7 +49,7 @@ export function renderMotivationView(): HTMLElement {
 
       <section class="page-view__section">
         <h2 class="page-view__section-title">What Contributions Look Like</h2>
-        <p class="page-view__body" style="margin-bottom: 20px;">
+        <p class="page-view__body page-view__body--spaced">
           Contributions do not have to be large.<br>
           The most valuable inputs often come from real implementation experience:
         </p>
@@ -69,7 +69,7 @@ export function renderMotivationView(): HTMLElement {
             </ul>
           </div>
         </div>
-        <p class="page-view__body" style="margin-top: 20px; font-style: italic; color: var(--text-muted);">
+        <p class="page-view__body page-view__body--footnote">
           Real systems create real learning.<br>
           That learning improves the architecture.
         </p>
@@ -77,7 +77,7 @@ export function renderMotivationView(): HTMLElement {
 
       <section class="page-view__section">
         <h2 class="page-view__section-title">From Reference Model to Real Systems</h2>
-        <p class="page-view__body" style="margin-bottom: 20px;">
+        <p class="page-view__body page-view__body--spaced">
           The long-term ambition of OIA is to evolve step by step:
         </p>
         <div class="page-view__flow page-view__flow--vertical">
@@ -89,14 +89,14 @@ export function renderMotivationView(): HTMLElement {
           <span class="page-view__flow-arrow">→</span>
           <span class="page-view__flow-step accent3">Operational Organizational Intelligence Systems</span>
         </div>
-        <p class="page-view__body" style="margin-top: 20px; font-style: italic; color: var(--text-muted);">
+        <p class="page-view__body page-view__body--footnote">
           This evolution can only happen through <strong>shared practice</strong>.
         </p>
       </section>
 
       <section class="page-view__section">
         <h2 class="page-view__section-title">Join the Work</h2>
-        <p class="page-view__body" style="margin-bottom: 20px;">
+        <p class="page-view__body page-view__body--spaced">
           If you are building systems where <strong>knowledge must become action</strong>,<br>
           your experience belongs in this architecture.
         </p>
@@ -114,7 +114,7 @@ export function renderMotivationView(): HTMLElement {
             <span>Contribute insights from real implementations</span>
           </div>
         </div>
-        <p class="page-view__body page-view__manifesto" style="margin-top: 28px;">
+        <p class="page-view__body page-view__manifesto page-view__manifesto--top-spaced">
           OIA is not a finished answer.<br><br>
           It is a place where the architecture of organizational intelligence is <strong>built in the open</strong>.
         </p>
