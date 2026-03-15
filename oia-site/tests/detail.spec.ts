@@ -21,11 +21,12 @@ describe('renderDetailView', () => {
     expect(el.innerHTML).toContain('Organizational Knowledge Core')
   })
 
-  test('back link points to #/', () => {
+  test('breadcrumb contains OIA link to #/', () => {
     const el = renderDetailView(model, '#L1')
-    const back = el.querySelector('.detail-back')
-    expect(back).not.toBeNull()
-    expect(back?.getAttribute('href')).toBe('#/')
+    const breadcrumb = el.querySelector('.detail-breadcrumb')
+    expect(breadcrumb).not.toBeNull()
+    const homeLink = el.querySelector('.detail-breadcrumb__item[href="#/"]')
+    expect(homeLink).not.toBeNull()
   })
 
   test('renders detail-id element', () => {
