@@ -242,6 +242,39 @@ See [ADR-0006](decisions/adr/0006-prompt-helper-enforcement.md) for rationale.
 
 ---
 
+## 2.14 Agent Skills (SKILL.md)
+
+Reusable AI agent workflows are defined as Agent Skills following the SKILL.md format (agentskills.io). See [ADR-0017](decisions/adr/0017-agent-skills-skill-md-format.md) for rationale.
+
+**Location:** `prompts/skills/<skill-name>/SKILL.md`
+
+**SKILL.md structure:**
+
+```yaml
+---
+name: skill-name          # kebab-case, unique within the project
+description: >-           # max 1024 characters; describes when to trigger
+  ...
+---
+```
+
+Body: workflow steps in sequence. Loaded only when the skill is triggered (~2000 tokens max).
+
+**Reference convention:** The SKILL.md body references project files by **path only** — never as copies. Example:
+
+```
+Read CONVENTIONS.md §2.1 to determine BIZ vs DEV.
+Read decisions/README.md to check ADR/ODR compliance.
+```
+
+Copying `CONVENTIONS.md` or `decisions/README.md` into a `references/` directory is **not allowed** — copies go stale immediately and create a maintenance trap.
+
+**Authoring rule:** Creating or modifying a skill file still requires the `prompts/templates/prompt-helper.md` process for workflow design (ADR-0006). The output is a SKILL.md file, not a standard prompt with Context/Goal/Constraints/AC sections.
+
+**Naming:** skill directories are kebab-case, English.
+
+---
+
 ## 2.12 Concept Introduction
 
 When introducing a new concept into the project (a new documentation format, a new process, a new architectural pattern), the following order is mandatory:
