@@ -68,7 +68,7 @@ function renderTriad(model: OIAModel, triadId: string): string {
   return `<div class="sp-triad">${parts.join('')}</div>`
 }
 
-function renderSpectrum(model: OIAModel, spectrumId: string): string {
+export function renderSpectrum(model: OIAModel, spectrumId: string): string {
   const spectrum = getItem(model, spectrumId) as Container | undefined
   if (!spectrum || spectrum.type !== 'container') return ''
 
@@ -107,7 +107,7 @@ function renderSpectrum(model: OIAModel, spectrumId: string): string {
   </div>`
 }
 
-function renderKeyInsight(model: OIAModel, insightId: string): string {
+export function renderKeyInsight(model: OIAModel, insightId: string): string {
   const item = getItem(model, insightId) as ParticipantItem | undefined
   if (!item || item.itemType !== 'keyInsight') return ''
   const full = item.text ?? item.label
@@ -132,6 +132,7 @@ export function renderSystemParticipantsDetail(model: OIAModel, layer: Container
   return `<div class="sp-layer">
     ${renderTriad(model, triadId)}
     <div class="sp-centric-stmt">${ACTOR_CENTRIC_STMT}</div>
+    <div class="sp-spectra-label">Actor types — how they differ</div>
     ${renderSpectrum(model, spectrum1Id)}
     ${renderSpectrum(model, spectrum2Id)}
     ${renderKeyInsight(model, insightId)}

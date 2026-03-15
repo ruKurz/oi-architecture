@@ -86,6 +86,7 @@ function renderOverview() {
 function renderDetail(id: string) {
   appContainer.innerHTML = ''
   appContainer.appendChild(renderDetailView(model, id))
+  attachClickHandlers()
 }
 
 function renderPage(viewElement: HTMLElement) {
