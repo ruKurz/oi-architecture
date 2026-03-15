@@ -1,4 +1,5 @@
-import type { OIAModel, OIAElement } from '../data/types'
+import type { OIAModel, OIAElement, Container } from '../data/types'
+import { renderSystemParticipantsDetail } from '../renderer/render-system-participants'
 
 function renderChildren(model: OIAModel, ids: string[], depth = 0): string {
   if (depth > 3) return ''
@@ -41,16 +42,32 @@ export function renderDetailView(model: OIAModel, id: string): HTMLElement {
   }
 
   const children = el.type === 'container' ? el.children : []
-  const description = el.type === 'container' ? el.description || '' : el.description || ''
+  const description = el.description || ''
+
+  if (el.id === '#L9' && el.type === 'container') {
+    view.innerHTML = `
+      <a class="detail-back" href="#/">← Back to Overview</a>
+      <div class="detail-id">${el.id}</div>
+      <div class="detail-title">${el.label}</div>
+      ${description ? `<div class="detail-desc">${description}</div>` : ''}
+      ${renderSystemParticipantsDetail(model, el as Container)}
+    `
+    return view
+  }
+
+  const childrenHtml =
+    children.length > 0
+      ? `<div class="detail-items">${renderChildren(model, children)}</div>`
+      : description
+        ? ''
+        : '<div class="detail-items"><div class="detail-item detail-item--empty">No sub-elements</div></div>'
 
   view.innerHTML = `
     <a class="detail-back" href="#/">← Back to Overview</a>
     <div class="detail-id">${el.id}</div>
     <div class="detail-title">${el.label}</div>
     ${description ? `<div class="detail-desc">${description}</div>` : ''}
-    <div class="detail-items">
-      ${children.length > 0 ? renderChildren(model, children) : '<div class="detail-item detail-item--empty">No sub-elements</div>'}
-    </div>
+    ${childrenHtml}
   `
   return view
 }
