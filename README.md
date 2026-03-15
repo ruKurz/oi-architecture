@@ -2,7 +2,7 @@
 
 > *How organizations turn knowledge into action.*
 
-**[Live Demo →](https://rukurz.github.io/oi-architecture/)** | Version 0.1.0 — early access | [![CI](https://github.com/ruKurz/oi-architecture/actions/workflows/pr-check.yml/badge.svg)](https://github.com/ruKurz/oi-architecture/actions/workflows/pr-check.yml)
+**[Live Demo →](https://rukurz.github.io/oi-architecture/)** | Version 0.2.0 — early access | [![CI](https://github.com/ruKurz/oi-architecture/actions/workflows/pr-check.yml/badge.svg)](https://github.com/ruKurz/oi-architecture/actions/workflows/pr-check.yml)
 
 **OIA** is a conceptual reference model for intelligent organizations.
 It describes how raw data becomes decisions, actions, and measurable business outcomes — going beyond pure data and analytics architectures.
