@@ -35,18 +35,28 @@ describe('renderDetailView', () => {
   })
 
   test('renders children for container element', () => {
-    const el = renderDetailView(model, '#L9')
+    const el = renderDetailView(model, '#L3')
     expect(el.querySelector('.detail-items')).not.toBeNull()
     expect(el.querySelectorAll('.detail-item').length).toBeGreaterThan(0)
   })
 
-  test('shows "No sub-elements" for item without children', () => {
-    // Find any item (not container) in the model
-    const item = (model).elements.find((e) => e.type === 'item')
-    expect(item).toBeDefined()
-    const el = renderDetailView(model, item!.id)
+  test('renders system participants detail view for #L9', () => {
+    const el = renderDetailView(model, '#L9')
+    expect(el.querySelector('.sp-layer')).not.toBeNull()
+    expect(el.querySelector('.sp-spectrum')).not.toBeNull()
+    expect(el.querySelector('.sp-insight')).not.toBeNull()
+  })
+
+  test('shows "No sub-elements" for item without children and no description', () => {
+    const el = renderDetailView(model, '#I2-1')
     expect(el.querySelector('.detail-items')).not.toBeNull()
     expect(el.innerHTML).toContain('No sub-elements')
+  })
+
+  test('does not show "No sub-elements" for triad item with description', () => {
+    const el = renderDetailView(model, '#L9-t-initiator')
+    expect(el.innerHTML).not.toContain('No sub-elements')
+    expect(el.querySelector('.detail-desc')).not.toBeNull()
   })
 
   test('shows not-found message for unknown id', () => {
