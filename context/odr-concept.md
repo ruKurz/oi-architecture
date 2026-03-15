@@ -1,6 +1,5 @@
 # ODR — Organizational Decision Record
 
-**Version:** 1.3.0 · 2026-03-14
 **Status:** Active
 **Related:** [ADR-0012](../decisions/adr/0012-introduce-odr-governance-layer.md) · [ODR Template](../decisions/odr/odr-template.md)
 

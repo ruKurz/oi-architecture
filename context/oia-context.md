@@ -1,5 +1,4 @@
 # Organizational Intelligence Architecture (OIA)
-### Context Document · v1.1.0
 > *How organizations turn knowledge into action*
 
 ---
