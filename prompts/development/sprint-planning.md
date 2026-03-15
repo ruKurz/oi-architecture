@@ -9,7 +9,7 @@
 
 ## Context
 
-- `sprints/` — sprint notes files; sprint goal from the human is the primary input
+- `.local/sprints/` — sprint notes files (local only, gitignored); sprint goal from the human is the primary input
 - GitHub Issues — open backlog
 - `CONVENTIONS.md` §Git Workflow — issue sizing conventions (XS/S/M/L)
 
@@ -137,11 +137,11 @@ Goal: [sprint goal]
 
 ### C-5 — Create sprint file
 
-Create `sprints/YYYY-MM-DD.md` with the sprint goal, DoD, and issue list.
+Create `.local/sprints/YYYY-MM-DD.md` with the sprint goal, DoD, and issue list.
 
 **Sprint naming rule:** The sprint name is the date of today's planning session — not a future date from planning notes or a previous meeting. Use `date +%Y-%m-%d` to confirm today's date if unsure.
 
-**Duplicate file handling:** If `sprints/YYYY-MM-DD.md` already exists, append a two-digit counter suffix starting at `00`: `YYYY-MM-DD-00.md`, `YYYY-MM-DD-01.md`, etc. Check with `ls sprints/YYYY-MM-DD*.md` before creating.
+**Duplicate file handling:** If `.local/sprints/YYYY-MM-DD.md` already exists, append a two-digit counter suffix starting at `00`: `YYYY-MM-DD-00.md`, `YYYY-MM-DD-01.md`, etc. Check with `ls .local/sprints/YYYY-MM-DD*.md` before creating.
 
 **Language:** Sprint file content must be in English — per ODR-0004. Goal, DoD, section headers, and notes are all English.
 
@@ -178,7 +178,7 @@ After confirmation:
 - [ ] Gap analysis performed
 - [ ] Checkpoint 1: feedback gathered and applied
 - [ ] Checkpoint 2: handshake completed
-- [ ] Sprint file created at `sprints/YYYY-MM-DD.md`
+- [ ] Sprint file created at `.local/sprints/YYYY-MM-DD.md`
 - [ ] Final scope output in writing
 
 ---
@@ -186,7 +186,7 @@ After confirmation:
 ## Output
 
 ```
-sprints/YYYY-MM-DD.md — created
+.local/sprints/YYYY-MM-DD.md — created
 GitHub Issues — new issues if gap analysis confirmed (variable count)
 Chat output — final sprint scope
 ```

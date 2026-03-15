@@ -19,7 +19,7 @@
 - `decisions/README.md` — ADR/ODR index
 - `decisions/adr/*.md` — Architecture Decision Records (all Accepted + Proposed)
 - `decisions/odr/*.md` — Organizational Decision Records (all)
-- `sprints/` — sprint files
+- `.local/sprints/` — sprint files (local only, gitignored)
 
 ---
 
@@ -61,7 +61,7 @@ Skip only: `_obsolete/`, `README.md`, template files (`adr-template.md`, `odr-te
 
 ### S-3 — Detect active sprint
 
-List `sprints/` and identify the most recent file (by filename date).
+List `.local/sprints/` and identify the most recent file (by filename date).
 Read it and extract: sprint goal, issue list, DoD.
 
 If no sprint file exists: note "No active sprint found" and continue.
