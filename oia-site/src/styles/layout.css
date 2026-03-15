@@ -1095,6 +1095,28 @@ body::after {
   padding: 0 8px;
 }
 
+/* Attribution label above spectra */
+.sp-spectra-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 20px;
+  margin-bottom: 4px;
+}
+
+/* Actor detail: spectra context block */
+.detail-actor-context {
+  margin-top: 8px;
+  margin-bottom: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 /* ── Spectrum ── */
 .sp-spectrum {
   display: flex;
