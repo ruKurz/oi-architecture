@@ -907,12 +907,16 @@ body::after {
   background: rgba(255, 255, 255, 0.05);
 }
 
+.sp-triad__item--primary {
+  flex: 1.5;
+}
+
 .sp-triad__item--secondary {
-  opacity: 0.6;
+  opacity: 0.72;
 }
 
 .sp-triad__item--secondary:hover {
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 .sp-triad__label {
@@ -923,11 +927,50 @@ body::after {
   letter-spacing: 0.03em;
 }
 
-.sp-triad__descriptor {
-  font-size: 9px;
-  color: var(--text-muted);
+.sp-triad__raci {
+  font-size: 8px;
+  font-weight: 600;
+  color: var(--sp-color, var(--text-muted));
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.07em;
+  opacity: 0.75;
+}
+
+.sp-triad__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.sp-triad__tag {
+  font-size: 8px;
+  padding: 1px 6px;
+  border: 1px solid var(--sp-color, var(--border));
+  border-radius: var(--radius-chip);
+  color: var(--sp-color, var(--text-dim));
+  opacity: 0.8;
+}
+
+.sp-triad__desc {
+  font-size: 8px;
+  font-style: italic;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.4;
+  margin-top: 2px;
+}
+
+/* Actor-centric statement */
+.sp-centric-stmt {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  text-align: center;
+  color: var(--accent2);
+  opacity: 0.5;
+  letter-spacing: 0.03em;
+  padding: 0 8px;
 }
 
 /* ── Spectrum ── */
