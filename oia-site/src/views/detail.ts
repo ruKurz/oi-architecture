@@ -31,7 +31,7 @@ const BREADCRUMB_SKIP_TYPES = new Set(['frame', 'spectrum'])
 
 function renderBreadcrumb(model: OIAModel, id: string): string {
   const ancestors = buildAncestors(model, id).filter(
-    (a) => !BREADCRUMB_SKIP_TYPES.has(a.containerType),
+    (a) => !BREADCRUMB_SKIP_TYPES.has(a.containerType) && a.navigationVisible !== false,
   )
   const el = model.elements.find((e) => e.id === id)
   const parts: string[] = [`<a class="detail-breadcrumb__item" href="#/">OIA</a>`]
