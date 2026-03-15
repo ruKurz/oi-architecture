@@ -39,7 +39,7 @@ Iteratively evolve the OIA diagram via the JSON model — without manual HTML ed
 
 ---
 
-## Datenmodell-Referenz
+## Data Model Reference
 
 Full schema: `oia-site/src/data/types.ts`. Quick reference for common changes:
 
