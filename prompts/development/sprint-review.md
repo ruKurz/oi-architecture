@@ -9,7 +9,7 @@
 
 ## Context
 
-- `sprints/` — sprint notes files (gitignored); contains issue list and sprint goal
+- `.local/sprints/` — sprint notes files (local only, gitignored); contains issue list and sprint goal
 - `decisions/adr/0003-github-issues-as-task-tracker.md` — close-verification format
 - `decisions/adr/0005-conventional-commits-with-content-type.md` — commit footer conventions
 - GitHub CLI (`gh`) and `git` available
@@ -36,7 +36,7 @@ All completed-but-open sprint issues are closed with AC verification. A deviatio
 ### 1 — Load sprint notes
 
 ```bash
-ls -t sprints/*.md 2>/dev/null | head -1
+ls -t .local/sprints/*.md 2>/dev/null | head -1
 ```
 
 Read the sprint file. Extract: sprint goal, Definition of Done, full issue list (`#N` entries).
