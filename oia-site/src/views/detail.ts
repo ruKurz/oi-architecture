@@ -1,5 +1,9 @@
 import type { OIAModel, OIAElement, Container, ParticipantItem } from '../data/types'
-import { renderSystemParticipantsDetail } from '../renderer/render-system-participants'
+import {
+  renderSystemParticipantsDetail,
+  renderSpectrum,
+  renderKeyInsight,
+} from '../renderer/render-system-participants'
 
 function findParent(model: OIAModel, id: string): Container | undefined {
   return model.elements.find(
@@ -54,25 +58,77 @@ function renderRelated(model: OIAModel, id: string): string {
 
 function renderParticipantContext(model: OIAModel, el: ParticipantItem): string {
   if (!el.role) return ''
-  const outgoing = model.connections.filter((c) => c.from === el.id && c.edgeType)
-  const incoming = model.connections.filter((c) => c.to === el.id && c.edgeType)
-  if (outgoing.length === 0 && incoming.length === 0) return ''
-  const rows: string[] = []
-  incoming.forEach((conn) => {
-    const from = model.elements.find((e) => e.id === conn.from)
-    if (!from) return
-    rows.push(
-      `<div class="detail-flow__row"><a class="detail-flow__node" href="#/detail/${encodeURIComponent(from.id)}">${from.label}</a><span class="detail-flow__edge">${conn.edgeType}</span><span class="detail-flow__node detail-flow__node--current">${el.label}</span></div>`,
+  // Collect triad edges: connections between participant items that carry an edgeType
+  const triadEdges = model.connections.filter((c) => {
+    if (!c.edgeType) return false
+    const from = model.elements.find((e) => e.id === c.from)
+    const to = model.elements.find((e) => e.id === c.to)
+    return (
+      from?.type === 'item' &&
+      (from as ParticipantItem).role !== undefined &&
+      to?.type === 'item' &&
+      (to as ParticipantItem).role !== undefined
     )
   })
-  outgoing.forEach((conn) => {
-    const to = model.elements.find((e) => e.id === conn.to)
-    if (!to) return
-    rows.push(
-      `<div class="detail-flow__row"><span class="detail-flow__node detail-flow__node--current">${el.label}</span><span class="detail-flow__edge">${conn.edgeType}</span><a class="detail-flow__node" href="#/detail/${encodeURIComponent(to.id)}">${to.label}</a></div>`,
-    )
+  if (triadEdges.length === 0) return ''
+
+  // Build ordered chain (walk from the node with no incoming edge)
+  const targets = new Set(triadEdges.map((c) => c.to))
+  const sources = new Set(triadEdges.map((c) => c.from))
+  const allNodes = new Set([...sources, ...targets])
+  const firstId = [...allNodes].find((id) => !targets.has(id))
+  if (!firstId) return ''
+
+  const chain: string[] = [firstId]
+  const edgeLabels: string[] = []
+  let current = firstId
+  while (true) {
+    const next = triadEdges.find((c) => c.from === current)
+    if (!next) break
+    edgeLabels.push(next.edgeType!)
+    chain.push(next.to)
+    current = next.to
+  }
+
+  // Render single horizontal row
+  const parts: string[] = []
+  chain.forEach((nodeId, i) => {
+    if (i > 0) {
+      parts.push(`<span class="detail-flow__edge">${edgeLabels[i - 1]}</span>`)
+    }
+    const node = model.elements.find((e) => e.id === nodeId)
+    if (!node) return
+    if (nodeId === el.id) {
+      parts.push(`<span class="detail-flow__node detail-flow__node--current">${node.label}</span>`)
+    } else {
+      parts.push(
+        `<a class="detail-flow__node" href="#/detail/${encodeURIComponent(nodeId)}">${node.label}</a>`,
+      )
+    }
   })
-  return `<div class="detail-flow"><div class="detail-flow__label">Governance flow</div>${rows.join('')}</div>`
+
+  return `<div class="detail-flow"><div class="detail-flow__label">Governance flow</div><div class="detail-flow__row">${parts.join('')}</div></div>`
+}
+
+function renderActorSpectraContext(model: OIAModel, el: ParticipantItem): string {
+  if (el.role !== 'actor') return ''
+  // Walk up to the grandparent layer (el → triad container → layer)
+  const triad = model.elements.find(
+    (e): e is Container => e.type === 'container' && e.children.includes(el.id),
+  )
+  if (!triad) return ''
+  const layer = model.elements.find(
+    (e): e is Container => e.type === 'container' && e.children.includes(triad.id),
+  )
+  if (!layer) return ''
+  // layer.children = [triadId, spectrum1Id, spectrum2Id, insightId]
+  const [, spectrum1Id, spectrum2Id, insightId] = layer.children
+  if (!spectrum1Id) return ''
+  return `<div class="detail-actor-context">
+    ${renderSpectrum(model, spectrum1Id)}
+    ${renderSpectrum(model, spectrum2Id)}
+    ${insightId ? renderKeyInsight(model, insightId) : ''}
+  </div>`
 }
 
 function renderChildren(model: OIAModel, ids: string[], depth = 0): string {
@@ -132,10 +188,10 @@ export function renderDetailView(model: OIAModel, id: string): HTMLElement {
     return view
   }
 
-  const participantContext =
-    el.type === 'item' && el.itemType === 'participant'
-      ? renderParticipantContext(model, el as ParticipantItem)
-      : ''
+  const participantEl =
+    el.type === 'item' && el.itemType === 'participant' ? (el as ParticipantItem) : null
+  const participantContext = participantEl ? renderParticipantContext(model, participantEl) : ''
+  const actorSpectra = participantEl ? renderActorSpectraContext(model, participantEl) : ''
 
   const childrenHtml =
     children.length > 0
@@ -150,6 +206,7 @@ export function renderDetailView(model: OIAModel, id: string): HTMLElement {
     <div class="detail-title">${el.label}</div>
     ${description ? `<div class="detail-desc">${description}</div>` : ''}
     ${participantContext}
+    ${actorSpectra}
     ${childrenHtml}
     ${related}
   `
