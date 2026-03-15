@@ -140,7 +140,7 @@ function renderParticipantContext(model: OIAModel, el: ParticipantItem): string 
 }
 
 function renderActorSpectraContext(model: OIAModel, el: ParticipantItem): string {
-  if (el.role !== 'actor') return ''
+  if (!el.role) return ''
   // Walk up to the grandparent layer (el → triad container → layer)
   const triad = model.elements.find(
     (e): e is Container => e.type === 'container' && e.children.includes(el.id),
