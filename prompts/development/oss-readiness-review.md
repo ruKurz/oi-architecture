@@ -22,7 +22,7 @@ Active repository: determined via `git remote get-url origin`.
 
 ## Goal
 
-At the end, a complete review document exists at `reviews/oss-readiness-review-YYYY-MM-DD.md`, evaluating the project's strengths, weaknesses, and missing elements from three external perspectives — as a basis for targeted improvements before public release.
+At the end, a complete review document exists at `.local/reviews/oss-readiness-review-YYYY-MM-DD.md`, evaluating the project's strengths, weaknesses, and missing elements from three external perspectives — as a basis for targeted improvements before public release.
 
 ---
 
@@ -166,12 +166,12 @@ Explain why. Focus: does the answer help the project survive public scrutiny?
 - [ ] §9 (Maturity) contains a concrete level rating with justification
 - [ ] §10 (Verdict) contains one of the four options (Ignore / Watch / Try / Adopt)
 - [ ] No project file was changed
-- [ ] Review saved at `reviews/oss-readiness-review-YYYY-MM-DD.md`
+- [ ] Review saved at `.local/reviews/oss-readiness-review-YYYY-MM-DD.md`
 
 ---
 
 ## Output
 
 ```
-reviews/oss-readiness-review-YYYY-MM-DD.md — created
+.local/reviews/oss-readiness-review-YYYY-MM-DD.md — created
 ```
