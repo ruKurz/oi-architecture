@@ -72,6 +72,15 @@
 }
 .layer:hover {
   border-color: var(--border-bright);
+  background: var(--panel-hover, rgba(255, 255, 255, 0.02));
+}
+.layer:hover .layer-title::after {
+  content: ' ↗';
+  font-size: 8px;
+  color: var(--accent);
+  opacity: 0.5;
+  font-weight: 400;
+  letter-spacing: normal;
 }
 .layer-header {
   display: flex;

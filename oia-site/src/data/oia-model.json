@@ -968,6 +968,22 @@
   ],
   "connections": [
     {
+      "id": "conn-triad-1",
+      "from": "#L9-t-initiator",
+      "to": "#L9-t-actor",
+      "connectionType": "generic",
+      "direction": "forward",
+      "edgeType": "defines frame for"
+    },
+    {
+      "id": "conn-triad-2",
+      "from": "#L9-t-actor",
+      "to": "#L9-t-beneficiary",
+      "connectionType": "generic",
+      "direction": "forward",
+      "edgeType": "creates value for"
+    },
+    {
       "id": "conn-fb-1",
       "from": "#L6",
       "to": "#L3",
