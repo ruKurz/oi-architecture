@@ -1,7 +1,7 @@
 # ODR-0000: Commit to Transparent Governance Documentation
 
 **Decision:** OIA commits to making all organizational and architectural decisions explicitly visible, traceable, and machine-readable — through ODRs at the Org layer and ADRs at the Arch layer. Implicit governance is rejected: every binding decision must exist as a versioned artifact.
-**Status:** Proposed
+**Status:** Accepted
 **Date:** 2026-03-14
 **Level:** Org
 **Binding for:** All

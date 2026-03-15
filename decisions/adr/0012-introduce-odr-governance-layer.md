@@ -1,7 +1,7 @@
 # ADR-0012: Introduce ODR as Governance Documentation Layer
 
 **Decision:** The project introduces Organizational Decision Records (ODRs) as a distinct documentation layer for organizational decisions, sitting above the existing ADR layer in the governance hierarchy Gov → Org → Arch.
-**Status:** Proposed
+**Status:** Accepted
 **Date:** 2026-03-14
 **Type:** BOTH
 **Governed by:** [ODR-0000](../odr/0000-commit-to-transparent-governance-documentation.md)

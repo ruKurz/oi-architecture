@@ -1,7 +1,7 @@
 # ADR-0007: Versioning Scheme — Semantic Versioning for OIA
 
 **Decision:** OIA uses Semantic Versioning (SemVer, semver.org) with the scheme `MAJOR.MINOR.PATCH` across all versioned artifacts: the OIA model + site (coupled, one version), and concept files in `context/` (each versioned independently).
-**Status:** Proposed
+**Status:** Accepted
 **Date:** 2026-03-13
 **Type:** BOTH
 **Governed by:** —

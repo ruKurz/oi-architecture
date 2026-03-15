@@ -1,7 +1,7 @@
 # ODR-0001: OIA Ecosystem Type — Community-Driven with Benevolent Dictator
 
 **Decision:** OIA operates as a **community-driven open project** under a benevolent dictator governance model: contributions are open to all, the project is not controlled by any vendor or commercial interest, and the maintainer holds final decision authority while actively working toward broader governance participation over time.
-**Status:** Proposed
+**Status:** Accepted
 **Date:** 2026-03-14
 **Level:** Org
 **Binding for:** All
