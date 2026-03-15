@@ -4,7 +4,7 @@
 **Status:** Proposed
 **Date:** 2026-03-15
 **Type:** DEV
-**Governed by:** —
+**Governed by:** — *(for now — if an OIA-ODR mandates Skills as the delivery format for Cognitive Capabilities, this ADR will be updated to reference that record)*
 
 ## Context
 
