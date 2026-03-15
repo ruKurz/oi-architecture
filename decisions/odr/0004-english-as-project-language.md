@@ -1,7 +1,7 @@
 # ODR-0004: English as the Sole Project Language
 
 **Decision:** All OIA project artifacts are written in English. The only exception is LinkedIn articles, which remain in German as an explicit author choice for a German-speaking professional audience. This rule applies to all participants — Users, Agents, and Contributors.
-**Status:** Proposed
+**Status:** Accepted
 **Date:** 2026-03-14
 **Level:** Org
 **Binding for:** All

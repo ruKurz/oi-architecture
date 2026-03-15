@@ -1,7 +1,7 @@
 # ODR-0003: Adopt ADRs as Arch-Layer Documentation Practice
 
 **Decision:** OIA uses Architecture Decision Records (ADRs) as the authoritative method for documenting all binding technical and structural decisions at the Arch layer of the governance hierarchy. Every architectural choice with non-obvious alternatives must exist as a versioned ADR.
-**Status:** Proposed
+**Status:** Accepted
 **Date:** 2026-03-14
 **Level:** Org
 **Binding for:** All

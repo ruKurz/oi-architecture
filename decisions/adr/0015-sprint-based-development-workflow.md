@@ -1,7 +1,7 @@
 # ADR-0015: Sprint-Based Development Workflow
 
 **Decision:** OIA uses a sprint-based development workflow: work is organized in timeboxed iterations (sprints) with a defined goal, a set of issues, and a fixed process cycle of Refinement → Planning → Implementation → Review → Retrospective.
-**Status:** Proposed
+**Status:** Accepted
 **Date:** 2026-03-28
 **Type:** DEV
 **Governed by:** [ODR-0002](../odr/0002-adopt-agile-principles.md)
