@@ -103,6 +103,16 @@ A compliant prompt must contain all of:
 
 See [ADR-0006](decisions/adr/0006-prompt-helper-enforcement.md) for rationale.
 
+### Agent Skills (SKILL.md)
+
+Reusable, triggerable workflows live in `prompts/skills/<skill-name>/SKILL.md`. See [ADR-0017](decisions/adr/0017-agent-skills-skill-md-format.md) for rationale. Authoring rules: CONVENTIONS.md §2.14.
+
+**Discovery:** Claude Code loads only the YAML frontmatter (`name` + `description`, ~50 tokens) at startup.
+**Trigger:** Skill activates when the human says "use skill `<name>`" or when the context clearly matches the `description`.
+**Execution:** The SKILL.md body references project files by path (`read CONVENTIONS.md`, `read decisions/README.md`) — never as copies inside the skill directory.
+
+**Creating a new skill:** Go through `prompts/templates/prompt-helper.md` for the workflow-design step first (ADR-0006 applies). The output format is SKILL.md frontmatter + body — not the standard prompt template sections.
+
 ### No Concept Introduction Without Design-First
 
 **Before introducing any new concept:** use `prompts/development/integrate-concept.md` as the mandatory entry point. Do not create integration issues or start implementation before the concept design is complete and approved by the human maintainer.
