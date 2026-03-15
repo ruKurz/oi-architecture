@@ -18,14 +18,14 @@ The layer is structured around three distinct roles:
 
 The entity that defines the governance frame: goals, permissions, organizational rules. The Initiator interacts with OIA **constitutively**, not operatively — it sets the conditions under which Actors operate. Accountability always traces back to the Initiator. Always reducible to a human or organization.
 
-**Was:**
+**What:**
 The Initiator is the entity that legitimises an action before it takes place. It sets the governance frame: goals, permissions, rules, and the boundaries within which Actors operate. The Initiator interacts with OIA constitutively — not operatively. It appears before the process, not within it. Accountability always traces back to the Initiator. Always reducible to a human or organisation.
 
-**Warum:**
+**Why:**
 Organisations fail at AI not because of bad Agents. They fail because no one explicitly defined who the Initiator is. When the governance frame is absent — which data may an Agent use, which goals may it pursue, which decisions may it make autonomously — Agents operate in a vacuum. They optimise without knowing what for.
 The Initiator is the answer to the question: who is responsible?
 
-**Wie:**
+**How:**
 In RACI terms: Accountable. The party that ultimately stands behind the outcome — not the executor.
 In EU AI Act terms: Deployer. The entity that puts an AI system into operation within a specific context and bears responsibility for that context. The Deployer has a contract with the Provider (external to OIA) that defines obligations and their limits.
 
@@ -35,13 +35,13 @@ In EU AI Act terms: Deployer. The entity that puts an AI system into operation w
 
 The primary interaction entity of OIA. The Actor engages with Capabilities, Features, and the Knowledge Core. **OIA is built from the Actor's perspective.** The Actor can be a Human, an Agent, or a System. The star symbol marks this as the central role in the triad.
 
-**Was:**
+**What:**
 The Actor is the primary interaction entity of OIA. It engages with Capabilities, Features, and the Knowledge Core. OIA is built from the Actor's perspective. The Actor can be a Human, an Agent, or a System — three distinct types of organisational asset.
 
-**Warum:**
+**Why:**
 Without an Actor, the governance frame of the Initiator has no effect. The Actor is the entity that translates intent into action. In a world where Agents increasingly operate alongside humans, making Actor types explicit is an architectural necessity — not a theoretical exercise.
 
-**Wie:**
+**How:**
 The three Actor types differ in how they are governed:
 
 | Actor type | Organisational asset | Governance frame |
@@ -58,13 +58,13 @@ Note: The EU AI Act assigns no independent role to AI Agents as actors. When an 
 
 The entity for whom the outcome creates value. The Beneficiary legitimizes the action. Feedback flows back into the architecture from the Beneficiary, but the Beneficiary does not control the process. Can be a human, team, or system.
 
-**Was:**
+**What:**
 The Beneficiary is the entity for whom the outcome creates value. It legitimises the action — without a Beneficiary, there is no purpose. The Beneficiary receives output but does not control the process. Feedback from the Beneficiary flows back into the architecture.
 
-**Warum:**
+**Why:**
 The Beneficiary is often the invisible party in AI implementations. Systems are built, Actors are trained, governance is defined — but the question "for whom, and with what outcome?" is answered too late. Making the Beneficiary explicit forces the question before implementation begins.
 
-**Wie:**
+**How:**
 In RACI terms: Informed. Receives the result, provides feedback.
 In EU AI Act terms: Affected person / end user. Subject to transparency and notification rights under Art. 50 — must be informed when interacting with AI systems.
 
