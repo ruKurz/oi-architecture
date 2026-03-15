@@ -908,10 +908,11 @@ body::after {
 }
 
 .sp-triad__item--primary {
-  flex: 1.5;
+  flex: 2;
 }
 
 .sp-triad__item--secondary {
+  flex: 1.5;
   opacity: 0.72;
 }
 
@@ -1081,9 +1082,20 @@ body::after {
   background: rgba(255, 255, 255, 0.03);
 }
 
-.sp-insight__text {
-  font-size: 10px;
-  color: var(--text-dim);
-  line-height: 1.5;
+.sp-insight__primary {
+  font-family: 'Space Mono', monospace;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent2);
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+}
+
+.sp-insight__secondary {
+  font-size: 12px;
   font-style: italic;
+  color: var(--text-dim);
+  opacity: 0.6;
+  line-height: 1.5;
+  margin-top: 6px;
 }

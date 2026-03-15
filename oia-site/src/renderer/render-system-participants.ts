@@ -102,8 +102,13 @@ function renderSpectrum(model: OIAModel, spectrumId: string): string {
 function renderKeyInsight(model: OIAModel, insightId: string): string {
   const item = getItem(model, insightId) as ParticipantItem | undefined
   if (!item || item.itemType !== 'keyInsight') return ''
+  const full = item.text ?? item.label
+  const splitIdx = full.indexOf('. The human')
+  const primary = splitIdx >= 0 ? full.slice(0, splitIdx + 1) : full
+  const secondary = splitIdx >= 0 ? full.slice(splitIdx + 2) : ''
   return `<div class="sp-insight" data-id="${item.id}">
-    <p class="sp-insight__text">${item.text ?? item.label}</p>
+    <p class="sp-insight__primary">${primary}</p>
+    ${secondary ? `<p class="sp-insight__secondary">${secondary}</p>` : ''}
   </div>`
 }
 
