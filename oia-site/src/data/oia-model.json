@@ -182,7 +182,7 @@
       "label": "System",
       "spectrumAxis": "autonomy",
       "position": 1,
-      "description": "Configured · deterministic",
+      "description": "Configured · deterministic. Executes within fixed parameters.",
       "color": "gray"
     },
     {
@@ -192,7 +192,7 @@
       "label": "Human",
       "spectrumAxis": "autonomy",
       "position": 2,
-      "description": "Guided · contextual judgment",
+      "description": "Guided · contextual judgment. Constrained by hierarchy & cognition.",
       "color": "teal"
     },
     {
@@ -202,7 +202,7 @@
       "label": "Agent",
       "spectrumAxis": "autonomy",
       "position": 3,
-      "description": "Goal-directed · autonomous",
+      "description": "Goal-directed · autonomous. Parallel, continuous, bias-free throughput.",
       "color": "teal",
       "converging": true
     },
@@ -221,7 +221,7 @@
       "label": "System",
       "spectrumAxis": "accountability",
       "position": 1,
-      "description": "Inherits from Initiator",
+      "description": "Inherits from Initiator. No independent accountability.",
       "color": "gray"
     },
     {
@@ -231,7 +231,7 @@
       "label": "Agent",
       "spectrumAxis": "accountability",
       "position": 2,
-      "description": "ODR-bounded · delegated",
+      "description": "ODR-bounded · delegated. No legal framework, no societal sanction.",
       "color": "teal"
     },
     {
@@ -241,7 +241,7 @@
       "label": "Human",
       "spectrumAxis": "accountability",
       "position": 3,
-      "description": "Legal · structural · always",
+      "description": "Legal · structural · always. The permanent anchor — regardless of agent autonomy.",
       "color": "purple"
     },
     {
