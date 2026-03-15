@@ -1,7 +1,5 @@
 # OIA · Active Semantic Anchors
 
-**Version:** 2.0.0 · 2026-03-28
-
 > Semantic Anchors are well-defined methodologies and frameworks that serve as reference points
 > when communicating with AI assistants. Invoking an anchor activates the AI's full trained
 > knowledge of that methodology — proponents, practices, failure modes — in a single phrase.
