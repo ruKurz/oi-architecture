@@ -9,7 +9,7 @@
 
 ## Context
 
-- `sprints/` — current sprint file (sprint goal, current scope)
+- `.local/sprints/` — current sprint file (local only, gitignored; sprint goal, current scope)
 - GitHub Issues — the issue being added, removed, or split
 - `CONVENTIONS.md` §2.4 — issue sizing, AC quality
 
@@ -108,7 +108,7 @@ gh issue comment <N> --body "Split into #X and #Y. Original scope reduced to: [d
 ## Output
 
 ```
-sprints/YYYY-MM-DD.md — updated
+.local/sprints/YYYY-MM-DD.md — updated
 GitHub Issues — comments or new issues (variable)
 Chat output — change summary
 ```
