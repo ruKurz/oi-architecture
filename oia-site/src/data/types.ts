@@ -80,6 +80,7 @@ export interface Connection {
   connectionType: 'flow' | 'depends-on' | 'uses' | 'produces' | 'feedback' | 'generic'
   label?: string
   direction: 'forward' | 'backward' | 'bidirectional'
+  edgeType?: string
 }
 
 export interface Badge {

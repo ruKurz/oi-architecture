@@ -84,9 +84,9 @@ describe('initRouter — detail route (#/detail/:id)', () => {
     expect(container.innerHTML).toContain('Organizational Knowledge Core')
   })
 
-  test('detail view has back link', async () => {
+  test('detail view has breadcrumb navigation', async () => {
     const { initRouter } = await import('../src/router')
     initRouter(model, container)
-    expect(container.querySelector('.detail-back')).not.toBeNull()
+    expect(container.querySelector('.detail-breadcrumb')).not.toBeNull()
   })
 })
