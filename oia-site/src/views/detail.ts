@@ -23,8 +23,13 @@ function buildAncestors(model: OIAModel, id: string): Container[] {
   return ancestors
 }
 
+// Container types that are structural groupings — not shown as breadcrumb segments
+const BREADCRUMB_SKIP_TYPES = new Set(['frame', 'spectrum'])
+
 function renderBreadcrumb(model: OIAModel, id: string): string {
-  const ancestors = buildAncestors(model, id)
+  const ancestors = buildAncestors(model, id).filter(
+    (a) => !BREADCRUMB_SKIP_TYPES.has(a.containerType),
+  )
   const el = model.elements.find((e) => e.id === id)
   const parts: string[] = [`<a class="detail-breadcrumb__item" href="#/">OIA</a>`]
   ancestors.forEach((anc) => {
@@ -56,6 +61,18 @@ function renderRelated(model: OIAModel, id: string): string {
   return `<div class="detail-related"><span class="detail-related__label">Related:</span>${items}</div>`
 }
 
+// Semantic badge and tooltip for each triad edge type
+const EDGE_BADGE: Record<string, string> = {
+  'defines frame for': 'governs',
+  'creates value for': 'produces',
+}
+const EDGE_TOOLTIP: Record<string, string> = {
+  'defines frame for':
+    'The Initiator sets goals, permissions and ODRs under which the Actor operates. No action without a governance frame.',
+  'creates value for':
+    "The Actor's work produces outcomes that flow to the Beneficiary. Value creation is the purpose of action.",
+}
+
 function renderParticipantContext(model: OIAModel, el: ParticipantItem): string {
   if (!el.role) return ''
   // Collect triad edges: connections between participant items that carry an edgeType
@@ -80,12 +97,13 @@ function renderParticipantContext(model: OIAModel, el: ParticipantItem): string 
   if (!firstId) return ''
 
   const chain: string[] = [firstId]
-  const edgeLabels: string[] = []
+  const edgeData: Array<{ label: string; badge: string; tooltip: string }> = []
   let current = firstId
   while (true) {
     const next = triadEdges.find((c) => c.from === current)
     if (!next) break
-    edgeLabels.push(next.edgeType!)
+    const label = next.edgeType!
+    edgeData.push({ label, badge: EDGE_BADGE[label] ?? '', tooltip: EDGE_TOOLTIP[label] ?? '' })
     chain.push(next.to)
     current = next.to
   }
@@ -94,15 +112,26 @@ function renderParticipantContext(model: OIAModel, el: ParticipantItem): string 
   const parts: string[] = []
   chain.forEach((nodeId, i) => {
     if (i > 0) {
-      parts.push(`<span class="detail-flow__edge">${edgeLabels[i - 1]}</span>`)
+      const { label, badge, tooltip } = edgeData[i - 1]
+      parts.push(`<div class="detail-flow__edge" title="${tooltip}">
+        ${badge ? `<span class="detail-flow__edge-badge">${badge}</span>` : ''}
+        <span class="detail-flow__edge-arrow">→</span>
+        <span class="detail-flow__edge-label">${label}</span>
+      </div>`)
     }
     const node = model.elements.find((e) => e.id === nodeId)
     if (!node) return
-    if (nodeId === el.id) {
-      parts.push(`<span class="detail-flow__node detail-flow__node--current">${node.label}</span>`)
+    const isActive = nodeId === el.id
+    const color = isActive ? (el.color ?? '') : ((node as ParticipantItem).color ?? '')
+    const colorClass = isActive && color ? ` detail-flow__node--${color}` : ''
+    const inactiveClass = isActive ? '' : ' detail-flow__node--inactive'
+    if (isActive) {
+      parts.push(
+        `<span class="detail-flow__node detail-flow__node--current${colorClass}">${node.label}</span>`,
+      )
     } else {
       parts.push(
-        `<a class="detail-flow__node" href="#/detail/${encodeURIComponent(nodeId)}">${node.label}</a>`,
+        `<a class="detail-flow__node${inactiveClass}" href="#/detail/${encodeURIComponent(nodeId)}">${node.label}</a>`,
       )
     }
   })
