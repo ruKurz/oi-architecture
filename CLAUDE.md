@@ -17,14 +17,15 @@ Read when working with decision records:
 - `context/adr-concept.md` — what ADRs are, canonical references, ADR vs ODR distinction
 - `context/odr-concept.md` — full ODR concept, derivation chain, lifecycle, agent onboarding
 
-## Decision Records: ADRs and ODRs
+## Decision Records: ADRs, ODRs, and OIA-ODRs
 
-The project uses two types of decision records in a three-layer governance hierarchy (Gov → Org → Arch):
+The project uses three types of decision records:
 
 - **ODRs** (Organizational Decision Records) — `decisions/odr/` — document *how the project operates*: governance model, operating principles, language policy. Bind all participants: Users, Agents, Contributors.
 - **ADRs** (Architecture Decision Records) — `decisions/adr/` — document *technical and structural choices*: tooling, conventions, code structure. Bind Contributors and Agents acting on the project.
+- **OIA-ODRs** (OIA Model Decision Records) — `decisions/oia-odr/` — document *how the OIA model is structured*: layer definitions, element semantics, governance frames within the model. Bind AI Agents traversing the model and Contributors implementing model changes. Numbered independently: OIA-ODR-0001, OIA-ODR-0002, …
 
-Both are binding contracts. Do not contradict a Proposed or Accepted record without first creating a superseding record.
+All three are binding contracts. Do not contradict a Proposed or Accepted record without first creating a superseding record.
 
 **Before any change:** check `decisions/README.md` for a relevant existing ADR or ODR.
 
@@ -43,6 +44,14 @@ Both are binding contracts. Do not contradict a Proposed or Accepted record with
 **ODR numbering:** The next ODR number is the current highest in `decisions/README.md` ODR index + 1. ODR numbers are independent of ADR numbers. Never reuse a number.
 
 **derives-from / implements:** Every ODR must carry `**Derives from:**` (parent ODR or `—` for the founding record) and `**Implements:**` (child ADRs or `—`). See `context/odr-concept.md` for the full concept and `decisions/odr/odr-template.md` for the template.
+
+### OIA Model Decision Records (OIA-ODRs)
+
+**When to create a new OIA-ODR:** A decision belongs at the Model layer when it defines the structure, semantics, or governance frame of an OIA model element (layer, element type, relationship). Use the template in `decisions/oia-odr/odr-template.md`.
+
+**OIA-ODR numbering:** The next OIA-ODR number is the current highest in `decisions/README.md` OIA-ODR index + 1. Numbers are independent of ADR and ODR numbers. Never reuse a number.
+
+**governs / implements fields:** Every OIA-ODR must carry `**Governs:**` (which model layers or elements) and `**Implements:**` (which OIA model version introduced this decision).
 
 ## Semantic Anchors
 
