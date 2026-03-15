@@ -85,7 +85,7 @@ function renderSpectrum(model: OIAModel, spectrumId: string): string {
           : ''
       return `${connector}<div class="sp-spectrum__entity ${colorClass}" data-id="${item.id}">
         <span class="sp-spectrum__entity-label">${item.label}</span>
-        ${item.description ? `<span class="sp-spectrum__entity-desc">${item.description}</span>` : ''}
+        ${(item.caption ?? item.description) ? `<span class="sp-spectrum__entity-desc">${item.caption ?? item.description}</span>` : ''}
       </div>`
     })
     .join('')
