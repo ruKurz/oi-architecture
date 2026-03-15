@@ -1,7 +1,7 @@
 # ADR-0010: Semantic Anchors as Shared Vocabulary Layer
 
 **Decision:** The OIA project adopts Semantic Anchors (https://llm-coding.github.io/Semantic-Anchors/) as a shared vocabulary layer for AI-assisted development. The active anchor set is maintained in `context/semantic-anchors.md` and referenced by `CLAUDE.md`. Anchors are invoked in prompts and CLAUDE.md to activate established knowledge domains in the AI assistant without re-explaining them from scratch.
-**Status:** Proposed
+**Status:** Accepted
 **Date:** 2026-03-12
 **Type:** DEV
 **Governed by:** —
