@@ -419,4 +419,4 @@ Existing code that pre-dates these conventions is not retroactively fixed. Viola
 
 | File | Violation | Issue |
 |---|---|---|
-| `oia-site/src/renderer/render-layer.ts`, `render-layer-blocks.ts`, `render-panel.ts` | Inline `style=` attributes instead of CSS classes | [#132](https://github.com/ruKurz/oi-architecture/issues/132) |
+| `oia-site/src/views/detail.ts:9` | Dynamic `margin-left:${depth * 16}px` — computed indentation, not replaceable by a static class | [#148](https://github.com/ruKurz/oi-architecture/issues/148) |
