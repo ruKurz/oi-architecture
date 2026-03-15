@@ -37,7 +37,12 @@ function renderTriad(model: OIAModel, triadId: string): string {
   triad.children.forEach((id, i) => {
     const item = getItem(model, id) as ParticipantItem | undefined
     if (!item) return
-    if (i > 0) parts.push(`<div class="sp-triad__arrow">→</div>`)
+    if (i > 0) {
+      const prevId = triad.children[i - 1]
+      const conn = model.connections.find((c) => c.from === prevId && c.to === id)
+      const edgeTitle = conn?.edgeType ? ` title="${conn.edgeType}"` : ''
+      parts.push(`<div class="sp-triad__arrow"${edgeTitle}>→</div>`)
+    }
     const colorClass = COLOR_CLASS[item.color ?? ''] ?? ''
     const weightClass =
       item.weight === 'primary'
@@ -45,13 +50,14 @@ function renderTriad(model: OIAModel, triadId: string): string {
         : item.weight === 'secondary'
           ? 'sp-triad__item--secondary'
           : ''
+    const primaryTitle = item.primary ? ' title="Primary interaction entity"' : ''
     const starLabel = item.primary ? `${item.label} ★` : item.label
     const raci = item.role ? (RACI_LABEL[item.role] ?? '') : ''
     const tags = item.role
       ? (TYPE_TAGS[item.role] ?? []).map((t) => `<span class="sp-triad__tag">${t}</span>`).join('')
       : ''
     const desc = item.role ? (TRIAD_DESCRIPTION[item.role] ?? '') : ''
-    parts.push(`<div class="sp-triad__item ${colorClass} ${weightClass}" data-id="${item.id}">
+    parts.push(`<div class="sp-triad__item ${colorClass} ${weightClass}" data-id="${item.id}"${primaryTitle}>
       <span class="sp-triad__label">${starLabel}</span>
       ${raci ? `<span class="sp-triad__raci">${raci}</span>` : ''}
       ${tags ? `<div class="sp-triad__tags">${tags}</div>` : ''}
@@ -73,7 +79,8 @@ function renderSpectrum(model: OIAModel, spectrumId: string): string {
     .map((item) => {
       if (!item) return ''
       const colorClass = COLOR_CLASS[item.color ?? ''] ?? ''
-      return `<div class="sp-spectrum__entity ${colorClass}" data-id="${item.id}">
+      const convergingClass = item.converging ? ' sp-spectrum__entity--converging' : ''
+      return `<div class="sp-spectrum__entity ${colorClass}${convergingClass}" data-id="${item.id}">
         <span class="sp-spectrum__entity-label">${item.label}</span>
         ${(item.caption ?? item.description) ? `<span class="sp-spectrum__entity-desc">${item.caption ?? item.description}</span>` : ''}
       </div>`
@@ -81,7 +88,7 @@ function renderSpectrum(model: OIAModel, spectrumId: string): string {
     .join('')
 
   const convergingOverlay = hasConverging
-    ? `<div class="sp-spectrum__converging-overlay">↔ human &amp; agent capabilities converging</div>`
+    ? `<div class="sp-spectrum__converging-overlay"><span class="sp-spectrum__converging-text">↔ capabilities converging</span></div>`
     : ''
 
   return `<div class="sp-spectrum">
@@ -121,8 +128,9 @@ export function renderSystemParticipants(model: OIAModel, layer: Container): str
 }
 
 export function renderSystemParticipantsDetail(model: OIAModel, layer: Container): string {
-  const [, spectrum1Id, spectrum2Id, insightId] = layer.children
+  const [triadId, spectrum1Id, spectrum2Id, insightId] = layer.children
   return `<div class="sp-layer">
+    ${renderTriad(model, triadId)}
     <div class="sp-centric-stmt">${ACTOR_CENTRIC_STMT}</div>
     ${renderSpectrum(model, spectrum1Id)}
     ${renderSpectrum(model, spectrum2Id)}

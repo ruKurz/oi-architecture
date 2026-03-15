@@ -796,6 +796,115 @@ body::after {
   margin: 48px auto;
   padding: 0 var(--padding-x);
 }
+
+/* Breadcrumb */
+.detail-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 28px;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+}
+.detail-breadcrumb__item {
+  color: var(--accent);
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.15s;
+}
+.detail-breadcrumb__item:hover {
+  opacity: 1;
+}
+.detail-breadcrumb__item--current {
+  color: var(--text-dim);
+  opacity: 1;
+  cursor: default;
+}
+.detail-breadcrumb__sep {
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+/* Related elements */
+.detail-related {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.detail-related__label {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.detail-related__item {
+  font-size: 12px;
+  color: var(--accent);
+  text-decoration: none;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 3px 10px;
+  transition: border-color 0.15s;
+}
+.detail-related__item:hover {
+  border-color: var(--border-bright);
+}
+
+/* Governance flow context */
+.detail-flow {
+  margin-bottom: 24px;
+}
+.detail-flow__label {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 10px;
+}
+.detail-flow__row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+.detail-flow__node {
+  font-size: 12px;
+  color: var(--accent);
+  text-decoration: none;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 3px 10px;
+}
+.detail-flow__node--current {
+  color: var(--text);
+  border-color: var(--border-bright);
+  cursor: default;
+}
+.detail-flow__edge {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+.detail-flow__edge::before {
+  content: '→ ';
+  opacity: 0.5;
+}
+.detail-flow__edge::after {
+  content: ' →';
+  opacity: 0.5;
+}
+
 .detail-back {
   display: inline-flex;
   align-items: center;
@@ -963,14 +1072,16 @@ body::after {
   margin-top: 2px;
 }
 
-/* Flow arrows between triad items */
+/* Flow arrows between triad items — item 7: min 2px visual weight */
 .sp-triad__arrow {
   display: flex;
   align-items: center;
   align-self: center;
-  color: var(--text-muted);
-  font-size: 14px;
+  color: var(--text-dim);
+  font-size: 20px;
+  font-weight: 700;
   flex-shrink: 0;
+  cursor: help;
 }
 
 /* Actor-centric statement */
@@ -1078,18 +1189,38 @@ body::after {
   text-align: center;
 }
 
-/* Converging annotation — overlay positioned under Human/Agent boundary */
+/* Converging zone — item 9: Venn-inspired shared-zone indicator */
+.sp-spectrum__entity--converging {
+  border-left: 1px dashed var(--accent2);
+  margin-left: -3px;
+}
+
 .sp-spectrum__converging-overlay {
   position: absolute;
-  bottom: 2px;
-  left: 66%;
-  transform: translateX(-50%);
+  bottom: 0;
+  left: 34%;
+  width: 64%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(44, 242, 194, 0.05) 30%,
+    rgba(44, 242, 194, 0.05) 100%
+  );
+  border: 1px dashed rgba(44, 242, 194, 0.2);
+  border-radius: var(--radius-sm);
+  padding: 1px 6px;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sp-spectrum__converging-text {
   font-family: 'Space Mono', monospace;
   font-size: 7px;
   color: var(--accent2);
-  opacity: 0.5;
+  opacity: 0.55;
   white-space: nowrap;
-  pointer-events: none;
   letter-spacing: 0.03em;
 }
 
