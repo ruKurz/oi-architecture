@@ -198,6 +198,40 @@ function renderParticipantWWH(el: ParticipantItem): string {
   </div>`
 }
 
+// What / Why / How narrative content per Actor type item (by element ID)
+const ACTOR_TYPE_WWH: Record<string, { what: string; why: string; how: string }> = {
+  '#L9-sa-human': {
+    what: `The Human Actor decides contextually, drawing on experience, judgment, and organisational knowledge. Embedded in hierarchy and social context — which constrains and enriches decisions simultaneously.`,
+    why: `The Human brings something no Agent has: accountability. Not just legal accountability — but the lived understanding of consequences. A Human Actor filters through values, relationships, and experience before acting. That friction is not a weakness. It is governance in practice.`,
+    how: `Organisational asset: <strong>Employee.</strong> Governance frame: Employment contract — rights, duties, governed by labour law.<br><br>On the Autonomy spectrum: middle position. More decision space than a System, less operational throughput than an Agent.<br>On the Accountability spectrum: rightmost position — always, regardless of Agent capabilities.`,
+  },
+  '#L9-sa-agent': {
+    what: `The Agent Actor operates goal-directed and autonomously within a defined governance frame. It processes information in parallel, runs continuously, and applies consistent logic without cognitive bias or organisational embeddedness.`,
+    why: `Agents do not replace humans — they extend organisational reach into tasks that exceed human throughput: continuous monitoring, parallel processing, pattern recognition at scale. Their value is precisely what makes them require governance: they act without the friction that humans provide naturally.`,
+    how: `Organisational asset: <strong>AI workforce.</strong> Governance frame: Governance document — scope, limits, termination. No legal status, no independent accountability.<br><br>On the Autonomy spectrum: rightmost position.<br>On the Accountability spectrum: middle position — accountability defaults to the Initiator.`,
+  },
+  '#L9-sa-system': {
+    what: `The System Actor executes deterministically within fixed parameters. It does not decide — it processes. Configurable, maintainable, replaceable.`,
+    why: `Systems are the stable foundation on which Agents and Humans operate. They provide consistency, auditability, and scalability — without the variability of human judgment or the autonomy of Agents. Their predictability is their value.`,
+    how: `Organisational asset: <strong>Production asset.</strong> Governance frame: Service / maintenance contract.<br><br>On the Autonomy spectrum: leftmost position — no independent decision space.<br>On the Accountability spectrum: leftmost position — inherits accountability from the Initiator.`,
+  },
+}
+
+function renderActorTypeWWH(el: ParticipantItem): string {
+  const content = ACTOR_TYPE_WWH[el.id]
+  if (!content) return ''
+  const section = (label: string, body: string) => `
+    <div class="detail-wwh__section">
+      <div class="detail-wwh__label">${label}</div>
+      <div class="detail-wwh__body">${body}</div>
+    </div>`
+  return `<div class="detail-wwh">
+    ${section('What', content.what)}
+    ${section('Why', content.why)}
+    ${section('How', content.how)}
+  </div>`
+}
+
 function renderChildren(model: OIAModel, ids: string[], depth = 0): string {
   if (depth > 3) return ''
   return ids
@@ -259,6 +293,7 @@ export function renderDetailView(model: OIAModel, id: string): HTMLElement {
     el.type === 'item' && el.itemType === 'participant' ? (el as ParticipantItem) : null
   const participantContext = participantEl ? renderParticipantContext(model, participantEl) : ''
   const participantWWH = participantEl ? renderParticipantWWH(participantEl) : ''
+  const actorTypeWWH = participantEl ? renderActorTypeWWH(participantEl) : ''
   const actorSpectra = participantEl ? renderActorSpectraContext(model, participantEl) : ''
 
   const childrenHtml =
@@ -289,6 +324,7 @@ export function renderDetailView(model: OIAModel, id: string): HTMLElement {
     ${description ? `<div class="detail-desc">${description}</div>` : ''}
     ${participantContext}
     ${participantWWH}
+    ${actorTypeWWH}
     ${actorSpectra}
     ${childrenHtml}
     ${related}
