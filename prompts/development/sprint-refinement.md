@@ -74,6 +74,24 @@ If the issue is a cross-cutting concept: check the integration point checklist (
 
 ---
 
+#### R-4.1 — Renderer / visual scope (if applicable)
+
+Skip if the issue has no renderer or visual output.
+
+**Visual spec requirement:** Before this issue can be sprint-ready, one of the following must exist:
+- An annotated screenshot or annotated HTML prototype attached to the issue, OR
+- An explicit CSS spec block (property + value + selector), OR
+- A link to a rendered preview that defines the expected visual state
+
+If no artifact exists: draft a minimal spec inline in the issue body, or flag the issue as not sprint-ready.
+
+**Model + renderer design decision:** If the issue touches both model types (`types.ts`, `oia-model.json`) and renderer logic:
+- Field names (new properties on model items) must be decided now — not mid-implementation
+- Visual vocabulary (class names, element structure) must be agreed before coding begins
+- Document these as a `## Design notes` block in the issue body before marking sprint-ready
+
+---
+
 #### R-5 — Size estimate
 
 Confirm or revise the size:
@@ -128,6 +146,8 @@ If sub-issues were approved: create them.
 | Issue depends on an unresolved decision | Flag as `blocked by #N` in AC — do not refine further |
 | Issue is XL (multi-day) | Always recommend splitting — do not mark as sprint-ready |
 | AC item cannot be verified pre-deploy | Mark `(post-deploy)` — still valid, does not block close |
+| Renderer / visual issue — no artifact | Block sprint-ready — create or draft spec artifact first |
+| Model + renderer issue — no design notes | Block sprint-ready — document field names and visual vocabulary in issue body first |
 
 ---
 
@@ -139,6 +159,8 @@ If sub-issues were approved: create them.
 - [ ] Size confirmed
 - [ ] Issue body updated in GitHub
 - [ ] Sub-issues created if needed and approved
+- [ ] Renderer / visual issues: reference artifact confirmed or noted in issue body
+- [ ] Model + renderer issues: design decisions documented in issue body (`## Design notes`)
 
 ---
 
