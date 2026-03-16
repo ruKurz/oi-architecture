@@ -1395,6 +1395,75 @@ body::after {
   margin-bottom: 4px;
 }
 
+/* Was / Warum / Wie narrative sections */
+.detail-wwh {
+  margin-bottom: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.detail-wwh__section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.detail-wwh__label {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.detail-wwh__body {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.6;
+}
+.detail-wwh__actor-types {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+@media (max-width: 600px) {
+  .detail-wwh__actor-types {
+    grid-template-columns: 1fr;
+  }
+}
+.detail-wwh__actor-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.detail-wwh__actor-type {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: var(--accent2);
+  font-weight: 600;
+}
+.detail-wwh__actor-asset {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.detail-wwh__actor-frame {
+  font-size: 12px;
+  color: var(--text);
+  margin-top: 4px;
+}
+.detail-wwh__note {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
 /* Actor detail: spectra context block */
 .detail-actor-context {
   margin-top: 8px;

@@ -163,6 +163,41 @@ function renderActorSpectraContext(model: OIAModel, el: ParticipantItem): string
   </div>`
 }
 
+// Was / Warum / Wie narrative content per participant role
+const WWH_CONTENT: Record<string, { was: string; warum: string; wie: string }> = {
+  initiator: {
+    was: `The Initiator is the entity that legitimises an action before it takes place. It sets the governance frame: goals, permissions, rules, and the boundaries within which Actors operate. The Initiator interacts with OIA constitutively — not operatively. It appears before the process, not within it. Accountability always traces back to the Initiator. Always reducible to a human or organisation.`,
+    warum: `Organisations fail at AI not because of bad Agents. They fail because no one explicitly defined who the Initiator is. When the governance frame is absent — which data may an Agent use, which goals may it pursue, which decisions may it make autonomously — Agents operate in a vacuum. They optimise without knowing what for. The Initiator is the answer to the question: who is responsible?`,
+    wie: `In RACI terms: <strong>Accountable.</strong> The party that ultimately stands behind the outcome — not the executor.<br><br>In EU AI Act terms: <strong>Deployer.</strong> The entity that puts an AI system into operation within a specific context and bears responsibility for that context. The Deployer has a contract with the Provider (external to OIA) that defines obligations and their limits.`,
+  },
+  actor: {
+    was: `The Actor is the primary interaction entity of OIA. It engages with Capabilities, Features, and the Knowledge Core. OIA is built from the Actor's perspective. The Actor can be a Human, an Agent, or a System — three distinct types of organisational asset.`,
+    warum: `Without an Actor, the governance frame of the Initiator has no effect. The Actor is the entity that translates intent into action. In a world where Agents increasingly operate alongside humans, making Actor types explicit is an architectural necessity — not a theoretical exercise.`,
+    wie: `The three Actor types differ in how they are governed:<div class="detail-wwh__actor-types"><div class="detail-wwh__actor-card"><div class="detail-wwh__actor-type">Human</div><div class="detail-wwh__actor-asset">Employee</div><div class="detail-wwh__actor-frame">Employment contract — rights, duties, labour law</div></div><div class="detail-wwh__actor-card"><div class="detail-wwh__actor-type">Agent</div><div class="detail-wwh__actor-asset">AI workforce</div><div class="detail-wwh__actor-frame">Governance document — scope, limits, termination</div></div><div class="detail-wwh__actor-card"><div class="detail-wwh__actor-type">System</div><div class="detail-wwh__actor-asset">Production asset</div><div class="detail-wwh__actor-frame">Service / maintenance contract</div></div></div><p class="detail-wwh__note">The EU AI Act assigns no independent role to AI Agents as actors. When an Agent acts, accountability defaults to the Deployer — which maps to the OIA Initiator. This is the structural basis for the key insight: <strong>Capabilities converge. Accountability does not.</strong></p>`,
+  },
+  beneficiary: {
+    was: `The Beneficiary is the entity for whom the outcome creates value. It legitimises the action — without a Beneficiary, there is no purpose. The Beneficiary receives output but does not control the process. Feedback from the Beneficiary flows back into the architecture.`,
+    warum: `The Beneficiary is often the invisible party in AI implementations. Systems are built, Actors are trained, governance is defined — but the question "for whom, and with what outcome?" is answered too late. Making the Beneficiary explicit forces the question before implementation begins.`,
+    wie: `In RACI terms: <strong>Informed.</strong> Receives the result, provides feedback.<br><br>In EU AI Act terms: <strong>Affected person / end user.</strong> Subject to transparency and notification rights under Art. 50 — must be informed when interacting with AI systems.`,
+  },
+}
+
+function renderParticipantWWH(el: ParticipantItem): string {
+  if (!el.role) return ''
+  const content = WWH_CONTENT[el.role]
+  if (!content) return ''
+  const section = (label: string, body: string) => `
+    <div class="detail-wwh__section">
+      <div class="detail-wwh__label">${label}</div>
+      <div class="detail-wwh__body">${body}</div>
+    </div>`
+  return `<div class="detail-wwh">
+    ${section('What', content.was)}
+    ${section('Why', content.warum)}
+    ${section('How', content.wie)}
+  </div>`
+}
+
 function renderChildren(model: OIAModel, ids: string[], depth = 0): string {
   if (depth > 3) return ''
   return ids
@@ -223,6 +258,7 @@ export function renderDetailView(model: OIAModel, id: string): HTMLElement {
   const participantEl =
     el.type === 'item' && el.itemType === 'participant' ? (el as ParticipantItem) : null
   const participantContext = participantEl ? renderParticipantContext(model, participantEl) : ''
+  const participantWWH = participantEl ? renderParticipantWWH(participantEl) : ''
   const actorSpectra = participantEl ? renderActorSpectraContext(model, participantEl) : ''
 
   const childrenHtml =
@@ -252,6 +288,7 @@ export function renderDetailView(model: OIAModel, id: string): HTMLElement {
     ${euAiActOverlay}
     ${description ? `<div class="detail-desc">${description}</div>` : ''}
     ${participantContext}
+    ${participantWWH}
     ${actorSpectra}
     ${childrenHtml}
     ${related}
