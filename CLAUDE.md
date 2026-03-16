@@ -148,7 +148,7 @@ Official tasks: GitHub Issues at https://github.com/ruKurz/oi-architecture/issue
 
 ## Version Identity
 
-**Current OIA version: `0.2.0`**
+**Current OIA version: `0.3.0`**
 
 This version string must be consistent everywhere it appears:
 - `oia-site/src/data/oia-model.json` → `meta.version`

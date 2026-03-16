@@ -24,6 +24,7 @@ export interface Container {
   description?: string
   children: string[]
   badges?: string[]
+  navigationVisible?: boolean
   meta?: {
     order?: number
     highlighted?: boolean
@@ -41,6 +42,7 @@ export interface ContentItem {
   description?: string
   icon?: string
   badges?: string[]
+  parent?: string
   properties?: Record<string, string | number | boolean | string[]>
 }
 
