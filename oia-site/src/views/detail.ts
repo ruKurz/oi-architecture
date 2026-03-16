@@ -34,12 +34,23 @@ function renderBreadcrumb(model: OIAModel, id: string): string {
     (a) => !BREADCRUMB_SKIP_TYPES.has(a.containerType) && a.navigationVisible !== false,
   )
   const el = model.elements.find((e) => e.id === id)
+  // Inject explicit parent element between container ancestors and current item.
+  // Used by Actor type items (Human/Agent/System) to show "… › Actor › Human".
+  const explicitParentId = el?.type === 'item' ? (el as ContentItem).parent : undefined
+  const explicitParent = explicitParentId
+    ? model.elements.find((e) => e.id === explicitParentId)
+    : undefined
   const parts: string[] = [`<a class="detail-breadcrumb__item" href="#/">OIA</a>`]
   ancestors.forEach((anc) => {
     parts.push(
       `<span class="detail-breadcrumb__sep">›</span><a class="detail-breadcrumb__item" href="#/detail/${encodeURIComponent(anc.id)}">${anc.label}</a>`,
     )
   })
+  if (explicitParent) {
+    parts.push(
+      `<span class="detail-breadcrumb__sep">›</span><a class="detail-breadcrumb__item" href="#/detail/${encodeURIComponent(explicitParent.id)}">${explicitParent.label}</a>`,
+    )
+  }
   if (el) {
     parts.push(
       `<span class="detail-breadcrumb__sep">›</span><span class="detail-breadcrumb__item detail-breadcrumb__item--current">${el.label}</span>`,
