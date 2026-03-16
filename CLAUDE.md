@@ -129,7 +129,7 @@ See CONVENTIONS.md §Git Workflow and [ADR-0014](decisions/adr/0014-feature-bran
 
 **Branch check before commit:** Before staging and committing, verify the current branch with `git branch --show-current` — especially when switching between feature branches mid-session. Never commit to the wrong branch.
 
-**Agent push autonomy:** Push to a feature branch at any time — no chat confirmation required. Notify the human in chat when opening a PR.
+**Agent push autonomy:** Push to `feature/*`, `fix/*`, and `chore/*` branches at any time — no chat confirmation required. Notify the human in chat when opening a PR.
 
 **Never merge to main:** Open the PR, summarize the changes in chat, and wait for human approval. The human merges.
 
