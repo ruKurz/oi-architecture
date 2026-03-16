@@ -192,9 +192,9 @@ function renderParticipantWWH(el: ParticipantItem): string {
       <div class="detail-wwh__body">${body}</div>
     </div>`
   return `<div class="detail-wwh">
-    ${section('Was', content.was)}
-    ${section('Warum', content.warum)}
-    ${section('Wie', content.wie)}
+    ${section('What', content.was)}
+    ${section('Why', content.warum)}
+    ${section('How', content.wie)}
   </div>`
 }
 
