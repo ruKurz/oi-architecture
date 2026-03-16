@@ -6,7 +6,53 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
-## [0.2.0] — Upcoming
+## [0.3.0] — 2026-03-16 — *Capabilities Converge. Accountability Does Not.*
+
+### Added
+
+**System Participants layer** — new conceptual layer replacing the previous Actors layer
+- OIA-ODR-0001: System Participants layer — triad, spectra, and governance frame — [#160](https://github.com/ruKurz/oi-architecture/issues/160)
+- `context/system-participants-concept.md` — full concept document: triad, spectra, key insight, Actor types, EU AI Act mapping — [#160](https://github.com/ruKurz/oi-architecture/issues/160), [#186](https://github.com/ruKurz/oi-architecture/issues/186)
+- `decisions/oia-odr/` — new namespace for OIA Model Decision Records (OIA-ODRs) — [#160](https://github.com/ruKurz/oi-architecture/issues/160)
+- AI Agents positioned as knowledge consumers in concept and model — [#31](https://github.com/ruKurz/oi-architecture/issues/31)
+- Description text on all 9 System Participants boxes (triad + spectra) — [#167](https://github.com/ruKurz/oi-architecture/issues/167)
+
+**Renderer — System Participants**
+- Custom renderer component for the System Participants layer with triad, spectra, and key insight — [#161](https://github.com/ruKurz/oi-architecture/issues/161)
+- Spectra and key insight moved to detail view; overview shows triad only — [#173](https://github.com/ruKurz/oi-architecture/issues/173)
+- Governance flow (horizontal), breadcrumb navigation, edge type labels — [#180](https://github.com/ruKurz/oi-architecture/issues/180), [#182](https://github.com/ruKurz/oi-architecture/issues/182), [#185](https://github.com/ruKurz/oi-architecture/issues/185)
+- EU AI Act info badge and overlay on all participant detail views — [#188](https://github.com/ruKurz/oi-architecture/issues/188)
+- What / Why / How sections on Initiator, Actor, and Beneficiary detail views — [#190](https://github.com/ruKurz/oi-architecture/issues/190)
+- What / Why / How narrative sections on Human, Agent, and System detail pages — [#194](https://github.com/ruKurz/oi-architecture/issues/194)
+
+**Process & Tooling**
+- Skill `oia-issue-implementieren` — progressive disclosure implementation workflow — [#174](https://github.com/ruKurz/oi-architecture/issues/174)
+- ADR-0017: Agent Skills (SKILL.md) as portable, triggerable workflow format — [#176](https://github.com/ruKurz/oi-architecture/issues/176)
+- `sprint-refinement.md`: visual spec artifact requirement and model+renderer design decision step — [#170](https://github.com/ruKurz/oi-architecture/issues/170)
+- `prompts/development/create-release.md` — manual release execution prompt — [#204](https://github.com/ruKurz/oi-architecture/issues/204)
+- README hero section: version/status/CI badges top-right, three-section CTA button — [#202](https://github.com/ruKurz/oi-architecture/issues/202)
+
+### Changed
+
+- `oia-model.json`: Actors layer replaced by System Participants triad + spectra + key insight structure — [#34](https://github.com/ruKurz/oi-architecture/issues/34)
+- Spectrum 2 label updated from "ODR-bounded" to "Governance-bounded" — [#192](https://github.com/ruKurz/oi-architecture/issues/192)
+- `CLAUDE.md`: agent push autonomy extended to `feature/*`, `fix/*`, and `chore/*` branches — [#170](https://github.com/ruKurz/oi-architecture/issues/170)
+- Model version bumped to `0.3.0` in `oia-model.json`, Motivation page, Contribute page, README — [#188](https://github.com/ruKurz/oi-architecture/issues/188)
+
+### Fixed
+
+- Accountability spectrum items not clickable on participant detail pages — [#196](https://github.com/ruKurz/oi-architecture/issues/196)
+- Breadcrumb missing Actor intermediate level on participant detail pages — [#197](https://github.com/ruKurz/oi-architecture/issues/197)
+- Missing `ContentItem` import causing TypeScript build error after #194 merge — [#197](https://github.com/ruKurz/oi-architecture/issues/197)
+- Font-weight and border inconsistencies causing layout shift on governance flow nodes — [#188](https://github.com/ruKurz/oi-architecture/issues/188)
+
+### Security
+
+- Patched high-severity `undici` vulnerability; `npm audit --audit-level=moderate` added to PR Check — [#171](https://github.com/ruKurz/oi-architecture/issues/171)
+
+---
+
+## [0.2.0] — 2026-03-15
 
 ### Added
 
@@ -119,4 +165,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Test files: removed implicit `any` types — [#13](https://github.com/ruKurz/oi-architecture/issues/13)
 - Test files: improved JSON model import typing — [#14](https://github.com/ruKurz/oi-architecture/issues/14)
 
+[0.3.0]: https://github.com/ruKurz/oi-architecture/releases/tag/v0.3.0
+[0.2.0]: https://github.com/ruKurz/oi-architecture/compare/v0.1.0...v0.3.0
 [0.1.0]: https://github.com/ruKurz/oi-architecture/releases/tag/v0.1.0
