@@ -12,9 +12,7 @@
 Data → Intelligence → Capability → Solution → Business Outcome
 ```
 
-<a href="https://rukurz.github.io/oi-architecture/">
-  <img src="https://img.shields.io/badge/Explore%20the%20live%20model-%E2%86%92-2cf2c2?style=for-the-badge&labelColor=161b22&color=0f6e56" width="320" alt="Explore the live model →">
-</a>
+<div align="center"><a href="https://rukurz.github.io/oi-architecture/"><img src="https://img.shields.io/badge/-%E2%86%92-0f6e56?style=for-the-badge" alt=""><img src="https://img.shields.io/badge/-Explore%20the%20live%20model-161b22?style=for-the-badge" alt="Explore the live model"><img src="https://img.shields.io/badge/-%E2%86%92-0f6e56?style=for-the-badge" alt=""></a></div>
 
 **OIA** is a conceptual reference model for intelligent organizations.
 It describes how raw data becomes decisions, actions, and measurable business outcomes — going beyond pure data and analytics architectures.
