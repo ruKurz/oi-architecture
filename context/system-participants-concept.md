@@ -97,7 +97,7 @@ Between Human and Agent: a dashed connector labeled "converging". Capabilities a
 | Position | Entity | Description |
 |---|---|---|
 | 1 | **System** (Gray) | Inherits from Initiator. No independent accountability. |
-| 2 | **Agent** (Teal) | ODR-bounded · delegated. Accountability is delegated and explicitly bounded by Organizational Decision Records. No legal framework, no societal sanction mechanism. |
+| 2 | **Agent** (Teal) | Governance-bounded · delegated. Accountability is delegated and explicitly bounded by a governance frame. No legal framework, no societal sanction mechanism. |
 | 3 | **Human** (Purple) | Legal · structural · always. Carries accountability through law, socialization, and culture. Permanently at the rightmost position — independent of agent autonomy. |
 
 **The asymmetry of the two spectra is the core architectural statement of this layer.** Autonomy and accountability scale in opposite directions. This is not a temporary limitation — it is a structural characteristic for the foreseeable future.
