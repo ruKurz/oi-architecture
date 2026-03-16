@@ -878,6 +878,7 @@ body::after {
 }
 .detail-flow__node {
   font-size: 12px;
+  font-weight: 600;
   color: var(--accent);
   text-decoration: none;
   background: var(--panel);
@@ -894,7 +895,6 @@ body::after {
   border-color: var(--border-bright);
   background: rgba(255, 255, 255, 0.06);
   cursor: default;
-  font-weight: 600;
 }
 /* Active color variants — match participant role color */
 .detail-flow__node--teal {
