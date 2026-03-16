@@ -881,7 +881,7 @@ body::after {
   color: var(--accent);
   text-decoration: none;
   background: var(--panel);
-  border: 1px solid var(--border);
+  border: 2px solid var(--border);
   border-radius: var(--radius-sm);
   padding: 4px 12px;
   transition: opacity 0.15s;
