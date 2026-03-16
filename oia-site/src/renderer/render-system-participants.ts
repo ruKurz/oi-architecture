@@ -80,7 +80,19 @@ export function renderSpectrum(model: OIAModel, spectrumId: string): string {
       if (!item) return ''
       const colorClass = COLOR_CLASS[item.color ?? ''] ?? ''
       const convergingClass = item.converging ? ' sp-spectrum__entity--converging' : ''
-      return `<div class="sp-spectrum__entity ${colorClass}${convergingClass}" data-id="${item.id}">
+      // Accountability items navigate to their Autonomy counterpart so both spectra
+      // land on the same Actor type detail page (which carries full content).
+      const clickId =
+        item.spectrumAxis === 'accountability'
+          ? (model.elements.find(
+              (e): e is ParticipantItem =>
+                e.type === 'item' &&
+                e.itemType === 'participant' &&
+                (e as ParticipantItem).spectrumAxis === 'autonomy' &&
+                (e as ParticipantItem).label === item.label,
+            )?.id ?? item.id)
+          : item.id
+      return `<div class="sp-spectrum__entity ${colorClass}${convergingClass}" data-id="${clickId}">
         <span class="sp-spectrum__entity-label">${item.label}</span>
         ${(item.caption ?? item.description) ? `<span class="sp-spectrum__entity-desc">${item.caption ?? item.description}</span>` : ''}
       </div>`
