@@ -19,7 +19,7 @@ Data → Intelligence → Capability → Solution → Business Outcome
 **OIA** is a conceptual reference model for intelligent organizations.
 It describes how raw data becomes decisions, actions, and measurable business outcomes — going beyond pure data and analytics architectures.
 
-![OIA Interactive Diagram — 7-layer architecture showing how organizations turn knowledge into action](docs/images/Organizational-Intelligence-Architecture-03-12-2026.png)
+![OIA Interactive Diagram — 7-layer architecture showing how organizations turn knowledge into action](docs/images/Organizational-Intelligence-Architecture-16-03-2026.png)
 
 ---
 
