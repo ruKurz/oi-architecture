@@ -1,3 +1,9 @@
+<div align="right">
+
+![Version](https://img.shields.io/badge/Version-0.3.0-161b22?style=flat-square) &nbsp; ![Status](https://img.shields.io/badge/Status-early%20access-161b22?style=flat-square) &nbsp; [![CI](https://github.com/ruKurz/oi-architecture/actions/workflows/pr-check.yml/badge.svg)](https://github.com/ruKurz/oi-architecture/actions/workflows/pr-check.yml)
+
+</div>
+
 # Organizational Intelligence Architecture (OIA)
 
 > *How organizations turn knowledge into action.*
@@ -6,8 +12,9 @@
 Data → Intelligence → Capability → Solution → Business Outcome
 ```
 
-[![Explore the live model →](https://img.shields.io/badge/Explore%20the%20live%20model-%E2%86%92-2cf2c2?style=for-the-badge&labelColor=161b22&color=0f6e56)](https://rukurz.github.io/oi-architecture/)
-&nbsp; ![Version](https://img.shields.io/badge/Version-0.3.0-161b22?style=flat-square) &nbsp; ![Status](https://img.shields.io/badge/Status-early%20access-161b22?style=flat-square) &nbsp; [![CI](https://github.com/ruKurz/oi-architecture/actions/workflows/pr-check.yml/badge.svg)](https://github.com/ruKurz/oi-architecture/actions/workflows/pr-check.yml)
+<a href="https://rukurz.github.io/oi-architecture/">
+  <img src="https://img.shields.io/badge/Explore%20the%20live%20model-%E2%86%92-2cf2c2?style=for-the-badge&labelColor=161b22&color=0f6e56" width="320" alt="Explore the live model →">
+</a>
 
 **OIA** is a conceptual reference model for intelligent organizations.
 It describes how raw data becomes decisions, actions, and measurable business outcomes — going beyond pure data and analytics architectures.
