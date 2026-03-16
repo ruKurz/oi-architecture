@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": "0.2.0",
+    "version": "0.3.0",
     "title": "Organizational Intelligence Architecture",
     "subtitle": "How organizations turn knowledge into action",
     "created": "2026"
@@ -134,6 +134,7 @@
       "type": "container",
       "containerType": "frame",
       "label": "Triad",
+      "navigationVisible": false,
       "children": ["#L9-t-initiator", "#L9-t-actor", "#L9-t-beneficiary"]
     },
     {
@@ -183,6 +184,7 @@
       "type": "item",
       "itemType": "participant",
       "label": "System",
+      "parent": "#L9-t-actor",
       "spectrumAxis": "autonomy",
       "position": 1,
       "caption": "Configured · deterministic",
@@ -194,6 +196,7 @@
       "type": "item",
       "itemType": "participant",
       "label": "Human",
+      "parent": "#L9-t-actor",
       "spectrumAxis": "autonomy",
       "position": 2,
       "caption": "Guided · contextual judgment",
@@ -205,6 +208,7 @@
       "type": "item",
       "itemType": "participant",
       "label": "Agent",
+      "parent": "#L9-t-actor",
       "spectrumAxis": "autonomy",
       "position": 3,
       "caption": "Goal-directed · autonomous",
@@ -225,6 +229,7 @@
       "type": "item",
       "itemType": "participant",
       "label": "System",
+      "parent": "#L9-t-actor",
       "spectrumAxis": "accountability",
       "position": 1,
       "caption": "Inherits from Initiator",
@@ -236,6 +241,7 @@
       "type": "item",
       "itemType": "participant",
       "label": "Agent",
+      "parent": "#L9-t-actor",
       "spectrumAxis": "accountability",
       "position": 2,
       "caption": "ODR-bounded · delegated",
@@ -247,6 +253,7 @@
       "type": "item",
       "itemType": "participant",
       "label": "Human",
+      "parent": "#L9-t-actor",
       "spectrumAxis": "accountability",
       "position": 3,
       "caption": "Legal · structural · always",
@@ -257,6 +264,7 @@
       "id": "#L9-key-insight",
       "type": "item",
       "itemType": "keyInsight",
+      "parent": "#L9-t-actor",
       "label": "Key Insight",
       "text": "Capabilities converge. Accountability does not. The human remains the legal and structural anchor — independent of agent autonomy."
     },
