@@ -1,4 +1,4 @@
-import type { OIAModel, OIAElement, Container, ParticipantItem } from '../data/types'
+import type { OIAModel, OIAElement, Container, ContentItem, ParticipantItem } from '../data/types'
 import {
   renderSystemParticipantsDetail,
   renderSpectrum,
