@@ -244,7 +244,7 @@
       "parent": "#L9-t-actor",
       "spectrumAxis": "accountability",
       "position": 2,
-      "caption": "ODR-bounded · delegated",
+      "caption": "Governance-bounded · delegated",
       "description": "Accountability is delegated and explicitly bounded by Organizational Decision Records (ODRs). No legal framework, no societal sanction mechanism. Without ODR-defined boundaries, Agent actions cannot be held accountable.",
       "color": "teal"
     },
