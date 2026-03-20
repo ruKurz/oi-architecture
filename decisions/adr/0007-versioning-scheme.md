@@ -73,6 +73,8 @@ Exceptions must be explicitly justified in the ADR, commit message, or inline co
 
 **Rationale:** Version suffixes in file names create drift that is invisible to the release versioning system. When a v3 model becomes v4, the file name `oia-model-v3.json` either gets renamed (breaking all references) or stays forever inaccurate. A functional name (`oia-model-doc.json`) remains stable across model generations.
 
+**Legacy files:** Pre-existing files that carry version suffixes and predate this rule are not retroactively renamed (see CONVENTIONS.md "Known Exceptions"). They are tracked as known exceptions: `diagrams/oia-diagram-v2.html`, `images/oia-model-v1.png`. New files must follow this rule without exception.
+
 ## Alternatives
 
 | Option | Reason rejected |

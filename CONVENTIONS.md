@@ -460,3 +460,5 @@ Existing code that pre-dates these conventions is not retroactively fixed. Viola
 | File | Violation | Issue |
 |---|---|---|
 | `oia-site/src/views/detail.ts:9` | Dynamic `margin-left:${depth * 16}px` — computed indentation, not replaceable by a static class | [#148](https://github.com/ruKurz/oi-architecture/issues/148) |
+| `diagrams/oia-diagram-v2.html` | Version suffix in file name (predates ADR-0007 file name rule) — not renamed due to active references in prompts | [ADR-0007](decisions/adr/0007-versioning-scheme.md) |
+| `images/oia-model-v1.png` | Version suffix in file name (predates ADR-0007 file name rule) — historical image, no active references | [ADR-0007](decisions/adr/0007-versioning-scheme.md) |
