@@ -37,6 +37,7 @@ ADR methodology: Ralf D. Müller / Johannes Dienst (fiveandahalfstars.ninja).
 | [ADR-0015](./adr/0015-sprint-based-development-workflow.md) | Sprint-Based Development Workflow | Accepted | DEV | 2026-03-28 |
 | [ADR-0016](./adr/0016-agile-semantic-anchors.md) | Agile Process Semantic Anchors | Accepted | DEV | 2026-03-28 |
 | [ADR-0017](./adr/0017-agent-skills-skill-md-format.md) | Agent Skills (SKILL.md) as Portable Workflow Format | Proposed | DEV | 2026-03-15 |
+| [ADR-0018](./adr/0018-two-layer-model-separation.md) | Two-Layer Model Separation — Semantic Model Layer vs. Presentation / Projection Layer | Proposed | BOTH | 2026-03-20 |
 
 ---
 
