@@ -51,6 +51,30 @@ Sequential versioning is too coarse — it says nothing about compatibility.
 
 **Pre-release (v0.x.y):** All `0.x.y` versions are pre-release by convention — the public API / model schema is not yet stable. A `MAJOR` bump to `1.0.0` signals that the model is stable and backwards-incompatible changes will be rare and deliberate.
 
+## File Name Versioning
+
+SemVer applies to **artifact metadata and releases** — not to internal file names.
+
+**Rule:** Internal file names must not carry version suffixes (`-v2`, `-v3`, etc.). File names describe function and purpose, not generation history.
+
+| Pattern | Status | Example |
+|---|---|---|
+| Metadata version field | ✅ Allowed | `"schema_version": "v3"` in JSON |
+| Git tag / GitHub Release | ✅ Allowed | `v0.3.0` |
+| Functional file name | ✅ Allowed | `oia-model-doc.json`, `types-doc.ts` |
+| Version suffix in file name | ❌ Not allowed | `oia-model-v3.json`, `types-v3.ts` |
+
+**Exceptions** — a version suffix in a file name is only permitted when:
+
+1. **Parallel model generations** coexist simultaneously in the codebase (e.g. a migration period where both `oia-model.json` and a successor must be present at runtime)
+2. **Public API boundary** with an independently versioned interface contract (e.g. a published REST endpoint at `/api/v2/`)
+
+Exceptions must be explicitly justified in the ADR, commit message, or inline comment at the point of introduction. An exception is not inherited — each versioned file name requires its own justification.
+
+**Rationale:** Version suffixes in file names create drift that is invisible to the release versioning system. When a v3 model becomes v4, the file name `oia-model-v3.json` either gets renamed (breaking all references) or stays forever inaccurate. A functional name (`oia-model-doc.json`) remains stable across model generations.
+
+**Legacy files:** Pre-existing files that carry version suffixes and predate this rule are not retroactively renamed (see CONVENTIONS.md "Known Exceptions"). They are tracked as known exceptions: `diagrams/oia-diagram-v2.html`, `images/oia-model-v1.png`. New files must follow this rule without exception.
+
 ## Alternatives
 
 | Option | Reason rejected |
