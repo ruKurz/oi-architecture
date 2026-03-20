@@ -12,7 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 **System Participants layer** — new conceptual layer replacing the previous Actors layer
 - OIA-ODR-0001: System Participants layer — triad, spectra, and governance frame — [#160](https://github.com/ruKurz/oi-architecture/issues/160)
-- `context/system-participants-concept.md` — full concept document: triad, spectra, key insight, Actor types, EU AI Act mapping — [#160](https://github.com/ruKurz/oi-architecture/issues/160), [#186](https://github.com/ruKurz/oi-architecture/issues/186)
+- `context/concepts/system-participants.md` — full concept document: triad, spectra, key insight, Actor types, EU AI Act mapping — [#160](https://github.com/ruKurz/oi-architecture/issues/160), [#186](https://github.com/ruKurz/oi-architecture/issues/186)
 - `decisions/oia-odr/` — new namespace for OIA Model Decision Records (OIA-ODRs) — [#160](https://github.com/ruKurz/oi-architecture/issues/160)
 - AI Agents positioned as knowledge consumers in concept and model — [#31](https://github.com/ruKurz/oi-architecture/issues/31)
 - Description text on all 9 System Participants boxes (triad + spectra) — [#167](https://github.com/ruKurz/oi-architecture/issues/167)

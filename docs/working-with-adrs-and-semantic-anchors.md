@@ -1,7 +1,7 @@
 # Working with ADRs and Semantic Anchors in OIA
 
 > **Diátaxis mode:** How-to guide — task-oriented, for contributors and AI agents.
-> For conceptual background, see [ADR-0004](../decisions/adr/0004-adr-format-mueller-dienst.md), [ADR-0010](../decisions/adr/0010-semantic-anchors-as-vocabulary-layer.md), and [context/odr-concept.md](../context/odr-concept.md).
+> For conceptual background, see [ADR-0004](../decisions/adr/0004-adr-format-mueller-dienst.md), [ADR-0010](../decisions/adr/0010-semantic-anchors-as-vocabulary-layer.md), and [context/agent/odr-concept.md](../context/agent/odr-concept.md).
 
 ---
 
@@ -93,7 +93,7 @@ ODRs form a derivation chain:
 - **`Implements:`** lists the ADRs that are the Arch-layer implementation (downward)
 - **`Governed by:`** on the ADR points back to the ODR (upward on the ADR side)
 
-All three fields must be kept in sync. See `context/odr-concept.md` for the full concept.
+All three fields must be kept in sync. See `context/agent/odr-concept.md` for the full concept.
 
 ### Updating the ODR Index
 
