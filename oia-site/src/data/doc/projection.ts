@@ -33,6 +33,8 @@ export interface ProjectedSection {
   title: string
   rawText: string
   sectionType: string
+  headerLevel: number
+  parentSectionId: string | null
 }
 
 export interface LayerProjection {
@@ -57,6 +59,8 @@ export function projectLayer(presentationId: string): LayerProjection | null {
       title: s.title,
       rawText: s.raw_text,
       sectionType: s.section_type,
+      headerLevel: s.header_level,
+      parentSectionId: s.parent_section_id,
     }))
 
   if (sections.length === 0) return null

@@ -270,16 +270,101 @@ function renderChildren(model: OIAModel, ids: string[], depth = 0): string {
     .join('')
 }
 
+function processRawText(text: string): string {
+  return (
+    text
+      // horizontal rules
+      .replace(/---\n?/g, '<hr class="sem__hr">')
+      // bold
+      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+      // double newline → paragraph break
+      .split(/\n\n+/)
+      .map((para) => para.replace(/\n/g, '<br>').trim())
+      .filter(Boolean)
+      .map((para) => `<p class="sem__para">${para}</p>`)
+      .join('')
+  )
+}
+
 function renderSemanticSections(projection: LayerProjection): string {
-  const items = projection.sections
-    .map(
-      (s) => `<div class="detail-semantic-section">
-        <div class="detail-semantic-section__title">${s.title}</div>
-        <div class="detail-semantic-section__body">${s.rawText}</div>
-      </div>`,
-    )
+  const sections = projection.sections
+  if (sections.length === 0) return ''
+
+  const firstId = sections[0].sectionId
+
+  const navItems = sections
+    .map((s) => {
+      const isSubsection = s.headerLevel > 2
+      const subsClass = isSubsection ? ' sem__nav-item--sub' : ''
+      const activeClass = s.sectionId === firstId ? ' sem__nav-item--active' : ''
+      return `<button class="sem__nav-item${subsClass}${activeClass}" data-sem-nav="${s.sectionId}" aria-pressed="${s.sectionId === firstId}">${s.title}</button>`
+    })
     .join('')
-  return `<div class="detail-semantic">${items}</div>`
+
+  const panels = sections
+    .map((s) => {
+      const hidden = s.sectionId !== firstId ? ' hidden' : ''
+      return `<div class="sem__panel${s.sectionId === firstId ? ' sem__panel--active' : ''}" data-sem-panel="${s.sectionId}"${hidden}>
+        <div class="sem__panel-title">${s.title}</div>
+        <div class="sem__panel-body">${processRawText(s.rawText)}</div>
+      </div>`
+    })
+    .join('')
+
+  return `<div class="sem">
+    <div class="sem__header">
+      <span class="sem__label">Documentation</span>
+      <span class="sem__count">${sections.length} sections</span>
+    </div>
+    <div class="sem__body">
+      <nav class="sem__nav" aria-label="Semantic sections">${navItems}</nav>
+      <div class="sem__content">${panels}</div>
+    </div>
+  </div>`
+}
+
+function attachSemanticHandlers(root: HTMLElement): void {
+  const nav = root.querySelector<HTMLElement>('.sem__nav')
+  const content = root.querySelector<HTMLElement>('.sem__content')
+  if (!nav || !content) return
+
+  const navEl = nav
+  const contentEl = content
+
+  let pinnedId: string | null =
+    (root.querySelector('.sem__nav-item--active') as HTMLElement | null)?.dataset.semNav ?? null
+
+  function showPanel(id: string, isActive: boolean) {
+    contentEl.querySelectorAll('.sem__panel').forEach((panel) => {
+      const el = panel as HTMLElement
+      const match = el.dataset.semPanel === id
+      el.hidden = !match
+      el.classList.toggle('sem__panel--active', match)
+    })
+    navEl.querySelectorAll('.sem__nav-item').forEach((btn) => {
+      const el = btn as HTMLElement
+      el.classList.toggle('sem__nav-item--active', isActive && el.dataset.semNav === id)
+      el.setAttribute('aria-pressed', String(isActive && el.dataset.semNav === id))
+    })
+  }
+
+  navEl.querySelectorAll('.sem__nav-item').forEach((btn) => {
+    const el = btn as HTMLElement
+    const id = el.dataset.semNav!
+
+    el.addEventListener('mouseenter', () => {
+      showPanel(id, id === pinnedId)
+    })
+
+    el.addEventListener('mouseleave', () => {
+      if (pinnedId) showPanel(pinnedId, true)
+    })
+
+    el.addEventListener('click', () => {
+      pinnedId = id
+      showPanel(id, true)
+    })
+  })
 }
 
 export function renderDetailView(
@@ -311,10 +396,11 @@ export function renderDetailView(
       <div class="detail-id">${el.id}</div>
       <div class="detail-title">${el.label}</div>
       ${description ? `<div class="detail-desc">${description}</div>` : ''}
-      ${renderSystemParticipantsDetail(model, el as Container)}
       ${layerProjection ? renderSemanticSections(layerProjection) : ''}
+      ${renderSystemParticipantsDetail(model, el as Container)}
       ${related}
     `
+    if (layerProjection) attachSemanticHandlers(view)
     return view
   }
 
@@ -355,12 +441,13 @@ export function renderDetailView(
     ${participantWWH}
     ${actorTypeWWH}
     ${actorSpectra}
-    ${childrenHtml}
     ${layerProjection ? renderSemanticSections(layerProjection) : ''}
+    ${childrenHtml}
     ${related}
   `
 
   if (participantEl?.role) attachInfoBadgeHandlers(view)
+  if (layerProjection) attachSemanticHandlers(view)
 
   return view
 }

@@ -1256,6 +1256,143 @@ body::after {
   color: var(--text-muted);
 }
 
+/* ── Semantic Documentation Viewer (.sem) ────────────────────── */
+
+.sem {
+  margin-bottom: 28px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--panel);
+}
+
+.sem__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 14px;
+  background: rgba(77, 184, 255, 0.04);
+  border-bottom: 1px solid var(--border);
+}
+
+.sem__label {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.sem__count {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  color: var(--text-muted);
+}
+
+.sem__body {
+  display: grid;
+  grid-template-columns: 196px 1fr;
+  min-height: 200px;
+}
+
+/* Left: section navigator */
+.sem__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 8px 0;
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  max-height: 480px;
+}
+
+.sem__nav-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  border-left: 2px solid transparent;
+  padding: 7px 14px;
+  font-size: 12px;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition:
+    color 0.15s,
+    background 0.15s,
+    border-left-color 0.15s;
+  line-height: 1.35;
+}
+
+.sem__nav-item:hover {
+  background: rgba(77, 184, 255, 0.05);
+  color: var(--text);
+  border-left-color: var(--border-bright);
+}
+
+.sem__nav-item--active {
+  background: rgba(77, 184, 255, 0.08);
+  color: var(--accent);
+  border-left-color: var(--accent);
+}
+
+.sem__nav-item--sub {
+  padding-left: 26px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.sem__nav-item--sub.sem__nav-item--active {
+  color: var(--accent);
+}
+
+/* Right: content panel */
+.sem__content {
+  overflow-y: auto;
+  max-height: 480px;
+  padding: 20px 24px;
+}
+
+.sem__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sem__panel[hidden] {
+  display: none;
+}
+
+.sem__panel-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.sem__panel-body {
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.65;
+}
+
+.sem__para {
+  margin: 0 0 10px;
+}
+
+.sem__para:last-child {
+  margin-bottom: 0;
+}
+
+.sem__hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 12px 0;
+}
+
 /* ── System Participants layer (#L9) ─────────────────────────── */
 
 /* Color tokens for participant entities */
