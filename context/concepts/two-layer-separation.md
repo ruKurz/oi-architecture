@@ -32,6 +32,21 @@ Without this document, the risk identified in ADR-0018 — that presentation and
 
 The asymmetry is foundational: the Semantic Model Layer exists independently of any rendering concern. The Presentation / Projection Layer cannot exist without deriving from the Semantic Model Layer. This dependency is strictly one-directional and must not be reversed.
 
+### 2.1 Projection Pipeline
+
+The Projection Pipeline is the explicit third element in this architecture. It is not a layer — it is the transformation stage that sits between the two layers and produces the Presentation / Projection Layer from the Semantic Model Layer.
+
+| Aspect | Projection Pipeline |
+|---|---|
+| **Role** | Transformation stage — not a storage layer |
+| **Input** | Semantic Model Layer (read-only) |
+| **Output** | Presentation / Projection Layer (write) |
+| **Owner** | Renderer pipeline (same ownership as Presentation / Projection Layer) |
+| **Location** | `oia-site/src/data/` — projection logic co-located with the loader it feeds |
+| **Responsibility** | ID mapping (scoped mapping), structural transformation, field selection |
+
+The Projection Pipeline is the only place where the two layers are in contact. No other module, file, or pipeline stage may read from the Semantic Model Layer and write to the Presentation / Projection Layer simultaneously. Cross-layer access outside the Projection Pipeline is an architectural violation.
+
 ---
 
 ## 3. Boundary Rules
@@ -72,6 +87,20 @@ The dependency between layers is **strictly one-directional**: Semantic Model La
 
 Any data flow, import, or structural reference that runs from the Presentation / Projection Layer toward the Semantic Model Layer is an architectural violation. Projections derive from the semantic model; the semantic model is never shaped by projection requirements.
 
+### 3.6 Enforcement
+
+The boundary rules above are verifiable constraints — not conventions that rely on discipline alone. The following mechanisms enforce them:
+
+**Folder boundary:** Semantic Model Layer artifacts (`types-doc.ts`, `document-model.ts`) are placed in a dedicated subfolder (e.g. `oia-site/src/data/doc/`). Renderer modules in `oia-site/src/renderer/` have no structural reason to reach into that subfolder; any such import is immediately visible as a boundary violation during code review.
+
+**Import guard (ESLint rule):** A `no-restricted-imports` rule configured in `eslint.config.ts` prohibits imports from the semantic layer's schema and loader files in renderer modules. This makes boundary violations a lint error, not a review finding.
+
+**Loader separation:** `model.ts` and `document-model.ts` are separate files with no shared imports. A renderer that only knows `model.ts` cannot accidentally access semantic structures — there is no shared entry point.
+
+**Type opacity:** No renderer function accepts `OIADocumentModel` or any type from `types-doc.ts` as a parameter. TypeScript's structural type system would allow accidental substitution; named types from separate schema files prevent silent coupling.
+
+These mechanisms are complementary. Folder boundaries are visible; lint rules are automatic; loader separation is structural; type opacity is enforced by the compiler.
+
 ---
 
 ## 4. Identity Strategy
@@ -90,7 +119,7 @@ Coordinated IDs introduce implicit coupling: any change to semantic entity ident
 
 Independent IDs fully decouple the layers but require an explicit mapping to relate them — which is effectively scoped mapping with no documented contract.
 
-Scoped mapping makes the relationship explicit and controlled without requiring identity alignment. Each layer manages its own IDs; a defined mapping layer — part of the projection mechanism — maintains the correspondence. The mapping is owned by the projection pipeline, not by either source layer.
+Scoped mapping makes the relationship explicit and controlled without requiring identity alignment. Each layer manages its own IDs; a defined mapping table — part of the Projection Pipeline — maintains the correspondence. The mapping lives in the Projection Pipeline's transformation stage (`oia-site/src/data/doc/projection.ts` or equivalent), not in either source layer. It is owned by the renderer pipeline.
 
 ### Decision: Scoped Mapping
 
