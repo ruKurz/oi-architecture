@@ -367,6 +367,26 @@ Rules:
 
 ---
 
+## 2.15 Two-Layer Model Separation
+
+The OIA data architecture separates into two structurally independent layers. See [ADR-0018](decisions/adr/0018-two-layer-model-separation.md) and [context/concepts/two-layer-separation.md](context/concepts/two-layer-separation.md) for full rationale and boundary rules.
+
+| Layer | Schema file | Loader file | Owner |
+|---|---|---|---|
+| **Semantic Model Layer** (source of truth) | `oia-site/src/data/types-doc.ts` | `oia-site/src/data/document-model.ts` | Semantic extraction pipeline |
+| **Presentation / Projection Layer** (derived) | `oia-site/src/data/types.ts` | `oia-site/src/data/model.ts` | Renderer pipeline |
+
+**Rules:**
+
+- **No unified schema.** No TypeScript type may serve both layers. Shape similarity does not imply shared ownership — duplicate with layer-specific definitions when needed; clarify layer ownership when uncertain.
+- **Dependency direction.** Semantic Model Layer → Presentation / Projection Layer, never the inverse. Renderer modules must not import from `types-doc.ts` or `document-model.ts`.
+- **Folder boundary.** Semantic Model Layer artifacts live in `oia-site/src/data/doc/`. Renderer modules in `oia-site/src/renderer/` must not reach into this subfolder — any such import is a boundary violation.
+- **Projection Pipeline.** Cross-layer transformation lives exclusively in the Projection Pipeline (`oia-site/src/data/doc/projection.ts` or equivalent). No other module may read from the Semantic Model Layer and write to the Presentation / Projection Layer simultaneously.
+- **Change policy.** Presentation / Projection Layer: changes only when visual architecture evolves. Semantic Model Layer: changes only when source documents or organizational meaning changes. These are independent change cycles and must not be conflated.
+- **Enforcement.** An ESLint `no-restricted-imports` rule must be configured to prevent renderer imports from semantic layer files (see #216). Folder boundary and loader separation are the structural enforcement layer; the lint rule is the automated enforcement layer.
+
+---
+
 ## Document Versioning
 
 **No document-internal version annotations.** Individual files do not carry a `**Version:**` field or version subtitle. Versioning is via Git history exclusively — `git log -- <file>` is the authoritative change record.
