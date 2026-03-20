@@ -14,7 +14,6 @@ This prompt generates a **static image** of the Organizational Intelligence Arch
 
 Relevant files (for terminology and layer definitions — do not inline content):
 - `context/oia-context.md` — canonical layer names, terminology, architecture overview
-- `context/agent/oia-project-instruction-prompt.md` — target audience (CIO, Enterprise Architect), mission, visual positioning
 
 The OIA model has a fixed nine-layer structure (bottom → top) plus a left-side System Development dimension and feedback loops. These must appear in every generated image.
 

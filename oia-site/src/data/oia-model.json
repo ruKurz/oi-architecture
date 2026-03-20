@@ -700,7 +700,7 @@
       "id": "#L2",
       "type": "container",
       "containerType": "layer",
-      "label": "AI & Cognitive Infrastructure",
+      "label": "Data Sources",
       "description": "Technology foundation",
       "children": ["#L2-1", "#L2-2", "#L2-3", "#L2-4", "#L2-5", "#L2-6", "#L2-7", "#L2-8"],
       "meta": { "order": 2 }
@@ -816,7 +816,7 @@
       "id": "#L1",
       "type": "container",
       "containerType": "layer",
-      "label": "Data Sources",
+      "label": "AI Infrastructure",
       "description": "Organizational raw data",
       "children": [
         "#L1-1",
