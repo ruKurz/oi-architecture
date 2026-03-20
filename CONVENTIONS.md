@@ -392,8 +392,6 @@ The OIA data architecture separates into two structurally independent layers. Se
 **No document-internal version annotations.** Individual files do not carry a `**Version:**` field or version subtitle. Versioning is via Git history exclusively — `git log -- <file>` is the authoritative change record.
 
 **Exception:** `oia-site/src/data/oia-model.json → meta.version` — this is the OIA model's release version, consumed by the UI and tied to the project's SemVer release cycle (ADR-0007). It must not be removed.
-| `context/agent/oia-project-instruction-prompt.md` | 1.0.0 |
-
 Update the version field and this table when making significant changes to a concept file.
 
 ---

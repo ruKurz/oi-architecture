@@ -32,7 +32,6 @@ If the prompt establishes a repeatable way of working in the project → Prompt 
 
 **Read before creating the prompt:**
 - `context/oia-context.md` — architecture layers, terminology, backlog (DE)
-- `context/agent/oia-project-instruction-prompt.md` — role, mission, target audience
 
 **Scan for existing similar prompts:**
 - `prompts/development/` — technical execution prompts
