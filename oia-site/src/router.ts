@@ -1,6 +1,7 @@
 import type { OIAModel } from './data/types'
 import { renderOIA } from './renderer/render-diagram'
 import { renderDetailView } from './views/detail'
+import { projectLayer } from './data/doc/projection'
 import { renderMotivationView } from './views/motivation'
 import { renderContributeView } from './views/contribute'
 import { renderAboutView } from './views/about'
@@ -85,7 +86,8 @@ function renderOverview() {
 
 function renderDetail(id: string) {
   appContainer.innerHTML = ''
-  appContainer.appendChild(renderDetailView(model, id))
+  const projection = projectLayer(id)
+  appContainer.appendChild(renderDetailView(model, id, projection))
   attachClickHandlers()
 }
 

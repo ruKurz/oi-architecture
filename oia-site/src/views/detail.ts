@@ -1,4 +1,5 @@
 import type { OIAModel, OIAElement, Container, ContentItem, ParticipantItem } from '../data/types'
+import type { LayerProjection } from '../data/doc/projection'
 import {
   renderSystemParticipantsDetail,
   renderSpectrum,
@@ -269,7 +270,23 @@ function renderChildren(model: OIAModel, ids: string[], depth = 0): string {
     .join('')
 }
 
-export function renderDetailView(model: OIAModel, id: string): HTMLElement {
+function renderSemanticSections(projection: LayerProjection): string {
+  const items = projection.sections
+    .map(
+      (s) => `<div class="detail-semantic-section">
+        <div class="detail-semantic-section__title">${s.title}</div>
+        <div class="detail-semantic-section__body">${s.rawText}</div>
+      </div>`,
+    )
+    .join('')
+  return `<div class="detail-semantic">${items}</div>`
+}
+
+export function renderDetailView(
+  model: OIAModel,
+  id: string,
+  layerProjection: LayerProjection | null = null,
+): HTMLElement {
   const el: OIAElement | undefined = model.elements.find((e) => e.id === id)
 
   const view = document.createElement('div')
@@ -295,6 +312,7 @@ export function renderDetailView(model: OIAModel, id: string): HTMLElement {
       <div class="detail-title">${el.label}</div>
       ${description ? `<div class="detail-desc">${description}</div>` : ''}
       ${renderSystemParticipantsDetail(model, el as Container)}
+      ${layerProjection ? renderSemanticSections(layerProjection) : ''}
       ${related}
     `
     return view
@@ -338,6 +356,7 @@ export function renderDetailView(model: OIAModel, id: string): HTMLElement {
     ${actorTypeWWH}
     ${actorSpectra}
     ${childrenHtml}
+    ${layerProjection ? renderSemanticSections(layerProjection) : ''}
     ${related}
   `
 
