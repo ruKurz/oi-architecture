@@ -16,7 +16,7 @@ These decisions are organizational in nature. They bind not only technical contr
 
 The Organizational Intelligence Architecture (OIA) framework — which this project both documents and demonstrates — argues explicitly that organizational decisions must be made visible and traceable, just as technical decisions are. Applying ADRs only to the Arch layer while leaving the Org layer implicit contradicts the core thesis of the project.
 
-The full concept, hierarchy definition, and template are documented in `context/odr-concept.md`.
+The full concept, hierarchy definition, and template are documented in `context/agent/odr-concept.md`.
 
 ## Consequences
 
