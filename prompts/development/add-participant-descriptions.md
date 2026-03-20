@@ -9,7 +9,7 @@ Affected files:
 - `oia-site/src/data/types.ts` — `ParticipantItem` interface
 - `oia-site/src/renderer/render-system-participants.ts` — spectrum caption rendering
 - `oia-site/src/views/detail.ts` — renders `description` (no change expected)
-- `context/system-participants-concept.md` — source of truth for all content
+- `context/concepts/system-participants.md` — source of truth for all content
 
 ## Goal
 
@@ -28,7 +28,7 @@ All 9 participant blocks show a context-rich description in the detail view when
 - `oia-site/src/data/oia-model.json` — current `#L9` structure (read before editing)
 - `oia-site/src/data/types.ts` — `ParticipantItem` interface
 - `oia-site/src/renderer/render-system-participants.ts` — spectrum entity rendering
-- `context/system-participants-concept.md` — source for all description text
+- `context/concepts/system-participants.md` — source for all description text
 - GitHub Issue #167 — full description content table
 
 ## Steps
@@ -60,7 +60,7 @@ All 9 participant blocks show a context-rich description in the detail view when
 ## Decision rules
 
 - If `caption` vs `description` distinction causes confusion elsewhere in the codebase: check all usages of `item.description` in renderers before proceeding — do not silently break other layers
-- If the description text in Issue #167 conflicts with `context/system-participants-concept.md`: use the concept doc as the authoritative source; flag the conflict in a PR comment
+- If the description text in Issue #167 conflicts with `context/concepts/system-participants.md`: use the concept doc as the authoritative source; flag the conflict in a PR comment
 
 ## Acceptance criteria
 

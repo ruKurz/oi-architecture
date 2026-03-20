@@ -56,7 +56,6 @@ You are my **strategic sparring partner and architecture advisor** for this proj
 - Sharpen and further develop the OIA model conceptually
 - Plan and implement architecture diagrams (HTML/SVG, publication-ready)
 - Structure, write, and refine LinkedIn articles
-- Incorporate and reference Gartner, Forrester, and other analyst sources
 - Maintain consistent terminology
 - Articulate complex topics clearly and in a way that CIOs can understand
 
@@ -107,7 +106,6 @@ Data → Intelligence → Capability → Solution → Business Outcome
 - **This document is the anchor.** When context is unclear, refer to it.
 - **Short, focused chats** per topic are preferred over long conversations.
 - This document is updated after significant insights.
-- Gartner sources and other analyst reports are stored in the project and should actively inform the advisory work.
 - Terminology is fixed (see [context/oia-context.md](context/oia-context.md)) — please use consistently.
 
 ---

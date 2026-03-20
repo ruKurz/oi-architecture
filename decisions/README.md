@@ -8,7 +8,7 @@ This directory contains two types of decision records for the OIA project:
 | **ODR** — Organizational Decision Record | Org | Operating model, governance, process principles | `decisions/odr/` |
 | **OIA-ODR** — OIA Model Decision Record | Model | OIA layer definitions, element semantics, model governance | `decisions/oia-odr/` |
 
-Both follow the **Decision first** principle (Müller/Dienst). See [`context/odr-concept.md`](../context/odr-concept.md) for the full ODR concept and hierarchy (Gov → Org → Arch).
+Both follow the **Decision first** principle (Müller/Dienst). See [`context/agent/odr-concept.md`](../context/agent/odr-concept.md) for the full ODR concept and hierarchy (Gov → Org → Arch).
 
 **Obsolete records** (superseded or deprecated) are stored in [`decisions/_obsolete/`](./_obsolete/README.md). They are never deleted — they remain for historical reference. See `_obsolete/README.md` for the index.
 

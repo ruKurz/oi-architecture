@@ -5,7 +5,7 @@
 The OIA project documents organizational decisions as ODRs (Organizational Decision Records) at the Org layer of the governance hierarchy (Gov → Org → Arch). ODRs complement ADRs: where ADRs document technical and structural choices (Arch layer), ODRs document how the project governs itself — its operating model, principles, and policies.
 
 **Key references:**
-- `context/odr-concept.md` — full ODR concept, hierarchy, and rationale
+- `context/agent/odr-concept.md` — full ODR concept, hierarchy, and rationale
 - `decisions/odr/odr-template.md` — canonical ODR template with all required fields
 - `decisions/README.md` — ODR index (source of truth for next ODR number)
 - `CONVENTIONS.md §ODR Format` — field definitions, commit rules, acceptance protocol
