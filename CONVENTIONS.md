@@ -348,7 +348,7 @@ ODRs document organizational decisions at the Org layer of the governance hierar
 
 **Supersession:** When an ODR is superseded, move it to `decisions/_obsolete/` and update its status to `Superseded by ODR-XXXX`. Update the ODR index in `decisions/README.md` with a strikethrough entry.
 
-See [ODR-0000](decisions/odr/0000-commit-to-transparent-governance-documentation.md) and [context/odr-concept.md](context/odr-concept.md) for rationale and full concept.
+See [ODR-0000](decisions/odr/0000-commit-to-transparent-governance-documentation.md) and [context/agent/odr-concept.md](context/agent/odr-concept.md) for rationale and full concept.
 
 ---
 
@@ -392,7 +392,7 @@ The OIA data architecture separates into two structurally independent layers. Se
 **No document-internal version annotations.** Individual files do not carry a `**Version:**` field or version subtitle. Versioning is via Git history exclusively — `git log -- <file>` is the authoritative change record.
 
 **Exception:** `oia-site/src/data/oia-model.json → meta.version` — this is the OIA model's release version, consumed by the UI and tied to the project's SemVer release cycle (ADR-0007). It must not be removed.
-| `context/oia-project-instruction-prompt.md` | 1.0.0 |
+| `context/agent/oia-project-instruction-prompt.md` | 1.0.0 |
 
 Update the version field and this table when making significant changes to a concept file.
 
