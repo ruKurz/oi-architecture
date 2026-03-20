@@ -220,7 +220,7 @@
       "order_index": 1,
       "document_index": 1,
       "header_level": 1,
-      "title": "Concept – Organizational Entities",
+      "title": "Konzept – Organizational Entities",
       "section_type": "custom",
       "raw_text": "",
       "is_dual_structure_member": false,
@@ -228,14 +228,14 @@
       "source_anchor": {
         "filename": "C1_Entities.md",
         "element_id": "c1_entities",
-        "section_title": "Concept – Organizational Entities",
+        "section_title": "Konzept – Organizational Entities",
         "header_level": 1,
         "document_index": 1,
-        "path_string": "Concept – Organizational Entities",
+        "path_string": "Konzept – Organizational Entities",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["Concept – Organizational Entities"]
+      "section_path": ["Konzept – Organizational Entities"]
     },
     {
       "section_id": "c1_entities__s002",
@@ -246,22 +246,22 @@
       "order_index": 1,
       "document_index": 2,
       "header_level": 2,
-      "title": "Rationale",
+      "title": "Begründung",
       "section_type": "custom",
-      "raw_text": "Semantic base objects such as Person, Project, Organizational Unit, or Customer.\n\nEntities represent the stable concepts about which an organization thinks, works, and decides.  \nThey are not raw data, but the **meaning layer** above the data.\n\n---\n\n",
+      "raw_text": "Semantische Grundobjekte wie Person, Projekt, Organisationseinheit oder Kunde.\n\nEntitäten repräsentieren die stabilen Konzepte, über die eine Organisation denkt, arbeitet und entscheidet.  \nSie sind keine Rohdaten, sondern die **Bedeutungsschicht** über den Daten.\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "C1_Entities.md",
         "element_id": "c1_entities",
-        "section_title": "Rationale",
+        "section_title": "Begründung",
         "header_level": 2,
         "document_index": 2,
-        "path_string": "Concept – Organizational Entities > Rationale",
+        "path_string": "Konzept – Organizational Entities > Begründung",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["Concept – Organizational Entities", "Rationale"]
+      "section_path": ["Konzept – Organizational Entities", "Begründung"]
     },
     {
       "section_id": "c1_entities__s003",
@@ -272,22 +272,22 @@
       "order_index": 2,
       "document_index": 3,
       "header_level": 2,
-      "title": "Role in the Model",
+      "title": "Rolle im Modell",
       "section_type": "role",
-      "raw_text": "Stable, system-independent units that consolidate information from multiple sources.\n\n- Entities are **uniquely identifiable**\n- Entities are **consistent across systems**\n- Entities are **stored and managed in the Knowledge Core**\n- Entities are the foundation for **context, understanding, and decisions**\n\n---\n\n",
+      "raw_text": "Stabile, systemunabhängige Einheiten, die Informationen aus mehreren Quellen bündeln.\n\n- Entitäten sind **eindeutig identifizierbar**\n- Entitäten sind **konsistent über Systeme hinweg**\n- Entitäten werden im **Knowledge Core gespeichert und verwaltet**\n- Entitäten sind die Grundlage für **Kontext, Verständnis und Entscheidungen**\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "C1_Entities.md",
         "element_id": "c1_entities",
-        "section_title": "Role in the Model",
+        "section_title": "Rolle im Modell",
         "header_level": 2,
         "document_index": 3,
-        "path_string": "Concept – Organizational Entities > Role in the Model",
+        "path_string": "Konzept – Organizational Entities > Rolle im Modell",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["Concept – Organizational Entities", "Role in the Model"]
+      "section_path": ["Konzept – Organizational Entities", "Rolle im Modell"]
     },
     {
       "section_id": "c1_entities__s004",
@@ -298,22 +298,22 @@
       "order_index": 3,
       "document_index": 4,
       "header_level": 2,
-      "title": "Relationships",
+      "title": "Beziehungen",
       "section_type": "custom",
-      "raw_text": "- are modeled in the Knowledge Core (L3)  \n- are aggregated from different Data Sources (L1)  \n- are formed and enriched via Data Pipelines (C2)  \n- are used by Capabilities (L5)  \n\n---\n\n",
+      "raw_text": "- werden im Knowledge Core modelliert (L3)  \n- werden aus unterschiedlichen Data Sources aggregiert (L1)  \n- werden über Data Pipelines gebildet und angereichert (C2)  \n- werden von Capabilities genutzt (L5)  \n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "C1_Entities.md",
         "element_id": "c1_entities",
-        "section_title": "Relationships",
+        "section_title": "Beziehungen",
         "header_level": 2,
         "document_index": 4,
-        "path_string": "Concept – Organizational Entities > Relationships",
+        "path_string": "Konzept – Organizational Entities > Beziehungen",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["Concept – Organizational Entities", "Relationships"]
+      "section_path": ["Konzept – Organizational Entities", "Beziehungen"]
     },
     {
       "section_id": "c1_entities__s005",
@@ -324,22 +324,22 @@
       "order_index": 4,
       "document_index": 5,
       "header_level": 2,
-      "title": "Interlinking (Core Principle)",
+      "title": "Interlinking (Kernprinzip)",
       "section_type": "custom",
-      "raw_text": "Example linkage:\n\n- Organization  \n  → has Organizational Units  \n  → within which Persons work  \n  → who work on Projects  \n  → use News & Media for context  \n\n**Insight:**\n- Entities do not exist in isolation, but are **systematically interconnected**\n- This interlinking produces:\n  - Context  \n  - Understanding  \n  - Decision-making capacity  \n\n➡️ This interconnected knowledge is created in the:\n- **Knowledge Core**  \n- → as **interlinked data (semantic network)**  \n\n---\n\n",
+      "raw_text": "Beispielhafte Verknüpfung:\n\n- Organisation  \n  → hat Organisationseinheiten  \n  → darin arbeiten Personen  \n  → diese arbeiten an Projekten  \n  → nutzen News & Media für Kontext  \n\n**Erkenntnis:**\n- Entitäten stehen nicht isoliert, sondern sind **systematisch miteinander verknüpft**\n- Dieses Interlinking erzeugt:\n  - Kontext  \n  - Verständnis  \n  - Entscheidungsfähigkeit  \n\n➡️ Dieses vernetzte Wissen entsteht im:\n- **Knowledge Core**  \n- → als **interlinked data (semantisches Netzwerk)**  \n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "C1_Entities.md",
         "element_id": "c1_entities",
-        "section_title": "Interlinking (Core Principle)",
+        "section_title": "Interlinking (Kernprinzip)",
         "header_level": 2,
         "document_index": 5,
-        "path_string": "Concept – Organizational Entities > Interlinking (Core Principle)",
+        "path_string": "Konzept – Organizational Entities > Interlinking (Kernprinzip)",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["Concept – Organizational Entities", "Interlinking (Core Principle)"]
+      "section_path": ["Konzept – Organizational Entities", "Interlinking (Kernprinzip)"]
     },
     {
       "section_id": "c1_entities__s006",
@@ -350,22 +350,22 @@
       "order_index": 5,
       "document_index": 6,
       "header_level": 2,
-      "title": "Distinction from Data Sources",
+      "title": "Abgrenzung zu Data Sources",
       "section_type": "distinction",
-      "raw_text": "**Important architectural point:**\n\n- Entities:\n  - ❌ do not belong in Data Sources  \n  - ❌ are not raw data  \n  - ❌ are not system-bound artifacts  \n\n- Instead:\n  - ✅ they are **extracted / derived** from Data Sources  \n  - ✅ they are **unified and modeled** in the Knowledge Core  \n\n---\n\n",
+      "raw_text": "**Wichtiger Architekturpunkt:**\n\n- Entitäten:\n  - ❌ gehören nicht in Data Sources  \n  - ❌ sind keine Rohdaten  \n  - ❌ sind keine systemgebundenen Artefakte  \n\n- Stattdessen:\n  - ✅ werden sie aus Data Sources **extrahiert / abgeleitet**  \n  - ✅ werden sie im Knowledge Core **vereinheitlicht und modelliert**  \n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "C1_Entities.md",
         "element_id": "c1_entities",
-        "section_title": "Distinction from Data Sources",
+        "section_title": "Abgrenzung zu Data Sources",
         "header_level": 2,
         "document_index": 6,
-        "path_string": "Concept – Organizational Entities > Distinction from Data Sources",
+        "path_string": "Konzept – Organizational Entities > Abgrenzung zu Data Sources",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["Concept – Organizational Entities", "Distinction from Data Sources"]
+      "section_path": ["Konzept – Organizational Entities", "Abgrenzung zu Data Sources"]
     },
     {
       "section_id": "c1_entities__s007",
@@ -376,22 +376,22 @@
       "order_index": 6,
       "document_index": 7,
       "header_level": 2,
-      "title": "Core Statement",
+      "title": "Kernaussage",
       "section_type": "core_statement",
-      "raw_text": "Entities consolidate information across systems and make their meaning explicit.\n\n> Entities are not the data of an organization – they are its meaning.\n\n---\n\n",
+      "raw_text": "Entitäten bündeln Informationen über Systeme hinweg und machen deren Bedeutung explizit.\n\n> Entitäten sind nicht die Daten einer Organisation – sie sind deren Bedeutung.\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "C1_Entities.md",
         "element_id": "c1_entities",
-        "section_title": "Core Statement",
+        "section_title": "Kernaussage",
         "header_level": 2,
         "document_index": 7,
-        "path_string": "Concept – Organizational Entities > Core Statement",
+        "path_string": "Konzept – Organizational Entities > Kernaussage",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["Concept – Organizational Entities", "Core Statement"]
+      "section_path": ["Konzept – Organizational Entities", "Kernaussage"]
     },
     {
       "section_id": "c1_entities__s008",
@@ -402,7 +402,7 @@
       "order_index": 7,
       "document_index": 8,
       "header_level": 2,
-      "title": "Examples",
+      "title": "Beispiele",
       "section_type": "custom",
       "raw_text": "- Persons  \n- Organizations  \n- Locations  \n- Customers  \n- Materials  \n- Projects  \n- News & Media  \n- Rules & Policies  \n- Blogs  \n- Systems  ",
       "is_dual_structure_member": false,
@@ -410,14 +410,14 @@
       "source_anchor": {
         "filename": "C1_Entities.md",
         "element_id": "c1_entities",
-        "section_title": "Examples",
+        "section_title": "Beispiele",
         "header_level": 2,
         "document_index": 8,
-        "path_string": "Concept – Organizational Entities > Examples",
+        "path_string": "Konzept – Organizational Entities > Beispiele",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["Concept – Organizational Entities", "Examples"]
+      "section_path": ["Konzept – Organizational Entities", "Beispiele"]
     },
     {
       "section_id": "c2_information_processing_transformation_pipeline__s001",
@@ -464,7 +464,7 @@
       "header_level": 2,
       "title": "Definition",
       "section_type": "definition",
-      "raw_text": "Data Pipelines are **reusable transformation mechanisms for the extraction, structuring, and enrichment of data**  \n*(i.e., the processing steps that bring together and prepare data from different sources)*\n\nThey are not a separate semantic layer, but an operational mechanism within the architecture.\n\n---\n\n",
+      "raw_text": "Data Pipelines sind **wiederverwendbare Transformationsmechanismen zur Extraktion, Strukturierung und Anreicherung von Daten**  \n*(also die Verarbeitungsschritte, die Daten aus verschiedenen Quellen zusammenführen und vorbereiten)*\n\nSie sind kein eigener semantischer Layer, sondern ein operativer Mechanismus innerhalb der Architektur.\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
@@ -488,22 +488,22 @@
       "order_index": 2,
       "document_index": 11,
       "header_level": 2,
-      "title": "Role in the Model",
+      "title": "Rolle im Modell",
       "section_type": "role",
-      "raw_text": "Data Pipelines process raw data and prepare it for further use.\n\n- extract data from **Data Sources (L2)**\n- structure and clean data\n- consolidate data from different sources\n- contextually enrich data\n\nImportant:\n\n- Data Pipelines **operate on data, not on meaning**\n- they produce **no semantic interpretation**\n- they are **a transformation mechanism, not the overall logic of the architecture**\n\n---\n\n",
+      "raw_text": "Data Pipelines verarbeiten Rohdaten und bereiten sie für die weitere Nutzung vor.\n\n- extrahieren Daten aus **Data Sources (L2)**\n- strukturieren und bereinigen Daten\n- führen Daten aus unterschiedlichen Quellen zusammen\n- reichern Daten kontextuell an\n\nWichtig:\n\n- Data Pipelines **arbeiten auf Daten, nicht auf Bedeutung**\n- sie erzeugen **keine semantische Interpretation**\n- sie sind **ein Transformationsmechanismus, nicht die Gesamtwirklogik der Architektur**\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "C2_Data_Pipelines.md",
         "element_id": "c2_information_processing_transformation_pipeline",
-        "section_title": "Role in the Model",
+        "section_title": "Rolle im Modell",
         "header_level": 2,
         "document_index": 11,
-        "path_string": "C2 – Data Pipelines > Role in the Model",
+        "path_string": "C2 – Data Pipelines > Rolle im Modell",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["C2 – Data Pipelines", "Role in the Model"]
+      "section_path": ["C2 – Data Pipelines", "Rolle im Modell"]
     },
     {
       "section_id": "c2_information_processing_transformation_pipeline__s004",
@@ -514,22 +514,22 @@
       "order_index": 3,
       "document_index": 12,
       "header_level": 2,
-      "title": "Position in the Architecture",
+      "title": "Einordnung in die Architektur",
       "section_type": "classification",
-      "raw_text": "Data Pipelines are **not a linear main flow**, but are used at different points:\n\n- between **Data Sources (L2)** and **Knowledge Core (L3)**  \n- within **Capabilities (L5)** for transformation and enrichment  \n- within **Applications (L6)** for situational processing  \n\nThey are thus a **reusable processing concept**, not an independent layer.\n\n---\n\n",
+      "raw_text": "Data Pipelines sind **kein linearer Hauptfluss**, sondern werden an unterschiedlichen Stellen eingesetzt:\n\n- zwischen **Data Sources (L2)** und **Knowledge Core (L3)**  \n- innerhalb von **Capabilities (L5)** zur Transformation und Anreicherung  \n- innerhalb von **Applications (L6)** für situative Verarbeitung  \n\nSie sind damit ein **wiederverwendbares Verarbeitungskonzept**, kein eigenständiger Layer.\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "C2_Data_Pipelines.md",
         "element_id": "c2_information_processing_transformation_pipeline",
-        "section_title": "Position in the Architecture",
+        "section_title": "Einordnung in die Architektur",
         "header_level": 2,
         "document_index": 12,
-        "path_string": "C2 – Data Pipelines > Position in the Architecture",
+        "path_string": "C2 – Data Pipelines > Einordnung in die Architektur",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["C2 – Data Pipelines", "Position in the Architecture"]
+      "section_path": ["C2 – Data Pipelines", "Einordnung in die Architektur"]
     },
     {
       "section_id": "c2_information_processing_transformation_pipeline__s005",
@@ -540,22 +540,22 @@
       "order_index": 4,
       "document_index": 13,
       "header_level": 2,
-      "title": "Relationships in the Model",
+      "title": "Beziehungen im Modell",
       "section_type": "custom",
-      "raw_text": "- process data from **Data Sources (L2)**  \n- use **Infrastructure (L1)** for execution  \n- feed the **Knowledge Core (L3)**  \n- can be used by **Features (L4)**, **Capabilities (L5)**, and **Applications (L6)**  \n\n---\n\n",
+      "raw_text": "- verarbeiten Daten aus **Data Sources (L2)**  \n- nutzen **Infrastructure (L1)** zur Ausführung  \n- speisen den **Knowledge Core (L3)**  \n- können von **Features (L4)**, **Capabilities (L5)** und **Applications (L6)** genutzt werden  \n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "C2_Data_Pipelines.md",
         "element_id": "c2_information_processing_transformation_pipeline",
-        "section_title": "Relationships in the Model",
+        "section_title": "Beziehungen im Modell",
         "header_level": 2,
         "document_index": 13,
-        "path_string": "C2 – Data Pipelines > Relationships in the Model",
+        "path_string": "C2 – Data Pipelines > Beziehungen im Modell",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["C2 – Data Pipelines", "Relationships in the Model"]
+      "section_path": ["C2 – Data Pipelines", "Beziehungen im Modell"]
     },
     {
       "section_id": "c2_information_processing_transformation_pipeline__s006",
@@ -566,22 +566,22 @@
       "order_index": 5,
       "document_index": 14,
       "header_level": 2,
-      "title": "Output Types",
+      "title": "Ergebnisarten",
       "section_type": "custom",
-      "raw_text": "The results of Data Pipelines can take two forms:\n\n**1. Persistent**\n- structured and enriched data is stored in the **Knowledge Core (L3)**\n\n**2. Ephemeral**\n- data is processed situationally and used directly in:\n  - **Capabilities (L5)** or\n  - **Applications (L6)**\n\n---\n\n",
+      "raw_text": "Die Ergebnisse von Data Pipelines können zwei Formen annehmen:\n\n**1. Persistent**\n- strukturierte und angereicherte Daten werden im **Knowledge Core (L3)** gespeichert\n\n**2. Ephemer**\n- Daten werden situativ verarbeitet und direkt in:\n  - **Capabilities (L5)** oder\n  - **Applications (L6)** genutzt\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "C2_Data_Pipelines.md",
         "element_id": "c2_information_processing_transformation_pipeline",
-        "section_title": "Output Types",
+        "section_title": "Ergebnisarten",
         "header_level": 2,
         "document_index": 14,
-        "path_string": "C2 – Data Pipelines > Output Types",
+        "path_string": "C2 – Data Pipelines > Ergebnisarten",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["C2 – Data Pipelines", "Output Types"]
+      "section_path": ["C2 – Data Pipelines", "Ergebnisarten"]
     },
     {
       "section_id": "c2_information_processing_transformation_pipeline__s007",
@@ -592,22 +592,22 @@
       "order_index": 6,
       "document_index": 15,
       "header_level": 2,
-      "title": "Distinction from Other Concepts",
+      "title": "Abgrenzung zu anderen Konzepten",
       "section_type": "distinction",
-      "raw_text": "**vs. Knowledge Core (L3):**\n- Pipeline → processes data  \n- Knowledge Core → creates meaning  \n\n**vs. Capabilities (L5):**\n- Pipeline → technical processing  \n- Capability → business-level effect  \n\n**vs. Features (L4):**\n- Pipeline → flow / process  \n- Feature → reusable technical function  \n\n---\n\n",
+      "raw_text": "**vs. Knowledge Core (L3):**\n- Pipeline → verarbeitet Daten  \n- Knowledge Core → erzeugt Bedeutung  \n\n**vs. Capabilities (L5):**\n- Pipeline → technische Verarbeitung  \n- Capability → fachliche Wirkung  \n\n**vs. Features (L4):**\n- Pipeline → Ablauf / Prozess  \n- Feature → wiederverwendbare technische Funktion  \n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "C2_Data_Pipelines.md",
         "element_id": "c2_information_processing_transformation_pipeline",
-        "section_title": "Distinction from Other Concepts",
+        "section_title": "Abgrenzung zu anderen Konzepten",
         "header_level": 2,
         "document_index": 15,
-        "path_string": "C2 – Data Pipelines > Distinction from Other Concepts",
+        "path_string": "C2 – Data Pipelines > Abgrenzung zu anderen Konzepten",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["C2 – Data Pipelines", "Distinction from Other Concepts"]
+      "section_path": ["C2 – Data Pipelines", "Abgrenzung zu anderen Konzepten"]
     },
     {
       "section_id": "c2_information_processing_transformation_pipeline__s008",
@@ -618,22 +618,22 @@
       "order_index": 7,
       "document_index": 16,
       "header_level": 2,
-      "title": "Core Statement",
+      "title": "Kernaussage",
       "section_type": "core_statement",
-      "raw_text": "Data Pipelines transform data – they do not create meaning.\n\n> They are the operational mechanism of processing, not the logic of the architecture.",
+      "raw_text": "Data Pipelines transformieren Daten – sie erzeugen keine Bedeutung.\n\n> Sie sind der operative Mechanismus der Verarbeitung, nicht die Logik der Architektur.",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "C2_Data_Pipelines.md",
         "element_id": "c2_information_processing_transformation_pipeline",
-        "section_title": "Core Statement",
+        "section_title": "Kernaussage",
         "header_level": 2,
         "document_index": 16,
-        "path_string": "C2 – Data Pipelines > Core Statement",
+        "path_string": "C2 – Data Pipelines > Kernaussage",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["C2 – Data Pipelines", "Core Statement"]
+      "section_path": ["C2 – Data Pipelines", "Kernaussage"]
     },
     {
       "section_id": "l1_infrastructure__s001",
@@ -680,7 +680,7 @@
       "header_level": 2,
       "title": "Definition",
       "section_type": "definition",
-      "raw_text": "AI Infrastructure is the **technological execution environment for processing, storage, and model usage**  \n*(i.e., the technical basis such as servers, databases, and AI models on which everything runs)*\n\nIt provides the fundamental technical resources necessary for operating the architecture.\n\n---\n\n",
+      "raw_text": "AI Infrastructure ist die **technologische Ausführungsumgebung für Verarbeitung, Speicherung und Modellnutzung**  \n*(also die technische Basis wie Server, Datenbanken und KI-Modelle, auf denen alles läuft)*\n\nSie stellt die grundlegenden technischen Ressourcen bereit, die für den Betrieb der Architektur notwendig sind.\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
@@ -704,22 +704,22 @@
       "order_index": 2,
       "document_index": 19,
       "header_level": 2,
-      "title": "Role in the Model",
+      "title": "Rolle im Modell",
       "section_type": "role",
-      "raw_text": "AI Infrastructure enables the execution of all technical processes within the architecture, but carries no business or semantic meaning.\n\n- provides **compute, storage, and network resources**  \n- enables the execution of **Data Pipelines (C2)**, **Features (L4)**, and **Capabilities (L5)**  \n- provides **models and technical services**  \n- is the basis for processing data, not for interpreting it  \n\nImportant:\n\n- AI Infrastructure **executes – it does not understand**\n- it is **not a knowledge store**\n- it is **not a carrier of meaning**\n\n---\n\n",
+      "raw_text": "AI Infrastructure ermöglicht die Ausführung aller technischen Prozesse innerhalb der Architektur, trägt jedoch keine fachliche oder semantische Bedeutung.\n\n- stellt **Compute, Storage und Netzwerkressourcen** bereit  \n- ermöglicht die Ausführung von **Data Pipelines (C2)**, **Features (L4)** und **Capabilities (L5)**  \n- stellt **Modelle und technische Services** zur Verfügung  \n- ist Grundlage für die Verarbeitung von Daten, nicht deren Interpretation  \n\nWichtig:\n\n- AI Infrastructure **führt aus – sie versteht nicht**\n- sie ist **kein Wissensspeicher**\n- sie ist **kein Träger von Bedeutung**\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L1_AI_Infrastructure.md",
         "element_id": "l1_infrastructure",
-        "section_title": "Role in the Model",
+        "section_title": "Rolle im Modell",
         "header_level": 2,
         "document_index": 19,
-        "path_string": "L1 – AI Infrastructure > Role in the Model",
+        "path_string": "L1 – AI Infrastructure > Rolle im Modell",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L1 – AI Infrastructure", "Role in the Model"]
+      "section_path": ["L1 – AI Infrastructure", "Rolle im Modell"]
     },
     {
       "section_id": "l1_infrastructure__s004",
@@ -730,22 +730,22 @@
       "order_index": 3,
       "document_index": 20,
       "header_level": 2,
-      "title": "Position in the Architecture",
+      "title": "Einordnung in die Architektur",
       "section_type": "classification",
-      "raw_text": "AI Infrastructure forms the **lowest level of the architecture**.\n\nAll other layers build directly or indirectly on it, without themselves being part of the infrastructure.\n\nIt is thus an **enabler**, but not an active component of the business logic.\n\n---\n\n",
+      "raw_text": "AI Infrastructure bildet die **unterste Ebene der Architektur**.\n\nAlle anderen Layer bauen direkt oder indirekt auf ihr auf, ohne selbst Teil der Infrastruktur zu sein.\n\nSie ist damit ein **Enabler**, aber kein aktiver Bestandteil der fachlichen Logik.\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L1_AI_Infrastructure.md",
         "element_id": "l1_infrastructure",
-        "section_title": "Position in the Architecture",
+        "section_title": "Einordnung in die Architektur",
         "header_level": 2,
         "document_index": 20,
-        "path_string": "L1 – AI Infrastructure > Position in the Architecture",
+        "path_string": "L1 – AI Infrastructure > Einordnung in die Architektur",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L1 – AI Infrastructure", "Position in the Architecture"]
+      "section_path": ["L1 – AI Infrastructure", "Einordnung in die Architektur"]
     },
     {
       "section_id": "l1_infrastructure__s005",
@@ -756,22 +756,22 @@
       "order_index": 4,
       "document_index": 21,
       "header_level": 2,
-      "title": "Relationships in the Model",
+      "title": "Beziehungen im Modell",
       "section_type": "custom",
-      "raw_text": "- is used by **Data Pipelines (C2)** for data processing  \n- is used by **Features (L4)** to provide technical functions  \n- is used indirectly by **Capabilities (L5)** via Features and Pipelines  \n- supports the connection and processing of **Data Sources (L2)**  \n\n---\n\n",
+      "raw_text": "- wird von **Data Pipelines (C2)** zur Datenverarbeitung genutzt  \n- wird von **Features (L4)** zur Bereitstellung technischer Funktionen genutzt  \n- wird von **Capabilities (L5)** indirekt über Features und Pipelines genutzt  \n- unterstützt die Anbindung und Verarbeitung von **Data Sources (L2)**  \n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L1_AI_Infrastructure.md",
         "element_id": "l1_infrastructure",
-        "section_title": "Relationships in the Model",
+        "section_title": "Beziehungen im Modell",
         "header_level": 2,
         "document_index": 21,
-        "path_string": "L1 – AI Infrastructure > Relationships in the Model",
+        "path_string": "L1 – AI Infrastructure > Beziehungen im Modell",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L1 – AI Infrastructure", "Relationships in the Model"]
+      "section_path": ["L1 – AI Infrastructure", "Beziehungen im Modell"]
     },
     {
       "section_id": "l1_infrastructure__s006",
@@ -782,22 +782,22 @@
       "order_index": 5,
       "document_index": 22,
       "header_level": 2,
-      "title": "Classification of AI Models",
+      "title": "Einordnung von KI-Modellen",
       "section_type": "classification",
-      "raw_text": "Models such as machine learning models or Large Language Models (LLMs) are part of AI Infrastructure.\n\nAn important distinction must be made here:\n\n",
+      "raw_text": "Modelle wie Machine-Learning-Modelle oder Large Language Models (LLMs) sind Teil der AI Infrastructure.\n\nDabei ist eine wichtige Unterscheidung zu treffen:\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L1_AI_Infrastructure.md",
         "element_id": "l1_infrastructure",
-        "section_title": "Classification of AI Models",
+        "section_title": "Einordnung von KI-Modellen",
         "header_level": 2,
         "document_index": 22,
-        "path_string": "L1 – AI Infrastructure > Classification of AI Models",
+        "path_string": "L1 – AI Infrastructure > Einordnung von KI-Modellen",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L1 – AI Infrastructure", "Classification of AI Models"]
+      "section_path": ["L1 – AI Infrastructure", "Einordnung von KI-Modellen"]
     },
     {
       "section_id": "l1_infrastructure__s007",
@@ -808,22 +808,26 @@
       "order_index": 1,
       "document_index": 23,
       "header_level": 3,
-      "title": "1. Generic Models",
+      "title": "1. Generische Modelle",
       "section_type": "custom",
-      "raw_text": "- pre-trained and obtained externally  \n- contain no organization-specific, controlled knowledge  \n- are used as **pure infrastructure components**  \n\n",
+      "raw_text": "- vortrainiert und extern bezogen  \n- enthalten kein organisationsspezifisches, kontrolliertes Wissen  \n- werden als **reine Infrastrukturkomponenten** genutzt  \n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L1_AI_Infrastructure.md",
         "element_id": "l1_infrastructure",
-        "section_title": "1. Generic Models",
+        "section_title": "1. Generische Modelle",
         "header_level": 3,
         "document_index": 23,
-        "path_string": "L1 – AI Infrastructure > Classification of AI Models > 1. Generic Models",
+        "path_string": "L1 – AI Infrastructure > Einordnung von KI-Modellen > 1. Generische Modelle",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L1 – AI Infrastructure", "Classification of AI Models", "1. Generic Models"]
+      "section_path": [
+        "L1 – AI Infrastructure",
+        "Einordnung von KI-Modellen",
+        "1. Generische Modelle"
+      ]
     },
     {
       "section_id": "l1_infrastructure__s008",
@@ -834,25 +838,25 @@
       "order_index": 2,
       "document_index": 24,
       "header_level": 3,
-      "title": "2. Organization-Specific Adapted Models",
+      "title": "2. Organisationsspezifisch adaptierte Modelle",
       "section_type": "custom",
-      "raw_text": "- adapted to enterprise data through fine-tuning or training  \n- reflect terminology, patterns, and structures of the organization  \n- significantly influence behavior and results  \n\nThese models are **knowledge-adjacent**, but:\n\n- their \"knowledge\" is **implicitly embedded in model behavior**  \n- it is **not explicit, structured, or directly controllable**  \n- it **cannot be used as a reliable knowledge base**  \n\nTherefore:\n\n> Even organization-specifically trained models are not knowledge stores in the sense of the Knowledge Core (L3).\n\nThe **Knowledge Core remains the only source of explicit, verifiable organizational knowledge**.\n\n---\n\n",
+      "raw_text": "- durch Fine-Tuning oder Training an Unternehmensdaten angepasst  \n- spiegeln Begriffe, Muster und Strukturen der Organisation wider  \n- beeinflussen Verhalten und Ergebnisse signifikant  \n\nDiese Modelle sind **wissensnah**, aber:\n\n- ihr „Wissen“ ist **implizit im Modellverhalten enthalten**  \n- es ist **nicht explizit, strukturiert oder direkt kontrollierbar**  \n- es kann **nicht als verlässliche Wissensbasis genutzt werden**  \n\nDaher gilt:\n\n> Auch organisationsspezifisch trainierte Modelle sind keine Wissensspeicher im Sinne des Knowledge Core (L3).\n\nDer **Knowledge Core bleibt die einzige Quelle für explizites, überprüfbares Organisationswissen**.\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L1_AI_Infrastructure.md",
         "element_id": "l1_infrastructure",
-        "section_title": "2. Organization-Specific Adapted Models",
+        "section_title": "2. Organisationsspezifisch adaptierte Modelle",
         "header_level": 3,
         "document_index": 24,
-        "path_string": "L1 – AI Infrastructure > Classification of AI Models > 2. Organization-Specific Adapted Models",
+        "path_string": "L1 – AI Infrastructure > Einordnung von KI-Modellen > 2. Organisationsspezifisch adaptierte Modelle",
         "line_start": null,
         "line_end": null
       },
       "section_path": [
         "L1 – AI Infrastructure",
-        "Classification of AI Models",
-        "2. Organization-Specific Adapted Models"
+        "Einordnung von KI-Modellen",
+        "2. Organisationsspezifisch adaptierte Modelle"
       ]
     },
     {
@@ -864,22 +868,22 @@
       "order_index": 6,
       "document_index": 25,
       "header_level": 2,
-      "title": "Distinction from Other Layers",
+      "title": "Abgrenzung zu anderen Layern",
       "section_type": "distinction",
-      "raw_text": "**vs. Data Sources (L2):**\n- Infrastructure → provides technical environment  \n- Data Sources → contain data  \n\n**vs. Knowledge Core (L3):**\n- Infrastructure → executes processing  \n- Knowledge Core → creates and structures meaning  \n\n**vs. Features (L4):**\n- Infrastructure → technical basis  \n- Features → concrete technical functions  \n\n---\n\n",
+      "raw_text": "**vs. Data Sources (L2):**\n- Infrastructure → stellt technische Umgebung bereit  \n- Data Sources → enthalten Daten  \n\n**vs. Knowledge Core (L3):**\n- Infrastructure → führt Verarbeitung aus  \n- Knowledge Core → erzeugt und strukturiert Bedeutung  \n\n**vs. Features (L4):**\n- Infrastructure → technische Basis  \n- Features → konkrete technische Funktionen  \n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L1_AI_Infrastructure.md",
         "element_id": "l1_infrastructure",
-        "section_title": "Distinction from Other Layers",
+        "section_title": "Abgrenzung zu anderen Layern",
         "header_level": 2,
         "document_index": 25,
-        "path_string": "L1 – AI Infrastructure > Distinction from Other Layers",
+        "path_string": "L1 – AI Infrastructure > Abgrenzung zu anderen Layern",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L1 – AI Infrastructure", "Distinction from Other Layers"]
+      "section_path": ["L1 – AI Infrastructure", "Abgrenzung zu anderen Layern"]
     },
     {
       "section_id": "l1_infrastructure__s010",
@@ -890,22 +894,22 @@
       "order_index": 7,
       "document_index": 26,
       "header_level": 2,
-      "title": "Core Statement",
+      "title": "Kernaussage",
       "section_type": "core_statement",
-      "raw_text": "AI Infrastructure enables processing – it creates neither knowledge nor meaning.\n\n> It is the technical foundation of the architecture, not its intelligence.",
+      "raw_text": "AI Infrastructure ermöglicht Verarbeitung – sie erzeugt weder Wissen noch Bedeutung.\n\n> Sie ist die technische Grundlage der Architektur, nicht deren Intelligenz.",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L1_AI_Infrastructure.md",
         "element_id": "l1_infrastructure",
-        "section_title": "Core Statement",
+        "section_title": "Kernaussage",
         "header_level": 2,
         "document_index": 26,
-        "path_string": "L1 – AI Infrastructure > Core Statement",
+        "path_string": "L1 – AI Infrastructure > Kernaussage",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L1 – AI Infrastructure", "Core Statement"]
+      "section_path": ["L1 – AI Infrastructure", "Kernaussage"]
     },
     {
       "section_id": "l2_data_sources__s001",
@@ -953,7 +957,7 @@
       "header_level": 2,
       "title": "Definition",
       "section_type": "definition",
-      "raw_text": "Data Sources are **system-bound primary sources for fragmented data, documents, and operational representations**  \n*(i.e., the many individual systems in which information exists only in fragments and in isolation)*\n\nThey form the original storage locations for information within an organization.\n\n---\n\n",
+      "raw_text": "Data Sources sind **systemgebundene Primärquellen für fragmentierte Daten, Dokumente und operative Repräsentationen**  \n*(also die vielen Einzelsysteme, in denen Informationen jeweils nur ausschnitthaft und getrennt voneinander vorliegen)*\n\nSie bilden die ursprünglichen Speicherorte von Informationen innerhalb einer Organisation.\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
@@ -977,22 +981,22 @@
       "order_index": 2,
       "document_index": 29,
       "header_level": 2,
-      "title": "Role in the Model",
+      "title": "Rolle im Modell",
       "section_type": "role",
-      "raw_text": "Data Sources represent the **primary data base** of the organization.\n\n- contain **raw data, documents, and digital artifacts**  \n- store information in **concrete systems and formats**  \n- are **fragmented, redundant, and system-bound**  \n- form the basis for all downstream processing steps  \n\nImportant:\n\n- Data Sources contain **no consolidated semantic truth**\n- they are **not the location of organized knowledge**\n- they provide the starting point for **extraction, consolidation, and modeling**\n\n---\n\n",
+      "raw_text": "Data Sources stellen die **Primärdatenbasis** der Organisation dar.\n\n- enthalten **Rohdaten, Dokumente und digitale Artefakte**  \n- speichern Informationen in **konkreten Systemen und Formaten**  \n- sind **fragmentiert, redundant und systemgebunden**  \n- bilden die Grundlage für alle nachgelagerten Verarbeitungsschritte  \n\nWichtig:\n\n- Data Sources enthalten **keine konsolidierte semantische Wahrheit**\n- sie sind **nicht der Ort von organisiertem Wissen**\n- sie liefern die Ausgangsbasis für **Extraktion, Konsolidierung und Modellierung**\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L2_Data_Sources.md",
         "element_id": "l2_data_sources",
-        "section_title": "Role in the Model",
+        "section_title": "Rolle im Modell",
         "header_level": 2,
         "document_index": 29,
-        "path_string": "L2 – Data Sources > Role in the Model",
+        "path_string": "L2 – Data Sources > Rolle im Modell",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L2 – Data Sources", "Role in the Model"]
+      "section_path": ["L2 – Data Sources", "Rolle im Modell"]
     },
     {
       "section_id": "l2_data_sources__s004",
@@ -1003,22 +1007,22 @@
       "order_index": 3,
       "document_index": 30,
       "header_level": 2,
-      "title": "Classification as Primary Sources",
+      "title": "Einordnung als Primärquellen",
       "section_type": "classification",
-      "raw_text": "Data Sources are the **primary sources of the organization**.\n\n- all downstream structures (e.g., Knowledge Core, indexes, Features) are based on them  \n- they contain the **original data** from which all further representations arise  \n- if primary sources are lost, reconstruction of downstream systems becomes uncertain or impossible  \n\nThis implies:\n\n- downstream systems are **dependent on the integrity of Data Sources**\n- they can **derive** content, but cannot fully reproduce it independently  \n\n---\n\n",
+      "raw_text": "Data Sources sind die **Primärquellen der Organisation**.\n\n- alle nachgelagerten Strukturen (z. B. Knowledge Core, Indizes, Features) basieren auf ihnen  \n- sie enthalten die **originären Daten**, aus denen alle weiteren Repräsentationen entstehen  \n- wenn Primärquellen verloren gehen, wird auch die Rekonstruktion nachgelagerter Systeme unsicher oder unmöglich  \n\nDaraus folgt:\n\n- nachgelagerte Systeme sind **abhängig von der Integrität der Data Sources**\n- sie können Inhalte **ableiten**, aber nicht vollständig unabhängig reproduzieren  \n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L2_Data_Sources.md",
         "element_id": "l2_data_sources",
-        "section_title": "Classification as Primary Sources",
+        "section_title": "Einordnung als Primärquellen",
         "header_level": 2,
         "document_index": 30,
-        "path_string": "L2 – Data Sources > Classification as Primary Sources",
+        "path_string": "L2 – Data Sources > Einordnung als Primärquellen",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L2 – Data Sources", "Classification as Primary Sources"]
+      "section_path": ["L2 – Data Sources", "Einordnung als Primärquellen"]
     },
     {
       "section_id": "l2_data_sources__s005",
@@ -1029,22 +1033,22 @@
       "order_index": 4,
       "document_index": 31,
       "header_level": 2,
-      "title": "Position in the Architecture",
+      "title": "Einordnung in die Architektur",
       "section_type": "classification",
-      "raw_text": "Data Sources are the **operational reality layer of the organization**.\n\nThey arise historically through:\n\n- introduction of software solutions  \n- establishment of specialized systems  \n- storage of documents and data in different contexts  \n\nThe result is a:\n\n- distributed  \n- heterogeneous  \n- system-bound data landscape  \n\nThis structure is the starting point for the necessity of a **Knowledge Core (L3)**.\n\n---\n\n",
+      "raw_text": "Data Sources sind die **operative Realitätsschicht der Organisation**.\n\nSie entstehen historisch durch:\n\n- Einführung von Softwarelösungen  \n- Aufbau von Fachsystemen  \n- Speicherung von Dokumenten und Daten in unterschiedlichen Kontexten  \n\nDas Ergebnis ist eine:\n\n- verteilte  \n- heterogene  \n- systemgebundene Datenlandschaft  \n\nDiese Struktur ist der Ausgangspunkt für die Notwendigkeit eines **Knowledge Core (L3)**.\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L2_Data_Sources.md",
         "element_id": "l2_data_sources",
-        "section_title": "Position in the Architecture",
+        "section_title": "Einordnung in die Architektur",
         "header_level": 2,
         "document_index": 31,
-        "path_string": "L2 – Data Sources > Position in the Architecture",
+        "path_string": "L2 – Data Sources > Einordnung in die Architektur",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L2 – Data Sources", "Position in the Architecture"]
+      "section_path": ["L2 – Data Sources", "Einordnung in die Architektur"]
     },
     {
       "section_id": "l2_data_sources__s006",
@@ -1055,22 +1059,22 @@
       "order_index": 5,
       "document_index": 32,
       "header_level": 2,
-      "title": "Relationships in the Model",
+      "title": "Beziehungen im Modell",
       "section_type": "custom",
-      "raw_text": "- supply data for **Data Pipelines (C2)**  \n- are connected and processed via **AI Infrastructure (L1)**  \n- are the foundation for building the **Knowledge Core (L3)**  \n\n---\n\n",
+      "raw_text": "- liefern Daten für **Data Pipelines (C2)**  \n- werden über **AI Infrastructure (L1)** angebunden und verarbeitet  \n- sind die Grundlage für den Aufbau des **Knowledge Core (L3)**  \n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L2_Data_Sources.md",
         "element_id": "l2_data_sources",
-        "section_title": "Relationships in the Model",
+        "section_title": "Beziehungen im Modell",
         "header_level": 2,
         "document_index": 32,
-        "path_string": "L2 – Data Sources > Relationships in the Model",
+        "path_string": "L2 – Data Sources > Beziehungen im Modell",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L2 – Data Sources", "Relationships in the Model"]
+      "section_path": ["L2 – Data Sources", "Beziehungen im Modell"]
     },
     {
       "section_id": "l2_data_sources__s007",
@@ -1081,22 +1085,22 @@
       "order_index": 6,
       "document_index": 33,
       "header_level": 2,
-      "title": "Distinction from Entities",
+      "title": "Abgrenzung zu Entities",
       "section_type": "distinction",
-      "raw_text": "A central architectural point is the clear separation between **primary data** and **semantic objects**:\n\n**Data Sources (L2):**\n- contain **source-specific representations**\n- store data in concrete system contexts  \n- form **no cross-system identities**  \n\n**Entities (C1 / L3):**\n- are **cross-system consolidated semantic objects**\n- arise through extraction, consolidation, and linking from Data Sources  \n- are uniformly modeled in the **Knowledge Core (L3)**  \n\nTherefore:\n\n> Data Sources never contain Entities in the architectural sense, but exclusively their local representations.\n\n---\n\n",
+      "raw_text": "Ein zentraler Architekturpunkt ist die klare Trennung zwischen **Primärdaten** und **semantischen Objekten**:\n\n**Data Sources (L2):**\n- enthalten **quellspezifische Repräsentationen**\n- speichern Daten in konkreten Systemkontexten  \n- bilden **keine systemübergreifenden Identitäten**  \n\n**Entities (C1 / L3):**\n- sind **systemübergreifend konsolidierte semantische Objekte**\n- entstehen durch Extraktion, Konsolidierung und Verknüpfung aus Data Sources  \n- werden im **Knowledge Core (L3)** einheitlich modelliert  \n\nDaher gilt:\n\n> Data Sources enthalten niemals Entitäten im architektonischen Sinn, sondern ausschließlich deren lokale Repräsentationen.\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L2_Data_Sources.md",
         "element_id": "l2_data_sources",
-        "section_title": "Distinction from Entities",
+        "section_title": "Abgrenzung zu Entities",
         "header_level": 2,
         "document_index": 33,
-        "path_string": "L2 – Data Sources > Distinction from Entities",
+        "path_string": "L2 – Data Sources > Abgrenzung zu Entities",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L2 – Data Sources", "Distinction from Entities"]
+      "section_path": ["L2 – Data Sources", "Abgrenzung zu Entities"]
     },
     {
       "section_id": "l2_data_sources__s008",
@@ -1107,22 +1111,22 @@
       "order_index": 7,
       "document_index": 34,
       "header_level": 2,
-      "title": "Distinction from Knowledge Core",
+      "title": "Abgrenzung zu Knowledge Core",
       "section_type": "distinction",
-      "raw_text": "**Data Sources (L2):**\n- contain data, documents, and artifacts  \n- are fragmented and system-bound  \n- contain knowledge-relevant signals  \n\n**Knowledge Core (L3):**\n- consolidates this data  \n- structures it semantically  \n- creates a **unified, interconnected knowledge model**  \n\n---\n\n",
+      "raw_text": "**Data Sources (L2):**\n- enthalten Daten, Dokumente und Artefakte  \n- sind fragmentiert und systemgebunden  \n- enthalten wissensrelevante Signale  \n\n**Knowledge Core (L3):**\n- konsolidiert diese Daten  \n- strukturiert sie semantisch  \n- erzeugt ein **einheitliches, verknüpftes Wissensmodell**  \n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L2_Data_Sources.md",
         "element_id": "l2_data_sources",
-        "section_title": "Distinction from Knowledge Core",
+        "section_title": "Abgrenzung zu Knowledge Core",
         "header_level": 2,
         "document_index": 34,
-        "path_string": "L2 – Data Sources > Distinction from Knowledge Core",
+        "path_string": "L2 – Data Sources > Abgrenzung zu Knowledge Core",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L2 – Data Sources", "Distinction from Knowledge Core"]
+      "section_path": ["L2 – Data Sources", "Abgrenzung zu Knowledge Core"]
     },
     {
       "section_id": "l2_data_sources__s009",
@@ -1133,22 +1137,22 @@
       "order_index": 8,
       "document_index": 35,
       "header_level": 2,
-      "title": "Core Statement",
+      "title": "Kernaussage",
       "section_type": "core_statement",
-      "raw_text": "Data Sources are the primary sources of the organization – they contain data, but no consolidated meaning.\n\n> They are the foundation of all further processing, but not the location of knowledge.",
+      "raw_text": "Data Sources sind die Primärquellen der Organisation – sie enthalten Daten, aber keine konsolidierte Bedeutung.\n\n> Sie sind die Grundlage aller weiteren Verarbeitung, aber nicht der Ort von Wissen.",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L2_Data_Sources.md",
         "element_id": "l2_data_sources",
-        "section_title": "Core Statement",
+        "section_title": "Kernaussage",
         "header_level": 2,
         "document_index": 35,
-        "path_string": "L2 – Data Sources > Core Statement",
+        "path_string": "L2 – Data Sources > Kernaussage",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L2 – Data Sources", "Core Statement"]
+      "section_path": ["L2 – Data Sources", "Kernaussage"]
     },
     {
       "section_id": "l3_knowledge_core__s001",
@@ -1195,7 +1199,7 @@
       "header_level": 2,
       "title": "Definition",
       "section_type": "definition",
-      "raw_text": "The Knowledge Core is a **central, semantically structured, and controlled knowledge space** in which organization-wide consolidated entities, relationships, and context information are modeled  \n*(i.e., the place where a coherent and comprehensible overall picture of the organization emerges from scattered data)*\n\nIt is the **sole authoritative source of semantic organizational knowledge**.\n\n---\n\n",
+      "raw_text": "Der Knowledge Core ist ein **zentraler, semantisch strukturierter und kontrollierter Wissensraum**, in dem organisationsweit konsolidierte Entities, Beziehungen und Kontextinformationen modelliert werden  \n*(also der Ort, an dem aus verstreuten Daten ein zusammenhängendes und verstehbares Gesamtbild der Organisation entsteht)*\n\nEr ist die **einzige autoritative Quelle für semantisches Organisationswissen**.\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
@@ -1219,22 +1223,22 @@
       "order_index": 2,
       "document_index": 38,
       "header_level": 2,
-      "title": "Role in the Model",
+      "title": "Rolle im Modell",
       "section_type": "role",
-      "raw_text": "The Knowledge Core transforms fragmented data into **structured, interconnected, and contextualized meaning**.\n\n- consolidates data from different **Data Sources (L2)**  \n- models **Entities (C1)** as central semantic objects  \n- explicitly maps **relationships between Entities**  \n- integrates **context information** for interpretation  \n- makes knowledge available consistently across the organization  \n\nImportant:\n\n- Meaning arises **exclusively in the Knowledge Core**\n- the Knowledge Core is **not a data store**, but a **semantic system**\n- it is the foundation for **understanding, context, and decision-making capacity**\n\n---\n\n",
+      "raw_text": "Der Knowledge Core transformiert fragmentierte Daten in **strukturierte, verknüpfte und kontextualisierte Bedeutung**.\n\n- konsolidiert Daten aus unterschiedlichen **Data Sources (L2)**  \n- modelliert **Entities (C1)** als zentrale semantische Objekte  \n- bildet **Beziehungen zwischen Entities** explizit ab  \n- integriert **Kontextinformationen** zur Interpretation  \n- stellt Wissen organisationsweit konsistent zur Verfügung  \n\nWichtig:\n\n- Bedeutung entsteht **ausschließlich im Knowledge Core**\n- der Knowledge Core ist **kein Datenlager**, sondern ein **semantisches System**\n- er ist die Grundlage für **Verständnis, Kontext und Entscheidungsfähigkeit**\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L3_Knowledge_Core.md",
         "element_id": "l3_knowledge_core",
-        "section_title": "Role in the Model",
+        "section_title": "Rolle im Modell",
         "header_level": 2,
         "document_index": 38,
-        "path_string": "L3 – Knowledge Core > Role in the Model",
+        "path_string": "L3 – Knowledge Core > Rolle im Modell",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L3 – Knowledge Core", "Role in the Model"]
+      "section_path": ["L3 – Knowledge Core", "Rolle im Modell"]
     },
     {
       "section_id": "l3_knowledge_core__s004",
@@ -1245,22 +1249,22 @@
       "order_index": 3,
       "document_index": 39,
       "header_level": 2,
-      "title": "Structure of the Knowledge Core",
+      "title": "Struktur des Knowledge Core",
       "section_type": "structure",
-      "raw_text": "The Knowledge Core is based on a clear semantic structure:\n\n- **Entities** (identities)  \n- **Relationships** (interlinking between entities)  \n- **Attributes** (properties of entities and relationships)  \n- **Context information** (situational classification and meaning)  \n\nThis structure forms a:\n\n→ **interconnected semantic model of the organization**\n\n---\n\n",
+      "raw_text": "Der Knowledge Core basiert auf einer klaren semantischen Struktur:\n\n- **Entities** (Identitäten)  \n- **Beziehungen** (Interlinking zwischen Entities)  \n- **Attribute** (Eigenschaften von Entities und Beziehungen)  \n- **Kontextinformationen** (situative Einordnung und Bedeutung)  \n\nDiese Struktur bildet ein:\n\n→ **vernetztes semantisches Modell der Organisation**\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L3_Knowledge_Core.md",
         "element_id": "l3_knowledge_core",
-        "section_title": "Structure of the Knowledge Core",
+        "section_title": "Struktur des Knowledge Core",
         "header_level": 2,
         "document_index": 39,
-        "path_string": "L3 – Knowledge Core > Structure of the Knowledge Core",
+        "path_string": "L3 – Knowledge Core > Struktur des Knowledge Core",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L3 – Knowledge Core", "Structure of the Knowledge Core"]
+      "section_path": ["L3 – Knowledge Core", "Struktur des Knowledge Core"]
     },
     {
       "section_id": "l3_knowledge_core__s005",
@@ -1271,22 +1275,22 @@
       "order_index": 4,
       "document_index": 40,
       "header_level": 2,
-      "title": "Position in the Architecture",
+      "title": "Einordnung in die Architektur",
       "section_type": "classification",
-      "raw_text": "The Knowledge Core stands at the center of the architecture.\n\n- is fed by **Data Pipelines (C2)** from Data Sources  \n- provides knowledge for **Features (L4)**  \n- is used by **Capabilities (L5)** to generate effects  \n- is interpreted in the context of **Situations (L8)**  \n\nIt thus connects data, processing, and action.\n\n---\n\n",
+      "raw_text": "Der Knowledge Core steht im Zentrum der Architektur.\n\n- wird durch **Data Pipelines (C2)** aus Data Sources gespeist  \n- stellt Wissen für **Features (L4)** bereit  \n- wird von **Capabilities (L5)** zur Wirkungserzeugung genutzt  \n- wird im Kontext von **Situationen (L8)** interpretiert  \n\nEr verbindet damit Daten, Verarbeitung und Handlung.\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L3_Knowledge_Core.md",
         "element_id": "l3_knowledge_core",
-        "section_title": "Position in the Architecture",
+        "section_title": "Einordnung in die Architektur",
         "header_level": 2,
         "document_index": 40,
-        "path_string": "L3 – Knowledge Core > Position in the Architecture",
+        "path_string": "L3 – Knowledge Core > Einordnung in die Architektur",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L3 – Knowledge Core", "Position in the Architecture"]
+      "section_path": ["L3 – Knowledge Core", "Einordnung in die Architektur"]
     },
     {
       "section_id": "l3_knowledge_core__s006",
@@ -1297,22 +1301,22 @@
       "order_index": 5,
       "document_index": 41,
       "header_level": 2,
-      "title": "Governance and Control",
+      "title": "Governance und Kontrolle",
       "section_type": "governance",
-      "raw_text": "The Knowledge Core is a **controlled and trustworthy knowledge space**.\n\n- Knowledge is **explicitly modeled and traceable**  \n- Structures are **versionable and verifiable**  \n- Access is **controllable and security-critical**  \n- Changes are **controlled and auditable**  \n\nThis fundamentally distinguishes the Knowledge Core from:\n\n- Data Sources (fragmented, unstructured)  \n- AI Infrastructure / LLMs (implicit, probabilistic)\n\n---\n\n",
+      "raw_text": "Der Knowledge Core ist ein **kontrollierter und vertrauenswürdiger Wissensraum**.\n\n- Wissen ist **explizit modelliert und nachvollziehbar**  \n- Strukturen sind **versionierbar und überprüfbar**  \n- Zugriff ist **steuerbar und sicherheitskritisch**  \n- Änderungen sind **kontrolliert und auditierbar**  \n\nDamit unterscheidet sich der Knowledge Core fundamental von:\n\n- Data Sources (fragmentiert, unstrukturiert)  \n- AI Infrastructure / LLMs (implizit, probabilistisch)\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L3_Knowledge_Core.md",
         "element_id": "l3_knowledge_core",
-        "section_title": "Governance and Control",
+        "section_title": "Governance und Kontrolle",
         "header_level": 2,
         "document_index": 41,
-        "path_string": "L3 – Knowledge Core > Governance and Control",
+        "path_string": "L3 – Knowledge Core > Governance und Kontrolle",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L3 – Knowledge Core", "Governance and Control"]
+      "section_path": ["L3 – Knowledge Core", "Governance und Kontrolle"]
     },
     {
       "section_id": "l3_knowledge_core__s007",
@@ -1323,22 +1327,22 @@
       "order_index": 6,
       "document_index": 42,
       "header_level": 2,
-      "title": "Distinction from Other Layers",
+      "title": "Abgrenzung zu anderen Layern",
       "section_type": "distinction",
-      "raw_text": "**vs. Data Sources (L2):**\n- Data Sources → contain primary data  \n- Knowledge Core → creates semantic structure and meaning  \n\n**vs. AI Infrastructure (L1):**\n- Infrastructure → executes processing  \n- Knowledge Core → holds and structures knowledge  \n\n**vs. Data Pipelines (C2):**\n- Pipelines → transform data  \n- Knowledge Core → models meaning  \n\n---\n\n",
+      "raw_text": "**vs. Data Sources (L2):**\n- Data Sources → enthalten Primärdaten  \n- Knowledge Core → erzeugt semantische Struktur und Bedeutung  \n\n**vs. AI Infrastructure (L1):**\n- Infrastructure → führt Verarbeitung aus  \n- Knowledge Core → hält und strukturiert Wissen  \n\n**vs. Data Pipelines (C2):**\n- Pipelines → transformieren Daten  \n- Knowledge Core → modelliert Bedeutung  \n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L3_Knowledge_Core.md",
         "element_id": "l3_knowledge_core",
-        "section_title": "Distinction from Other Layers",
+        "section_title": "Abgrenzung zu anderen Layern",
         "header_level": 2,
         "document_index": 42,
-        "path_string": "L3 – Knowledge Core > Distinction from Other Layers",
+        "path_string": "L3 – Knowledge Core > Abgrenzung zu anderen Layern",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L3 – Knowledge Core", "Distinction from Other Layers"]
+      "section_path": ["L3 – Knowledge Core", "Abgrenzung zu anderen Layern"]
     },
     {
       "section_id": "l3_knowledge_core__s008",
@@ -1349,22 +1353,22 @@
       "order_index": 7,
       "document_index": 43,
       "header_level": 2,
-      "title": "Core Statement",
+      "title": "Kernaussage",
       "section_type": "core_statement",
-      "raw_text": "The Knowledge Core is the place where data becomes meaning.\n\n> It is the central knowledge authority of the organization and the foundation for all intelligent capabilities.",
+      "raw_text": "Der Knowledge Core ist der Ort, an dem aus Daten Bedeutung wird.\n\n> Er ist die zentrale Wissensinstanz der Organisation und die Grundlage für alle intelligenten Fähigkeiten.",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L3_Knowledge_Core.md",
         "element_id": "l3_knowledge_core",
-        "section_title": "Core Statement",
+        "section_title": "Kernaussage",
         "header_level": 2,
         "document_index": 43,
-        "path_string": "L3 – Knowledge Core > Core Statement",
+        "path_string": "L3 – Knowledge Core > Kernaussage",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L3 – Knowledge Core", "Core Statement"]
+      "section_path": ["L3 – Knowledge Core", "Kernaussage"]
     },
     {
       "section_id": "l4_features_in_apis__s001",
@@ -1411,7 +1415,7 @@
       "header_level": 2,
       "title": "Definition",
       "section_type": "definition",
-      "raw_text": "Features are **context-independent, API-based technical functions for processing data and knowledge**  \n*(i.e., individual building blocks such as search, classification, or summarization that can be executed specifically, without themselves deciding what is useful)*\n\nThey provide standardized, reusable operations.\n\n---\n\n",
+      "raw_text": "Features sind **kontextunabhängige, API-basierte technische Funktionen zur Verarbeitung von Daten und Wissen**  \n*(also einzelne Bausteine wie Suchen, Klassifizieren oder Zusammenfassen, die gezielt ausgeführt werden können, ohne selbst zu entscheiden, was sinnvoll ist)*\n\nSie stellen standardisierte, wiederverwendbare Operationen bereit.\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
@@ -1435,22 +1439,22 @@
       "order_index": 2,
       "document_index": 46,
       "header_level": 2,
-      "title": "Role in the Model",
+      "title": "Rolle im Modell",
       "section_type": "role",
-      "raw_text": "Features form the **technical function layer** of the architecture.\n\n- execute **clearly defined operations** on data and knowledge  \n- access **Data Sources (L2)** and **Knowledge Core (L3)**  \n- use **AI Infrastructure (L1)** for execution  \n- can incorporate **Data Pipelines (C2)**  \n\nImportant:\n\n- Features are **context-independent**\n- they are **not goal-directed**\n- they produce **no independent effect**\n\n---\n\n",
+      "raw_text": "Features bilden die **technische Funktionsschicht** der Architektur.\n\n- führen **klar definierte Operationen** auf Daten und Wissen aus  \n- greifen auf **Data Sources (L2)** und **Knowledge Core (L3)** zu  \n- nutzen **AI Infrastructure (L1)** zur Ausführung  \n- können **Data Pipelines (C2)** einbinden  \n\nWichtig:\n\n- Features sind **kontextunabhängig**\n- sie sind **nicht zielgerichtet**\n- sie erzeugen **keine eigenständige Wirkung**\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L4_Features_in_APIs.md",
         "element_id": "l4_features_in_apis",
-        "section_title": "Role in the Model",
+        "section_title": "Rolle im Modell",
         "header_level": 2,
         "document_index": 46,
-        "path_string": "L4 – Features in APIs > Role in the Model",
+        "path_string": "L4 – Features in APIs > Rolle im Modell",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L4 – Features in APIs", "Role in the Model"]
+      "section_path": ["L4 – Features in APIs", "Rolle im Modell"]
     },
     {
       "section_id": "l4_features_in_apis__s004",
@@ -1461,22 +1465,22 @@
       "order_index": 3,
       "document_index": 47,
       "header_level": 2,
-      "title": "Position in the Architecture",
+      "title": "Einordnung in die Architektur",
       "section_type": "classification",
-      "raw_text": "Features are **modular building blocks** used by higher layers:\n\n- are combined and orchestrated by **Capabilities (L5)**  \n- can be directly incorporated into **Applications (L6)**  \n\nThey form the technical foundation for more complex functions, without themselves containing business logic.\n\n---\n\n",
+      "raw_text": "Features sind **modulare Bausteine**, die von höheren Layern genutzt werden:\n\n- werden von **Capabilities (L5)** kombiniert und orchestriert  \n- können in **Applications (L6)** direkt eingebunden werden  \n\nSie bilden die technische Grundlage für komplexere Funktionen, ohne selbst fachliche Logik zu enthalten.\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L4_Features_in_APIs.md",
         "element_id": "l4_features_in_apis",
-        "section_title": "Position in the Architecture",
+        "section_title": "Einordnung in die Architektur",
         "header_level": 2,
         "document_index": 47,
-        "path_string": "L4 – Features in APIs > Position in the Architecture",
+        "path_string": "L4 – Features in APIs > Einordnung in die Architektur",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L4 – Features in APIs", "Position in the Architecture"]
+      "section_path": ["L4 – Features in APIs", "Einordnung in die Architektur"]
     },
     {
       "section_id": "l4_features_in_apis__s005",
@@ -1487,22 +1491,22 @@
       "order_index": 4,
       "document_index": 48,
       "header_level": 2,
-      "title": "Characteristics",
+      "title": "Charakteristik",
       "section_type": "custom",
-      "raw_text": "Features are:\n\n- **deterministic or controllably executable**  \n- **clearly specified and reusable**  \n- **usable in isolation**  \n- **without their own understanding of goals**  \n\nThey execute exactly the operation for which they were defined.\n\n---\n\n",
+      "raw_text": "Features sind:\n\n- **deterministisch oder kontrolliert ausführbar**  \n- **klar spezifiziert und wiederverwendbar**  \n- **isoliert nutzbar**  \n- **ohne eigenes Zielverständnis**  \n\nSie führen exakt die Operation aus, für die sie definiert wurden.\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L4_Features_in_APIs.md",
         "element_id": "l4_features_in_apis",
-        "section_title": "Characteristics",
+        "section_title": "Charakteristik",
         "header_level": 2,
         "document_index": 48,
-        "path_string": "L4 – Features in APIs > Characteristics",
+        "path_string": "L4 – Features in APIs > Charakteristik",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L4 – Features in APIs", "Characteristics"]
+      "section_path": ["L4 – Features in APIs", "Charakteristik"]
     },
     {
       "section_id": "l4_features_in_apis__s006",
@@ -1513,22 +1517,22 @@
       "order_index": 5,
       "document_index": 49,
       "header_level": 2,
-      "title": "Examples",
+      "title": "Beispiele",
       "section_type": "custom",
-      "raw_text": "- Search  \n- Classification  \n- Extraction  \n- Summarization  \n- Calculation  \n- OCR  \n- Translation  \n\n---\n\n",
+      "raw_text": "- Suche (Search)  \n- Klassifikation  \n- Extraktion  \n- Zusammenfassung  \n- Berechnung  \n- OCR  \n- Übersetzung  \n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L4_Features_in_APIs.md",
         "element_id": "l4_features_in_apis",
-        "section_title": "Examples",
+        "section_title": "Beispiele",
         "header_level": 2,
         "document_index": 49,
-        "path_string": "L4 – Features in APIs > Examples",
+        "path_string": "L4 – Features in APIs > Beispiele",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L4 – Features in APIs", "Examples"]
+      "section_path": ["L4 – Features in APIs", "Beispiele"]
     },
     {
       "section_id": "l4_features_in_apis__s007",
@@ -1539,22 +1543,22 @@
       "order_index": 6,
       "document_index": 50,
       "header_level": 2,
-      "title": "Distinction from Other Layers",
+      "title": "Abgrenzung zu anderen Layern",
       "section_type": "distinction",
-      "raw_text": "**vs. AI Infrastructure (L1):**\n- Infrastructure → technical basis  \n- Features → concrete functions  \n\n**vs. Knowledge Core (L3):**\n- Knowledge Core → holds meaning  \n- Features → process data and knowledge  \n\n**vs. Capabilities (L5):**\n- Features → execute operations  \n- Capabilities → generate business-level effect and pursue goals  \n\n---\n\n",
+      "raw_text": "**vs. AI Infrastructure (L1):**\n- Infrastructure → technische Basis  \n- Features → konkrete Funktionen  \n\n**vs. Knowledge Core (L3):**\n- Knowledge Core → hält Bedeutung  \n- Features → verarbeiten Daten und Wissen  \n\n**vs. Capabilities (L5):**\n- Features → führen Operationen aus  \n- Capabilities → erzeugen fachliche Wirkung und verfolgen Ziele  \n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L4_Features_in_APIs.md",
         "element_id": "l4_features_in_apis",
-        "section_title": "Distinction from Other Layers",
+        "section_title": "Abgrenzung zu anderen Layern",
         "header_level": 2,
         "document_index": 50,
-        "path_string": "L4 – Features in APIs > Distinction from Other Layers",
+        "path_string": "L4 – Features in APIs > Abgrenzung zu anderen Layern",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L4 – Features in APIs", "Distinction from Other Layers"]
+      "section_path": ["L4 – Features in APIs", "Abgrenzung zu anderen Layern"]
     },
     {
       "section_id": "l4_features_in_apis__s008",
@@ -1565,22 +1569,22 @@
       "order_index": 7,
       "document_index": 51,
       "header_level": 2,
-      "title": "Core Statement",
+      "title": "Kernaussage",
       "section_type": "core_statement",
-      "raw_text": "Features provide technical functionality – they produce no independent effect.\n\n> They are the building blocks from which capabilities emerge, but are not themselves capabilities.",
+      "raw_text": "Features liefern technische Funktionalität – sie erzeugen keine eigenständige Wirkung.\n\n> Sie sind die Bausteine, aus denen Fähigkeiten entstehen, aber selbst keine Fähigkeiten.",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L4_Features_in_APIs.md",
         "element_id": "l4_features_in_apis",
-        "section_title": "Core Statement",
+        "section_title": "Kernaussage",
         "header_level": 2,
         "document_index": 51,
-        "path_string": "L4 – Features in APIs > Core Statement",
+        "path_string": "L4 – Features in APIs > Kernaussage",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L4 – Features in APIs", "Core Statement"]
+      "section_path": ["L4 – Features in APIs", "Kernaussage"]
     },
     {
       "section_id": "l5_capabilities__s001",
@@ -1628,7 +1632,7 @@
       "header_level": 2,
       "title": "Definition",
       "section_type": "definition",
-      "raw_text": "Capabilities are **goal-directed, context-dependent abilities for generating effect through the use of knowledge and technical functions**  \n*(i.e., what a system or organization can do to achieve a desired result in a concrete situation)*\n\n---\n\n",
+      "raw_text": "Capabilities sind **zielgerichtete, kontextabhängige Fähigkeiten zur Erzeugung von Wirkung unter Nutzung von Wissen und technischen Funktionen**  \n*(also das, was ein System oder eine Organisation tun kann, um in einer konkreten Situation ein gewünschtes Ergebnis zu erreichen)*\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
@@ -1652,22 +1656,22 @@
       "order_index": 2,
       "document_index": 54,
       "header_level": 2,
-      "title": "Role in the Model",
+      "title": "Rolle im Modell",
       "section_type": "role",
-      "raw_text": "Capabilities translate technical possibilities and knowledge into **business-effective abilities**.\n\n- use **Features (L4)** as technical building blocks  \n- access the **Knowledge Core (L3)**  \n- can use **Data Pipelines (C2)** for transformation  \n- are applied in the context of **Situations (L8)**  \n- are executed by **Actors (L9)**  \n\nImportant:\n\n- Capabilities are **goal-directed**\n- they are **context-dependent**\n- they orchestrate technical and semantic resources\n\n---\n\n",
+      "raw_text": "Capabilities übersetzen technische Möglichkeiten und Wissen in **fachlich wirksame Fähigkeiten**.\n\n- nutzen **Features (L4)** als technische Bausteine  \n- greifen auf den **Knowledge Core (L3)** zu  \n- können **Data Pipelines (C2)** zur Transformation einsetzen  \n- werden im Kontext von **Situationen (L8)** angewendet  \n- werden durch **Actors (L9)** ausgeführt  \n\nWichtig:\n\n- Capabilities sind **zielgerichtet**\n- sie sind **kontextabhängig**\n- sie orchestrieren technische und semantische Ressourcen\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L5_Capabilities.md",
         "element_id": "l5_capabilities",
-        "section_title": "Role in the Model",
+        "section_title": "Rolle im Modell",
         "header_level": 2,
         "document_index": 54,
-        "path_string": "L5 – Capabilities > Role in the Model",
+        "path_string": "L5 – Capabilities > Rolle im Modell",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L5 – Capabilities", "Role in the Model"]
+      "section_path": ["L5 – Capabilities", "Rolle im Modell"]
     },
     {
       "section_id": "l5_capabilities__s004",
@@ -1678,22 +1682,22 @@
       "order_index": 3,
       "document_index": 55,
       "header_level": 2,
-      "title": "Position in the Architecture",
+      "title": "Einordnung in die Architektur",
       "section_type": "classification",
-      "raw_text": "Capabilities form the **business capability layer** of the architecture.\n\nThey stand between:\n\n- technical functions (L4)  \n- and concrete application (L6)  \n\nand connect:\n\n→ Knowledge + Technology → Action potential\n\n---\n\n",
+      "raw_text": "Capabilities bilden die **fachliche Fähigkeitsschicht** der Architektur.\n\nSie stehen zwischen:\n\n- technischen Funktionen (L4)  \n- und konkreter Anwendung (L6)  \n\nund verbinden:\n\n→ Wissen + Technik → Handlungspotenzial\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L5_Capabilities.md",
         "element_id": "l5_capabilities",
-        "section_title": "Position in the Architecture",
+        "section_title": "Einordnung in die Architektur",
         "header_level": 2,
         "document_index": 55,
-        "path_string": "L5 – Capabilities > Position in the Architecture",
+        "path_string": "L5 – Capabilities > Einordnung in die Architektur",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L5 – Capabilities", "Position in the Architecture"]
+      "section_path": ["L5 – Capabilities", "Einordnung in die Architektur"]
     },
     {
       "section_id": "l5_capabilities__s005",
@@ -1704,22 +1708,22 @@
       "order_index": 4,
       "document_index": 56,
       "header_level": 2,
-      "title": "Characteristics",
+      "title": "Charakteristik",
       "section_type": "custom",
-      "raw_text": "Capabilities are:\n\n- **expressed in business terms and technology-independent**  \n- **goal-directed**  \n- **context-dependent**  \n- **combinable and orchestratable**  \n- **more stable than technical implementations**  \n\n---\n\n",
+      "raw_text": "Capabilities sind:\n\n- **fachlich formuliert und technologieunabhängig**  \n- **zielgerichtet**  \n- **kontextabhängig**  \n- **kombinierbar und orchestrierbar**  \n- **stabiler als technische Implementierungen**  \n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L5_Capabilities.md",
         "element_id": "l5_capabilities",
-        "section_title": "Characteristics",
+        "section_title": "Charakteristik",
         "header_level": 2,
         "document_index": 56,
-        "path_string": "L5 – Capabilities > Characteristics",
+        "path_string": "L5 – Capabilities > Charakteristik",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L5 – Capabilities", "Characteristics"]
+      "section_path": ["L5 – Capabilities", "Charakteristik"]
     },
     {
       "section_id": "l5_capabilities__s006",
@@ -1730,22 +1734,22 @@
       "order_index": 5,
       "document_index": 57,
       "header_level": 2,
-      "title": "Relationship to Business Outcome",
+      "title": "Beziehung zu Business Outcome",
       "section_type": "custom",
-      "raw_text": "Capabilities are oriented toward effect, but do not produce Business Outcome alone.\n\n> Capabilities enable effect, but Business Outcome only arises through their application by Actors in a concrete situation.\n\nOutcome arises through:\n\n- Application of Capabilities  \n- in the context of **Situations (L8)**  \n- by **Actors (L9)**  \n- typically within **Applications (L6)**  \n\n---\n\n",
+      "raw_text": "Capabilities sind auf Wirkung ausgerichtet, erzeugen jedoch keinen Business Outcome allein.\n\n> Capabilities ermöglichen Wirkung, aber der Business Outcome entsteht erst durch ihre Anwendung durch Actors in einer konkreten Situation.\n\nOutcome entsteht durch:\n\n- Anwendung von Capabilities  \n- im Kontext von **Situationen (L8)**  \n- durch **Actors (L9)**  \n- typischerweise innerhalb von **Applications (L6)**  \n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L5_Capabilities.md",
         "element_id": "l5_capabilities",
-        "section_title": "Relationship to Business Outcome",
+        "section_title": "Beziehung zu Business Outcome",
         "header_level": 2,
         "document_index": 57,
-        "path_string": "L5 – Capabilities > Relationship to Business Outcome",
+        "path_string": "L5 – Capabilities > Beziehung zu Business Outcome",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L5 – Capabilities", "Relationship to Business Outcome"]
+      "section_path": ["L5 – Capabilities", "Beziehung zu Business Outcome"]
     },
     {
       "section_id": "l5_capabilities__s007",
@@ -1756,22 +1760,22 @@
       "order_index": 6,
       "document_index": 58,
       "header_level": 2,
-      "title": "Examples",
+      "title": "Beispiele",
       "section_type": "custom",
-      "raw_text": "- Analysis of information  \n- Evaluation of options  \n- Generation of content  \n- Linking of knowledge  \n- Decision support  \n\n---\n\n",
+      "raw_text": "- Analyse von Informationen  \n- Bewertung von Optionen  \n- Generierung von Inhalten  \n- Verknüpfung von Wissen  \n- Entscheidungsunterstützung  \n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L5_Capabilities.md",
         "element_id": "l5_capabilities",
-        "section_title": "Examples",
+        "section_title": "Beispiele",
         "header_level": 2,
         "document_index": 58,
-        "path_string": "L5 – Capabilities > Examples",
+        "path_string": "L5 – Capabilities > Beispiele",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L5 – Capabilities", "Examples"]
+      "section_path": ["L5 – Capabilities", "Beispiele"]
     },
     {
       "section_id": "l5_capabilities__s008",
@@ -1782,22 +1786,22 @@
       "order_index": 7,
       "document_index": 59,
       "header_level": 2,
-      "title": "Distinction from Other Layers",
+      "title": "Abgrenzung zu anderen Layern",
       "section_type": "distinction",
-      "raw_text": "**vs. Features (L4):**\n- Features → execute operations  \n- Capabilities → pursue goals and generate effect potential  \n\n**vs. Knowledge Core (L3):**\n- Knowledge Core → holds meaning  \n- Capabilities → use meaning to generate effect  \n\n**vs. Applications (L6):**\n- Capabilities → describe ability  \n- Applications → implement this ability concretely  \n\n---\n\n",
+      "raw_text": "**vs. Features (L4):**\n- Features → führen Operationen aus  \n- Capabilities → verfolgen Ziele und erzeugen Wirkungspotenzial  \n\n**vs. Knowledge Core (L3):**\n- Knowledge Core → hält Bedeutung  \n- Capabilities → nutzen Bedeutung zur Wirkungserzeugung  \n\n**vs. Applications (L6):**\n- Capabilities → beschreiben Fähigkeit  \n- Applications → setzen diese Fähigkeit konkret um  \n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L5_Capabilities.md",
         "element_id": "l5_capabilities",
-        "section_title": "Distinction from Other Layers",
+        "section_title": "Abgrenzung zu anderen Layern",
         "header_level": 2,
         "document_index": 59,
-        "path_string": "L5 – Capabilities > Distinction from Other Layers",
+        "path_string": "L5 – Capabilities > Abgrenzung zu anderen Layern",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L5 – Capabilities", "Distinction from Other Layers"]
+      "section_path": ["L5 – Capabilities", "Abgrenzung zu anderen Layern"]
     },
     {
       "section_id": "l5_capabilities__s009",
@@ -1808,22 +1812,22 @@
       "order_index": 8,
       "document_index": 60,
       "header_level": 2,
-      "title": "Core Statement",
+      "title": "Kernaussage",
       "section_type": "core_statement",
-      "raw_text": "Capabilities are the level at which real possibilities for action emerge from technical functions and knowledge.\n\n> They turn systems into action-capable systems – but only their application generates effect.",
+      "raw_text": "Capabilities sind die Ebene, auf der aus technischen Funktionen und Wissen echte Handlungsmöglichkeiten entstehen.\n\n> Sie machen aus Systemen handlungsfähige Systeme – aber erst ihre Anwendung erzeugt Wirkung.",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L5_Capabilities.md",
         "element_id": "l5_capabilities",
-        "section_title": "Core Statement",
+        "section_title": "Kernaussage",
         "header_level": 2,
         "document_index": 60,
-        "path_string": "L5 – Capabilities > Core Statement",
+        "path_string": "L5 – Capabilities > Kernaussage",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L5 – Capabilities", "Core Statement"]
+      "section_path": ["L5 – Capabilities", "Kernaussage"]
     },
     {
       "section_id": "l6_applications_tools_solutions__s001",
@@ -1870,7 +1874,7 @@
       "header_level": 2,
       "title": "Definition",
       "section_type": "definition",
-      "raw_text": "Applications are **orchestration and interaction units for the concrete application of Capabilities in the context of Situations**  \n*(i.e., the systems or tools in which capabilities are combined and used to implement real tasks)*\n\n---\n\n",
+      "raw_text": "Applications sind **Orchestrierungs- und Interaktionseinheiten zur konkreten Anwendung von Capabilities im Kontext von Situationen**  \n*(also die Systeme oder Tools, in denen Fähigkeiten kombiniert und genutzt werden, um reale Aufgaben umzusetzen)*\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
@@ -1894,22 +1898,22 @@
       "order_index": 2,
       "document_index": 63,
       "header_level": 2,
-      "title": "Role in the Model",
+      "title": "Rolle im Modell",
       "section_type": "role",
-      "raw_text": "Applications are the place where Capabilities are **concretely applied, combined, and executed**.\n\n- orchestrate **Capabilities (L5)** for solving concrete tasks  \n- access the **Knowledge Core (L3)**  \n- use **Features (L4)** and if applicable **Data Pipelines (C2)**  \n- are used in the context of **Situations (L8)**  \n- are used or executed by **Actors (L9)**  \n\nImportant:\n\n- Applications are **context-dependent**\n- they are the place of **concrete implementation**\n- they connect capability with action\n\n---\n\n",
+      "raw_text": "Applications sind der Ort, an dem Capabilities **konkret angewendet, kombiniert und ausgeführt** werden.\n\n- orchestrieren **Capabilities (L5)** zur Lösung konkreter Aufgaben  \n- greifen auf den **Knowledge Core (L3)** zu  \n- nutzen **Features (L4)** und ggf. **Data Pipelines (C2)**  \n- werden im Kontext von **Situationen (L8)** genutzt  \n- werden von **Actors (L9)** verwendet oder ausgeführt  \n\nWichtig:\n\n- Applications sind **kontextabhängig**\n- sie sind der Ort der **konkreten Umsetzung**\n- sie verbinden Fähigkeit mit Handlung\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L6_Applications.md",
         "element_id": "l6_applications_tools_solutions",
-        "section_title": "Role in the Model",
+        "section_title": "Rolle im Modell",
         "header_level": 2,
         "document_index": 63,
-        "path_string": "L6 – Applications > Role in the Model",
+        "path_string": "L6 – Applications > Rolle im Modell",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L6 – Applications", "Role in the Model"]
+      "section_path": ["L6 – Applications", "Rolle im Modell"]
     },
     {
       "section_id": "l6_applications_tools_solutions__s004",
@@ -1920,22 +1924,22 @@
       "order_index": 3,
       "document_index": 64,
       "header_level": 2,
-      "title": "Position in the Architecture",
+      "title": "Einordnung in die Architektur",
       "section_type": "classification",
-      "raw_text": "Applications form the **implementation and orchestration level** of the architecture.\n\nThey stand between:\n\n- Capabilities (L5) as ability  \n- and concrete action by Actors (L9)  \n\nand enable:\n\n→ the practical use of capabilities in the context of real tasks\n\n---\n\n",
+      "raw_text": "Applications bilden die **Umsetzungs- und Orchestrierungsebene** der Architektur.\n\nSie stehen zwischen:\n\n- Capabilities (L5) als Fähigkeit  \n- und konkreter Handlung durch Actors (L9)  \n\nund ermöglichen:\n\n→ die praktische Nutzung von Fähigkeiten im Kontext realer Aufgaben\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L6_Applications.md",
         "element_id": "l6_applications_tools_solutions",
-        "section_title": "Position in the Architecture",
+        "section_title": "Einordnung in die Architektur",
         "header_level": 2,
         "document_index": 64,
-        "path_string": "L6 – Applications > Position in the Architecture",
+        "path_string": "L6 – Applications > Einordnung in die Architektur",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L6 – Applications", "Position in the Architecture"]
+      "section_path": ["L6 – Applications", "Einordnung in die Architektur"]
     },
     {
       "section_id": "l6_applications_tools_solutions__s005",
@@ -1946,22 +1950,22 @@
       "order_index": 4,
       "document_index": 65,
       "header_level": 2,
-      "title": "Characteristics",
+      "title": "Charakteristik",
       "section_type": "custom",
-      "raw_text": "Applications are:\n\n- **orchestrating** (combine multiple Capabilities)  \n- **context-sensitive**  \n- **interactive or automated**  \n- **not necessarily UI-based**  \n- **close to execution**  \n\nThey can take different forms:\n\n- User interfaces (UI)  \n- Systems and services  \n- Workflows  \n- Agentic execution forms  \n\n---\n\n",
+      "raw_text": "Applications sind:\n\n- **orchestrierend** (kombinieren mehrere Capabilities)  \n- **kontextsensitiv**  \n- **interaktiv oder automatisiert**  \n- **nicht zwingend UI-basiert**  \n- **ausführungsnah**  \n\nSie können unterschiedliche Formen annehmen:\n\n- Benutzeroberflächen (UI)  \n- Systeme und Services  \n- Workflows  \n- agentische Ausführungsformen  \n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L6_Applications.md",
         "element_id": "l6_applications_tools_solutions",
-        "section_title": "Characteristics",
+        "section_title": "Charakteristik",
         "header_level": 2,
         "document_index": 65,
-        "path_string": "L6 – Applications > Characteristics",
+        "path_string": "L6 – Applications > Charakteristik",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L6 – Applications", "Characteristics"]
+      "section_path": ["L6 – Applications", "Charakteristik"]
     },
     {
       "section_id": "l6_applications_tools_solutions__s006",
@@ -1972,22 +1976,22 @@
       "order_index": 5,
       "document_index": 66,
       "header_level": 2,
-      "title": "Transformation of Applications",
+      "title": "Transformation von Applications",
       "section_type": "custom",
-      "raw_text": "In today's reality and in the target architecture, Applications differ significantly:\n\n**Current state:**\n- fragmented, UI-driven tools  \n- users execute functions manually  \n- low integration between systems  \n- focus on individual functions rather than end-to-end tasks  \n\n**Target state:**\n- orchestration units for Capabilities  \n- combine functions context-dependently  \n- support or automate decisions and actions  \n- can act partially autonomously (e.g., agentic systems)  \n\nThis transformation shifts Applications from:\n\n→ \"tools for operating functions\"  \nto  \n→ \"systems for implementing capabilities\"\n\n---\n\n",
+      "raw_text": "In der heutigen Realität und in der Zielarchitektur unterscheiden sich Applications deutlich:\n\n**Ist-Zustand:**\n- fragmentierte, UI-getriebene Werkzeuge  \n- Nutzer führen Funktionen manuell aus  \n- geringe Integration zwischen Systemen  \n- Fokus auf einzelne Funktionen statt auf durchgängige Aufgaben  \n\n**Zielbild:**\n- Orchestrierungseinheiten für Capabilities  \n- kombinieren Funktionen kontextabhängig  \n- unterstützen oder automatisieren Entscheidungen und Handlungen  \n- können teilweise autonom agieren (z. B. agentische Systeme)  \n\nDiese Transformation verschiebt Applications von:\n\n→ „Werkzeugen zur Bedienung von Funktionen“  \nzu  \n→ „Systemen zur Umsetzung von Fähigkeiten“\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L6_Applications.md",
         "element_id": "l6_applications_tools_solutions",
-        "section_title": "Transformation of Applications",
+        "section_title": "Transformation von Applications",
         "header_level": 2,
         "document_index": 66,
-        "path_string": "L6 – Applications > Transformation of Applications",
+        "path_string": "L6 – Applications > Transformation von Applications",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L6 – Applications", "Transformation of Applications"]
+      "section_path": ["L6 – Applications", "Transformation von Applications"]
     },
     {
       "section_id": "l6_applications_tools_solutions__s007",
@@ -1998,22 +2002,22 @@
       "order_index": 6,
       "document_index": 67,
       "header_level": 2,
-      "title": "Distinction from Other Layers",
+      "title": "Abgrenzung zu anderen Layern",
       "section_type": "distinction",
-      "raw_text": "**vs. Capabilities (L5):**\n- Capabilities → describe what is possible  \n- Applications → implement these possibilities concretely  \n\n**vs. Features (L4):**\n- Features → individual technical functions  \n- Applications → orchestrate these functions to solve tasks  \n\n**vs. Situation (L8):**\n- Situation → determines context and frame  \n- Applications → implement within this context  \n\n---\n\n",
+      "raw_text": "**vs. Capabilities (L5):**\n- Capabilities → beschreiben, was möglich ist  \n- Applications → setzen diese Möglichkeiten konkret um  \n\n**vs. Features (L4):**\n- Features → einzelne technische Funktionen  \n- Applications → orchestrieren diese Funktionen zur Lösung von Aufgaben  \n\n**vs. Situation (L8):**\n- Situation → bestimmt Kontext und Rahmen  \n- Applications → setzen innerhalb dieses Kontexts um  \n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L6_Applications.md",
         "element_id": "l6_applications_tools_solutions",
-        "section_title": "Distinction from Other Layers",
+        "section_title": "Abgrenzung zu anderen Layern",
         "header_level": 2,
         "document_index": 67,
-        "path_string": "L6 – Applications > Distinction from Other Layers",
+        "path_string": "L6 – Applications > Abgrenzung zu anderen Layern",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L6 – Applications", "Distinction from Other Layers"]
+      "section_path": ["L6 – Applications", "Abgrenzung zu anderen Layern"]
     },
     {
       "section_id": "l6_applications_tools_solutions__s008",
@@ -2024,22 +2028,22 @@
       "order_index": 7,
       "document_index": 68,
       "header_level": 2,
-      "title": "Core Statement",
+      "title": "Kernaussage",
       "section_type": "core_statement",
-      "raw_text": "Applications are the place where capabilities come into concrete use.\n\n> They turn capabilities into actual usage – and connect system logic with action.",
+      "raw_text": "Applications sind der Ort, an dem Fähigkeiten konkret zur Anwendung kommen.\n\n> Sie machen aus Fähigkeiten tatsächliche Nutzung – und verbinden Systemlogik mit Handlung.",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L6_Applications.md",
         "element_id": "l6_applications_tools_solutions",
-        "section_title": "Core Statement",
+        "section_title": "Kernaussage",
         "header_level": 2,
         "document_index": 68,
-        "path_string": "L6 – Applications > Core Statement",
+        "path_string": "L6 – Applications > Kernaussage",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L6 – Applications", "Core Statement"]
+      "section_path": ["L6 – Applications", "Kernaussage"]
     },
     {
       "section_id": "l7_use_cases_challenges__s001",
@@ -2086,7 +2090,7 @@
       "header_level": 2,
       "title": "Definition",
       "section_type": "definition",
-      "raw_text": "Use Cases are **concrete tasks and problems from the real world that must be solved in a situation**  \n*(i.e., the actual concerns, challenges, and tasks that people or systems face)*\n\n---\n\n",
+      "raw_text": "Use Cases sind **konkrete Aufgaben und Probleme aus der realen Welt, die in einer Situation gelöst werden müssen**  \n*(also die tatsächlichen Anliegen, Herausforderungen und Aufgaben, mit denen Menschen oder Systeme konfrontiert sind)*\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
@@ -2110,22 +2114,22 @@
       "order_index": 2,
       "document_index": 71,
       "header_level": 2,
-      "title": "Role in the Model",
+      "title": "Rolle im Modell",
       "section_type": "role",
-      "raw_text": "Use Cases describe the **concrete need** to which the architecture is directed.\n\n- arise from **Challenges**  \n- define **what must be solved**  \n- form the basis for the deployment of **Capabilities (L5)** and **Applications (L6)**  \n- always take place in the context of **Situations (L8)**  \n\nImportant:\n\n- Use Cases are **not a solution space**\n- they describe **problems and tasks, not their implementation**\n\n---\n\n",
+      "raw_text": "Use Cases beschreiben den **konkreten Bedarf**, auf den die Architektur ausgerichtet ist.\n\n- entstehen aus **Challenges (Herausforderungen)**  \n- definieren, **was gelöst werden muss**  \n- bilden die Grundlage für den Einsatz von **Capabilities (L5)** und **Applications (L6)**  \n- finden immer im Kontext von **Situationen (L8)** statt  \n\nWichtig:\n\n- Use Cases sind **kein Lösungsraum**\n- sie beschreiben **Probleme und Aufgaben, nicht deren Umsetzung**\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L7_UseCases.md",
         "element_id": "l7_use_cases_challenges",
-        "section_title": "Role in the Model",
+        "section_title": "Rolle im Modell",
         "header_level": 2,
         "document_index": 71,
-        "path_string": "L7 – Use Cases > Role in the Model",
+        "path_string": "L7 – Use Cases > Rolle im Modell",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L7 – Use Cases", "Role in the Model"]
+      "section_path": ["L7 – Use Cases", "Rolle im Modell"]
     },
     {
       "section_id": "l7_use_cases_challenges__s004",
@@ -2136,22 +2140,22 @@
       "order_index": 3,
       "document_index": 72,
       "header_level": 2,
-      "title": "Relationship to Challenges",
+      "title": "Zusammenhang mit Challenges",
       "section_type": "custom",
-      "raw_text": "Challenges are the **starting point of Use Cases**.\n\n- a Challenge describes a challenge or a problem  \n- a Use Case describes the concrete situation in which this challenge must be solved  \n\nExample:\n\n- Challenge: \"Information is difficult to find\"  \n- Use Case: \"An employee is looking for relevant information for a decision\"  \n\n---\n\n",
+      "raw_text": "Challenges sind der **Ausgangspunkt von Use Cases**.\n\n- eine Challenge beschreibt eine Herausforderung oder ein Problem  \n- ein Use Case beschreibt die konkrete Situation, in der diese Herausforderung gelöst werden muss  \n\nBeispiel:\n\n- Challenge: „Informationen sind schwer auffindbar“  \n- Use Case: „Ein Mitarbeiter sucht relevante Informationen für eine Entscheidung“  \n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L7_UseCases.md",
         "element_id": "l7_use_cases_challenges",
-        "section_title": "Relationship to Challenges",
+        "section_title": "Zusammenhang mit Challenges",
         "header_level": 2,
         "document_index": 72,
-        "path_string": "L7 – Use Cases > Relationship to Challenges",
+        "path_string": "L7 – Use Cases > Zusammenhang mit Challenges",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L7 – Use Cases", "Relationship to Challenges"]
+      "section_path": ["L7 – Use Cases", "Zusammenhang mit Challenges"]
     },
     {
       "section_id": "l7_use_cases_challenges__s005",
@@ -2162,22 +2166,22 @@
       "order_index": 4,
       "document_index": 73,
       "header_level": 2,
-      "title": "Position in the Architecture",
+      "title": "Einordnung in die Architektur",
       "section_type": "classification",
-      "raw_text": "Use Cases stand at the **starting point of the architecture**.\n\n- are defined by **Initiators (L9)**  \n- arise within **Situations (L8)**  \n- lead to the use of **Capabilities (L5)** and **Applications (L6)**  \n- aim at a **Business Outcome (L10)**  \n\n---\n\n",
+      "raw_text": "Use Cases stehen am **Ausgangspunkt der Architektur**.\n\n- werden durch **Initiatoren (L9)** definiert  \n- entstehen innerhalb von **Situationen (L8)**  \n- führen zur Nutzung von **Capabilities (L5)** und **Applications (L6)**  \n- zielen auf einen **Business Outcome (L10)**  \n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L7_UseCases.md",
         "element_id": "l7_use_cases_challenges",
-        "section_title": "Position in the Architecture",
+        "section_title": "Einordnung in die Architektur",
         "header_level": 2,
         "document_index": 73,
-        "path_string": "L7 – Use Cases > Position in the Architecture",
+        "path_string": "L7 – Use Cases > Einordnung in die Architektur",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L7 – Use Cases", "Position in the Architecture"]
+      "section_path": ["L7 – Use Cases", "Einordnung in die Architektur"]
     },
     {
       "section_id": "l7_use_cases_challenges__s006",
@@ -2188,22 +2192,22 @@
       "order_index": 5,
       "document_index": 74,
       "header_level": 2,
-      "title": "Transformation of Use Case Understanding",
+      "title": "Transformation des Use-Case-Verständnisses",
       "section_type": "custom",
-      "raw_text": "The concept of \"Use Case\" has evolved over time:\n\n**Classic understanding:**\n- formalized and statically described  \n- frequently modeled in fixed structures (e.g., UML)  \n- describes clearly defined processes  \n\n**Target state (OIA):**\n- dynamic and situational  \n- arises from real challenges  \n- dependent on context, situation, and goal  \n- not fully modelable in advance  \n\nThis transformation shifts the focus from:\n\n→ \"predefined processes\"  \nto  \n→ \"situational challenges that must be solved\"\n\n---\n\n",
+      "raw_text": "Der Begriff „Use Case“ hat sich im Laufe der Zeit verändert:\n\n**Klassisches Verständnis:**\n- formalisiert und statisch beschrieben  \n- häufig in festen Strukturen (z. B. UML) modelliert  \n- beschreibt klar definierte Abläufe  \n\n**Zielbild (OIA):**\n- dynamisch und situativ  \n- entsteht aus realen Herausforderungen  \n- abhängig von Kontext, Situation und Ziel  \n- nicht vollständig vorab modellierbar  \n\nDiese Transformation verschiebt den Fokus von:\n\n→ „vordefinierten Abläufen“  \nzu  \n→ „situativen Herausforderungen, die gelöst werden müssen“\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L7_UseCases.md",
         "element_id": "l7_use_cases_challenges",
-        "section_title": "Transformation of Use Case Understanding",
+        "section_title": "Transformation des Use-Case-Verständnisses",
         "header_level": 2,
         "document_index": 74,
-        "path_string": "L7 – Use Cases > Transformation of Use Case Understanding",
+        "path_string": "L7 – Use Cases > Transformation des Use-Case-Verständnisses",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L7 – Use Cases", "Transformation of Use Case Understanding"]
+      "section_path": ["L7 – Use Cases", "Transformation des Use-Case-Verständnisses"]
     },
     {
       "section_id": "l7_use_cases_challenges__s007",
@@ -2214,22 +2218,22 @@
       "order_index": 6,
       "document_index": 75,
       "header_level": 2,
-      "title": "Distinction from Other Layers",
+      "title": "Abgrenzung zu anderen Layern",
       "section_type": "distinction",
-      "raw_text": "**vs. Capabilities (L5):**\n- Use Cases → describe the problem  \n- Capabilities → describe the ability to solve it  \n\n**vs. Applications (L6):**\n- Use Cases → define the need  \n- Applications → implement the solution concretely  \n\n**vs. Situation (L8):**\n- Situation → describes the context  \n- Use Cases → describe the task within this context  \n\n---\n\n",
+      "raw_text": "**vs. Capabilities (L5):**\n- Use Cases → beschreiben das Problem  \n- Capabilities → beschreiben die Fähigkeit zur Lösung  \n\n**vs. Applications (L6):**\n- Use Cases → definieren den Bedarf  \n- Applications → setzen die Lösung konkret um  \n\n**vs. Situation (L8):**\n- Situation → beschreibt den Kontext  \n- Use Cases → beschreiben die Aufgabe innerhalb dieses Kontexts  \n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L7_UseCases.md",
         "element_id": "l7_use_cases_challenges",
-        "section_title": "Distinction from Other Layers",
+        "section_title": "Abgrenzung zu anderen Layern",
         "header_level": 2,
         "document_index": 75,
-        "path_string": "L7 – Use Cases > Distinction from Other Layers",
+        "path_string": "L7 – Use Cases > Abgrenzung zu anderen Layern",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L7 – Use Cases", "Distinction from Other Layers"]
+      "section_path": ["L7 – Use Cases", "Abgrenzung zu anderen Layern"]
     },
     {
       "section_id": "l7_use_cases_challenges__s008",
@@ -2240,22 +2244,22 @@
       "order_index": 7,
       "document_index": 76,
       "header_level": 2,
-      "title": "Core Statement",
+      "title": "Kernaussage",
       "section_type": "core_statement",
-      "raw_text": "Use Cases describe real tasks and problems that must be solved in concrete situations.\n\n> They are the starting point for every form of capability, application, and action.",
+      "raw_text": "Use Cases beschreiben reale Aufgaben und Probleme, die in konkreten Situationen gelöst werden müssen.\n\n> Sie sind der Ausgangspunkt für jede Form von Fähigkeit, Anwendung und Handlung.",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L7_UseCases.md",
         "element_id": "l7_use_cases_challenges",
-        "section_title": "Core Statement",
+        "section_title": "Kernaussage",
         "header_level": 2,
         "document_index": 76,
-        "path_string": "L7 – Use Cases > Core Statement",
+        "path_string": "L7 – Use Cases > Kernaussage",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L7 – Use Cases", "Core Statement"]
+      "section_path": ["L7 – Use Cases", "Kernaussage"]
     },
     {
       "section_id": "l8_situation_context__s001",
@@ -2303,7 +2307,7 @@
       "header_level": 2,
       "title": "Definition",
       "section_type": "definition",
-      "raw_text": "Situation & Context describes the **concrete, action-determining state that governs the selection, interpretation, and application of capabilities**  \n*(i.e., the current situation that determines which action is meaningful and how knowledge is used)*\n\nSituation is the **primary control mechanism for action and decision**.\n\n---\n\n",
+      "raw_text": "Situation & Context beschreibt den **konkreten, handlungsbestimmenden Zustand, der Auswahl, Interpretation und Anwendung von Fähigkeiten steuert**  \n*(also die aktuelle Lage, die bestimmt, welche Handlung sinnvoll ist und wie Wissen genutzt wird)*\n\nSituation ist der **primäre Steuerungsmechanismus für Handlung und Entscheidung**.\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
@@ -2327,22 +2331,22 @@
       "order_index": 2,
       "document_index": 79,
       "header_level": 2,
-      "title": "Role in the Model",
+      "title": "Rolle im Modell",
       "section_type": "role",
-      "raw_text": "Situation & Context determines how tasks are interpreted, capabilities are selected, and actions are executed.\n\n- governs the selection and application of **Capabilities (L5)**  \n- shapes the concrete use of **Applications (L6)**  \n- influences decisions and actions of **Actors (L9)**  \n- determines how knowledge from the **Knowledge Core (L3)** becomes relevant  \n- influences the evaluation of **Business Outcomes (L10)**  \n\nImportant:\n\n- Meaning is not only embedded in knowledge, but becomes **situationally effective**\n- the same capabilities can be used differently depending on the situation\n- without Situation and Context, the architecture remains static\n\n---\n\n",
+      "raw_text": "Situation & Context bestimmt, wie Aufgaben interpretiert, Fähigkeiten ausgewählt und Handlungen ausgeführt werden.\n\n- steuert die Auswahl und Anwendung von **Capabilities (L5)**  \n- prägt die konkrete Nutzung von **Applications (L6)**  \n- beeinflusst Entscheidungen und Handlungen von **Actors (L9)**  \n- bestimmt, wie Wissen aus dem **Knowledge Core (L3)** relevant wird  \n- beeinflusst die Bewertung von **Business Outcomes (L10)**  \n\nWichtig:\n\n- Bedeutung ist nicht nur im Wissen angelegt, sondern wird **situativ wirksam**\n- gleiche Fähigkeiten können je nach Situation unterschiedlich eingesetzt werden\n- ohne Situation und Kontext bleibt die Architektur statisch\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L8_Situation_Context.md",
         "element_id": "l8_situation_context",
-        "section_title": "Role in the Model",
+        "section_title": "Rolle im Modell",
         "header_level": 2,
         "document_index": 79,
-        "path_string": "L8 – Situation & Context > Role in the Model",
+        "path_string": "L8 – Situation & Context > Rolle im Modell",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L8 – Situation & Context", "Role in the Model"]
+      "section_path": ["L8 – Situation & Context", "Rolle im Modell"]
     },
     {
       "section_id": "l8_situation_context__s004",
@@ -2353,7 +2357,7 @@
       "order_index": 3,
       "document_index": 80,
       "header_level": 2,
-      "title": "Structure of Situation & Context",
+      "title": "Struktur von Situation & Context",
       "section_type": "structure",
       "raw_text": "",
       "is_dual_structure_member": false,
@@ -2361,14 +2365,14 @@
       "source_anchor": {
         "filename": "L8_Situation_Context.md",
         "element_id": "l8_situation_context",
-        "section_title": "Structure of Situation & Context",
+        "section_title": "Struktur von Situation & Context",
         "header_level": 2,
         "document_index": 80,
-        "path_string": "L8 – Situation & Context > Structure of Situation & Context",
+        "path_string": "L8 – Situation & Context > Struktur von Situation & Context",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L8 – Situation & Context", "Structure of Situation & Context"]
+      "section_path": ["L8 – Situation & Context", "Struktur von Situation & Context"]
     },
     {
       "section_id": "l8_situation_context__s005",
@@ -2381,7 +2385,7 @@
       "header_level": 3,
       "title": "Situation",
       "section_type": "custom",
-      "raw_text": "The Situation is the **concrete, time-bound, and dynamic state of action**.\n\nIt encompasses for example:\n\n- current task or challenge  \n- temporal constraints  \n- available resources and access  \n- environmental conditions  \n- priorities and restrictions  \n\nThe Situation determines:\n\n- what is currently relevant  \n- what is useful or necessary  \n- which action possibilities are chosen  \n\n",
+      "raw_text": "Die Situation ist der **konkrete, zeitgebundene und dynamische Handlungszustand**.\n\nSie umfasst zum Beispiel:\n\n- aktuelle Aufgabe oder Herausforderung  \n- zeitliche Rahmenbedingungen  \n- verfügbare Mittel und Zugänge  \n- Umgebungsbedingungen  \n- Prioritäten und Einschränkungen  \n\nDie Situation bestimmt:\n\n- was jetzt relevant ist  \n- was sinnvoll oder notwendig ist  \n- welche Handlungsmöglichkeiten gewählt werden  \n\n",
       "is_dual_structure_member": true,
       "dual_structure_group": "l8_situation_context__dual_001",
       "source_anchor": {
@@ -2390,11 +2394,11 @@
         "section_title": "Situation",
         "header_level": 3,
         "document_index": 81,
-        "path_string": "L8 – Situation & Context > Structure of Situation & Context > Situation",
+        "path_string": "L8 – Situation & Context > Struktur von Situation & Context > Situation",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L8 – Situation & Context", "Structure of Situation & Context", "Situation"]
+      "section_path": ["L8 – Situation & Context", "Struktur von Situation & Context", "Situation"]
     },
     {
       "section_id": "l8_situation_context__s006",
@@ -2405,22 +2409,22 @@
       "order_index": 2,
       "document_index": 82,
       "header_level": 3,
-      "title": "Context",
+      "title": "Kontext",
       "section_type": "custom",
-      "raw_text": "Context is the **activated interpretation and knowledge excerpt within the Situation**.\n\nIt describes the part of the available knowledge that actually becomes relevant and action-effective in a concrete situation.\n\nContext is thus:\n\n- not the totality of available knowledge  \n- but the **situationally relevant excerpt** of it  \n- the basis for classification, understanding, and expectation formation  \n\nIt holds:\n\n> Situation determines what currently counts; Context determines how it is to be understood.\n\n---\n\n",
+      "raw_text": "Kontext ist der **aktivierte Deutungs- und Wissensausschnitt innerhalb der Situation**.\n\nEr beschreibt den Teil des verfügbaren Wissens, der in einer konkreten Situation tatsächlich relevant und handlungswirksam wird.\n\nKontext ist damit:\n\n- nicht das gesamte verfügbare Wissen  \n- sondern der **situativ relevante Ausschnitt** daraus  \n- die Grundlage für Einordnung, Verständnis und Erwartungsbildung  \n\nEs gilt:\n\n> Situation bestimmt, was gerade zählt; Kontext bestimmt, wie es zu verstehen ist.\n\n---\n\n",
       "is_dual_structure_member": true,
       "dual_structure_group": "l8_situation_context__dual_001",
       "source_anchor": {
         "filename": "L8_Situation_Context.md",
         "element_id": "l8_situation_context",
-        "section_title": "Context",
+        "section_title": "Kontext",
         "header_level": 3,
         "document_index": 82,
-        "path_string": "L8 – Situation & Context > Structure of Situation & Context > Context",
+        "path_string": "L8 – Situation & Context > Struktur von Situation & Context > Kontext",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L8 – Situation & Context", "Structure of Situation & Context", "Context"]
+      "section_path": ["L8 – Situation & Context", "Struktur von Situation & Context", "Kontext"]
     },
     {
       "section_id": "l8_situation_context__s007",
@@ -2431,22 +2435,22 @@
       "order_index": 4,
       "document_index": 83,
       "header_level": 2,
-      "title": "Position in the Architecture",
+      "title": "Einordnung in die Architektur",
       "section_type": "classification",
-      "raw_text": "Situation & Context forms the **control and interpretation layer** of the architecture.\n\nIt connects:\n\n- **Use Cases (L7)** as concrete task  \n- **Capabilities (L5)** as action potential  \n- **Applications (L6)** as implementation  \n- **Actors (L9)** as agents of action  \n- **Business Outcome (L10)** as effect  \n\nThus L8 is the level at which possibility becomes **situationally meaningful action**.\n\n---\n\n",
+      "raw_text": "Situation & Context bildet die **Steuerungs- und Interpretationsschicht** der Architektur.\n\nSie verbindet:\n\n- **Use Cases (L7)** als konkrete Aufgabe  \n- **Capabilities (L5)** als Handlungspotenzial  \n- **Applications (L6)** als Umsetzung  \n- **Actors (L9)** als Handlungsträger  \n- **Business Outcome (L10)** als Wirkung  \n\nDamit ist L8 die Ebene, auf der aus Möglichkeit **situativ sinnvolles Handeln** wird.\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L8_Situation_Context.md",
         "element_id": "l8_situation_context",
-        "section_title": "Position in the Architecture",
+        "section_title": "Einordnung in die Architektur",
         "header_level": 2,
         "document_index": 83,
-        "path_string": "L8 – Situation & Context > Position in the Architecture",
+        "path_string": "L8 – Situation & Context > Einordnung in die Architektur",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L8 – Situation & Context", "Position in the Architecture"]
+      "section_path": ["L8 – Situation & Context", "Einordnung in die Architektur"]
     },
     {
       "section_id": "l8_situation_context__s008",
@@ -2457,22 +2461,22 @@
       "order_index": 5,
       "document_index": 84,
       "header_level": 2,
-      "title": "Governance and Traceability",
+      "title": "Governance und Nachvollziehbarkeit",
       "section_type": "governance",
-      "raw_text": "Situation & Context is central to Governance.\n\nBecause in the Situation it is decided:\n\n- which information is relevant  \n- which action is permissible or meaningful  \n- which priorities apply  \n- how results must be evaluated  \n\nThus L8 is also central to:\n\n- Traceability  \n- Reproducibility  \n- Responsible decision-making  \n\n---\n\n",
+      "raw_text": "Situation & Context ist für Governance zentral.\n\nDenn in der Situation entscheidet sich:\n\n- welche Informationen relevant sind  \n- welche Handlung zulässig oder sinnvoll ist  \n- welche Prioritäten gelten  \n- wie Ergebnisse bewertet werden müssen  \n\nDamit ist L8 auch zentral für:\n\n- Nachvollziehbarkeit  \n- Reproduzierbarkeit  \n- verantwortliche Entscheidungsfindung  \n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L8_Situation_Context.md",
         "element_id": "l8_situation_context",
-        "section_title": "Governance and Traceability",
+        "section_title": "Governance und Nachvollziehbarkeit",
         "header_level": 2,
         "document_index": 84,
-        "path_string": "L8 – Situation & Context > Governance and Traceability",
+        "path_string": "L8 – Situation & Context > Governance und Nachvollziehbarkeit",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L8 – Situation & Context", "Governance and Traceability"]
+      "section_path": ["L8 – Situation & Context", "Governance und Nachvollziehbarkeit"]
     },
     {
       "section_id": "l8_situation_context__s009",
@@ -2483,22 +2487,22 @@
       "order_index": 6,
       "document_index": 85,
       "header_level": 2,
-      "title": "Methodological Note",
+      "title": "Methodischer Hinweis",
       "section_type": "custom",
-      "raw_text": "For later operationalization, methods can be used that make context more explicit and less ambiguous.  \nSuch methods can support work in this layer, but are **not part of the architecture model itself**.\n\n---\n\n",
+      "raw_text": "Zur späteren Operationalisierung können Methoden eingesetzt werden, die Kontext expliziter und weniger mehrdeutig machen.  \nSolche Methoden können die Arbeit in diesem Layer unterstützen, sind jedoch **nicht Teil des Architekturmodells selbst**.\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L8_Situation_Context.md",
         "element_id": "l8_situation_context",
-        "section_title": "Methodological Note",
+        "section_title": "Methodischer Hinweis",
         "header_level": 2,
         "document_index": 85,
-        "path_string": "L8 – Situation & Context > Methodological Note",
+        "path_string": "L8 – Situation & Context > Methodischer Hinweis",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L8 – Situation & Context", "Methodological Note"]
+      "section_path": ["L8 – Situation & Context", "Methodischer Hinweis"]
     },
     {
       "section_id": "l8_situation_context__s010",
@@ -2509,22 +2513,22 @@
       "order_index": 7,
       "document_index": 86,
       "header_level": 2,
-      "title": "Distinction from Other Layers",
+      "title": "Abgrenzung zu anderen Layern",
       "section_type": "distinction",
-      "raw_text": "**vs. Knowledge Core (L3):**\n- Knowledge Core → holds structured knowledge  \n- Situation & Context → makes knowledge situationally relevant  \n\n**vs. Use Cases (L7):**\n- Use Cases → describe the task  \n- Situation & Context → determines how this task is concretely to be understood  \n\n**vs. Capabilities (L5):**\n- Capabilities → describe what can be done  \n- Situation & Context → determines what of that is meaningfully deployed  \n\n---\n\n",
+      "raw_text": "**vs. Knowledge Core (L3):**\n- Knowledge Core → hält strukturiertes Wissen  \n- Situation & Context → macht Wissen situativ relevant  \n\n**vs. Use Cases (L7):**\n- Use Cases → beschreiben die Aufgabe  \n- Situation & Context → bestimmt, wie diese Aufgabe konkret zu verstehen ist  \n\n**vs. Capabilities (L5):**\n- Capabilities → beschreiben, was getan werden kann  \n- Situation & Context → bestimmt, was davon sinnvoll eingesetzt wird  \n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L8_Situation_Context.md",
         "element_id": "l8_situation_context",
-        "section_title": "Distinction from Other Layers",
+        "section_title": "Abgrenzung zu anderen Layern",
         "header_level": 2,
         "document_index": 86,
-        "path_string": "L8 – Situation & Context > Distinction from Other Layers",
+        "path_string": "L8 – Situation & Context > Abgrenzung zu anderen Layern",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L8 – Situation & Context", "Distinction from Other Layers"]
+      "section_path": ["L8 – Situation & Context", "Abgrenzung zu anderen Layern"]
     },
     {
       "section_id": "l8_situation_context__s011",
@@ -2535,22 +2539,22 @@
       "order_index": 8,
       "document_index": 87,
       "header_level": 2,
-      "title": "Core Statement",
+      "title": "Kernaussage",
       "section_type": "core_statement",
-      "raw_text": "Situation & Context determines which action is meaningful in a concrete moment.\n\n> Only through Situation and Context does knowledge become action-relevant and capability become meaningful application.",
+      "raw_text": "Situation & Context bestimmt, welche Handlung in einem konkreten Moment sinnvoll ist.\n\n> Erst durch Situation und Kontext wird Wissen handlungsrelevant und Fähigkeit zu sinnvoller Anwendung.",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L8_Situation_Context.md",
         "element_id": "l8_situation_context",
-        "section_title": "Core Statement",
+        "section_title": "Kernaussage",
         "header_level": 2,
         "document_index": 87,
-        "path_string": "L8 – Situation & Context > Core Statement",
+        "path_string": "L8 – Situation & Context > Kernaussage",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L8 – Situation & Context", "Core Statement"]
+      "section_path": ["L8 – Situation & Context", "Kernaussage"]
     },
     {
       "section_id": "l9_system_participants__s001",
@@ -2597,7 +2601,7 @@
       "header_level": 2,
       "title": "Definition",
       "section_type": "definition",
-      "raw_text": "System Participants describe the **roles of stakeholders with respect to responsibility, execution, and effect within an action system**  \n*(i.e., who initiates something, who implements it, and who experiences the effects)*\n\nThey make responsibility, execution, and effect explicit and attributable.\n\n---\n\n",
+      "raw_text": "System Participants beschreiben die **Rollen von Beteiligten in Bezug auf Verantwortung, Ausführung und Wirkung innerhalb eines Handlungssystems**  \n*(also wer etwas veranlasst, wer es umsetzt und wer die Auswirkungen erlebt)*\n\nSie machen Verantwortung, Ausführung und Wirkung explizit und zuordenbar.\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
@@ -2621,22 +2625,22 @@
       "order_index": 2,
       "document_index": 90,
       "header_level": 2,
-      "title": "Role in the Model",
+      "title": "Rolle im Modell",
       "section_type": "role",
-      "raw_text": "System Participants define **who takes which role in the emergence of action and effect**.\n\n- link **Use Cases (L7)** with concrete responsible parties  \n- connect **Capabilities (L5)** and **Applications (L6)** with execution  \n- make visible who is responsible for **Business Outcomes (L10)**  \n- act within **Situations (L8)**  \n\nImportant:\n\n- every action is assigned to roles  \n- responsibility, execution, and effect are **clearly separated**  \n- roles are independent of concrete systems or technologies  \n\n---\n\n",
+      "raw_text": "System Participants definieren, **wer welche Rolle im Entstehen von Handlung und Wirkung einnimmt**.\n\n- verknüpfen **Use Cases (L7)** mit konkreten Verantwortlichen  \n- verbinden **Capabilities (L5)** und **Applications (L6)** mit Ausführung  \n- machen sichtbar, wer für **Business Outcomes (L10)** verantwortlich ist  \n- wirken innerhalb von **Situationen (L8)**  \n\nWichtig:\n\n- jede Handlung ist Rollen zugeordnet  \n- Verantwortung, Ausführung und Wirkung sind **klar getrennt**  \n- Rollen sind unabhängig von konkreten Systemen oder Technologien  \n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L9_SystemParticipants.md",
         "element_id": "l9_system_participants",
-        "section_title": "Role in the Model",
+        "section_title": "Rolle im Modell",
         "header_level": 2,
         "document_index": 90,
-        "path_string": "L9 – System Participants > Role in the Model",
+        "path_string": "L9 – System Participants > Rolle im Modell",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L9 – System Participants", "Role in the Model"]
+      "section_path": ["L9 – System Participants", "Rolle im Modell"]
     },
     {
       "section_id": "l9_system_participants__s004",
@@ -2651,22 +2655,22 @@
       "order_index": 3,
       "document_index": 91,
       "header_level": 2,
-      "title": "Role Model",
+      "title": "Rollenmodell",
       "section_type": "custom",
-      "raw_text": "The model distinguishes three central roles:\n\n",
+      "raw_text": "Das Modell unterscheidet drei zentrale Rollen:\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L9_SystemParticipants.md",
         "element_id": "l9_system_participants",
-        "section_title": "Role Model",
+        "section_title": "Rollenmodell",
         "header_level": 2,
         "document_index": 91,
-        "path_string": "L9 – System Participants > Role Model",
+        "path_string": "L9 – System Participants > Rollenmodell",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L9 – System Participants", "Role Model"]
+      "section_path": ["L9 – System Participants", "Rollenmodell"]
     },
     {
       "section_id": "l9_system_participants__s005",
@@ -2679,7 +2683,7 @@
       "header_level": 3,
       "title": "Initiator (Accountability)",
       "section_type": "custom",
-      "raw_text": "The Initiator defines the occasion and bears responsibility for the purpose.\n\n- defines the **Use Case (L7)**  \n- sets goals and expectations  \n- bears responsibility for the intended effect  \n\nGuiding question:\n\n→ \"Why is action taken?\"\n\n---\n\n",
+      "raw_text": "Der Initiator definiert den Anlass und trägt die Verantwortung für den Zweck.\n\n- definiert den **Use Case (L7)**  \n- setzt Ziele und Erwartungen  \n- trägt Verantwortung für die intendierte Wirkung  \n\nLeitfrage:\n\n→ „Warum wird gehandelt?“\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
@@ -2688,11 +2692,11 @@
         "section_title": "Initiator (Accountability)",
         "header_level": 3,
         "document_index": 92,
-        "path_string": "L9 – System Participants > Role Model > Initiator (Accountability)",
+        "path_string": "L9 – System Participants > Rollenmodell > Initiator (Accountability)",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L9 – System Participants", "Role Model", "Initiator (Accountability)"]
+      "section_path": ["L9 – System Participants", "Rollenmodell", "Initiator (Accountability)"]
     },
     {
       "section_id": "l9_system_participants__s006",
@@ -2705,7 +2709,7 @@
       "header_level": 3,
       "title": "Actor (Execution)",
       "section_type": "custom",
-      "raw_text": "The Actor executes the action.\n\n- uses **Applications (L6)** and **Capabilities (L5)**  \n- implements tasks concretely  \n- can be:\n  - Human  \n  - System  \n  - Agentic instance  \n\nGuiding question:\n\n→ \"How is action taken?\"\n\n---\n\n",
+      "raw_text": "Der Actor führt die Handlung aus.\n\n- nutzt **Applications (L6)** und **Capabilities (L5)**  \n- setzt Aufgaben konkret um  \n- kann sein:\n  - Mensch  \n  - System  \n  - agentische Instanz  \n\nLeitfrage:\n\n→ „Wie wird gehandelt?“\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
@@ -2714,11 +2718,11 @@
         "section_title": "Actor (Execution)",
         "header_level": 3,
         "document_index": 93,
-        "path_string": "L9 – System Participants > Role Model > Actor (Execution)",
+        "path_string": "L9 – System Participants > Rollenmodell > Actor (Execution)",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L9 – System Participants", "Role Model", "Actor (Execution)"]
+      "section_path": ["L9 – System Participants", "Rollenmodell", "Actor (Execution)"]
     },
     {
       "section_id": "l9_system_participants__s007",
@@ -2729,22 +2733,22 @@
       "order_index": 3,
       "document_index": 94,
       "header_level": 3,
-      "title": "Beneficiary (Effect)",
+      "title": "Beneficiary (Wirkung)",
       "section_type": "custom",
-      "raw_text": "The Beneficiary experiences the effects of the action.\n\n- benefits from results or is affected by them  \n- can be:\n  - Customer  \n  - Employee  \n  - Organization  \n  - System  \n\nGuiding question:\n\n→ \"Who is affected by the effect?\"\n\n---\n\n",
+      "raw_text": "Der Beneficiary erlebt die Auswirkungen der Handlung.\n\n- profitiert von Ergebnissen oder ist davon betroffen  \n- kann sein:\n  - Kunde  \n  - Mitarbeiter  \n  - Organisation  \n  - System  \n\nLeitfrage:\n\n→ „Wer ist von der Wirkung betroffen?“\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L9_SystemParticipants.md",
         "element_id": "l9_system_participants",
-        "section_title": "Beneficiary (Effect)",
+        "section_title": "Beneficiary (Wirkung)",
         "header_level": 3,
         "document_index": 94,
-        "path_string": "L9 – System Participants > Role Model > Beneficiary (Effect)",
+        "path_string": "L9 – System Participants > Rollenmodell > Beneficiary (Wirkung)",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L9 – System Participants", "Role Model", "Beneficiary (Effect)"]
+      "section_path": ["L9 – System Participants", "Rollenmodell", "Beneficiary (Wirkung)"]
     },
     {
       "section_id": "l9_system_participants__s008",
@@ -2755,22 +2759,22 @@
       "order_index": 4,
       "document_index": 95,
       "header_level": 2,
-      "title": "Position in the Architecture",
+      "title": "Einordnung in die Architektur",
       "section_type": "classification",
-      "raw_text": "System Participants connect responsibility with action and effect.\n\nThey stand in direct relationship to:\n\n- **Use Cases (L7)** as trigger  \n- **Situation & Context (L8)** as action frame  \n- **Capabilities (L5)** and **Applications (L6)** as implementation  \n- **Business Outcome (L10)** as result  \n\nThis makes visible:\n\n→ who initiates, who acts, and who is affected\n\n---\n\n",
+      "raw_text": "System Participants verbinden Verantwortung mit Handlung und Wirkung.\n\nSie stehen in direkter Beziehung zu:\n\n- **Use Cases (L7)** als Auslöser  \n- **Situation & Context (L8)** als Handlungsrahmen  \n- **Capabilities (L5)** und **Applications (L6)** als Umsetzung  \n- **Business Outcome (L10)** als Ergebnis  \n\nDamit wird sichtbar:\n\n→ wer initiiert, wer handelt und wer betroffen ist\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L9_SystemParticipants.md",
         "element_id": "l9_system_participants",
-        "section_title": "Position in the Architecture",
+        "section_title": "Einordnung in die Architektur",
         "header_level": 2,
         "document_index": 95,
-        "path_string": "L9 – System Participants > Position in the Architecture",
+        "path_string": "L9 – System Participants > Einordnung in die Architektur",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L9 – System Participants", "Position in the Architecture"]
+      "section_path": ["L9 – System Participants", "Einordnung in die Architektur"]
     },
     {
       "section_id": "l9_system_participants__s009",
@@ -2781,22 +2785,22 @@
       "order_index": 5,
       "document_index": 96,
       "header_level": 2,
-      "title": "Responsibility and Governance",
+      "title": "Verantwortung und Governance",
       "section_type": "governance",
-      "raw_text": "System Participants are central to Governance.\n\n- the **Actor executes**, but is not necessarily responsible for the purpose  \n- the **Initiator bears responsibility for goal and effect**  \n- the **Beneficiary makes effects visible**  \n\nThis implies:\n\n- responsibility is **not the same as execution**  \n- responsibility remains attributable even with automated or agentic systems  \n\n---\n\n",
+      "raw_text": "System Participants sind zentral für Governance.\n\n- der **Actor führt aus**, aber ist nicht zwangsläufig verantwortlich für den Zweck  \n- der **Initiator trägt die Verantwortung für Ziel und Wirkung**  \n- der **Beneficiary macht Auswirkungen sichtbar**  \n\nDaraus folgt:\n\n- Verantwortung ist **nicht gleich Ausführung**  \n- Verantwortung bleibt auch bei automatisierten oder agentischen Systemen zuordenbar  \n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L9_SystemParticipants.md",
         "element_id": "l9_system_participants",
-        "section_title": "Responsibility and Governance",
+        "section_title": "Verantwortung und Governance",
         "header_level": 2,
         "document_index": 96,
-        "path_string": "L9 – System Participants > Responsibility and Governance",
+        "path_string": "L9 – System Participants > Verantwortung und Governance",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L9 – System Participants", "Responsibility and Governance"]
+      "section_path": ["L9 – System Participants", "Verantwortung und Governance"]
     },
     {
       "section_id": "l9_system_participants__s010",
@@ -2807,22 +2811,22 @@
       "order_index": 6,
       "document_index": 97,
       "header_level": 2,
-      "title": "Distinction from Other Layers",
+      "title": "Abgrenzung zu anderen Layern",
       "section_type": "distinction",
-      "raw_text": "**vs. Capabilities (L5):**\n- Capabilities → describe what is possible  \n- Participants → describe who acts  \n\n**vs. Applications (L6):**\n- Applications → implement capabilities  \n- Participants → use or operate this implementation  \n\n**vs. Business Outcome (L10):**\n- Outcome → describes effect  \n- Participants → attribute this effect to persons or systems  \n\n---\n\n",
+      "raw_text": "**vs. Capabilities (L5):**\n- Capabilities → beschreiben, was möglich ist  \n- Participants → beschreiben, wer handelt  \n\n**vs. Applications (L6):**\n- Applications → setzen Fähigkeiten um  \n- Participants → nutzen oder betreiben diese Umsetzung  \n\n**vs. Business Outcome (L10):**\n- Outcome → beschreibt Wirkung  \n- Participants → ordnen diese Wirkung Personen oder Systemen zu  \n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L9_SystemParticipants.md",
         "element_id": "l9_system_participants",
-        "section_title": "Distinction from Other Layers",
+        "section_title": "Abgrenzung zu anderen Layern",
         "header_level": 2,
         "document_index": 97,
-        "path_string": "L9 – System Participants > Distinction from Other Layers",
+        "path_string": "L9 – System Participants > Abgrenzung zu anderen Layern",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L9 – System Participants", "Distinction from Other Layers"]
+      "section_path": ["L9 – System Participants", "Abgrenzung zu anderen Layern"]
     },
     {
       "section_id": "l9_system_participants__s011",
@@ -2833,22 +2837,22 @@
       "order_index": 7,
       "document_index": 98,
       "header_level": 2,
-      "title": "Core Statement",
+      "title": "Kernaussage",
       "section_type": "core_statement",
-      "raw_text": "System Participants make responsibility, execution, and effect explicit.\n\n> They ensure that action and result remain traceable and attributable within an organization.",
+      "raw_text": "System Participants machen Verantwortung, Ausführung und Wirkung explizit.\n\n> Sie sorgen dafür, dass Handlung und Ergebnis einer Organisation nachvollziehbar und zuordenbar bleiben.",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L9_SystemParticipants.md",
         "element_id": "l9_system_participants",
-        "section_title": "Core Statement",
+        "section_title": "Kernaussage",
         "header_level": 2,
         "document_index": 98,
-        "path_string": "L9 – System Participants > Core Statement",
+        "path_string": "L9 – System Participants > Kernaussage",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L9 – System Participants", "Core Statement"]
+      "section_path": ["L9 – System Participants", "Kernaussage"]
     },
     {
       "section_id": "l10_business_outcome__s001",
@@ -2895,7 +2899,7 @@
       "header_level": 2,
       "title": "Definition",
       "section_type": "definition",
-      "raw_text": "Business Outcome describes the **actual, context-dependent effect of actions in the real world and serves as a reference point for evaluating the entire architecture**  \n*(i.e., what concretely changes through decisions and actions and shows whether the system works)*\n\n---\n\n",
+      "raw_text": "Business Outcome beschreibt die **tatsächliche, kontextabhängige Wirkung von Handlungen in der realen Welt und dient als Referenzpunkt zur Bewertung der gesamten Architektur**  \n*(also das, was sich durch Entscheidungen und Aktionen konkret verändert und zeigt, ob das System funktioniert)*\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
@@ -2919,22 +2923,22 @@
       "order_index": 2,
       "document_index": 101,
       "header_level": 2,
-      "title": "Role in the Model",
+      "title": "Rolle im Modell",
       "section_type": "role",
-      "raw_text": "Business Outcome makes visible whether **actual value** emerges from knowledge, capabilities, and action.\n\n- arises through the application of **Capabilities (L5)**  \n- is concretely implemented via **Applications (L6)**  \n- is carried out by **Actors (L9)**  \n- is dependent on **Situations (L8)**  \n\nImportant:\n\n- Outcome is **not a system output**, but a **change in reality**  \n- the same action can lead to different outcomes depending on the situation  \n- Outcome arises **not in the system alone**, but in the interplay of system, action, and context  \n\n---\n\n",
+      "raw_text": "Business Outcome macht sichtbar, ob aus Wissen, Fähigkeiten und Handlung **tatsächlicher Nutzen entsteht**.\n\n- entsteht durch die Anwendung von **Capabilities (L5)**  \n- wird konkret umgesetzt über **Applications (L6)**  \n- erfolgt durch **Actors (L9)**  \n- ist abhängig von **Situationen (L8)**  \n\nWichtig:\n\n- Outcome ist **keine Systemausgabe**, sondern eine **Veränderung in der Realität**  \n- gleiche Handlung kann je nach Situation zu unterschiedlichen Outcomes führen  \n- Outcome entsteht **nicht im System allein**, sondern im Zusammenspiel von System, Handlung und Kontext  \n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L10_BusinessOutcome.md",
         "element_id": "l10_business_outcome",
-        "section_title": "Role in the Model",
+        "section_title": "Rolle im Modell",
         "header_level": 2,
         "document_index": 101,
-        "path_string": "L10 – Business Outcome > Role in the Model",
+        "path_string": "L10 – Business Outcome > Rolle im Modell",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L10 – Business Outcome", "Role in the Model"]
+      "section_path": ["L10 – Business Outcome", "Rolle im Modell"]
     },
     {
       "section_id": "l10_business_outcome__s004",
@@ -2945,22 +2949,22 @@
       "order_index": 3,
       "document_index": 102,
       "header_level": 2,
-      "title": "Position in the Architecture",
+      "title": "Einordnung in die Architektur",
       "section_type": "classification",
-      "raw_text": "Business Outcome is the **central reference point of the entire architecture**.\n\nAll other layers contribute to it:\n\n- **Data Sources (L2)** provide the foundation  \n- **Knowledge Core (L3)** creates meaning  \n- **Capabilities (L5)** enable action  \n- **Applications (L6)** implement action  \n- **Situation (L8)** determines execution  \n\nThe Outcome is thus the **end result of this chain of effects**.\n\n---\n\n",
+      "raw_text": "Business Outcome ist der **zentrale Referenzpunkt der gesamten Architektur**.\n\nAlle anderen Layer zahlen auf ihn ein:\n\n- **Data Sources (L2)** liefern die Grundlage  \n- **Knowledge Core (L3)** erzeugt Bedeutung  \n- **Capabilities (L5)** ermöglichen Handlung  \n- **Applications (L6)** setzen Handlung um  \n- **Situation (L8)** bestimmt die Ausführung  \n\nDer Outcome ist damit das **Endergebnis dieser Wirkungskette**.\n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L10_BusinessOutcome.md",
         "element_id": "l10_business_outcome",
-        "section_title": "Position in the Architecture",
+        "section_title": "Einordnung in die Architektur",
         "header_level": 2,
         "document_index": 102,
-        "path_string": "L10 – Business Outcome > Position in the Architecture",
+        "path_string": "L10 – Business Outcome > Einordnung in die Architektur",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L10 – Business Outcome", "Position in the Architecture"]
+      "section_path": ["L10 – Business Outcome", "Einordnung in die Architektur"]
     },
     {
       "section_id": "l10_business_outcome__s005",
@@ -2971,22 +2975,22 @@
       "order_index": 4,
       "document_index": 103,
       "header_level": 2,
-      "title": "Measurability and Evaluability",
+      "title": "Messbarkeit und Auswertbarkeit",
       "section_type": "custom",
-      "raw_text": "Business Outcome makes the system **measurable and evaluable**.\n\n- shows whether set goals were achieved  \n- enables the definition of **KPIs and success metrics**  \n- serves as the basis for analysis and evaluation  \n- enables systematic improvement and governance  \n\nThis implies:\n\n- the system can **not only be executed, but also evaluated**  \n- decisions can **be based on effect rather than activity**  \n\n---\n\n",
+      "raw_text": "Business Outcome macht das System **messbar und auswertbar**.\n\n- zeigt, ob gesetzte Ziele erreicht wurden  \n- ermöglicht die Definition von **KPIs und Erfolgsmetriken**  \n- dient als Grundlage für Analyse und Bewertung  \n- ermöglicht systematische Verbesserung und Steuerung  \n\nDaraus folgt:\n\n- das System kann **nicht nur ausgeführt, sondern auch bewertet werden**  \n- Entscheidungen können **auf Wirkung statt auf Aktivität basieren**  \n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L10_BusinessOutcome.md",
         "element_id": "l10_business_outcome",
-        "section_title": "Measurability and Evaluability",
+        "section_title": "Messbarkeit und Auswertbarkeit",
         "header_level": 2,
         "document_index": 103,
-        "path_string": "L10 – Business Outcome > Measurability and Evaluability",
+        "path_string": "L10 – Business Outcome > Messbarkeit und Auswertbarkeit",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L10 – Business Outcome", "Measurability and Evaluability"]
+      "section_path": ["L10 – Business Outcome", "Messbarkeit und Auswertbarkeit"]
     },
     {
       "section_id": "l10_business_outcome__s006",
@@ -2997,22 +3001,22 @@
       "order_index": 5,
       "document_index": 104,
       "header_level": 2,
-      "title": "Feedback and Control",
+      "title": "Rückkopplung und Steuerung",
       "section_type": "custom",
-      "raw_text": "Business Outcome acts as a **feedback mechanism for the entire architecture**.\n\n- positive Outcomes confirm effectiveness  \n- negative Outcomes indicate problems  \n\nPossible causes lie in:\n\n- insufficient knowledge (**L3**)  \n- unsuitable capabilities (**L5**)  \n- faulty implementation (**L6**)  \n- incorrect assessment of the situation (**L8**)  \n\nThus the Outcome enables:\n\n→ targeted analysis  \n→ continuous improvement  \n→ strategic governance  \n\n---\n\n",
+      "raw_text": "Business Outcome wirkt als **Feedbackmechanismus für die gesamte Architektur**.\n\n- positive Outcomes bestätigen die Wirksamkeit  \n- negative Outcomes weisen auf Probleme hin  \n\nMögliche Ursachen liegen in:\n\n- unzureichendem Wissen (**L3**)  \n- ungeeigneten Fähigkeiten (**L5**)  \n- fehlerhafter Umsetzung (**L6**)  \n- falscher Einschätzung der Situation (**L8**)  \n\nDamit ermöglicht der Outcome:\n\n→ gezielte Analyse  \n→ kontinuierliche Verbesserung  \n→ strategische Steuerung  \n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L10_BusinessOutcome.md",
         "element_id": "l10_business_outcome",
-        "section_title": "Feedback and Control",
+        "section_title": "Rückkopplung und Steuerung",
         "header_level": 2,
         "document_index": 104,
-        "path_string": "L10 – Business Outcome > Feedback and Control",
+        "path_string": "L10 – Business Outcome > Rückkopplung und Steuerung",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L10 – Business Outcome", "Feedback and Control"]
+      "section_path": ["L10 – Business Outcome", "Rückkopplung und Steuerung"]
     },
     {
       "section_id": "l10_business_outcome__s007",
@@ -3023,22 +3027,22 @@
       "order_index": 6,
       "document_index": 105,
       "header_level": 2,
-      "title": "Distinction from Other Concepts",
+      "title": "Abgrenzung zu anderen Konzepten",
       "section_type": "distinction",
-      "raw_text": "**vs. Output:**\n- Output → result of a system (e.g., report, answer)  \n- Outcome → effect in the real world (e.g., better decision, efficiency gain)  \n\n**vs. Capabilities (L5):**\n- Capabilities → enable action  \n- Outcome → measures their actual effect  \n\n---\n\n",
+      "raw_text": "**vs. Output:**\n- Output → Ergebnis eines Systems (z. B. Bericht, Antwort)  \n- Outcome → Wirkung in der realen Welt (z. B. bessere Entscheidung, Effizienzsteigerung)  \n\n**vs. Capabilities (L5):**\n- Capabilities → ermöglichen Handlung  \n- Outcome → misst deren tatsächliche Wirkung  \n\n---\n\n",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L10_BusinessOutcome.md",
         "element_id": "l10_business_outcome",
-        "section_title": "Distinction from Other Concepts",
+        "section_title": "Abgrenzung zu anderen Konzepten",
         "header_level": 2,
         "document_index": 105,
-        "path_string": "L10 – Business Outcome > Distinction from Other Concepts",
+        "path_string": "L10 – Business Outcome > Abgrenzung zu anderen Konzepten",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L10 – Business Outcome", "Distinction from Other Concepts"]
+      "section_path": ["L10 – Business Outcome", "Abgrenzung zu anderen Konzepten"]
     },
     {
       "section_id": "l10_business_outcome__s008",
@@ -3049,22 +3053,22 @@
       "order_index": 7,
       "document_index": 106,
       "header_level": 2,
-      "title": "Core Statement",
+      "title": "Kernaussage",
       "section_type": "core_statement",
-      "raw_text": "Business Outcome describes the actual effect of actions and makes the system measurable and governable.\n\n> It is the central reference point at which the success of the entire architecture is determined.",
+      "raw_text": "Business Outcome beschreibt die tatsächliche Wirkung von Handlungen und macht das System messbar und steuerbar.\n\n> Er ist der zentrale Referenzpunkt, an dem sich der Erfolg der gesamten Architektur entscheidet.",
       "is_dual_structure_member": false,
       "dual_structure_group": null,
       "source_anchor": {
         "filename": "L10_BusinessOutcome.md",
         "element_id": "l10_business_outcome",
-        "section_title": "Core Statement",
+        "section_title": "Kernaussage",
         "header_level": 2,
         "document_index": 106,
-        "path_string": "L10 – Business Outcome > Core Statement",
+        "path_string": "L10 – Business Outcome > Kernaussage",
         "line_start": null,
         "line_end": null
       },
-      "section_path": ["L10 – Business Outcome", "Core Statement"]
+      "section_path": ["L10 – Business Outcome", "Kernaussage"]
     }
   ],
   "documentation_semantic": []
