@@ -59,7 +59,7 @@ OIA uses the **Müller/Dienst format** (not Nygard, not MADR) for the reasons do
 | **Points to ODR** | via `Governed by:` field | — |
 | **Points to ADR** | — | via `Implements:` field |
 
-For the full ODR concept, see [context/odr-concept.md](./odr-concept.md).
+For the full ODR concept, see [context/agent/odr-concept.md](./odr-concept.md).
 
 ---
 

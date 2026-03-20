@@ -16,8 +16,8 @@ Sprint process entry point: `prompts/development/sprint-change.md` — orchestra
 **Mid-sprint scope rule:** Any issue added to an active sprint after the planning handshake must be processed via `prompts/development/sprint-scope-change.md`. Do not add issues to the sprint file directly without running this prompt.
 
 Read when working with decision records:
-- `context/adr-concept.md` — what ADRs are, canonical references, ADR vs ODR distinction
-- `context/odr-concept.md` — full ODR concept, derivation chain, lifecycle, agent onboarding
+- `context/agent/adr-concept.md` — what ADRs are, canonical references, ADR vs ODR distinction
+- `context/agent/odr-concept.md` — full ODR concept, derivation chain, lifecycle, agent onboarding
 
 Read when working with data model layers or the semantic pipeline:
 - `context/concepts/two-layer-separation.md` — binding boundary definition between Semantic Model Layer and Presentation / Projection Layer (implements ADR-0018)
@@ -48,7 +48,7 @@ All three are binding contracts. Do not contradict a Proposed or Accepted record
 
 **ODR numbering:** The next ODR number is the current highest in `decisions/README.md` ODR index + 1. ODR numbers are independent of ADR numbers. Never reuse a number.
 
-**derives-from / implements:** Every ODR must carry `**Derives from:**` (parent ODR or `—` for the founding record) and `**Implements:**` (child ADRs or `—`). See `context/odr-concept.md` for the full concept and `decisions/odr/odr-template.md` for the template.
+**derives-from / implements:** Every ODR must carry `**Derives from:**` (parent ODR or `—` for the founding record) and `**Implements:**` (child ADRs or `—`). See `context/agent/odr-concept.md` for the full concept and `decisions/odr/odr-template.md` for the template.
 
 ### OIA Model Decision Records (OIA-ODRs)
 
