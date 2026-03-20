@@ -1,6 +1,6 @@
-# ADR-0018: Two-Layer Model Separation — Rendering vs. Documentation
+# ADR-0018: Separation of Presentation Layer and Semantic Data Layer
 
-**Decision:** The OIA data layer is split into two distinct models: OIAModel (rendering) drives the visual diagram; OIADocumentModel (documentation) holds structural ground truth with full section traceability. The two models are never merged into a single schema.
+**Decision:** The OIA architecture enforces a strict separation between a Presentation Layer (rendering-oriented) and a Semantic Data Layer (structure- and meaning-oriented). These layers are conceptually and structurally independent, must not be unified into a single model, and follow a one-way dependency: Semantic Data → Presentation, never the inverse.
 **Status:** Proposed
 **Date:** 2026-03-20
 **Type:** BOTH
@@ -8,39 +8,49 @@
 
 ## Context
 
-The OIA project maintains two data artifacts that serve fundamentally different purposes:
+The OIA aims to model an organization as a semantically structured system — not merely as a visual diagram. This introduces two fundamentally different concerns that evolve under conflicting pressures:
 
-**OIAModel** (`oia-site/src/data/oia-model.json`, v0.3) is a rendering model. Its schema is designed around visual layout concerns: layers, containers, items, panels, badges, and connections that drive the diagram renderer. Eight renderer modules in `oia-site/src/renderer/` depend on this schema. Stability is critical — schema changes break rendering.
+| Concern | Optimized for |
+|---|---|
+| Presentation | clarity, layout, usability, visual stability |
+| Semantic Data | correctness, traceability, expressiveness, extensibility |
 
-**model-v3-full-mapping.json** is a documentation model developed separately. It maps the OIA source documents into a structured representation with `source_documents`, `elements`, `sections`, and `raw_text` fields. Its schema follows `schema_version = "v3"` with `mapping_mode = "strict_mechanical"`. It serves as structural ground truth for semantic analysis, not for rendering.
+**Representation vs. Meaning.** How the architecture is *displayed* and what it *means* are not the same problem. Coupling them forces trade-offs that degrade both sides: visual concerns leak into data structures, semantic structures get distorted by layout needs, and schema evolution becomes constrained by rendering stability.
 
-These two models solve different problems, have different change drivers, and have different consumers. A single unified schema would couple the renderer's stability requirements to the documentation model's evolution — or vice versa. The documentation model's section-level granularity and raw text fields have no meaning in a rendering context.
+**Increasing semantic depth.** The OIA is evolving toward explicit semantic structures, ontology derivation, machine-readable relationships, and traceability to source statements. This requires a semantically rich, structurally precise data layer that is independent of any visual representation.
 
-A decision is needed to formally establish this separation before implementation, so that future contributors understand the boundary and do not conflate the two concerns.
+**Future system evolution.** Planned extensions include semantic extraction pipelines, ontology and schema generation, database-backed representations (graph or relational), API-based access to architecture knowledge, and AI-supported reasoning. All of these require a stable, presentation-independent data model. A presentation-coupled model cannot serve as the foundation for any of these without architectural rework.
+
+**Risk of model conflation.** Without an explicit decision, presentation and semantic concerns tend to merge over time: the renderer becomes the de-facto schema owner, UI constructs carry implicit semantic assumptions, and the data model drifts toward serving display rather than meaning. This leads to loss of semantic integrity and blocks the transition to an intelligent organizational knowledge system.
 
 ## Consequences
 
 **Easier:**
-- Renderer is fully isolated from documentation model changes — a documentation schema update never risks breaking visual output
-- Documentation model can evolve freely (new sections, schema refinements, semantic annotations) without renderer review
-- Clear ownership: renderer pipeline owns OIAModel; semantic extraction pipeline owns OIADocumentModel
-- Type safety enforced per layer: `types.ts` for OIAModel, `types-v3.ts` for OIADocumentModel
+- Semantic model and presentation layer evolve independently — changes in one do not constrain the other
+- Databases (graph, relational) can be introduced without UI constraints
+- Clean foundation for APIs and AI integration
+- Clear ownership of each layer; responsibilities do not overlap
+- Traceability, reasoning, and querying capabilities can be built on a stable, presentation-free data model
 
 **Harder:**
-- Two model files and two type definitions to maintain
-- Element ID coordination between layers must be explicitly decided and documented (independent IDs vs. coordinated IDs)
-- Consumers of both models must know which export to use (`model` vs. `documentModel` from `model.ts`)
+- Explicit transformation between layers is required wherever presentation derives from semantic data
+- Multiple representations of the same conceptual elements must be managed
+- Identifiers and mapping rules between layers must be explicitly coordinated
 
 **Required adjustments:**
-- `oia-site/src/data/types-v3.ts` — new type file for OIADocumentModel
-- `oia-site/src/data/oia-model-v3.json` — documentation model as committed repo artifact
-- `oia-site/src/data/model.ts` — extended with a second export (`documentModel`) alongside the existing `model` export
-- Concept document defining boundary rules between both layers (see #215)
+- Defined mapping between semantic entities and visual elements (where they coexist)
+- Explicit validation to prevent concern leakage across the layer boundary
+- Clear identifier strategy across layers (coordinated vs. independent)
+- Ownership assigned per layer: semantic pipeline owns the data layer; renderer pipeline owns the presentation layer
 
 ## Alternatives
 
 | Option | Reason rejected |
 |---|---|
-| Single unified model | Schema complexity grows unmanageable; renderer couples to documentation semantics (e.g. `raw_text`, `sections`); a schema change for semantic purposes risks breaking visual output |
-| Adapter / projection layer | Adds indirection without structural isolation; the adapter itself still requires a second schema internally; increases cognitive overhead without reducing coupling |
-| Keep documentation model local only (never commit) | Blocks semantic extraction from being reproducible and version-controlled; prevents collaboration and CI integration |
+| Unified model (presentation + data) | Mixes concerns, creates bidirectional coupling, blocks evolution toward semantic and database-backed systems; schema changes for semantic purposes risk breaking rendering |
+| Presentation-driven model as sole model | Reduces the architecture to a visualization artifact; loses semantic depth required for reasoning, querying, and AI integration |
+| Semantic model as optional extension of presentation model | Prevents consistent evolution; introduces ambiguity about which model is the source of truth; semantic concerns remain subordinate to visual constraints |
+
+## Strategic Impact
+
+This decision establishes the architectural foundation for transforming the OIA from a visual architecture description into a semantically explicit, machine-interpretable organizational knowledge system. It is a prerequisite for ontology-driven architecture, semantic querying, AI-assisted reasoning, and database-backed architecture models.
