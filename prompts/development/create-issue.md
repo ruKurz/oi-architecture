@@ -103,6 +103,18 @@ gh issue create \
 
 Output the created issue URL.
 
+### Step 6 — Sprint-scope gate
+
+After the issue is created, ask:
+
+> "Is a sprint currently active? Should this issue be added to the sprint?"
+
+- **No active sprint** → done.
+- **Yes, sprint extension** → immediately route to `prompts/development/sprint-scope-change.md`. Do not add the issue to the sprint file directly.
+- **Uncertain** → ask the user before proceeding.
+
+This step closes the feedback loop between issue creation and sprint tracking.
+
 ---
 
 ## Decision rules
