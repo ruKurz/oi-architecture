@@ -19,6 +19,9 @@ Read when working with decision records:
 - `context/adr-concept.md` — what ADRs are, canonical references, ADR vs ODR distinction
 - `context/odr-concept.md` — full ODR concept, derivation chain, lifecycle, agent onboarding
 
+Read when working with data model layers or the semantic pipeline:
+- `context/concepts/two-layer-separation.md` — binding boundary definition between Semantic Model Layer and Presentation / Projection Layer (implements ADR-0018)
+
 ## Decision Records: ADRs, ODRs, and OIA-ODRs
 
 The project uses three types of decision records:
@@ -73,6 +76,23 @@ This project uses Semantic Anchors as a shared vocabulary layer. The full active
 - **MoSCoW (Clegg)** when sprint scope exceeds time-box: label each issue Must/Should/Could/Won't
 - **Testing Pyramid (Fowler/Cohn)** when designing or reviewing test coverage for renderer/tooling
 - **YAGNI (Jeffries, Beck)** on every DEV implementation: implement only what the current issue's AC requires
+
+## Two-Layer Model Separation
+
+The OIA data architecture is split into two structurally independent layers, governed by [ADR-0018](decisions/adr/0018-two-layer-model-separation.md) and specified in [context/concepts/two-layer-separation.md](context/concepts/two-layer-separation.md).
+
+**Terminology — use exactly:**
+- **Semantic Model Layer** — source of truth; schema: `types-doc.ts`; loader: `document-model.ts`; owned by semantic extraction pipeline
+- **Presentation / Projection Layer** — derived rendering model; schema: `types.ts`; loader: `model.ts`; owned by renderer pipeline
+- **Projection Pipeline** — the only legal cross-layer contact point; transforms Semantic → Projection
+
+**Binding rules for agents:**
+- The Semantic Model Layer is the sole source of truth. Never derive semantic meaning from the Presentation / Projection Layer.
+- No type or schema may serve both layers. Types in `types.ts` are presentation types; types in `types-doc.ts` are semantic types — they must not be merged or used interchangeably.
+- The dependency direction is strictly one-directional: Semantic Model → Projection. Any import from the Presentation / Projection Layer toward the Semantic Model Layer is an architectural violation.
+- No renderer module may import from `types-doc.ts` or `document-model.ts`. Cross-layer access is only permitted within the Projection Pipeline.
+- When creating new types: determine which layer the type belongs to before writing any code. If uncertain, consult ADR-0018 and the concept document.
+- Semantic model changes driven by rendering requirements are a violation of ADR-0018. If a renderer need cannot be met without touching the semantic model, re-examine the semantic model for incompleteness — do not add rendering properties to it.
 
 ## Scope Rules
 
