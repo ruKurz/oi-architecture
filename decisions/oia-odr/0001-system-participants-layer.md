@@ -76,7 +76,7 @@ The human carries accountability through socialization, law, and culture — mec
 
 **Required adjustments:** All references to the "Actors" layer name in documentation, prompts, and context files must be updated to "System Participants". The version bump to `0.2.0` is required (renamed layer = breaking change per ADR-0007).
 
-For the full narrative depth, EU AI Act mapping, and Actor type definitions, see [context/system-participants-concept.md](../../context/system-participants-concept.md).
+For the full narrative depth, EU AI Act mapping, and Actor type definitions, see [context/concepts/system-participants.md](../../context/concepts/system-participants.md).
 
 ---
 
@@ -95,4 +95,4 @@ For the full narrative depth, EU AI Act mapping, and Actor type definitions, see
 
 **Governs:** `#L9` and all child elements (`#L9-triad-*`, `#L9-spectrum-*`)
 **Related:** ODR-002 (Agent Governance Framework — future) · ODR-003 (Knowledge Core Access Control — future)
-**Implemented by:** `oia-site/src/data/oia-model.json` `#L9` · `context/system-participants-concept.md`
+**Implemented by:** `oia-site/src/data/oia-model.json` `#L9` · `context/concepts/system-participants.md`
