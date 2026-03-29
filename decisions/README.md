@@ -64,6 +64,7 @@ OIA-ODR numbers are independent of ADR and ODR numbers. The next OIA-ODR number 
 | OIA-ODR | Title | Status | Date |
 |---|---|---|---|
 | [OIA-ODR-0001](./oia-odr/0001-system-participants-layer.md) | System Participants Layer | Proposed | 2026-03-15 |
+| [OIA-ODR-0002](./oia-odr/0002-oia-maturity-model.md) | OIA Maturity Model — Layer Semantics and Assessment Dimensions | Proposed | 2026-03-29 |
 
 ---
 
