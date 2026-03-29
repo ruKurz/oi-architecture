@@ -33,16 +33,20 @@ export function renderTransformZone(
     .join('')
 
   wrapper.innerHTML = `
+    <div class="transform-output" data-id="${concept.id}">
+      <div class="transform-output-header">
+        <span class="concept-id">${conceptNumId}</span>
+        <span class="concept-name">${concept.label}</span>
+      </div>
+      <div class="concept-chips">${chips}</div>
+    </div>
+    <div class="transform-zone-divider" role="separator"></div>
     <div class="transform-zone-header">
       <span class="layer-num">${pipelineNumId}</span>
       <span class="layer-title">${pipeline.label}</span>
       <span class="layer-desc">${pipeline.description || ''}</span>
     </div>
     <div class="pipeline-row">${steps}</div>
-    <div class="transform-output" data-id="${concept.id}">
-      <span class="transform-output-label">${conceptNumId} Extracted →</span>
-      <div class="concept-chips">${chips}</div>
-    </div>
   `
   return wrapper
 }

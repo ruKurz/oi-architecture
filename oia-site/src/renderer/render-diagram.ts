@@ -59,20 +59,47 @@ export function renderOIA(model: OIAModel): HTMLElement {
     (a, b) => (b.meta?.order ?? 0) - (a.meta?.order ?? 0),
   )
 
-  // Render: pair each pipeline with its adjacent concept into one transform-zone
+  // Pre-pass: identify which concepts are absorbed by a pipeline (prevents duplicate rendering
+  // when a concept sorts before its paired pipeline in descending order)
   const absorbed = new Set<string>()
+  const pipelinePairs = new Map<string, Container>()
   for (const container of allCenter) {
-    if (absorbed.has(container.id)) continue
     if (container.containerType === 'pipeline') {
       const concept = allCenter.find(
         (c) =>
           c.containerType === 'concept' &&
-          !absorbed.has(c.id) &&
           Math.abs((c.meta?.order ?? 0) - (container.meta?.order ?? 0)) < 1,
       )
       if (concept) {
         absorbed.add(concept.id)
+        pipelinePairs.set(container.id, concept)
+      }
+    }
+  }
+
+  // Render: pair each pipeline with its absorbed concept into one transform-zone
+  for (const container of allCenter) {
+    if (absorbed.has(container.id)) continue
+    if (container.containerType === 'pipeline') {
+      const concept = pipelinePairs.get(container.id)
+      if (concept) {
+        // Upper connector: between Knowledge Core (above) and this transform zone
+        const upperConn = document.createElement('div')
+        upperConn.className = 'layer-flow-connector'
+        upperConn.setAttribute('aria-hidden', 'true')
+        upperConn.innerHTML =
+          '<span class="layer-flow-arrow">↑</span><span class="layer-flow-label">Entities feed into Knowledge Core</span>'
+        center.appendChild(upperConn)
+
         center.appendChild(renderTransformZone(model, container, concept))
+
+        // Lower connector: between this transform zone and Data Sources (below)
+        const lowerConn = document.createElement('div')
+        lowerConn.className = 'layer-flow-connector'
+        lowerConn.setAttribute('aria-hidden', 'true')
+        lowerConn.innerHTML =
+          '<span class="layer-flow-arrow">↑</span><span class="layer-flow-label">Raw Data from Data Sources</span>'
+        center.appendChild(lowerConn)
       } else {
         center.appendChild(renderLayer(model, container))
       }
