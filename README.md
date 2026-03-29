@@ -1,6 +1,6 @@
 <div align="right">
 
-![Version](https://img.shields.io/badge/Version-0.3.0-161b22?style=flat-square) &nbsp; ![Status](https://img.shields.io/badge/Status-early%20access-161b22?style=flat-square) &nbsp; [![CI](https://github.com/ruKurz/oi-architecture/actions/workflows/pr-check.yml/badge.svg)](https://github.com/ruKurz/oi-architecture/actions/workflows/pr-check.yml)
+![Version](https://img.shields.io/badge/Version-0.4.0-161b22?style=flat-square) &nbsp; ![Status](https://img.shields.io/badge/Status-early%20access-161b22?style=flat-square) &nbsp; [![CI](https://github.com/ruKurz/oi-architecture/actions/workflows/pr-check.yml/badge.svg)](https://github.com/ruKurz/oi-architecture/actions/workflows/pr-check.yml)
 
 </div>
 

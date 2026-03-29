@@ -6,6 +6,42 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.4.0] — 2026-03-29 — *The model learns to assess itself.*
+
+v0.4.0 ships the OIA Maturity Model in full: concept, layer definitions, rubric across all three zones, and — unusually for a framework release — the first real assessment, complete with the rubric gaps it exposed and the model changes it triggered. A System-Type Qualifier now ensures frameworks are not graded on end-user criteria they were never meant to meet. The two-layer model separation landed in the renderer. The diagram finally shows C1 and C2. Several vulnerabilities got quietly evicted.
+
+### Model & Content
+
+- [#229](https://github.com/ruKurz/oi-architecture/issues/229) fix(data): translate all German content in document-model.json to comply with ODR-0004
+- [#239](https://github.com/ruKurz/oi-architecture/issues/239) content(context): design OIA Maturity Model — concept, 5-star scale, output format
+- [#240](https://github.com/ruKurz/oi-architecture/issues/240) content(context): formalize OIA layer definitions as MECE assessment criteria
+- [#241](https://github.com/ruKurz/oi-architecture/issues/241) content(context): create OIA Maturity Rubric v1 (5-star, per-layer, benefit + KPI)
+- [#242](https://github.com/ruKurz/oi-architecture/issues/242) docs(decisions): introduce OIA-ODR-0002 for OIA Maturity Model layer semantics
+- [#243](https://github.com/ruKurz/oi-architecture/issues/243) content(biz): apply OIA Maturity Rubric to a reference project (first real-world validation)
+- [#247](https://github.com/ruKurz/oi-architecture/issues/247) content(context): create OIA Maturity Rubric v1 — Zone 1 layers (Data, AI Infra)
+- [#248](https://github.com/ruKurz/oi-architecture/issues/248) content(context): create OIA Maturity Rubric v1 — Zone 2+3 layers
+- [#252](https://github.com/ruKurz/oi-architecture/issues/252) content(model): fix swapped layer contents — Data Sources and AI Infrastructure
+- [#262](https://github.com/ruKurz/oi-architecture/issues/262) content(model): introduce System-Type Qualifier for OIA Maturity Assessment
+
+### Renderer & UX
+
+- [#216](https://github.com/ruKurz/oi-architecture/issues/216) feat: implement two-layer model separation (OIADocumentModel + model.ts extension)
+- [#228](https://github.com/ruKurz/oi-architecture/issues/228) feat(renderer): show semantic sections in detail panel for mapped layer elements
+- [#254](https://github.com/ruKurz/oi-architecture/issues/254) feat(ux): show C1/C2 cross-cutting concepts and data-flow in OIA diagram
+
+### Infrastructure & Governance
+
+- [#206](https://github.com/ruKurz/oi-architecture/issues/206) chore(process): sprint retro improvements
+- [#207](https://github.com/ruKurz/oi-architecture/issues/207) chore(release): prepare and tag v0.3.0
+- [#214](https://github.com/ruKurz/oi-architecture/issues/214) docs: create ADR for two-layer model separation
+- [#215](https://github.com/ruKurz/oi-architecture/issues/215) concept: define layer separation between OIADocumentModel and OIAModel
+- [#219](https://github.com/ruKurz/oi-architecture/issues/219) fix(infra): resolve flatted prototype pollution vulnerability in npm lockfile
+- [#223](https://github.com/ruKurz/oi-architecture/issues/223) chore(context): restructure context/ folder — separate BIZ concepts, DEV concepts, and agent docs
+- [#225](https://github.com/ruKurz/oi-architecture/issues/225) docs(decisions): clarify file name versioning scope in ADR-0007
+- [#245](https://github.com/ruKurz/oi-architecture/issues/245) fix(infra): resolve brace-expansion, picomatch, yaml vulnerabilities in npm lockfile
+- [#249](https://github.com/ruKurz/oi-architecture/issues/249) chore(deps-dev): bump vitest and @vitest/ui to 4.1.2
+- [#253](https://github.com/ruKurz/oi-architecture/issues/253) chore(process): add scope rule — no private project names in public GitHub Issues
+
 ## [0.3.0] — 2026-03-16 — *Capabilities Converge. Accountability Does Not.*
 
 ### Added
@@ -165,6 +201,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Test files: removed implicit `any` types — [#13](https://github.com/ruKurz/oi-architecture/issues/13)
 - Test files: improved JSON model import typing — [#14](https://github.com/ruKurz/oi-architecture/issues/14)
 
+[0.4.0]: https://github.com/ruKurz/oi-architecture/releases/tag/v0.4.0
 [0.3.0]: https://github.com/ruKurz/oi-architecture/releases/tag/v0.3.0
 [0.2.0]: https://github.com/ruKurz/oi-architecture/compare/v0.1.0...v0.3.0
 [0.1.0]: https://github.com/ruKurz/oi-architecture/releases/tag/v0.1.0
