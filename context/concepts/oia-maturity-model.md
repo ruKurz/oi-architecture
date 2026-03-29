@@ -16,6 +16,22 @@
 
 ---
 
+## Assessment Setup — System-Type Classification
+
+Before scoring any layer, the assessor must classify the Vorhaben into one of three system types (OIA-ODR-0003). The System-Type determines how Zone 3 layer definitions (L7, L8, L9, L10) are applied.
+
+| Type | Name | Definition | L10 definition |
+|---|---|---|---|
+| **A** | End-User-Anwendung | System works directly for end users | User-visible / organizational business outcome |
+| **B** | Framework/Platform | System enables client applications; no direct end-user interaction | Integration quality: time-to-value for integrators, retrieval reliability, API stability |
+| **C** | Infrastruktur | System provides operational capacity to other systems | Operational KPIs: availability, latency, cost |
+
+**This classification is mandatory.** Include it in the assessment output header before the first layer score.
+
+Zone 1 (L1, L2) and Zone 2 (L3, L4, L5, L8) definitions are identical across all types. For L8 (Situation & Context), the structural gate criteria are the same; for Type B the interpretation shifts from "system is context-aware" to "system enables context-passing via API." See OIA-ODR-0003 for the full variant definitions.
+
+---
+
 ## Assessment Object
 
 The model assesses a **Vorhaben** (project, system, or product initiative) — not the organization as a whole.
