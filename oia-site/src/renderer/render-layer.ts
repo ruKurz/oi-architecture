@@ -27,7 +27,7 @@ const layerRenderers: Record<string, LayerRenderer> = {
   '#L4': (model, layer) => `<div class="tag-row">${renderFeaturesLayer(model, layer)}</div>`,
   '#L1': (model, layer) => `<div class="tag-row">${renderInfrastructureLayer(model, layer)}</div>`,
   '#L10': (model, layer) => `<div class="outcome-grid">${renderOutcomeLayer(model, layer)}</div>`,
-  '#L1b': renderPipeline,
+  '#C2': renderPipeline,
   '#L2': (model, layer) => `<div class="data-grid">${renderDataSources(model, layer)}</div>`,
 }
 

@@ -788,16 +788,16 @@
     },
 
     {
-      "id": "#L1b",
+      "id": "#C2",
       "type": "container",
       "containerType": "pipeline",
       "label": "Data Processing Pipeline",
       "description": "Raw data → usable knowledge",
-      "children": ["#L1b-1", "#L1b-2", "#L1b-3", "#L1b-4", "#L1b-5"],
+      "children": ["#C2-1", "#C2-2", "#C2-3", "#C2-4", "#C2-5"],
       "meta": { "order": 2.5 }
     },
     {
-      "id": "#L1b-1",
+      "id": "#C2-1",
       "type": "item",
       "itemType": "processingstep",
       "label": "Data Ingestion",
@@ -805,7 +805,7 @@
       "properties": { "order": 1 }
     },
     {
-      "id": "#L1b-2",
+      "id": "#C2-2",
       "type": "item",
       "itemType": "processingstep",
       "label": "Processing",
@@ -813,7 +813,7 @@
       "properties": { "order": 2 }
     },
     {
-      "id": "#L1b-3",
+      "id": "#C2-3",
       "type": "item",
       "itemType": "processingstep",
       "label": "Cleansing",
@@ -821,7 +821,7 @@
       "properties": { "order": 3 }
     },
     {
-      "id": "#L1b-4",
+      "id": "#C2-4",
       "type": "item",
       "itemType": "processingstep",
       "label": "Validation",
@@ -829,7 +829,7 @@
       "properties": { "order": 4 }
     },
     {
-      "id": "#L1b-5",
+      "id": "#C2-5",
       "type": "item",
       "itemType": "processingstep",
       "label": "Information & Knowledge",
@@ -1035,13 +1035,13 @@
     {
       "id": "conn-flow-1",
       "from": "#L2",
-      "to": "#L1b",
+      "to": "#C2",
       "connectionType": "flow",
       "direction": "forward"
     },
     {
       "id": "conn-flow-2",
-      "from": "#L1b",
+      "from": "#C2",
       "to": "#L3",
       "connectionType": "flow",
       "direction": "forward"
