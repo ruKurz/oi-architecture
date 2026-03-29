@@ -429,6 +429,8 @@ Zone 2 is where data and infrastructure (Zone 1) are transformed into describabl
 
 > **Reality note:** Most AI initiatives reach Zone 1 with a functional data pipeline but no semantic knowledge model. L3 ★★ is common — data flows but doesn't accumulate meaning. The transition from ★★ to ★★★ is often the most intellectually demanding step in the architecture: it requires deciding what the organization actually knows, not just what it stores.
 
+> **Structural vs. functional assessment:** L3 star ratings assess *structural presence* — whether entity types are defined, documented, and owned. They do not assess *functional quality* — whether retrieval is actually returning relevant results. A system can reach L3 ★★★ structurally while returning poor results in practice (e.g. 0/5 relevant hits for a real query). Functional quality requires runtime measurement: run representative queries from L7 use cases and evaluate top-k precision. If structural and functional scores diverge, report both — structural score for the rubric, functional score as a separate quality note.
+
 ---
 
 ### Level Descriptions
@@ -1083,11 +1085,14 @@ A single ★★ on any of the four layers keeps the gate closed, regardless of t
 
 ### Recommended Sequencing Within Zone 2
 
-1. L3 ★2→3 + L5 ★2→3 simultaneously — entity model and capability vocabulary evolve together
-2. L4 ★2→3 + L8 ★1→3 in parallel — API contracts and context model are independent
-3. L3 ★3→4 + L4 ★3→4 together — connected Knowledge Core requires connected API layer
-4. L5 ★3→4 + L8 ★3→4 together — connected capabilities require context-aware routing
-5. ★4→5 transitions deferred until Zone 3 baseline is stable
+1. **L8 ★1→3 first** — start intent logging and context field before anything else. Intent data accumulates passively while other Zone 2 work proceeds. The longer it runs, the more useful it becomes. Starting here costs one sprint; delaying it costs weeks of data.
+2. **L5 ★2→3 while L8 data accumulates** — create the capability catalog in parallel. This is documentation work, not code — it can happen while L8 intent logging runs in the background.
+3. **L3 ★2→3 + L4 ★2→3** in parallel — entity model and API contracts can evolve simultaneously once L8 and L5 work is underway
+4. **L3 ★3→4 + L4 ★3→4** together — connected Knowledge Core requires connected API layer
+5. **L5 ★3→4 + L8 ★3→4** together — connected capabilities require context-aware routing, which needs the intent data from step 1
+6. ★4→5 transitions deferred until Zone 3 baseline is stable
+
+> **Sequencing rationale:** L8 ★1→3 is the only Zone 2 transition that produces value passively — data accumulates during all other work. L5 ★2→3 is documentation-only — no engineering risk. These two together open the Zone 2 gate for the two most common blockers at minimal cost, while L3 and L4 work continues in parallel.
 
 ---
 
@@ -1606,6 +1611,8 @@ The team develops a shared, informal understanding of what success looks like. A
 - **M** Define success in one sentence: what does it look like when this initiative is working?
 - **M** Identify the organizational metric most likely to change if the initiative succeeds
 - **S** Begin collecting qualitative feedback from users: is this making their work easier?
+
+> **Minimum viable L10:** If baseline measurement was not designed into the initiative from the start, the minimal viable approach is: search log + manual relevance rating. For each session, the user rates whether the results were useful (binary: yes/no). This produces an outcome signal — even if rough — within days, without infrastructure investment. It also seeds the data needed for L10 ★2→3.
 
 **How to measure progress:**
 
