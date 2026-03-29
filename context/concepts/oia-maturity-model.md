@@ -146,25 +146,6 @@ Diagnosis: Governance, context, and data aligned. The rarest pattern — and the
 
 ---
 
-## First Reference Project
-
-**local-rag** is the first Vorhaben to be assessed against this model.
-
-Preliminary estimate (to be validated in #247):
-
-| Layer | Score | Note |
-|---|---|---|
-| Data Sources (L2) | ★★★★ | Explicit pipeline, modular |
-| AI & Cognitive Infra (L1) | ★★★ | Present; interchangeability not documented |
-| Cognitive Capabilities (L5) | ★★ | Implicitly present, not named |
-| Situation & Context (L8) | ★ | Missing entirely |
-| Business Outcome (L10) | ★ | Not modeled |
-
-Zone 1 gate is open. Zone 2 is the next working area.
-Likely pattern: **Pattern A — Data-Rich, Context-Poor**.
-
----
-
 ## Relationship to Other Concepts
 
 - **OIA Layers (L1–L10):** each layer is an independent assessment dimension
