@@ -701,8 +701,19 @@
       "type": "container",
       "containerType": "layer",
       "label": "Data Sources",
-      "description": "Technology foundation",
-      "children": ["#L2-1", "#L2-2", "#L2-3", "#L2-4", "#L2-5", "#L2-6", "#L2-7", "#L2-8"],
+      "description": "Organizational raw data",
+      "children": [
+        "#L1-1",
+        "#L1-2",
+        "#L1-3",
+        "#L1-4",
+        "#L1-5",
+        "#L1-6",
+        "#L1-7",
+        "#L1-8",
+        "#L1-9",
+        "#L1-10"
+      ],
       "meta": { "order": 2 }
     },
     {
@@ -761,6 +772,20 @@
       "label": "RPA",
       "properties": { "tech_type": "rpa" }
     },
+    {
+      "id": "#L2-9",
+      "type": "item",
+      "itemType": "infrastructure",
+      "label": "RDBMS",
+      "properties": { "tech_type": "storage" }
+    },
+    {
+      "id": "#L2-10",
+      "type": "item",
+      "itemType": "infrastructure",
+      "label": "Blob Storage",
+      "properties": { "tech_type": "storage" }
+    },
 
     {
       "id": "#L1b",
@@ -816,19 +841,19 @@
       "id": "#L1",
       "type": "container",
       "containerType": "layer",
-      "label": "AI Infrastructure",
-      "description": "Organizational raw data",
+      "label": "AI & Cognitive Infrastructure",
+      "description": "Technology foundation",
       "children": [
-        "#L1-1",
-        "#L1-2",
-        "#L1-3",
-        "#L1-4",
-        "#L1-5",
-        "#L1-6",
-        "#L1-7",
-        "#L1-8",
-        "#L1-9",
-        "#L1-10"
+        "#L2-1",
+        "#L2-2",
+        "#L2-3",
+        "#L2-4",
+        "#L2-5",
+        "#L2-6",
+        "#L2-7",
+        "#L2-8",
+        "#L2-9",
+        "#L2-10"
       ],
       "meta": { "order": 1 }
     },
@@ -836,47 +861,47 @@
       "id": "#L1-1",
       "type": "item",
       "itemType": "datasource",
-      "label": "Persons",
-      "icon": "👤",
-      "properties": { "source_type": "internal" }
+      "label": "Documents & Files",
+      "icon": "📄",
+      "properties": { "source_type": "unstructured" }
     },
     {
       "id": "#L1-2",
       "type": "item",
       "itemType": "datasource",
-      "label": "Organizations",
-      "icon": "🏢",
-      "properties": { "source_type": "internal" }
+      "label": "Databases",
+      "icon": "💾",
+      "properties": { "source_type": "structured" }
     },
     {
       "id": "#L1-3",
       "type": "item",
       "itemType": "datasource",
-      "label": "Locations",
-      "icon": "📍",
-      "properties": { "source_type": "internal" }
+      "label": "Email & Messaging",
+      "icon": "📧",
+      "properties": { "source_type": "unstructured" }
     },
     {
       "id": "#L1-4",
       "type": "item",
       "itemType": "datasource",
-      "label": "Customers",
-      "icon": "👥",
-      "properties": { "source_type": "internal" }
+      "label": "APIs & Web Services",
+      "icon": "🌐",
+      "properties": { "source_type": "external" }
     },
     {
       "id": "#L1-5",
       "type": "item",
       "itemType": "datasource",
-      "label": "Materials",
-      "icon": "📦",
-      "properties": { "source_type": "internal" }
+      "label": "Structured Data",
+      "icon": "📊",
+      "properties": { "source_type": "structured" }
     },
     {
       "id": "#L1-6",
       "type": "item",
       "itemType": "datasource",
-      "label": "Projects",
+      "label": "Code Repositories",
       "icon": "📁",
       "properties": { "source_type": "internal" }
     },
@@ -884,32 +909,32 @@
       "id": "#L1-7",
       "type": "item",
       "itemType": "datasource",
-      "label": "News & Media",
-      "icon": "📰",
-      "properties": { "source_type": "external" }
+      "label": "Logs & Events",
+      "icon": "📝",
+      "properties": { "source_type": "transactional" }
     },
     {
       "id": "#L1-8",
       "type": "item",
       "itemType": "datasource",
-      "label": "Rules & Policies",
-      "icon": "📜",
-      "properties": { "source_type": "internal" }
+      "label": "Media & Images",
+      "icon": "🎥",
+      "properties": { "source_type": "unstructured" }
     },
     {
       "id": "#L1-9",
       "type": "item",
       "itemType": "datasource",
-      "label": "Logs",
-      "icon": "🗒️",
-      "properties": { "source_type": "transactional" }
+      "label": "External Feeds",
+      "icon": "🔗",
+      "properties": { "source_type": "external" }
     },
     {
       "id": "#L1-10",
       "type": "item",
       "itemType": "datasource",
-      "label": "Systems",
-      "icon": "🖥️",
+      "label": "Legacy Systems",
+      "icon": "🏛️",
       "properties": { "source_type": "internal" }
     },
 
@@ -1009,7 +1034,7 @@
     },
     {
       "id": "conn-flow-1",
-      "from": "#L1",
+      "from": "#L2",
       "to": "#L1b",
       "connectionType": "flow",
       "direction": "forward"

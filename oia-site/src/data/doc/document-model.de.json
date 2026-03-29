@@ -124,7 +124,7 @@
     {
       "element_id": "l1_infrastructure",
       "element_type": "layer",
-      "name": "AI Infrastructure",
+      "name": "AI & Cognitive Infrastructure",
       "source_document_id": "doc_l1_infrastructure",
       "root_section_ids": ["l1_infrastructure__s001"],
       "section_count": 10
