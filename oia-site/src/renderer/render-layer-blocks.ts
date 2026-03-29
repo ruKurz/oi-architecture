@@ -1,6 +1,56 @@
 import type { OIAModel, Container, ContentItem } from '../data/types'
 import { getItem } from './utils'
 
+export function renderTransformZone(
+  model: OIAModel,
+  pipeline: Container,
+  concept: Container,
+): HTMLElement {
+  const wrapper = document.createElement('div')
+  wrapper.className = 'transform-zone'
+  wrapper.dataset.id = pipeline.id
+
+  const pipelineNumId = pipeline.id.replace('#', '')
+  const conceptNumId = concept.id.replace('#', '')
+
+  const steps = pipeline.children
+    .map((id, i, arr) => {
+      const item = getItem(model, id) as ContentItem | undefined
+      if (!item) return ''
+      const isLast = i === arr.length - 1
+      const isOutput = item.properties?.variant === 'output'
+      const outputClass = isOutput ? ' pipeline-step--output' : ''
+      const arrow = !isLast ? '<div class="pipeline-arrow">→</div>' : ''
+      return `<div class="pipeline-step${outputClass}">${item.icon || ''}<br>${item.label}</div>${arrow}`
+    })
+    .join('')
+
+  const chips = concept.children
+    .map((id) => {
+      const item = getItem(model, id)
+      return item ? `<span class="concept-chip">${item.label}</span>` : ''
+    })
+    .join('')
+
+  wrapper.innerHTML = `
+    <div class="transform-output" data-id="${concept.id}">
+      <div class="transform-output-header">
+        <span class="concept-id">${conceptNumId}</span>
+        <span class="concept-name">${concept.label}</span>
+      </div>
+      <div class="concept-chips">${chips}</div>
+    </div>
+    <div class="transform-zone-divider" role="separator"></div>
+    <div class="transform-zone-header">
+      <span class="layer-num">${pipelineNumId}</span>
+      <span class="layer-title">${pipeline.label}</span>
+      <span class="layer-desc">${pipeline.description || ''}</span>
+    </div>
+    <div class="pipeline-row">${steps}</div>
+  `
+  return wrapper
+}
+
 export function renderSolutionsLayer(model: OIAModel, layer: Container): string {
   return layer.children
     .map((id) => {

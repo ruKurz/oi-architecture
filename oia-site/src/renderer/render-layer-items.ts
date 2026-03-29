@@ -60,6 +60,16 @@ export function renderInfrastructureLayer(model: OIAModel, layer: Container): st
     .join('')
 }
 
+export function renderConceptLayer(model: OIAModel, layer: Container): string {
+  const chips = layer.children
+    .map((id) => {
+      const item = getItem(model, id)
+      return item ? `<span class="concept-chip">${item.label}</span>` : ''
+    })
+    .join('')
+  return `<div class="concept-chips">${chips}</div>`
+}
+
 export function renderDataSources(model: OIAModel, layer: Container): string {
   return layer.children
     .map((id) => {

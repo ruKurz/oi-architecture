@@ -1,6 +1,7 @@
 import type { OIAModel, Container } from '../data/types'
 import { renderLayer } from './render-layer'
 import { renderPanel } from './render-panel'
+import { renderTransformZone } from './render-layer-blocks'
 import { getItem } from './utils'
 
 export function renderOIA(model: OIAModel): HTMLElement {
@@ -43,18 +44,68 @@ export function renderOIA(model: OIAModel): HTMLElement {
     .map((e) => e as Container)
     .sort((a, b) => (b.meta?.order ?? 0) - (a.meta?.order ?? 0))
 
-  // Collect pipeline containers too (they sit between L1 and L2)
-  const pipelines = model.elements
-    .filter((e) => e.type === 'container' && (e as Container).containerType === 'pipeline')
+  // Collect pipeline and concept containers (positioned by order between layers)
+  const inlineContainers = model.elements
+    .filter(
+      (e) =>
+        e.type === 'container' &&
+        ((e as Container).containerType === 'pipeline' ||
+          (e as Container).containerType === 'concept'),
+    )
     .map((e) => e as Container)
 
-  // Build ordered list: layers sorted by order, insert pipelines by their order value
-  const allCenter: Container[] = [...layers, ...pipelines].sort(
+  // Build ordered list: layers sorted by order, insert inline containers by their order value
+  const allCenter: Container[] = [...layers, ...inlineContainers].sort(
     (a, b) => (b.meta?.order ?? 0) - (a.meta?.order ?? 0),
   )
 
-  for (const layer of allCenter) {
-    center.appendChild(renderLayer(model, layer))
+  // Pre-pass: identify which concepts are absorbed by a pipeline (prevents duplicate rendering
+  // when a concept sorts before its paired pipeline in descending order)
+  const absorbed = new Set<string>()
+  const pipelinePairs = new Map<string, Container>()
+  for (const container of allCenter) {
+    if (container.containerType === 'pipeline') {
+      const concept = allCenter.find(
+        (c) =>
+          c.containerType === 'concept' &&
+          Math.abs((c.meta?.order ?? 0) - (container.meta?.order ?? 0)) < 1,
+      )
+      if (concept) {
+        absorbed.add(concept.id)
+        pipelinePairs.set(container.id, concept)
+      }
+    }
+  }
+
+  // Render: pair each pipeline with its absorbed concept into one transform-zone
+  for (const container of allCenter) {
+    if (absorbed.has(container.id)) continue
+    if (container.containerType === 'pipeline') {
+      const concept = pipelinePairs.get(container.id)
+      if (concept) {
+        // Upper connector: between Knowledge Core (above) and this transform zone
+        const upperConn = document.createElement('div')
+        upperConn.className = 'layer-flow-connector'
+        upperConn.setAttribute('aria-hidden', 'true')
+        upperConn.innerHTML =
+          '<span class="layer-flow-arrow">↑</span><span class="layer-flow-label">Entities feed into Knowledge Core</span>'
+        center.appendChild(upperConn)
+
+        center.appendChild(renderTransformZone(model, container, concept))
+
+        // Lower connector: between this transform zone and Data Sources (below)
+        const lowerConn = document.createElement('div')
+        lowerConn.className = 'layer-flow-connector'
+        lowerConn.setAttribute('aria-hidden', 'true')
+        lowerConn.innerHTML =
+          '<span class="layer-flow-arrow">↑</span><span class="layer-flow-label">Raw Data from Data Sources</span>'
+        center.appendChild(lowerConn)
+      } else {
+        center.appendChild(renderLayer(model, container))
+      }
+    } else {
+      center.appendChild(renderLayer(model, container))
+    }
   }
 
   grid.appendChild(center)

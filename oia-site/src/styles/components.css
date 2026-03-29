@@ -241,24 +241,120 @@
 }
 .pipeline-step {
   flex: 1;
-  background: rgba(77, 184, 255, 0.06);
-  border: 1px solid rgba(77, 184, 255, 0.2);
+  background: rgba(77, 184, 255, 0.1);
+  border: 1px solid rgba(77, 184, 255, 0.35);
   border-radius: var(--radius-chip);
-  padding: 7px 8px;
+  padding: 10px 8px;
   text-align: center;
-  font-size: 11px;
-  color: var(--text-dim);
+  font-size: 12px;
+  color: var(--text-mid);
+  font-weight: 500;
 }
 .pipeline-step--output {
-  border-color: var(--accent2-dim);
+  background: rgba(44, 242, 194, 0.1);
+  border-color: var(--accent2-high);
   color: var(--accent2-high);
+  font-weight: 600;
 }
 .pipeline-arrow {
-  flex: 0 0 24px;
+  flex: 0 0 28px;
   text-align: center;
   color: var(--accent);
-  font-size: 12px;
+  font-size: 18px;
   font-weight: bold;
+  line-height: 1;
+}
+
+/* ── TRANSFORM ZONE (C2 pipeline + C1 entities combined) ── */
+.transform-zone {
+  position: relative;
+  padding: 14px 20px 16px;
+  background: linear-gradient(
+    to bottom,
+    rgba(77, 184, 255, 0.05) 0%,
+    rgba(44, 242, 194, 0.09) 55%,
+    rgba(77, 184, 255, 0.05) 100%
+  );
+  border-top: 2px solid rgba(77, 184, 255, 0.55);
+  border-bottom: 2px solid rgba(77, 184, 255, 0.55);
+  border-left: 3px solid rgba(77, 184, 255, 0.4);
+  border-right: 3px solid rgba(77, 184, 255, 0.4);
+  border-radius: 4px;
+  cursor: pointer;
+}
+.transform-zone-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+/* ── INTER-LAYER FLOW CONNECTORS (between layer blocks) ── */
+.layer-flow-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 6px 0;
+  font-size: 11px;
+  font-family: 'Space Mono', monospace;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: rgba(77, 184, 255, 0.8);
+}
+.layer-flow-arrow {
+  font-size: 22px;
+  line-height: 1;
+  color: rgba(77, 184, 255, 0.9);
+}
+.layer-flow-label {
+  font-size: 11px;
+}
+
+/* Zone divider between entity output and pipeline processing */
+.transform-zone-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(77, 184, 255, 0.3), transparent);
+  margin: 10px 0;
+}
+
+/* Entity output block (top of zone, closest to Knowledge Core) */
+.transform-output {
+  margin-bottom: 0;
+}
+.transform-output-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.concept-id {
+  font-size: 11px;
+  font-family: 'Space Mono', monospace;
+  color: var(--accent2-high);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.concept-name {
+  font-size: 11px;
+  color: var(--accent2-mid);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.concept-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.concept-chip {
+  background: rgba(44, 242, 194, 0.08);
+  border: 1px solid rgba(44, 242, 194, 0.3);
+  border-radius: var(--radius-chip);
+  padding: 4px 12px;
+  font-size: 12px;
+  color: var(--accent2-mid);
+  font-weight: 500;
 }
 
 /* ── ACTORS ── */
@@ -525,6 +621,7 @@
 .diagram-wrapper.zoom-far .sol-grid,
 .diagram-wrapper.zoom-far .data-grid,
 .diagram-wrapper.zoom-far .pipeline-row,
+.diagram-wrapper.zoom-far .layer-flow-connector,
 .diagram-wrapper.zoom-far .core-inner,
 .diagram-wrapper.zoom-far .actors-grid,
 .diagram-wrapper.zoom-far .side-item,
