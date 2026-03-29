@@ -26,6 +26,11 @@ describe('OIA Model integrity', () => {
     expect(ids).toContain('#C2')
   })
 
+  test('entities concept present', () => {
+    const ids = model.elements.map((e) => e.id)
+    expect(ids).toContain('#C1')
+  })
+
   test('no duplicate IDs', () => {
     const ids = model.elements.map((e) => e.id)
     expect(new Set(ids).size).toBe(ids.length)

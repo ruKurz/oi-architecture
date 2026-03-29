@@ -14,6 +14,7 @@ import { documentModel } from './document-model'
 // Scoped mapping: Presentation Layer IDs → Semantic Layer element_ids
 // Identity Strategy: scoped mapping (ADR-0018 §4 / concept §4)
 const layerIdMap: Record<string, string> = {
+  '#C1': 'c1_entities',
   '#C2': 'c2_information_processing_transformation_pipeline',
   '#L1': 'l1_infrastructure',
   '#L2': 'l2_data_sources',

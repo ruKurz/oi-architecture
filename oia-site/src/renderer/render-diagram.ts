@@ -43,13 +43,18 @@ export function renderOIA(model: OIAModel): HTMLElement {
     .map((e) => e as Container)
     .sort((a, b) => (b.meta?.order ?? 0) - (a.meta?.order ?? 0))
 
-  // Collect pipeline containers too (they sit between L1 and L2)
-  const pipelines = model.elements
-    .filter((e) => e.type === 'container' && (e as Container).containerType === 'pipeline')
+  // Collect pipeline and concept containers (positioned by order between layers)
+  const inlineContainers = model.elements
+    .filter(
+      (e) =>
+        e.type === 'container' &&
+        ((e as Container).containerType === 'pipeline' ||
+          (e as Container).containerType === 'concept'),
+    )
     .map((e) => e as Container)
 
-  // Build ordered list: layers sorted by order, insert pipelines by their order value
-  const allCenter: Container[] = [...layers, ...pipelines].sort(
+  // Build ordered list: layers sorted by order, insert inline containers by their order value
+  const allCenter: Container[] = [...layers, ...inlineContainers].sort(
     (a, b) => (b.meta?.order ?? 0) - (a.meta?.order ?? 0),
   )
 

@@ -7,6 +7,7 @@ import {
   renderFeaturesLayer,
   renderInfrastructureLayer,
   renderDataSources,
+  renderConceptLayer,
 } from './render-layer-items'
 import {
   renderSolutionsLayer,
@@ -19,6 +20,7 @@ import { renderSystemParticipants } from './render-system-participants'
 type LayerRenderer = (model: OIAModel, layer: Container) => string
 
 const layerRenderers: Record<string, LayerRenderer> = {
+  '#C1': (model, layer) => renderConceptLayer(model, layer),
   '#L9': (model, layer) => renderSystemParticipants(model, layer),
   '#L8': (model, layer) => `<div class="sit-grid">${renderSituationLayer(model, layer)}</div>`,
   '#L7': (model, layer) => `<div class="usecase-grid">${renderUseCaseLayer(model, layer)}</div>`,
@@ -54,7 +56,8 @@ export function renderLayer(model: OIAModel, layer: Container): HTMLElement {
     return wrapper
   }
 
-  wrapper.className = 'layer'
+  const isConcept = layer.containerType === 'concept'
+  wrapper.className = isConcept ? 'layer layer--concept' : 'layer'
   const numId = layer.id.replace('#', '')
   const renderer = layerRenderers[layer.id] ?? (isPipeline ? renderPipeline : null)
   const content = renderer ? renderer(model, layer) : ''

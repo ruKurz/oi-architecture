@@ -838,6 +838,22 @@
     },
 
     {
+      "id": "#C1",
+      "type": "container",
+      "containerType": "concept",
+      "label": "Organizational Entities",
+      "description": "Derived from Data Sources · Modeled in Knowledge Core",
+      "children": ["#C1-1", "#C1-2", "#C1-3", "#C1-4", "#C1-5", "#C1-6"],
+      "meta": { "order": 2.7 }
+    },
+    { "id": "#C1-1", "type": "item", "itemType": "concept", "label": "Persons" },
+    { "id": "#C1-2", "type": "item", "itemType": "concept", "label": "Organizations" },
+    { "id": "#C1-3", "type": "item", "itemType": "concept", "label": "Locations" },
+    { "id": "#C1-4", "type": "item", "itemType": "concept", "label": "Products & Materials" },
+    { "id": "#C1-5", "type": "item", "itemType": "concept", "label": "Projects & Activities" },
+    { "id": "#C1-6", "type": "item", "itemType": "concept", "label": "Events & Contexts" },
+
+    {
       "id": "#L1",
       "type": "container",
       "containerType": "layer",

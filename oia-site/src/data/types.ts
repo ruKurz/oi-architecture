@@ -19,7 +19,7 @@ export type OIAElement = Container | ContentItem | ParticipantItem
 export interface Container {
   id: string
   type: 'container'
-  containerType: 'layer' | 'frame' | 'box' | 'pipeline' | 'panel' | 'spectrum'
+  containerType: 'layer' | 'frame' | 'box' | 'pipeline' | 'panel' | 'spectrum' | 'concept'
   label: string
   description?: string
   children: string[]

@@ -261,6 +261,29 @@
   font-weight: bold;
 }
 
+/* ── CONCEPT (C1, C2 cross-cutting) ── */
+.layer--concept {
+  border-style: dashed;
+  opacity: 0.85;
+}
+.layer--concept .layer-num {
+  color: var(--accent2-high);
+  border-color: var(--accent2-dim);
+}
+.concept-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.concept-chip {
+  background: rgba(77, 184, 255, 0.06);
+  border: 1px solid rgba(77, 184, 255, 0.2);
+  border-radius: var(--radius-chip);
+  padding: 3px 10px;
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
 /* ── ACTORS ── */
 .actors-grid {
   display: grid;
