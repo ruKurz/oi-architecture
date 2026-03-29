@@ -23,7 +23,7 @@ describe('OIA Model integrity', () => {
 
   test('pipeline layer present', () => {
     const ids = model.elements.map((e) => e.id)
-    expect(ids).toContain('#L1b')
+    expect(ids).toContain('#C2')
   })
 
   test('no duplicate IDs', () => {
