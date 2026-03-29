@@ -1793,12 +1793,19 @@ Replace "user/business outcome" with **integration quality outcome**:
 
 ### L8 — Situation & Context (Type B interpretation)
 
-L8 remains in Zone 2 with the same gate threshold (≥ ★★★). For Type B, the structural criteria apply but the interpretation shifts:
+L8 remains in Zone 2 with the same gate threshold (≥ ★★★) and the same structural criteria. The concept is identical to Type A: does the system understand the situation it is operating in? What changes are the **dimensions** of context, not the presence of context as a concern.
 
-- **Not assessed:** Does the framework itself adapt to context?
-- **Assessed instead:** Does the framework's API allow client applications to supply context?
+**Type B context dimensions:**
+- **Caller type:** Agent (e.g. Claude Code via MCP), pipeline (CI/CD, scheduled job), human developer (interactive), automation (deployment script)
+- **Operation type:** Index, search/retrieve, configure, monitor/health
+- **Deployment environment:** Local single-user, multi-tenant cloud, CI environment
+- **Corpus characteristics:** Document type mix, expected corpus size, language
 
-L8 ★★★ for Type B: "Core context dimensions are defined as API parameters, documented, and at least one reference client passes them." The rubric question is API design completeness, not system context-awareness.
+A search request from an Agent in an interactive session has different relevance and latency expectations than a bulk QA check from a CI pipeline. A local deployment context calls for different defaults than a multi-tenant environment. The framework is in a situation — that situation is shaped by integration context, not business context.
+
+**L8 ★★★ for Type B:** Core integration context dimensions are defined and documented, context is captured at request time, and logged with results. At least one caller type is differentiated in behavior.
+
+Apply the full Zone 2 L8 level descriptions and transition blocks using integration context dimensions as the referent. The rubric structure is identical; the vocabulary changes from "user role / intent" to "caller type / operation type."
 
 ---
 

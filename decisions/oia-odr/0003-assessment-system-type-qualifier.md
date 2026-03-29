@@ -45,15 +45,17 @@ The System-Type is not a score. It is a qualifier that selects the appropriate i
 
 L1, L2, L3, L4, and L5 definitions are identical across all system types. These layers describe the technical and semantic foundation that any system type requires.
 
-**L8 (Situation & Context)** is in Zone 2 and remains a Zone 2 gate layer for all system types. The *structural criteria* (defined context dimensions, context captured at request time, context logged with results) apply to all types. The *interpretation* of what "context" means differs:
+**L8 (Situation & Context)** is in Zone 2 and remains a Zone 2 gate layer for all system types. The *structural criteria* (defined context dimensions, context captured at request time, context logged with results) apply identically. The *dimensions* of context differ by system type — but the concept is identical: does the system understand the situation it is operating in?
 
-| Type | L8 interpretation |
+| Type | Context dimensions |
 |---|---|
-| **A** | System is context-aware: role, intent, domain shape the system's own behavior |
-| **B** | System enables context-passing: the API allows client applications to supply context; API completeness and documentation are the assessment criteria |
-| **C** | N/A — infrastructure systems generally do not require context modeling; L8 remains at ★ by design |
+| **A** | User role, domain, intent, urgency, language, task |
+| **B** | Caller type (agent / pipeline / human developer / automation), operation type (index / search / configure / monitor), deployment environment (local / cloud / multi-tenant), corpus characteristics |
+| **C** | Operational conditions: load level, resource constraints, upstream system state |
 
-For Type B, L8 ★★★ means: "Core context dimensions are defined as API parameters, documented, and at least one client passes them." The gate threshold is the same; the rubric criterion is adapted.
+For Type B, L8 ★★★ means: "Core integration context dimensions are defined (caller type, operation type, deployment environment), captured at request time, and logged with results." The gate threshold is identical to Type A; the context dimensions are integration-shaped rather than business-shaped.
+
+> **Why this matters for frameworks:** A search request from Claude Code via MCP in an interactive session has different relevance expectations than a bulk QA check from a CI pipeline. A local single-user deployment context calls for different behavior than a multi-tenant cloud deployment. The framework is in a situation — that situation just looks like integration context, not user context.
 
 ### 4. Zone 3 Layer Definition Variants
 
