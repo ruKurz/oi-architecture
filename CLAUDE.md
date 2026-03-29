@@ -166,6 +166,11 @@ Follow CONVENTIONS.md §2.3. Every commit subject ends with `(#N)`. Every commit
 Official tasks: GitHub Issues at https://github.com/ruKurz/oi-architecture/issues
 `context/todo.md` is a session parking lot only — not the primary tracker.
 
+**No private project names in public artifacts.**
+Before creating or editing a GitHub Issue, PR, or commit message that references an external project, system, or codebase: verify the referenced project is publicly known (open source, published, or explicitly approved by the maintainer).
+Never include names, paths, or details of private, proprietary, or non-public projects in any public repository artifact.
+When a private project serves as a test or reference object: describe it generically ("a reference project", "an internal knowledge system") — never by name.
+
 ## Version Identity
 
 **Current OIA version: `0.3.0`**

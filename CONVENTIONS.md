@@ -108,6 +108,18 @@ Categories: `model` · `renderer` · `prompt` · `architecture` · `infra` · `u
 
 See [ADR-0003](decisions/adr/0003-github-issues-as-task-tracker.md) for rationale.
 
+### No Private Names in Public Artifacts
+
+**Before creating or editing any public artifact (GitHub Issue, PR, commit message):**
+
+- Verify that any referenced external project, system, or codebase is publicly known (open source, published, or explicitly approved by the maintainer for public mention)
+- Never include names, paths, or details of private, proprietary, or non-public projects
+- When a private project serves as a test or reference object: describe it generically — "a reference project", "an internal knowledge system" — not by name
+
+Rationale: This repository is public. Private project names in Issues, PRs, or commits are permanently visible and cannot be reliably removed from git history or GitHub's search index.
+
+See [#253](https://github.com/ruKurz/oi-architecture/issues/253) for the incident that prompted this rule.
+
 ### No-Duplicate Rule
 
 **Every workflow that creates GitHub Issues must run the duplicate check first — without exception.**
