@@ -794,7 +794,7 @@
       "label": "Data Processing Pipeline",
       "description": "Raw data → usable knowledge",
       "children": ["#L1b-1", "#L1b-2", "#L1b-3", "#L1b-4", "#L1b-5"],
-      "meta": { "order": 1.5 }
+      "meta": { "order": 2.5 }
     },
     {
       "id": "#L1b-1",
