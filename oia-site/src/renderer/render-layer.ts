@@ -25,10 +25,10 @@ const layerRenderers: Record<string, LayerRenderer> = {
   '#L6': (model, layer) => `<div class="sol-grid">${renderSolutionsLayer(model, layer)}</div>`,
   '#L5': (model, layer) => `<div class="cap-grid">${renderCapabilitiesLayer(model, layer)}</div>`,
   '#L4': (model, layer) => `<div class="tag-row">${renderFeaturesLayer(model, layer)}</div>`,
-  '#L2': (model, layer) => `<div class="tag-row">${renderInfrastructureLayer(model, layer)}</div>`,
+  '#L1': (model, layer) => `<div class="tag-row">${renderInfrastructureLayer(model, layer)}</div>`,
   '#L10': (model, layer) => `<div class="outcome-grid">${renderOutcomeLayer(model, layer)}</div>`,
   '#L1b': renderPipeline,
-  '#L1': (model, layer) => `<div class="data-grid">${renderDataSources(model, layer)}</div>`,
+  '#L2': (model, layer) => `<div class="data-grid">${renderDataSources(model, layer)}</div>`,
 }
 
 export function renderLayer(model: OIAModel, layer: Container): HTMLElement {
