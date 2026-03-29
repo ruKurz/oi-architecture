@@ -6,27 +6,41 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
-## [0.4.0] — 2026-03-29 — *Maturity Model. Real-World Validation. System-Type Qualifier.*
+## [0.4.0] — 2026-03-29 — *The model learns to assess itself.*
 
-### Added
+v0.4.0 ships the OIA Maturity Model in full: concept, layer definitions, rubric across all three zones, and — unusually for a framework release — the first real assessment, complete with the rubric gaps it exposed and the model changes it triggered. A System-Type Qualifier now ensures frameworks are not graded on end-user criteria they were never meant to meet. The two-layer model separation landed in the renderer. The diagram finally shows C1 and C2. Several vulnerabilities got quietly evicted.
 
-**OIA Maturity Model** — complete framework for assessing initiative-level contribution to organizational intelligence
-- `context/concepts/oia-maturity-model.md` — concept document: 5-star scale, Stop-Gate zones, Organizational Reading, pattern library, comparison with 7 existing frameworks (CMMI, Gartner, Microsoft, DAMA, IBM, MITRE, Siemens KMMM) — [#239](https://github.com/ruKurz/oi-architecture/issues/239)
-- `context/concepts/oia-layer-definitions.md` — MECE assessment criteria for all 10 layers with in/out criteria and assignment examples — [#240](https://github.com/ruKurz/oi-architecture/issues/240)
-- `context/concepts/oia-maturity-rubric.md` — full Rubric v1 covering all three zones (L1–L10): 5-level descriptions, transition blocks with MoSCoW actions and leading/lagging KPIs, Stop-Gate summaries, Muster-Bibliothek (4 patterns), Organisationslesart template — [#247](https://github.com/ruKurz/oi-architecture/issues/247), [#248](https://github.com/ruKurz/oi-architecture/issues/248)
-- `decisions/oia-odr/0002-oia-maturity-model.md` — OIA-ODR-0002: formalizes 5-star scale, Stop-Gate zones, MECE layer boundaries — [#242](https://github.com/ruKurz/oi-architecture/issues/242)
-- `decisions/oia-odr/0003-assessment-system-type-qualifier.md` — OIA-ODR-0003: System-Type Qualifier as mandatory pre-assessment step; Type A/B/C definitions; Zone 3 variant definitions for Framework/Platform systems — [#262](https://github.com/ruKurz/oi-architecture/issues/262)
-- `context/assessments/001-local-knowledge-retrieval-system.md` — first real-world OIA assessment (Type B, anonymized); rubric gaps documented; §3 framework changes; §4 next test hypotheses — [#243](https://github.com/ruKurz/oi-architecture/issues/243)
+### Model & Content
 
-**C1/C2 diagram visualization** — cross-cutting concepts visible in OIA diagram — [#254](https://github.com/ruKurz/oi-architecture/issues/254)
+- [#229](https://github.com/ruKurz/oi-architecture/issues/229) fix(data): translate all German content in document-model.json to comply with ODR-0004
+- [#239](https://github.com/ruKurz/oi-architecture/issues/239) content(context): design OIA Maturity Model — concept, 5-star scale, output format
+- [#240](https://github.com/ruKurz/oi-architecture/issues/240) content(context): formalize OIA layer definitions as MECE assessment criteria
+- [#241](https://github.com/ruKurz/oi-architecture/issues/241) content(context): create OIA Maturity Rubric v1 (5-star, per-layer, benefit + KPI)
+- [#242](https://github.com/ruKurz/oi-architecture/issues/242) docs(decisions): introduce OIA-ODR-0002 for OIA Maturity Model layer semantics
+- [#243](https://github.com/ruKurz/oi-architecture/issues/243) content(biz): apply OIA Maturity Rubric to a reference project (first real-world validation)
+- [#247](https://github.com/ruKurz/oi-architecture/issues/247) content(context): create OIA Maturity Rubric v1 — Zone 1 layers (Data, AI Infra)
+- [#248](https://github.com/ruKurz/oi-architecture/issues/248) content(context): create OIA Maturity Rubric v1 — Zone 2+3 layers
+- [#252](https://github.com/ruKurz/oi-architecture/issues/252) content(model): fix swapped layer contents — Data Sources and AI Infrastructure
+- [#262](https://github.com/ruKurz/oi-architecture/issues/262) content(model): introduce System-Type Qualifier for OIA Maturity Assessment
 
-**Process & governance**
-- Scope rule: no private project names in public issues, commits, or PRs — [#253](https://github.com/ruKurz/oi-architecture/issues/253)
+### Renderer & UX
 
-### Changed
+- [#216](https://github.com/ruKurz/oi-architecture/issues/216) feat: implement two-layer model separation (OIADocumentModel + model.ts extension)
+- [#228](https://github.com/ruKurz/oi-architecture/issues/228) feat(renderer): show semantic sections in detail panel for mapped layer elements
+- [#254](https://github.com/ruKurz/oi-architecture/issues/254) feat(ux): show C1/C2 cross-cutting concepts and data-flow in OIA diagram
 
-- `context/concepts/oia-maturity-rubric.md` — Zone 2 sequencing: L8 before L5 (intent data accumulates passively); L10 minimum viable tracking pattern; L3 structural vs. functional assessment note — [#248](https://github.com/ruKurz/oi-architecture/issues/248)
-- Model version bumped to `0.4.0` in `oia-model.json`, Motivation page, Contribute page, README, CLAUDE.md — [#244](https://github.com/ruKurz/oi-architecture/issues/244)
+### Infrastructure & Governance
+
+- [#206](https://github.com/ruKurz/oi-architecture/issues/206) chore(process): sprint retro improvements
+- [#207](https://github.com/ruKurz/oi-architecture/issues/207) chore(release): prepare and tag v0.3.0
+- [#214](https://github.com/ruKurz/oi-architecture/issues/214) docs: create ADR for two-layer model separation
+- [#215](https://github.com/ruKurz/oi-architecture/issues/215) concept: define layer separation between OIADocumentModel and OIAModel
+- [#219](https://github.com/ruKurz/oi-architecture/issues/219) fix(infra): resolve flatted prototype pollution vulnerability in npm lockfile
+- [#223](https://github.com/ruKurz/oi-architecture/issues/223) chore(context): restructure context/ folder — separate BIZ concepts, DEV concepts, and agent docs
+- [#225](https://github.com/ruKurz/oi-architecture/issues/225) docs(decisions): clarify file name versioning scope in ADR-0007
+- [#245](https://github.com/ruKurz/oi-architecture/issues/245) fix(infra): resolve brace-expansion, picomatch, yaml vulnerabilities in npm lockfile
+- [#249](https://github.com/ruKurz/oi-architecture/issues/249) chore(deps-dev): bump vitest and @vitest/ui to 4.1.2
+- [#253](https://github.com/ruKurz/oi-architecture/issues/253) chore(process): add scope rule — no private project names in public GitHub Issues
 
 ## [0.3.0] — 2026-03-16 — *Capabilities Converge. Accountability Does Not.*
 
