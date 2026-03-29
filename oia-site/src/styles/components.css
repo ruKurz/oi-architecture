@@ -261,14 +261,61 @@
   font-weight: bold;
 }
 
-/* ── CONCEPT (C1, C2 cross-cutting) ── */
-.layer--concept {
-  border-style: dashed;
-  opacity: 0.85;
+/* ── TRANSFORM ZONE (C2 pipeline + C1 entities combined) ── */
+.transform-zone {
+  position: relative;
+  padding: 12px 20px 14px;
+  background: linear-gradient(
+    135deg,
+    rgba(77, 184, 255, 0.03) 0%,
+    rgba(44, 242, 194, 0.06) 50%,
+    rgba(77, 184, 255, 0.03) 100%
+  );
+  border-top: 1px dashed rgba(77, 184, 255, 0.35);
+  border-bottom: 1px dashed rgba(77, 184, 255, 0.35);
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+  cursor: pointer;
 }
-.layer--concept .layer-num {
+.transform-zone::before,
+.transform-zone::after {
+  content: '↕';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(77, 184, 255, 0.3);
+  font-size: 12px;
+  line-height: 1;
+}
+.transform-zone::before {
+  top: -9px;
+}
+.transform-zone::after {
+  bottom: -9px;
+}
+.transform-zone-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.transform-output {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(44, 242, 194, 0.25);
+}
+.transform-output-label {
+  font-size: 10px;
   color: var(--accent2-high);
-  border-color: var(--accent2-dim);
+  font-family: 'Space Mono', monospace;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 .concept-chips {
   display: flex;
@@ -276,12 +323,12 @@
   gap: 6px;
 }
 .concept-chip {
-  background: rgba(77, 184, 255, 0.06);
-  border: 1px solid rgba(77, 184, 255, 0.2);
+  background: rgba(44, 242, 194, 0.05);
+  border: 1px solid rgba(44, 242, 194, 0.2);
   border-radius: var(--radius-chip);
   padding: 3px 10px;
   font-size: 11px;
-  color: var(--text-dim);
+  color: var(--accent2-mid);
 }
 
 /* ── ACTORS ── */

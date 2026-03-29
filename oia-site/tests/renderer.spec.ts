@@ -24,10 +24,10 @@ describe('renderOIA', () => {
     expect(el.innerHTML).toContain('Architecture')
   })
 
-  test('renders all 9 layers + pipeline as data-id attributes', async () => {
+  test('renders all 9 layers + transform zone as data-id attributes', async () => {
     const { renderOIA } = await import('../src/renderer/render-diagram')
     const el = renderOIA(model)
-    ;['#L1', '#L2', '#L3', '#L4', '#L5', '#L6', '#L7', '#L8', '#L9', '#C2', '#C1'].forEach((id) => {
+    ;['#L1', '#L2', '#L3', '#L4', '#L5', '#L6', '#L7', '#L8', '#L9', '#C2'].forEach((id) => {
       expect(el.querySelector(`[data-id="${id}"]`), `Missing data-id="${id}"`).not.toBeNull()
     })
   })

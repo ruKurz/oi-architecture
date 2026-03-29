@@ -1,6 +1,7 @@
 import type { OIAModel, Container } from '../data/types'
 import { renderLayer } from './render-layer'
 import { renderPanel } from './render-panel'
+import { renderTransformZone } from './render-layer-blocks'
 import { getItem } from './utils'
 
 export function renderOIA(model: OIAModel): HTMLElement {
@@ -58,8 +59,26 @@ export function renderOIA(model: OIAModel): HTMLElement {
     (a, b) => (b.meta?.order ?? 0) - (a.meta?.order ?? 0),
   )
 
-  for (const layer of allCenter) {
-    center.appendChild(renderLayer(model, layer))
+  // Render: pair each pipeline with its adjacent concept into one transform-zone
+  const absorbed = new Set<string>()
+  for (const container of allCenter) {
+    if (absorbed.has(container.id)) continue
+    if (container.containerType === 'pipeline') {
+      const concept = allCenter.find(
+        (c) =>
+          c.containerType === 'concept' &&
+          !absorbed.has(c.id) &&
+          Math.abs((c.meta?.order ?? 0) - (container.meta?.order ?? 0)) < 1,
+      )
+      if (concept) {
+        absorbed.add(concept.id)
+        center.appendChild(renderTransformZone(model, container, concept))
+      } else {
+        center.appendChild(renderLayer(model, container))
+      }
+    } else {
+      center.appendChild(renderLayer(model, container))
+    }
   }
 
   grid.appendChild(center)
