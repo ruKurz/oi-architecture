@@ -6,6 +6,28 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.4.0] — 2026-03-29 — *Maturity Model. Real-World Validation. System-Type Qualifier.*
+
+### Added
+
+**OIA Maturity Model** — complete framework for assessing initiative-level contribution to organizational intelligence
+- `context/concepts/oia-maturity-model.md` — concept document: 5-star scale, Stop-Gate zones, Organizational Reading, pattern library, comparison with 7 existing frameworks (CMMI, Gartner, Microsoft, DAMA, IBM, MITRE, Siemens KMMM) — [#239](https://github.com/ruKurz/oi-architecture/issues/239)
+- `context/concepts/oia-layer-definitions.md` — MECE assessment criteria for all 10 layers with in/out criteria and assignment examples — [#240](https://github.com/ruKurz/oi-architecture/issues/240)
+- `context/concepts/oia-maturity-rubric.md` — full Rubric v1 covering all three zones (L1–L10): 5-level descriptions, transition blocks with MoSCoW actions and leading/lagging KPIs, Stop-Gate summaries, Muster-Bibliothek (4 patterns), Organisationslesart template — [#247](https://github.com/ruKurz/oi-architecture/issues/247), [#248](https://github.com/ruKurz/oi-architecture/issues/248)
+- `decisions/oia-odr/0002-oia-maturity-model.md` — OIA-ODR-0002: formalizes 5-star scale, Stop-Gate zones, MECE layer boundaries — [#242](https://github.com/ruKurz/oi-architecture/issues/242)
+- `decisions/oia-odr/0003-assessment-system-type-qualifier.md` — OIA-ODR-0003: System-Type Qualifier as mandatory pre-assessment step; Type A/B/C definitions; Zone 3 variant definitions for Framework/Platform systems — [#262](https://github.com/ruKurz/oi-architecture/issues/262)
+- `context/assessments/001-local-knowledge-retrieval-system.md` — first real-world OIA assessment (Type B, anonymized); rubric gaps documented; §3 framework changes; §4 next test hypotheses — [#243](https://github.com/ruKurz/oi-architecture/issues/243)
+
+**C1/C2 diagram visualization** — cross-cutting concepts visible in OIA diagram — [#254](https://github.com/ruKurz/oi-architecture/issues/254)
+
+**Process & governance**
+- Scope rule: no private project names in public issues, commits, or PRs — [#253](https://github.com/ruKurz/oi-architecture/issues/253)
+
+### Changed
+
+- `context/concepts/oia-maturity-rubric.md` — Zone 2 sequencing: L8 before L5 (intent data accumulates passively); L10 minimum viable tracking pattern; L3 structural vs. functional assessment note — [#248](https://github.com/ruKurz/oi-architecture/issues/248)
+- Model version bumped to `0.4.0` in `oia-model.json`, Motivation page, Contribute page, README, CLAUDE.md — [#244](https://github.com/ruKurz/oi-architecture/issues/244)
+
 ## [0.3.0] — 2026-03-16 — *Capabilities Converge. Accountability Does Not.*
 
 ### Added
@@ -165,6 +187,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Test files: removed implicit `any` types — [#13](https://github.com/ruKurz/oi-architecture/issues/13)
 - Test files: improved JSON model import typing — [#14](https://github.com/ruKurz/oi-architecture/issues/14)
 
+[0.4.0]: https://github.com/ruKurz/oi-architecture/releases/tag/v0.4.0
 [0.3.0]: https://github.com/ruKurz/oi-architecture/releases/tag/v0.3.0
 [0.2.0]: https://github.com/ruKurz/oi-architecture/compare/v0.1.0...v0.3.0
 [0.1.0]: https://github.com/ruKurz/oi-architecture/releases/tag/v0.1.0

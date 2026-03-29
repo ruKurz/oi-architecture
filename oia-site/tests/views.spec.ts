@@ -86,10 +86,10 @@ describe('renderMotivationView', () => {
     expect(el.querySelector('.page-view__eyebrow')?.textContent?.trim()).toBe('Motivation')
   })
 
-  test('contains version number 0.3.0', async () => {
+  test('contains version number 0.4.0', async () => {
     const { renderMotivationView } = await import('../src/views/motivation')
     const el = renderMotivationView()
-    expect(el.innerHTML).toContain('0.3.0')
+    expect(el.innerHTML).toContain('0.4.0')
   })
 
   test('contains at least one section', async () => {

@@ -173,7 +173,7 @@ When a private project serves as a test or reference object: describe it generic
 
 ## Version Identity
 
-**Current OIA version: `0.3.0`**
+**Current OIA version: `0.4.0`**
 
 This version string must be consistent everywhere it appears:
 - `oia-site/src/data/oia-model.json` → `meta.version`

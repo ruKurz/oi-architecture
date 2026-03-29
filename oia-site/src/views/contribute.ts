@@ -18,7 +18,7 @@ export function renderContributeView(): HTMLElement {
       <div class="page-view__intro">
         <p>OIA is not a finished framework.</p>
         <p>
-          It is a <strong>working model</strong> — version <strong>0.3.0</strong>, intentionally early.
+          It is a <strong>working model</strong> — version <strong>0.4.0</strong>, intentionally early.
         </p>
         <p>
           The architecture will evolve through real implementations, experiments, and operational feedback.<br>
