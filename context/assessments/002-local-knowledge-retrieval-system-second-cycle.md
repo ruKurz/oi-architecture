@@ -258,13 +258,13 @@ Capabilities are named in business terms, each scoped to a module, and explicitl
 ## Recommendations
 
 > **Recommendation character is explicit below.** Each recommendation is one of three types:
-> — **Dokumentation:** text work, no code, completable in days
-> — **Messung:** manual measurement or data analysis, no code, requires operator time
-> — **Ingenieurarbeit:** code change, requires design + implementation cycle
+> — **Documentation:** text work, no code, completable in days
+> — **Measurement:** manual measurement or data analysis, no code, requires operator time
+> — **Engineering:** code change, requires design + implementation cycle
 
 ### Recommendation 1 — Document Integration Scenarios (L7 ★★→★★★)
 
-**Character: Dokumentation**
+**Character: Documentation**
 **Priority: High — Zone 3 gate blocker. Completable in 1 week without code.**
 
 Create an integration-scenario document with three scenarios:
@@ -284,7 +284,7 @@ Lagging KPI: New integrators onboard using scenario documentation without direct
 
 ### Recommendation 2 — Establish Quality Baseline (L10 ★→★★)
 
-**Character: Messung**
+**Character: Measurement**
 **Priority: High — prerequisite for R3. Must precede intent-based routing.**
 
 Take 10 representative queries from the search log (covering at least 3 intent types), run them against the primary indexed corpus, and manually evaluate top-5 results for relevance. Record in a quality-baseline document:
@@ -308,7 +308,7 @@ Lagging KPI: Precision@5 by intent type — the number itself is the outcome, wh
 
 ### Recommendation 3 — Activate Intent-Based Retrieval Routing (L8 ★★★→★★★★)
 
-**Character: Ingenieurarbeit**
+**Character: Engineering**
 **Priority: Medium — pursue after R2 is complete.**
 
 Using the precision findings from R2, define two retrieval configurations:
@@ -330,9 +330,9 @@ Three new increments derived directly from this assessment:
 
 | Increment | Name | Character | L-Target | Prerequisite |
 |---|---|---|---|---|
-| Increment 1 | Integration Scenarios | Dokumentation | L7 → ★★★ | None |
-| Increment 2 | Quality Baseline | Messung | L10 → ★★, L3 functional validation | Search-log data (context-model increment) |
-| Increment 3 | Intent-Based Retrieval Routing | Ingenieurarbeit | L8 → ★★★★ | Increment 2 complete |
+| Increment 1 | Integration Scenarios | Documentation | L7 → ★★★ | None |
+| Increment 2 | Quality Baseline | Measurement | L10 → ★★, L3 functional validation | Search-log data (context-model increment) |
+| Increment 3 | Intent-Based Retrieval Routing | Engineering | L8 → ★★★★ | Increment 2 complete |
 
 **Recommended sequencing:** Increment 1 and Increment 2 can run in parallel (no dependency between them). Increment 3 requires Increment 2 to be complete.
 
@@ -344,7 +344,7 @@ No new structural gaps in Rubric v1 were discovered in this cycle. Three observa
 
 1. **L3 structural vs. functional scoring is under-specified for OCR-heavy corpora.** The rubric's L3 ★★★ criteria ("entities extracted, metadata structured") does not distinguish between clean digital text and OCR-extracted content, which can have substantially lower semantic coherence. A rubric note for OCR-heavy contexts — requiring a functional precision measurement before treating L3 as production-ready — would prevent false confidence.
 
-2. **Recommendation character (Dokumentation / Messung / Ingenieurarbeit) is not a rubric concept.** The assessment feedback explicitly identified that the three recommendations had different characters not named in the report. The rubric's recommendation format (MoSCoW action items + KPIs) does not include a "character" field. Adding one would help assessors sequence recommendations correctly — especially when a Messung must precede an Ingenieurarbeit.
+2. **Recommendation character (Documentation / Measurement / Engineering) is not a rubric concept.** The assessment feedback explicitly identified that the three recommendations had different characters not named in the report. The rubric's recommendation format (MoSCoW action items + KPIs) does not include a "character" field. Adding one would help assessors sequence recommendations correctly — especially when a Measurement recommendation must precede an Engineering recommendation.
 
 3. **Zone 3 transition path (Zone 2 open → Zone 3 targets) needs elaboration.** The rubric describes Zone 3 layer targets (L6 ★★★★, L9 ★★★, L7 ★★★★, L10 ★★★★) but gives no guidance on which Zone 3 layer to start with once Zone 2 opens. Feedback from this cycle: L7 (Integration Scenarios) is the lowest-effort, highest-leverage first step because it is pure documentation work and unlocks L9 and L10 framing. A sequencing note for Zone 3 entry would be valuable.
 
@@ -356,9 +356,9 @@ One change to the assessment methodology directly from this cycle's feedback.
 
 ### Change 1 — Recommendation character field
 
-**Feedback:** The three recommendations in the draft report (R1, R2, R3) were listed in an order that was logical by layer number but incorrect for implementation: R2 (intent-based routing = Ingenieurarbeit) was listed before R3 (quality baseline = Messung), when R3 is in fact a prerequisite for R2. The feedback identified that the report did not make the character of each recommendation explicit.
+**Feedback:** The three recommendations in the draft report (R1, R2, R3) were listed in an order that was logical by layer number but incorrect for implementation: R2 (intent-based routing = Engineering) was listed before R3 (quality baseline = Measurement), when R3 is in fact a prerequisite for R2. The feedback identified that the report did not make the character of each recommendation explicit.
 
-**Assessment practice change:** All future assessments must label each recommendation with its character (Dokumentation / Messung / Ingenieurarbeit) before the priority assignment. Sequencing within the recommendation list must respect the dependency between Messung and the Ingenieurarbeit it enables. This change is reflected in the recommendations above and documented in the rubric backlog (Rubric Gap #2).
+**Assessment practice change:** All future assessments must label each recommendation with its character (Documentation / Measurement / Engineering) before the priority assignment. Sequencing within the recommendation list must respect the dependency between a Measurement recommendation and the Engineering change it enables. This change is reflected in the recommendations above and documented in the rubric backlog (Rubric Gap #2).
 
 ---
 
