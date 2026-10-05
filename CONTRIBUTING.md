@@ -12,7 +12,7 @@ Contributions do not have to be large. A comment on an issue, a challenge to an 
 
 ### Prerequisites
 
-- Node.js 20+
+- Node.js 24.15+ (or 22.22+)
 - Git
 - A GitHub account
 

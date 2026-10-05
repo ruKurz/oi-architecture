@@ -4,7 +4,7 @@
 
 ## Prerequisites
 
-- **Node.js 20+** — <https://nodejs.org>
+- **Node.js 24.15+** (or 22.22+) — <https://nodejs.org>
 - **Git**
 - **VS Code** (recommended) — install suggested extensions when prompted
 
