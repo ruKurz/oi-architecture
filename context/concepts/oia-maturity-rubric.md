@@ -403,8 +403,17 @@ Current state — what this looks like: [concrete symptoms]
 What you gain at ★★★: [business benefit, measurably formulated]
 What needs to be done: [MoSCoW-labeled action list]
 How to measure progress: [Leading KPI + Lagging KPI]
+Character: [Documentation | Measurement | Engineering]
 Priority: [derived from Stop-Gate position + reasoning]
 ```
+
+**Recommendation character.** Every recommendation in an assessment — and every new or revised transition block — declares its character before its priority:
+
+- **Documentation** — text work, no code; completable in days
+- **Measurement** — manual measurement or data analysis, no code; requires operator time
+- **Engineering** — code change; requires a design and implementation cycle
+
+Sequencing must respect dependencies between characters: a Measurement that produces the baseline for an Engineering change comes first. An Engineering change without a baseline cannot be validated — ordering recommendations by layer number alone hides this dependency.
 
 ---
 
@@ -430,6 +439,8 @@ Zone 2 is where data and infrastructure (Zone 1) are transformed into describabl
 > **Reality note:** Most AI initiatives reach Zone 1 with a functional data pipeline but no semantic knowledge model. L3 ★★ is common — data flows but doesn't accumulate meaning. The transition from ★★ to ★★★ is often the most intellectually demanding step in the architecture: it requires deciding what the organization actually knows, not just what it stores.
 
 > **Structural vs. functional assessment:** L3 star ratings assess *structural presence* — whether entity types are defined, documented, and owned. They do not assess *functional quality* — whether retrieval is actually returning relevant results. A system can reach L3 ★★★ structurally while returning poor results in practice (e.g. 0/5 relevant hits for a real query). Functional quality requires runtime measurement: run representative queries from L7 use cases and evaluate top-k precision. If structural and functional scores diverge, report both — structural score for the rubric, functional score as a separate quality note.
+
+> **OCR-heavy corpora:** When a substantial share of the corpus enters the Knowledge Core through OCR (scanned PDFs, images), the structural criteria are not sufficient for ★★★. OCR noise lowers semantic coherence — entities are extracted from misrecognized text, chunks mix layout artefacts with content — while every structural criterion remains formally met. For such corpora, treat L3 ★★★ as production-ready only after a functional precision measurement: representative queries, top-5 precision, with OCR-extracted and digital-text sources reported separately. Until that measurement exists, record the score as "structurally sound, functionally unvalidated."
 
 ---
 
@@ -1735,6 +1746,25 @@ A single ★★ on any of the four layers keeps the gate closed, regardless of t
 | L10 < ★★★ across the board | The organization cannot distinguish between valuable and worthless initiatives. Investment is unjustifiable. |
 | All Zone 3 ≥ ★★★ | Zone 3 gate open. Impact is measurable. The organization can distinguish what works from what doesn't. |
 | All ≥ ★★★★ | Architecture produces organizational intelligence at scale. Impact is traceable and investable. |
+
+### Entering Zone 3 — Transition Path from Zone 2
+
+When the Zone 2 gate opens, the system can describe what it does and knows the context it operates in — but nothing yet ties it to organizational needs, accountable participants, or measured outcomes. Opening the Zone 3 gate requires four shifts:
+
+| Layer | Typical state when Zone 2 opens | Required for Zone 3 gate |
+|---|---|---|
+| L6 Solutions & Applications | Applications exist and work | Documented, owned, deployable; users onboard without developer assistance |
+| L7 Use Cases & Challenges | Use cases implicit in personas or feature lists | Use case register with actor, task, context — linked to capabilities (L5) |
+| L9 System Participants | Callers and users implied by the applications | Participant model with Initiator/Actor/Beneficiary triad and access control |
+| L10 Business Outcome | Operational metrics only (latency, failure rate) | Outcome KPIs defined and baselined, measurement cadence established |
+
+L6 is often at or near threshold when Zone 2 opens; L7, L9, and L10 are the typical blockers.
+
+**Entry point: L7 ★2→3.** It is Documentation work — no engineering risk, completable within a sprint — and it frames the other two blockers: participants (L9) are defined per use case, and outcome KPIs (L10) are defined per use case. Starting with L9 or L10 before L7 produces generic participant lists and KPIs that measure activity, not impact.
+
+**Then start the L10 baseline.** As soon as L7 names what each use case is meant to achieve, begin the baseline measurement (Measurement character). Like intent logging in Zone 2, a baseline gains value with every cycle — and it is the prerequisite for any Engineering change that claims to improve outcomes.
+
+> **Type B (Framework/Platform):** The path is identical; the layers are read through their Type B variants (OIA-ODR-0003 §4) — L7 = integration scenarios, L9 = Framework-Team → Integrator → End-User triad, L10 = integration quality KPIs.
 
 ### Recommended Sequencing Within Zone 3
 
