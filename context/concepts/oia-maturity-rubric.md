@@ -1111,6 +1111,8 @@ A single ★★ on any of the four layers keeps the gate closed, regardless of t
 
 Zone 3 is where capabilities (Zone 2) meet real organizational needs (L7), are delivered through concrete applications (L6), for identifiable participants (L9), with traceable outcomes (L10).
 
+> **System-Type note (OIA-ODR-0003):** The level descriptions below assume **System-Type A (End-User-Anwendung)**. For **Type B (Framework/Platform)**, apply the Type B variant definitions for L7, L8, L9, and L10 as specified in OIA-ODR-0003 §4 and the [Type B Variant Reference](#zone-3--type-b-variant-reference-frameworkplatform) section at the end of this zone. The gate thresholds (≥ ★★★) are identical across types; the rubric criteria differ.
+
 ---
 
 ## L6 — Solutions, Applications & Tools
@@ -1742,6 +1744,68 @@ A single ★★ on any of the four layers keeps the gate closed, regardless of t
 4. L10 ★1→3 — outcome measurement designed before the application reaches full usage
 5. L6 ★3→4 + L10 ★3→4 together — connected application and outcome tracking reinforce each other
 6. ★4→5 transitions deferred until outcome data has accumulated (minimum: 2–3 measurement cycles)
+
+---
+
+## Zone 3 — Type B Variant Reference (Framework/Platform)
+
+For Vorhaben classified as **System-Type B (Framework/Platform)** per OIA-ODR-0003, apply the following variant criteria for Zone 3 layers. The gate thresholds and star-level names are identical to Type A; only the rubric criteria differ.
+
+### L7 — Use Cases (Type B variant)
+
+Replace "end-user use cases and challenges" with **integration scenarios**: what client applications need the framework to enable.
+
+| Level | Type B criteria |
+|---|---|
+| ★ Absent | No integration scenarios documented. The framework exists but no one has written down what client applications need it to do. |
+| ★★ Implicit | Integration needs understood informally by the framework team. Not written down. Different integrators have different expectations. |
+| ★★★ Defined | Core integration scenarios documented: for each scenario, what the client application needs, what the framework must deliver, what success looks like. Prioritized. |
+| ★★★★ Connected | Integration scenarios linked to framework capabilities (L5), API features (L4), and outcome KPIs (L10). Coverage known. Gaps explicit. |
+| ★★★★★ Optimized | Integration scenario register evolves from integrator feedback. New scenarios incorporated systematically. Addressed scenarios retired with outcome evidence. |
+
+**Example integration scenarios:** "Index a 50k-document corpus in under 10 minutes", "Retrieve with ≥ 70% top-5 precision across all supported file types", "A new integrator can build a working prototype in under 4 hours from documentation alone."
+
+### L9 — System Participants (Type B variant)
+
+The Initiator/Actor/Beneficiary triad differs from Type A:
+
+| Role | Type A | Type B |
+|---|---|---|
+| **Initiator** | Business stakeholder / project sponsor | Framework team (defines what the framework does and how) |
+| **Actor** | End user of the application | Integrator — the developer building the client application on top of the framework |
+| **Beneficiary** | End user (same as Actor or downstream) | End user of the client application (indirect — the framework never serves them directly) |
+
+Apply all L9 level descriptions and transition blocks using this triad. ★★★ Defined means: the Integrator role is documented — their responsibilities, what the framework owes them (API stability, documentation, support path), and what they owe the framework (integration contract, versioning discipline).
+
+### L10 — Business Outcome (Type B variant)
+
+Replace "user/business outcome" with **integration quality outcome**:
+
+| Level | Type B criteria |
+|---|---|
+| ★ Absent | No integration quality metrics defined or tracked. Success is assumed. |
+| ★★ Implicit | Integration quality understood informally. "Integrators seem satisfied." No measurement. |
+| ★★★ Defined | Core integration KPIs defined and baselined: time-to-value for new integrators, retrieval reliability across reference corpora, API stability (breaking change frequency), documentation completeness score. |
+| ★★★★ Connected | Integration quality data informs framework investment decisions. Which API gaps slow integrators? Which documentation gaps cause support escalations? Framework roadmap references outcome data. |
+| ★★★★★ Optimized | Integration quality improves as a background process. Integrator friction signals are detected automatically and routed to improvement tasks. The framework continuously reduces time-to-value without dedicated improvement sprints. |
+
+**Minimum viable L10 for Type B:** time-to-first-working-integration measured across new integrators + pass rate of integration test suite across supported corpus types. Both are measurable with minimal instrumentation.
+
+### L8 — Situation & Context (Type B interpretation)
+
+L8 remains in Zone 2 with the same gate threshold (≥ ★★★) and the same structural criteria. The concept is identical to Type A: does the system understand the situation it is operating in? What changes are the **dimensions** of context, not the presence of context as a concern.
+
+**Type B context dimensions:**
+- **Caller type:** Agent (e.g. Claude Code via MCP), pipeline (CI/CD, scheduled job), human developer (interactive), automation (deployment script)
+- **Operation type:** Index, search/retrieve, configure, monitor/health
+- **Deployment environment:** Local single-user, multi-tenant cloud, CI environment
+- **Corpus characteristics:** Document type mix, expected corpus size, language
+
+A search request from an Agent in an interactive session has different relevance and latency expectations than a bulk QA check from a CI pipeline. A local deployment context calls for different defaults than a multi-tenant environment. The framework is in a situation — that situation is shaped by integration context, not business context.
+
+**L8 ★★★ for Type B:** Core integration context dimensions are defined and documented, context is captured at request time, and logged with results. At least one caller type is differentiated in behavior.
+
+Apply the full Zone 2 L8 level descriptions and transition blocks using integration context dimensions as the referent. The rubric structure is identical; the vocabulary changes from "user role / intent" to "caller type / operation type."
 
 ---
 
