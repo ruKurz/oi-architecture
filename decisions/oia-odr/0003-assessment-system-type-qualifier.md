@@ -91,7 +91,7 @@ No direct end-user interaction. Zone 3 definitions applied per OIA-ODR-0003 §4 
 - AI Agents performing maturity assessments must determine and document the System-Type before scoring any layer
 - For Type B assessments: apply L7/L9/L10 Type B variants; interpret L8 as context-passing API completeness
 - The assessment output must include the System-Type declaration block (§5)
-- The local-rag reference assessment (`.local/notes/oia-assessment-local-rag.md`) must be re-scored for L7/L9/L10 using Type B variants before any published version is produced (#243)
+- The first reference assessment must be re-scored for L7/L9/L10 using Type B variants before any published version is produced (#243)
 - Future rubric additions for Zone 3 (★4→5 transitions) must provide Type A and Type B descriptions in parallel
 
 ---
